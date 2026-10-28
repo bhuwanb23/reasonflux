@@ -1,7 +1,19 @@
 # Decision thresholds (Phase 7 / 11A examples)
 invariants:
-  # Keep patterns with IS = frequency × consistency × generality above this
+  # IS = frequency × consistency × generality; keep patterns at/above this
   minimum_invariant_strength: 5.0
+  # Phase 11C-1 qualification policy
+  min_frequency: 3
+  min_consistency: 0.6
+  min_task_families: 2
+  min_generality: 0.0
+  require_transfer_evidence: true
+  min_transfer_events: 1
+  # Rejection: structures this broad are treated as universal noise
+  universal_noise_generality: 0.95
+  # Confidence bands
+  moderate_score: 0.4
+  strong_score: 0.7
 
 skills:
   # Create skill when SCV = Reuse × AG × TS − CreationCost exceeds this

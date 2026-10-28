@@ -1,14 +1,56 @@
 """Load YAML configuration from configs/."""
 
+from __future__ import annotations
+
 from pathlib import Path
 from typing import Any
+
+import yaml
+
+__all__ = [
+    "DEFAULT_CONFIG_DIR",
+    "load_config",
+    "load_default_configs",
+    "load_invariant_policy",
+]
+
+DEFAULT_CONFIG_DIR = Path("configs")
 
 
 def load_config(path: str | Path) -> dict[str, Any]:
     """Load a YAML config file into a dict."""
-    raise NotImplementedError("load_config is not implemented yet")
+    target = Path(path)
+    if not target.exists():
+        raise FileNotFoundError(f"Config file not found: {target}")
+    data = yaml.safe_load(target.read_text(encoding="utf-8")) or {}
+    if not isinstance(data, dict):
+        raise ValueError(f"Expected a mapping in {target}, got {type(data).__name__}")
+    return data
 
 
-def load_default_configs(config_dir: str | Path = "configs") -> dict[str, Any]:
-    """Merge default, thresholds, metrics, and experiments configs."""
-    raise NotImplementedError("load_default_configs is not implemented yet")
+def load_default_configs(config_dir: str | Path = DEFAULT_CONFIG_DIR) -> dict[str, Any]:
+    """Merge default, thresholds, metrics, and experiments configs.
+
+    Later files override earlier ones, key by key at the top level.
+    """
+    directory = Path(config_dir)
+    merged: dict[str, Any] = {}
+    for name in ("default.yaml", "thresholds.yaml", "metrics.yaml", "experiments.yaml"):
+        path = directory / name
+        if path.exists():
+            merged.update(load_config(path))
+    return merged
+
+
+def load_invariant_policy(config_dir: str | Path = DEFAULT_CONFIG_DIR) -> Any:
+    """Build an InvariantPolicy from configs/thresholds.yaml.
+
+    Reads the ``invariants`` mapping; unknown keys are ignored.
+    """
+    from invariants.specification import InvariantPolicy
+
+    path = Path(config_dir) / "thresholds.yaml"
+    if not path.exists():
+        return InvariantPolicy()
+    data = load_config(path).get("invariants") or {}
+    return InvariantPolicy.from_dict(data)

@@ -16,11 +16,18 @@ class SkillState(str, Enum):
 
 
 class InvariantState(str, Enum):
-    """Invariant lifecycle states."""
+    """Invariant lifecycle states (Phase 11C-1 stages).
 
+    Forward path: candidate → detected → validated → strong →
+    transfer_verified → skill_candidate, with archived as terminal.
+    """
+
+    CANDIDATE = "candidate"
     DETECTED = "detected"
     VALIDATED = "validated"
     STRONG = "strong"
+    TRANSFER_VERIFIED = "transfer_verified"
+    SKILL_CANDIDATE = "skill_candidate"
     ARCHIVED = "archived"
 
 
@@ -52,13 +59,37 @@ SKILL_TRANSITIONS: dict[SkillState, frozenset[SkillState]] = {
 }
 
 INVARIANT_TRANSITIONS: dict[InvariantState, frozenset[InvariantState]] = {
+    InvariantState.CANDIDATE: frozenset(
+        {InvariantState.CANDIDATE, InvariantState.DETECTED, InvariantState.ARCHIVED}
+    ),
     InvariantState.DETECTED: frozenset(
         {InvariantState.DETECTED, InvariantState.VALIDATED, InvariantState.ARCHIVED}
     ),
     InvariantState.VALIDATED: frozenset(
-        {InvariantState.VALIDATED, InvariantState.STRONG, InvariantState.ARCHIVED}
+        {
+            InvariantState.VALIDATED,
+            InvariantState.STRONG,
+            InvariantState.TRANSFER_VERIFIED,
+            InvariantState.ARCHIVED,
+        }
     ),
-    InvariantState.STRONG: frozenset({InvariantState.STRONG, InvariantState.ARCHIVED}),
+    InvariantState.STRONG: frozenset(
+        {
+            InvariantState.STRONG,
+            InvariantState.TRANSFER_VERIFIED,
+            InvariantState.ARCHIVED,
+        }
+    ),
+    InvariantState.TRANSFER_VERIFIED: frozenset(
+        {
+            InvariantState.TRANSFER_VERIFIED,
+            InvariantState.SKILL_CANDIDATE,
+            InvariantState.ARCHIVED,
+        }
+    ),
+    InvariantState.SKILL_CANDIDATE: frozenset(
+        {InvariantState.SKILL_CANDIDATE, InvariantState.ARCHIVED}
+    ),
     InvariantState.ARCHIVED: frozenset({InvariantState.ARCHIVED}),
 }
 

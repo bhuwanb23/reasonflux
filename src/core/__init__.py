@@ -9,7 +9,13 @@ from core.contracts import (
     TraceBatchProvider,
     ValidatedInvariantProvider,
 )
-from core.invariant import Invariant
+from core.invariant import (
+    MVP_INVARIANT_TYPES,
+    Invariant,
+    InvariantConfidence,
+    InvariantEvidence,
+    InvariantType,
+)
 from core.memory import (
     ASFTMemory,
     AbstractionMemory,
@@ -44,7 +50,11 @@ __all__ = [
     "INVARIANT_TRANSITIONS",
     "InvalidStateTransitionError",
     "Invariant",
+    "InvariantConfidence",
+    "InvariantEvidence",
     "InvariantState",
+    "InvariantType",
+    "MVP_INVARIANT_TYPES",
     "PromotedSkillProvider",
     "ReasoningStep",
     "ReasoningTrace",
