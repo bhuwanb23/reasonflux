@@ -170,44 +170,21 @@ Paper Architecture & Engineering Blueprint
 
 Module breakdown, dependencies, milestones, version planning, baseline implementations, paper artifact mapping
 
-Now proceeding to Phase 11.
+✅ Phase 11
 
-Phase 11: Implementation Planning
+Implementation Planning
 
-Goal: Convert the research blueprint into a concrete implementation roadmap with module definitions, dependency order, and MVP milestones.
+Detailed module specifications, algorithm designs, dependency order, MVP milestones, risk mitigation, and version planning.
 
-Key Deliverables:
+Module specifications for all 5 components (Trace Logger, Invariant Detector, Skill Creation Trigger, Skill Library, Evaluation Framework).
+Dependency graph documented.
+MVP milestones (5 phases: trace collection → capability growth).
+Version plan: v0.1 (Research Prototype), v0.2 (Concept Layer), v1.0 (ARC Integration).
+Implementation priority order (1→2→3→4→5).
+Risk mitigation plan (4 risks with mitigations and go/no-go criteria).
+Paper artifact mapping (each module → paper sections/figures/tables).
 
-- Module 1: Trace Logger - capture reasoning traces
-- Module 2: Invariant Detector - find recurring structures
-- Module 3: Skill Creation Trigger - SCV computation and create/don't-create decisions
-- Module 4: Skill Library - store and retrieve reusable skills
-- Module 5: Evaluation Framework - measure IS, AG, SU, TS, CGR, IG
-
-Dependencies:
-
-Trace Logger → Invariant Detector → Skill Creation Trigger → Skill Library → Evaluation Layer
-
-Version Plan:
-
-v0.1: Research Prototype - validate theory with 5 core modules
-v0.2: Concept Layer - add concept representation and graphs
-v1.0: ARC Integration - add ARC tasks and competition readiness
-
-Implementation Priority:
-
-1. Trace Logger (foundation - everything depends on traces)
-2. Invariant Detector (validates IDT)
-3. Skill Creation Trigger (validates SCT)
-4. Skill Library (enables skill reuse and transfer)
-5. Evaluation Framework (validates CGM)
-
-Risk Mitigation:
-
-- Risk 1: Invariant Discovery - ensure traces capture meaningful operations
-- Risk 2: DreamCoder Overlap - emphasize invariant discovery vs. compression distinction
-- Risk 3: Transfer Signal - design transfer tasks that measure TS > 0
-- Risk 4: Capability Metrics - validate CGR correlates with future performance
+Key Outcome: Complete implementation roadmap that converts the research blueprint into an executable development plan. Every line of code will trace back to a claim, figure, or table in the paper blueprint.
 
 Phase 12: Minimal Implementation (v0.1 Prototype)
 
