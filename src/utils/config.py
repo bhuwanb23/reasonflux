@@ -13,6 +13,7 @@ __all__ = [
     "load_default_configs",
     "load_invariant_policy",
     "load_mining_config",
+    "load_validation_config",
 ]
 
 DEFAULT_CONFIG_DIR = Path("configs")
@@ -69,3 +70,14 @@ def load_mining_config(config_dir: str | Path = DEFAULT_CONFIG_DIR) -> Any:
         return MiningConfig()
     data = load_config(path).get("mining") or {}
     return MiningConfig.from_dict(data)
+
+
+def load_validation_config(config_dir: str | Path = DEFAULT_CONFIG_DIR) -> Any:
+    """Build a ValidationConfig from configs/thresholds.yaml."""
+    from invariants.validation.scores import ValidationConfig
+
+    path = Path(config_dir) / "thresholds.yaml"
+    if not path.exists():
+        return ValidationConfig()
+    data = load_config(path).get("validation") or {}
+    return ValidationConfig.from_dict(data)
