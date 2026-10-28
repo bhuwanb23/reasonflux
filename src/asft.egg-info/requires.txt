@@ -1,0 +1,9 @@
+numpy
+pandas
+networkx
+scikit-learn
+matplotlib
+pyyaml
+
+[dev]
+pytest
