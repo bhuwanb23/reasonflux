@@ -16,6 +16,29 @@ Organize around **research contributions**, not algorithms:
 
 Shared knowledge objects live in `src/core`. Baselines stay under `baselines/` and must not mix with ASFT code. Notebooks are exploration only — no production logic.
 
+## Core ontology and memory layers (Phase 11B)
+
+Knowledge objects in `src/core/`:
+
+| Object | Module | Role |
+| --- | --- | --- |
+| `Task` | `task.py` | Temporary problem instance |
+| `ReasoningTrace` | `trace.py` | Raw learning material |
+| `Invariant` | `invariant.py` | Recurring structure (observation) |
+| `Concept` | `concept.py` | Lightweight semantic link (MVP) |
+| `SkillCandidate` / `Skill` | `skill.py` | SCT promotion path |
+| `CapabilityState` | `capability.py` | CGM snapshot |
+
+Three memory layers (`src/core/memory.py`) mirror the ASFT thesis:
+
+```
+Experience Memory (tasks, traces)
+ → Abstraction Memory (invariants, concepts)
+ → Capability Memory (skills, capability state)
+```
+
+Module boundaries are typed in `src/core/contracts.py` (`TraceBatchProvider`, `ValidatedInvariantProvider`, `PromotedSkillProvider`, `SkillUsageStatsProvider`). Lifecycle enums and transitions live in `src/core/states.py`.
+
 ## Top-level layout
 
 ```
