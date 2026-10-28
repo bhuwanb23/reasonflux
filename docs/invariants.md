@@ -102,10 +102,15 @@ operations → patterns → invariants
 two-step procedural pattern to `patterns`, and longer structures to `invariants`.
 `InvariantHierarchy.build(...)` groups a collection by level.
 
+## Ranking & validation (Phase 11C-3)
+
+Candidates from mining must pass F×C×G×T×R ranking and promotion before SCT.
+See [docs/validation.md](validation.md).
+
 ## Relationship to skills
 
 ```
-Invariant (observation) → SCT evaluation → Skill Candidate (executable capability)
+Invariant (observation) → Ranking/Validation → SCT evaluation → Skill Candidate
 ```
 
 ## Relationship to transfer

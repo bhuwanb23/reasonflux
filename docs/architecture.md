@@ -71,7 +71,8 @@ Task
 ```
 
 Trace mining details: [docs/mining.md](mining.md). Invariant qualification:
-[docs/invariants.md](invariants.md).
+[docs/invariants.md](invariants.md). Ranking & validation:
+[docs/validation.md](validation.md).
 
 ## Module dependency graph
 
