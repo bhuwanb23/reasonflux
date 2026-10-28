@@ -69,9 +69,7 @@ Phase 11
 Implementation
 
 Phase 12
-Submission Strategy
-
-Completed Phases
+Submission StrategyCompleted Phases
 ✅ Phase 0
 
 Competition understanding.
@@ -85,7 +83,6 @@ Key result:
 Intelligence
 =
 Skill Acquisition Efficiency
-
 
 Based on On the Measure of Intelligence.
 
@@ -141,245 +138,85 @@ Skill Creation
 ↓
 Future Cost Reduction
 
-Next Phase
-Phase 6
+✅ Phase 6
+
 Novelty Validation
 
-This is where I think we should go next.
+✅ Phase 7
 
-Goal
-
-Answer:
-
-Is ASFT actually new?
-
-
-This is critical.
-
-Because reviewers will ask:
-
-Isn't this DreamCoder?
-
-or
-
-Isn't this hierarchical RL?
-
-or
-
-Isn't this meta-learning?
-
-Deliverables
-
-Create:
-
-DreamCoder
-vs
-ASFT
-
-Voyager
-vs
-ASFT
-
-Hierarchical RL
-vs
-ASFT
-
-Neuro-Symbolic
-vs
-ASFT
-
-ARC Winners
-vs
-ASFT
-
-Success Criteria
-
-We can clearly state:
-
-Existing Systems:
-Learn Solutions
-
-ASFT:
-Learns Skill Formation Rules
-
-
-or something similarly precise.
-
-Phase 7
 Research Contribution Definition
 
-After novelty validation.
+Three contributions:
 
-Goal:
+1. Invariant Discovery Theory (IDT)
+2. Skill Creation Trigger Theory (SCT)
+3. Capability Growth Metrics (CGM)
 
-Reduce everything into:
+✅ Phase 8
 
-3 Contributions
-
-
-Maximum.
-
-For example:
-
-Contribution 1
-
-Invariant Discovery Theory
-
-Contribution 2
-
-Skill Creation Trigger
-
-Contribution 3
-
-Capability Growth Metric
-
-That's enough.
-
-Most strong papers have 2-4 contributions.
-
-Not 15.
-
-Phase 8
 Minimal Prototype Design
 
-This is important.
+Five sub-phases (8A-8E): Scope, Data/Tasks, Architecture, Experiments, Success Metrics
 
-Do NOT build full AAA.
+✅ Phase 9
 
-Instead:
-
-Build smallest possible proof.
-
-Example:
-
-ARC Tasks
-↓
-Reasoning Trace Extraction
-↓
-Invariant Mining
-↓
-Skill Trigger Detection
-
-
-No need for:
-
-Full AGI System
-
-Phase 9
 Experimental Design
 
-This is where many papers fail.
+Nine sub-phases (9A-9F): Claims, Evidence Mapping, Experiment Matrix, Baselines/Ablations, Paper Blueprint, Reviewer Attack Simulation
 
-Need explicit experiments.
+✅ Phase 10
 
-Example:
+Paper Architecture & Engineering Blueprint
 
-Experiment A
+Module breakdown, dependencies, milestones, version planning, baseline implementations, paper artifact mapping
 
-Can invariant detection find reusable patterns?
+Now proceeding to Phase 11.
 
-Experiment B
+Phase 11: Implementation Planning
 
-Does skill creation reduce reasoning cost?
+Goal: Convert the research blueprint into a concrete implementation roadmap with module definitions, dependency order, and MVP milestones.
 
-Experiment C
+Key Deliverables:
 
-Do created skills transfer?
+- Module 1: Trace Logger - capture reasoning traces
+- Module 2: Invariant Detector - find recurring structures
+- Module 3: Skill Creation Trigger - SCV computation and create/don't-create decisions
+- Module 4: Skill Library - store and retrieve reusable skills
+- Module 5: Evaluation Framework - measure IS, AG, SU, TS, CGR, IG
 
-Experiment D
+Dependencies:
 
-Does capability growth occur?
+Trace Logger → Invariant Detector → Skill Creation Trigger → Skill Library → Evaluation Layer
 
-Phase 10
-Paper Architecture
+Version Plan:
 
-Draft structure.
+v0.1: Research Prototype - validate theory with 5 core modules
+v0.2: Concept Layer - add concept representation and graphs
+v1.0: ARC Integration - add ARC tasks and competition readiness
 
-Potential title:
+Implementation Priority:
 
-Adaptive Skill Formation Theory: From Reasoning Traces to Reusable Capabilities for ARC-AGI
+1. Trace Logger (foundation - everything depends on traces)
+2. Invariant Detector (validates IDT)
+3. Skill Creation Trigger (validates SCT)
+4. Skill Library (enables skill reuse and transfer)
+5. Evaluation Framework (validates CGM)
 
-Sections:
+Risk Mitigation:
 
-Introduction
+- Risk 1: Invariant Discovery - ensure traces capture meaningful operations
+- Risk 2: DreamCoder Overlap - emphasize invariant discovery vs. compression distinction
+- Risk 3: Transfer Signal - design transfer tasks that measure TS > 0
+- Risk 4: Capability Metrics - validate CGR correlates with future performance
 
-Problem
+Phase 12: Minimal Implementation (v0.1 Prototype)
 
-Theory
+Build the smallest working ASFT prototype that validates all three contributions.
 
-Mathematical Formulation
+Phase 13: Experimental Validation
 
-Architecture
+Run the Phase 9 experiments (E1-E6) on the v0.1 prototype.
 
-Experiments
+Phase 14: Paper Writing & ARC Submission
 
-Results
-
-Discussion
-
-Future Work
-
-Phase 11
-Implementation
-
-Only now.
-
-Not earlier.
-
-Because now we know:
-
-What
-Why
-How
-
-Phase 12
-ARC Submission Strategy
-
-At the end:
-
-ARC-AGI-2
-
-Prototype implementation.
-
-ARC-AGI-3
-
-Capability growth extension.
-
-Paper Track
-
-ASFT paper.
-
-My Recommendation
-
-Right now, the highest-value next step is:
-
-Phase 6: Novelty Validation
-
-Specifically:
-
-ASFT
-vs
-DreamCoder
-
-ASFT
-vs
-Voyager
-
-ASFT
-vs
-Hierarchical RL
-
-ASFT
-vs
-Meta-Learning
-
-ASFT
-vs
-ARC Winner Architectures
-
-
-Because if ASFT survives that comparison, then we can confidently claim:
-
-We are not proposing another solver. We are proposing a theory of how skills are created from reasoning experience.
-
-And that is exactly the kind of claim that could matter to both the ARC community and the Paper Track judges.
+Prepare the ARC Paper Track submission with all contributions empirically validated.
