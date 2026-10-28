@@ -31,3 +31,16 @@ mining:
   max_fragment_length: 4
   min_core_length: 2
   successful_trace_bias: true
+
+validation:
+  # Phase 11C-3 ranking / promotion
+  freq_norm: 10
+  transfer_norm: 3
+  min_f: 0.3
+  min_c: 0.6
+  min_g: 0.3
+  min_t: 0.1
+  min_r: 0.1
+  min_invariant_score: 0.01
+  transfer_rescue_min_t: 0.7
+  transfer_rescue_min_frequency: 2

@@ -183,18 +183,21 @@ class TraceMiner:
 
 
 class InvariantDetector:
-    """Discover invariant candidates from reasoning traces.
+    """Discover and validate invariants from reasoning traces.
 
-    Phase 11C-2: delegates to ``TraceMiner`` and returns candidates.
-    Ranking/validation is Phase 11C-3.
+    Phase 11C-2: ``detect`` / ``mine`` produce candidates.
+    Phase 11C-3: ``validate`` / ``detect_and_validate`` rank and promote.
     """
 
     def __init__(
         self,
         config: MiningConfig | None = None,
         policy: InvariantPolicy | None = None,
+        validation_config: object | None = None,
     ) -> None:
         self.miner = TraceMiner(config=config, policy=policy)
+        self.policy = policy
+        self.validation_config = validation_config
 
     def detect(self, traces: Sequence[ReasoningTrace] | object) -> list[Invariant]:
         """Return invariant candidates mined from ``traces``."""
@@ -203,6 +206,31 @@ class InvariantDetector:
     def mine(self, traces: Sequence[ReasoningTrace] | object) -> MiningResult:
         """Return the full mining result (patterns, structures, candidates)."""
         return self.miner.mine(traces)
+
+    def validate(
+        self,
+        candidates: Sequence[Invariant],
+        *,
+        transfer_scores: dict[str, float] | None = None,
+    ):
+        """Rank and promote candidate invariants (Phase 11C-3)."""
+        from invariants.validator import validate_and_rank
+
+        return validate_and_rank(
+            candidates,
+            config=self.validation_config,  # type: ignore[arg-type]
+            transfer_scores=transfer_scores,
+            policy=self.policy,
+        )
+
+    def detect_and_validate(
+        self,
+        traces: Sequence[ReasoningTrace] | object,
+        *,
+        transfer_scores: dict[str, float] | None = None,
+    ):
+        """Mine candidates then validate/rank them end-to-end."""
+        return self.validate(self.detect(traces), transfer_scores=transfer_scores)
 
 
 def _coerce_traces(traces: Sequence[ReasoningTrace] | object) -> list[ReasoningTrace]:
