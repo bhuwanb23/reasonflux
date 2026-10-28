@@ -1,0 +1,13 @@
+# ASFT default configuration (v0.1)
+project:
+  name: asft
+  version: "0.1.0"
+
+paths:
+  datasets: datasets
+  reports: reports
+  configs: configs
+
+runtime:
+  seed: 42
+  verbose: true

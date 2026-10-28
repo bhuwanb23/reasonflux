@@ -1,0 +1,23 @@
+# Metric definitions — Capability Growth Metrics (CGM) and related
+metrics:
+  IS:
+    name: Invariant Strength
+    formula: frequency * consistency * generality
+  SCV:
+    name: Skill Creation Value
+    formula: reuse * AG * TS - creation_cost
+  SU:
+    name: Skill Utility
+    formula: accuracy_gain * cost_reduction * transferability
+  TS:
+    name: Transfer Score
+    formula: performance_after - performance_before
+  CGR:
+    name: Capability Growth Rate
+    formula: (capability_t - capability_t_minus_1) / delta_t
+  IG:
+    name: Intelligence Growth
+    formula: f(AG, SU, TS, CGR)
+  AG:
+    name: Abstraction Gain
+    formula: reasoning_cost_before - reasoning_cost_after

@@ -1,0 +1,13 @@
+# Decision thresholds (Phase 7 / 11A examples)
+invariants:
+  # Keep patterns with IS = frequency × consistency × generality above this
+  minimum_invariant_strength: 5.0
+
+skills:
+  # Create skill when SCV = Reuse × AG × TS − CreationCost exceeds this
+  skill_creation_threshold: 0.0
+  # Alternate stricter threshold used in some Phase 11A examples
+  skill_creation_threshold_strict: 2.0
+
+traces:
+  min_steps: 1
