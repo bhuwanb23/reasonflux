@@ -61,14 +61,17 @@ reasonflux/
 Task
  → Trace Logger
  → Trace Store
- → Invariant Detector
- → Invariant Ranking
+ → Trace Mining (normalize → segment → extract → aggregate → candidates)
+ → Invariant Detector / Ranking (11C-3)
  → Skill Trigger
  → Skill Library
  → Transfer Engine
  → Evaluation Engine
  → Reports
 ```
+
+Trace mining details: [docs/mining.md](mining.md). Invariant qualification:
+[docs/invariants.md](invariants.md).
 
 ## Module dependency graph
 
