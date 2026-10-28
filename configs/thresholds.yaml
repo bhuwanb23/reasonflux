@@ -23,3 +23,11 @@ skills:
 
 traces:
   min_steps: 1
+
+mining:
+  # Phase 11C-2 trace mining constraints
+  min_frequency: 3
+  min_cross_trace: 2
+  max_fragment_length: 4
+  min_core_length: 2
+  successful_trace_bias: true

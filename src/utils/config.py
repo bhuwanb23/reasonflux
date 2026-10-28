@@ -12,6 +12,7 @@ __all__ = [
     "load_config",
     "load_default_configs",
     "load_invariant_policy",
+    "load_mining_config",
 ]
 
 DEFAULT_CONFIG_DIR = Path("configs")
@@ -54,3 +55,17 @@ def load_invariant_policy(config_dir: str | Path = DEFAULT_CONFIG_DIR) -> Any:
         return InvariantPolicy()
     data = load_config(path).get("invariants") or {}
     return InvariantPolicy.from_dict(data)
+
+
+def load_mining_config(config_dir: str | Path = DEFAULT_CONFIG_DIR) -> Any:
+    """Build a MiningConfig from configs/thresholds.yaml.
+
+    Reads the ``mining`` mapping; unknown keys are ignored.
+    """
+    from invariants.pattern_mining import MiningConfig
+
+    path = Path(config_dir) / "thresholds.yaml"
+    if not path.exists():
+        return MiningConfig()
+    data = load_config(path).get("mining") or {}
+    return MiningConfig.from_dict(data)
