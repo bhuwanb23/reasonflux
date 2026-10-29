@@ -30,3 +30,15 @@ metrics:
   NTR:
     name: Negative Transfer Rate
     formula: failed_transfer_attempts / total_transfer_attempts
+  IER:
+    name: Invariant Explosion Ratio
+    formula: invariants / traces
+  VST:
+    name: Variation Survival Test
+    formula: successful_variations / total_variations
+  TC:
+    name: Trace Consistency
+    formula: consistent_steps / total_steps
+  TFD:
+    name: Task Family Diversity
+    formula: unique_families / total_tasks

@@ -30,9 +30,12 @@ Candidates (11C-2)
 
 ## False positives / negatives
 
-- **FP:** task-specific color/shape/position literals, or `metadata.failed_variations`.
+- **FP:** task-specific color/shape/position/count literals, `metadata.failed_variations`, or low VST (`low_vst`).
 - **FN:** rare invariants with `T >= transfer_rescue_min_t` and
   `frequency >= transfer_rescue_min_frequency` are rescued on the frequency gate.
+
+Phase 11C-5 adds the **hard promotion gate** and failure taxonomy — see
+[docs/failure_modes.md](failure_modes.md).
 
 ## Promotion lifecycle
 

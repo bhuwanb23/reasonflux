@@ -52,3 +52,21 @@ transfer:
   ntr_limit: 0.3
   tu_reduction_norm: 1.0
   confidence_attempts_norm: 5
+
+robustness:
+  # Phase 11C-5 failure modes and hard gate
+  min_vst: 0.6
+  ier_warn: 1.0
+  ier_restrict: 3.0
+  min_evidence: 3
+  min_tc: 0.5
+  min_tfd: 0.3
+  min_task_families_hard: 2
+  min_compatibility: 0.5
+  similarity_merge: 0.85
+  saturation_k: 5
+  difficulty_near: 0.25
+  difficulty_moderate: 0.5
+  difficulty_compositional: 0.75
+  difficulty_structural: 1.0
+  ntr_blacklist_violations: 2
