@@ -81,10 +81,18 @@ def enforce_library_capacity(
     library: SkillLibrary,
     config: SkillRobustnessConfig | None = None,
 ) -> list[Skill]:
-    """Retire weakest skills until library size ≤ capacity. Returns retired."""
+    """Retire weakest live skills until live count ≤ capacity. Returns retired."""
     config = config or SkillRobustnessConfig()
     capacity = int(config.library_capacity)
-    skills = list(library.list_skills())
+
+    def _live() -> list[Skill]:
+        return [
+            s
+            for s in library.list_skills()
+            if s.state not in (SkillState.RETIRED, SkillState.ARCHIVED)
+        ]
+
+    skills = _live()
     if len(skills) <= capacity:
         return []
     # Prefer non-core, low utility first.
@@ -99,7 +107,7 @@ def enforce_library_capacity(
     )
     retired: list[Skill] = []
     for skill in ranked:
-        if len(library) <= capacity:
+        if len(_live()) <= capacity:
             break
         if skill.state in (SkillState.RETIRED, SkillState.ARCHIVED, SkillState.CORE):
             continue

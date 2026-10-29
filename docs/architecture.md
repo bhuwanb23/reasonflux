@@ -78,7 +78,8 @@ Trace mining details: [docs/mining.md](mining.md). Invariant qualification:
 [docs/skills.md](skills.md). Skill utility economics:
 [docs/skill_economics.md](skill_economics.md). Skill lifecycle:
 [docs/lifecycle.md](lifecycle.md). Skill composition:
-[docs/composition.md](composition.md).
+[docs/composition.md](composition.md). Skill failure modes:
+[docs/skill_failure_modes.md](skill_failure_modes.md).
 
 ## Module dependency graph
 
