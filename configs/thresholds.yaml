@@ -54,6 +54,18 @@ skills:
   reactivate_min_evidence: 2
   reactivate_max_attempts: 2
   archive_after_tasks: 20
+  # Phase 11D-4 sequential composition
+  compose_max_skills: 3
+  compose_max_candidates_per_task: 8
+  compose_cost_base: 0.1
+  cu_min: 0.0
+  compose_min_successes_validate: 1
+  compose_min_reuse_store: 2
+  compose_min_reuse_promote: 3
+  compose_min_confidence: 0.4
+  compose_ncr_limit: 0.3
+  compose_reject_identical: true
+  compose_max_literal_triggers: 2
 
 traces:
   min_steps: 1

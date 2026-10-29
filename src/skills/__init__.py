@@ -1,8 +1,18 @@
-"""Skill Creation Trigger Theory (SCT) — Phase 11D-1/11D-2/11D-3."""
+"""Skill Creation Trigger Theory (SCT) — Phase 11D-1..11D-4."""
 
 from skills.birth import SkillBirthRecord, make_birth_record
 from skills.candidate import classify_mvp_category, from_invariant, generate_candidates
 from skills.competition import rank_by_utility, select_dominant
+from skills.composition import (
+    CompositionCandidate,
+    CompositionGraph,
+    advance_composition,
+    compute_cu,
+    promote_composition,
+    propose_sequential,
+    should_compose,
+    try_compose,
+)
 from skills.config import SkillConfig
 from skills.economics import (
     EconomicsProjection,
@@ -43,6 +53,8 @@ from skills.utility import (
 from skills.utility_components import SkillUtilityBreakdown
 
 __all__ = [
+    "CompositionCandidate",
+    "CompositionGraph",
     "EconomicsProjection",
     "IntakeResult",
     "PortfolioMetrics",
@@ -57,10 +69,12 @@ __all__ = [
     "SkillEvidence",
     "SkillLibrary",
     "SkillUtilityBreakdown",
+    "advance_composition",
     "apply_lifecycle",
     "build_biography",
     "classify_economic_status",
     "classify_mvp_category",
+    "compute_cu",
     "compute_health",
     "compute_lifecycle_metrics",
     "compute_portfolio_metrics",
@@ -77,7 +91,9 @@ __all__ = [
     "is_promotable_invariant",
     "lifetime_cost",
     "make_birth_record",
+    "promote_composition",
     "promote_skill",
+    "propose_sequential",
     "qualify_candidate",
     "rank_by_utility",
     "reactivate_skill",
@@ -90,4 +106,6 @@ __all__ = [
     "score_skill_utility",
     "seed_evidence_from_invariant",
     "select_dominant",
+    "should_compose",
+    "try_compose",
 ]
