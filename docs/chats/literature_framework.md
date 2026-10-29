@@ -1,325 +1,230 @@
-Excellent. Before reviewing papers, we need a research framework. Otherwise we'll read 100 papers and still not know what we're looking for.
+# Literature Framework
 
-Phase 1: Define the Questions
+## Overview
+
+Before reviewing papers, we need a research framework. Otherwise we'll read 100 papers and still not know what we're looking for.
+
+---
+
+## Phase 1: Define the Questions
 
 I think there are actually three layers of questions.
 
-Layer A: ARC's Questions
+---
+
+## Layer A: ARC's Questions
 
 These are the questions that François Chollet and the ARC team are trying to answer. If we don't align with these, the project may be interesting but not valuable to ARC.
 
-Q-A1
+### Q-A1: What is intelligence?
+**ARC's answer:** Intelligence is skill-acquisition efficiency, not skill itself.
 
-What is intelligence?
-
-ARC's answer:
-
-Intelligence is skill-acquisition efficiency, not skill itself.
-
-Q-A2
-
-How can a system learn a new skill from only a few examples?
-
+### Q-A2: How can a system learn a new skill from only a few examples?
 This is the central ARC question.
 
-Q-A3
-
-How can a system generalize outside training distribution?
-
+### Q-A3: How can a system generalize outside training distribution?
 Current AI performs well on known distributions but struggles with novel tasks.
 
-Q-A4
-
-Can intelligence emerge without massive datasets?
-
+### Q-A4: Can intelligence emerge without massive datasets?
 ARC is specifically designed to minimize the advantage of brute-force training.
 
-Q-A5
-
-Can an agent acquire skills during problem solving?
-
+### Q-A5: Can an agent acquire skills during problem solving?
 This becomes even more important with ARC-AGI-3's interactive environments.
 
-Layer B: Questions Current ARC Research Is Solving
+---
+
+## Layer B: Questions Current ARC Research Is Solving
 
 These are the questions that winning teams are already attacking.
 
-By reviewing 2024 and 2025 winners we can identify the dominant directions.
+### ARC 2024 Observation
 
-ARC 2024 Observation
-
-State-of-the-art jumped from about 33% to 55.5%.
+State-of-the-art jumped from about **33% to 55.5%**.
 
 The major themes were:
+- Deep-learning guided program synthesis
+- Test-time training
+- Search
+- Neuro-symbolic methods
 
-Deep-learning guided program synthesis
-Test-time training
-Search
-Neuro-symbolic methods
-ARC 2025 Observation
+### ARC 2025 Observation
 
-The defining theme was:
-
-"Refinement Loops"
+The defining theme was: **"Refinement Loops"**
 
 Meaning:
+```
+Generate → Evaluate → Improve → Generate → Evaluate → Improve
+```
 
-Generate
-→ Evaluate
-→ Improve
-→ Generate
-→ Evaluate
-→ Improve
+Instead of one-shot reasoning.
 
+**Research Question Being Solved:** How do we think longer?
 
-instead of one-shot reasoning.
+Not: bigger model, but: better iterative reasoning.
 
-Research Question Being Solved
+---
 
-How do we think longer?
-
-Not:
-
-bigger model
-
-
-but:
-
-better iterative reasoning
-
-Layer C: Questions Nobody Has Solved Yet
+## Layer C: Questions Nobody Has Solved Yet
 
 This is where our opportunity lies.
 
 The literature suggests several things are improving:
+- ✅ Program synthesis
+- ✅ Evolutionary search
+- ✅ Test-time adaptation
+- ✅ Refinement loops
+- ✅ Neuro-symbolic reasoning
 
-✅ program synthesis
+But some deeper questions remain largely unanswered:
 
-✅ evolutionary search
+### Candidate Open Problem 1: How Are New Skills Created?
 
-✅ test-time adaptation
+Current systems mostly search, select, refine.
 
-✅ refinement loops
-
-✅ neuro-symbolic reasoning
-
-But some deeper questions remain largely unanswered.
-
-Candidate Open Problem 1
-How Are New Skills Created?
-
-Current systems mostly:
-
-Search
-Select
-Refine
-
-
-They don't truly explain:
-
-How does a new cognitive capability emerge?
-
+They don't truly explain: **How does a new cognitive capability emerge?**
 
 I have not yet seen ARC work directly targeting this.
 
-Candidate Open Problem 2
-How Should Skills Be Represented?
+### Candidate Open Problem 2: How Should Skills Be Represented?
 
 Current approaches use:
-
-programs
-DSLs
-latent vectors
-reasoning traces
+- Programs
+- DSLs
+- Latent vectors
+- Reasoning traces
 
 But there is no consensus.
 
-Candidate Open Problem 3
-How Do Skills Compose?
+### Candidate Open Problem 3: How Do Skills Compose?
 
-Humans naturally do:
+Humans naturally do: `Reflection + Counting + Grouping = New Ability`
 
-Reflection
-+
-Counting
-+
-Grouping
-=
-New Ability
+ARC tasks often require compositionality. Yet most systems still search over transformations rather than learning skill composition.
 
+### Candidate Open Problem 4: Can Intelligence Compress Itself?
 
-ARC tasks often require compositionality.
+Humans don't store solutions. They store abstractions.
 
-Yet most systems still search over transformations rather than learning skill composition.
+Question: `100 solved tasks → 5 reusable concepts`
 
-Candidate Open Problem 4
-Can Intelligence Compress Itself?
+Can AI do that? I see very little ARC work here.
 
-Humans don't store solutions.
-
-They store abstractions.
-
-Question:
-
-100 solved tasks
-↓
-5 reusable concepts
-
-
-Can AI do that?
-
-I see very little ARC work here.
-
-Candidate Open Problem 5
-Can A System Learn Better Ways Of Reasoning?
+### Candidate Open Problem 5: Can A System Learn Better Ways Of Reasoning?
 
 Current systems learn:
+- Answer
+- Maybe: program
 
-Answer
-
-
-Maybe:
-
-Program
-
-
-But not:
-
-Reasoning Strategy
-
+But not: **Reasoning Strategy**
 
 This feels very underexplored.
 
-The Most Important Literature Questions
+---
 
-When reading every paper, winner, report, and solution, I think we should evaluate them against exactly these 12 questions:
+## The Most Important Literature Questions
 
-Intelligence
+When reading every paper, winner, report, and solution, evaluate them against exactly these 12 questions:
 
-What is intelligence according to the paper?
+### Intelligence
+1. What is intelligence according to the paper?
+2. What causes generalization?
 
-What causes generalization?
+### Learning
+3. How are new skills acquired?
+4. How are skills stored?
+5. How are skills reused?
 
-Learning
+### Reasoning
+6. How are hypotheses generated?
+7. How are hypotheses verified?
+8. How is compute allocated?
 
-How are new skills acquired?
+### Memory
+9. Is there lifelong memory?
+10. Does the system improve over time?
 
-How are skills stored?
+### AGI
+11. Does the approach transfer beyond ARC?
+12. If everyone adopted this idea, would AGI progress accelerate?
 
-How are skills reused?
+---
 
-Reasoning
+## Early Gap Analysis
 
-How are hypotheses generated?
+Just from the technical reports, I already see a pattern:
 
-How are hypotheses verified?
+| Year | Theme |
+|------|-------|
+| ARC 2024 | Search, Program Synthesis, Test-Time Training |
+| ARC 2025 | Refinement Loops, Evolutionary Search, Tiny Recursive Models, Self-Improvement |
+| ARC 2026 (predicted) | Agentic Learning, Interactive Exploration, Memory, Skill Acquisition |
 
-How is compute allocated?
+Because ARC-AGI-3 explicitly introduces:
+- Exploration
+- Planning
+- Memory
+- Goal acquisition
+- Interaction
 
-Memory
+As benchmark requirements.
 
-Is there lifelong memory?
+---
 
-Does the system improve over time?
+## Research Plan Going Forward
 
-AGI
+Structure the literature review into five investigations:
 
-Does the approach transfer beyond ARC?
+### Investigation 1: ARC Philosophy
+- Chollet papers
+- ARC benchmark design
+- What ARC considers intelligence
 
-If everyone adopted this idea, would AGI progress accelerate?
+### Investigation 2: ARC Winners
+- 2024 winners
+- 2025 winners
+- Architecture breakdowns
 
-Early Gap Analysis
+### Investigation 3: Program Synthesis Lineage
+- DSL methods
+- Evolutionary synthesis
+- Search methods
 
-Just from the technical reports, I already see a pattern.
+### Investigation 4: Neuro-Symbolic Lineage
+- Object-centric reasoning
+- Compositional reasoning
+- Symbolic abstraction
 
-ARC 2024 Theme
-Search
-Program Synthesis
-Test-Time Training
+### Investigation 5: Future AGI Architectures
+- Memory systems
+- Skill libraries
+- Continual learning
+- Meta-reasoning
+- Self-improving systems
 
-ARC 2025 Theme
-Refinement Loops
-Evolutionary Search
-Tiny Recursive Models
-Self-Improvement
+---
 
-Likely ARC 2026 Theme
-
-My prediction:
-
-Agentic Learning
-Interactive Exploration
-Memory
-Skill Acquisition
-
-
-because ARC-AGI-3 explicitly introduces:
-
-exploration
-planning
-memory
-goal acquisition
-interaction
-
-as benchmark requirements.
-
-Research Plan Going Forward
-
-I would structure the literature review into five investigations:
-
-Investigation 1
-
-ARC philosophy
-
-Chollet papers
-ARC benchmark design
-What ARC considers intelligence
-Investigation 2
-
-ARC winners
-
-2024 winners
-2025 winners
-architecture breakdowns
-Investigation 3
-
-Program synthesis lineage
-
-DSL methods
-evolutionary synthesis
-search methods
-Investigation 4
-
-Neuro-symbolic lineage
-
-object-centric reasoning
-compositional reasoning
-symbolic abstraction
-Investigation 5
-
-Future AGI architectures
-
-memory systems
-skill libraries
-continual learning
-meta-reasoning
-self-improving systems
-My Current Hypothesis
+## Current Hypothesis
 
 After this first pass, the highest-value unsolved question is not:
 
-"How do we solve ARC?"
+> "How do we solve ARC?"
 
 It's:
 
-"How can an agent create, store, compress, and reuse skills learned while solving novel tasks?"
+> **"How can an agent create, store, compress, and reuse skills learned while solving novel tasks?"**
 
 That question directly aligns with:
+- ARC philosophy
+- ARC-AGI-3 direction
+- Paper Track novelty
+- AGI research value
 
-ARC philosophy,
-ARC-AGI-3 direction,
-Paper Track novelty,
-AGI research value,
-and likely remains largely unsolved.
+And likely remains largely unsolved.
 
-My recommendation is that next we do Investigation 1 deeply: dissect François Chollet's intelligence theory and ARC design principles. That's the foundation against which every future idea should be evaluated.
+---
+
+## Recommendation
+
+Next, do Investigation 1 deeply: dissect François Chollet's intelligence theory and ARC design principles.
+
+That's the foundation against which every future idea should be evaluated.
