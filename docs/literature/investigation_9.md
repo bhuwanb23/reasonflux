@@ -1,554 +1,292 @@
+# Investigation 9: DreamCoder Deep Dive
+
+## Objective
+
 This is the investigation that will probably decide whether we have a genuinely novel research direction or whether we're unknowingly reinventing something that already exists.
 
-After Investigations 1-8, every path kept converging toward one system:
-
-DreamCoder
+After Investigations 1–8, every path kept converging toward one system: **DreamCoder**.
 
 Because it is the first major AI architecture that explicitly attempts:
 
-Experience
-↓
-Solve Tasks
-↓
-Compress Knowledge
-↓
-Invent New Primitives
-↓
-Grow Capability
-
+```
+Experience → Solve Tasks → Compress Knowledge → Invent New Primitives → Grow Capability
+```
 
 Which sounds remarkably close to our emerging theory.
 
-So our mission is not:
+So our mission is **not** "understand DreamCoder". Our mission is:
 
-Understand DreamCoder.
+> **Find the exact point where DreamCoder stops and where our future idea might begin.**
 
-Our mission is:
+---
 
-Find the exact point where DreamCoder stops and where our future idea might begin.
+## Executive Summary
 
-Executive Summary
+After a deep analysis:
 
-After a deep analysis, I believe:
-
-DreamCoder is probably the closest existing implementation of "capability accumulation," but it is fundamentally a program compression system rather than an abstraction formation system.
+> **DreamCoder is probably the closest existing implementation of "capability accumulation," but it is fundamentally a program compression system rather than an abstraction formation system.**
 
 That distinction may become the foundation of our paper.
 
-Step 1: What Problem Was DreamCoder Trying To Solve?
+---
 
-Most AI systems learn:
+## Step 1: What Problem Was DreamCoder Trying To Solve?
 
-Task A
-Task B
-Task C
-
-
-independently.
+Most AI systems learn Task A, Task B, Task C independently.
 
 DreamCoder asks:
 
-Can solving Task A
-make Task B easier?
-
+> **Can solving Task A make Task B easier?**
 
 This is a huge shift.
 
-Core DreamCoder Loop
+### Core DreamCoder Loop
 
-DreamCoder operates roughly as:
+```
+Tasks → Find Programs → Store Programs → Compress Programs → Create New Primitives → Future Tasks Become Easier
+```
 
-Tasks
-↓
-Find Programs
-↓
-Store Programs
-↓
-Compress Programs
-↓
-Create New Primitives
-↓
-Future Tasks Become Easier
-
-
-Notice something important.
-
-The optimization target is:
-
-Library Growth
-
-
-not
-
-Task Score
-
+Notice something important. The optimization target is **library growth**, not task score.
 
 This is why DreamCoder is so important.
 
-Why DreamCoder Was Revolutionary
+### Why DreamCoder Was Revolutionary
 
-Traditional program synthesis:
+**Traditional program synthesis:**
 
-Task
-↓
-Program
-↓
-Done
+```
+Task → Program → Done
+```
 
+**DreamCoder:**
 
-DreamCoder:
-
-Task
-↓
-Program
-↓
-Extract Reusable Structure
-↓
-Improve Library
-↓
-Future Benefit
-
+```
+Task → Program → Extract Reusable Structure → Improve Library → Future Benefit
+```
 
 This is one of the first architectures that explicitly models cumulative intelligence.
 
-The Three Core Components
+---
+
+## The Three Core Components
 
 Let's break DreamCoder down rigorously.
 
-Component 1
-Wake Phase
+### Component 1: Wake Phase
 
 DreamCoder solves tasks.
 
-Task
-↓
-Program Search
-↓
-Solution Program
-
+```
+Task → Program Search → Solution Program
+```
 
 This part is relatively standard.
 
-Component 2
-Sleep Phase
+### Component 2: Sleep Phase
 
-This is the famous part.
+This is the famous part. Instead of stopping, **analyze solved programs**.
 
-Instead of stopping:
+DreamCoder looks for repeated structures:
 
-Analyze Solved Programs
+- Example: `A+B+C` appears repeatedly.
+- Again: `A+B+C` appears.
+- Again: `A+B+C` appears.
 
+System creates: `X = A+B+C`.
 
-DreamCoder looks for repeated structures.
-
-Example:
-
-A+B+C
-
-
-appears repeatedly.
-
-Again:
-
-A+B+C
-
-
-appears.
-
-Again:
-
-A+B+C
-
-
-appears.
-
-System creates:
-
-X = A+B+C
-
-
-New primitive:
-
-X
-
-
-enters library.
+**New primitive: X** enters library.
 
 This is extremely important.
 
-Component 3
-Library Expansion
+### Component 3: Library Expansion
 
-Future tasks now use:
+Future tasks now use `X` instead of `A+B+C`. Reasoning becomes cheaper.
 
-X
+**This is capability accumulation through compression.**
 
+---
 
-instead of:
-
-A+B+C
-
-
-Reasoning becomes cheaper.
-
-This is capability accumulation through compression.
-
-Why DreamCoder Looks So Similar To Our Direction
+## Why DreamCoder Looks So Similar To Our Direction
 
 Compare.
 
-Our emerging hypothesis:
+**Our emerging hypothesis:**
 
-Experience
-↓
-Invariant Detection
-↓
-Abstraction
-↓
-Skill Formation
-↓
-Skill Library
+```
+Experience → Invariant Detection → Abstraction → Skill Formation → Skill Library
+```
 
+**DreamCoder:**
 
-DreamCoder:
+```
+Experience → Program Compression → Primitive Creation → Library Growth
+```
 
-Experience
-↓
-Program Compression
-↓
-Primitive Creation
-↓
-Library Growth
+Very similar. This is why we must be careful.
 
+---
 
-Very similar.
+## The Most Important Question: Why Hasn't DreamCoder Solved ARC?
 
-This is why we must be careful.
+If DreamCoder is so aligned with ARC philosophy, why isn't it dominating ARC? This is the critical question. After analyzing everything we've learned, there are several reasons.
 
-The Most Important Question
-Why Hasn't DreamCoder Solved ARC?
+### Limitation 1: DreamCoder Creates Syntax More Than Concepts
 
-If DreamCoder is so aligned with ARC philosophy, why isn't it dominating ARC?
+Suppose we repeatedly observe `Rotate`, `Scale`, `Translate` together. DreamCoder might compress into `Primitive_X`. But does it discover **geometric transformation** as a concept? Usually no.
 
-This is the critical question.
+This is a profound distinction:
 
-After analyzing everything we've learned, I think there are several reasons.
+- **Compression:** `A+B+C → X`
+- **Abstraction:** `A`, `B`, `C` share a principle → concept
 
-Limitation 1
-DreamCoder Creates Syntax More Than Concepts
+Humans appear to do both. DreamCoder primarily does the first.
 
-Suppose we repeatedly observe:
+### Limitation 2: No Explicit Invariant Discovery
 
-Rotate
-Scale
-Translate
+Investigation 7 revealed: abstractions seem to emerge from invariant detection.
 
-
-together.
-
-DreamCoder might compress into:
-
-Primitive_X
-
-
-But does it discover:
-
-Geometric Transformation
-
-
-as a concept?
-
-Usually no.
-
-This is a profound distinction.
-
-Compression:
-
-A+B+C
-→ X
-
-
-Abstraction:
-
-A
-B
-C
-share a principle
-→ Concept
-
-
-Humans appear to do both.
-
-DreamCoder primarily does the first.
-
-Limitation 2
-No Explicit Invariant Discovery
-
-Investigation 7 revealed:
-
-Abstractions seem to emerge from invariant detection.
-
-DreamCoder does:
-
-Frequent Pattern Detection
-
-
-Humans do:
-
-Invariant Discovery
-
+- **DreamCoder does:** frequent pattern detection
+- **Humans do:** invariant discovery
 
 These are not identical.
 
-Example:
+**Example:**
 
-Repeated structure:
+- Repeated structure: Move Red, Move Blue, Move Green
+- Human abstraction: **color-independent movement**
 
-Move Red
-Move Blue
-Move Green
+DreamCoder tends to focus on program structure, not conceptual invariants.
 
+### Limitation 3: No Meta-Reasoning About Skill Creation
 
-Human abstraction:
+DreamCoder creates primitives **because compression is useful**.
 
-Color Independent Movement
+Humans often create concepts **because current representation is failing**.
 
-
-DreamCoder tends to focus on program structure.
-
-Not conceptual invariants.
-
-Limitation 3
-No Meta-Reasoning About Skill Creation
-
-DreamCoder creates primitives because compression is useful.
-
-Humans often create concepts because:
-
-Current Representation Is Failing
-
-
-Example:
-
-Physics.
-
-People invented:
-
-Force
-Energy
-Momentum
-
-
-not because of compression alone.
-
-Because existing explanations failed.
+**Example:** Physics. People invented Force, Energy, Momentum — not because of compression alone, but because existing explanations failed.
 
 DreamCoder lacks this mechanism.
 
-Limitation 4
-No Explicit Skill Boundaries
+### Limitation 4: No Explicit Skill Boundaries
 
-Investigation 7 gave us:
+Investigation 7 gave us: skills emerge when recurring reasoning modules repeatedly appear.
 
-Skills emerge when recurring reasoning modules repeatedly appear.
+DreamCoder creates **reusable program fragments**. But:
 
-DreamCoder creates:
+- `Program Fragment ≠ Skill` necessarily.
 
-Reusable Program Fragments
+A skill may include goals, applicability conditions, reasoning patterns, abstractions. DreamCoder mostly stores procedures.
 
-
-But:
-
-Program Fragment
-≠
-Skill
-
-
-necessarily.
-
-A skill may include:
-
-goals
-applicability conditions
-reasoning patterns
-abstractions
-
-DreamCoder mostly stores procedures.
-
-Limitation 5
-Weak Analogical Reasoning
+### Limitation 5: Weak Analogical Reasoning
 
 Investigation 8 identified analogy as potentially central.
 
 Humans often solve:
 
-New Problem
-↓
-Find Similar Structure
-↓
-Transfer Concept
+```
+New Problem → Find Similar Structure → Transfer Concept
+```
 
+DreamCoder mostly transfers **library components**, not **structural analogies**.
 
-DreamCoder mostly transfers:
-
-Library Components
-
-
-Not:
-
-Structural Analogies
-
-Limitation 6
-No Representation Evolution
+### Limitation 6: No Representation Evolution
 
 This may be the biggest limitation.
 
 Humans improve by changing representations.
 
-Example:
+- **Child:** many separate facts
+- **Expert:** one unified concept
 
-Child:
+DreamCoder grows libraries. But it does not fundamentally reorganize its worldview.
 
-Many Separate Facts
+---
 
+## The Most Important Insight
 
-Expert:
+Let's compare all architectures:
 
-One Unified Concept
+| Architecture | Learns |
+|-------------|--------|
+| Program Synthesis | Programs |
+| Neuro-Symbolic | Structured Rules |
+| DreamCoder | Reusable Program Fragments |
+| Human Learning | Concepts → Skills → Representations |
 
+Notice the difference. Humans are operating at a higher level.
 
-DreamCoder grows libraries.
+---
 
-But it does not fundamentally reorganize its worldview.
+## The DreamCoder Boundary
 
-The Most Important Insight
+We've finally found it.
 
-Let's compare all architectures.
-
-Program Synthesis
-
-Learns:
-
-Programs
-
-Neuro-Symbolic
-
-Learns:
-
-Structured Rules
-
-DreamCoder
-
-Learns:
-
-Reusable Program Fragments
-
-Human Learning
-
-Appears to learn:
-
-Concepts
-↓
-Skills
-↓
-Representations
-
-
-Notice the difference.
-
-Humans are operating at a higher level.
-
-The DreamCoder Boundary
-
-I think we've finally found it.
-
-DreamCoder's central mechanism is:
-
-Compression
-
-
-Our emerging theory is becoming:
-
-Compression
-+
-Invariant Discovery
-+
-Concept Formation
-+
-Skill Formation
-
+- **DreamCoder's central mechanism is:** compression
+- **Our emerging theory is becoming:** compression + invariant discovery + concept formation + skill formation
 
 Compression alone may not be enough.
 
-Revised Architecture Hypothesis
+---
 
-DreamCoder:
+## Revised Architecture Hypothesis
 
+**DreamCoder:**
+
+```
+Task → Program → Compression → Primitive
+```
+
+**Potential New Direction:**
+
+```
 Task
-↓
-Program
-↓
-Compression
-↓
-Primitive
-
-
-Potential New Direction:
-
-Task
-↓
+  ↓
 Reasoning Trace
-↓
+  ↓
 Invariant Detector
-↓
+  ↓
 Concept Generator
-↓
+  ↓
 Skill Constructor
-↓
+  ↓
 Skill Library
-↓
+  ↓
 Meta-Reasoner
-
+```
 
 Notice what's new:
 
-Invariant Detector
-Concept Generator
-Skill Constructor
-Meta-Reasoner
+- Invariant Detector
+- Concept Generator
+- Skill Constructor
+- Meta-Reasoner
 
-The Biggest Discovery Of Investigation 9
+---
 
-I believe this is the strongest statement we've reached in all nine investigations:
+## The Biggest Discovery Of Investigation 9
 
-DreamCoder explains how reusable procedures emerge from compression, but it does not fully explain how new concepts emerge from experience.
+This is the strongest statement we've reached in all nine investigations:
+
+> **DreamCoder explains how reusable procedures emerge from compression, but it does not fully explain how new concepts emerge from experience.**
 
 And if ARC is truly about skill acquisition efficiency rather than program compression, then concept formation may be the missing layer between current ARC systems and more general intelligence. This aligns closely with the ARC philosophy that intelligence is about acquiring new skills and abstractions efficiently rather than memorizing solutions.
 
-Where We Are Now
+---
 
-After Investigations 1-9, we've narrowed the space dramatically.
+## Where We Are Now
+
+After Investigations 1–9, we've narrowed the space dramatically.
 
 The strongest remaining research gap appears to be:
 
-Experience
-↓
-Invariant Discovery
-↓
-Concept Formation
-↓
-Skill Formation
-↓
-Capability Growth
+```
+Experience → Invariant Discovery → Concept Formation → Skill Formation → Capability Growth
+```
 
+…rather than:
 
-rather than:
+```
+Experience → Program Compression → Library Growth
+```
 
-Experience
-↓
-Program Compression
-↓
-Library Growth
-
-
-That is the first point in our entire investigation where I think we have identified a potentially meaningful and differentiable research thesis rather than just a variation of existing ARC approaches.
+That is the first point in our entire investigation where we have identified a potentially meaningful and differentiable research thesis rather than just a variation of existing ARC approaches.

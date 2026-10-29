@@ -1,512 +1,368 @@
-Perfect.
+# Investigation 6: Existing Skill-Based Intelligence Systems
 
-This is the investigation that will determine whether we have a genuinely novel research direction or just a rebranded version of existing work.
+## Objective
 
-The goal is not to find papers.
+Perfect. This is the investigation that will determine whether we have a genuinely novel research direction or just a rebranded version of existing work.
 
-The goal is to build a capability map of intelligence architectures and identify exactly where the empty space exists.
+The goal is not to find papers. The goal is to **build a capability map of intelligence architectures and identify exactly where the empty space exists**.
 
-Investigation 6: Existing Skill-Based Intelligence Systems
-Core Evaluation Criteria
+---
+
+## Core Evaluation Criteria
 
 From our previous investigations, we derived the key dimensions:
 
-Capability	MeaningSkill Creation	Can it create new capabilities?
-Skill Storage	Can it remember skills?
-Skill Composition	Can it combine skills?
-Skill Compression	Can it abstract many experiences into one concept?
-Continual Learning	Does it improve over time?
-Meta-Reasoning	Does it reason about its own reasoning?
-Generalization	Can it transfer to unseen problems?
-ARC Alignment	Matches ARC's intelligence definition?
-Category 1: Classical Cognitive Architectures
-SOAR
+| Capability | Meaning |
+|-----------|---------|
+| Skill Creation | Can it create new capabilities? |
+| Skill Storage | Can it remember skills? |
+| Skill Composition | Can it combine skills? |
+| Skill Compression | Can it abstract many experiences into one concept? |
+| Continual Learning | Does it improve over time? |
+| Meta-Reasoning | Does it reason about its own reasoning? |
+| Generalization | Can it transfer to unseen problems? |
+| ARC Alignment | Matches ARC's intelligence definition? |
 
-One of the oldest AGI architectures.
+---
 
-Core idea:
+## Category 1: Classical Cognitive Architectures
 
-Problem
-↓
-Production Rules
-↓
-Chunking
-↓
-New Rules
+### SOAR
 
-Strengths
+One of the oldest AGI architectures. Core idea:
 
-✅ Stores learned rules
+```
+Problem → Production Rules → Chunking → New Rules
+```
 
-✅ Long-term memory
+**Strengths**
+- ✅ Stores learned rules
+- ✅ Long-term memory
+- ✅ Some skill accumulation
+- ✅ Goal-directed reasoning
 
-✅ Some skill accumulation
+**Weaknesses**
+- ❌ Poor abstraction creation
+- ❌ Limited scalability
+- ❌ Weak modern perception
 
-✅ Goal-directed reasoning
+**Assessment:** Interesting historically. Not sufficient for ARC.
 
-Weaknesses
+### ACT-R
 
-❌ Poor abstraction creation
+Human cognition inspired. Modules:
 
-❌ Limited scalability
+- Memory
+- Attention
+- Procedural Knowledge
+- Goals
 
-❌ Weak modern perception
+**Strengths**
+- ✅ Cognitive grounding
+- ✅ Memory systems
+- ✅ Skill reuse
 
-Assessment
+**Weaknesses**
+- ❌ Not open-ended
+- ❌ Weak abstraction growth
 
-Interesting historically.
+---
 
-Not sufficient for ARC.
+## Category 2: Program-Synthesis Intelligence
 
-ACT-R
-
-Human cognition inspired.
-
-Modules:
-
-Memory
-Attention
-Procedural Knowledge
-Goals
-
-Strengths
-
-✅ Cognitive grounding
-
-✅ Memory systems
-
-✅ Skill reuse
-
-Weaknesses
-
-❌ Not open-ended
-
-❌ Weak abstraction growth
-
-Category 2: Program-Synthesis Intelligence
-ARC Program Synthesis Systems
+### ARC Program Synthesis Systems
 
 Examples:
+- Searching Latent Program Spaces
+- ARC DSL solvers
+- Evolutionary synthesis systems
 
-Searching Latent Program Spaces
-ARC DSL solvers
-Evolutionary synthesis systems
-Strengths
+**Strengths**
+- ✅ Rule discovery
+- ✅ Interpretable
+- ✅ Good ARC performance
 
-✅ Rule discovery
+**Weaknesses**
+- ❌ No persistent skill memory
+- ❌ No capability growth
+- ❌ No abstraction accumulation
 
-✅ Interpretable
+**Key Observation:** They learn **program**, not **capability**.
 
-✅ Good ARC performance
+---
 
-Weaknesses
-
-❌ No persistent skill memory
-
-❌ No capability growth
-
-❌ No abstraction accumulation
-
-Key Observation
-
-They learn:
-
-Program
-
-
-not:
-
-Capability
-
-Category 3: Neuro-Symbolic Systems
+## Category 3: Neuro-Symbolic Systems
 
 Examples:
+- Compositional Neuro-Symbolic Reasoning
+- Neurosymbolic Program Synthesis for ARC using Vector Symbolic Algebras
 
-Compositional Neuro-Symbolic Reasoning
-Neurosymbolic Program Synthesis for ARC using Vector Symbolic Algebras
-Strengths
+**Strengths**
+- ✅ Object reasoning
+- ✅ Symbolic abstraction
+- ✅ Better compositionality
 
-✅ Object reasoning
+**Weaknesses**
+- ❌ Skills mostly handcrafted
+- ❌ No skill evolution
+- ❌ Weak lifelong learning
 
-✅ Symbolic abstraction
+**Observation:** They manipulate abstractions. They rarely create abstractions.
 
-✅ Better compositionality
+---
 
-Weaknesses
-
-❌ Skills mostly handcrafted
-
-❌ No skill evolution
-
-❌ Weak lifelong learning
-
-Observation
-
-They manipulate abstractions.
-
-They rarely create abstractions.
-
-Category 4: Hierarchical Reinforcement Learning
+## Category 4: Hierarchical Reinforcement Learning
 
 This becomes extremely relevant.
 
-Option-Critic
+### Option-Critic
 
 Core idea:
 
-Primitive Actions
-↓
-Options
-↓
-Hierarchical Skills
+```
+Primitive Actions → Options → Hierarchical Skills
+```
 
+Example: instead of `Move Left`, `Move Right` — learn **"Open Door"** as a reusable skill.
 
-Example:
+**Strengths**
+- ✅ Skill discovery
+- ✅ Skill reuse
+- ✅ Hierarchy
 
-Instead of:
+**Weaknesses**
+- ❌ Mostly action-based
+- ❌ Weak symbolic reasoning
+- ❌ Limited abstraction
 
-Move Left
-Move Right
+**Important:** This is the first category that genuinely learns reusable skills.
 
+---
 
-learn:
-
-Open Door
-
-
-as a reusable skill.
-
-Strengths
-
-✅ Skill discovery
-
-✅ Skill reuse
-
-✅ Hierarchy
-
-Weaknesses
-
-❌ Mostly action-based
-
-❌ Weak symbolic reasoning
-
-❌ Limited abstraction
-
-Important
-
-This is the first category that genuinely learns reusable skills.
-
-Category 5: DreamCoder
+## Category 5: DreamCoder
 
 One of the most important systems for us.
 
-DreamCoder
+### DreamCoder Core Loop
 
-Core loop:
+```
+Solve Tasks → Extract Programs → Compress Programs → Create New Primitives → Future Tasks Easier
+```
 
-Solve Tasks
-↓
-Extract Programs
-↓
-Compress Programs
-↓
-Create New Primitives
-↓
-Future Tasks Easier
+Read that again. This is the closest thing we've found so far to our emerging hypothesis.
 
+**Strengths**
+- ✅ Skill extraction
+- ✅ Skill compression
+- ✅ New primitive creation
+- ✅ Library growth
+- ✅ Continual improvement
 
-Read that again.
+**Weaknesses**
+- ❌ Mostly program-centric
+- ❌ Limited meta-reasoning
+- ❌ Not designed for ARC-3 style interaction
 
-This is the closest thing we've found so far to our emerging hypothesis.
+**Critical Observation:** DreamCoder may be the single most important prior art for us. Any future proposal must clearly go beyond it.
 
-Strengths
+---
 
-✅ Skill extraction
-
-✅ Skill compression
-
-✅ New primitive creation
-
-✅ Library growth
-
-✅ Continual improvement
-
-Weaknesses
-
-❌ Mostly program-centric
-
-❌ Limited meta-reasoning
-
-❌ Not designed for ARC-3 style interaction
-
-Critical Observation
-
-DreamCoder may be the single most important prior art for us.
-
-Any future proposal must clearly go beyond it.
-
-Category 6: Voyager
+## Category 6: Voyager
 
 One of the most interesting modern systems.
 
-Voyager
+### Voyager
 
-Minecraft autonomous agent.
+Minecraft autonomous agent. Core loop:
 
-Core loop:
+```
+Task → Solve → Store Skill → Reuse Skill → Compose Skills
+```
 
-Task
-↓
-Solve
-↓
-Store Skill
-↓
-Reuse Skill
-↓
-Compose Skills
+**Strengths**
+- ✅ Skill library
+- ✅ Lifelong learning
+- ✅ Continual capability growth
+- ✅ Automatic curriculum
 
-Strengths
+**Weaknesses**
+- ❌ LLM dependent
+- ❌ Weak formal abstraction
+- ❌ Skill quality varies
 
-✅ Skill library
+**Observation:** Voyager moves closer to cumulative intelligence.
 
-✅ Lifelong learning
+---
 
-✅ Continual capability growth
-
-✅ Automatic curriculum
-
-Weaknesses
-
-❌ LLM dependent
-
-❌ Weak formal abstraction
-
-❌ Skill quality varies
-
-Observation
-
-Voyager moves closer to cumulative intelligence.
-
-Category 7: Generative Agents
+## Category 7: Generative Agents
 
 Core concept:
 
-Experience
-↓
-Reflection
-↓
-Memory
-↓
-Behavior
+```
+Experience → Reflection → Memory → Behavior
+```
 
-Strengths
+**Strengths**
+- ✅ Reflection
+- ✅ Memory
+- ✅ Experience accumulation
 
-✅ Reflection
-
-✅ Memory
-
-✅ Experience accumulation
-
-Weaknesses
-
-❌ Weak reasoning
-
-❌ Weak skill formation
+**Weaknesses**
+- ❌ Weak reasoning
+- ❌ Weak skill formation
 
 These are memory systems more than intelligence systems.
 
-Category 8: World Models
+---
+
+## Category 8: World Models
 
 Examples:
-
-Dreamer
-MuZero-style systems
+- Dreamer
+- MuZero-style systems
 
 Core idea:
 
-Build Internal World
-↓
-Plan Within World
+```
+Build Internal World → Plan Within World
+```
 
-Strengths
+**Strengths**
+- ✅ Planning
+- ✅ Generalization
+- ✅ Latent abstraction
 
-✅ Planning
+**Weaknesses**
+- ❌ Not explicit skill libraries
+- ❌ Weak symbolic structure
 
-✅ Generalization
+---
 
-✅ Latent abstraction
+## Category 9: Meta-Learning
 
-Weaknesses
-
-❌ Not explicit skill libraries
-
-❌ Weak symbolic structure
-
-Category 9: Meta-Learning
-
-"Learning to Learn"
+*"Learning to Learn"*
 
 Core idea:
 
-Many Tasks
-↓
-Learn Adaptation Strategy
+```
+Many Tasks → Learn Adaptation Strategy
+```
 
-Strengths
+**Strengths**
+- ✅ Fast adaptation
+- ✅ Generalization
 
-✅ Fast adaptation
+**Weaknesses**
+- ❌ Usually no explicit skill memory
+- ❌ Little interpretability
 
-✅ Generalization
+**Important:** Meta-learning learns adaptation mechanisms. Not necessarily reusable skills.
 
-Weaknesses
+---
 
-❌ Usually no explicit skill memory
-
-❌ Little interpretability
-
-Important
-
-Meta-learning learns adaptation mechanisms.
-
-Not necessarily reusable skills.
-
-Category 10: ARC-Specific Self-Improving Systems
+## Category 10: ARC-Specific Self-Improving Systems
 
 Examples:
+- Recursive Reasoning
+- Refinement Loops
+- Evolutionary Program Synthesis
 
-Recursive Reasoning
-Refinement Loops
-Evolutionary Program Synthesis
-Strengths
+**Strengths**
+- ✅ Better solutions
+- ✅ Better search
+- ✅ Better refinement
 
-✅ Better solutions
+**Weaknesses**
+- ❌ Improvement stays inside task
+- ❌ No cumulative intelligence
 
-✅ Better search
+---
 
-✅ Better refinement
+## Master Comparison Matrix
 
-Weaknesses
+| System | Create Skills | Store Skills | Compose Skills | Compress Skills | Continual Growth | Meta-Reasoning |
+|--------|--------------|--------------|----------------|-----------------|------------------|----------------|
+| SOAR | Partial | Yes | Partial | Partial | Partial | Partial |
+| ACT-R | Partial | Yes | Partial | Partial | Partial | Weak |
+| Program Synthesis | No | Weak | Weak | No | No | No |
+| Neuro-Symbolic | Weak | Weak | Good | Weak | No | No |
+| Hierarchical RL | Good | Good | Good | Weak | Partial | Weak |
+| DreamCoder | Very Strong | Very Strong | Good | Very Strong | Strong | Weak |
+| Voyager | Strong | Strong | Strong | Partial | Strong | Partial |
+| World Models | Weak | Partial | Partial | Strong | Partial | Weak |
+| Meta-Learning | Weak | Weak | Weak | Partial | Strong | Partial |
+| ARC Refinement Loops | No | No | No | No | No | Weak |
 
-❌ Improvement stays inside task
+---
 
-❌ No cumulative intelligence
+## The Most Important Discovery
 
-Master Comparison Matrix
-System	Create Skills	Store Skills	Compose Skills	Compress Skills	Continual Growth	Meta-ReasoningSOAR	Partial	Yes	Partial	Partial	Partial	Partial
-ACT-R	Partial	Yes	Partial	Partial	Partial	Weak
-Program Synthesis	No	Weak	Weak	No	No	No
-Neuro-Symbolic	Weak	Weak	Good	Weak	No	No
-Hierarchical RL	Good	Good	Good	Weak	Partial	Weak
-DreamCoder	Very Strong	Very Strong	Good	Very Strong	Strong	Weak
-Voyager	Strong	Strong	Strong	Partial	Strong	Partial
-World Models	Weak	Partial	Partial	Strong	Partial	Weak
-Meta-Learning	Weak	Weak	Weak	Partial	Strong	Partial
-ARC Refinement Loops	No	No	No	No	No	Weak
-The Most Important Discovery
-
-After this entire matrix, one architecture stands out:
-
-DreamCoder
+After this entire matrix, one architecture stands out: **DreamCoder**.
 
 Because it explicitly does:
 
-Task
-↓
-Program
-↓
-Compression
-↓
-New Primitive
-↓
-Library Growth
+```
+Task → Program → Compression → New Primitive → Library Growth
+```
 
+…which is astonishingly close to what we've been independently converging toward.
 
-Which is astonishingly close to what we've been independently converging toward.
+---
 
-The Critical Question Now
+## The Critical Question Now
 
 If DreamCoder already exists, then:
 
-Why hasn't DreamCoder solved ARC?
+> **Why hasn't DreamCoder solved ARC?**
 
-This is the question we need to investigate next.
+This is the question we need to investigate next. Because the answer likely contains our opportunity.
 
-Because the answer likely contains our opportunity.
+**Potential hypotheses:**
 
-Potential hypotheses:
+| Hypothesis | Statement |
+|-----------|-----------|
+| 1 | DreamCoder creates programs. ARC may require creating abstractions. |
+| 2 | DreamCoder compresses solutions. ARC may require compressing reasoning strategies. |
+| 3 | DreamCoder builds primitive libraries. ARC-3 may require dynamic skill ecosystems. |
+| 4 | DreamCoder learns skills. ARC may require learning **when** to invent skills. |
 
-Hypothesis 1
+---
 
-DreamCoder creates programs.
+## Updated Novelty Landscape
 
-ARC may require creating abstractions.
+After all six investigations, the research space classifies like this:
 
-Hypothesis 2
+### Crowded
+- ❌ Better search
+- ❌ Better DSLs
+- ❌ Better program synthesis
+- ❌ Better refinement loops
+- ❌ Better neuro-symbolic reasoning
 
-DreamCoder compresses solutions.
+### Moderately Explored
+- ⚠️ Skill libraries
+- ⚠️ Continual learning
+- ⚠️ Meta-learning
+- ⚠️ Hierarchical skills
 
-ARC may require compressing reasoning strategies.
+### Still Wide Open
+- ✅ Skill invention triggers
+- ✅ Abstraction formation mechanisms
+- ✅ Skill compression into concepts
+- ✅ Meta-reasoning over skill creation
+- ✅ Cumulative intelligence architectures
+- ✅ Systems that improve themselves across tasks rather than within tasks
 
-Hypothesis 3
+---
 
-DreamCoder builds primitive libraries.
-
-ARC-3 may require dynamic skill ecosystems.
-
-Hypothesis 4
-
-DreamCoder learns skills.
-
-ARC may require learning when to invent skills.
-
-Updated Novelty Landscape
-
-After all six investigations, I would classify the research space like this:
-
-Crowded
-
-❌ Better search
-
-❌ Better DSLs
-
-❌ Better program synthesis
-
-❌ Better refinement loops
-
-❌ Better neuro-symbolic reasoning
-
-Moderately Explored
-
-⚠ Skill libraries
-
-⚠ Continual learning
-
-⚠ Meta-learning
-
-⚠ Hierarchical skills
-
-Still Wide Open
-
-✅ Skill invention triggers
-
-✅ Abstraction formation mechanisms
-
-✅ Skill compression into concepts
-
-✅ Meta-reasoning over skill creation
-
-✅ Cumulative intelligence architectures
-
-✅ Systems that improve themselves across tasks rather than within tasks
-
-My Current Best Research Direction
+## Current Best Research Direction
 
 After all six investigations, the most promising thesis is no longer:
 
-"Build a better ARC solver."
+> "Build a better ARC solver."
 
 It has evolved into:
 
-Build an architecture that converts solved tasks into reusable abstractions, grows a skill library, and uses meta-reasoning to decide when new skills should be invented, compressed, or composed.
+> **Build an architecture that converts solved tasks into reusable abstractions, grows a skill library, and uses meta-reasoning to decide when new skills should be invented, compressed, or composed.**
 
 That is the first direction we've found that survives comparison against ARC philosophy, ARC winners, program synthesis, neuro-symbolic systems, DreamCoder, Voyager, and continual-learning architectures while still appearing meaningfully differentiated.
