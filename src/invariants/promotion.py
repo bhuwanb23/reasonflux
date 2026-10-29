@@ -8,7 +8,9 @@ from invariants.ranking import RankedInvariant
 from invariants.specification.confidence import compute_confidence
 from invariants.validation.scores import ValidationConfig, ValidationScores
 
-_FP_TAGS = frozenset({"task_specific_literal", "failed_variation_survival"})
+_FP_TAGS = frozenset(
+    {"task_specific_literal", "failed_variation_survival", "low_vst"}
+)
 
 # Preferred forward path to Promotable (SKILL_CANDIDATE).
 _PROMOTION_PATH: tuple[InvariantState, ...] = (

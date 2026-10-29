@@ -9,8 +9,13 @@ from core.invariant import Invariant
 from core.states import InvariantState
 from invariants.promotion import apply_promotion, meets_promotion_criteria
 from invariants.ranking import RankedInvariant, rank_invariants
+from invariants.robustness.config import RobustnessConfig
+from invariants.robustness.explosion import should_restrict_promotion
+from invariants.robustness.hard_gate import evaluate_hard_gate
 from invariants.specification.policy import InvariantPolicy
 from invariants.validation.scores import ValidationConfig
+from transfer.memory import TransferMemory
+from transfer.metrics import TransferConfig
 
 
 @dataclass(slots=True)
@@ -77,9 +82,17 @@ def validate_and_rank(
     config: ValidationConfig | None = None,
     transfer_scores: Mapping[str, float] | None = None,
     policy: InvariantPolicy | None = None,
+    robustness_config: RobustnessConfig | None = None,
+    transfer_memory: TransferMemory | None = None,
+    transfer_config: TransferConfig | None = None,
+    ier: float | None = None,
+    total_families: int = 1,
+    use_hard_gate: bool = False,
 ) -> ValidationResult:
     """Score, rank, and promote candidate invariants (gatekeeper for SCT)."""
     config = config or ValidationConfig()
+    robustness_config = robustness_config or RobustnessConfig()
+    transfer_config = transfer_config or TransferConfig()
     ranked = rank_invariants(
         list(candidates), config, transfer_scores=transfer_scores, policy=policy
     )
@@ -94,10 +107,26 @@ def validate_and_rank(
         inv = item.invariant
 
         if meets_promotion_criteria(scores, config):
+            if ier is not None and should_restrict_promotion(ier, robustness_config):
+                rejected.append((inv, ["ier_restrict"]))
+                continue
             promoted = apply_promotion(item, config)
             if promoted is None:
                 rejected.append((inv, list(scores.reasons) or ["promotion"]))
                 continue
+            if use_hard_gate:
+                hg = evaluate_hard_gate(
+                    promoted,
+                    scores,
+                    memory=transfer_memory,
+                    robustness_config=robustness_config,
+                    transfer_config=transfer_config,
+                    ier=ier,
+                    total_families=total_families,
+                )
+                if not hg.promotable:
+                    rejected.append((promoted, hg.reasons))
+                    continue
             promotable.append(promoted)
             validated.append(promoted)
             transfer_verified.append(promoted)
@@ -110,6 +139,7 @@ def validate_and_rank(
             and scores.pass_generality
             and "task_specific_literal" not in scores.reasons
             and "failed_variation_survival" not in scores.reasons
+            and "low_vst" not in scores.reasons
         )
         if structural_ok:
             _ensure_detected(inv)

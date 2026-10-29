@@ -25,6 +25,14 @@ from invariants.pattern_mining import (
 )
 from invariants.promotion import advance_to_promotable, apply_promotion, meets_promotion_criteria
 from invariants.ranking import RankedInvariant, compute_validation_scores, rank_invariants
+from invariants.robustness import (
+    FailureLevel,
+    HardGateResult,
+    RobustnessConfig,
+    confirm_hard_gate,
+    evaluate_hard_gate,
+    evaluate_escalation,
+)
 from invariants.transfer_aware import rank_transfer_aware, transfer_scores_map
 from invariants.specification import (
     MVP_INVARIANT_TYPES,
@@ -93,8 +101,13 @@ __all__ = [
     "compute_validation_scores",
     "confidence_from_evidence",
     "extract_patterns",
+    "FailureLevel",
     "generate_candidates",
+    "HardGateResult",
     "hierarchy_level_for",
+    "confirm_hard_gate",
+    "evaluate_escalation",
+    "evaluate_hard_gate",
     "is_above_threshold",
     "longest_common_contiguous_subsequence",
     "meets_promotion_criteria",
@@ -104,6 +117,7 @@ __all__ = [
     "rank_invariants",
     "rank_transfer_aware",
     "require_qualification",
+    "RobustnessConfig",
     "summarize_specification",
     "transfer_scores_map",
     "validate_and_rank",
