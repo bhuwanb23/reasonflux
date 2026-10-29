@@ -1,3 +1,7 @@
 """Capability Growth Metrics (CGM) — measurement and reports."""
 
-__all__: list[str] = []
+from evaluation.transfer_metrics import compute_ts
+
+__all__ = [
+    "compute_ts",
+]

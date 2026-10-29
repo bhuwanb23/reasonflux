@@ -1,6 +1,10 @@
-"""Transfer Score (TS) = performance_after − performance_before."""
+"""Transfer Score (TS) = performance_after − performance_before (CGM)."""
+
+from __future__ import annotations
 
 
-def compute_ts(*args, **kwargs):
-    """Compute Transfer Score between task pairs or phases."""
-    raise NotImplementedError("compute_ts is not implemented yet")
+def compute_ts(performance_before: float, performance_after: float) -> float:
+    """Compute system-level Transfer Score between two performance readings."""
+    before = float(performance_before)
+    after = float(performance_after)
+    return after - before

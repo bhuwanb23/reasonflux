@@ -25,6 +25,7 @@ from invariants.pattern_mining import (
 )
 from invariants.promotion import advance_to_promotable, apply_promotion, meets_promotion_criteria
 from invariants.ranking import RankedInvariant, compute_validation_scores, rank_invariants
+from invariants.transfer_aware import rank_transfer_aware, transfer_scores_map
 from invariants.specification import (
     MVP_INVARIANT_TYPES,
     HierarchyLevel,
@@ -101,7 +102,9 @@ __all__ = [
     "patterns_share_core",
     "qualify_invariant",
     "rank_invariants",
+    "rank_transfer_aware",
     "require_qualification",
     "summarize_specification",
+    "transfer_scores_map",
     "validate_and_rank",
 ]

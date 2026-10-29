@@ -21,3 +21,12 @@ metrics:
   AG:
     name: Abstraction Gain
     formula: reasoning_cost_before - reasoning_cost_after
+  ITS:
+    name: Invariant Transfer Score
+    formula: sum(transfer_benefits) / transfer_attempts
+  TU:
+    name: Transfer Utility
+    formula: transfer_success * reasoning_reduction * task_coverage
+  NTR:
+    name: Negative Transfer Rate
+    formula: failed_transfer_attempts / total_transfer_attempts

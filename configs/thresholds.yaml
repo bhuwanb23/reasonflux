@@ -44,3 +44,11 @@ validation:
   min_invariant_score: 0.01
   transfer_rescue_min_t: 0.7
   transfer_rescue_min_frequency: 2
+
+transfer:
+  # Phase 11C-4 transfer-aware discovery / promotion gate
+  min_transfer_attempts: 2
+  min_its: 0.5
+  ntr_limit: 0.3
+  tu_reduction_norm: 1.0
+  confidence_attempts_norm: 5

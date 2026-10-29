@@ -72,7 +72,8 @@ Task
 
 Trace mining details: [docs/mining.md](mining.md). Invariant qualification:
 [docs/invariants.md](invariants.md). Ranking & validation:
-[docs/validation.md](validation.md).
+[docs/validation.md](validation.md). Transfer-aware discovery:
+[docs/transfer.md](transfer.md).
 
 ## Module dependency graph
 
