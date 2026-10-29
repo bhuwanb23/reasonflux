@@ -32,6 +32,26 @@ class SkillConfig:
     core_su: float = 0.6
     core_min_reuse: int = 3
     core_min_transfer: float = 0.5
+    # Phase 11D-3 lifecycle
+    growing_ug: float = 0.02
+    dormant_after_tasks: int = 10
+    core_growth_periods: int = 2
+    retire_low_su_periods: int = 3
+    retire_max_reuse: int = 1
+    retire_max_ts: float = 0.1
+    retire_min_age_tasks: int = 20
+    decay_lambda: float = 0.01
+    health_healthy: float = 0.75
+    health_stable: float = 0.5
+    health_weak: float = 0.25
+    health_w_u: float = 0.4
+    health_w_r: float = 0.2
+    health_w_t: float = 0.2
+    health_w_c: float = 0.2
+    reactivate_min_evidence: int = 2
+    reactivate_min_expected_su: float | None = None  # defaults to su_min
+    reactivate_max_attempts: int = 2
+    archive_after_tasks: int = 20
 
     def __post_init__(self) -> None:
         if self.min_evidence < 1:
@@ -54,6 +74,26 @@ class SkillConfig:
             raise ValueError("library_capacity must be >= 1")
         if self.core_min_reuse < 1:
             raise ValueError("core_min_reuse must be >= 1")
+        if self.dormant_after_tasks < 1:
+            raise ValueError("dormant_after_tasks must be >= 1")
+        if self.core_growth_periods < 1:
+            raise ValueError("core_growth_periods must be >= 1")
+        if self.retire_low_su_periods < 1:
+            raise ValueError("retire_low_su_periods must be >= 1")
+        if self.retire_min_age_tasks < 1:
+            raise ValueError("retire_min_age_tasks must be >= 1")
+        if self.retire_max_reuse < 0:
+            raise ValueError("retire_max_reuse must be >= 0")
+        if self.archive_after_tasks < 1:
+            raise ValueError("archive_after_tasks must be >= 1")
+        if self.reactivate_min_evidence < 1:
+            raise ValueError("reactivate_min_evidence must be >= 1")
+        if self.reactivate_max_attempts < 1:
+            raise ValueError("reactivate_max_attempts must be >= 1")
+        if self.decay_lambda < 0:
+            raise ValueError("decay_lambda must be >= 0")
+        if self.reactivate_min_expected_su is None:
+            self.reactivate_min_expected_su = self.su_min
         for name in (
             "min_consistency",
             "min_generality",
@@ -61,10 +101,18 @@ class SkillConfig:
             "default_cp",
             "core_su",
             "core_min_transfer",
+            "health_healthy",
+            "health_stable",
+            "health_weak",
+            "retire_max_ts",
         ):
             value = getattr(self, name)
-            if not 0.0 <= value <= 1.0:
+            if not 0.0 <= float(value) <= 1.0:
                 raise ValueError(f"{name} must be in [0, 1]")
+        for name in ("health_w_u", "health_w_r", "health_w_t", "health_w_c"):
+            value = getattr(self, name)
+            if float(value) < 0:
+                raise ValueError(f"{name} must be >= 0")
 
     @classmethod
     def from_dict(cls, data: dict[str, Any] | None) -> SkillConfig:

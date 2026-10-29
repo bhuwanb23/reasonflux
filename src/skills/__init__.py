@@ -1,4 +1,4 @@
-"""Skill Creation Trigger Theory (SCT) — Phase 11D-1/11D-2."""
+"""Skill Creation Trigger Theory (SCT) — Phase 11D-1/11D-2/11D-3."""
 
 from skills.birth import SkillBirthRecord, make_birth_record
 from skills.candidate import classify_mvp_category, from_invariant, generate_candidates
@@ -13,6 +13,14 @@ from skills.economics import (
 from skills.evidence import SkillEvidence, compute_skill_confidence, seed_evidence_from_invariant
 from skills.intake import IntakeResult, intake_invariant, is_promotable_invariant
 from skills.library import SkillLibrary
+from skills.lifecycle import (
+    apply_lifecycle,
+    build_biography,
+    compute_health,
+    compute_lifecycle_metrics,
+    evaluate_library_lifecycle,
+    evaluate_lifecycle,
+)
 from skills.monitoring import record_negative, record_reuse, record_transfer
 from skills.pipeline import (
     SkillCreationResult,
@@ -22,7 +30,9 @@ from skills.pipeline import (
 from skills.portfolio import PortfolioMetrics, compute_portfolio_metrics
 from skills.promotion import PromotionResult, promote_skill
 from skills.qualification import QualificationResult, qualify_candidate
+from skills.reactivation import ReactivationResult, reactivate_skill
 from skills.retrieval import retrieve_skills
+from skills.retirement import retire_skills
 from skills.trigger import SkillCreationTrigger
 from skills.utility import (
     classify_economic_status,
@@ -38,6 +48,7 @@ __all__ = [
     "PortfolioMetrics",
     "PromotionResult",
     "QualificationResult",
+    "ReactivationResult",
     "SkillBirthRecord",
     "SkillConfig",
     "SkillCreationResult",
@@ -46,12 +57,18 @@ __all__ = [
     "SkillEvidence",
     "SkillLibrary",
     "SkillUtilityBreakdown",
+    "apply_lifecycle",
+    "build_biography",
     "classify_economic_status",
     "classify_mvp_category",
+    "compute_health",
+    "compute_lifecycle_metrics",
     "compute_portfolio_metrics",
     "compute_skill_confidence",
     "compute_su",
     "create_skills_from_invariants",
+    "evaluate_library_lifecycle",
+    "evaluate_lifecycle",
     "evaluate_promotion_economics",
     "expected_future_utility",
     "from_invariant",
@@ -63,10 +80,12 @@ __all__ = [
     "promote_skill",
     "qualify_candidate",
     "rank_by_utility",
+    "reactivate_skill",
     "record_negative",
     "record_reuse",
     "record_transfer",
     "refresh_skill_utility",
+    "retire_skills",
     "retrieve_skills",
     "score_skill_utility",
     "seed_evidence_from_invariant",

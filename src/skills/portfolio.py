@@ -40,11 +40,21 @@ def compute_portfolio_metrics(
     config: SkillConfig | None = None,
     refresh: bool = True,
 ) -> PortfolioMetrics:
-    """Compute ASU / TSU / PU / UG / NTB over active skills."""
+    """Compute ASU / TSU / PU / UG / NTB over active-tier skills."""
     config = config or SkillConfig()
-    skills = library.list_skills(state=SkillState.ACTIVE)
+    active_tier = {
+        SkillState.ACTIVE,
+        SkillState.GROWING,
+        SkillState.CORE,
+    }
+    skills = [s for s in library.list_skills() if s.state in active_tier]
     if not skills:
-        skills = library.list_skills()
+        skills = [
+            s
+            for s in library.list_skills()
+            if s.state
+            not in (SkillState.RETIRED, SkillState.ARCHIVED, SkillState.CANDIDATE)
+        ]
     if refresh:
         for skill in skills:
             refresh_skill_utility(skill, config)

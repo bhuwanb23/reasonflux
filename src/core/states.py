@@ -6,13 +6,16 @@ from enum import Enum
 
 
 class SkillState(str, Enum):
-    """Skill lifecycle states."""
+    """Skill lifecycle states (Phase 11D-3)."""
 
     CANDIDATE = "candidate"
     PROMOTED = "promoted"
     ACTIVE = "active"
+    GROWING = "growing"
+    CORE = "core"
     DORMANT = "dormant"
     RETIRED = "retired"
+    ARCHIVED = "archived"
 
 
 class InvariantState(str, Enum):
@@ -49,13 +52,49 @@ class TraceLifecyclePhase(str, Enum):
     ARCHIVED = "archived"
 
 
-# Allowed forward transitions (and self-stay).
+# Allowed forward transitions (and self-stay). Phase 11D-3 reactivation:
+# RETIRED/ARCHIVED → ACTIVE is legal at FSM level; evidence gates live in
+# skills.reactivation.reactivate_skill.
 SKILL_TRANSITIONS: dict[SkillState, frozenset[SkillState]] = {
-    SkillState.CANDIDATE: frozenset({SkillState.CANDIDATE, SkillState.PROMOTED, SkillState.RETIRED}),
-    SkillState.PROMOTED: frozenset({SkillState.PROMOTED, SkillState.ACTIVE, SkillState.RETIRED}),
-    SkillState.ACTIVE: frozenset({SkillState.ACTIVE, SkillState.DORMANT, SkillState.RETIRED}),
-    SkillState.DORMANT: frozenset({SkillState.DORMANT, SkillState.ACTIVE, SkillState.RETIRED}),
-    SkillState.RETIRED: frozenset({SkillState.RETIRED}),
+    SkillState.CANDIDATE: frozenset(
+        {SkillState.CANDIDATE, SkillState.PROMOTED, SkillState.RETIRED}
+    ),
+    SkillState.PROMOTED: frozenset(
+        {SkillState.PROMOTED, SkillState.ACTIVE, SkillState.RETIRED}
+    ),
+    SkillState.ACTIVE: frozenset(
+        {
+            SkillState.ACTIVE,
+            SkillState.GROWING,
+            SkillState.DORMANT,
+            SkillState.RETIRED,
+        }
+    ),
+    SkillState.GROWING: frozenset(
+        {
+            SkillState.GROWING,
+            SkillState.ACTIVE,
+            SkillState.CORE,
+            SkillState.DORMANT,
+            SkillState.RETIRED,
+        }
+    ),
+    SkillState.CORE: frozenset(
+        {
+            SkillState.CORE,
+            SkillState.ACTIVE,
+            SkillState.GROWING,
+            SkillState.DORMANT,
+            SkillState.RETIRED,
+        }
+    ),
+    SkillState.DORMANT: frozenset(
+        {SkillState.DORMANT, SkillState.ACTIVE, SkillState.RETIRED}
+    ),
+    SkillState.RETIRED: frozenset(
+        {SkillState.RETIRED, SkillState.ARCHIVED, SkillState.ACTIVE}
+    ),
+    SkillState.ARCHIVED: frozenset({SkillState.ARCHIVED, SkillState.ACTIVE}),
 }
 
 INVARIANT_TRANSITIONS: dict[InvariantState, frozenset[InvariantState]] = {
