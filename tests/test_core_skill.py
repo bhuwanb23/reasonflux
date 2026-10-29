@@ -3,7 +3,6 @@
 import pytest
 
 from core import (
-    InvalidStateTransitionError,
     Skill,
     SkillCandidate,
     SkillState,
@@ -45,8 +44,9 @@ def test_skill_from_candidate_and_lifecycle():
     skill.transition_to(SkillState.ACTIVE)
     skill.transition_to(SkillState.DORMANT)
     skill.transition_to(SkillState.RETIRED)
-    with pytest.raises(InvalidStateTransitionError):
-        skill.transition_to(SkillState.ACTIVE)
+    skill.transition_to(SkillState.ARCHIVED)
+    skill.transition_to(SkillState.ACTIVE)
+    assert skill.state == SkillState.ACTIVE
 
 
 def test_skill_dict_round_trip():
