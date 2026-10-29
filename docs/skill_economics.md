@@ -30,8 +30,9 @@ and `metadata.economic_status`.
 
 `unproven` → `useful` → `core` | `declining` | `retirement_candidate`
 
-Retirement **execution** is 11D-3; 11D-2 only sets `retirement_candidate` when
-`SU < su_min`.
+Retirement **execution** lives in 11D-3 lifecycle (`retire_skills` /
+`decide_lifecycle`); 11D-2 still sets `retirement_candidate` when `SU < su_min`
+as an economic signal.
 
 ## Competition
 
@@ -63,4 +64,4 @@ replace SCV birth gates (11D-1).
 
 ## Non-goals
 
-Lifecycle FSM (11D-3), composition engine (11D-4), CGR learning.
+Composition engine (11D-4), CGR learning. Lifecycle FSM: [lifecycle.md](lifecycle.md).

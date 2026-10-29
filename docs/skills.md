@@ -76,13 +76,20 @@ reflection · rotation · counting · grouping (signature heuristics)
 | `utility.py` / `utility_components.py` | SU + economic status (11D-2) |
 | `competition.py` / `portfolio.py` | Rank / portfolio metrics |
 | `economics.py` | EFU vs lifetime cost (advisory) |
-| `retirement.py` | Stub (11D-3) |
+| `retirement.py` | Retire/archive decisions (no delete) |
+| `reactivation.py` | Evidence-gated revival + zombie guard |
+| `lifecycle/` | Health, aging, biography, policy, sweep |
 
 ## Skill utility (11D-2)
 
 See [skill_economics.md](skill_economics.md). `SU = (RCG+TV+CP+RV)−(CC+MC+NR)`.
 Monitoring refreshes `skill.utility`; retrieval prefers higher SU.
 
+## Lifecycle (11D-3)
+
+See [lifecycle.md](lifecycle.md). Growing / Core / Dormant / Retired / Archived
+plus reactivation. Default retrieval is the active tier (ACTIVE/GROWING/CORE).
+
 ## Non-goals
 
-Retirement policies (11D-3), composition engine (11D-4), skill failure catalogue (11D-5).
+Composition engine (11D-4), skill failure catalogue (11D-5).

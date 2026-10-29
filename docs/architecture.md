@@ -76,7 +76,8 @@ Trace mining details: [docs/mining.md](mining.md). Invariant qualification:
 [docs/transfer.md](transfer.md). Failure modes & hard gate:
 [docs/failure_modes.md](failure_modes.md). Skill creation (SCT):
 [docs/skills.md](skills.md). Skill utility economics:
-[docs/skill_economics.md](skill_economics.md).
+[docs/skill_economics.md](skill_economics.md). Skill lifecycle:
+[docs/lifecycle.md](lifecycle.md).
 
 ## Module dependency graph
 
