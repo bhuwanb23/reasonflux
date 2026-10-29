@@ -99,9 +99,18 @@ def apply_recovery(
                 skill.transition_to(SkillState.RETIRED)
         return skill
     if action.action == "archive":
+        if skill.state is SkillState.CORE:
+            # CORE is protected from archival; retire via normal lifecycle.
+            return skill
         if skill.state is SkillState.ACTIVE:
-            skill.transition_to(SkillState.DORMANT)
-        if skill.state is SkillState.DORMANT:
+            skill.transition_to(SkillState.RETIRED)
+        elif skill.state is SkillState.GROWING:
+            skill.transition_to(SkillState.RETIRED)
+        elif skill.state is SkillState.DORMANT:
+            skill.transition_to(SkillState.RETIRED)
+        elif skill.state is SkillState.PROMOTED:
+            skill.transition_to(SkillState.RETIRED)
+        elif skill.state is SkillState.CANDIDATE:
             skill.transition_to(SkillState.RETIRED)
         if skill.state is SkillState.RETIRED:
             skill.transition_to(SkillState.ARCHIVED)

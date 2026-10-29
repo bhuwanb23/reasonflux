@@ -77,12 +77,13 @@ def evaluate_skill_promotion_gate(
     override = rare_high_value_override(skill, config)
     metrics["transfer_override"] = override
     premature = detect_premature_skill(skill, config)
+    # EC1 bypasses frequency/evidence floors only; utility and confidence still apply.
     if premature and not override:
         reasons.append("evidence")
-        if conf < config.min_confidence_promote:
-            reasons.append("confidence")
+    if conf < float(config.min_confidence_promote) and not override:
+        reasons.append("confidence")
 
-    if float(skill.utility or 0.0) < float(config.min_utility_promote) and not override:
+    if float(skill.utility or 0.0) < float(config.min_utility_promote):
         reasons.append("utility")
 
     ntr_val = float(ntr) if ntr is not None else skill_ntr(skill)

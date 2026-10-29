@@ -15,15 +15,22 @@ def skill_explosion_ratio(skills: int | Sequence, validated_invariants: int) -> 
 
 
 def skill_ntr(skill: Skill) -> float:
-    """NTR = negative transfers / transfer attempts from history + evidence."""
+    """NTR = negative transfers / transfer attempts from history + evidence.
+
+    Negative evidence may overlap transfer_history (record_transfer writes both),
+    so count the union rather than summing.
+    """
     history = list(skill.transfer_history or [])
     meta = skill.metadata or {}
     evidence = meta.get("evidence") or {}
     negatives = list(evidence.get("negative") or [])
-    attempts = len(history) + len(negatives)
+    history_fails = sum(1 for e in history if not e.get("success", True))
+    # Evidence-only negatives not already represented in transfer history.
+    extra = max(0, len(negatives) - history_fails)
+    attempts = len(history) + extra
     if attempts <= 0:
         return 0.0
-    fails = sum(1 for e in history if not e.get("success", True)) + len(negatives)
+    fails = history_fails + extra
     return float(fails) / float(attempts)
 
 

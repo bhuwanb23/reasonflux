@@ -2,10 +2,11 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from typing import Any, Sequence
 
 from core.skill import Skill
+from core.states import SkillState
 from skills.library import SkillLibrary
 from skills.robustness.config import SkillRobustnessConfig
 from skills.robustness.edge_cases import enforce_zombie_archive, is_ancient_core
@@ -18,7 +19,7 @@ from skills.robustness.sf_creation import (
     enforce_library_capacity,
 )
 from skills.robustness.sf_transfer import apply_transfer_health, assess_negative_transfer
-from skills.robustness.taxonomy import FailureDiagnosis, diagnose_skill
+from skills.robustness.taxonomy import FailureDiagnosis, SkillFailure, diagnose_skill
 
 
 @dataclass(slots=True)
@@ -66,10 +67,12 @@ def audit_library(
 
     action_budget = int(config.audit_max_actions)
     for skill in skills:
+        if skill.state in (SkillState.RETIRED, SkillState.ARCHIVED):
+            continue
         premature = detect_premature_skill(skill, config)
         dups = detect_duplicates(skill, library, config)
         ntr = skill_ntr(skill)
-        zombie = bool((skill.metadata or {}).get("zombie")) or (
+        zombie = (
             int((skill.metadata or {}).get("reactivations", 0) or 0)
             >= config.zombie_permanent_archive_attempts
             and not bool(
@@ -95,37 +98,50 @@ def audit_library(
         if not apply or action_budget <= 0:
             continue
 
-        # Prefer transfer health and premature demotion.
-        health = assess_negative_transfer(skill, config)
-        if health.action != "none" and action_budget > 0:
-            apply_transfer_health(skill, health, library)
-            action = plan_recovery(diagnoses[0], config) if diagnoses else None
-            if action:
-                report.actions.append(action)
-            action_budget -= 1
-            if skill.state.value == "retired":
-                report.retired.append(skill.skill_id)
+        # CORE skills are protected from demotion/retirement in the audit.
+        if ancient or skill.state is SkillState.CORE:
             continue
 
-        if premature and action_budget > 0 and not ancient:
-            action = plan_recovery(diagnoses[0], config) if diagnoses else None
-            if action and action.action == "demote":
-                apply_recovery(skill, action, library, config)
-                report.actions.append(action)
+        before = skill.state
+
+        # 1. Zombie archive (SF/EC3) — only when it truly changes state.
+        if zombie and enforce_zombie_archive(skill, config):
+            report.actions.append(
+                RecoveryAction("archive", SkillFailure.EC3, "archived", ["zombie"])
+            )
+            action_budget -= 1
+            continue
+
+        # 2. NTR ladder.
+        health = assess_negative_transfer(skill, config)
+        if health.action != "none":
+            apply_transfer_health(skill, health, library)
+            if skill.state is not before or health.action == "demote_retrieval":
+                action = plan_recovery(diagnoses[0], config) if diagnoses else None
+                if action:
+                    report.actions.append(action)
                 action_budget -= 1
+                if skill.state is SkillState.RETIRED:
+                    report.retired.append(skill.skill_id)
                 continue
 
-        if zombie and action_budget > 0:
-            if enforce_zombie_archive(skill, config):
-                from skills.robustness.taxonomy import SkillFailure
-
-                action = RecoveryAction(
-                    "archive", SkillFailure.EC3, "archived", ["zombie"]
-                )
+        # 3. Premature demotion.
+        if premature and diagnoses:
+            action = plan_recovery(diagnoses[0], config)
+            if action.action == "demote":
+                apply_recovery(skill, action, library, config)
                 report.actions.append(action)
                 action_budget -= 1
 
     if apply:
+        # SF2: when SER is restricted, shrink the live library to the SER target.
+        target = int(config.library_capacity)
+        if ser >= float(config.ser_restrict):
+            target = max(1, int(float(config.ser_restrict) * max(1, validated_invariants)))
+            report.metrics["ser_target"] = target
+            shrunk = replace(config, library_capacity=min(target, int(config.library_capacity)))
+            retired_ser = enforce_library_capacity(library, shrunk)
+            report.retired.extend(s.skill_id for s in retired_ser)
         retired = enforce_library_capacity(library, config)
         report.retired.extend(s.skill_id for s in retired)
         report.metrics["skill_count_after"] = len(library)

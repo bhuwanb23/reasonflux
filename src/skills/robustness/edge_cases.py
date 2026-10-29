@@ -42,29 +42,44 @@ def is_ancient_core(
 def enforce_zombie_archive(
     skill: Skill, config: SkillRobustnessConfig | None = None
 ) -> bool:
-    """EC3: repeated failed reactivations → permanent archive. Returns True if archived."""
+    """EC3: repeated failed reactivations → permanent archive.
+
+    Returns True only when the skill actually reached ARCHIVED.
+    """
     config = config or SkillRobustnessConfig()
     meta = dict(skill.metadata or {})
     attempts = int(meta.get("reactivations", 0) or 0)
     last = dict(meta.get("last_reactivation") or {})
     raised = bool(last.get("raised_utility", False))
     threshold = int(config.zombie_permanent_archive_attempts)
-    if attempts >= threshold and not raised:
-        if skill.state is SkillState.ACTIVE:
-            skill.transition_to(SkillState.DORMANT)
-            skill.transition_to(SkillState.RETIRED)
-            skill.transition_to(SkillState.ARCHIVED)
-        elif skill.state is SkillState.RETIRED:
-            skill.transition_to(SkillState.ARCHIVED)
-        elif skill.state is SkillState.DORMANT:
-            skill.transition_to(SkillState.RETIRED)
-            skill.transition_to(SkillState.ARCHIVED)
-        meta["permanent_archive"] = True
-        meta["zombie"] = True
-        skill.metadata = meta
-        append_biography_event(skill, "archived", {"reason": "zombie"})
-        return True
-    return False
+    if attempts < threshold or raised:
+        return False
+    if skill.state is SkillState.ARCHIVED:
+        return False
+
+    # Walk any live state to RETIRED, then ARCHIVED.
+    if skill.state is SkillState.CANDIDATE:
+        skill.transition_to(SkillState.RETIRED)
+    elif skill.state is SkillState.PROMOTED:
+        skill.transition_to(SkillState.RETIRED)
+    elif skill.state is SkillState.ACTIVE:
+        skill.transition_to(SkillState.RETIRED)
+    elif skill.state is SkillState.GROWING:
+        skill.transition_to(SkillState.RETIRED)
+    elif skill.state is SkillState.CORE:
+        skill.transition_to(SkillState.RETIRED)
+    elif skill.state is SkillState.DORMANT:
+        skill.transition_to(SkillState.RETIRED)
+    if skill.state is SkillState.RETIRED:
+        skill.transition_to(SkillState.ARCHIVED)
+    if skill.state is not SkillState.ARCHIVED:
+        return False
+
+    meta["permanent_archive"] = True
+    meta["zombie"] = True
+    skill.metadata = meta
+    append_biography_event(skill, "archived", {"reason": "zombie"})
+    return True
 
 
 def detect_cannibalization(

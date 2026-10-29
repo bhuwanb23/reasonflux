@@ -37,12 +37,16 @@ def detect_premature_skill(
 
 
 def demote_skill(skill: Skill, library: SkillLibrary | None = None) -> Skill:
-    """Active-tier → PROMOTED → CANDIDATE for requalification."""
+    """Active-tier → PROMOTED → CANDIDATE for requalification.
+
+    CORE skills are capability anchors and are not demoted by SF1 recovery.
+    """
     del library  # library kept for API symmetry; skill mutated in place
+    if skill.state is SkillState.CORE:
+        return skill
     active_tier = {
         SkillState.ACTIVE,
         SkillState.GROWING,
-        SkillState.CORE,
     }
     if skill.state in active_tier:
         skill.transition_to(SkillState.PROMOTED)
@@ -111,14 +115,13 @@ def enforce_library_capacity(
             break
         if skill.state in (SkillState.RETIRED, SkillState.ARCHIVED, SkillState.CORE):
             continue
-        if skill.state is SkillState.CANDIDATE:
-            continue
         # Walk to retired when possible.
         if skill.state in (
             SkillState.ACTIVE,
             SkillState.GROWING,
             SkillState.PROMOTED,
             SkillState.DORMANT,
+            SkillState.CANDIDATE,
         ):
             skill.transition_to(SkillState.RETIRED)
             retired.append(skill)
@@ -131,10 +134,18 @@ def detect_duplicates(
     library: SkillLibrary,
     config: SkillRobustnessConfig | None = None,
 ) -> list[tuple[Skill, float]]:
+    """Similar live skills; retired/archived corpses and empty signatures ignored."""
     config = config or SkillRobustnessConfig()
-    sig = list(skill.trigger_conditions or [])
+    sig = [str(t) for t in (skill.trigger_conditions or []) if str(t).strip()]
+    if not sig:
+        return []
     hits = library.find_similar(sig, float(config.duplicate_similarity))
-    return [(s, score) for s, score in hits if s.skill_id != skill.skill_id]
+    return [
+        (s, score)
+        for s, score in hits
+        if s.skill_id != skill.skill_id
+        and s.state not in (SkillState.RETIRED, SkillState.ARCHIVED)
+    ]
 
 
 def merge_skills(

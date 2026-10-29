@@ -6,6 +6,7 @@ from dataclasses import dataclass, field
 from typing import Sequence
 
 from core.skill import Skill
+from core.states import SkillState
 from skills.library import SkillLibrary
 from skills.robustness.config import SkillRobustnessConfig
 from skills.robustness.metrics import retrieval_recall
@@ -18,14 +19,20 @@ def _norm(items: Sequence[str]) -> set[str]:
 def applicable_skills(
     library: SkillLibrary, requirements: Sequence[str]
 ) -> list[Skill]:
-    """Skills whose triggers overlap requirements (any state except archived)."""
+    """Retrievable skills whose triggers overlap requirements."""
     req = _norm(requirements)
+    if not req:
+        return []
     hits: list[Skill] = []
     for skill in library.list_skills():
-        if skill.state.value == "archived":
+        if skill.state not in (
+            SkillState.ACTIVE,
+            SkillState.GROWING,
+            SkillState.CORE,
+        ):
             continue
         triggers = _norm(skill.trigger_conditions or [])
-        if req & triggers:
+        if triggers and req & triggers:
             hits.append(skill)
     return hits
 
