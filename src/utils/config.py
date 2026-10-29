@@ -13,6 +13,7 @@ __all__ = [
     "load_default_configs",
     "load_invariant_policy",
     "load_mining_config",
+    "load_transfer_config",
     "load_validation_config",
 ]
 
@@ -81,3 +82,14 @@ def load_validation_config(config_dir: str | Path = DEFAULT_CONFIG_DIR) -> Any:
         return ValidationConfig()
     data = load_config(path).get("validation") or {}
     return ValidationConfig.from_dict(data)
+
+
+def load_transfer_config(config_dir: str | Path = DEFAULT_CONFIG_DIR) -> Any:
+    """Build a TransferConfig from configs/thresholds.yaml."""
+    from transfer.metrics import TransferConfig
+
+    path = Path(config_dir) / "thresholds.yaml"
+    if not path.exists():
+        return TransferConfig()
+    data = load_config(path).get("transfer") or {}
+    return TransferConfig.from_dict(data)
