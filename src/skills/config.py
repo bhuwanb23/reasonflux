@@ -52,6 +52,18 @@ class SkillConfig:
     reactivate_min_expected_su: float | None = None  # defaults to su_min
     reactivate_max_attempts: int = 2
     archive_after_tasks: int = 20
+    # Phase 11D-4 sequential composition
+    compose_max_skills: int = 3
+    compose_max_candidates_per_task: int = 8
+    compose_cost_base: float = 0.1
+    cu_min: float = 0.0
+    compose_min_successes_validate: int = 1
+    compose_min_reuse_store: int = 2
+    compose_min_reuse_promote: int = 3
+    compose_min_confidence: float = 0.4
+    compose_ncr_limit: float = 0.3
+    compose_reject_identical: bool = True
+    compose_max_literal_triggers: int = 2
 
     def __post_init__(self) -> None:
         if self.min_evidence < 1:
@@ -94,6 +106,20 @@ class SkillConfig:
             raise ValueError("decay_lambda must be >= 0")
         if self.reactivate_min_expected_su is None:
             self.reactivate_min_expected_su = self.su_min
+        if self.compose_max_skills < 2:
+            raise ValueError("compose_max_skills must be >= 2")
+        if self.compose_max_candidates_per_task < 1:
+            raise ValueError("compose_max_candidates_per_task must be >= 1")
+        if self.compose_cost_base < 0:
+            raise ValueError("compose_cost_base must be >= 0")
+        if self.compose_min_successes_validate < 1:
+            raise ValueError("compose_min_successes_validate must be >= 1")
+        if self.compose_min_reuse_store < 1:
+            raise ValueError("compose_min_reuse_store must be >= 1")
+        if self.compose_min_reuse_promote < 1:
+            raise ValueError("compose_min_reuse_promote must be >= 1")
+        if self.compose_max_literal_triggers < 0:
+            raise ValueError("compose_max_literal_triggers must be >= 0")
         for name in (
             "min_consistency",
             "min_generality",
@@ -105,6 +131,8 @@ class SkillConfig:
             "health_stable",
             "health_weak",
             "retire_max_ts",
+            "compose_min_confidence",
+            "compose_ncr_limit",
         ):
             value = getattr(self, name)
             if not 0.0 <= float(value) <= 1.0:

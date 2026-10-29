@@ -96,5 +96,5 @@ Streaks live in `metadata["lifecycle"]`.
 
 ## Non-goals
 
-Composition engine (11D-4), full failure taxonomy / safeguards suite (11D-5),
-re-deriving SU math (consume 11D-2).
+Full failure taxonomy / safeguards suite (11D-5), re-deriving SU math
+(consume 11D-2). Composition: [composition.md](composition.md).

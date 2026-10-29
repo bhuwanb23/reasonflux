@@ -64,4 +64,5 @@ replace SCV birth gates (11D-1).
 
 ## Non-goals
 
-Composition engine (11D-4), CGR learning. Lifecycle FSM: [lifecycle.md](lifecycle.md).
+CGR learning. Lifecycle FSM: [lifecycle.md](lifecycle.md). Composition CU:
+[composition.md](composition.md).

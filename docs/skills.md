@@ -79,6 +79,7 @@ reflection · rotation · counting · grouping (signature heuristics)
 | `retirement.py` | Retire/archive decisions (no delete) |
 | `reactivation.py` | Evidence-gated revival + zombie guard |
 | `lifecycle/` | Health, aging, biography, policy, sweep |
+| `composition/` | Sequential compose, CU, graph, promote |
 
 ## Skill utility (11D-2)
 
@@ -90,6 +91,11 @@ Monitoring refreshes `skill.utility`; retrieval prefers higher SU.
 See [lifecycle.md](lifecycle.md). Growing / Core / Dormant / Retired / Archived
 plus reactivation. Default retrieval is the active tier (ACTIVE/GROWING/CORE).
 
+## Composition (11D-4)
+
+See [composition.md](composition.md). Sequential pairs/triples when no single
+skill covers the task; promote reusable compositions to Skills.
+
 ## Non-goals
 
-Composition engine (11D-4), skill failure catalogue (11D-5).
+Skill failure catalogue (11D-5). Parallel/conditional/recursive composition later.
