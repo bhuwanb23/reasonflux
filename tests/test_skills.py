@@ -4,8 +4,11 @@ from skills import (
     SkillConfig,
     SkillCreationTrigger,
     SkillLibrary,
+    compute_portfolio_metrics,
+    compute_su,
     create_skills_from_invariants,
     promote_skill,
+    rank_by_utility,
     retrieve_skills,
 )
 
@@ -17,3 +20,6 @@ def test_skills_package_exports():
     assert callable(create_skills_from_invariants)
     assert callable(promote_skill)
     assert callable(retrieve_skills)
+    assert callable(compute_su)
+    assert callable(rank_by_utility)
+    assert callable(compute_portfolio_metrics)

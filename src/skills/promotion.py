@@ -18,6 +18,7 @@ from skills.intake import intake_invariant
 from skills.library import SkillLibrary
 from skills.qualification import QualificationResult, qualify_candidate
 from skills.trigger import SkillCreationTrigger
+from skills.utility import refresh_skill_utility
 
 
 @dataclass(slots=True)
@@ -110,6 +111,7 @@ def promote_skill(
         reasons=["scv", "transfer", "evidence", "ntr"],
     )
     skill.metadata["birth"] = birth.to_dict()
+    refresh_skill_utility(skill, config)
 
     library.add(skill)
     return PromotionResult(

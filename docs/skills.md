@@ -71,11 +71,18 @@ reflection · rotation · counting · grouping (signature heuristics)
 | `promotion.py` | Promote to Active |
 | `library.py` | Capability memory |
 | `pipeline.py` | End-to-end SCT |
-| `monitoring.py` | Stage 7 hooks |
-| `retrieval.py` | Thin condition match |
+| `monitoring.py` | Stage 7 hooks (+ SU refresh) |
+| `retrieval.py` | Condition match, SU ranking |
+| `utility.py` / `utility_components.py` | SU + economic status (11D-2) |
+| `competition.py` / `portfolio.py` | Rank / portfolio metrics |
+| `economics.py` | EFU vs lifetime cost (advisory) |
 | `retirement.py` | Stub (11D-3) |
+
+## Skill utility (11D-2)
+
+See [skill_economics.md](skill_economics.md). `SU = (RCG+TV+CP+RV)−(CC+MC+NR)`.
+Monitoring refreshes `skill.utility`; retrieval prefers higher SU.
 
 ## Non-goals
 
-Utility economics (11D-2), retirement policies (11D-3), composition (11D-4),
-skill failure catalogue (11D-5).
+Retirement policies (11D-3), composition engine (11D-4), skill failure catalogue (11D-5).

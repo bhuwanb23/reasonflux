@@ -8,7 +8,22 @@ metrics:
     formula: reuse * AG * TS - creation_cost
   SU:
     name: Skill Utility
-    formula: accuracy_gain * cost_reduction * transferability
+    formula: (RCG + TV + CP + RV) - (CC + MC + NR)
+  ASU:
+    name: Average Skill Utility
+    formula: mean(active_skill_utilities)
+  TSU:
+    name: Top Skill Utility
+    formula: max(active_skill_utilities)
+  PU:
+    name: Portfolio Utility
+    formula: sum(positive_active_skill_utilities)
+  UG:
+    name: Utility Growth
+    formula: asu_now - asu_previous
+  NTB:
+    name: Negative Transfer Burden
+    formula: mean(negative_transfer_risk)
   TS:
     name: Transfer Score
     formula: performance_after - performance_before

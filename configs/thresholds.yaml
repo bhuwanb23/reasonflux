@@ -28,6 +28,17 @@ skills:
   min_consistency: 0.6
   min_generality: 0.3
   min_reasoning_value: 0.1
+  # Phase 11D-2 skill utility economics
+  su_min: 0.0
+  reuse_norm: 10
+  tv_coverage_norm: 5
+  base_maintenance: 0.05
+  ntr_impact: 1.0
+  default_cp: 0.3
+  library_capacity: 50
+  core_su: 0.6
+  core_min_reuse: 3
+  core_min_transfer: 0.5
 
 traces:
   min_steps: 1

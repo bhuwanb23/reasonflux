@@ -1,7 +1,4 @@
-"""Thin skill retrieval by trigger conditions (Phase 11D-1).
-
-Full ranking / confidence-weighted retrieval expands in later 11D phases.
-"""
+"""Skill retrieval by trigger conditions with SU ranking (Phase 11D-2)."""
 
 from __future__ import annotations
 
@@ -9,7 +6,9 @@ from typing import Sequence
 
 from core.skill import Skill
 from core.states import SkillState
+from skills.config import SkillConfig
 from skills.library import SkillLibrary
+from skills.utility import compute_su
 
 
 def retrieve_skills(
@@ -17,21 +16,40 @@ def retrieve_skills(
     conditions: Sequence[str] | None = None,
     *,
     state: SkillState | None = SkillState.ACTIVE,
+    rank_by: str = "utility",
+    config: SkillConfig | None = None,
 ) -> list[Skill]:
-    """Return skills matching any trigger condition (simple overlap)."""
+    """Return matching skills ranked by utility (default) or confidence."""
+    config = config or SkillConfig()
     skills = library.list_skills(state=state) if state else library.list_skills()
-    if not conditions:
-        return list(skills)
-    wanted = {str(c).lower() for c in conditions if str(c).strip()}
-    hits: list[Skill] = []
-    for skill in skills:
-        triggers = {str(t).lower() for t in skill.trigger_conditions}
-        if wanted & triggers:
-            hits.append(skill)
-    hits.sort(
-        key=lambda s: (
-            -float((s.metadata or {}).get("confidence", 0.0) or 0.0),
-            s.skill_id,
+    if conditions:
+        wanted = {str(c).lower() for c in conditions if str(c).strip()}
+        hits: list[Skill] = []
+        for skill in skills:
+            triggers = {str(t).lower() for t in skill.trigger_conditions}
+            if wanted & triggers:
+                hits.append(skill)
+        skills = hits
+    else:
+        skills = list(skills)
+
+    if rank_by == "confidence":
+        skills.sort(
+            key=lambda s: (
+                -float((s.metadata or {}).get("confidence", 0.0) or 0.0),
+                s.skill_id,
+            )
         )
-    )
-    return hits
+    else:
+        skills.sort(
+            key=lambda s: (
+                -float(
+                    s.utility
+                    if (s.metadata or {}).get("utility_breakdown")
+                    else compute_su(s, config)
+                ),
+                -float((s.metadata or {}).get("confidence", 0.0) or 0.0),
+                s.skill_id,
+            )
+        )
+    return skills

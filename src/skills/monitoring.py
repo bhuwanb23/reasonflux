@@ -1,6 +1,7 @@
-"""Stage 7 — post-creation monitoring hooks (Phase 11D-1).
+"""Stage 7 — post-creation monitoring hooks (Phase 11D-1 / 11D-2).
 
-Records reuse / transfer / negative events. Retirement decisions are 11D-3.
+Records reuse / transfer / negative events and refreshes Skill Utility.
+Retirement decisions are 11D-3.
 """
 
 from __future__ import annotations
@@ -9,7 +10,9 @@ import time
 from typing import Any
 
 from core.skill import Skill
+from skills.config import SkillConfig
 from skills.evidence import SkillEvidence, compute_skill_confidence
+from skills.utility import refresh_skill_utility
 
 
 def _evidence_of(skill: Skill) -> SkillEvidence:
@@ -23,8 +26,18 @@ def _write_evidence(skill: Skill, evidence: SkillEvidence) -> None:
     skill.metadata["confidence"] = compute_skill_confidence(evidence)
 
 
-def record_reuse(skill: Skill, *, task_id: str = "", detail: dict[str, Any] | None = None) -> None:
-    """Append a reuse event and bump reuse_count."""
+def _refresh(skill: Skill, config: SkillConfig | None = None) -> None:
+    refresh_skill_utility(skill, config)
+
+
+def record_reuse(
+    skill: Skill,
+    *,
+    task_id: str = "",
+    detail: dict[str, Any] | None = None,
+    config: SkillConfig | None = None,
+) -> None:
+    """Append a reuse event, bump reuse_count, refresh SU."""
     event = {"task_id": task_id, "timestamp": time.time(), **(detail or {})}
     skill.reuse_history = list(skill.reuse_history or [])
     skill.reuse_history.append(event)
@@ -33,6 +46,7 @@ def record_reuse(skill: Skill, *, task_id: str = "", detail: dict[str, Any] | No
     evidence.utility = list(evidence.utility)
     evidence.utility.append({"kind": "reuse", **event})
     _write_evidence(skill, evidence)
+    _refresh(skill, config)
 
 
 def record_transfer(
@@ -42,8 +56,9 @@ def record_transfer(
     target_family: str = "",
     success: bool = True,
     benefit: float = 0.0,
+    config: SkillConfig | None = None,
 ) -> None:
-    """Append a transfer outcome to history and evidence."""
+    """Append a transfer outcome and refresh SU."""
     event = {
         "source_family": source_family,
         "target_family": target_family,
@@ -61,14 +76,20 @@ def record_transfer(
         evidence.negative = list(evidence.negative)
         evidence.negative.append({"kind": "negative_transfer", **event})
     _write_evidence(skill, evidence)
+    _refresh(skill, config)
 
 
 def record_negative(
-    skill: Skill, *, reason: str = "", detail: dict[str, Any] | None = None
+    skill: Skill,
+    *,
+    reason: str = "",
+    detail: dict[str, Any] | None = None,
+    config: SkillConfig | None = None,
 ) -> None:
-    """Record negative evidence (harmful application)."""
+    """Record negative evidence and refresh SU."""
     event = {"reason": reason, "timestamp": time.time(), **(detail or {})}
     evidence = _evidence_of(skill)
     evidence.negative = list(evidence.negative)
     evidence.negative.append({"kind": "negative", **event})
     _write_evidence(skill, evidence)
+    _refresh(skill, config)
