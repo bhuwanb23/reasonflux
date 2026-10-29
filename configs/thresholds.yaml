@@ -16,10 +16,18 @@ invariants:
   strong_score: 0.7
 
 skills:
-  # Create skill when SCV = Reuse × AG × TS − CreationCost exceeds this
+  # Phase 11D-1 SCT — create when SCV = Reuse × AG × TS − CreationCost exceeds this
   skill_creation_threshold: 0.0
-  # Alternate stricter threshold used in some Phase 11A examples
   skill_creation_threshold_strict: 2.0
+  min_its: 0.5
+  min_evidence: 3
+  ntr_limit: 0.3
+  similarity_merge: 0.85
+  default_creation_cost: 0.1
+  min_frequency: 3
+  min_consistency: 0.6
+  min_generality: 0.3
+  min_reasoning_value: 0.1
 
 traces:
   min_steps: 1
