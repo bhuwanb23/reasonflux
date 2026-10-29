@@ -116,3 +116,28 @@ robustness:
   difficulty_compositional: 0.75
   difficulty_structural: 1.0
   ntr_blacklist_violations: 2
+
+skill_robustness:
+  # Phase 11D-5 skill failure modes and robust gates
+  ser_warn: 0.5
+  ser_restrict: 0.8
+  min_confidence_promote: 0.4
+  min_evidence_promote: 3
+  min_utility_promote: 0.0
+  duplicate_similarity: 0.85
+  ntr_warn: 0.2
+  ntr_restrict: 0.3
+  ntr_retire: 0.5
+  rr_min: 0.6
+  retrieval_boost: 0.2
+  cu_min_composition: 0.0
+  composition_ncr_limit: 0.3
+  cgr_collapse: -0.05
+  collapse_periods: 2
+  tfd_min_promote: 0.2
+  transfer_override_min: 0.7
+  ancient_core_min_age: 50
+  zombie_permanent_archive_attempts: 2
+  cannibalization_ratio: 0.5
+  audit_max_actions: 5
+  library_capacity: 50

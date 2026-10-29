@@ -55,12 +55,18 @@ class TraceLifecyclePhase(str, Enum):
 # Allowed forward transitions (and self-stay). Phase 11D-3 reactivation:
 # RETIRED/ARCHIVED → ACTIVE is legal at FSM level; evidence gates live in
 # skills.reactivation.reactivate_skill.
+# Phase 11D-5 demotion: ACTIVE/GROWING/CORE → PROMOTED → CANDIDATE.
 SKILL_TRANSITIONS: dict[SkillState, frozenset[SkillState]] = {
     SkillState.CANDIDATE: frozenset(
         {SkillState.CANDIDATE, SkillState.PROMOTED, SkillState.RETIRED}
     ),
     SkillState.PROMOTED: frozenset(
-        {SkillState.PROMOTED, SkillState.ACTIVE, SkillState.RETIRED}
+        {
+            SkillState.PROMOTED,
+            SkillState.ACTIVE,
+            SkillState.RETIRED,
+            SkillState.CANDIDATE,
+        }
     ),
     SkillState.ACTIVE: frozenset(
         {
@@ -68,6 +74,7 @@ SKILL_TRANSITIONS: dict[SkillState, frozenset[SkillState]] = {
             SkillState.GROWING,
             SkillState.DORMANT,
             SkillState.RETIRED,
+            SkillState.PROMOTED,
         }
     ),
     SkillState.GROWING: frozenset(
@@ -77,6 +84,7 @@ SKILL_TRANSITIONS: dict[SkillState, frozenset[SkillState]] = {
             SkillState.CORE,
             SkillState.DORMANT,
             SkillState.RETIRED,
+            SkillState.PROMOTED,
         }
     ),
     SkillState.CORE: frozenset(
@@ -86,6 +94,7 @@ SKILL_TRANSITIONS: dict[SkillState, frozenset[SkillState]] = {
             SkillState.GROWING,
             SkillState.DORMANT,
             SkillState.RETIRED,
+            SkillState.PROMOTED,
         }
     ),
     SkillState.DORMANT: frozenset(
