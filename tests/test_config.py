@@ -44,3 +44,13 @@ def test_load_invariant_policy_falls_back_when_missing(tmp_path: Path):
     policy = load_invariant_policy(tmp_path)
     assert isinstance(policy, InvariantPolicy)
     assert policy.min_frequency == 3
+
+
+def test_load_robustness_config_from_repo():
+    from invariants.robustness import RobustnessConfig
+    from utils.config import load_robustness_config
+
+    cfg = load_robustness_config(Path("configs"))
+    assert isinstance(cfg, RobustnessConfig)
+    assert cfg.min_vst == 0.6
+    assert cfg.ier_restrict == 3.0

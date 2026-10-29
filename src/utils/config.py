@@ -13,6 +13,7 @@ __all__ = [
     "load_default_configs",
     "load_invariant_policy",
     "load_mining_config",
+    "load_robustness_config",
     "load_transfer_config",
     "load_validation_config",
 ]
@@ -93,3 +94,14 @@ def load_transfer_config(config_dir: str | Path = DEFAULT_CONFIG_DIR) -> Any:
         return TransferConfig()
     data = load_config(path).get("transfer") or {}
     return TransferConfig.from_dict(data)
+
+
+def load_robustness_config(config_dir: str | Path = DEFAULT_CONFIG_DIR) -> Any:
+    """Build a RobustnessConfig from configs/thresholds.yaml."""
+    from invariants.robustness.config import RobustnessConfig
+
+    path = Path(config_dir) / "thresholds.yaml"
+    if not path.exists():
+        return RobustnessConfig()
+    data = load_config(path).get("robustness") or {}
+    return RobustnessConfig.from_dict(data)

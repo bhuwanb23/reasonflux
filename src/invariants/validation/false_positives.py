@@ -1,8 +1,10 @@
-"""False-positive handling — variation survival (Phase 11C-3)."""
+"""False-positive handling — variation survival (Phase 11C-3 / 11C-5)."""
 
 from __future__ import annotations
 
 from core.invariant import Invariant
+from invariants.robustness.config import RobustnessConfig
+from invariants.robustness.vst import passes_vst, vst_for_invariant
 from invariants.specification.policy import InvariantPolicy
 
 
@@ -27,11 +29,11 @@ def has_task_specific_literals(
 
 
 def failed_variation_survival(invariant: Invariant) -> bool:
-    """True when metadata records failed color/shape/position probes."""
+    """True when metadata records failed color/shape/position/count probes."""
     failed = (invariant.metadata or {}).get("failed_variations") or []
     if not failed:
         return False
-    markers = {"color", "shape", "position"}
+    markers = {"color", "shape", "position", "count"}
     return any(str(item).lower() in markers for item in failed)
 
 
@@ -44,4 +46,6 @@ def is_false_positive(
         reasons.append("task_specific_literal")
     if failed_variation_survival(invariant):
         reasons.append("failed_variation_survival")
+    if not passes_vst(invariant, RobustnessConfig()):
+        reasons.append("low_vst")
     return reasons
