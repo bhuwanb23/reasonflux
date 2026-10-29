@@ -55,6 +55,7 @@ def retrieve_skills(
         skills.sort(
             key=lambda s: (
                 -float((s.metadata or {}).get("confidence", 0.0) or 0.0),
+                -float((s.metadata or {}).get("retrieval_boost", 0.0) or 0.0),
                 s.skill_id,
             )
         )
@@ -65,7 +66,8 @@ def retrieve_skills(
                     s.utility
                     if (s.metadata or {}).get("utility_breakdown")
                     else compute_su(s, config)
-                ),
+                )
+                - float((s.metadata or {}).get("retrieval_boost", 0.0) or 0.0),
                 -float((s.metadata or {}).get("confidence", 0.0) or 0.0),
                 s.skill_id,
             )

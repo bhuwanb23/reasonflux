@@ -98,4 +98,5 @@ skill covers the task; promote reusable compositions to Skills.
 
 ## Non-goals
 
-Skill failure catalogue (11D-5). Parallel/conditional/recursive composition later.
+Capability growth metrics (11E). Parallel/conditional/recursive composition later.
+Skill failure modes and safeguards: [skill_failure_modes.md](skill_failure_modes.md).

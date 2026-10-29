@@ -15,6 +15,7 @@ __all__ = [
     "load_mining_config",
     "load_robustness_config",
     "load_skill_config",
+    "load_skill_robustness_config",
     "load_transfer_config",
     "load_validation_config",
 ]
@@ -117,3 +118,14 @@ def load_skill_config(config_dir: str | Path = DEFAULT_CONFIG_DIR) -> Any:
         return SkillConfig()
     data = load_config(path).get("skills") or {}
     return SkillConfig.from_dict(data)
+
+
+def load_skill_robustness_config(config_dir: str | Path = DEFAULT_CONFIG_DIR) -> Any:
+    """Build a SkillRobustnessConfig from configs/thresholds.yaml."""
+    from skills.robustness.config import SkillRobustnessConfig
+
+    path = Path(config_dir) / "thresholds.yaml"
+    if not path.exists():
+        return SkillRobustnessConfig()
+    data = load_config(path).get("skill_robustness") or {}
+    return SkillRobustnessConfig.from_dict(data)

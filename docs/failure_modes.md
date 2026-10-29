@@ -79,4 +79,5 @@ Stored in `invariant.metadata["failure_level"]` and `["failure_reasons"]`.
 
 ## Non-goals
 
-Skill creation, SCV, skill library (11D). Full skill merge lifecycle (11D).
+Skill creation, SCV, skill library (11D). Skill-side failure modes and robust
+gates are implemented in 11D-5: [skill_failure_modes.md](skill_failure_modes.md).

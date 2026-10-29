@@ -43,6 +43,16 @@ from skills.qualification import QualificationResult, qualify_candidate
 from skills.reactivation import ReactivationResult, reactivate_skill
 from skills.retrieval import retrieve_skills
 from skills.retirement import retire_skills
+from skills.robustness import (
+    SkillFailure,
+    SkillRobustnessConfig,
+    audit_library,
+    demote_skill,
+    diagnose_skill,
+    evaluate_skill_promotion_gate,
+    evaluate_skill_retirement_gate,
+    merge_skills,
+)
 from skills.trigger import SkillCreationTrigger
 from skills.utility import (
     classify_economic_status,
@@ -67,10 +77,13 @@ __all__ = [
     "SkillCreationStatistics",
     "SkillCreationTrigger",
     "SkillEvidence",
+    "SkillFailure",
     "SkillLibrary",
+    "SkillRobustnessConfig",
     "SkillUtilityBreakdown",
     "advance_composition",
     "apply_lifecycle",
+    "audit_library",
     "build_biography",
     "classify_economic_status",
     "classify_mvp_category",
@@ -81,9 +94,13 @@ __all__ = [
     "compute_skill_confidence",
     "compute_su",
     "create_skills_from_invariants",
+    "demote_skill",
+    "diagnose_skill",
     "evaluate_library_lifecycle",
     "evaluate_lifecycle",
     "evaluate_promotion_economics",
+    "evaluate_skill_promotion_gate",
+    "evaluate_skill_retirement_gate",
     "expected_future_utility",
     "from_invariant",
     "generate_candidates",
@@ -91,6 +108,7 @@ __all__ = [
     "is_promotable_invariant",
     "lifetime_cost",
     "make_birth_record",
+    "merge_skills",
     "promote_composition",
     "promote_skill",
     "propose_sequential",

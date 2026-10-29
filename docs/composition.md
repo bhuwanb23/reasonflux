@@ -74,5 +74,5 @@ Returned on `ComposeResult` (standalone; no SkillLibrary API break).
 
 ## Non-goals
 
-Parallel / conditional / recursive composition; full failure catalogue (11D-5);
-re-deriving SU math.
+Parallel / conditional / recursive composition; re-deriving SU math.
+Skill failure modes and safeguards: [skill_failure_modes.md](skill_failure_modes.md).
