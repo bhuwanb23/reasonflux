@@ -5,6 +5,7 @@ from skills import (
     SkillCreationTrigger,
     SkillLibrary,
     apply_lifecycle,
+    compute_cu,
     compute_health,
     compute_portfolio_metrics,
     compute_su,
@@ -15,6 +16,8 @@ from skills import (
     reactivate_skill,
     retire_skills,
     retrieve_skills,
+    should_compose,
+    try_compose,
 )
 
 
@@ -33,3 +36,6 @@ def test_skills_package_exports():
     assert callable(retire_skills)
     assert callable(reactivate_skill)
     assert callable(compute_health)
+    assert callable(try_compose)
+    assert callable(should_compose)
+    assert callable(compute_cu)
