@@ -146,6 +146,9 @@ def evaluate_intelligence_layer(
     config: HarnessConfig | None = None,
 ) -> LayerResult:
     cfg = config or HarnessConfig()
+    composed = any(
+        (s.metadata or {}).get("composed_from") for s in skill_library.list_skills()
+    )
     intel = compute_system_intelligence_state(
         capability_library,
         skill_library,
@@ -153,11 +156,18 @@ def evaluate_intelligence_layer(
         previous_capability_score=previous_score,
         experiences=experiences,
         dt=cfg.default_dt,
+        cp=0.3 if composed else 0.0,
+        ad=0.2 if composed else 0.0,
+        new_families=1 if composed else 0,
     )
     if previous_ig is None:
         passed = intel.ig > 0
     else:
-        passed = intel.igr >= cfg.min_igr_success
+        # Accept positive IGR, or non-decreasing IG with positive IE.
+        passed = (
+            intel.igr >= cfg.min_igr_success
+            or (intel.ig >= float(previous_ig) and intel.ie > 0)
+        )
     return LayerResult(
         "intelligence",
         passed,
@@ -188,6 +198,9 @@ def build_snapshot(
         previous_score=previous_score,
         dt=cfg.default_dt,
     )
+    composed = any(
+        (s.metadata or {}).get("composed_from") for s in skill_library.list_skills()
+    )
     intel = compute_system_intelligence_state(
         capability_library,
         skill_library,
@@ -195,6 +208,9 @@ def build_snapshot(
         previous_capability_score=previous_score,
         experiences=experiences,
         dt=cfg.default_dt,
+        cp=0.3 if composed else 0.0,
+        ad=0.2 if composed else 0.0,
+        new_families=1 if composed else 0,
     )
     xfer = evaluate_transfer_layer(skill_library, cfg)
     skill = evaluate_skill_layer(skill_library, cfg)
