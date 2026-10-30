@@ -34,6 +34,30 @@ from evaluation.growth_metrics import (
 )
 from evaluation.skill_metrics import compute_su, skill_utility_breakdown
 from evaluation.transfer_metrics import compute_ts
+from evaluation.intelligence import (
+    intelligence_score,
+    compute_igr,
+    compute_ia,
+    compute_ie,
+    compute_elasticity,
+)
+from evaluation.intelligence_state import (
+    IntelligenceState,
+    IntelligencePortfolioMetrics,
+    compute_system_intelligence_state,
+)
+from evaluation.intelligence_graph import (
+    build_intelligence_graph,
+    IntelligenceGraph,
+    out_degree,
+)
+from evaluation.intelligence_checks import (
+    audit_intelligence,
+    detect_skill_hoarding,
+    detect_transfer_collapse,
+    detect_fragmentation_persistence,
+    detect_composition_failure,
+)
 
 __all__ = [
     "GROWTH_STATES",
@@ -65,4 +89,20 @@ __all__ = [
     "skill_utility_breakdown",
     "transfer_growth",
     "utility_growth",
+    "intelligence_score",
+    "compute_igr",
+    "compute_ia",
+    "compute_ie",
+    "compute_elasticity",
+    "IntelligenceState",
+    "IntelligencePortfolioMetrics",
+    "compute_system_intelligence_state",
+    "build_intelligence_graph",
+    "IntelligenceGraph",
+    "out_degree",
+    "audit_intelligence",
+    "detect_skill_hoarding",
+    "detect_transfer_collapse",
+    "detect_fragmentation_persistence",
+    "detect_composition_failure",
 ]
