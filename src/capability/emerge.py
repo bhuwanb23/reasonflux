@@ -103,19 +103,38 @@ def propose_capabilities_from_library(
             )
         )
 
-    # Cross-domain: one cluster spanning ≥ 2 categories when enough skills.
-    cats_present = { _category(s) for s in skills if _category(s) != "general" }
-    if len(cats_present) >= 2 and len(skills) >= 2:
-        ids = [s.skill_id for s in skills]
-        _add(
-            Capability(
-                capability_id="cap-cross-domain",
-                name="Cross-Domain Capability",
-                capability_type=CapabilityType.CROSS_DOMAIN,
-                skill_ids=ids[: min(6, len(ids))],
-                metadata={"categories": sorted(cats_present)},
+    # Cross-domain: ≥1 skill from ≥2 non-general categories.
+    by_cat_all: dict[str, list[str]] = defaultdict(list)
+    for skill in skills:
+        cat = _category(skill)
+        if cat != "general":
+            by_cat_all[cat].append(skill.skill_id)
+    if len(by_cat_all) >= 2:
+        cross_ids: list[str] = []
+        for cat in sorted(by_cat_all):
+            if by_cat_all[cat]:
+                cross_ids.append(by_cat_all[cat][0])
+            if len(cross_ids) >= 6:
+                break
+        # Fill remaining slots from leftover members while preserving multi-cat.
+        if len(cross_ids) >= 2:
+            for cat in sorted(by_cat_all):
+                for sid in by_cat_all[cat][1:]:
+                    if sid not in cross_ids:
+                        cross_ids.append(sid)
+                    if len(cross_ids) >= 6:
+                        break
+                if len(cross_ids) >= 6:
+                    break
+            _add(
+                Capability(
+                    capability_id="cap-cross-domain",
+                    name="Cross-Domain Capability",
+                    capability_type=CapabilityType.CROSS_DOMAIN,
+                    skill_ids=cross_ids,
+                    metadata={"categories": sorted(by_cat_all)},
+                )
             )
-        )
 
     return proposed
 

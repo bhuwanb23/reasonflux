@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from capability.config import CapabilityConfig
+from capability.evidence import transfer_event_count
 from capability.models import Capability
 from skills.library import SkillLibrary
 
@@ -53,13 +54,7 @@ def compute_confidence(
     del config
     evidence = capability.evidence or {}
     skill_ev = list(evidence.get("skills") or [])
-    transfer_ev = list(evidence.get("transfer") or [])
-    # Also count live transfer history on member skills.
-    transfer_events = len(transfer_ev) + len(capability.transfer_history or [])
-    for sid in capability.skill_ids:
-        skill = library.get(sid)
-        if skill is not None:
-            transfer_events += len(skill.transfer_history or [])
+    transfer_events = transfer_event_count(capability, library)
     evidence_score = _clamp01(len(skill_ev) / max(1, len(capability.skill_ids) or 1))
     transfer_norm = _clamp01(transfer_events / 5.0)
     # Consistency: fraction of members with positive transfer_score.

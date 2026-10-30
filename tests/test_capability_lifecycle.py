@@ -45,12 +45,8 @@ def test_advance_emerging_to_developing_with_transfer():
     seed_from_skills(cap, lib)
     cfg = CapabilityConfig(min_utility=0.0, min_transfer_events=1)
     advance_capability(cap, library=lib, config=cfg, previous_utility=0.0)
-    assert cap.state in (
-        CapabilityLifecycle.DEVELOPING,
-        CapabilityLifecycle.ESTABLISHED,
-        CapabilityLifecycle.CORE,
-    )
-    assert cap.state is not CapabilityLifecycle.EMERGING
+    # One hop per advance: emerging → developing only.
+    assert cap.state is CapabilityLifecycle.DEVELOPING
 
 
 def test_ghost_cannot_establish_without_transfer():

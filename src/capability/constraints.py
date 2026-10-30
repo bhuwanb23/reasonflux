@@ -33,18 +33,16 @@ def validate_capability(
         reasons.append("min_skills")
 
     present = [sid for sid in capability.skill_ids if library.get(sid) is not None]
-    if not present and capability.skill_ids:
+    if capability.skill_ids and len(present) < len(capability.skill_ids):
         reasons.append("missing_skills")
 
-    transfers = transfer_event_count(capability)
-    for sid in capability.skill_ids:
-        skill = library.get(sid)
-        if skill is not None:
-            transfers += len(skill.transfer_history or [])
+    transfers = transfer_event_count(capability, library)
     if transfers < int(config.min_transfer_events):
         reasons.append("transfer")
 
-    breakdown = compute_capability_utility(capability, library, config)
+    breakdown = compute_capability_utility(
+        capability, library, config, record_history=False
+    )
     if breakdown.capu < float(config.min_utility):
         reasons.append("utility")
 

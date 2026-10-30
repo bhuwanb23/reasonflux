@@ -46,18 +46,13 @@ def advance_capability(
         capability, library, config, total_families=total_families
     )
     refresh_capability_scores(capability, library, config)
-    transfers = transfer_event_count(capability)
-    # Also count member skill transfers for ghost/transfer gates.
-    for sid in capability.skill_ids:
-        skill = library.get(sid)
-        if skill is not None:
-            transfers += len(skill.transfer_history or [])
+    transfers = transfer_event_count(capability, library)
     meta = dict(capability.metadata or {})
     ug = breakdown.capu - prev
     meta["previous_utility"] = breakdown.capu
     meta["utility_growth"] = ug
 
-    # Decline on sustained CapU drop.
+    # Decline on sustained CapU drop (at most one transition this call).
     if ug <= float(config.decline_ug) and capability.state not in (
         CapabilityLifecycle.EMERGING,
         CapabilityLifecycle.ARCHIVED,
@@ -73,8 +68,6 @@ def advance_capability(
                 and streak >= int(config.archive_low_utility_periods)
             ):
                 capability.transition_to(CapabilityLifecycle.ARCHIVED)
-                capability.metadata = meta
-                return capability
         capability.metadata = meta
         return capability
 
@@ -82,33 +75,24 @@ def advance_capability(
 
     # Ghost guard: no transfer → cannot leave emerging toward established.
     has_transfer = transfers >= int(config.min_transfer_events)
-
+    # At most one forward transition per advance call.
     if capability.state is CapabilityLifecycle.EMERGING:
-        if (
-            has_transfer
-            and breakdown.capu >= float(config.min_utility)
-        ):
+        if has_transfer and breakdown.capu >= float(config.min_utility):
             capability.transition_to(CapabilityLifecycle.DEVELOPING)
-
-    if capability.state is CapabilityLifecycle.DEVELOPING:
+    elif capability.state is CapabilityLifecycle.DEVELOPING:
         if (
             has_transfer
             and capability.confidence >= float(config.min_confidence)
             and capability.coverage >= float(config.min_coverage)
         ):
             capability.transition_to(CapabilityLifecycle.ESTABLISHED)
-        elif not has_transfer:
-            # Stay developing or fall back — cannot establish as ghost.
-            pass
-
-    if capability.state is CapabilityLifecycle.ESTABLISHED:
+    elif capability.state is CapabilityLifecycle.ESTABLISHED:
         if (
             capability.strength >= float(config.core_min_strength)
             and capability.confidence >= float(config.core_min_confidence)
         ) or _member_is_anchor(capability, library):
             capability.transition_to(CapabilityLifecycle.CORE)
-
-    if capability.state is CapabilityLifecycle.DECLINING and ug > 0:
+    elif capability.state is CapabilityLifecycle.DECLINING and ug > 0:
         capability.transition_to(CapabilityLifecycle.DEVELOPING)
 
     capability.metadata = meta

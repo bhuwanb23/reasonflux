@@ -113,12 +113,7 @@ def detect_ghost(
     skill_library: SkillLibrary | None = None,
 ) -> RepresentationFailure | None:
     """Capability claim without transfer support."""
-    transfers = transfer_event_count(capability)
-    if skill_library is not None:
-        for sid in capability.skill_ids:
-            skill = skill_library.get(sid)
-            if skill is not None:
-                transfers += len(skill.transfer_history or [])
+    transfers = transfer_event_count(capability, skill_library)
     if transfers == 0 and (
         float(capability.utility or 0.0) > 0
         or float(capability.confidence or 0.0) > 0

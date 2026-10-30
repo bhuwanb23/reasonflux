@@ -49,6 +49,7 @@ def compute_capability_utility(
     config: CapabilityConfig | None = None,
     *,
     total_families: int | None = None,
+    record_history: bool = True,
 ) -> CapabilityUtilityBreakdown:
     """CapU = w_su·mean(SU) + w_ts·mean(TS) + w_cov·CCov + w_comp·comp_bonus."""
     config = config or CapabilityConfig()
@@ -84,10 +85,11 @@ def compute_capability_utility(
         composition_bonus=bonus,
         capu=float(capu),
     )
-    capability.utility = breakdown.capu
-    meta = dict(capability.metadata or {})
-    meta["capu_breakdown"] = breakdown.to_dict()
-    capability.metadata = meta
-    capability.utility_history = list(capability.utility_history or [])
-    capability.utility_history.append({"utility": breakdown.capu})
+    if record_history:
+        capability.utility = breakdown.capu
+        meta = dict(capability.metadata or {})
+        meta["capu_breakdown"] = breakdown.to_dict()
+        capability.metadata = meta
+        capability.utility_history = list(capability.utility_history or [])
+        capability.utility_history.append({"utility": breakdown.capu})
     return breakdown

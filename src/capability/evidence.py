@@ -72,14 +72,20 @@ def seed_from_skills(
     library: SkillLibrary,
     skill_ids: Sequence[str] | None = None,
 ) -> CapabilityEvidence:
-    """Seed evidence buckets from member skills currently in the library."""
+    """Seed evidence buckets from member skills currently in the library.
+
+    Idempotent: skips skill/transfer rows already present for a skill_id.
+    Canonical transfer list is ``evidence.transfer`` (mirrored to
+    ``transfer_history`` only when appending new events).
+    """
     ids = list(skill_ids) if skill_ids is not None else list(capability.skill_ids)
     ev = CapabilityEvidence.from_dict(capability.evidence)
+    seeded_skills = {str(e.get("skill_id")) for e in ev.skills if e.get("skill_id")}
     for sid in ids:
         skill = library.get(sid)
         if skill is None:
             continue
-        if not any(e.get("skill_id") == sid for e in ev.skills):
+        if sid not in seeded_skills:
             ev.skills.append(
                 {
                     "skill_id": sid,
@@ -87,6 +93,11 @@ def seed_from_skills(
                     "transfer_score": float(skill.transfer_score or 0.0),
                 }
             )
+            seeded_skills.add(sid)
+        # Only seed transfers once per skill_id.
+        already = any(e.get("skill_id") == sid for e in ev.transfer)
+        if already:
+            continue
         for event in list(skill.transfer_history or []):
             payload = {"skill_id": sid, **dict(event)}
             ev.transfer.append(payload)
@@ -96,6 +107,27 @@ def seed_from_skills(
     return ev
 
 
-def transfer_event_count(capability: Capability) -> int:
+def transfer_event_count(
+    capability: Capability,
+    library: SkillLibrary | None = None,
+) -> int:
+    """Count unique transfer support for a capability.
+
+    Prefer evidence.transfer when present; otherwise capability.transfer_history.
+    Optionally union in member-skill transfers that were never seeded.
+    """
     ev = CapabilityEvidence.from_dict(capability.evidence)
-    return len(ev.transfer) + len(capability.transfer_history or [])
+    if ev.transfer:
+        count = len(ev.transfer)
+    else:
+        count = len(capability.transfer_history or [])
+    if library is None:
+        return count
+    seeded = {str(e.get("skill_id")) for e in ev.transfer if e.get("skill_id")}
+    for sid in capability.skill_ids:
+        if sid in seeded:
+            continue
+        skill = library.get(sid)
+        if skill is not None:
+            count += len(skill.transfer_history or [])
+    return count
