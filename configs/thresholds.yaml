@@ -186,3 +186,15 @@ growth:
   metric_gaming_max_evidence: 0
   saturation_low_csr: 0.05
   default_dt: 1.0
+
+evaluation:
+  # Phase 11E-4 evaluation harness
+  default_dt: 1.0
+  min_cgr_success: 0.01
+  min_igr_success: 0.005
+  max_ntr_success: 0.3
+  min_reuse_success: 1
+  ci_z: 1.96
+  report_dir: reports/metrics
+  default_level: capability
+  experiences_per_step: 5

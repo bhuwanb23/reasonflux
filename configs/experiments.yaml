@@ -15,7 +15,8 @@ experiments:
   exp04_growth:
     description: Validate Capability Growth Metrics (CGM)
     contribution: CGM
-    enabled: false
+    enabled: true
+    entry: experiments/exp04_growth/run.py
   exp05_end_to_end:
     description: Full ASFT pipeline smoke / paper end-to-end
     contribution: ASFT

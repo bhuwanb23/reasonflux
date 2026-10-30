@@ -90,3 +90,6 @@ collapse, fragmentation, composition failure, adaptation failure, growth illusio
 | IntelligenceState | `src/evaluation/intelligence_state.py` |
 | IntelligenceGraph | `src/evaluation/intelligence_graph.py` |
 | Intel robustness | `src/evaluation/intelligence_checks.py` |
+| Evaluation harness | `src/evaluation/harness/` |
+| Reports | `src/evaluation/reports.py` |
+| Eval pipeline | `src/pipelines/evaluation_pipeline.py` |
