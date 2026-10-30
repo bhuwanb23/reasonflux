@@ -1,44 +1,41 @@
 import puppeteer from 'puppeteer';
 import fs from 'fs';
-const htmlPath = 'file://' + process.cwd() + '/work/scene_withjs.html';
+
+const htmlPath = 'file://' + process.cwd() + '/work/scene_withjs.html?static';
 const outDir = 'work/renderframe';
-fs.rmSync(outDir, {recursive:true, force:true});
-fs.mkdirSync(outDir, {recursive:true});
-const FPS = 30, TOTAL = 60*FPS;
-(async () => {
-  const b = await puppeteer.launch({args: ['--no-sandbox','--disable-setuid-sandbox']});
-  const p = await b.newPage();
-  await p.setViewport({width:1920,height:1080});
-  await p.goto(htmlPath, {waitUntil:'networkidle0'});
-  await new Promise(r => setTimeout(r, 1500));
-  for (let t=0; t<TOTAL; t++) {
-    await p.evaluate((sec) => {
-      document.querySelectorAll('[id^=s]').forEach(el => el.classList.add('hidden'));
-      const scenes = [['s0',0,3],['s1',3,10],['s2',10,14],['s3',14,24],['s4',24,36],['s5',36,48],['s6',48,60]];
-      for (const [id,start,end] of scenes) {
-        if (sec >= start && sec < end) {
-          const el = document.getElementById(id);
-          if (el) {
-            el.classList.remove('hidden');
-            if (id === 's1' || id === 's6') el.style.transform = 'scale(1)';
-            if (id === 's6') el.style.opacity = '1';
-            document.getElementById('cross').classList.remove('on');
-          }
-        }
-      }
-      const cv = document.getElementById('curve');
-      if (cv) {
-        const ctx = cv.getContext('2d');
-        const w = cv.width, h = cv.height;
-        ctx.clearRect(0,0,w,h);
-        ctx.fillStyle = '#4fe0c8';
-        ctx.fillRect(10,10,40,40);
-      }
-    }, t/FPS);
-    await new Promise(r => setTimeout(r, 16));
-    await p.screenshot({path: outDir + '/frame_' + String(t).padStart(4,'0') + '.png'});
-    if (t % 180 === 0) console.log('rendered', t);
+const FPS = 30;
+const TOTAL = 60 * FPS;
+
+fs.rmSync(outDir, { recursive: true, force: true });
+fs.mkdirSync(outDir, { recursive: true });
+
+const browser = await puppeteer.launch({
+  headless: true,
+  args: ['--no-sandbox', '--disable-setuid-sandbox', '--force-device-scale-factor=1', '--hide-scrollbars'],
+});
+const page = await browser.newPage();
+await page.setViewport({ width: 1920, height: 1080, deviceScaleFactor: 1 });
+page.on('pageerror', (e) => { console.error('PAGE ERROR:', e.message); process.exitCode = 1; });
+page.on('console', (m) => { if (m.type() === 'error') console.error('CONSOLE:', m.text()); });
+
+await page.goto(htmlPath, { waitUntil: 'networkidle0' });
+await page.evaluate(() => (document.fonts ? document.fonts.ready : Promise.resolve()));
+
+const hasSeek = await page.evaluate(() => typeof window.__seek === 'function');
+if (!hasSeek) { console.error('window.__seek missing — aborting'); process.exit(1); }
+
+const t0 = Date.now();
+for (let t = 0; t < TOTAL; t++) {
+  const sec = t / FPS;
+  await page.evaluate((s) => window.__seek(s), sec);
+  await page.screenshot({
+    path: `${outDir}/frame_${String(t).padStart(4, '0')}.png`,
+    optimizeForSpeed: true,
+  });
+  if (t % 150 === 0) {
+    const rate = t > 0 ? Math.round(t / ((Date.now() - t0) / 1000)) : 0;
+    console.log(`rendered ${t}/${TOTAL} (${rate} fps)`);
   }
-  await b.close();
-  console.log('done rendered', TOTAL, 'frames');
-})().catch(e => { console.error(e.message); process.exit(1); });
+}
+await browser.close();
+console.log(`done: ${TOTAL} frames in ${Math.round((Date.now() - t0) / 1000)}s`);
