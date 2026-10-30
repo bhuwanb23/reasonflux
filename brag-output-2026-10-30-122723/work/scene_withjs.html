@@ -1,0 +1,1144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>ASFT — launch frame</title>
+  <style>
+    :root {
+      --bg: #0a0b0c;
+      --panel: #111316;
+      --line: #23272c;
+      --ink: #e9edf1;
+      --muted: #8a939d;
+      --accent: #4fe0c8;
+      --accent-warm: #f4b860;
+      --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+      --sans: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0;
+      height: 100%
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .stage {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background:
+        radial-gradient(1200px 700px at 78% -10%, #13201f 0%, transparent 60%),
+        radial-gradient(1000px 700px at 8% 110%, #1a1410 0%, transparent 60%),
+        linear-gradient(180deg, #0a0b0c 0%, #0c0d0f 100%);
+      overflow: hidden;
+    }
+
+    .grain {
+      position: absolute;
+      inset: 0;
+      opacity: .05;
+      mix-blend-mode: screen;
+      background-image:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 1) 0 1px, transparent 1px 3px),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 1) 0 1px, transparent 1px 3px);
+      pointer-events: none;
+    }
+
+    .wrap {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0
+    }
+
+    .type {
+      font-family: var(--mono);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-align: center;
+      line-height: 1.15;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, .35);
+    }
+
+    .eyebrow {
+      font-family: var(--sans);
+      letter-spacing: .55em;
+      font-size: 15px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .big {
+      font-size: 92px;
+      font-weight: 600;
+      letter-spacing: .04em;
+      line-height: 1.02;
+      margin: 0;
+    }
+
+    .sub {
+      font-size: 30px;
+      color: var(--muted);
+      letter-spacing: .04em;
+      margin-top: 18px;
+      max-width: 1400px;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .link {
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .16em;
+      color: var(--accent);
+      margin-top: 26px;
+      text-transform: uppercase;
+    }
+
+    .chip {
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .22em;
+      color: var(--accent-warm);
+      text-transform: uppercase;
+      padding: 10px 18px;
+      border: 1px solid rgba(244, 184, 96, .25);
+      border-radius: 14px;
+      background: rgba(244, 184, 96, .05);
+    }
+
+    .panel {
+      position: absolute;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(17, 19, 22, .62);
+      backdrop-filter: blur(2px);
+      box-shadow: 0 30px 80px -40px rgba(0, 0, 0, .8);
+    }
+
+    .pl,
+    .pr {
+      width: 920px;
+      height: 600px;
+      top: 240px;
+      display: flex;
+      flex-direction: column;
+      padding: 34px 42px;
+      gap: 14px;
+    }
+
+    .pl {
+      left: 76px
+    }
+
+    .pr {
+      right: 76px
+    }
+
+    .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+    }
+
+    .head .tag {
+      font-family: var(--mono);
+      font-size: 15px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .head .count {
+      font-family: var(--mono);
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .field {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      font-family: var(--mono);
+      font-size: 16px;
+      letter-spacing: .04em;
+    }
+
+    .field .k {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: 13px
+    }
+
+    .field .v {
+      color: var(--ink)
+    }
+
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 18px var(--accent)
+    }
+
+    .dot.n {
+      background: #7a8590;
+      box-shadow: none
+    }
+
+    .trace {
+      margin-top: 10px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #0c0e11;
+      padding: 16px 18px;
+      font-family: var(--mono);
+      font-size: 15px;
+      line-height: 1.7;
+      color: #cfd4da;
+      white-space: pre;
+      overflow: hidden;
+    }
+
+    .trace .op {
+      color: var(--accent)
+    }
+
+    .trace .res {
+      color: var(--accent-warm)
+    }
+
+    .trace .cm {
+      color: #7a8590
+    }
+
+    /* pipeline motion graphic */
+    .pipe {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .stagecard {
+      width: 190px;
+      height: 140px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: linear-gradient(180deg, #13161a, #0d0f12);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 14px;
+      position: relative;
+      transition: transform .05s linear, box-shadow .05s linear, border-color .05s linear;
+    }
+
+    .stagecard .n {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: .2em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .stagecard .t {
+      font-family: var(--sans);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.15;
+    }
+
+    .stagecard.active {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent), 0 0 42px -6px rgba(79, 224, 200, .55);
+      transform: translateY(-6px);
+    }
+
+    .stagecard.done {
+      border-color: rgba(79, 224, 200, .55);
+      background: linear-gradient(180deg, #11201d, #0d1412);
+    }
+
+    .stagecard.done .t {
+      color: var(--accent)
+    }
+
+    .stagecard .num {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: .14em;
+    }
+
+    .pipearrow {
+      width: 46px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent) 0%, rgba(79, 224, 200, 0) 100%);
+      margin: 0 -6px;
+      position: relative;
+      overflow: visible;
+    }
+
+    .pipearrow::after {
+      content: "";
+      position: absolute;
+      right: -1px;
+      top: -5px;
+      width: 0;
+      height: 0;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 9px solid var(--accent);
+    }
+
+    .pipelabels {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 60px;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .tagline {
+      font-family: var(--mono);
+      font-size: 15px;
+      letter-spacing: .2em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    /* contributions */
+    .contrib {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 150px;
+      display: flex;
+      gap: 40px;
+      align-items: flex-end;
+      height: 260px;
+    }
+
+    .col {
+      width: 440px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #13161a, #0c0e11);
+      padding: 26px 30px;
+      transition: transform .05s linear, border-color .05s linear, opacity .05s linear;
+    }
+
+    .col .abbr {
+      font-family: var(--mono);
+      font-size: 14px;
+      letter-spacing: .22em;
+      color: var(--accent-warm);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .col .title {
+      font-family: var(--sans);
+      font-size: 34px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.1;
+      margin: 0 0 12px 0;
+    }
+
+    .col .desc {
+      font-family: var(--sans);
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.5;
+      max-width: 380px;
+    }
+
+    .col.active {
+      border-color: var(--accent-warm);
+      transform: translateY(-10px);
+      box-shadow: 0 0 0 1px var(--accent-warm), 0 30px 50px -25px rgba(244, 184, 96, .4);
+    }
+
+    /* what v0.1 is/is not */
+    .twocol {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 160px;
+      width: 1300px;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .tc {
+      flex: 1;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 28px 34px;
+      background: #0e1114;
+    }
+
+    .tc .label {
+      font-family: var(--mono);
+      font-size: 14px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .tc.do .label {
+      color: var(--accent)
+    }
+
+    .tc.dont .label {
+      color: #e08a87
+    }
+
+    .tc ul {
+      margin: 0;
+      padding-left: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px
+    }
+
+    .tc li {
+      font-family: var(--mono);
+      font-size: 17px;
+      letter-spacing: .04em;
+      line-height: 1.4;
+      padding-left: 22px;
+      position: relative;
+      color: var(--ink);
+    }
+
+    .tc.dont li {
+      color: #cfc8c2
+    }
+
+    .tc li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 12px;
+      height: 12px;
+      border: 1px solid var(--accent);
+      border-radius: 3px;
+    }
+
+    .tc.do li::before {
+      background: var(--accent);
+      box-shadow: 0 0 14px rgba(79, 224, 200, .6)
+    }
+
+    .tc.dont li::before {
+      border-color: #e08a87
+    }
+
+    /* metrics / paper */
+    .metrics {
+      position: absolute;
+      left: 96px;
+      right: 96px;
+      bottom: 180px;
+      display: flex;
+      gap: 28px;
+      align-items: flex-end;
+    }
+
+    .mblock {
+      flex: 1;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #0e1114;
+      padding: 22px 26px;
+    }
+
+    .mblock .name {
+      font-family: var(--mono);
+      font-size: 14px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .mblock .formula {
+      font-family: var(--mono);
+      font-size: 22px;
+      color: var(--ink);
+      line-height: 1.3;
+      letter-spacing: .02em;
+    }
+
+    .mblock .note {
+      font-family: var(--sans);
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 12px;
+      line-height: 1.45;
+      max-width: 380px;
+    }
+
+    /* growth curve */
+    .growth {
+      position: absolute;
+      right: 120px;
+      bottom: 220px;
+      width: 620px;
+      height: 300px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #0c0e11;
+      padding: 22px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .growth .key {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .curve {
+      position: absolute;
+      inset: 24px 120px 24px 40px;
+      border-left: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .curvecanvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* outro */
+    .outro {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .outro .big {
+      font-size: 86px
+    }
+
+    .outro .link {}
+
+    .badge {
+      margin-top: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--mono);
+      font-size: 16px;
+      letter-spacing: .2em;
+      color: var(--muted);
+      text-transform: uppercase;
+      padding: 10px 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .02);
+    }
+
+    .badge .pip {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 14px var(--accent)
+    }
+
+    .hidden {
+      display: none !important
+    }
+
+    .cross {
+      position: absolute;
+      inset: 0;
+      background: var(--bg);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease;
+    }
+
+    .cross.on {
+      opacity: 1
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stage" id="stage">
+    <div class="grain"></div>
+    <div class="cross" id="cross"></div>
+
+    <!-- 0-3s: hook -->
+    <div class="wrap hidden" id="s0">
+      <div class="row">
+        <div class="eyebrow">ARC Prize Paper Track · Research Prototype</div>
+        <h1 class="type big">Intelligence as growth</h1>
+        <div class="sub">A theory for turning repeated reasoning into reusable skills.</div>
+      </div>
+    </div>
+
+    <!-- 3-10s: thesis -->
+    <div class="wrap hidden" id="s1">
+      <div class="row">
+        <div class="eyebrow">The Claim</div>
+        <h1 class="type big">ASFT</h1>
+        <div class="sub">Adaptive Skill Formation Theory — the idea that capability compounds when a system lowers
+          future reasoning cost by promoting what it has already proven.</div>
+      </div>
+    </div>
+
+    <!-- 10-14s: pipeline motion graphic -->
+    <div class="wrap hidden" id="s2">
+      <div class="wrap" style="justify-content:center; margin-top:120px">
+        <div class="type eyebrow" style="margin-bottom:30px">The pipeline</div>
+      </div>
+      <div class="pipe" id="pipe"></div>
+      <div class="pipelabels">
+        <div class="tagline">Task</div>
+        <div class="tagline">Trace</div>
+        <div class="tagline">Invariant</div>
+        <div class="tagline">Skill</div>
+        <div class="tagline">Transfer</div>
+        <div class="tagline">Growth</div>
+        <div class="tagline">Reports</div>
+      </div>
+      <div style="position:absolute; bottom:30px; left:0; right:0; text-align:center">
+        <div class="type" style="font-size:18px; letter-spacing:.22em; color:var(--muted); text-transform:uppercase">One
+          data flow · seven stages</div>
+      </div>
+    </div>
+
+    <!-- 14-24s: three contributions -->
+    <div class="wrap hidden" id="s3">
+      <div class="type eyebrow"
+        style="position:absolute; top:120px; left:0; right:0; text-align:center; margin:0 auto; display:block">Three
+        contributions</div>
+      <div class="contrib" id="contribs"></div>
+      <div style="position:absolute; bottom:60px; left:0; right:0; text-align:center">
+        <div class="type" style="font-size:18px; letter-spacing:.22em; color:var(--muted); text-transform:uppercase">IDT
+          · SCT · CGM</div>
+      </div>
+    </div>
+
+    <!-- 24-36s: what v0.1 is / isn't -->
+    <div class="wrap hidden" id="s4">
+      <div class="type eyebrow"
+        style="position:absolute; top:120px; left:0; right:0; text-align:center; margin:0 auto; display:block">v0.1,
+        stated plainly</div>
+      <div class="twocol">
+        <div class="tc do">
+          <div class="label">We build</div>
+          <ul>
+            <li>A working ASFT scaffold — Task → Trace → Invariant → Skill → Transfer → Evaluation → Reports</li>
+            <li>Three contributed theories with metric definitions and decision thresholds</li>
+            <li>A paper-facing experiment matrix and baseline set</li>
+            <li>Configuration-first code — no magic numbers in source</li>
+          </ul>
+        </div>
+        <div class="tc dont">
+          <div class="label">We do not claim</div>
+          <ul>
+            <li>To be an ARC solver yet</li>
+            <li>LLMs, neural nets, or a meta-reasoner</li>
+            <li>Concept graphs or ARC-3 agents</li>
+            <li>A finished result — this is the prototype that earns the paper</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 36-48s: metrics + growth -->
+    <div class="wrap hidden" id="s5">
+      <div class="type eyebrow"
+        style="position:absolute; top:120px; left:0; right:0; text-align:center; margin:0 auto; display:block">What we
+        measure</div>
+      <div class="metrics">
+        <div class="mblock">
+          <div class="name">Invariant Strength · IDT</div>
+          <div class="formula">IS = Freq × Consistency × Generality</div>
+          <div class="note">Threshold-gated discovery of reusable structure.</div>
+        </div>
+        <div class="mblock">
+          <div class="name">Skill Creation Value · SCT</div>
+          <div class="formula">SCV = Reuse × AG × TS − Cost</div>
+          <div class="note">Create a skill only when it earns it.</div>
+        </div>
+        <div class="mblock">
+          <div class="name">Capability Growth · CGM</div>
+          <div class="formula">CGR = ΔCapability / Δt</div>
+          <div class="note">TS · CGR · IG track growth over time.</div>
+        </div>
+      </div>
+      <div class="growth">
+        <div class="key">Capability over time</div>
+        <div style="position:relative; flex:1; height:100%">
+          <div class="curve"><canvas class="curvecanvas" id="curve"></canvas></div>
+        </div>
+      </div>
+      <div style="position:absolute; bottom:60px; left:0; right:0; text-align:center">
+        <div class="type" style="font-size:18px; letter-spacing:.22em; color:var(--muted); text-transform:uppercase">
+          Paper-facing evidence, not narrative</div>
+      </div>
+    </div>
+
+    <!-- 48-60s: outro -->
+    <div class="wrap hidden" id="s6">
+      <div class="outro">
+        <div class="eyebrow">ReasonFlux · ASFT v0.1</div>
+        <h1 class="type big">The paper starts here.</h1>
+        <div class="sub" style="margin-top:14px; max-width:1200px">A prototype that turns reasoning traces into a
+          measurable growth story — built to be run, measured, and written up.</div>
+        <div class="link">Build · measure · publish</div>
+        <div class="badge"><span class="pip"></span> ARC Prize Paper Track</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    (function () {
+      const FPS = 30, DUR = 60;
+      const STAGE = document.getElementById('stage');
+      const CROSS = document.getElementById('cross');
+
+      const scenes = [
+        { id: 's0', start: 0, end: 3 },
+        { id: 's1', start: 3, end: 10 },
+        { id: 's2', start: 10, end: 14, dur: 4 },
+        { id: 's3', start: 14, end: 24, dur: 10 },
+        { id: 's4', start: 24, end: 36, dur: 12 },
+        { id: 's5', start: 36, end: 48, dur: 12 },
+        { id: 's6', start: 48, end: 60, dur: 12 },
+      ];
+
+      // build pipeline cards
+      const pipe = document.getElementById('pipe');
+      const stages = [
+        { n: '01', t: 'Task' },
+        { n: '02', t: 'Trace\nLogger' },
+        { n: '03', t: 'Trace\nStore' },
+        { n: '04', t: 'Invariant\nDetector' },
+        { n: '05', t: 'Skill\nTrigger' },
+        { n: '06', t: 'Transfer\nEngine' },
+        { n: '07', t: 'Reports' },
+      ];
+      stages.forEach((s, i) => {
+        const c = document.createElement('div');
+        c.className = 'stagecard';
+        c.innerHTML = `<div class="num">${s.n}</div><div class="n">stage</div><div class="t">${s.t.replace('\n', '<br>')}</div>`;
+        pipe.appendChild(c);
+        if (i < stages.length - 1) {
+          const a = document.createElement('div');
+          a.className = 'pipearrow';
+          pipe.appendChild(a);
+        }
+      });
+      const cards = [...pipe.querySelectorAll('.stagecard')];
+
+      // contributions
+      const contribs = [
+        { abbr: 'IDT', title: 'Invariant Discovery Theory', desc: 'Find recurring structure in reasoning traces and rank it by strength so transfer has something to reuse.' },
+        { abbr: 'SCT', title: 'Skill Creation Trigger Theory', desc: 'Promote a trace into a skill only when its expected reuse beats the cost of creating it.' },
+        { abbr: 'CGM', title: 'Capability Growth Metrics', desc: 'Measure transfer, growth rate, and intelligence growth instead of one-off accuracy.' },
+      ];
+      const cwrap = document.getElementById('contribs');
+      contribs.forEach((c, i) => {
+        const el = document.createElement('div');
+        el.className = 'col';
+        el.innerHTML = `<div class="abbr">${c.abbr}</div><div class="title">${c.title}</div><div class="desc">${c.desc}</div>`;
+        cwrap.appendChild(el);
+      });
+      const cols = [...cwrap.querySelectorAll('.col')];
+
+      // curve
+      const canvas = document.getElementById('curve');
+      const ctx = canvas.getContext('2d');
+      function fitCanvas() {
+        const r = canvas.getBoundingClientRect();
+        canvas.width = Math.round(r.width * devicePixelRatio);
+        canvas.height = Math.round(r.height * devicePixelRatio);
+        ctx.scale(devicePixelRatio, devicePixelRatio);
+      }
+      function drawCurve(t) {
+        const w = canvas.width / devicePixelRatio, h = canvas.height / devicePixelRatio;
+        ctx.clearRect(0, 0, w, h);
+        const pts = [
+          [0.00, 0.12], [0.18, 0.14], [0.34, 0.20], [0.50, 0.30],
+          [0.66, 0.46], [0.82, 0.66], [1.00, 0.84]
+        ];
+        const x = i => 40 + (w - 160) * pts[i][0];
+        const y = i => (h - 48) - (h - 84) * Math.min(1, Math.max(0, pts[i][1] + 0.0));
+        ctx.lineWidth = 2.5;
+        ctx.strokeStyle = '#4fe0c8';
+        ctx.beginPath();
+        for (let i = 0; i < pts.length; i++) {
+          const xx = x(i), yy = y(i);
+          if (i === 0) ctx.moveTo(xx, yy);
+          else {
+            const px = x(i - 1), py = y(i - 1);
+            const cpx = (px + xx) / 2, cpy = py;
+            ctx.bezierCurveTo(cpx, py, cpx, yy, xx, yy);
+          }
+        }
+        ctx.stroke();
+        // fill
+        ctx.lineTo(x(pts.length - 1), h - 48);
+        ctx.lineTo(40, h - 48);
+        ctx.closePath();
+        const g = ctx.createLinearGradient(0, 0, 0, h - 48);
+        g.addColorStop(0, 'rgba(79,224,200,.22)');
+        g.addColorStop(1, 'rgba(79,224,200,.01)');
+        ctx.fillStyle = g;
+        ctx.fill();
+        // markers
+        ctx.fillStyle = '#4fe0c8';
+        const mark = Math.min(pts.length - 1, Math.max(0, Math.floor(t * (pts.length - 1))));
+        ctx.beginPath();
+        ctx.arc(x(mark), y(mark), 7, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = '#0a0b0c';
+        ctx.beginPath();
+        ctx.arc(x(mark), y(mark), 3, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      function clamp(v, a, b) { return Math.max(a, Math.min(b, v)) }
+
+      function setVisible(id, on) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.classList.toggle('hidden', !on);
+      }
+
+      function paperFold(t, a, b, d) {
+        // ease in-out
+        const x = clamp(t / d, 0, 1);
+        const e = x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+        return a + (b - a) * e;
+      }
+
+      function tick(now) {
+        const sec = now / 1000;
+        if (sec >= DUR) { requestAnimationFrame(tick); return; }
+
+        // scene visibility
+        for (const s of scenes) {
+          const on = sec >= s.start && sec < s.end;
+          setVisible(s.id, on);
+        }
+        CROSS.classList.toggle('on', false);
+
+        // per-scene motion
+        if (sec >= 3 && sec < 10) {
+          const el = document.getElementById('s1');
+          el.style.opacity = 1;
+          el.style.transform = `scale(${paperFold(sec - 3, 0.96, 1, 1.2)})`;
+          el.style.transition = 'none';
+        }
+        if (sec >= 10 && sec < 14) {
+          // pipeline cards light up in sequence
+          const rel = sec - 10;
+          const lane = Math.min(cards.length - 1, Math.floor(rel / 0.5));
+          cards.forEach((c, i) => {
+            c.classList.toggle('active', i === lane);
+            c.classList.toggle('done', i < lane);
+          });
+        }
+        if (sec >= 14 && sec < 24) {
+          const rel = sec - 14;
+          const idx = Math.min(cols.length - 1, Math.floor(rel / 3.3));
+          cols.forEach((c, i) => {
+            c.classList.toggle('active', i === idx);
+            c.style.opacity = i <= idx ? 1 : paperFold((i - idx - 1), 0, 1, 0.5);
+          });
+        }
+        if (sec >= 24 && sec < 36) {
+          const r = sec - 24;
+          const items = [...document.querySelectorAll('.tc.do li')];
+          const rhyme = [...document.querySelectorAll('.tc.dont li')];
+          const show = (arr, t) => {
+            arr.forEach((li, i) => {
+              const appearAt = i * 0.7;
+              if (t < appearAt) { li.style.opacity = 0; li.style.transform = 'translateY(6px)'; li.style.transition = 'none'; }
+              else {
+                li.style.opacity = paperFold(t - appearAt, 0, 1, 0.25);
+                li.style.transform = `translateY(${16 * (1 - paperFold(t - appearAt, 0, 1, 0.25))}px)`;
+                li.style.transition = 'none';
+              }
+            });
+          };
+          show(items, r);
+          show(rhyme, r);
+        }
+        if (sec >= 36 && sec < 48) {
+          drawCurve((sec - 36) / 12);
+        }
+        if (sec >= 48 && sec < 60) {
+          const el = document.getElementById('s6');
+          el.style.opacity = 1;
+          el.style.transform = `scale(${paperFold(sec - 48, 0.94, 1, 1.4)})`;
+          el.style.transition = 'none';
+        }
+
+        requestAnimationFrame(tick);
+      }
+
+      fitCanvas();
+      window.addEventListener('resize', fitCanvas);
+      requestAnimationFrame(tick);
+    })();
+  </script>
+<script>
+    (function () {
+      const FPS = 30, DUR = 60;
+      const STAGE = document.getElementById('stage');
+      const CROSS = document.getElementById('cross');
+
+      const scenes = [
+        { id: 's0', start: 0, end: 3 },
+        { id: 's1', start: 3, end: 10 },
+        { id: 's2', start: 10, end: 14, dur: 4 },
+        { id: 's3', start: 14, end: 24, dur: 10 },
+        { id: 's4', start: 24, end: 36, dur: 12 },
+        { id: 's5', start: 36, end: 48, dur: 12 },
+        { id: 's6', start: 48, end: 60, dur: 12 },
+      ];
+
+      // build pipeline cards
+      const pipe = document.getElementById('pipe');
+      const stages = [
+        { n: '01', t: 'Task' },
+        { n: '02', t: 'Trace\nLogger' },
+        { n: '03', t: 'Trace\nStore' },
+        { n: '04', t: 'Invariant\nDetector' },
+        { n: '05', t: 'Skill\nTrigger' },
+        { n: '06', t: 'Transfer\nEngine' },
+        { n: '07', t: 'Reports' },
+      ];
+      stages.forEach((s, i) => {
+        const c = document.createElement('div');
+        c.className = 'stagecard';
+        c.innerHTML = `<div class="num">${s.n}</div><div class="n">stage</div><div class="t">${s.t.replace('\n', '<br>')}</div>`;
+        pipe.appendChild(c);
+        if (i < stages.length - 1) {
+          const a = document.createElement('div');
+          a.className = 'pipearrow';
+          pipe.appendChild(a);
+        }
+      });
+      const cards = [...pipe.querySelectorAll('.stagecard')];
+
+      // contributions
+      const contribs = [
+        { abbr: 'IDT', title: 'Invariant Discovery Theory', desc: 'Find recurring structure in reasoning traces and rank it by strength so transfer has something to reuse.' },
+        { abbr: 'SCT', title: 'Skill Creation Trigger Theory', desc: 'Promote a trace into a skill only when its expected reuse beats the cost of creating it.' },
+        { abbr: 'CGM', title: 'Capability Growth Metrics', desc: 'Measure transfer, growth rate, and intelligence growth instead of one-off accuracy.' },
+      ];
+      const cwrap = document.getElementById('contribs');
+      contribs.forEach((c, i) => {
+        const el = document.createElement('div');
+        el.className = 'col';
+        el.innerHTML = `<div class="abbr">${c.abbr}</div><div class="title">${c.title}</div><div class="desc">${c.desc}</div>`;
+        cwrap.appendChild(el);
+      });
+      const cols = [...cwrap.querySelectorAll('.col')];
+
+      // curve
+      const canvas = document.getElementById('curve');
+      const ctx = canvas.getContext('2d');
+      function fitCanvas() {
+        const r = canvas.getBoundingClientRect();
+        canvas.width = Math.round(r.width * devicePixelRatio);
+        canvas.height = Math.round(r.height * devicePixelRatio);
+        ctx.scale(devicePixelRatio, devicePixelRatio);
+      }
+      function drawCurve(t) {
+        const w = canvas.width / devicePixelRatio, h = canvas.height / devicePixelRatio;
+        ctx.clearRect(0, 0, w, h);
+        const pts = [
+          [0.00, 0.12], [0.18, 0.14], [0.34, 0.20], [0.50, 0.30],
+          [0.66, 0.46], [0.82, 0.66], [1.00, 0.84]
+        ];
+        const x = i => 40 + (w - 160) * pts[i][0];
+        const y = i => (h - 48) - (h - 84) * Math.min(1, Math.max(0, pts[i][1] + 0.0));
+        ctx.lineWidth = 2.5;
+        ctx.strokeStyle = '#4fe0c8';
+        ctx.beginPath();
+        for (let i = 0; i < pts.length; i++) {
+          const xx = x(i), yy = y(i);
+          if (i === 0) ctx.moveTo(xx, yy);
+          else {
+            const px = x(i - 1), py = y(i - 1);
+            const cpx = (px + xx) / 2, cpy = py;
+            ctx.bezierCurveTo(cpx, py, cpx, yy, xx, yy);
+          }
+        }
+        ctx.stroke();
+        // fill
+        ctx.lineTo(x(pts.length - 1), h - 48);
+        ctx.lineTo(40, h - 48);
+        ctx.closePath();
+        const g = ctx.createLinearGradient(0, 0, 0, h - 48);
+        g.addColorStop(0, 'rgba(79,224,200,.22)');
+        g.addColorStop(1, 'rgba(79,224,200,.01)');
+        ctx.fillStyle = g;
+        ctx.fill();
+        // markers
+        ctx.fillStyle = '#4fe0c8';
+        const mark = Math.min(pts.length - 1, Math.max(0, Math.floor(t * (pts.length - 1))));
+        ctx.beginPath();
+        ctx.arc(x(mark), y(mark), 7, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = '#0a0b0c';
+        ctx.beginPath();
+        ctx.arc(x(mark), y(mark), 3, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      function clamp(v, a, b) { return Math.max(a, Math.min(b, v)) }
+
+      function setVisible(id, on) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.classList.toggle('hidden', !on);
+      }
+
+      function paperFold(t, a, b, d) {
+        // ease in-out
+        const x = clamp(t / d, 0, 1);
+        const e = x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+        return a + (b - a) * e;
+      }
+
+      function tick(now) {
+        const sec = now / 1000;
+        if (sec >= DUR) { requestAnimationFrame(tick); return; }
+
+        // scene visibility
+        for (const s of scenes) {
+          const on = sec >= s.start && sec < s.end;
+          setVisible(s.id, on);
+        }
+        CROSS.classList.toggle('on', false);
+
+        // per-scene motion
+        if (sec >= 3 && sec < 10) {
+          const el = document.getElementById('s1');
+          el.style.opacity = 1;
+          el.style.transform = `scale(${paperFold(sec - 3, 0.96, 1, 1.2)})`;
+          el.style.transition = 'none';
+        }
+        if (sec >= 10 && sec < 14) {
+          // pipeline cards light up in sequence
+          const rel = sec - 10;
+          const lane = Math.min(cards.length - 1, Math.floor(rel / 0.5));
+          cards.forEach((c, i) => {
+            c.classList.toggle('active', i === lane);
+            c.classList.toggle('done', i < lane);
+          });
+        }
+        if (sec >= 14 && sec < 24) {
+          const rel = sec - 14;
+          const idx = Math.min(cols.length - 1, Math.floor(rel / 3.3));
+          cols.forEach((c, i) => {
+            c.classList.toggle('active', i === idx);
+            c.style.opacity = i <= idx ? 1 : paperFold((i - idx - 1), 0, 1, 0.5);
+          });
+        }
+        if (sec >= 24 && sec < 36) {
+          const r = sec - 24;
+          const items = [...document.querySelectorAll('.tc.do li')];
+          const rhyme = [...document.querySelectorAll('.tc.dont li')];
+          const show = (arr, t) => {
+            arr.forEach((li, i) => {
+              const appearAt = i * 0.7;
+              if (t < appearAt) { li.style.opacity = 0; li.style.transform = 'translateY(6px)'; li.style.transition = 'none'; }
+              else {
+                li.style.opacity = paperFold(t - appearAt, 0, 1, 0.25);
+                li.style.transform = `translateY(${16 * (1 - paperFold(t - appearAt, 0, 1, 0.25))}px)`;
+                li.style.transition = 'none';
+              }
+            });
+          };
+          show(items, r);
+          show(rhyme, r);
+        }
+        if (sec >= 36 && sec < 48) {
+          drawCurve((sec - 36) / 12);
+        }
+        if (sec >= 48 && sec < 60) {
+          const el = document.getElementById('s6');
+          el.style.opacity = 1;
+          el.style.transform = `scale(${paperFold(sec - 48, 0.94, 1, 1.4)})`;
+          el.style.transition = 'none';
+        }
+
+        requestAnimationFrame(tick);
+      }
+
+      fitCanvas();
+      window.addEventListener('resize', fitCanvas);
+      requestAnimationFrame(tick);
+    })();
+  </script></body>
+
+</html>
