@@ -10,7 +10,7 @@ Organize around **research contributions**, not algorithms:
 | --- | --- |
 | IDT | `src/traces`, `src/invariants` |
 | SCT | `src/skills` |
-| CGM | `src/capability` (representation), `src/evaluation` (growth metrics) |
+| CGM | `src/capability` (representation), `src/evaluation` (growth + harness) |
 | Transfer hypothesis | `src/transfer` |
 | End-to-end ASFT | `src/pipelines` |
 
