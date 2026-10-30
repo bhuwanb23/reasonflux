@@ -12,7 +12,6 @@ from capability.robustness.metrics import (
     mean_transfer_score,
     negative_transfer_rate,
     saturation_ratio,
-    series_cgr_signs,
 )
 from capability.robustness.taxonomy import (
     CapabilityFailureKind,
@@ -32,9 +31,7 @@ def _diag(
     metrics: dict[str, Any] | None = None,
     caps: list[str] | None = None,
 ) -> FailureDiagnosis:
-    return FailureDiagnosis(
-        kind, level, reasons, metrics or {}, caps or []
-    )
+    return FailureDiagnosis(kind, level, reasons, metrics or {}, caps or [])
 
 
 def _from_legacy(
@@ -113,18 +110,14 @@ def detect_cf2_fragmentation(
                 {"fr": fr, "threshold": config.max_fragmentation_ratio},
             )
         )
-    report = audit_representation(cap_lib, skill_lib)
-    out.extend(_from_legacy(report, default_level=FailureLevel.RESTRICTED))
-    # Dedup CF2
-    seen = False
-    uniq: list[FailureDiagnosis] = []
-    for d in out:
-        if d.kind is CapabilityFailureKind.CF2:
-            if seen:
-                continue
-            seen = True
-        uniq.append(d)
-    return [d for d in uniq if d.kind is CapabilityFailureKind.CF2]
+    out.extend(
+        _from_legacy(
+            audit_representation(cap_lib, skill_lib),
+            default_level=FailureLevel.RESTRICTED,
+        )
+    )
+    cf2 = [d for d in out if d.kind is CapabilityFailureKind.CF2]
+    return cf2[:1] if cf2 else []
 
 
 def detect_cf3_inflation(
@@ -216,8 +209,6 @@ def detect_cf5_saturation(
 def detect_cf6_regression(
     cgr_series: Sequence[float], config: CapabilityRobustnessConfig
 ) -> list[FailureDiagnosis]:
-    neg, _ = series_cgr_signs(cgr_series)
-    # Count trailing negatives
     trailing = 0
     for x in reversed(list(cgr_series)):
         if float(x) < -1e-12:
@@ -230,7 +221,7 @@ def detect_cf6_regression(
                 CapabilityFailureKind.CF6,
                 FailureLevel.RESTRICTED,
                 ["sustained_negative_cgr"],
-                {"trailing_neg": trailing, "neg_total": neg},
+                {"trailing_neg": trailing},
             )
         ]
     return []

@@ -105,44 +105,53 @@ def gate_run(
         return False, ["no_snapshots"]
     after = run.snapshots[-1]
     before = run.snapshots[-2] if len(run.snapshots) >= 2 else None
-    ev = evidence_from_snapshots(before, after)
+    # Longitudinal deltas (first→last) for the hard gate; adjacent for audits.
+    origin = run.snapshots[0]
+    ev = evidence_from_snapshots(origin, after)
+    adj_ev = evidence_from_snapshots(before, after)
 
-    transfer_delta = _delta(after, before, "mean_ts")
-    utility_delta = _delta(after, before, "mean_su")
-    coverage_delta = _delta(after, before, "coverage")
-    # Approximate skill growth from utility lift when libraries unavailable.
-    skill_delta = 1 if utility_delta > 0 else 0
+    transfer_delta = _delta(after, origin, "mean_ts")
+    utility_delta = _delta(after, origin, "mean_su")
+    coverage_delta = _delta(after, origin, "coverage")
+    adj_ug = _delta(after, before, "mean_su")
+    adj_tg = _delta(after, before, "mean_ts")
+    adj_ccg = _delta(after, before, "coverage")
+
     meta = after.metadata or {}
-    if "skill_count" in meta and before is not None:
-        prev_n = int((before.metadata or {}).get("skill_count", 0) or 0)
-        skill_delta = max(0, int(meta.get("skill_count", 0) or 0) - prev_n)
+    origin_meta = origin.metadata or {}
+    skill_delta = max(
+        0,
+        int(meta.get("skill_count", 0) or 0)
+        - int(origin_meta.get("skill_count", 0) or 0),
+    )
+    if skill_delta <= 0 and utility_delta > 0:
+        skill_delta = 1
     skill_count = int(meta.get("skill_count", 0) or 0)
     if skill_count <= 0:
-        # Fall back to longitudinal signal strength as proxy.
         skill_count = max(1, skill_delta + (1 if after.mean_su > 0 else 0))
 
     cgr = after.cgr
-    ug = utility_delta
-    tg = transfer_delta
+    ug = adj_ug
+    tg = adj_tg
 
     growth = audit_growth(
         cgr=cgr,
         tg=max(0.0, tg),
         ug=ug,
-        ccg=max(0.0, coverage_delta),
+        ccg=max(0.0, adj_ccg),
         skill_delta=skill_delta,
         transfer_delta=max(0.0, transfer_delta),
-        evidence=ev,
+        evidence=adj_ev,
     )
     intel = audit_intelligence(
         ig=after.ig,
         ig_delta=after.ig - (before.ig if before else 0.0),
-        evidence=ev,
+        evidence=adj_ev,
         extra_metrics={
             "cgr": cgr,
             "tg": after.mean_ts,
             "ug": ug,
-            "ccg": coverage_delta,
+            "ccg": adj_ccg,
             "skill_count": skill_count,
             "skill_delta": skill_delta,
             "transfer_delta": transfer_delta,
