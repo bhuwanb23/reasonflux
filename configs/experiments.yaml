@@ -1,0 +1,22 @@
+# Experiment registry — maps to Phase 9C / experiments/
+experiments:
+  exp01_invariants:
+    description: Validate Invariant Discovery Theory (IDT)
+    contribution: IDT
+    enabled: false
+  exp02_skills:
+    description: Validate Skill Creation Trigger Theory (SCT)
+    contribution: SCT
+    enabled: false
+  exp03_transfer:
+    description: Measure Task A → Task B transfer effects
+    contribution: transfer
+    enabled: false
+  exp04_growth:
+    description: Validate Capability Growth Metrics (CGM)
+    contribution: CGM
+    enabled: false
+  exp05_end_to_end:
+    description: Full ASFT pipeline smoke / paper end-to-end
+    contribution: ASFT
+    enabled: false

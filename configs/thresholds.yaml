@@ -1,0 +1,143 @@
+# Decision thresholds (Phase 7 / 11A examples)
+invariants:
+  # IS = frequency × consistency × generality; keep patterns at/above this
+  minimum_invariant_strength: 5.0
+  # Phase 11C-1 qualification policy
+  min_frequency: 3
+  min_consistency: 0.6
+  min_task_families: 2
+  min_generality: 0.0
+  require_transfer_evidence: true
+  min_transfer_events: 1
+  # Rejection: structures this broad are treated as universal noise
+  universal_noise_generality: 0.95
+  # Confidence bands
+  moderate_score: 0.4
+  strong_score: 0.7
+
+skills:
+  # Phase 11D-1 SCT — create when SCV = Reuse × AG × TS − CreationCost exceeds this
+  skill_creation_threshold: 0.0
+  skill_creation_threshold_strict: 2.0
+  min_its: 0.5
+  min_evidence: 3
+  ntr_limit: 0.3
+  similarity_merge: 0.85
+  default_creation_cost: 0.1
+  min_frequency: 3
+  min_consistency: 0.6
+  min_generality: 0.3
+  min_reasoning_value: 0.1
+  # Phase 11D-2 skill utility economics
+  su_min: 0.0
+  reuse_norm: 10
+  tv_coverage_norm: 5
+  base_maintenance: 0.05
+  ntr_impact: 1.0
+  default_cp: 0.3
+  library_capacity: 50
+  core_su: 0.6
+  core_min_reuse: 3
+  core_min_transfer: 0.5
+  # Phase 11D-3 skill lifecycle
+  growing_ug: 0.02
+  dormant_after_tasks: 10
+  core_growth_periods: 2
+  retire_low_su_periods: 3
+  retire_max_reuse: 1
+  retire_max_ts: 0.1
+  retire_min_age_tasks: 20
+  decay_lambda: 0.01
+  health_healthy: 0.75
+  health_stable: 0.5
+  health_weak: 0.25
+  reactivate_min_evidence: 2
+  reactivate_max_attempts: 2
+  archive_after_tasks: 20
+  # Phase 11D-4 sequential composition
+  compose_max_skills: 3
+  compose_max_candidates_per_task: 8
+  compose_cost_base: 0.1
+  cu_min: 0.0
+  compose_min_successes_validate: 1
+  compose_min_reuse_store: 2
+  compose_min_reuse_promote: 3
+  compose_min_confidence: 0.4
+  compose_ncr_limit: 0.3
+  compose_reject_identical: true
+  compose_max_literal_triggers: 2
+
+traces:
+  min_steps: 1
+
+mining:
+  # Phase 11C-2 trace mining constraints
+  min_frequency: 3
+  min_cross_trace: 2
+  max_fragment_length: 4
+  min_core_length: 2
+  successful_trace_bias: true
+
+validation:
+  # Phase 11C-3 ranking / promotion
+  freq_norm: 10
+  transfer_norm: 3
+  min_f: 0.3
+  min_c: 0.6
+  min_g: 0.3
+  min_t: 0.1
+  min_r: 0.1
+  min_invariant_score: 0.01
+  transfer_rescue_min_t: 0.7
+  transfer_rescue_min_frequency: 2
+
+transfer:
+  # Phase 11C-4 transfer-aware discovery / promotion gate
+  min_transfer_attempts: 2
+  min_its: 0.5
+  ntr_limit: 0.3
+  tu_reduction_norm: 1.0
+  confidence_attempts_norm: 5
+
+robustness:
+  # Phase 11C-5 failure modes and hard gate
+  min_vst: 0.6
+  ier_warn: 1.0
+  ier_restrict: 3.0
+  min_evidence: 3
+  min_tc: 0.5
+  min_tfd: 0.3
+  min_task_families_hard: 2
+  min_compatibility: 0.5
+  similarity_merge: 0.85
+  saturation_k: 5
+  difficulty_near: 0.25
+  difficulty_moderate: 0.5
+  difficulty_compositional: 0.75
+  difficulty_structural: 1.0
+  ntr_blacklist_violations: 2
+
+skill_robustness:
+  # Phase 11D-5 skill failure modes and robust gates
+  ser_warn: 0.5
+  ser_restrict: 0.8
+  min_confidence_promote: 0.4
+  min_evidence_promote: 3
+  min_utility_promote: 0.0
+  duplicate_similarity: 0.85
+  ntr_warn: 0.2
+  ntr_restrict: 0.3
+  ntr_retire: 0.5
+  rr_min: 0.6
+  retrieval_boost: 0.2
+  cu_min_composition: 0.0
+  composition_ncr_limit: 0.3
+  cgr_collapse: -0.05
+  collapse_periods: 2
+  tfd_min_promote: 0.2
+  transfer_override_min: 0.7
+  ancient_core_min_age: 50
+  zombie_permanent_archive_attempts: 2
+  cannibalization_ratio: 0.5
+  audit_max_actions: 5
+  library_capacity: 50

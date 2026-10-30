@@ -1,0 +1,59 @@
+# Metric definitions — Capability Growth Metrics (CGM) and related
+metrics:
+  IS:
+    name: Invariant Strength
+    formula: frequency * consistency * generality
+  SCV:
+    name: Skill Creation Value
+    formula: reuse * AG * TS - creation_cost
+  SU:
+    name: Skill Utility
+    formula: (RCG + TV + CP + RV) - (CC + MC + NR)
+  ASU:
+    name: Average Skill Utility
+    formula: mean(active_skill_utilities)
+  TSU:
+    name: Top Skill Utility
+    formula: max(active_skill_utilities)
+  PU:
+    name: Portfolio Utility
+    formula: sum(positive_active_skill_utilities)
+  UG:
+    name: Utility Growth
+    formula: asu_now - asu_previous
+  NTB:
+    name: Negative Transfer Burden
+    formula: mean(negative_transfer_risk)
+  TS:
+    name: Transfer Score
+    formula: performance_after - performance_before
+  CGR:
+    name: Capability Growth Rate
+    formula: (capability_t - capability_t_minus_1) / delta_t
+  IG:
+    name: Intelligence Growth
+    formula: f(AG, SU, TS, CGR)
+  AG:
+    name: Abstraction Gain
+    formula: reasoning_cost_before - reasoning_cost_after
+  ITS:
+    name: Invariant Transfer Score
+    formula: sum(transfer_benefits) / transfer_attempts
+  TU:
+    name: Transfer Utility
+    formula: transfer_success * reasoning_reduction * task_coverage
+  NTR:
+    name: Negative Transfer Rate
+    formula: failed_transfer_attempts / total_transfer_attempts
+  IER:
+    name: Invariant Explosion Ratio
+    formula: invariants / traces
+  VST:
+    name: Variation Survival Test
+    formula: successful_variations / total_variations
+  TC:
+    name: Trace Consistency
+    formula: consistent_steps / total_steps
+  TFD:
+    name: Task Family Diversity
+    formula: unique_families / total_tasks
