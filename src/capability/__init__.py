@@ -24,7 +24,9 @@ from capability.lifecycle import advance_capability
 from capability.models import Capability, CapabilityType
 from capability.portfolio import (
     CapabilityPortfolioMetrics,
+    SystemCapabilitySnapshot,
     compute_capability_portfolio,
+    compute_system_capability_state,
     sync_capability_state,
 )
 from capability.scores import compute_confidence, compute_strength, refresh_capability_scores
@@ -51,6 +53,7 @@ __all__ = [
     "ConstraintResult",
     "InvalidCapabilityTransitionError",
     "RepresentationFailure",
+    "SystemCapabilitySnapshot",
     "accept_capabilities",
     "advance_capability",
     "append_growth_evidence",
@@ -63,6 +66,7 @@ __all__ = [
     "compute_confidence",
     "compute_coverage",
     "compute_strength",
+    "compute_system_capability_state",
     "detect_fragmentation",
     "detect_ghost",
     "detect_monolith",

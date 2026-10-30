@@ -15,6 +15,7 @@ __all__ = [
     "load_mining_config",
     "load_robustness_config",
     "load_capability_config",
+    "load_growth_config",
     "load_skill_config",
     "load_skill_robustness_config",
     "load_transfer_config",
@@ -141,3 +142,14 @@ def load_capability_config(config_dir: str | Path = DEFAULT_CONFIG_DIR) -> Any:
         return CapabilityConfig()
     data = load_config(path).get("capability") or {}
     return CapabilityConfig.from_dict(data)
+
+
+def load_growth_config(config_dir: str | Path = DEFAULT_CONFIG_DIR) -> Any:
+    """Build a GrowthConfig from configs/thresholds.yaml."""
+    from evaluation.growth_config import GrowthConfig
+
+    path = Path(config_dir) / "thresholds.yaml"
+    if not path.exists():
+        return GrowthConfig()
+    data = load_config(path).get("growth") or {}
+    return GrowthConfig.from_dict(data)

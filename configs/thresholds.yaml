@@ -162,3 +162,27 @@ capability:
   max_capabilities: 30
   monolith_skill_fraction: 0.8
   archive_low_utility_periods: 3
+
+growth:
+  # Phase 11E-2 capability growth measurement
+  w_su: 0.4
+  w_ts: 0.25
+  w_cov: 0.2
+  w_comp: 0.15
+  ig_w_cgr: 0.35
+  ig_w_tg: 0.25
+  ig_w_ug: 0.2
+  ig_w_ccg: 0.15
+  ig_w_compg: 0.05
+  skill_count_illusion_min_skills: 5
+  skill_count_illusion_max_cgr: 0.01
+  transfer_illusion_min_tg: 0.05
+  transfer_illusion_max_utility_delta: 0.0
+  coverage_inflation_min_ccg: 0.05
+  coverage_inflation_max_transfer_delta: 0.0
+  growth_without_utility_min_cgr: 0.02
+  growth_without_utility_max_ug: 0.0
+  metric_gaming_min_cgr: 0.05
+  metric_gaming_max_evidence: 0
+  saturation_low_csr: 0.05
+  default_dt: 1.0
