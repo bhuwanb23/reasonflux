@@ -47,7 +47,8 @@ Ghost guard: no transfer evidence → cannot become established.
 
 `CapabilityLibrary` + `CapabilityGraph` (shared_skill / transfer / composition
 edges). `compute_capability_portfolio` syncs `mean_capu`, `core_count`,
-`capability_ids` into `CapabilityState` (not CGR — that is 11E-2).
+`capability_ids` into `CapabilityState`. Opt-in CGR sync via
+`write_growth=True` (Phase 11E-2).
 
 ## Constraints and representation failures
 
@@ -76,5 +77,5 @@ Valid capability: ≥1 skill, transfer evidence, CapU floor, supporting evidence
 
 ## Non-goals
 
-CGR / IG measurement (11E-2), intelligence growth model (11E-3), evaluation
+Intelligence growth model (11E-3), evaluation
 harness (11E-4), full capability failure suite (11E-5).

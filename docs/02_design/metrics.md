@@ -30,24 +30,36 @@ SU = AccuracyGain \times CostReduction \times Transferability
 TS = Performance_{after} - Performance_{before}
 \]
 
-## Capability Growth Rate (CGR)
+## Capability representation scores (11E-1)
+
+CapU / CCov / strength / confidence live in `src/capability/`. See
+[capability.md](capability.md).
+
+## Capability function and CGR (11E-2)
 
 \[
-CGR = \frac{Capability_t - Capability_{t-1}}{\Delta t}
+C_t = w_{su}\cdot\overline{SU} + w_{ts}\cdot\overline{TS} + w_{cov}\cdot CCov + w_{comp}\cdot CP
 \]
+
+\[
+CGR = \frac{C_t - C_{t-1}}{\Delta t},\quad
+CA = \frac{CGR_t - CGR_{t-1}}{\Delta t},\quad
+CSR = \frac{NewCapability}{ExistingCapability}
+\]
+
+Component deltas: \(TG\), \(CCG\), \(CompG\), \(UG\).
 
 ## Intelligence Growth (IG)
 
 \[
-IG = f(AG, SU, TS, CGR)
+IG = w_{cgr}\,CGR + w_{tg}\,TG + w_{ug}\,UG + w_{ccg}\,CCG + w_{compg}\,CompG
 \]
 
-where Abstraction Gain \(AG = RC_{before} - RC_{after}\).
+Defaults and robustness thresholds: `configs/thresholds.yaml` → `growth:`.
 
-## Capability representation scores (11E-1)
-
-CapU / CCov / strength / confidence live in `src/capability/`. See
-[capability.md](capability.md). CGR / IG remain stubs until 11E-2.
+Growth claims require evidence (new skills, transfers, coverage, utility,
+composition). Failure detectors reject skill-count illusion, transfer illusion,
+coverage inflation, growth-without-utility, and metric gaming.
 
 ## Code homes
 
@@ -57,4 +69,6 @@ CapU / CCov / strength / confidence live in `src/capability/`. See
 | SCV / SU | `src/skills/trigger.py`, `src/evaluation/skill_metrics.py` |
 | TS | `src/evaluation/transfer_metrics.py`, `src/transfer/` |
 | CapU / CCov | `src/capability/utility.py`, `src/capability/coverage.py` |
-| CGR / IG | `src/evaluation/growth_metrics.py` (11E-2) |
+| C_t / CGR / CA / IG | `src/evaluation/growth_metrics.py` |
+| TG / CCG / CompG / UG | `src/evaluation/growth_components.py` |
+| Growth robustness | `src/evaluation/growth_checks.py` |
