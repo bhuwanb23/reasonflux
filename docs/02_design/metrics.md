@@ -49,17 +49,31 @@ CSR = \frac{NewCapability}{ExistingCapability}
 
 Component deltas: \(TG\), \(CCG\), \(CompG\), \(UG\).
 
-## Intelligence Growth (IG)
+## Capability Growth IG aggregator (11E-2)
 
 \[
-IG = w_{cgr}\,CGR + w_{tg}\,TG + w_{ug}\,UG + w_{ccg}\,CCG + w_{compg}\,CompG
+IG_{growth} = w_{cgr}\,CGR + w_{tg}\,TG + w_{ug}\,UG + w_{ccg}\,CCG + w_{compg}\,CompG
 \]
 
-Defaults and robustness thresholds: `configs/thresholds.yaml` → `growth:`.
+Defaults: `configs/thresholds.yaml` → `growth:`.
 
-Growth claims require evidence (new skills, transfers, coverage, utility,
-composition). Failure detectors reject skill-count illusion, transfer illusion,
-coverage inflation, growth-without-utility, and metric gaming.
+## Intelligence Growth Model (11E-3)
+
+\[
+IG = w_{ag}\,AG + w_{su}\,SU + w_{ts}\,TS + w_{cgr}\,CGR + w_{cp}\,CP + w_{ad}\,AD
+\]
+
+\[
+IGR = \frac{IG_t - IG_{t-1}}{\Delta t},\quad
+IA = \frac{IGR_t - IGR_{t-1}}{\Delta t},\quad
+IE = \frac{IG}{Experiences}
+\]
+
+Elasticity = ΔIG per new task family. Maturity stages: emerging → developing →
+generalizing → compositional → adaptive.
+
+Intelligence claims require evidence; detectors cover skill hoarding, transfer
+collapse, fragmentation, composition failure, adaptation failure, growth illusion.
 
 ## Code homes
 
@@ -69,6 +83,10 @@ coverage inflation, growth-without-utility, and metric gaming.
 | SCV / SU | `src/skills/trigger.py`, `src/evaluation/skill_metrics.py` |
 | TS | `src/evaluation/transfer_metrics.py`, `src/transfer/` |
 | CapU / CCov | `src/capability/utility.py`, `src/capability/coverage.py` |
-| C_t / CGR / CA / IG | `src/evaluation/growth_metrics.py` |
+| C_t / CGR / CA | `src/evaluation/growth_metrics.py` |
 | TG / CCG / CompG / UG | `src/evaluation/growth_components.py` |
 | Growth robustness | `src/evaluation/growth_checks.py` |
+| IG / IGR / IA / IE | `src/evaluation/intelligence.py` |
+| IntelligenceState | `src/evaluation/intelligence_state.py` |
+| IntelligenceGraph | `src/evaluation/intelligence_graph.py` |
+| Intel robustness | `src/evaluation/intelligence_checks.py` |

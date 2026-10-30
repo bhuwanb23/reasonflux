@@ -1,1 +1,26 @@
-\"\"\"Tests for intelligence graph building and simple metrics.\"\"\"\n+\n+from capability import Capability, CapabilityLibrary\n+from evaluation import build_intelligence_graph, out_degree\n+\n+\n+def test_build_graph_and_out_degree():\n+    caps = CapabilityLibrary()\n+    a = Capability(capability_id=\"a\", skill_ids=[\"s1\", \"s2\"], metadata={\"composed_with\": [\"b\"]})\n+    b = Capability(capability_id=\"b\", skill_ids=[\"s2\", \"s3\"], metadata={\"transfer_links\": [\"a\"]})\n+    caps.add(a)\n+    caps.add(b)\n+    g = build_intelligence_graph(caps)\n+    assert isinstance(g, type(g))\n+    # out_degree of 'a' should be at least 1 (b linked)\n+    assert out_degree(g, \"a\") >= 1\n+\n*** End Patch"}I'll apply."}
+"""Tests for intelligence graph building and simple metrics."""
+
+from capability import Capability, CapabilityLibrary
+from evaluation import build_intelligence_graph, degree_centrality, out_degree
+
+
+def test_build_graph_and_out_degree():
+    caps = CapabilityLibrary()
+    a = Capability(
+        capability_id="a",
+        skill_ids=["s1", "s2"],
+        metadata={"composed_with": ["b"]},
+    )
+    b = Capability(
+        capability_id="b",
+        skill_ids=["s2", "s3"],
+        metadata={"transfer_links": ["a"]},
+    )
+    caps.add(a)
+    caps.add(b)
+    g = build_intelligence_graph(caps)
+    assert out_degree(g, "a") >= 1
+    assert g.edge_count() >= 1
+    cents = degree_centrality(g)
+    assert "a" in cents
+    assert cents["a"] > 0

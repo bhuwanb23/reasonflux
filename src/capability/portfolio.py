@@ -153,11 +153,14 @@ def sync_capability_state(
     *,
     growth: SystemCapabilitySnapshot | None = None,
     write_growth: bool = False,
+    intel: Any | None = None,
+    write_intel: bool = False,
 ) -> CapabilityState:
     """Write portfolio summary into CapabilityState.
 
-    When ``write_growth`` is True and ``growth`` is provided, also store
-    ``capability_score`` / ``cgr`` / ``growth_state`` (Phase 11E-2 opt-in).
+    Opt-in flags:
+    - ``write_growth``: store CGR / capability_score (11E-2)
+    - ``write_intel``: store IG / IGR / stage (11E-3); ``intel`` is IntelligenceState
     """
     state.growth_metrics = dict(state.growth_metrics or {})
     state.growth_metrics["mean_capu"] = float(portfolio.mean_capu)
@@ -171,5 +174,10 @@ def sync_capability_state(
         state.growth_metrics["capability_score"] = float(growth.capability_score)
         state.growth_metrics["cgr"] = float(growth.cgr)
         meta["growth_state"] = growth.growth_state
+    if write_intel and intel is not None:
+        state.growth_metrics["ig"] = float(getattr(intel, "ig", 0.0))
+        state.growth_metrics["igr"] = float(getattr(intel, "igr", 0.0))
+        state.growth_metrics["ia"] = float(getattr(intel, "ia", 0.0))
+        meta["intelligence_stage"] = str(getattr(intel, "stage", "emerging"))
     state.metadata = meta
     return state

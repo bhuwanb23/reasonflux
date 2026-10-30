@@ -48,7 +48,7 @@ Ghost guard: no transfer evidence → cannot become established.
 `CapabilityLibrary` + `CapabilityGraph` (shared_skill / transfer / composition
 edges). `compute_capability_portfolio` syncs `mean_capu`, `core_count`,
 `capability_ids` into `CapabilityState`. Opt-in CGR sync via
-`write_growth=True` (Phase 11E-2).
+`write_growth=True` (11E-2); opt-in IG/IGR/stage via `write_intel=True` (11E-3).
 
 ## Constraints and representation failures
 
@@ -75,7 +75,11 @@ Valid capability: ≥1 skill, transfer evidence, CapU floor, supporting evidence
 | `constraints.py` / `failures.py` | validity + representation guards |
 | `emerge.py` | propose from skill library |
 
+## Intelligence (11E-3)
+
+Intelligence ≠ capability stock. Measured as IG / IGR / IA / IE / elasticity in
+`src/evaluation/intelligence*.py`. See [metrics.md](metrics.md).
+
 ## Non-goals
 
-Intelligence growth model (11E-3), evaluation
-harness (11E-4), full capability failure suite (11E-5).
+Evaluation harness (11E-4), full capability failure suite (11E-5).

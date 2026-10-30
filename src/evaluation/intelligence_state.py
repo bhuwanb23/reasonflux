@@ -2,13 +2,20 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any
 
 from capability.library import CapabilityLibrary
+from evaluation.growth_config import GrowthConfig
+from evaluation.intelligence import (
+    classify_intelligence_stage,
+    compute_elasticity,
+    compute_ia,
+    compute_ie,
+    compute_igr,
+    intelligence_score,
+)
 from skills.library import SkillLibrary
-from evaluation.intelligence import compute_ie, compute_igr, compute_ia, compute_elasticity
-from capability.portfolio import compute_system_capability_state
 
 
 @dataclass(slots=True)
@@ -17,7 +24,10 @@ class IntelligencePortfolioMetrics:
     n: int = 0
 
     def to_dict(self) -> dict[str, Any]:
-        return {"capability_score": self.capability_score, "n": int(self.n)}
+        return {
+            "capability_score": float(self.capability_score),
+            "n": int(self.n),
+        }
 
 
 @dataclass(slots=True)
@@ -27,9 +37,10 @@ class IntelligenceState:
     ia: float = 0.0
     ie: float = 0.0
     elasticity: float = 0.0
+    stage: str = "emerging"
     portfolio: IntelligencePortfolioMetrics | None = None
     timestamp: float = 0.0
-    metadata: dict[str, Any] = None
+    metadata: dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -38,6 +49,7 @@ class IntelligenceState:
             "ia": float(self.ia),
             "ie": float(self.ie),
             "elasticity": float(self.elasticity),
+            "stage": self.stage,
             "portfolio": self.portfolio.to_dict() if self.portfolio else None,
             "timestamp": float(self.timestamp),
             "metadata": dict(self.metadata or {}),
@@ -54,32 +66,82 @@ def compute_system_intelligence_state(
     experiences: int | float = 0,
     new_families: int = 0,
     dt: float = 1.0,
-    growth_config=None,
+    growth_config: GrowthConfig | None = None,
+    ag: float = 0.0,
+    su: float = 0.0,
+    ts: float = 0.0,
+    cp: float = 0.0,
+    ad: float = 0.0,
 ) -> IntelligenceState:
-    """Build IntelligenceState from CGM outputs (uses compute_system_capability_state).
+    """Build IntelligenceState from CGM outputs + optional component proxies."""
+    # Lazy import avoids evaluation ↔ capability.portfolio circular import.
+    from capability.portfolio import compute_system_capability_state
 
-    This is intentionally conservative: IG derives from capability portfolio score
-    and supplied component proxies (caller provides AG/CP/AD if available).
-    """
-    # Derive portfolio / capability score + cgr
     sys = compute_system_capability_state(
-        capability_library, skill_library, previous_score=previous_capability_score, dt=dt, growth_config=growth_config
+        capability_library,
+        skill_library,
+        previous_score=previous_capability_score,
+        dt=dt,
+        growth_config=growth_config,
     )
     cap_score = float(sys.capability_score)
     cgr = float(sys.cgr)
 
-    # Basic IG proxy: reuse compute_ig from growth_metrics if available (caller may
-    # map AG/CP/AD into inputs). For now use cgr as main signal; others are zero.
-    from evaluation.growth_metrics import compute_ig
+    # Prefer explicit component args; fall back to portfolio proxies.
+    mean_su = su if su else float(
+        (sys.portfolio.mean_capu if sys.portfolio else 0.0) or 0.0
+    )
+    mean_ts = ts
+    if mean_ts == 0.0:
+        vals = [
+            float(s.transfer_score or 0.0)
+            for s in skill_library.list_skills()
+        ]
+        mean_ts = sum(vals) / len(vals) if vals else 0.0
 
-    ig = float(compute_ig(cgr, tg=0.0, ug=0.0, ccg=0.0, compg=0.0, growth_config=growth_config))
+    ig = intelligence_score(
+        ag=ag,
+        su=mean_su,
+        ts=mean_ts,
+        cgr=cgr,
+        cp=cp,
+        ad=ad,
+        growth_config=growth_config,
+    )
 
-    prev_ig = float(previous_ig) if previous_ig is not None else float(previous_intel.ig if previous_intel else 0.0)
+    if previous_ig is not None:
+        prev_ig = float(previous_ig)
+    elif previous_intel is not None:
+        prev_ig = float(previous_intel.ig)
+    else:
+        prev_ig = 0.0
+
     igr = compute_igr(ig, prev_ig, dt=dt)
-    prev_igr = float(previous_intel.igr if previous_intel else 0.0)
+    prev_igr = float(previous_intel.igr) if previous_intel is not None else 0.0
     ia = compute_ia(igr, prev_igr, dt=dt)
     ie = compute_ie(ig, experiences)
     elasticity = compute_elasticity(ig - prev_ig, new_families, dt=dt)
+
+    n_skills = len(skill_library)
+    transfer_events = sum(len(s.transfer_history or []) for s in skill_library.list_skills())
+    families = {
+        str((e or {}).get("target_family") or "").lower()
+        for s in skill_library.list_skills()
+        for e in (s.transfer_history or [])
+        if (e or {}).get("target_family")
+    }
+    composed = any(
+        (s.metadata or {}).get("composed_from") or (s.metadata or {}).get("capability_candidate")
+        for s in skill_library.list_skills()
+    )
+    stage = classify_intelligence_stage(
+        skill_count=n_skills,
+        transfer_events=transfer_events,
+        cross_family=len(families) >= 2,
+        composition_ok=composed,
+        adaptation_ok=ad > 0 and igr > 0,
+        igr=igr,
+    )
 
     return IntelligenceState(
         ig=ig,
@@ -87,8 +149,10 @@ def compute_system_intelligence_state(
         ia=ia,
         ie=ie,
         elasticity=elasticity,
-        portfolio=IntelligencePortfolioMetrics(capability_score=cap_score, n=len(capability_library)),
+        stage=stage,
+        portfolio=IntelligencePortfolioMetrics(
+            capability_score=cap_score, n=len(capability_library)
+        ),
         timestamp=0.0,
-        metadata={},
+        metadata={"cgr": cgr, "capability_score": cap_score},
     )
-\"\"\"IntelligenceState dataclasses and system-level helpers (Phase 11E-3).\"\"\"\n+\n+from __future__ import annotations\n+\n+from dataclasses import dataclass\n+from typing import Any\n+\n+from capability.library import CapabilityLibrary\n+from skills.library import SkillLibrary\n+from evaluation.intelligence import compute_ie, compute_igr, compute_ia, compute_elasticity\n+from capability.portfolio import compute_system_capability_state\n+\n+\n+@dataclass(slots=True)\n+class IntelligencePortfolioMetrics:\n+    capability_score: float = 0.0\n+    n: int = 0\n+\n+    def to_dict(self) -> dict[str, Any]:\n+        return {\"capability_score\": self.capability_score, \"n\": int(self.n)}\n+\n+\n+@dataclass(slots=True)\n+class IntelligenceState:\n+    ig: float = 0.0\n+    igr: float = 0.0\n+    ia: float = 0.0\n+    ie: float = 0.0\n+    elasticity: float = 0.0\n+    portfolio: IntelligencePortfolioMetrics | None = None\n+    timestamp: float = 0.0\n+    metadata: dict[str, Any] = None\n+\n+    def to_dict(self) -> dict[str, Any]:\n+        return {\n+            \"ig\": float(self.ig),\n+            \"igr\": float(self.igr),\n+            \"ia\": float(self.ia),\n+            \"ie\": float(self.ie),\n+            \"elasticity\": float(self.elasticity),\n+            \"portfolio\": self.portfolio.to_dict() if self.portfolio else None,\n+            \"timestamp\": float(self.timestamp),\n+            \"metadata\": dict(self.metadata or {}),\n+        }\n+\n+\n+def compute_system_intelligence_state(\n+    capability_library: CapabilityLibrary,\n+    skill_library: SkillLibrary,\n+    *,\n+    previous_intel: IntelligenceState | None = None,\n+    previous_capability_score: float | None = None,\n+    previous_ig: float | None = None,\n+    experiences: int | float = 0,\n+    new_families: int = 0,\n+    dt: float = 1.0,\n+    growth_config=None,\n+) -> IntelligenceState:\n+    \"\"\"Build IntelligenceState from CGM outputs (uses compute_system_capability_state).\n+\n+    This is intentionally conservative: IG derives from capability portfolio score\n+    and supplied component proxies (caller provides AG/CP/AD if available).\n+    \"\"\"\n+    # Derive portfolio / capability score + cgr\n+    sys = compute_system_capability_state(\n+        capability_library, skill_library, previous_score=previous_capability_score, dt=dt, growth_config=growth_config\n+    )\n+    cap_score = float(sys.capability_score)\n+    cgr = float(sys.cgr)\n+\n+    # Basic IG proxy: reuse compute_ig from growth_metrics if available (caller may\n+    # map AG/CP/AD into inputs). For now use cgr as main signal; others are zero.\n+    from evaluation.growth_metrics import compute_ig\n+\n+    ig = float(compute_ig(cgr, tg=0.0, ug=0.0, ccg=0.0, compg=0.0, growth_config=growth_config))\n+\n+    prev_ig = float(previous_ig) if previous_ig is not None else float(previous_intel.ig if previous_intel else 0.0)\n+    igr = compute_igr(ig, prev_ig, dt=dt)\n+    prev_igr = float(previous_intel.igr if previous_intel else 0.0)\n+    ia = compute_ia(igr, prev_igr, dt=dt)\n+    ie = compute_ie(ig, experiences)\n+    elasticity = compute_elasticity(ig - prev_ig, new_families, dt=dt)\n+\n+    return IntelligenceState(\n+        ig=ig,\n+        igr=igr,\n+        ia=ia,\n+        ie=ie,\n+        elasticity=elasticity,\n+        portfolio=IntelligencePortfolioMetrics(capability_score=cap_score, n=len(capability_library)),\n+        timestamp=0.0,\n+        metadata={},\n+    )\n+\n*** End Patch"}>
