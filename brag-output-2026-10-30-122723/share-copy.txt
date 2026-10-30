@@ -1,0 +1,3 @@
+Intelligence as growth, not just answers. ASFT is our ARC Prize Paper Track prototype: it turns repeated reasoning traces into reusable skills — Task → Trace → Invariant → Skill → Transfer → Growth → Reports — with real metrics (Invariant Strength, Skill Creation Value, Capability Growth) instead of narrative.
+
+Three contributed theories, one working scaffold, zero hype. The paper starts here.
