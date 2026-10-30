@@ -11,8 +11,6 @@ Skill Economics
 Skill Lifecycle
 ↓
 Skill Composition
-
-
 Now we must answer the most important engineering question:
 
 How can the entire skill system fail?
