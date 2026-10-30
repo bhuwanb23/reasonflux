@@ -44,6 +44,11 @@ IG = f(AG, SU, TS, CGR)
 
 where Abstraction Gain \(AG = RC_{before} - RC_{after}\).
 
+## Capability representation scores (11E-1)
+
+CapU / CCov / strength / confidence live in `src/capability/`. See
+[capability.md](capability.md). CGR / IG remain stubs until 11E-2.
+
 ## Code homes
 
 | Metric | Module |
@@ -51,4 +56,5 @@ where Abstraction Gain \(AG = RC_{before} - RC_{after}\).
 | IS | `src/invariants/strength.py`, `src/evaluation/invariant_metrics.py` |
 | SCV / SU | `src/skills/trigger.py`, `src/evaluation/skill_metrics.py` |
 | TS | `src/evaluation/transfer_metrics.py`, `src/transfer/` |
-| CGR / IG | `src/evaluation/growth_metrics.py` |
+| CapU / CCov | `src/capability/utility.py`, `src/capability/coverage.py` |
+| CGR / IG | `src/evaluation/growth_metrics.py` (11E-2) |

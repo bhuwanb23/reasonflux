@@ -10,7 +10,7 @@ Organize around **research contributions**, not algorithms:
 | --- | --- |
 | IDT | `src/traces`, `src/invariants` |
 | SCT | `src/skills` |
-| CGM | `src/evaluation` |
+| CGM | `src/capability` (representation), `src/evaluation` (growth metrics) |
 | Transfer hypothesis | `src/transfer` |
 | End-to-end ASFT | `src/pipelines` |
 
@@ -27,14 +27,15 @@ Knowledge objects in `src/core/`:
 | `Invariant` | `invariant.py` | Recurring structure (observation) |
 | `Concept` | `concept.py` | Lightweight semantic link (MVP) |
 | `SkillCandidate` / `Skill` | `skill.py` | SCT promotion path |
-| `CapabilityState` | `capability.py` | CGM snapshot |
+| `CapabilityState` | `capability.py` | CGM system snapshot (L4) |
+| `Capability` | `src/capability` | Capability clusters (L3, Phase 11E-1) |
 
 Three memory layers (`src/core/memory.py`) mirror the ASFT thesis:
 
 ```
 Experience Memory (tasks, traces)
  → Abstraction Memory (invariants, concepts)
- → Capability Memory (skills, capability state)
+ → Capability Memory (skills, CapabilityLibrary, capability state)
 ```
 
 Module boundaries are typed in `src/core/contracts.py` (`TraceBatchProvider`, `ValidatedInvariantProvider`, `PromotedSkillProvider`, `SkillUsageStatsProvider`). Lifecycle enums and transitions live in `src/core/states.py`.
@@ -79,7 +80,8 @@ Trace mining details: [docs/mining.md](mining.md). Invariant qualification:
 [docs/skill_economics.md](skill_economics.md). Skill lifecycle:
 [docs/lifecycle.md](lifecycle.md). Skill composition:
 [docs/composition.md](composition.md). Skill failure modes:
-[docs/skill_failure_modes.md](skill_failure_modes.md).
+[docs/skill_failure_modes.md](skill_failure_modes.md). Capability representation:
+[docs/capability.md](capability.md).
 
 ## Module dependency graph
 
@@ -88,6 +90,7 @@ core
  ├─ traces
  ├─ invariants
  ├─ skills
+ ├─ capability
  ├─ transfer
  └─ evaluation
 

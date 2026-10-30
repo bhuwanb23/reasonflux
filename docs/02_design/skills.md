@@ -98,5 +98,6 @@ skill covers the task; promote reusable compositions to Skills.
 
 ## Non-goals
 
-Capability growth metrics (11E). Parallel/conditional/recursive composition later.
-Skill failure modes and safeguards: [skill_failure_modes.md](skill_failure_modes.md).
+Capability growth measurement / CGR (11E-2). Parallel/conditional/recursive
+composition later. Skill failure modes: [skill_failure_modes.md](skill_failure_modes.md).
+Capability representation: [capability.md](capability.md).
