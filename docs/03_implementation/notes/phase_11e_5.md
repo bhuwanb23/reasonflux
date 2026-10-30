@@ -6,7 +6,8 @@
   recovery, and `audit_capability_ecosystem`.
 - YAML `capability_robustness:` + `load_capability_robustness_config`.
 - Harness `gate_run` uses `validate_growth_claim` when `hard_validation=True`
-  (default); soft-bypass of gaming/illusion kinds removed for that path.
+  (default). Multi-signal hard gate decides acceptance; adjacent-step growth/intel
+  audit kinds are still reported in metadata but do not veto a passing claim.
 - Docs: `docs/02_design/capability_failure_modes.md`.
 
 ## Design choices

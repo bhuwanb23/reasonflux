@@ -95,3 +95,4 @@ def test_audit_ok_on_supported_growth():
     )
     assert result.growth_claim is not None
     assert result.growth_claim.accepted is True
+    assert result.ok is True

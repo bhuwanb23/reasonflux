@@ -67,7 +67,8 @@ audit_capability_ecosystem(cap_lib, skill_lib, snapshots=None, *, config)
 | `robustness/config.py` | `CapabilityRobustnessConfig` |
 | `robustness/taxonomy.py` | CF1–CF10, `FailureDiagnosis` |
 | `robustness/metrics.py` | FR, CSR, CHS, CS helpers |
-| `robustness/detectors.py` | CF1–CF10 detectors |
+| `robustness/detectors.py` | CF1–CF4 / CF7 / CF9 wrappers |
+| `robustness/detectors_series.py` | CF5 / CF6 / CF8 / CF10 |
 | `robustness/gates.py` | `validate_growth_claim` |
 | `robustness/health.py` | per-cap + portfolio bands |
 | `robustness/recovery.py` | plan / apply recovery |

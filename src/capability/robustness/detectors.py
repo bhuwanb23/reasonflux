@@ -1,4 +1,4 @@
-"""CF1–CF10 detectors wrapping representation/growth/intelligence audits."""
+"""CF1–CF4 / CF7 / CF9 detectors wrapping growth/intel/representation audits."""
 
 from __future__ import annotations
 
@@ -7,11 +7,16 @@ from typing import Any, Sequence
 from capability.failures import audit_representation
 from capability.library import CapabilityLibrary
 from capability.robustness.config import CapabilityRobustnessConfig
+from capability.robustness.detectors_series import (
+    detect_cf5_saturation,
+    detect_cf6_regression,
+    detect_cf8_overfitting,
+    detect_cf10_collapse,
+)
 from capability.robustness.metrics import (
     fragmentation_ratio,
     mean_transfer_score,
     negative_transfer_rate,
-    saturation_ratio,
 )
 from capability.robustness.taxonomy import (
     CapabilityFailureKind,
@@ -22,6 +27,19 @@ from evaluation.growth_checks import GrowthEvidence, audit_growth
 from evaluation.intelligence_checks import audit_intelligence
 from invariants.robustness.escalation import FailureLevel
 from skills.library import SkillLibrary
+
+__all__ = [
+    "detect_cf1_growth_illusion",
+    "detect_cf2_fragmentation",
+    "detect_cf3_inflation",
+    "detect_cf4_transfer_collapse",
+    "detect_cf5_saturation",
+    "detect_cf6_regression",
+    "detect_cf7_metric_gaming",
+    "detect_cf8_overfitting",
+    "detect_cf9_intelligence_illusion",
+    "detect_cf10_collapse",
+]
 
 
 def _diag(
@@ -42,14 +60,13 @@ def _from_legacy(
         kind = kind_from_legacy(getattr(f, "kind", "") or "")
         if kind is None:
             continue
-        caps = list(getattr(f, "capability_ids", []) or [])
         out.append(
             _diag(
                 kind,
                 default_level,
                 list(getattr(f, "reasons", []) or []),
                 dict(getattr(f, "metrics", {}) or {}),
-                caps,
+                list(getattr(f, "capability_ids", []) or []),
             )
         )
     return out
@@ -66,6 +83,7 @@ def detect_cf1_growth_illusion(
     evidence: GrowthEvidence | None,
     config: CapabilityRobustnessConfig,
 ) -> list[FailureDiagnosis]:
+    del config
     report = audit_growth(
         cgr=cgr,
         tg=tg,
@@ -75,11 +93,9 @@ def detect_cf1_growth_illusion(
         transfer_delta=transfer_delta,
         evidence=evidence,
     )
-    mapped = _from_legacy(report.failures, default_level=FailureLevel.REJECTED)
-    # Prefer CF1 for skill-count / utility illusions.
     out = [
         d
-        for d in mapped
+        for d in _from_legacy(report.failures, default_level=FailureLevel.REJECTED)
         if d.kind in (CapabilityFailureKind.CF1, CapabilityFailureKind.CF7)
     ]
     if skill_delta > 0 and ug <= 0 and cgr > 0:
@@ -99,8 +115,8 @@ def detect_cf2_fragmentation(
     skill_lib: SkillLibrary,
     config: CapabilityRobustnessConfig,
 ) -> list[FailureDiagnosis]:
-    fr = fragmentation_ratio(cap_lib, skill_lib)
     out: list[FailureDiagnosis] = []
+    fr = fragmentation_ratio(cap_lib, skill_lib)
     if fr > config.max_fragmentation_ratio:
         out.append(
             _diag(
@@ -128,13 +144,14 @@ def detect_cf3_inflation(
     observed_coverage: float | None = None,
     config: CapabilityRobustnessConfig,
 ) -> list[FailureDiagnosis]:
-    out: list[FailureDiagnosis] = []
-    report = audit_representation(cap_lib, skill_lib)
-    out.extend(
+    out = [
         d
-        for d in _from_legacy(report, default_level=FailureLevel.REJECTED)
+        for d in _from_legacy(
+            audit_representation(cap_lib, skill_lib),
+            default_level=FailureLevel.REJECTED,
+        )
         if d.kind is CapabilityFailureKind.CF3
-    )
+    ]
     if (
         claimed_coverage is not None
         and observed_coverage is not None
@@ -159,9 +176,10 @@ def detect_cf4_transfer_collapse(
     skill_lib: SkillLibrary,
     *,
     prev_ts: float | None = None,
+    curr_ts: float | None = None,
     config: CapabilityRobustnessConfig,
 ) -> list[FailureDiagnosis]:
-    ts = mean_transfer_score(skill_lib)
+    ts = float(curr_ts) if curr_ts is not None else mean_transfer_score(skill_lib)
     ntr = negative_transfer_rate(skill_lib)
     out: list[FailureDiagnosis] = []
     if prev_ts is not None and prev_ts > 0:
@@ -187,46 +205,6 @@ def detect_cf4_transfer_collapse(
     return out
 
 
-def detect_cf5_saturation(
-    *,
-    new_cap: float,
-    existing_cap: float,
-    config: CapabilityRobustnessConfig,
-) -> list[FailureDiagnosis]:
-    csr = saturation_ratio(new_cap, existing_cap)
-    if csr <= config.saturation_csr and existing_cap > 0:
-        return [
-            _diag(
-                CapabilityFailureKind.CF5,
-                FailureLevel.WARNING,
-                ["capability_saturation"],
-                {"csr": csr, "threshold": config.saturation_csr},
-            )
-        ]
-    return []
-
-
-def detect_cf6_regression(
-    cgr_series: Sequence[float], config: CapabilityRobustnessConfig
-) -> list[FailureDiagnosis]:
-    trailing = 0
-    for x in reversed(list(cgr_series)):
-        if float(x) < -1e-12:
-            trailing += 1
-        else:
-            break
-    if trailing >= config.regression_negative_cgr_steps:
-        return [
-            _diag(
-                CapabilityFailureKind.CF6,
-                FailureLevel.RESTRICTED,
-                ["sustained_negative_cgr"],
-                {"trailing_neg": trailing},
-            )
-        ]
-    return []
-
-
 def detect_cf7_metric_gaming(
     *,
     evidence: GrowthEvidence | None,
@@ -235,6 +213,7 @@ def detect_cf7_metric_gaming(
     tg: float,
     config: CapabilityRobustnessConfig,
 ) -> list[FailureDiagnosis]:
+    del config
     report = audit_growth(
         cgr=cgr,
         tg=tg,
@@ -249,29 +228,6 @@ def detect_cf7_metric_gaming(
         for d in _from_legacy(report.failures, default_level=FailureLevel.REJECTED)
         if d.kind is CapabilityFailureKind.CF7
     ]
-
-
-def detect_cf8_overfitting(
-    *,
-    train_success: float,
-    holdout_success: float,
-    config: CapabilityRobustnessConfig,
-) -> list[FailureDiagnosis]:
-    gap = float(train_success) - float(holdout_success)
-    if gap >= config.overfitting_success_gap and train_success > 0.5:
-        return [
-            _diag(
-                CapabilityFailureKind.CF8,
-                FailureLevel.REJECTED,
-                ["train_holdout_divergence"],
-                {
-                    "train_success": train_success,
-                    "holdout_success": holdout_success,
-                    "gap": gap,
-                },
-            )
-        ]
-    return []
 
 
 def detect_cf9_intelligence_illusion(
@@ -302,21 +258,3 @@ def detect_cf9_intelligence_illusion(
             )
         )
     return mapped
-
-
-def detect_cf10_collapse(
-    cgr_series: Sequence[float], config: CapabilityRobustnessConfig
-) -> list[FailureDiagnosis]:
-    bad = sum(
-        1 for x in cgr_series if float(x) <= config.collapse_cgr_threshold
-    )
-    if bad >= config.collapse_min_steps:
-        return [
-            _diag(
-                CapabilityFailureKind.CF10,
-                FailureLevel.REJECTED,
-                ["capability_collapse"],
-                {"bad_steps": bad, "threshold": config.collapse_cgr_threshold},
-            )
-        ]
-    return []

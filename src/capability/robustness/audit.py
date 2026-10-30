@@ -71,8 +71,8 @@ def audit_capability_ecosystem(
     evidence: GrowthEvidence | None = None,
     claimed_coverage: float | None = None,
     observed_coverage: float | None = None,
-    new_cap: float = 0.0,
-    existing_cap: float = 1.0,
+    new_cap: float | None = None,
+    existing_cap: float | None = None,
     skill_delta: int = 0,
     hard_gate: bool = True,
 ) -> EcosystemAuditResult:
@@ -88,7 +88,6 @@ def audit_capability_ecosystem(
     ug = float(after.mean_su) - (float(before.mean_su) if before else 0.0)
     ccg = float(after.coverage) - (float(before.coverage) if before else 0.0)
     transfer_delta = tg
-    prev_ts = float(before.mean_ts) if before else mean_transfer_score(skill_lib)
     ig = float(after.ig)
     ig_delta = ig - (float(before.ig) if before else 0.0)
     cgr_series = [float(s.cgr) for s in snaps]
@@ -117,16 +116,27 @@ def audit_capability_ecosystem(
             config=config,
         )
     )
-    failures.extend(
-        detect_cf4_transfer_collapse(
-            skill_lib, prev_ts=prev_ts if before else None, config=config
+    # Prefer snapshot mean_ts for collapse; fall back to library mean.
+    curr_ts = float(after.mean_ts) if snaps else mean_transfer_score(skill_lib)
+    if before is not None:
+        failures.extend(
+            detect_cf4_transfer_collapse(
+                skill_lib,
+                prev_ts=float(before.mean_ts),
+                curr_ts=curr_ts,
+                config=config,
+            )
         )
-    )
-    failures.extend(
-        detect_cf5_saturation(
-            new_cap=new_cap, existing_cap=existing_cap, config=config
+    else:
+        failures.extend(
+            detect_cf4_transfer_collapse(skill_lib, prev_ts=None, config=config)
         )
-    )
+    if new_cap is not None and existing_cap is not None:
+        failures.extend(
+            detect_cf5_saturation(
+                new_cap=new_cap, existing_cap=existing_cap, config=config
+            )
+        )
     if cgr_series:
         failures.extend(detect_cf6_regression(cgr_series, config))
         failures.extend(detect_cf10_collapse(cgr_series, config))
