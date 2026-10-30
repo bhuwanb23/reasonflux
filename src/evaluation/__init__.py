@@ -16,6 +16,7 @@ from evaluation.growth_components import (
     component_snapshot,
     composition_growth,
     coverage_growth,
+    mean_transfer_score,
     transfer_growth,
     utility_growth,
 )
@@ -60,6 +61,7 @@ __all__ = [
     "detect_metric_gaming",
     "detect_skill_count_illusion",
     "detect_transfer_illusion",
+    "mean_transfer_score",
     "skill_utility_breakdown",
     "transfer_growth",
     "utility_growth",

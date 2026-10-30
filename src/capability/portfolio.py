@@ -14,8 +14,10 @@ from capability.utility import compute_capability_utility
 from evaluation.growth_config import GrowthConfig
 from evaluation.growth_metrics import (
     classify_growth_state,
+    compute_ca,
     compute_cgr,
     compute_portfolio_capability,
+    compute_saturation_ratio,
 )
 from skills.library import SkillLibrary
 
@@ -101,6 +103,8 @@ def compute_system_capability_state(
     config: CapabilityConfig | None = None,
     growth_config: GrowthConfig | None = None,
     previous_score: float | None = None,
+    previous_cgr: float | None = None,
+    new_capability: float | None = None,
     dt: float | None = None,
     refresh_portfolio: bool = True,
 ) -> SystemCapabilitySnapshot:
@@ -117,12 +121,21 @@ def compute_system_capability_state(
     )
     cgr = 0.0
     has_history = previous_score is not None
+    step = gc.default_dt if dt is None else float(dt)
     if has_history:
         cgr = compute_cgr(
-            current_c=score, previous_c=float(previous_score), dt=dt or gc.default_dt
+            current_c=score, previous_c=float(previous_score), dt=step
         )
+    ca = 0.0
+    if previous_cgr is not None:
+        ca = compute_ca(cgr, float(previous_cgr), dt=step)
+    existing = float(previous_score) if previous_score is not None else score
+    csr = compute_saturation_ratio(
+        float(new_capability) if new_capability is not None else max(0.0, score - existing),
+        existing,
+    )
     state_label = classify_growth_state(
-        cgr, growth_config=gc, has_history=has_history
+        cgr, ca=ca, csr=csr, growth_config=gc, has_history=has_history
     )
     return SystemCapabilitySnapshot(
         capability_score=score,

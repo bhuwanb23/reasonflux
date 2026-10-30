@@ -6,26 +6,41 @@ from typing import Any
 
 from capability.config import CapabilityConfig
 from capability.coverage import compute_coverage
-from capability.evidence import transfer_event_count
 from capability.models import Capability
 from skills.library import SkillLibrary
 
 
-def _snapshot_float(previous: Capability | dict[str, Any] | float | None, key: str) -> float:
+def _from_prev(
+    previous: Capability | dict[str, Any] | float | None,
+    key: str,
+    *,
+    default: float = 0.0,
+) -> float:
     if previous is None:
-        return 0.0
+        return default
     if isinstance(previous, (int, float)):
         return float(previous)
     if isinstance(previous, Capability):
-        return float(getattr(previous, key, 0.0) or 0.0)
-    return float((previous or {}).get(key, 0.0) or 0.0)
+        return float(getattr(previous, key, default) or default)
+    if isinstance(previous, dict):
+        if key in previous:
+            return float(previous[key] or default)
+        return default
+    return default
 
 
-def transfer_support(
+def mean_transfer_score(
     capability: Capability, library: SkillLibrary | None = None
 ) -> float:
-    """Scalar transfer support used for TG."""
-    return float(transfer_event_count(capability, library))
+    """Mean member-skill transfer_score (CapU TS component)."""
+    if library is None:
+        return float(capability.metadata.get("mean_ts", 0.0) or 0.0) if capability.metadata else 0.0
+    vals: list[float] = []
+    for sid in capability.skill_ids:
+        skill = library.get(sid)
+        if skill is not None:
+            vals.append(float(skill.transfer_score or 0.0))
+    return sum(vals) / len(vals) if vals else 0.0
 
 
 def transfer_growth(
@@ -34,14 +49,15 @@ def transfer_growth(
     *,
     library: SkillLibrary | None = None,
 ) -> float:
-    """TG = TS_t − TS_{t−1} (transfer event support delta)."""
-    current = transfer_support(capability, library)
+    """TG = TS_t − TS_{t−1} (mean transfer_score delta)."""
+    current = mean_transfer_score(capability, library)
     if isinstance(previous, Capability):
-        prev = transfer_support(previous, library)
-    elif isinstance(previous, dict) and "transfer_support" in previous:
-        prev = float(previous["transfer_support"])
+        prev = mean_transfer_score(previous, library)
     else:
-        prev = _snapshot_float(previous, "transfer_support")
+        prev = _from_prev(previous, "mean_ts")
+        if isinstance(previous, dict) and "mean_ts" not in previous and "transfer_support" in previous:
+            # Back-compat for older snapshots that stored event counts.
+            prev = _from_prev(previous, "transfer_support")
     return current - prev
 
 
@@ -58,17 +74,16 @@ def coverage_growth(
         capability, library=library, total_families=total_families, config=config
     )
     if isinstance(previous, Capability):
-        prev = float(previous.coverage or 0.0)
-    elif isinstance(previous, dict) and "coverage" in previous:
-        prev = float(previous["coverage"])
+        prev = compute_coverage(
+            previous, library=library, total_families=total_families, config=config
+        )
     else:
-        prev = _snapshot_float(previous, "coverage")
-    return float(current) - prev
+        prev = _from_prev(previous, "coverage")
+    return float(current) - float(prev)
 
 
 def _composition_count(capability: Capability, library: SkillLibrary | None) -> float:
     if library is None:
-        # Fall back to evidence / metadata flags on the capability itself.
         meta = capability.metadata or {}
         return float(meta.get("composition_count", 0.0) or 0.0)
     n = 0
@@ -92,10 +107,8 @@ def composition_growth(
     current = _composition_count(capability, library)
     if isinstance(previous, Capability):
         prev = _composition_count(previous, library)
-    elif isinstance(previous, dict) and "composition_count" in previous:
-        prev = float(previous["composition_count"])
     else:
-        prev = _snapshot_float(previous, "composition_count")
+        prev = _from_prev(previous, "composition_count")
     return current - prev
 
 
@@ -105,20 +118,22 @@ def utility_growth(
 ) -> float:
     """UG = CapU_t − CapU_{t−1} (or last two utility_history entries)."""
     current = float(capability.utility or 0.0)
-    if isinstance(previous, Capability):
-        prev = float(previous.utility or 0.0)
-    elif isinstance(previous, dict) and "utility" in previous:
-        prev = float(previous["utility"])
-    elif isinstance(previous, (int, float)):
-        prev = float(previous)
-    else:
+    if previous is None:
         hist = list(capability.utility_history or [])
         if len(hist) >= 2:
             return float(hist[-1].get("utility", 0.0)) - float(
                 hist[-2].get("utility", 0.0)
             )
-        prev = 0.0
-    return current - prev
+        return current
+    if isinstance(previous, Capability):
+        return current - float(previous.utility or 0.0)
+    if isinstance(previous, (int, float)):
+        return current - float(previous)
+    if isinstance(previous, dict):
+        if "utility" in previous:
+            return current - float(previous["utility"] or 0.0)
+        return current - 0.0
+    return current
 
 
 def component_snapshot(
@@ -133,7 +148,7 @@ def component_snapshot(
         capability, library=library, total_families=total_families, config=config
     )
     return {
-        "transfer_support": transfer_support(capability, library),
+        "mean_ts": mean_transfer_score(capability, library),
         "coverage": float(cov),
         "composition_count": _composition_count(capability, library),
         "utility": float(capability.utility or 0.0),

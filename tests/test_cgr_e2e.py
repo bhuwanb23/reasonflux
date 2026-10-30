@@ -85,7 +85,7 @@ def test_positive_zero_negative_cgr_and_ig():
     assert ca > 0
 
     cap = caps.get("geo")
-    prev = {"transfer_support": 1.0, "coverage": 0.1, "composition_count": 0.0, "utility": 0.4}
+    prev = {"mean_ts": 0.4, "coverage": 0.1, "composition_count": 0.0, "utility": 0.4}
     tg = transfer_growth(cap, prev, library=skills_t1)
     ccg = coverage_growth(cap, prev, library=skills_t1, total_families=5)
     compg = composition_growth(cap, prev, library=skills_t1)
