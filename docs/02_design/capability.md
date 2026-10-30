@@ -80,6 +80,12 @@ Valid capability: ≥1 skill, transfer evidence, CapU floor, supporting evidence
 Intelligence ≠ capability stock. Measured as IG / IGR / IA / IE / elasticity in
 `src/evaluation/intelligence*.py`. See [metrics.md](metrics.md).
 
+## Failure modes (11E-5)
+
+Capability ecosystem hardening (CF1–CF10, CHS/CS, hard growth gate, recovery):
+[capability_failure_modes.md](capability_failure_modes.md).
+
 ## Non-goals
 
-Evaluation harness (11E-4), full capability failure suite (11E-5).
+Paper-scale experiment checklist beyond CGM measurement; interactive dashboards;
+re-deriving CapU / CGR / IG formulas.

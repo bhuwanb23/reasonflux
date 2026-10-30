@@ -19,6 +19,7 @@ __all__ = [
     "load_harness_config",
     "load_skill_config",
     "load_skill_robustness_config",
+    "load_capability_robustness_config",
     "load_transfer_config",
     "load_validation_config",
 ]
@@ -165,3 +166,16 @@ def load_harness_config(config_dir: str | Path = DEFAULT_CONFIG_DIR) -> Any:
         return HarnessConfig()
     data = load_config(path).get("evaluation") or {}
     return HarnessConfig.from_dict(data)
+
+
+def load_capability_robustness_config(
+    config_dir: str | Path = DEFAULT_CONFIG_DIR,
+) -> Any:
+    """Build a CapabilityRobustnessConfig from configs/thresholds.yaml."""
+    from capability.robustness.config import CapabilityRobustnessConfig
+
+    path = Path(config_dir) / "thresholds.yaml"
+    if not path.exists():
+        return CapabilityRobustnessConfig()
+    data = load_config(path).get("capability_robustness") or {}
+    return CapabilityRobustnessConfig.from_dict(data)

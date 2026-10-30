@@ -93,3 +93,4 @@ collapse, fragmentation, composition failure, adaptation failure, growth illusio
 | Evaluation harness | `src/evaluation/harness/` |
 | Reports | `src/evaluation/reports.py` |
 | Eval pipeline | `src/pipelines/evaluation_pipeline.py` |
+| CHS / CS / FR / CF1–CF10 | `src/capability/robustness/` — see [capability_failure_modes.md](capability_failure_modes.md) |

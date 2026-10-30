@@ -224,4 +224,11 @@ def build_snapshot(
         mean_su=float(skill.metrics.get("mean_su", 0.0)),
         mean_ts=float(xfer.metrics.get("mean_ts", 0.0)),
         ntr=float(xfer.metrics.get("ntr", 0.0)),
+        metadata={
+            "skill_count": len(skill_library),
+            "cap_count": len(capability_library),
+            "composition_success_rate": 0.5 if composed else 0.0,
+            "new_families": 1 if composed else 0,
+            "elasticity": float(intel.elasticity),
+        },
     )

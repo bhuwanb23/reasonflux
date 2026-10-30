@@ -198,3 +198,25 @@ evaluation:
   report_dir: reports/metrics
   default_level: capability
   experiences_per_step: 5
+  hard_validation: true
+
+capability_robustness:
+  # Phase 11E-5 capability failure modes and hard growth gates
+  max_fragmentation_ratio: 0.8
+  min_skills_per_cap: 1.0
+  inflation_coverage_gap: 0.4
+  transfer_collapse_ratio: 0.5
+  min_tg_positive: 0.0
+  regression_negative_cgr_steps: 2
+  saturation_csr: 0.05
+  collapse_cgr_threshold: -0.05
+  collapse_min_steps: 2
+  overfitting_success_gap: 0.5
+  ig_stagnation_eps: 0.005
+  chs_excellent: 0.8
+  chs_healthy: 0.6
+  chs_stable: 0.4
+  chs_weak: 0.2
+  cs_unstable: 0.3
+  hard_validation: true
+  require_evidence: true

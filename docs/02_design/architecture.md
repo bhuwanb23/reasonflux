@@ -81,7 +81,8 @@ Trace mining details: [docs/mining.md](mining.md). Invariant qualification:
 [docs/lifecycle.md](lifecycle.md). Skill composition:
 [docs/composition.md](composition.md). Skill failure modes:
 [docs/skill_failure_modes.md](skill_failure_modes.md). Capability representation:
-[docs/capability.md](capability.md).
+[docs/capability.md](capability.md). Capability failure modes:
+[docs/capability_failure_modes.md](capability_failure_modes.md).
 
 ## Module dependency graph
 

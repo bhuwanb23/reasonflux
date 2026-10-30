@@ -19,6 +19,7 @@ class HarnessConfig:
     report_dir: str = "reports/metrics"
     default_level: str = "capability"
     experiences_per_step: int = 5
+    hard_validation: bool = True
 
     def __post_init__(self) -> None:
         if self.default_dt <= 0:
