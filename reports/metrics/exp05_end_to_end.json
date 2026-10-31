@@ -1,0 +1,114 @@
+{
+  "asft": {
+    "capability_score": 0.8309,
+    "cgr": 0.013333,
+    "ig": 0.278,
+    "n_skills": 6,
+    "name": "asft_full",
+    "reuse_credited": 27
+  },
+  "baselines": [
+    {
+      "capability_score": 0.0,
+      "cgr": 0.0,
+      "ig": 0.0,
+      "name": "no_learning",
+      "reuse_credited": 0
+    },
+    {
+      "capability_score": 0.0,
+      "cgr": 0.0,
+      "ig": 0.0,
+      "name": "skill_storage",
+      "reuse_credited": 6
+    },
+    {
+      "capability_score": 0.5201,
+      "cgr": 0.0,
+      "ig": 0.078,
+      "name": "random_skill_creation",
+      "reuse_credited": 6
+    },
+    {
+      "capability_score": 0.6832,
+      "cgr": 0.0,
+      "ig": 0.1025,
+      "name": "dreamcoder_like",
+      "reuse_credited": 6
+    }
+  ],
+  "beats_all_baselines": true,
+  "contribution": "ASFT",
+  "experiment": "exp05_end_to_end",
+  "rounds": [
+    {
+      "capability_score": 0.84313,
+      "cgr": 0.0,
+      "ig": 0.276469,
+      "n_capabilities": 2,
+      "n_invariants": 6,
+      "n_new_skills": 4,
+      "n_skills": 4,
+      "n_traces": 16,
+      "reuse_credited": 6,
+      "round": 0
+    },
+    {
+      "capability_score": 0.804241,
+      "cgr": -0.038889,
+      "ig": 0.260914,
+      "n_capabilities": 3,
+      "n_invariants": 4,
+      "n_new_skills": 2,
+      "n_skills": 6,
+      "n_traces": 32,
+      "reuse_credited": 7,
+      "round": 1
+    },
+    {
+      "capability_score": 0.817574,
+      "cgr": 0.013333,
+      "ig": 0.275969,
+      "n_capabilities": 3,
+      "n_invariants": 4,
+      "n_new_skills": 0,
+      "n_skills": 6,
+      "n_traces": 48,
+      "reuse_credited": 7,
+      "round": 2
+    },
+    {
+      "capability_score": 0.830907,
+      "cgr": 0.013333,
+      "ig": 0.277969,
+      "n_capabilities": 3,
+      "n_invariants": 4,
+      "n_new_skills": 0,
+      "n_skills": 6,
+      "n_traces": 64,
+      "reuse_credited": 7,
+      "round": 3
+    }
+  ],
+  "success": true,
+  "summary": {
+    "cgr": 0.013333,
+    "final_capability": 0.830907,
+    "ig": 0.277969,
+    "initial_capability": 0.84313,
+    "library_size": 6,
+    "mean_transfer_benefit": 0.5042,
+    "n_capabilities": 3,
+    "n_invariants": 4,
+    "n_skills": 6,
+    "n_traces": 64,
+    "recovered_from_trough": true,
+    "reuse_attempts": 32,
+    "reuse_credited": 27,
+    "rounds": 4,
+    "success": true,
+    "transfer_rate": 0.8438,
+    "transfer_records": 27,
+    "trough_capability": 0.804241
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "contribution": "IDT",
+  "experiment": "exp01_invariants",
+  "invariants": [
+    {
+      "consistency": 1.0,
+      "families": "counting, grouping, reflection",
+      "frequency": 12,
+      "generality": 0.75,
+      "is": 9.0,
+      "signature": "apply_reflection"
+    },
+    {
+      "consistency": 1.0,
+      "families": "counting, grouping, reflection",
+      "frequency": 12,
+      "generality": 0.75,
+      "is": 9.0,
+      "signature": "find_symmetry"
+    },
+    {
+      "consistency": 1.0,
+      "families": "counting, grouping, rotation",
+      "frequency": 9,
+      "generality": 0.75,
+      "is": 6.75,
+      "signature": "find_rotation"
+    },
+    {
+      "consistency": 1.0,
+      "families": "counting, grouping, rotation",
+      "frequency": 9,
+      "generality": 0.75,
+      "is": 6.75,
+      "signature": "apply_rotation"
+    }
+  ],
+  "is_summary": {
+    "above_threshold": 4.0,
+    "max": 9.0,
+    "mean": 7.875,
+    "min": 6.75,
+    "n": 4.0,
+    "threshold": 5.0
+  },
+  "n_candidates": 6,
+  "n_traces": 24,
+  "n_validated": 4,
+  "reflection_found": true,
+  "rotation_found": true
+}
