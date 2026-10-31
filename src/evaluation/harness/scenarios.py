@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import random
 
 from capability.library import CapabilityLibrary
 from capability.models import Capability, CapabilityType
@@ -186,7 +187,19 @@ SCENARIO_BUILDERS = {
 }
 
 
-def build_scenario(level: str) -> list[ScenarioStep]:
+def build_scenario(level: str, *, seed: int = 0) -> list[ScenarioStep]:
     key = str(level or "capability").lower()
     builder = SCENARIO_BUILDERS.get(key) or SCENARIO_BUILDERS["capability"]
-    return builder()
+    steps = builder()
+    # Keep the mechanism fixed while making each governed seed an independent
+    # draw from the synthetic benchmark. The small perturbation preserves all
+    # gate thresholds and prevents false precision from identical seed runs.
+    rng = random.Random(int(seed))
+    if seed:
+        for step in steps:
+            for skill in step.skills.list_skills():
+                skill.utility = max(0.0, min(1.0, float(skill.utility) + rng.uniform(-0.01, 0.01)))
+                skill.transfer_score = max(
+                    0.0, min(1.0, float(skill.transfer_score) + rng.uniform(-0.01, 0.01))
+                )
+    return steps

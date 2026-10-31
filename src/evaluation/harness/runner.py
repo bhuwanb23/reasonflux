@@ -42,6 +42,7 @@ def _success_from_layers(layers: list[LayerResult], level: str) -> bool:
 def run_benchmark(
     level: str = "capability",
     *,
+    seed: int = 0,
     baseline: str | None = None,
     ablation: str | None = None,
     config: HarnessConfig | None = None,
@@ -49,9 +50,12 @@ def run_benchmark(
 ) -> EvaluationRun:
     """Run a longitudinal synthetic benchmark and evaluate all layers."""
     cfg = config or HarnessConfig()
-    steps = build_scenario(level if level != "intelligence" else "capability")
+    steps = build_scenario(
+        level if level != "intelligence" else "capability",
+        seed=seed,
+    )
     if str(level).lower() == "arc":
-        steps = build_scenario("arc")
+        steps = build_scenario("arc", seed=seed)
     steps = apply_baseline(steps, baseline)
     steps = apply_ablation(steps, ablation)
 
@@ -135,4 +139,5 @@ def run_benchmark(
     run.metadata["gate_ok"] = ok_gate
     run.metadata["gate_failures"] = kinds
     run.metadata["n_steps"] = len(steps)
+    run.metadata["seed"] = int(seed)
     return run

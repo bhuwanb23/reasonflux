@@ -15,6 +15,7 @@ from utils.config import load_harness_config
 def run_evaluation_pipeline(
     level: str = "capability",
     *,
+    seed: int = 0,
     baseline: str | None = None,
     ablation: str | None = None,
     config: HarnessConfig | None = None,
@@ -27,6 +28,7 @@ def run_evaluation_pipeline(
     level = level or cfg.default_level
     result: EvaluationRun = run_benchmark(
         level,
+        seed=seed,
         baseline=baseline,
         ablation=ablation,
         config=cfg,

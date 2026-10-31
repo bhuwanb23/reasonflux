@@ -166,7 +166,7 @@ def run_full_asft_pipeline(
         eval_tasks = make_task_batch(
             tuple(families),
             per_family=eval_per_family,
-            seed=eval_seed + r,
+            seed=eval_seed + (seed * 1000) + r,
             difficulty=difficulty,
         )
         round_reuse = engine.apply_batch(eval_tasks)

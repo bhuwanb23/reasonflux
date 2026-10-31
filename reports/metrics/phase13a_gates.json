@@ -1,0 +1,76 @@
+{
+  "checks": [
+    {
+      "details": "validated=4 mean_IS=7.875",
+      "name": "IDT readiness",
+      "passed": true
+    },
+    {
+      "details": "admitted=4 mean_SCV=0.0583",
+      "name": "SCT readiness",
+      "passed": true
+    },
+    {
+      "details": "records=5 mean_benefit=0.31",
+      "name": "Transfer readiness",
+      "passed": true
+    },
+    {
+      "details": "CGR=0.155234375 IG=0.26515625000000004 intelligence_harness_success=False",
+      "name": "CGM readiness",
+      "passed": true
+    },
+    {
+      "details": "success=True beats_all=True",
+      "name": "End-to-end baseline readiness",
+      "passed": true
+    },
+    {
+      "details": "baselines=4",
+      "name": "Baseline readiness",
+      "passed": true
+    }
+  ],
+  "configuration": {
+    "mode": "smoke",
+    "seed": 0
+  },
+  "experiment_id": "PHASE-13A",
+  "failure_cases": [],
+  "observations": {
+    "scope": "readiness smoke checks, not formal multi-seed evidence"
+  },
+  "results": [
+    {
+      "details": "validated=4 mean_IS=7.875",
+      "name": "IDT readiness",
+      "passed": true
+    },
+    {
+      "details": "admitted=4 mean_SCV=0.0583",
+      "name": "SCT readiness",
+      "passed": true
+    },
+    {
+      "details": "records=5 mean_benefit=0.31",
+      "name": "Transfer readiness",
+      "passed": true
+    },
+    {
+      "details": "CGR=0.155234375 IG=0.26515625000000004 intelligence_harness_success=False",
+      "name": "CGM readiness",
+      "passed": true
+    },
+    {
+      "details": "success=True beats_all=True",
+      "name": "End-to-end baseline readiness",
+      "passed": true
+    },
+    {
+      "details": "baselines=4",
+      "name": "Baseline readiness",
+      "passed": true
+    }
+  ],
+  "success": true
+}
