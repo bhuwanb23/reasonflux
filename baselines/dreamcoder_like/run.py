@@ -67,8 +67,18 @@ def run(
 
 
 def _category(signature: tuple[str, ...]) -> str:
-    joined = " ".join(signature)
-    for family, ops in FAMILY_OPS.items():
-        if any(op in joined for op in ops):
-            return family
+    """Classify by the *discriminating* op, not any shared token.
+
+    Every family begins with ``detect_object``, so a naive "any op in family"
+    check labels every primitive as reflection. Match the reduction op instead.
+    """
+    joined = set(signature)
+    if "apply_reflection" in joined:
+        return "reflection"
+    if "apply_rotation" in joined:
+        return "rotation"
+    if "count_objects" in joined:
+        return "counting"
+    if "group_by_color" in joined:
+        return "grouping"
     return "general"

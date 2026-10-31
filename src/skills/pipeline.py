@@ -57,6 +57,7 @@ def create_skills_from_invariants(
     library: SkillLibrary | None = None,
     config: SkillConfig | None = None,
     ntr_by_invariant: dict[str, float] | None = None,
+    allow_prior_evidence: bool = False,
 ) -> SkillCreationResult:
     """Run intake → candidate → qualify → promote for each invariant."""
     config = config or SkillConfig()
@@ -69,17 +70,20 @@ def create_skills_from_invariants(
     births: list[SkillBirthRecord] = []
 
     for inv in promotable:
-        intake = intake_invariant(inv, config)
+        intake = intake_invariant(inv, config, allow_prior_evidence=allow_prior_evidence)
         if not intake.accepted:
             rejected.append((inv, list(intake.reasons)))
             continue
-        candidate = from_invariant(inv, config=config)
+        candidate = from_invariant(
+            inv, config=config, allow_prior_transfer=allow_prior_evidence
+        )
         result = promote_skill(
             candidate,
             invariant=inv,
             library=library,
             config=config,
             ntr=float(ntr_by_invariant.get(inv.invariant_id, 0.0)),
+            allow_prior_evidence=allow_prior_evidence,
         )
         if result.promoted and result.skill is not None:
             promoted.append(result.skill)

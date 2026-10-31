@@ -23,7 +23,7 @@ from experiments._common import write_experiment, write_figure  # noqa: E402
 def main(*, seed: int = 0, per_family: int = 6, write: bool = True) -> dict:
     """Mine invariants from solver traces and report their strength."""
     trace_run = run_trace_pipeline(per_family=per_family, seed=seed, persist=False)
-    inv_run = run_invariant_pipeline(trace_run.traces)
+    inv_run = run_invariant_pipeline(trace_run.traces, bootstrap=True)
     validated = list(inv_run.validation.validated) if inv_run.validation else []
 
     rows = [

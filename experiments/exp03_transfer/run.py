@@ -26,8 +26,8 @@ from experiments._common import write_experiment, write_figure  # noqa: E402
 def main(*, seed: int = 0, per_family: int = 6, write: bool = True) -> dict:
     """Measure transfer per source→target family pair."""
     trace_run = run_trace_pipeline(per_family=per_family, seed=seed, persist=False)
-    inv_run = run_invariant_pipeline(trace_run.traces)
-    skill_run = run_skill_pipeline(inv_run.promotable)
+    inv_run = run_invariant_pipeline(trace_run.traces, bootstrap=True)
+    skill_run = run_skill_pipeline(inv_run.promotable, allow_prior_evidence=True)
 
     engine = ReuseEngine(skill_run.library)
     tasks = make_task_batch(FAMILIES, per_family=2, seed=100, difficulty=0.2)

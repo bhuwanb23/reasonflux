@@ -113,10 +113,10 @@ skill-count-only and evidence-free growth
 | Artifact | table: ASFT vs baselines A–D; table: ablations A1–A5 |
 | Verifier | `tests/test_full_pipeline_e2e.py::test_asft_beats_every_baseline` |
 
-**Status: demonstrated.** ASFT reaches capability 0.831 vs DreamCoder-like 0.683,
-random 0.520, and 0.000 for storage-only and no-learning on identical evaluation
-tasks. The A1–A5 ablation table is still to be added to `exp05`; the transforms
-themselves are implemented and tested in
+**Status: demonstrated.** ASFT reaches capability 1.230 vs DreamCoder-like 0.782,
+random 0.463, storage-only 0.439, and 0.000 for no-learning on identical
+evaluation tasks. The A1–A5 ablation table is still to be added to `exp05`; the
+transforms themselves are implemented and tested in
 [`evaluation/harness/baselines.py`](../../src/evaluation/harness/baselines.py).
 
 ## Metric registry mapping

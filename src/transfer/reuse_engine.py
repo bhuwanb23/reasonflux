@@ -14,17 +14,22 @@ from dataclasses import dataclass, field
 from typing import Any, Sequence
 
 from core.skill import Skill
+from core.states import SkillState
 from skills.config import SkillConfig
 from skills.library import SkillLibrary
-from skills.monitoring import record_reuse, record_transfer
+from skills.monitoring import record_negative, record_reuse, record_transfer
 from skills.retrieval import retrieve_skills
 from solver.executor import GridSolver, SolveResult
-from solver.tasks import GridTask, FAMILY_OPS
+from solver.grid import Grid
+from solver.tasks import FAMILY_OPS, GridTask
 from transfer.memory import TransferMemory
 from transfer.records import TransferRecord
 from transfer.taxonomy import TransferType
 
 __all__ = ["ReuseEngine", "ReuseResult"]
+
+#: Families whose reduction legitimately uses reflection as an invariance.
+CROSS_FAMILY_REFLECTION = frozenset({"counting", "grouping"})
 
 
 @dataclass(slots=True)
@@ -128,14 +133,30 @@ class ReuseEngine:
             },
         )
 
-        record_reuse(
-            skill,
-            task_id=task.task_id,
-            detail={"family": task.task_family, "benefit": benefit},
-            config=self.config,
-            task_clock=task_clock,
-        )
+        # Reuse is only credit-bearing when the replayed skill was correct. A
+        # failure must be recorded as negative evidence, otherwise NTR is
+        # structurally always zero and negative transfer is invisible.
+        if reused.success:
+            record_reuse(
+                skill,
+                task_id=task.task_id,
+                detail={"family": task.task_family, "benefit": benefit},
+                config=self.config,
+                task_clock=task_clock,
+            )
+        else:
+            record_negative(
+                skill,
+                reason="reuse_incorrect",
+                detail={
+                    "task_id": task.task_id,
+                    "family": task.task_family,
+                },
+                config=self.config,
+            )
+
         if benefit > 0.0:
+            _confirm(skill)
             record_transfer(
                 skill,
                 source_family=_source_family(skill),
@@ -163,14 +184,16 @@ class ReuseEngine:
 
         A skill is applicable only when it carries a reusable ``apply_`` step.
         Cross-family use is allowed solely when the underlying invariance
-        actually holds on this grid — a reflection skill may serve a symmetric
-        counting grid, but never an asymmetric one.
+        actually holds on this grid. Provisional skills (admitted on a prior) are
+        eligible: trialling them is what generates the transfer evidence.
         """
         wanted = list(FAMILY_OPS.get(task.task_family, ()))
-        candidates = retrieve_skills(self.library, wanted, config=self.config)
+        candidates = retrieve_skills(self.library, wanted, state=None, config=self.config)
         if not candidates:
-            candidates = retrieve_skills(self.library, config=self.config)
+            candidates = retrieve_skills(self.library, state=None, config=self.config)
         for skill in candidates:
+            if not _is_retrievable(skill):
+                continue
             if not _macro_ops(skill):
                 continue
             if _invariance_holds(skill, task):
@@ -197,6 +220,24 @@ class ReuseEngine:
         return out
 
 
+def _is_retrievable(skill: Skill) -> bool:
+    """Active-tier skills, plus provisional trials awaiting confirmation."""
+    if skill.state in (SkillState.ACTIVE, SkillState.GROWING, SkillState.CORE):
+        return True
+    meta = skill.metadata or {}
+    return bool(meta.get("provisional")) and skill.state is SkillState.PROMOTED
+
+
+def _confirm(skill: Skill) -> None:
+    """Promote a provisional skill to ACTIVE once transfer is measured."""
+    meta = dict(skill.metadata or {})
+    meta["transfer_verified"] = True
+    meta["provisional"] = False
+    skill.metadata = meta
+    if skill.state is SkillState.PROMOTED:
+        skill.transition_to(SkillState.ACTIVE)
+
+
 def _macro_ops(skill: Skill) -> list[str]:
     """Apply-step to replay: prefer the canonical apply op in the triggers."""
     for trigger in skill.trigger_conditions:
@@ -213,22 +254,30 @@ def _macro_ops(skill: Skill) -> list[str]:
 def _invariance_holds(skill: Skill, task: GridTask) -> bool:
     """True when the skill's invariance is genuinely present in this task.
 
-    Within the skill's own family the family definition *is* the invariance.
-    Across families the claim must hold on the grid itself: reflection is a real
-    invariance only on a symmetric grid.
+    A skill may only be applied across families when the claimed invariance holds
+    on the grid *as a whole* — not merely on one palindromic row, which every
+    mostly-empty grid has. Within its own family the family definition is the
+    invariance.
     """
     ops = _macro_ops(skill)
     if not ops:
         return False
     op = ops[0]
-    same_family = _source_family(skill) == task.task_family
+    family = task.task_family
+    if _source_family(skill) == family:
+        return True
     if op == "apply_reflection":
-        return same_family or any(
-            row == tuple(reversed(row)) for row in task.input_grid.cells
-        )
+        # Reflection must actually be a symmetry of the grid, and the family must
+        # be one whose output could legitimately involve it.
+        return family in CROSS_FAMILY_REFLECTION and _is_symmetric(task.input_grid)
     if op == "apply_rotation":
-        return task.task_family == "rotation"
+        return family == "rotation"
     return False
+
+
+def _is_symmetric(grid: Grid) -> bool:
+    """Whole-grid horizontal symmetry: every row reads the same both ways."""
+    return all(row == tuple(reversed(row)) for row in grid.cells)
 
 
 def _reduction(baseline_cost: float, reused_cost: float) -> float:

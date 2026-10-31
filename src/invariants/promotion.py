@@ -77,11 +77,12 @@ def apply_promotion(
 
     inv = ranked.invariant
     scores = ranked.scores
-    inv.transfer_contribution = scores.transfer
+    # Note: `scores.transfer` is the *unverified* transfer signal used for ranking
+    # (it comes from metadata["transfer_prior"] / validation). It must not be
+    # written into transfer_contribution, which feeds CapU's TS term via
+    # Skill.transfer_score. Measured transfer arrives in Phase D instead.
     inv.confidence = compute_confidence(inv)
     inv.metadata = dict(inv.metadata or {})
     inv.metadata["validation"] = {**scores.to_dict(), "rank": ranked.rank}
-    if scores.transfer > 0 and inv.evidence.transfer_events == 0:
-        inv.evidence.transfer_events = max(1, int(round(scores.transfer * 3)))
     advance_to_promotable(inv)
     return inv

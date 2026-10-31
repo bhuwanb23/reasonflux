@@ -1,7 +1,7 @@
 """Pattern extraction and aggregation (Phase 11C-2 Stages 4–5).
 
 Patterns are not invariants yet. Extraction finds recurring fragments;
-aggregation groups similar patterns into shared structures.
+aggregation (in ``invariants.aggregation``) groups similar patterns.
 """
 
 from __future__ import annotations
@@ -248,94 +248,11 @@ def aggregate_patterns(
     *,
     min_core_length: int = 2,
 ) -> list[AggregatedStructure]:
-    """Group similar patterns into shared structures via connected components.
+    """Group similar patterns into shared structures (delegates).
 
-    An edge exists between two patterns when they share a contiguous common
-    subsequence of length >= ``min_core_length``.
+    The implementation lives in ``invariants.aggregation`` so this module stays
+    within the file-size budget.
     """
-    items = list(patterns)
-    if not items:
-        return []
+    from invariants.aggregation import aggregate_patterns as _impl
 
-    n = len(items)
-    parent = list(range(n))
-
-    def find(i: int) -> int:
-        while parent[i] != i:
-            parent[i] = parent[parent[i]]
-            i = parent[i]
-        return i
-
-    def union(i: int, j: int) -> None:
-        ri, rj = find(i), find(j)
-        if ri != rj:
-            parent[rj] = ri
-
-    for i in range(n):
-        for j in range(i + 1, n):
-            if patterns_share_core(items[i], items[j], min_core_length=min_core_length):
-                union(i, j)
-
-    groups: dict[int, list[MinedPattern]] = defaultdict(list)
-    for i, pattern in enumerate(items):
-        groups[find(i)].append(pattern)
-
-    structures: list[AggregatedStructure] = []
-    for index, group in enumerate(sorted(groups.values(), key=lambda g: -len(g)), start=1):
-        representative = _select_representative(group)
-        all_trace_ids: set[str] = set()
-        families: set[str] = set()
-        success = 0
-        failure = 0
-        occurrences = 0
-        for pattern in group:
-            all_trace_ids.update(pattern.trace_ids)
-            families.update(pattern.task_families)
-            success += pattern.success_count
-            failure += pattern.failure_count
-            occurrences += pattern.occurrences
-
-        # Unique-trace frequency for the structure (union of variant traces).
-        frequency = len(all_trace_ids)
-        # Recompute success/failure as unique traces across variants when possible.
-        # Fall back to summed counters if trace sets are unavailable.
-        success_ids: set[str] = set()
-        failure_ids: set[str] = set()
-        for pattern in group:
-            # Approximate: if only successes, all its traces are successes.
-            if pattern.failure_count == 0 and pattern.success_count == pattern.frequency:
-                success_ids.update(pattern.trace_ids)
-            elif pattern.success_count == 0 and pattern.failure_count == pattern.frequency:
-                failure_ids.update(pattern.trace_ids)
-            else:
-                # Mixed — keep summed counters; unique success/failure unknown.
-                success_ids.clear()
-                failure_ids.clear()
-                break
-        if success_ids or failure_ids:
-            success = len(success_ids)
-            failure = len(failure_ids)
-
-        structures.append(
-            AggregatedStructure(
-                structure_id=f"S{index}",
-                core=_structure_core(group, min_core_length),
-                representative=representative,
-                variants=sorted(
-                    group,
-                    key=lambda p: (-p.frequency, -len(p.signature), p.signature),
-                ),
-                frequency=frequency,
-                task_families=sorted(families),
-                success_count=success,
-                failure_count=failure,
-                occurrences=occurrences,
-            )
-        )
-
-    structures.sort(
-        key=lambda s: (-s.frequency, -len(s.core), s.core, s.structure_id)
-    )
-    for i, structure in enumerate(structures, start=1):
-        structure.structure_id = f"S{i}"
-    return structures
+    return _impl(patterns, min_core_length=min_core_length)

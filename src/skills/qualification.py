@@ -35,8 +35,15 @@ def qualify_candidate(
     library: SkillLibrary | None = None,
     config: SkillConfig | None = None,
     ntr: float = 0.0,
+    allow_prior_evidence: bool = False,
 ) -> QualificationResult:
-    """Run five tests and hard constraints before promotion."""
+    """Run five tests and hard constraints before promotion.
+
+    ``allow_prior_evidence`` relaxes tests 3 and 4 to accept trace-derived SCT
+    priors, admitting the candidate as a *provisional trial*. That is the
+    bootstrap: transfer is unmeasurable until the skill has been tried at least
+    once, so the trial itself is what generates the evidence.
+    """
     config = config or SkillConfig()
     if library is None:
         library = SkillLibrary()
@@ -68,17 +75,19 @@ def qualify_candidate(
     if not cons_ok:
         reasons.append("consistency")
 
-    # Test 3 — Transfer support (ITS / transfer_score)
+    # Test 3 — Transfer support (measured ITS, else prior only when bootstrapping)
+    meta = invariant.metadata or {}
     ts = candidate.transfer_score or candidate.expected_transfer
+    if not ts and allow_prior_evidence:
+        ts = float(meta.get("prior_transfer", 0.0) or 0.0)
     transfer_ok = ts >= config.min_its
     tests["transfer"] = transfer_ok
     if not transfer_ok:
         reasons.append("transfer")
 
-    # Test 4 — Reasoning reduction (AG / reasoning value)
+    # Test 4 — Reasoning reduction (measured AG, else the explicit SCT prior)
     ag = candidate.abstraction_gain
-    meta = invariant.metadata or {}
-    rv = float(meta.get("reasoning_value", ag) or 0.0)
+    rv = float(meta.get("reasoning_value", meta.get("prior_reasoning_value", ag)) or 0.0)
     reasoning_ok = max(ag, rv) >= config.min_reasoning_value
     tests["reasoning"] = reasoning_ok
     if not reasoning_ok:

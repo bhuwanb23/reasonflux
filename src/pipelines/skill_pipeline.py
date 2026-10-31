@@ -52,13 +52,19 @@ def run_skill_pipeline(
     library: SkillLibrary | None = None,
     config: SkillConfig | None = None,
     ntr_by_invariant: dict[str, float] | None = None,
+    allow_prior_evidence: bool = False,
 ) -> SkillPipelineResult:
-    """Promote each promotable invariant into a skill when SCV justifies it."""
-    lib = library or SkillLibrary()
+    """Promote each promotable invariant into a skill when SCV justifies it.
+
+    ``allow_prior_evidence`` admits unverified invariants as provisional trials
+    so Phase D can measure them. Leave it False to require measured evidence.
+    """
+    lib = library if library is not None else SkillLibrary()
     creation = create_skills_from_invariants(
         list(promotable),
         library=lib,
         config=config or SkillConfig(),
         ntr_by_invariant=ntr_by_invariant,
+        allow_prior_evidence=allow_prior_evidence,
     )
     return SkillPipelineResult(creation=creation, library=lib)

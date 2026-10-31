@@ -34,22 +34,43 @@ def _estimate_reuse(inv: Invariant) -> float:
     return min(1.0, max(0.0, float(inv.frequency) / 10.0))
 
 
-def _estimate_transfer(inv: Invariant) -> float:
+def _estimate_transfer(inv: Invariant, *, allow_prior: bool = False) -> float:
+    """Measured transfer contribution.
+
+    ``metadata["prior_transfer"]`` is excluded by default: a prior is evidence
+    *about whether to trial the skill*, not a measured transfer score. Letting it
+    through here would carry it into CapU's TS term and IG, double-counting one
+    trace statistic as generality, transfer, TV and TS.
+
+    ``allow_prior`` is used only when building a provisional trial candidate,
+    where the prior is needed to price the experiment. Provisional skills are
+    excluded from capability scoring until Phase D measures them.
+    """
     meta = inv.metadata or {}
     if "expected_transfer" in meta:
         return float(meta["expected_transfer"])
     validation = meta.get("validation") or {}
     if inv.transfer_contribution > 0:
         return float(inv.transfer_contribution)
-    return float(validation.get("transfer", 0.0) or 0.0)
+    measured = float(validation.get("transfer", 0.0) or 0.0)
+    if measured > 0 or not allow_prior:
+        return measured
+    return float(meta.get("prior_transfer", 0.0) or 0.0)
 
 
 def _estimate_ag(inv: Invariant) -> float:
+    """Abstraction gain from measured values, falling back to the SCT prior.
+
+    The prior is explicitly named ``prior_reasoning_value`` so the fallback is
+    visible at the call site rather than hidden behind a generic key.
+    """
     meta = inv.metadata or {}
     if "abstraction_gain" in meta:
         return float(meta["abstraction_gain"])
     if "reasoning_value" in meta:
         return float(meta["reasoning_value"])
+    if "prior_reasoning_value" in meta:
+        return float(meta["prior_reasoning_value"])
     validation = meta.get("validation") or {}
     return float(validation.get("reasoning_value", 0.0) or 0.0)
 
@@ -59,6 +80,7 @@ def from_invariant(
     *,
     config: SkillConfig | None = None,
     candidate_id: str | None = None,
+    allow_prior_transfer: bool = False,
 ) -> SkillCandidate:
     """Build a SkillCandidate under evaluation from a promotable invariant."""
     config = config or SkillConfig()
@@ -68,7 +90,7 @@ def from_invariant(
     )
     category = classify_mvp_category(invariant.pattern_signature)
     reuse = _estimate_reuse(invariant)
-    transfer = _estimate_transfer(invariant)
+    transfer = _estimate_transfer(invariant, allow_prior=allow_prior_transfer)
     ag = _estimate_ag(invariant)
     cid = candidate_id or f"SC-{invariant.invariant_id}"
 

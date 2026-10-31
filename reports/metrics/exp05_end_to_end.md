@@ -5,10 +5,10 @@
 ## asft
 
 - `name`: `asft_full`
-- `capability_score`: `0.8309`
-- `cgr`: `0.013333`
-- `ig`: `0.278`
-- `reuse_credited`: `27`
+- `capability_score`: `1.2302`
+- `cgr`: `0.02`
+- `ig`: `0.3395`
+- `reuse_credited`: `21`
 - `n_skills`: `6`
 
 ## baselines
@@ -16,9 +16,9 @@
 | name | capability_score | cgr | ig | reuse_credited |
 | --- | --- | --- | --- | --- |
 | no_learning | 0.0 | 0.0 | 0.0 | 0 |
-| skill_storage | 0.0 | 0.0 | 0.0 | 6 |
-| random_skill_creation | 0.5201 | 0.0 | 0.078 | 6 |
-| dreamcoder_like | 0.6832 | 0.0 | 0.1025 | 6 |
+| skill_storage | 0.4387 | 0.0 | 0.0658 | 5 |
+| random_skill_creation | 0.4626 | 0.0 | 0.0694 | 6 |
+| dreamcoder_like | 0.782 | 0.0 | 0.1173 | 5 |
 
 - **beats_all_baselines**: `True`
 - **success**: `True`
@@ -26,10 +26,10 @@
 
 | round | n_traces | n_invariants | n_skills | n_new_skills | n_capabilities | capability_score | cgr | ig | reuse_credited |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 0 | 16 | 6 | 4 | 4 | 2 | 0.84313 | 0.0 | 0.276469 | 6 |
-| 1 | 32 | 4 | 6 | 2 | 3 | 0.804241 | -0.038889 | 0.260914 | 7 |
-| 2 | 48 | 4 | 6 | 0 | 3 | 0.817574 | 0.013333 | 0.275969 | 7 |
-| 3 | 64 | 4 | 6 | 0 | 3 | 0.830907 | 0.013333 | 0.277969 | 7 |
+| 0 | 16 | 6 | 4 | 4 | 1 | 1.050167 | 0.0 | 0.307525 | 5 |
+| 1 | 32 | 4 | 6 | 2 | 1 | 1.170167 | 0.12 | 0.355525 | 6 |
+| 2 | 48 | 4 | 6 | 0 | 1 | 1.210167 | 0.04 | 0.341525 | 5 |
+| 3 | 64 | 4 | 6 | 0 | 1 | 1.230167 | 0.02 | 0.339525 | 5 |
 
 ## summary
 
@@ -38,17 +38,17 @@
 - `n_traces`: `64`
 - `n_invariants`: `4`
 - `n_skills`: `6`
-- `n_capabilities`: `3`
+- `n_capabilities`: `1`
 - `library_size`: `6`
-- `reuse_attempts`: `32`
-- `reuse_credited`: `27`
-- `transfer_rate`: `0.8438`
-- `mean_transfer_benefit`: `0.5042`
-- `transfer_records`: `27`
-- `initial_capability`: `0.84313`
-- `trough_capability`: `0.804241`
-- `final_capability`: `0.830907`
+- `reuse_attempts`: `25`
+- `reuse_credited`: `21`
+- `transfer_rate`: `0.84`
+- `mean_transfer_benefit`: `0.3143`
+- `transfer_records`: `21`
+- `initial_capability`: `1.050167`
+- `trough_capability`: `1.050167`
+- `final_capability`: `1.230167`
 - `recovered_from_trough`: `True`
-- `cgr`: `0.013333`
-- `ig`: `0.277969`
+- `cgr`: `0.02`
+- `ig`: `0.339525`
 

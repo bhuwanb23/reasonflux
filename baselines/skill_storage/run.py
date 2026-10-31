@@ -9,6 +9,7 @@ from __future__ import annotations
 
 from pipelines.invariant_pipeline import run_invariant_pipeline
 from pipelines.trace_pipeline import run_trace_pipeline
+from skills.candidate import classify_mvp_category
 from skills.library import SkillLibrary
 
 from baselines._common import make_skill, measure_library
@@ -28,7 +29,9 @@ def run(*, seed: int = 0, per_family: int = 4, difficulty: float = 0.2) -> dict:
         library.add(
             make_skill(
                 f"store-{i}",
-                category=str((inv.metadata or {}).get("mvp_category", "general")),
+                # Derive the category the same way the real pipeline does;
+                # invariants carry no mvp_category of their own.
+                category=classify_mvp_category(inv.pattern_signature),
                 triggers=inv.pattern_signature,
                 utility=0.3,
                 transfer_score=0.0,

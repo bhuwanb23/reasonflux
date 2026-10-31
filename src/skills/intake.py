@@ -26,9 +26,16 @@ def is_promotable_invariant(invariant: Invariant) -> bool:
 
 
 def intake_invariant(
-    invariant: Invariant, config: SkillConfig | None = None
+    invariant: Invariant,
+    config: SkillConfig | None = None,
+    *,
+    allow_prior_evidence: bool = False,
 ) -> IntakeResult:
-    """Re-check 11C floors before creating a skill candidate."""
+    """Re-check 11C floors before creating a skill candidate.
+
+    ``allow_prior_evidence`` accepts a trace-derived transfer prior as
+    sufficient to *trial* a skill. Without it, transfer must already be measured.
+    """
     config = config or SkillConfig()
     reasons: list[str] = []
 
@@ -46,7 +53,8 @@ def intake_invariant(
     meta = invariant.metadata or {}
     validation = meta.get("validation") or {}
     if transfer <= 0 and float(validation.get("transfer", 0.0) or 0.0) <= 0:
-        reasons.append("transfer")
+        if not (allow_prior_evidence and float(meta.get("prior_transfer", 0.0) or 0.0) > 0):
+            reasons.append("transfer")
 
     evidence = 0
     if invariant.evidence is not None:

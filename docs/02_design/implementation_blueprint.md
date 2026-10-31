@@ -91,19 +91,29 @@ capability growth → reports.
 
 ## Measured baseline comparison
 
-From `experiments/exp05_end_to_end` (seed 0), on identical evaluation tasks:
+From `experiments/exp05_end_to_end` (seed 0), on identical evaluation tasks and
+an identical measurement instrument:
 
-| System | Capability | CGR | IG | Credited transfers |
-| --- | --- | --- | --- | --- |
-| ASFT full | 0.831 | +0.0133 | 0.278 | 27 |
-| DreamCoder-like | 0.683 | 0.000 | 0.102 | 6 |
-| Random skill creation | 0.520 | 0.000 | 0.078 | 6 |
-| Skill storage only | 0.000 | 0.000 | 0.000 | 6 |
-| No learning | 0.000 | 0.000 | 0.000 | 0 |
+| System | Capability | IG | Credited transfers |
+| --- | --- | --- | --- |
+| ASFT full | 1.230 | 0.340 | 21 |
+| DreamCoder-like | 0.782 | 0.117 | 5 |
+| Random skill creation | 0.463 | 0.069 | 6 |
+| Skill storage only | 0.439 | 0.066 | 5 |
+| No learning | 0.000 | 0.000 | 0 |
 
-Ordering matches the theory: economic selection with transfer verification
-outperforms frequency-only compression, which outperforms random creation, which
+Ordering matches the theory: transfer-verified economic selection outperforms
+frequency-only compression, which slightly outperforms random creation, which
 outperforms no learning.
+
+How the numbers are protected from inflation:
+
+- Macro steps are priced at the real cost of the steps they replace, so a
+  reported saving comes from skipping work rather than from an asserted discount.
+- Transfer is credited only when the reused run is correct **and** cheaper.
+- Priors admitted a skill only as a **provisional trial**; it is excluded from
+  `C_t` and `IG` until Phase D measures it.
+- Cross-family application requires the invariance to hold on the whole grid.
 
 ## Stub inventory
 

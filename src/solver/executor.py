@@ -103,16 +103,19 @@ class GridSolver:
 
         grid = task.input_grid
         strategy = "search"
-        emit("detect_object", grid.height * grid.width)
 
         if macro_ops:
             strategy = "reuse"
-            # A reused skill replaces the whole reasoning sequence, including
-            # the composition stage, with its collapsed macro steps.
+            # A reused skill replaces the whole reasoning sequence, including the
+            # composition stage. Its steps are priced at their real per-step cost
+            # so the saving comes from skipping work, not from a discount.
+            emit("detect_object", grid.height * grid.width)
             for op in macro_ops:
-                emit(op, "macro", cost=self.cost_per_step * 0.25)
+                emit(op, "macro")
                 grid = _apply_macro(op, grid, task.task_family)
+            emit("verify_output", "reused")
         else:
+            emit("detect_object", grid.height * grid.width)
             readings = _readings(task)
             # Ambiguous tasks are resolved wrongly on purpose: the solver picks
             # the last (defensible but incorrect) reading.
@@ -126,8 +129,8 @@ class GridSolver:
                 grid = self._stage(grid, task, emit)
                 emit("detect_object", "compose")
             grid = self._execute(task, chosen[1], emit, grid)
+            emit("verify_output", "ok")
 
-        emit("verify_output", "ok")
         output = _output_for(task.task_family, grid)
         return SolveResult(
             task_id=task.task_id,

@@ -22,14 +22,21 @@ from experiments._common import write_experiment  # noqa: E402
 
 
 def main(*, seed: int = 0, per_family: int = 6, write: bool = True) -> dict:
-    """Run the SCV decision at the default and at a prohibitive threshold."""
+    """Run the SCV decision at the default and at a prohibitive threshold.
+
+    Skills are admitted as *provisional trials* (on trace-derived priors) because
+    mining cannot supply transfer evidence. Their admission is an experiment, not
+    a claim of utility.
+    """
     trace_run = run_trace_pipeline(per_family=per_family, seed=seed, persist=False)
-    inv_run = run_invariant_pipeline(trace_run.traces)
+    inv_run = run_invariant_pipeline(trace_run.traces, bootstrap=True)
     promotable = list(inv_run.promotable)
 
-    default_run = run_skill_pipeline(promotable)
+    default_run = run_skill_pipeline(promotable, allow_prior_evidence=True)
     strict_run = run_skill_pipeline(
-        promotable, config=SkillConfig(skill_creation_threshold=100.0)
+        promotable,
+        config=SkillConfig(skill_creation_threshold=100.0),
+        allow_prior_evidence=True,
     )
 
     admitted = [
@@ -38,6 +45,7 @@ def main(*, seed: int = 0, per_family: int = 6, write: bool = True) -> dict:
             "triggers": " -> ".join(s.trigger_conditions),
             "scv": round(float(s.scv or 0.0), 4),
             "utility": round(float(s.utility or 0.0), 4),
+            "provisional": bool((s.metadata or {}).get("provisional")),
         }
         for s in default_run.promoted
     ]
@@ -46,6 +54,8 @@ def main(*, seed: int = 0, per_family: int = 6, write: bool = True) -> dict:
         "contribution": "SCT",
         "n_promotable_invariants": len(promotable),
         "admitted": len(default_run.promoted),
+        "admitted_provisional": sum(1 for s in default_run.promoted
+                                    if (s.metadata or {}).get("provisional")),
         "rejected_at_default": len(default_run.rejected),
         "admitted_at_strict_threshold": len(strict_run.promoted),
         "scv_gate_effective": len(strict_run.promoted) < len(default_run.promoted),

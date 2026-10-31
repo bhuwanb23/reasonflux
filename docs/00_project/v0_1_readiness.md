@@ -6,11 +6,11 @@ Go/no-go for the MVP success checklist. Backed by
 
 ## Verdict
 
-**Specification and implementation: complete. Evidence: generated.**
+**Implementation: complete. Evidence: generated, with stated limits.**
 
-All three contributions are implemented and exercised end to end on real
-solver-generated traces. `run_full_asft_pipeline` produces positive CGR and IG,
-and ASFT outperforms all four baselines. 500 tests pass.
+All three contributions run end to end on solver-generated traces.
+`run_full_asft_pipeline` produces positive CGR and IG and beats all four
+baselines. 501 tests pass.
 
 | Dimension | Status |
 | --- | --- |
@@ -18,24 +18,20 @@ and ASFT outperforms all four baselines. 500 tests pass.
 | Architecture | complete |
 | Metrics + failure models | complete |
 | Engineering specification | complete |
-| Phase A trace capture | complete |
+| Trace capture (Phase A) | complete |
 | End-to-end pipeline | complete |
-| Experiments / paper artifacts | generated (`reports/`) |
-
-**Caveat that matters for the paper:** tasks are synthetic grid tasks, not ARC.
-The evidence demonstrates the *mechanism* end to end; external validity on ARC
-is Phase 13 work.
+| Paper artifacts | generated (`reports/`) |
 
 ## MVP gate status
 
 | Gate | Criterion (scope) | Verdict | Evidence |
 | --- | --- | --- | --- |
-| FOUNDATION | Tasks produce persisted traces retrievable by task and family (end-to-end) | PASS | `tests/test_pipeline_phases.py::test_trace_pipeline_produces_and_persists` |
-| IDT | Reflection and rotation invariants discovered from solver traces and ranked by IS (end-to-end) | PASS | `tests/test_experiments.py::test_exp01_discovers_reflection_and_rotation` |
-| SCT | SCV gate admits justified skills and admits none at a prohibitive threshold (end-to-end) | PASS | `tests/test_experiments.py::test_exp02_scv_gate_actually_gates` |
-| TRANSFER | Credited transfer including cross-family, never for incorrect runs (end-to-end) | PASS | `tests/test_experiments.py::test_exp03_reports_positive_and_cross_family_transfer` |
-| CGM | Positive / zero / negative CGR and IG computed (harness) | PASS | `tests/test_cgr_e2e.py::test_positive_zero_negative_cgr_and_ig` |
-| EVALUATION | One end-to-end run yields positive CGR and IG and beats every baseline (end-to-end) | PASS | `tests/test_full_pipeline_e2e.py::test_pipeline_success_flag` |
+| FOUNDATION | Tasks produce persisted traces retrievable by task and family | PASS | `tests/test_pipeline_phases.py::test_trace_pipeline_produces_and_persists` |
+| IDT | Reflection and rotation invariants discovered and ranked by IS | PASS | `tests/test_experiments.py::test_exp01_discovers_reflection_and_rotation` |
+| SCT | SCV gate admits trials and admits none at a prohibitive threshold | PASS | `tests/test_experiments.py::test_exp02_scv_gate_actually_gates` |
+| TRANSFER | Credited transfer measured, never for incorrect runs | PASS | `tests/test_experiments.py::test_exp03_reports_positive_and_cross_family_transfer` |
+| CGM | Positive / zero / negative CGR and IG computed | PASS | `tests/test_cgr_e2e.py::test_positive_zero_negative_cgr_and_ig` |
+| EVALUATION | One end-to-end run yields positive CGR/IG and beats every baseline | PASS | `tests/test_full_pipeline_e2e.py::test_pipeline_success_flag` |
 
 ## Measured results
 
@@ -43,56 +39,71 @@ is Phase 13 work.
 
 | Quantity | Value |
 | --- | --- |
-| Traces | 64 (24 solver-generated per round, accumulated) |
+| Traces | 64 |
 | Invariants validated | 4 |
 | Skills in library | 6 |
-| Capabilities | 3 |
-| Reuse attempts / credited | 32 / 27 (84% transfer rate) |
-| Mean transfer benefit | 0.50 |
-| Capability: initial → trough → final | 0.843 → 0.804 → 0.831 |
-| Final CGR | +0.0133 |
-| Final IG | 0.278 |
+| Capabilities | 1 |
+| Reuse attempts / credited | 25 / 21 (84%) |
+| Capability trajectory | 1.050 → 1.170 → 1.210 → 1.230 |
+| Final CGR | +0.020 |
+| Final IG | 0.340 |
 
-The trough is the composition-mechanism shock in round 2. Capability declines
-while the system learns a harder transform, then recovers and grows — which is
-the honest shape of a learning curve, not a monotonic artifact.
+The trajectory is monotonic across rounds — no trough, because skills keep
+accumulating and their measured transfer keeps being counted.
 
 ## Baseline comparison
 
-Same evaluation tasks, same measurement instrument:
+| System | Capability | IG |
+| --- | --- | --- |
+| ASFT full | 1.230 | 0.340 |
+| DreamCoder-like | 0.782 | 0.117 |
+| Random skill creation | 0.463 | 0.069 |
+| Skill storage only | 0.439 | 0.066 |
+| No learning | 0.000 | 0.000 |
 
-| System | Capability | IG | Credited transfers |
-| --- | --- | --- | --- |
-| ASFT full | 0.831 | 0.278 | 27 |
-| DreamCoder-like | 0.683 | 0.102 | 6 |
-| Random skill creation | 0.520 | 0.078 | 6 |
-| Skill storage only | 0.000 | 0.000 | 6 |
-| No learning | 0.000 | 0.000 | 0 |
+## What the numbers do and do not show
+
+Strengthened by construction:
+
+- Transfer is credited only for correct **and** cheaper reuse; a cheaper wrong
+  run earns nothing and is recorded as negative evidence.
+- Macro steps are priced at the real cost of what they replace.
+- Skills admitted on trace-derived priors enter as **provisional trials** and are
+  excluded from `C_t` / `IG` until Phase D measures them.
+- Cross-family application requires whole-grid symmetry, not one palindromic row.
+
+Limits that must be stated in the paper:
+
+1. **Synthetic tasks only.** Grids are generated by `src/solver/tasks.py`, not ARC.
+   The pipeline demonstrates the mechanism; external validity is Phase 13.
+2. **One capability.** The portfolio collapses to a single capability cluster at
+   this scale, so "capability growth" is mostly skill accumulation inside it.
+3. **Small runs.** One seed, four rounds. Paper-grade evidence needs multiple
+   seeds with confidence intervals.
+4. **Bootstrap framing.** Mining cannot produce transfer evidence by
+   construction, so skills are trialled on priors before being confirmed. This is
+   honest but must be described as a trial-then-confirm loop, not as
+   evidence-first promotion.
+5. **Ablation table missing.** `apply_ablation` (A1–A5) is implemented and tested
+   at harness level, but `exp05` still reports baselines only.
 
 ## Remaining work (Phase 12/13)
 
-Not blockers for v0.1, but needed before submission:
-
-1. **ARC validation** — point the Task System at `datasets/arc/` instead of
-   synthetic grids. The solver interface already accepts any `GridTask`.
-2. **Scale** — round counts and per-family sizes are small (minutes to run).
-   Paper-grade runs need more seeds and confidence intervals.
-3. **Ablation table** — `apply_ablation` (A1–A5) exists and is tested at harness
-   level, but `exp05` currently reports baselines only, not ablations.
-4. **Figure polish** — `reports/figures/` has the three core plots; paper
-   assembly may want consistent styling.
+1. Point the Task System at `datasets/arc/`.
+2. Run multiple seeds; report CIs.
+3. Add the A1–A5 ablation table to `exp05`.
+4. Grow the capability portfolio (more families) so capability growth is not
+   dominated by one cluster.
 
 ## What must not be built
 
-See `non_goals` in [`configs/modules.yaml`](../../configs/modules.yaml): LLM
-planner, autonomous agent, meta-reasoner, world model, recursive
+See `non_goals` in [`configs/modules.yaml`](../../configs/modules.yaml). Enforced
+by test: LLM planner, autonomous agent, meta-reasoner, world model, recursive
 self-improvement, concept graph engine, neural skill embeddings, ARC leaderboard
 optimizer, multi-agent architecture, AGI framework.
-
-These are enforced by test, not convention.
 
 ## Related documents
 
 - [implementation_blueprint.md](../02_design/implementation_blueprint.md) — module registry and contracts
 - [claim_traceability.md](../04_paper/claim_traceability.md) — claim → evidence chain
-- [roadmap.md](roadmap.md) — phase timeline
+- [phase_11_completion.md](../03_implementation/notes/phase_11_completion.md) — design decisions and bugs found

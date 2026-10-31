@@ -52,14 +52,18 @@ def test_invariant_pipeline_accepts_a_store(tmp_path):
     assert result.candidates
 
 
-def test_priors_are_trace_derived_and_bounded():
+def test_priors_are_trace_derived_and_bounded_and_contained():
+    """Priors live in metadata only and never become transfer_contribution."""
     trace_run = run_trace_pipeline(per_family=6, seed=0, persist=False)
-    result = run_invariant_pipeline(trace_run.traces)
+    result = run_invariant_pipeline(trace_run.traces, bootstrap=True)
+    assert result.validation.validated
     for inv in result.validation.validated:
         meta = inv.metadata or {}
-        assert 0.0 <= float(meta["reasoning_value"]) <= 1.0
-        assert 0.0 <= float(inv.transfer_contribution) <= 1.0
+        assert 0.0 <= float(meta["prior_reasoning_value"]) <= 1.0
+        assert 0.0 <= float(meta["prior_transfer"]) <= 1.0
         assert meta.get("transfer_verified") is False
+        # Containment: a prior must never leak into the scored transfer field.
+        assert inv.transfer_contribution == 0.0
 
 
 def test_prior_never_overwrites_measured_transfer():
@@ -75,20 +79,37 @@ def test_prior_never_overwrites_measured_transfer():
 
 def test_promotable_invariants_reach_sct_state():
     trace_run = run_trace_pipeline(per_family=6, seed=0, persist=False)
-    result = run_invariant_pipeline(trace_run.traces)
+    result = run_invariant_pipeline(trace_run.traces, bootstrap=True)
+    assert result.promotable, "bootstrap must supply trial candidates"
     for inv in result.promotable:
         assert inv.state is InvariantState.SKILL_CANDIDATE
+        assert (inv.metadata or {}).get("bootstrapped") is True
 
 
-def test_skill_pipeline_promotes_and_rejects():
+def test_without_bootstrap_nothing_is_promoted_from_mining_alone():
+    """Mining cannot supply transfer evidence, so no skill may be claimed."""
     trace_run = run_trace_pipeline(per_family=6, seed=0, persist=False)
-    inv_run = run_invariant_pipeline(trace_run.traces)
-    skill_run = run_skill_pipeline(inv_run.promotable)
-    assert skill_run.promoted
-    for skill in skill_run.promoted:
-        assert skill.state is SkillState.ACTIVE
-        assert skill.trigger_conditions
-    assert len(skill_run.library) == len(skill_run.promoted)
+    result = run_invariant_pipeline(trace_run.traces)
+    assert result.promotable == []
+    assert run_skill_pipeline(result.promotable).promoted == []
+
+
+def test_skill_pipeline_promotes_provisional_trials_and_rejects_without_prior():
+    trace_run = run_trace_pipeline(per_family=6, seed=0, persist=False)
+    inv_run = run_invariant_pipeline(trace_run.traces, bootstrap=True)
+
+    # Without prior evidence, the transfer gate must still refuse.
+    strict = run_skill_pipeline(inv_run.promotable)
+    assert strict.promoted == []
+    assert all("transfer" in reasons for _, reasons in strict.rejected)
+
+    # With prior evidence, skills are admitted as *provisional* trials only.
+    trial = run_skill_pipeline(inv_run.promotable, allow_prior_evidence=True)
+    assert trial.promoted
+    for skill in trial.promoted:
+        assert (skill.metadata or {}).get("provisional") is True
+        assert skill.state is SkillState.PROMOTED
+    assert len(trial.library) == len(trial.promoted)
 
 
 def test_skill_pipeline_accumulates_into_existing_library():

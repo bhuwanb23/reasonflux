@@ -55,12 +55,20 @@ def run_invariant_pipeline(
     transfer_scores: dict[str, float] | None = None,
     validate: bool = True,
     attach_priors: bool = True,
+    bootstrap: bool = False,
 ) -> InvariantPipelineResult:
     """Mine invariants from traces (or a store) and validate them.
 
-    ``attach_priors`` adds trace-derived SCT priors (see
-    :mod:`invariants.sct_priors`) to the *validated* invariants only, so
+    ``attach_priors`` adds trace-derived SCT priors to ``metadata`` only, so
     structural validation remains a pure IDT judgment.
+
+    ``bootstrap`` optionally advances *validated* invariants to the SCT input
+    state when no invariant could satisfy the transfer/reasoning gates from
+    mining alone. Mining cannot supply transfer evidence by construction, so
+    without this bootstrap Phase C would have nothing to trial and the system
+    could never measure transfer. Bootstrapped invariants are admitted only as
+    provisional skills (see ``allow_prior_evidence``) and never enter the
+    capability portfolio until Phase D measures them.
     """
     if isinstance(traces, TraceStore):
         raw = traces.load_all()
@@ -80,25 +88,35 @@ def run_invariant_pipeline(
             mining.candidates, transfer_scores=transfer_scores
         )
         if attach_priors:
-            mean_len = _mean_trace_length(raw)
             families = {t.task_family for t in mining.normalized if t.task_family}
             attach_sct_priors(
                 validation.validated,
-                mean_trace_length=mean_len,
+                mean_trace_length=_mean_trace_length(raw),
                 n_families=len(families),
             )
-            # Validated invariants are one legal hop short of SCT's input state;
-            # advance them through the documented promotion path.
-            for inv in validation.validated:
-                advance_to_promotable(inv)
-            validation.promotable = [
-                inv
-                for inv in validation.validated
-                if inv.state is InvariantState.SKILL_CANDIDATE
-            ]
+        if bootstrap and not validation.promotable:
+            validation.promotable = _bootstrap_promotable(validation)
     return InvariantPipelineResult(
         mining=mining, validation=validation, n_traces=len(raw)
     )
+
+
+def _bootstrap_promotable(validation: ValidationResult) -> list[Invariant]:
+    """Advance structurally validated invariants to the SCT input state.
+
+    Records that this happened in metadata so downstream code and reports can
+    distinguish a bootstrapped trial from an evidence-qualified promotion.
+    """
+    out: list[Invariant] = []
+    for inv in validation.validated:
+        if inv.state is InvariantState.SKILL_CANDIDATE:
+            out.append(inv)
+            continue
+        advance_to_promotable(inv)
+        inv.metadata = dict(inv.metadata or {})
+        inv.metadata["bootstrapped"] = True
+        out.append(inv)
+    return out
 
 
 def _mean_trace_length(traces: Sequence[ReasoningTrace]) -> float:

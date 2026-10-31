@@ -23,8 +23,15 @@ class TraceStore:
         self.root.mkdir(parents=True, exist_ok=True)
 
     def _path(self, family: str, trace_id: str) -> Path:
-        safe_family = _safe(family) or "unknown"
-        return self.root / safe_family / f"{_safe(trace_id)}.json"
+        return self._assert_within(self.root / _safe(family) / f"{_safe(trace_id)}.json")
+
+    def _assert_within(self, path: Path) -> Path:
+        """Guarantee the path stays inside the store root."""
+        root = self.root.resolve()
+        resolved = path.resolve()
+        if root != resolved and root not in resolved.parents:
+            raise ValueError(f"refusing path outside trace store: {path}")
+        return path
 
     def save(self, trace: ReasoningTrace) -> Path:
         """Write one trace, marking it stored."""
@@ -53,7 +60,7 @@ class TraceStore:
 
     def list_by_family(self, family: str) -> list[ReasoningTrace]:
         """All traces for one task family, ordered by trace id."""
-        directory = self.root / (_safe(family) or "unknown")
+        directory = self._assert_within(self.root / (_safe(family) or "unknown"))
         if not directory.exists():
             return []
         return [
@@ -80,8 +87,14 @@ class TraceStore:
 
 
 def _safe(name: str) -> str:
-    keep = [c if (c.isalnum() or c in "-_.") else "_" for c in str(name)]
-    return "".join(keep).strip("_")
+    """Sanitize a path segment, rejecting traversal.
+
+    ``.`` survives the allow-list, so ``..`` would escape the store root; it is
+    collapsed explicitly and verified afterwards by ``_assert_within``.
+    """
+    cleaned = "".join(c if (c.isalnum() or c in "-_.") else "_" for c in str(name))
+    cleaned = cleaned.replace("..", "_").strip("._")
+    return cleaned
 
 
 def _dumps(payload: dict) -> str:

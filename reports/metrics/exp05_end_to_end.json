@@ -1,11 +1,11 @@
 {
   "asft": {
-    "capability_score": 0.8309,
-    "cgr": 0.013333,
-    "ig": 0.278,
+    "capability_score": 1.2302,
+    "cgr": 0.02,
+    "ig": 0.3395,
     "n_skills": 6,
     "name": "asft_full",
-    "reuse_credited": 27
+    "reuse_credited": 21
   },
   "baselines": [
     {
@@ -16,25 +16,25 @@
       "reuse_credited": 0
     },
     {
-      "capability_score": 0.0,
+      "capability_score": 0.4387,
       "cgr": 0.0,
-      "ig": 0.0,
+      "ig": 0.0658,
       "name": "skill_storage",
-      "reuse_credited": 6
+      "reuse_credited": 5
     },
     {
-      "capability_score": 0.5201,
+      "capability_score": 0.4626,
       "cgr": 0.0,
-      "ig": 0.078,
+      "ig": 0.0694,
       "name": "random_skill_creation",
       "reuse_credited": 6
     },
     {
-      "capability_score": 0.6832,
+      "capability_score": 0.782,
       "cgr": 0.0,
-      "ig": 0.1025,
+      "ig": 0.1173,
       "name": "dreamcoder_like",
-      "reuse_credited": 6
+      "reuse_credited": 5
     }
   ],
   "beats_all_baselines": true,
@@ -42,73 +42,73 @@
   "experiment": "exp05_end_to_end",
   "rounds": [
     {
-      "capability_score": 0.84313,
+      "capability_score": 1.050167,
       "cgr": 0.0,
-      "ig": 0.276469,
-      "n_capabilities": 2,
+      "ig": 0.307525,
+      "n_capabilities": 1,
       "n_invariants": 6,
       "n_new_skills": 4,
       "n_skills": 4,
       "n_traces": 16,
-      "reuse_credited": 6,
+      "reuse_credited": 5,
       "round": 0
     },
     {
-      "capability_score": 0.804241,
-      "cgr": -0.038889,
-      "ig": 0.260914,
-      "n_capabilities": 3,
+      "capability_score": 1.170167,
+      "cgr": 0.12,
+      "ig": 0.355525,
+      "n_capabilities": 1,
       "n_invariants": 4,
       "n_new_skills": 2,
       "n_skills": 6,
       "n_traces": 32,
-      "reuse_credited": 7,
+      "reuse_credited": 6,
       "round": 1
     },
     {
-      "capability_score": 0.817574,
-      "cgr": 0.013333,
-      "ig": 0.275969,
-      "n_capabilities": 3,
+      "capability_score": 1.210167,
+      "cgr": 0.04,
+      "ig": 0.341525,
+      "n_capabilities": 1,
       "n_invariants": 4,
       "n_new_skills": 0,
       "n_skills": 6,
       "n_traces": 48,
-      "reuse_credited": 7,
+      "reuse_credited": 5,
       "round": 2
     },
     {
-      "capability_score": 0.830907,
-      "cgr": 0.013333,
-      "ig": 0.277969,
-      "n_capabilities": 3,
+      "capability_score": 1.230167,
+      "cgr": 0.02,
+      "ig": 0.339525,
+      "n_capabilities": 1,
       "n_invariants": 4,
       "n_new_skills": 0,
       "n_skills": 6,
       "n_traces": 64,
-      "reuse_credited": 7,
+      "reuse_credited": 5,
       "round": 3
     }
   ],
   "success": true,
   "summary": {
-    "cgr": 0.013333,
-    "final_capability": 0.830907,
-    "ig": 0.277969,
-    "initial_capability": 0.84313,
+    "cgr": 0.02,
+    "final_capability": 1.230167,
+    "ig": 0.339525,
+    "initial_capability": 1.050167,
     "library_size": 6,
-    "mean_transfer_benefit": 0.5042,
-    "n_capabilities": 3,
+    "mean_transfer_benefit": 0.3143,
+    "n_capabilities": 1,
     "n_invariants": 4,
     "n_skills": 6,
     "n_traces": 64,
     "recovered_from_trough": true,
-    "reuse_attempts": 32,
-    "reuse_credited": 27,
+    "reuse_attempts": 25,
+    "reuse_credited": 21,
     "rounds": 4,
     "success": true,
-    "transfer_rate": 0.8438,
-    "transfer_records": 27,
-    "trough_capability": 0.804241
+    "transfer_rate": 0.84,
+    "transfer_records": 21,
+    "trough_capability": 1.050167
   }
 }

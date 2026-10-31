@@ -147,14 +147,18 @@ def run_full_asft_pipeline(
         )
         corpus.extend(batch.traces)
         # --- Phase B: invariants over all experience so far --------------
-        inv_run = run_invariant_pipeline(corpus)
+        inv_run = run_invariant_pipeline(corpus, bootstrap=True)
         validated = list(inv_run.validation.validated) if inv_run.validation else []
 
         # --- Phase C: skills, *accumulated* into the existing library -----
         # The library is carried forward on purpose: skills gain reuse and
         # transfer evidence over time. Rebuilding it each round would throw that
         # evidence away and make growth impossible by construction.
-        skill_run = run_skill_pipeline(inv_run.promotable, library=library)
+        # Provisional admission lets Phase D generate the transfer evidence that
+        # mining cannot supply; measured transfer then confirms the skill.
+        skill_run = run_skill_pipeline(
+            inv_run.promotable, library=library, allow_prior_evidence=True
+        )
         library = skill_run.library
 
         # --- Phase D: exercise the library on fresh tasks -----------------
@@ -169,16 +173,20 @@ def run_full_asft_pipeline(
         result.reuse.extend(round_reuse)
 
         # --- Phase E: capability + intelligence --------------------------
+        # Only skills with *measured* transfer count toward capability. A
+        # provisional skill admitted on a prior is excluded until Phase D has
+        # seen it work, so a trace statistic can never inflate C_t or IG.
         caps = CapabilityLibrary()
-        for cap in propose_capabilities_from_library(library):
+        for cap in propose_capabilities_from_library(_scored_library(library)):
             if caps.get(cap.capability_id) is None:
                 caps.add(cap)
+        scored = _scored_library(library)
         state = compute_system_capability_state(
-            caps, library, previous_score=previous_score, dt=cfg.default_dt
+            caps, scored, previous_score=previous_score, dt=cfg.default_dt
         )
         intel = compute_system_intelligence_state(
             caps,
-            library,
+            scored,
             previous_ig=previous_ig,
             previous_capability_score=previous_score,
             experiences=cfg.experiences_per_step * len(corpus),
@@ -207,6 +215,20 @@ def run_full_asft_pipeline(
 
     result.summary = _summarise(result, library, memory)
     return result
+
+
+def _scored_library(library):
+    """Skills eligible for capability scoring: measured only, never provisional."""
+    from core.skill import Skill
+    from skills.library import SkillLibrary
+
+    snapshot = SkillLibrary()
+    for skill in library.list_skills():
+        meta = skill.metadata or {}
+        if meta.get("provisional") and not meta.get("transfer_verified"):
+            continue
+        snapshot.add(Skill.from_dict(skill.to_dict()))
+    return snapshot
 
 
 def _summarise(result: FullPipelineResult, library, memory: TransferMemory) -> dict[str, Any]:
