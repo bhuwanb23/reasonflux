@@ -1,0 +1,60 @@
+# Copy to each run bundle as environment.yaml and fill before execution.
+# Do not place secrets, Kaggle credentials, private keys, or tokens in this file.
+run_id: REQUIRED_BEFORE_RUN
+track: REQUIRED_BEFORE_RUN # agi2 | agi3
+hypothesis: REQUIRED_BEFORE_RUN # H1_IDT | H2_SCT | H3_CGM
+variant_id: REQUIRED_BEFORE_RUN
+status: NOT_RUN # NOT_RUN | SMOKE_TEST | PILOT | CONFIRMATORY | FAILED_RUN | DEVIATION
+owner: REQUIRED_BEFORE_RUN
+reviewer: REQUIRED_BEFORE_RUN
+started_utc: null
+finished_utc: null
+repo_commit: REQUIRED_BEFORE_RUN
+code_tree_sha256: REQUIRED_BEFORE_RUN
+protocol_version: 0.1-draft
+protocol_sha256: REQUIRED_BEFORE_RUN
+
+hardware:
+  platform: REQUIRED_BEFORE_RUN
+  cpu_model: REQUIRED_BEFORE_RUN
+  cpu_count: REQUIRED_BEFORE_RUN
+  ram_gb: REQUIRED_BEFORE_RUN
+  gpu_model: REQUIRED_BEFORE_RUN # list all GPUs or none
+  gpu_count: REQUIRED_BEFORE_RUN
+  gpu_vram_gb_each: REQUIRED_BEFORE_RUN
+  driver_version: REQUIRED_BEFORE_RUN
+  cuda_version: REQUIRED_BEFORE_RUN
+  storage_gb_available: REQUIRED_BEFORE_RUN
+
+software:
+  os_image: REQUIRED_BEFORE_RUN
+  python_version: REQUIRED_BEFORE_RUN
+  package_lock_path: REQUIRED_BEFORE_RUN
+  package_lock_sha256: REQUIRED_BEFORE_RUN
+  framework_versions: REQUIRED_BEFORE_RUN
+  evaluator_name_version_commit: REQUIRED_BEFORE_RUN
+
+models:
+  - model_id: REQUIRED_BEFORE_RUN
+    exact_revision: REQUIRED_BEFORE_RUN
+    weights_sha256: REQUIRED_BEFORE_RUN
+    source: REQUIRED_BEFORE_RUN
+    license: REQUIRED_BEFORE_RUN
+    pretraining_data_provenance: REQUIRED_BEFORE_RUN
+
+runtime_constraints:
+  internet_enabled_during_scoring: REQUIRED_BEFORE_RUN
+  max_wallclock_seconds: REQUIRED_BEFORE_RUN
+  max_gpu_seconds: REQUIRED_BEFORE_RUN
+  max_cpu_seconds: REQUIRED_BEFORE_RUN
+  max_model_tokens: REQUIRED_BEFORE_RUN
+  max_actions_or_search_nodes: REQUIRED_BEFORE_RUN
+  max_memory_mb: REQUIRED_BEFORE_RUN
+  memory_budget_mb: REQUIRED_BEFORE_RUN
+
+randomness:
+  seeds: REQUIRED_BEFORE_RUN # list integers
+  deterministic_flags: REQUIRED_BEFORE_RUN
+  nondeterminism_notes: REQUIRED_BEFORE_RUN
+
+notes: REQUIRED_BEFORE_RUN

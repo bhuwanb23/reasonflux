@@ -1,0 +1,332 @@
+[
+  {
+    "metrics": {
+      "ASFT": 0.09692460317460319,
+      "ASFT_advantage": 0.0,
+      "ASFT_minus_no_transfer": 0.0,
+      "ASFT_minus_random": 0.03202504960317461,
+      "ASFT_valid_top_rate": 1.0,
+      "frequency_only": 0.09692460317460319,
+      "frequency_valid_top_rate": 1.0,
+      "no_transfer": 0.09692460317460319,
+      "no_transfer_valid_top_rate": 1.0,
+      "random_pattern": 0.06489955357142858
+    },
+    "ranking_diagnostics": {
+      "asft_equals_frequency_order": true,
+      "asft_equals_no_transfer_order": true,
+      "asft_order": [
+        "reflection",
+        "rotation",
+        "count_objects",
+        "group_by_color"
+      ],
+      "distinct_semantic_candidates": 4,
+      "frequency_order": [
+        "reflection",
+        "rotation",
+        "count_objects",
+        "group_by_color"
+      ],
+      "held_out_utility_by_semantic_candidate": {
+        "count_objects": 0.0,
+        "group_by_color": 0.0,
+        "reflection": 0.1660714285714286,
+        "rotation": 0.027777777777777776
+      },
+      "mean_transfer_utility_at_k": {
+        "1": {
+          "ASFT": 0.1660714285714286,
+          "frequency_only": 0.1660714285714286,
+          "no_transfer": 0.1660714285714286
+        },
+        "2": {
+          "ASFT": 0.09692460317460319,
+          "frequency_only": 0.09692460317460319,
+          "no_transfer": 0.09692460317460319
+        },
+        "3": {
+          "ASFT": 0.06461640211640213,
+          "frequency_only": 0.06461640211640213,
+          "no_transfer": 0.06461640211640213
+        },
+        "4": {
+          "ASFT": 0.048462301587301596,
+          "frequency_only": 0.048462301587301596,
+          "no_transfer": 0.048462301587301596
+        }
+      },
+      "no_transfer_order": [
+        "reflection",
+        "rotation",
+        "count_objects",
+        "group_by_color"
+      ]
+    },
+    "seed": 0
+  },
+  {
+    "metrics": {
+      "ASFT": 0.09513888888888888,
+      "ASFT_advantage": 0.0,
+      "ASFT_minus_no_transfer": 0.0,
+      "ASFT_minus_random": 0.03059895833333333,
+      "ASFT_valid_top_rate": 1.0,
+      "frequency_only": 0.09513888888888888,
+      "frequency_valid_top_rate": 1.0,
+      "no_transfer": 0.09513888888888888,
+      "no_transfer_valid_top_rate": 1.0,
+      "random_pattern": 0.06453993055555556
+    },
+    "ranking_diagnostics": {
+      "asft_equals_frequency_order": true,
+      "asft_equals_no_transfer_order": true,
+      "asft_order": [
+        "reflection",
+        "rotation",
+        "count_objects",
+        "group_by_color"
+      ],
+      "distinct_semantic_candidates": 4,
+      "frequency_order": [
+        "reflection",
+        "rotation",
+        "count_objects",
+        "group_by_color"
+      ],
+      "held_out_utility_by_semantic_candidate": {
+        "count_objects": 0.0,
+        "group_by_color": 0.0,
+        "reflection": 0.1625,
+        "rotation": 0.027777777777777776
+      },
+      "mean_transfer_utility_at_k": {
+        "1": {
+          "ASFT": 0.1625,
+          "frequency_only": 0.1625,
+          "no_transfer": 0.1625
+        },
+        "2": {
+          "ASFT": 0.09513888888888888,
+          "frequency_only": 0.09513888888888888,
+          "no_transfer": 0.09513888888888888
+        },
+        "3": {
+          "ASFT": 0.06342592592592593,
+          "frequency_only": 0.06342592592592593,
+          "no_transfer": 0.06342592592592593
+        },
+        "4": {
+          "ASFT": 0.04756944444444444,
+          "frequency_only": 0.04756944444444444,
+          "no_transfer": 0.04756944444444444
+        }
+      },
+      "no_transfer_order": [
+        "reflection",
+        "rotation",
+        "count_objects",
+        "group_by_color"
+      ]
+    },
+    "seed": 1
+  },
+  {
+    "metrics": {
+      "ASFT": 0.0959201388888889,
+      "ASFT_advantage": 0.0,
+      "ASFT_minus_no_transfer": 0.0,
+      "ASFT_minus_random": 0.046223958333333336,
+      "ASFT_valid_top_rate": 1.0,
+      "frequency_only": 0.0959201388888889,
+      "frequency_valid_top_rate": 1.0,
+      "no_transfer": 0.0959201388888889,
+      "no_transfer_valid_top_rate": 1.0,
+      "random_pattern": 0.04969618055555556
+    },
+    "ranking_diagnostics": {
+      "asft_equals_frequency_order": true,
+      "asft_equals_no_transfer_order": true,
+      "asft_order": [
+        "reflection",
+        "rotation",
+        "count_objects",
+        "group_by_color"
+      ],
+      "distinct_semantic_candidates": 4,
+      "frequency_order": [
+        "reflection",
+        "rotation",
+        "count_objects",
+        "group_by_color"
+      ],
+      "held_out_utility_by_semantic_candidate": {
+        "count_objects": 0.0,
+        "group_by_color": 0.0,
+        "reflection": 0.1640625,
+        "rotation": 0.027777777777777776
+      },
+      "mean_transfer_utility_at_k": {
+        "1": {
+          "ASFT": 0.1640625,
+          "frequency_only": 0.1640625,
+          "no_transfer": 0.1640625
+        },
+        "2": {
+          "ASFT": 0.0959201388888889,
+          "frequency_only": 0.0959201388888889,
+          "no_transfer": 0.0959201388888889
+        },
+        "3": {
+          "ASFT": 0.06394675925925926,
+          "frequency_only": 0.06394675925925926,
+          "no_transfer": 0.06394675925925926
+        },
+        "4": {
+          "ASFT": 0.04796006944444445,
+          "frequency_only": 0.04796006944444445,
+          "no_transfer": 0.04796006944444445
+        }
+      },
+      "no_transfer_order": [
+        "reflection",
+        "rotation",
+        "count_objects",
+        "group_by_color"
+      ]
+    },
+    "seed": 2
+  },
+  {
+    "metrics": {
+      "ASFT": 0.0959201388888889,
+      "ASFT_advantage": 0.0,
+      "ASFT_minus_no_transfer": 0.0,
+      "ASFT_minus_random": 0.02823893229166667,
+      "ASFT_valid_top_rate": 1.0,
+      "frequency_only": 0.0959201388888889,
+      "frequency_valid_top_rate": 1.0,
+      "no_transfer": 0.0959201388888889,
+      "no_transfer_valid_top_rate": 1.0,
+      "random_pattern": 0.06768120659722222
+    },
+    "ranking_diagnostics": {
+      "asft_equals_frequency_order": true,
+      "asft_equals_no_transfer_order": true,
+      "asft_order": [
+        "reflection",
+        "rotation",
+        "count_objects",
+        "group_by_color"
+      ],
+      "distinct_semantic_candidates": 4,
+      "frequency_order": [
+        "reflection",
+        "rotation",
+        "count_objects",
+        "group_by_color"
+      ],
+      "held_out_utility_by_semantic_candidate": {
+        "count_objects": 0.0,
+        "group_by_color": 0.0,
+        "reflection": 0.1640625,
+        "rotation": 0.027777777777777776
+      },
+      "mean_transfer_utility_at_k": {
+        "1": {
+          "ASFT": 0.1640625,
+          "frequency_only": 0.1640625,
+          "no_transfer": 0.1640625
+        },
+        "2": {
+          "ASFT": 0.0959201388888889,
+          "frequency_only": 0.0959201388888889,
+          "no_transfer": 0.0959201388888889
+        },
+        "3": {
+          "ASFT": 0.06394675925925926,
+          "frequency_only": 0.06394675925925926,
+          "no_transfer": 0.06394675925925926
+        },
+        "4": {
+          "ASFT": 0.04796006944444445,
+          "frequency_only": 0.04796006944444445,
+          "no_transfer": 0.04796006944444445
+        }
+      },
+      "no_transfer_order": [
+        "reflection",
+        "rotation",
+        "count_objects",
+        "group_by_color"
+      ]
+    },
+    "seed": 3
+  },
+  {
+    "metrics": {
+      "ASFT": 0.09513888888888888,
+      "ASFT_advantage": 0.0,
+      "ASFT_minus_no_transfer": 0.0,
+      "ASFT_minus_random": 0.02638888888888888,
+      "ASFT_valid_top_rate": 1.0,
+      "frequency_only": 0.09513888888888888,
+      "frequency_valid_top_rate": 1.0,
+      "no_transfer": 0.09513888888888888,
+      "no_transfer_valid_top_rate": 1.0,
+      "random_pattern": 0.06875
+    },
+    "ranking_diagnostics": {
+      "asft_equals_frequency_order": true,
+      "asft_equals_no_transfer_order": true,
+      "asft_order": [
+        "reflection",
+        "rotation",
+        "count_objects",
+        "group_by_color"
+      ],
+      "distinct_semantic_candidates": 4,
+      "frequency_order": [
+        "reflection",
+        "rotation",
+        "count_objects",
+        "group_by_color"
+      ],
+      "held_out_utility_by_semantic_candidate": {
+        "count_objects": 0.0,
+        "group_by_color": 0.0,
+        "reflection": 0.1625,
+        "rotation": 0.027777777777777776
+      },
+      "mean_transfer_utility_at_k": {
+        "1": {
+          "ASFT": 0.1625,
+          "frequency_only": 0.1625,
+          "no_transfer": 0.1625
+        },
+        "2": {
+          "ASFT": 0.09513888888888888,
+          "frequency_only": 0.09513888888888888,
+          "no_transfer": 0.09513888888888888
+        },
+        "3": {
+          "ASFT": 0.06342592592592593,
+          "frequency_only": 0.06342592592592593,
+          "no_transfer": 0.06342592592592593
+        },
+        "4": {
+          "ASFT": 0.04756944444444444,
+          "frequency_only": 0.04756944444444444,
+          "no_transfer": 0.04756944444444444
+        }
+      },
+      "no_transfer_order": [
+        "reflection",
+        "rotation",
+        "count_objects",
+        "group_by_color"
+      ]
+    },
+    "seed": 4
+  }
+]

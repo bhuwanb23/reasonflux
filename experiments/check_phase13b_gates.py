@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import sys
 from pathlib import Path
+from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 for path in (ROOT, ROOT / "src"):
@@ -12,6 +13,16 @@ for path in (ROOT, ROOT / "src"):
         sys.path.insert(0, str(path))
 
 from experiments.idt_experiments import run_idt_evidence
+
+
+def baseline_comparison_passes(raw_results: list[dict[str, Any]]) -> bool:
+    """Require strict ASFT superiority to every control on every seed."""
+    return bool(raw_results) and all(
+        float(raw["metrics"]["ASFT"]) > float(raw["metrics"]["frequency_only"])
+        and float(raw["metrics"]["ASFT"]) > float(raw["metrics"]["no_transfer"])
+        and float(raw["metrics"]["ASFT"]) > float(raw["metrics"]["random_pattern"])
+        for raw in raw_results
+    )
 
 
 def main(*, write: bool = False) -> dict[str, object]:
@@ -55,11 +66,8 @@ def main(*, write: bool = False) -> dict[str, object]:
         "sparse_recall_floor": evidence["robustness"]["statistics"]["sparse_recall"]["mean"]
         >= 0.20,
         "seed_stability": bool(evidence["observations"]["seed_stable"]),
-        "baseline_comparison": all(
-            raw["metrics"]["ASFT"] > raw["metrics"]["frequency_only"]
-            and raw["metrics"]["ASFT"] > raw["metrics"]["no_transfer"]
-            and raw["metrics"]["ASFT"] > raw["metrics"]["random_pattern"]
-            for raw in evidence["baselines"]["raw_results"]
+        "baseline_comparison": baseline_comparison_passes(
+            evidence["baselines"]["raw_results"]
         ),
     }
     result = {

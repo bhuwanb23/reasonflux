@@ -100,6 +100,14 @@ experiments:
     contribution: external-validity
     enabled: false
     entry: experiments/exp08_arc/run.py
+  exp14_idt_confounded:
+    id: EXP-IDT-14
+    description: Exploratory stress test for frequent non-transfer patterns
+    contribution: IDT
+    enabled: true
+    status: exploratory_not_confirmatory
+    entry: experiments/exp14_confounded_idt.py
+    config: configs/idt_confounded_benchmark.yaml
 
 idt:
   runner: experiments/idt_experiments.py

@@ -47,5 +47,5 @@
 - `IS`: `{'name': 'IS', 'formula': 'frequency * consistency * generality', 'interpretation': 'invariant strength', 'valid_range': '[0, inf)', 'failure_condition': '<= 0'}`
 - `discovery`: `{'name': 'DISCOVERY', 'formula': 'expected_invariant_found', 'interpretation': 'discovery success', 'valid_range': '[0, 1]', 'failure_condition': '< 1'}`
 
-- **timestamp_utc**: `2026-10-31T12:10:03.195147+00:00`
+- **timestamp_utc**: `2026-10-31T13:42:26.485276+00:00`
 - **record_schema**: `phase-13a-v1`

@@ -109,6 +109,24 @@ def test_macro_reuse_is_cheaper_than_search():
     assert reused.success
 
 
+def test_cross_family_macro_still_charges_counting_and_grouping_output():
+    solver = GridSolver()
+    for family, output_op in (
+        ("counting", "count_objects"),
+        ("grouping", "group_by_color"),
+    ):
+        # Variant 1 is genuinely symmetric, so horizontal reflection is a
+        # semantics-preserving invariant for these reduction tasks.
+        task = make_task(family, seed=12, variant=1, difficulty=0.2)
+        baseline = solver.solve(task)
+        reused = solver.solve(task, macro_ops=["apply_reflection"])
+
+        assert baseline.success and reused.success
+        assert output_op in reused.operations
+        assert reused.step_count == baseline.step_count - 1
+        assert reused.cost == baseline.cost - 1.0
+
+
 def test_batch_is_balanced_across_families():
     batch = make_task_batch(per_family=3, seed=0)
     assert len(batch) == 3 * len(FAMILIES)

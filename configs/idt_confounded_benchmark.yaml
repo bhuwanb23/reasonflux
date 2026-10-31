@@ -1,0 +1,46 @@
+# EXP-IDT-14 supplemental stress test. Designed after the synthetic-v1 tie;
+# results are exploratory and do not retroactively replace the Phase 13B gate.
+experiment_id: EXP-IDT-14
+name: confounded_frequency_stress_test
+status: exploratory_not_confirmatory
+claim: IDT
+
+dataset:
+  version: synthetic-confounded-v1
+  base_version: synthetic-v1
+  seed_split:
+    run_seeds: [10, 11, 12, 13, 14]
+    calibration_task_seed_offset: 1000
+    evaluation_task_seed_offset: 2000
+  discovery:
+    families: [reflection, rotation, counting, grouping]
+    per_family: 12
+    injected_nontransfer_operation: normalize_grid
+    injected_families: [reflection, rotation, counting]
+    rationale: "Present in 3/4 families so it is frequent (but not universal-noise filtered by the current 0.95 rule)."
+    expected_injected_trace_fraction: 0.75
+    operation_semantics: "No-op trace marker; it does not alter task input, output, or solver execution."
+  transfer:
+    families: [reflection, rotation, counting, grouping]
+    per_family: 3
+    additional_symmetric_counting_tasks: 1
+    additional_symmetric_grouping_tasks: 1
+    difficulty: 0.2
+
+ranking:
+  candidate_pool: "same validated candidate pool for all methods, deduplicated by semantic operation family"
+  methods: [transfer_aware, frequency_only, no_transfer_is_only, random]
+  primary_metric: "mean held-out TU at top_k=1"
+  secondary_top_k: [2]
+  report_full_ranking_curve: true
+  random_permutations_per_seed: 16
+  strict_stress_test_success: "transfer_aware top-1 TU > each of frequency-only, no-transfer, and random for every run seed"
+
+statistics:
+  confidence_level: 0.95
+  aggregation_unit: "run seed; task-level outcomes retained in raw per-candidate results"
+
+interpretation:
+  - "A passing result supports only robustness to this controlled frequent-no-op confound."
+  - "It does not replace or erase the synthetic-v1 Phase 13B baseline tie."
+  - "Any confirmatory follow-up needs a separately frozen task split and analysis before inspecting its results."
