@@ -7,18 +7,17 @@
 | 0–9 | Research, theory, eval/paper blueprint | Complete (docs) |
 | 10 | Engineering blueprint | Complete (docs) |
 | 11A | Repository & code architecture scaffold | Complete |
-| 11B–11E | Core models, IDT, SCT, transfer, CGM, capability robustness | Complete (libraries + tests) |
-| 11F | Implementation-ready blueprint | Complete (spec) |
-| 12 | Trace capture → end-to-end pipeline → evidence | Next |
+| 11B–11E | Core models, IDT, SCT, transfer, CGM, capability robustness | Complete |
+| 11F | Implementation-ready blueprint | Complete |
+| 11 | Trace capture → end-to-end pipeline → evidence | **Complete** |
+| 12 | Scale + ablation tables + ARC validation | Next |
 | 13+ | Experiments, results, paper | After Phase 12 |
 
-Honest per-gate status: [v0_1_readiness.md](v0_1_readiness.md).
-Module registry and stub inventory:
-[implementation_blueprint.md](../02_design/implementation_blueprint.md).
+Per-gate status: [v0_1_readiness.md](v0_1_readiness.md).
+Module registry: [implementation_blueprint.md](../02_design/implementation_blueprint.md).
+Completion notes: [phase_11_completion.md](../03_implementation/notes/phase_11_completion.md).
 
-## MVP build order
-
-Completed through Phase 11E:
+## MVP build order — all complete
 
 1. Core models (`src/core`) — Phase 11B
 2. Invariant mining, validation, ranking, robustness (`src/invariants`) — 11C
@@ -26,14 +25,11 @@ Completed through Phase 11E:
 4. Transfer memory, scores, graph, transfer-aware ranking (`src/transfer`) — 11C-4
 5. Capability representation, growth, intelligence, robustness (`src/capability`, `src/evaluation`) — 11E
 6. Layered evaluation harness, baselines, ablations, reports (`src/evaluation/harness`) — 11E-4/5
-
-Remaining for v0.1 (Phase 12):
-
-7. Trace producer (`TraceLogger`, `TraceStore`, `run_trace_pipeline`)
-8. Phase pipelines (`run_invariant_pipeline`, `run_skill_pipeline`)
-9. Skill application (`ReuseEngine.apply`)
-10. Single end-to-end entry point (`run_full_asft_pipeline`)
-11. Figures + experiment runners (`plot_metric`, exp01–03, exp05)
+7. Trace producer + solver (`src/solver`, `src/traces`) — 11 completion
+8. Phase pipelines (`run_trace/invariant/skill_pipeline`) — 11 completion
+9. Skill application (`ReuseEngine.apply`) — 11 completion
+10. End-to-end entry point (`run_full_asft_pipeline`) — 11 completion
+11. Figures + experiment runners (`plot_metric`, exp01–05) — 11 completion
 
 ## Version plan
 
@@ -45,6 +41,11 @@ Remaining for v0.1 (Phase 12):
 
 ## Immediate next step
 
-**Phase 12A — Trace capture** ([v0_1_readiness.md](v0_1_readiness.md#phase-12-build-order-unblocks-gates-in-this-sequence)):
-implement `TraceLogger`, `TraceStore`, and `run_trace_pipeline` so tasks produce
-persisted reasoning traces. Every other gate depends on it.
+**Phase 12 — scale and external validity.** The pipeline runs end to end on
+synthetic grids and beats all baselines. What remains before paper submission:
+
+1. Point the Task System at `datasets/arc/` (the solver interface already takes
+   any `GridTask`).
+2. Run multiple seeds and report confidence intervals.
+3. Add the A1–A5 ablation table to `exp05` (the transforms already exist in
+   `evaluation/harness/baselines.py`).

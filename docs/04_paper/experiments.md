@@ -8,14 +8,17 @@ Claim → module → metric → experiment → artifact traceability:
 
 | Folder | Contribution | Question | Runnable now |
 | --- | --- | --- | --- |
-| `experiments/exp01_invariants/` | IDT | Can invariant extraction find reusable patterns? Does high IS predict transfer? | No — runner not implemented |
-| `experiments/exp02_skills/` | SCT | Does create-when-SCV>0 reduce future reasoning cost vs always-search? | No — runner not implemented |
-| `experiments/exp03_transfer/` | Transfer | How much does solving Task A improve Task B? | No — runner not implemented |
+| `experiments/exp01_invariants/` | IDT | Can invariant extraction find reusable patterns? Does high IS predict transfer? | Yes — `run.py` |
+| `experiments/exp02_skills/` | SCT | Does create-when-SCV>0 reduce future reasoning cost vs always-search? | Yes — `run.py` |
+| `experiments/exp03_transfer/` | Transfer | How much does solving Task A improve Task B? | Yes — `run.py` |
 | `experiments/exp04_growth/` | CGM | Do TS / CGR / IG track capability growth over time? | Yes — `run.py` |
-| `experiments/exp05_end_to_end/` | ASFT | Does the full pipeline produce coherent paper-facing evidence? | No — `run_full_asft_pipeline` is a stub |
+| `experiments/exp05_end_to_end/` | ASFT | Does the full pipeline produce coherent paper-facing evidence? | Yes — `run.py` |
 
-Only `exp04_growth` is `enabled: true` in `configs/experiments.yaml`. Experiments
-above run on synthetic scenario data, not on learned traces.
+All five experiments are `enabled: true` in `configs/experiments.yaml` and write
+JSON + Markdown to `reports/metrics/` plus figures to `reports/figures/`.
+
+Current caveat: these run on synthetic grid tasks from `src/solver/`, not on ARC.
+Mechanism is demonstrated end to end; external validity is Phase 13 work.
 
 ## Baselines (separate code)
 
