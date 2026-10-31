@@ -46,7 +46,7 @@ Module boundaries are typed in `src/core/contracts.py` (`TraceBatchProvider`, `V
 reasonflux/
 ├── configs/          # YAML — no hardcoded thresholds in source
 ├── datasets/         # synthetic first, ARC second
-├── src/              # packages (core, traces, invariants, skills, ...)
+├── src/              # packages (core, solver, traces, invariants, skills, ...)
 ├── experiments/      # one folder per paper experiment
 ├── baselines/
 ├── tests/
@@ -60,13 +60,15 @@ reasonflux/
 
 ```
 Task
+ → Solver (src/solver)
  → Trace Logger
  → Trace Store
  → Trace Mining (normalize → segment → extract → aggregate → candidates)
  → Invariant Detector / Ranking (11C-3)
  → Skill Trigger
  → Skill Library
- → Transfer Engine
+ → Reuse Engine (transfer + measured TS)
+ → Capability Growth (C_t / CGR) and Intelligence (IG)
  → Evaluation Engine
  → Reports
 ```
@@ -96,6 +98,8 @@ core
  └─ evaluation
 
 pipelines  →  orchestrates the above
+
+solver     →  produces experience (no dependency on evaluation)
 
 evaluation must NOT depend on experiments
 ```

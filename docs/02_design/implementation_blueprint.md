@@ -11,7 +11,6 @@ its behavior is covered by a test.
 `demonstrated`, and no file under `src/` raises `NotImplementedError`.
 
 ## Build hierarchy
-
 ```mermaid
 flowchart TB
   exp["Layer 1: Experience<br/>Tasks, Traces, Memory"]

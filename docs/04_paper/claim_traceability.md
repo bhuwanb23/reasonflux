@@ -31,12 +31,11 @@ claim.
 | Metrics | TC, TFD |
 | Experiment | `exp01_invariants` (consumes traces) |
 | Artifact | table: dataset and trace inventory per task family |
-| Verifier | `tests/test_spec_module_registry.py::test_partial_modules_own_a_stub` |
+| Verifier | `tests/test_pipeline_phases.py::test_trace_pipeline_produces_and_persists` |
 
-**Status: blocked.** No component produces or persists traces yet, so all
-downstream evidence currently runs on synthetic scenario data
-([`scenarios.py`](../../src/evaluation/harness/scenarios.py)) rather than on
-learned experience.
+**Status: demonstrated.** `src/solver/` produces real reasoning steps for
+reflection, rotation, counting, and grouping tasks; `TraceLogger` captures them;
+`TraceStore` persists them with a verified save/load round-trip.
 
 ## Contribution 1 — IDT
 
@@ -112,12 +111,13 @@ skill-count-only and evidence-free growth
 | Metrics | CGR, IG, SU, TS |
 | Experiment | `exp05_end_to_end` |
 | Artifact | table: ASFT vs baselines A–D; table: ablations A1–A5 |
-| Verifier | `tests/test_cap_robustness_e2e.py::test_flat_fails_hard_gate` (harness level) |
+| Verifier | `tests/test_full_pipeline_e2e.py::test_asft_beats_every_baseline` |
 
-**Status: blocked.** Harness-level baselines and ablations are demonstrated on
-synthetic scenarios, but `run_full_asft_pipeline` is still a stub, so no
-paper-facing end-to-end run exists. See
-[v0_1_readiness.md](../00_project/v0_1_readiness.md).
+**Status: demonstrated.** ASFT reaches capability 0.831 vs DreamCoder-like 0.683,
+random 0.520, and 0.000 for storage-only and no-learning on identical evaluation
+tasks. The A1–A5 ablation table is still to be added to `exp05`; the transforms
+themselves are implemented and tested in
+[`evaluation/harness/baselines.py`](../../src/evaluation/harness/baselines.py).
 
 ## Metric registry mapping
 

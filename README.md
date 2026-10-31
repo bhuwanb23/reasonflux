@@ -34,11 +34,14 @@ All pipelines are implemented; nothing under `src/` raises `NotImplementedError`
 
 ## Architecture
 
-Repository layout maps directly to research contributions. See [docs/architecture.md](docs/architecture.md), [docs/metrics.md](docs/metrics.md), [docs/experiments.md](docs/experiments.md), and [docs/roadmap.md](docs/roadmap.md).
+The repository layout maps to contributions and now includes the solver that
+produces experience. See [architecture.md](../02_design/architecture.md),
+[metrics.md](../02_design/metrics.md), [experiments.md](../04_paper/experiments.md),
+and [roadmap.md](../00_project/roadmap.md).
 
 ```
-Task → Trace Logger → Trace Store → Invariant Detector → Skill Trigger
-    → Skill Library → Transfer Engine → Evaluation Engine → Reports
+Task → Solver → Trace Logger → Trace Store → Invariant Detector → Skill Trigger
+→ Skill Library → Reuse Engine → Capability Growth → Evaluation → Reports
 ```
 
 ## What is not in v0.1
