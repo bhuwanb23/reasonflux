@@ -167,10 +167,12 @@ class GridSolver:
         return grid
 
     def _stage(self, grid: Grid, task: GridTask, emit) -> Grid:
-        """First stage of a composed task (used when ``compose=True``)."""
-        if task.task_family in ("reflection", "rotation"):
-            emit("find_symmetry", "stage1")
-            return reflect_horizontal(grid)
+        """First stage of a composed task (used when ``compose=True``).
+
+        Always a rotation, matching :func:`solver.tasks.expected_output`, so the
+        emitted steps and the reference answer stay consistent.
+        """
+        del task
         emit("find_rotation", "stage1")
         return rotate_90(grid)
 

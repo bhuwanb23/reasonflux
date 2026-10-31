@@ -51,6 +51,7 @@ def run_trace_pipeline(
     per_family: int = 4,
     seed: int = 0,
     difficulty: float = 0.3,
+    compose: bool = False,
     store: TraceStore | None = None,
     store_root: str | Path | None = None,
     persist: bool = True,
@@ -61,7 +62,11 @@ def run_trace_pipeline(
     logger = TraceLogger()
 
     tasks = make_task_batch(
-        tuple(families), per_family=per_family, seed=seed, difficulty=difficulty
+        tuple(families),
+        per_family=per_family,
+        seed=seed,
+        difficulty=difficulty,
+        compose=compose,
     )
     pairs = [(task.to_task(), solver.solve(task)) for task in tasks]
     traces = logger.log_batch(pairs)

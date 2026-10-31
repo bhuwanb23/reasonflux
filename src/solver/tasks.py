@@ -125,22 +125,24 @@ def _blob_grid(
     return Grid.from_rows(cells)
 
 
-def expected_output(family: str, grid: Grid, *, variant: int = 0) -> Any:
+def expected_output(
+    family: str, grid: Grid, *, variant: int = 0, compose: bool = False
+) -> Any:
     """Reference output for ``family`` on ``grid``.
 
-    The reflection target is always the horizontal mirror. ``variant`` only
-    changes the *spelling* of the operations (exercising the normalizer), never
-    the arithmetic — otherwise a single reusable skill could not know which axis
-    to apply and reuse would be unwinnable by construction.
+    ``compose`` prepends a rotation stage, so harder experience genuinely
+    composes two transforms rather than merely using a bigger grid. The expected
+    output always reflects what the solver's emitted steps actually compute.
     """
+    base = rotate_90(grid) if compose else grid
     if family == "reflection":
-        return reflect_horizontal(grid)
+        return reflect_horizontal(base)
     if family == "rotation":
-        return rotate_90(grid) if variant % 2 == 0 else rotate_90(rotate_90(grid))
+        return rotate_90(base) if variant % 2 == 0 else rotate_90(rotate_90(base))
     if family == "counting":
-        return count_objects(grid)
+        return count_objects(base)
     if family == "grouping":
-        return group_by_color(grid)
+        return group_by_color(base)
     raise ValueError(f"unknown task family: {family!r}")
 
 
@@ -150,6 +152,7 @@ def make_task(
     seed: int = 0,
     difficulty: float = 0.3,
     variant: int = 0,
+    compose: bool = False,
 ) -> GridTask:
     """Build a deterministic task. Same arguments always yield the same task."""
     if family not in FAMILIES:
@@ -157,7 +160,7 @@ def make_task(
     if not 0.0 <= float(difficulty) <= 1.0:
         raise ValueError("difficulty must be in [0, 1]")
 
-    rng = random.Random(f"{family}:{seed}:{variant}")
+    rng = random.Random(f"{family}:{seed}:{variant}:{compose}")
     size = 3 + int(float(difficulty) * 3)  # 3..6
     # Variant 1 for counting/grouping uses a symmetric grid so the solver has a
     # genuine symmetry axis to detect before reducing the task.
@@ -166,13 +169,13 @@ def make_task(
         grid = _blob_grid(rng, size=size, blobs=max(2, size - 1), symmetric=symmetric)
     else:
         grid = _random_grid(rng, size=size)
-    expected = expected_output(family, grid, variant=variant)
+    expected = expected_output(family, grid, variant=variant, compose=compose)
 
     # High difficulty marks the task ambiguous: more than one transform reading
     # is defensible, so the solver's first choice may be wrong.
     ambiguous = float(difficulty) >= 0.7
     return GridTask(
-        task_id=f"{family}-{seed}-v{variant}",
+        task_id=f"{family}-{seed}-v{variant}" + ("-c" if compose else ""),
         task_family=family,
         input_grid=grid,
         expected=expected,
@@ -185,6 +188,7 @@ def make_task(
             "size": size,
             "ambiguous": ambiguous,
             "symmetric": symmetric,
+            "compose": bool(compose),
         },
     )
 
@@ -195,6 +199,7 @@ def make_task_batch(
     per_family: int = 4,
     seed: int = 0,
     difficulty: float = 0.3,
+    compose: bool = False,
 ) -> list[GridTask]:
     """Build a balanced batch across families, alternating spelling variants."""
     out: list[GridTask] = []
@@ -206,6 +211,7 @@ def make_task_batch(
                     seed=seed + i,
                     difficulty=difficulty,
                     variant=i % 2,
+                    compose=compose,
                 )
             )
     return out

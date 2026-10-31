@@ -3,12 +3,18 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from typing import TYPE_CHECKING
 
 from core.invariant import Invariant
 from core.states import InvariantState
-from invariants.validation.scores import ValidationScores
 from transfer.memory import TransferMemory
 from transfer.metrics import TransferConfig, TransferScores, compute_transfer_score
+
+if TYPE_CHECKING:  # pragma: no cover - import only for type checkers
+    # Imported under TYPE_CHECKING to break the cycle
+    # transfer.gate → invariants.validation → invariants → robustness.hard_gate
+    # → transfer.gate. ValidationScores is used in annotations only.
+    from invariants.validation.scores import ValidationScores
 
 
 @dataclass(slots=True)

@@ -143,10 +143,9 @@ def run_full_asft_pipeline(
             difficulty=difficulty,
             persist=persist,
             store_root=store_root,
-            solver=GridSolver(compose=r > 0),
+            compose=r > 0,
         )
         corpus.extend(batch.traces)
-
         # --- Phase B: invariants over all experience so far --------------
         inv_run = run_invariant_pipeline(corpus)
         validated = list(inv_run.validation.validated) if inv_run.validation else []
