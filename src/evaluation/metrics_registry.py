@@ -158,6 +158,11 @@ METRICS: dict[str, MetricDefinition] = {
         "CROSS_FAMILY_REUSE", "credited reuse across source and target families",
         "cross-family transfer count", "[0, inf)", "== 0",
     ),
+    "CROSS_FAMILY_REUSE_RATE": MetricDefinition(
+        "CROSS_FAMILY_REUSE_RATE",
+        "cross-family credited reuse / credited reuse",
+        "normalized cross-family transfer rate", "[0, 1]", "== 0",
+    ),
     "CORRELATION_N": MetricDefinition(
         "CORRELATION_N", "number of invariant-level transfer pairs",
         "correlation sample size", "[0, inf)", "< 4",

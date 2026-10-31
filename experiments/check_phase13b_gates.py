@@ -29,6 +29,9 @@ def main(*, write: bool = False) -> dict[str, object]:
         "positive_transfer_score": evidence["transfer"]["statistics"]["TS"]["mean"] > 0,
         "positive_transfer_utility": evidence["transfer"]["statistics"]["TU"]["mean"] > 0,
         "cross_family_transfer": evidence["transfer"]["statistics"]["cross_family_reuse"]["mean"] > 0,
+        "cross_family_transfer_rate": evidence["transfer"]["statistics"][
+            "cross_family_reuse_rate"
+        ]["mean"] > 0,
         "correlation_sample_size": evidence["transfer"]["statistics"]["correlation_n"]["mean"]
         >= 4.0,
         "per_seed_transfer_sample_size": all(

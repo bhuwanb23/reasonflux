@@ -364,6 +364,9 @@ def transfer(
             skill.metadata or {}
         ).get("mvp_category") != result.task_family:
             cross_family_reuse += 1
+    credited_attempts = sum(
+        1 for result in results if result.applied and result.transfer_credit
+    )
     pairs = []
     by_invariant: dict[str, list[Any]] = {}
     for result in results:
@@ -476,6 +479,7 @@ def transfer(
             if utilities
             else 0.0,
             "cross_family_reuse": cross_family_reuse,
+            "cross_family_reuse_rate": cross_family_reuse / max(1, credited_attempts),
             "correlation_n": float(len(correlation_pairs)),
         },
         "n_transfer_records": len(records),
@@ -510,6 +514,7 @@ def transfer_multi(
             "TS",
             "TU",
             "cross_family_reuse",
+            "cross_family_reuse_rate",
             "correlation_n",
         ),
         # Cross-family reuse is an explicit IDT transfer gate.
@@ -844,7 +849,7 @@ def baselines(seed: int = 0, *, write: bool = False) -> dict[str, Any]:
         "configuration": {
             "top_k": top_k,
             "score": "mean transfer utility",
-            "candidate_level": "ASFT semantic-consolidated; baselines raw-pattern",
+            "candidate_level": "shared validated semantic-consolidated pool",
         },
         "metrics": {
             "ASFT": asft_score,
@@ -926,7 +931,7 @@ def run_idt_evidence(
                 "TU",
                 "PEARSON",
                 "SPEARMAN",
-                "cross_family_reuse",
+                "cross_family_reuse_rate",
                 "correlation_n",
             ),
         )
