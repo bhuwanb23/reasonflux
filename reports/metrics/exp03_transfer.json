@@ -1,0 +1,66 @@
+{
+  "by_family": {
+    "counting": {
+      "applied": 1,
+      "attempts": 2,
+      "credited": 1,
+      "mean_reduction": 0.4
+    },
+    "grouping": {
+      "applied": 1,
+      "attempts": 2,
+      "credited": 1,
+      "mean_reduction": 0.4
+    },
+    "reflection": {
+      "applied": 2,
+      "attempts": 2,
+      "credited": 2,
+      "mean_reduction": 0.25
+    },
+    "rotation": {
+      "applied": 2,
+      "attempts": 2,
+      "credited": 1,
+      "mean_reduction": 0.25
+    }
+  },
+  "contribution": "transfer",
+  "experiment": "exp03_transfer",
+  "mean_benefit": 0.31,
+  "n_cross_family": 2,
+  "n_transfer_records": 5,
+  "positive_transfer": true,
+  "records": [
+    {
+      "benefit": 0.25,
+      "reduction": 0.25,
+      "source": "reflection",
+      "target": "reflection"
+    },
+    {
+      "benefit": 0.25,
+      "reduction": 0.25,
+      "source": "rotation",
+      "target": "rotation"
+    },
+    {
+      "benefit": 0.25,
+      "reduction": 0.25,
+      "source": "reflection",
+      "target": "reflection"
+    },
+    {
+      "benefit": 0.4,
+      "reduction": 0.4,
+      "source": "reflection",
+      "target": "counting"
+    },
+    {
+      "benefit": 0.4,
+      "reduction": 0.4,
+      "source": "reflection",
+      "target": "grouping"
+    }
+  ]
+}

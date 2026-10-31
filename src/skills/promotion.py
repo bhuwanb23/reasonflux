@@ -51,13 +51,23 @@ def promote_skill(
     config: SkillConfig | None = None,
     ntr: float = 0.0,
     skill_id: str | None = None,
+    allow_prior_evidence: bool = False,
 ) -> PromotionResult:
-    """Qualify, instantiate, emit birth event, and store in the library."""
+    """Qualify, instantiate, emit birth event, and store in the library.
+
+    ``allow_prior_evidence`` implements the honest bootstrap: a skill may be
+    admitted as a **provisional** trial (state ``PROMOTED``, never ``ACTIVE``)
+    using trace-derived priors, so Phase D can measure whether it actually helps.
+    Only measured transfer confirms it. Provisional skills never enter the
+    capability portfolio, so a prior can never inflate a reported score.
+    """
     config = config or SkillConfig()
     if library is None:
         library = SkillLibrary()
 
-    intake = intake_invariant(invariant, config)
+    intake = intake_invariant(
+        invariant, config, allow_prior_evidence=allow_prior_evidence
+    )
     if not intake.accepted:
         return PromotionResult(promoted=False, reasons=list(intake.reasons))
 
@@ -67,6 +77,7 @@ def promote_skill(
         library=library,
         config=config,
         ntr=ntr,
+        allow_prior_evidence=allow_prior_evidence,
     )
     if not qualification.qualified:
         return PromotionResult(
@@ -81,7 +92,13 @@ def promote_skill(
 
     skill = Skill.from_candidate(candidate, skill_id=skill_id)
     skill.reuse_count = 0  # expected reuse is economic; count starts at birth
-    if skill.state is SkillState.PROMOTED:
+    if allow_prior_evidence and not invariant.evidence.transfer_events:
+        # Provisional trial: stays PROMOTED so it is excluded from the capability
+        # portfolio until Phase D measures it.
+        skill.metadata = dict(skill.metadata or {})
+        skill.metadata["provisional"] = True
+        skill.metadata["admitted_on"] = "prior"
+    elif skill.state is SkillState.PROMOTED:
         skill.transition_to(SkillState.ACTIVE)
 
     transfer_events = 0

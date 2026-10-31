@@ -3,15 +3,18 @@ experiments:
   exp01_invariants:
     description: Validate Invariant Discovery Theory (IDT)
     contribution: IDT
-    enabled: false
+    enabled: true
+    entry: experiments/exp01_invariants/run.py
   exp02_skills:
     description: Validate Skill Creation Trigger Theory (SCT)
     contribution: SCT
-    enabled: false
+    enabled: true
+    entry: experiments/exp02_skills/run.py
   exp03_transfer:
     description: Measure Task A → Task B transfer effects
     contribution: transfer
-    enabled: false
+    enabled: true
+    entry: experiments/exp03_transfer/run.py
   exp04_growth:
     description: Validate Capability Growth Metrics (CGM)
     contribution: CGM
@@ -20,4 +23,5 @@ experiments:
   exp05_end_to_end:
     description: Full ASFT pipeline smoke / paper end-to-end
     contribution: ASFT
-    enabled: false
+    enabled: true
+    entry: experiments/exp05_end_to_end/run.py

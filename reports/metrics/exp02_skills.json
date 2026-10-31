@@ -1,0 +1,36 @@
+{
+  "admitted": 4,
+  "admitted_at_strict_threshold": 0,
+  "contribution": "SCT",
+  "experiment": "exp02_skills",
+  "n_promotable_invariants": 4,
+  "rejected_at_default": 0,
+  "rejection_reasons": [],
+  "scv_gate_effective": true,
+  "skills": [
+    {
+      "scv": 0.05,
+      "skill_id": "SC-INV-489db88e598d48b3",
+      "triggers": "find_rotation",
+      "utility": 0.5622
+    },
+    {
+      "scv": 0.0667,
+      "skill_id": "SC-INV-a4f872d69c07cbc0",
+      "triggers": "apply_reflection",
+      "utility": 0.5622
+    },
+    {
+      "scv": 0.0667,
+      "skill_id": "SC-INV-b977e7292dcf8ad0",
+      "triggers": "find_symmetry",
+      "utility": 0.5622
+    },
+    {
+      "scv": 0.05,
+      "skill_id": "SC-INV-cd89c6e9697e31c5",
+      "triggers": "apply_rotation",
+      "utility": 0.5622
+    }
+  ]
+}

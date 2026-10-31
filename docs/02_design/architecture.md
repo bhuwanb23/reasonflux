@@ -46,7 +46,7 @@ Module boundaries are typed in `src/core/contracts.py` (`TraceBatchProvider`, `V
 reasonflux/
 ├── configs/          # YAML — no hardcoded thresholds in source
 ├── datasets/         # synthetic first, ARC second
-├── src/              # packages (core, traces, invariants, skills, ...)
+├── src/              # packages (core, solver, traces, invariants, skills, ...)
 ├── experiments/      # one folder per paper experiment
 ├── baselines/
 ├── tests/
@@ -60,13 +60,15 @@ reasonflux/
 
 ```
 Task
+ → Solver (src/solver)
  → Trace Logger
  → Trace Store
  → Trace Mining (normalize → segment → extract → aggregate → candidates)
  → Invariant Detector / Ranking (11C-3)
  → Skill Trigger
  → Skill Library
- → Transfer Engine
+ → Reuse Engine (transfer + measured TS)
+ → Capability Growth (C_t / CGR) and Intelligence (IG)
  → Evaluation Engine
  → Reports
 ```
@@ -81,7 +83,8 @@ Trace mining details: [docs/mining.md](mining.md). Invariant qualification:
 [docs/lifecycle.md](lifecycle.md). Skill composition:
 [docs/composition.md](composition.md). Skill failure modes:
 [docs/skill_failure_modes.md](skill_failure_modes.md). Capability representation:
-[docs/capability.md](capability.md).
+[docs/capability.md](capability.md). Capability failure modes:
+[docs/capability_failure_modes.md](capability_failure_modes.md).
 
 ## Module dependency graph
 
@@ -96,8 +99,14 @@ core
 
 pipelines  →  orchestrates the above
 
+solver     →  produces experience (no dependency on evaluation)
+
 evaluation must NOT depend on experiments
 ```
+
+Module-level build spec, status per module, and the stub inventory:
+[implementation_blueprint.md](implementation_blueprint.md). Its registry is
+[`configs/modules.yaml`](../../configs/modules.yaml), enforced by tests.
 
 ## Configuration
 

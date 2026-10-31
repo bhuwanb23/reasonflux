@@ -19,6 +19,7 @@ __all__ = [
     "normalize_lookup_key",
     "normalize_trace",
     "normalize_traces",
+    "normalized_operations_for",
 ]
 
 # Lookup keys are lowercase alphanumeric only (punctuation stripped).
@@ -126,3 +127,13 @@ def normalize_traces(
 ) -> list[NormalizedTrace]:
     """Normalize a batch of traces."""
     return [normalize_trace(t, synonym_map) for t in traces]
+
+
+def normalized_operations_for(
+    trace: ReasoningTrace,
+    synonym_map: Mapping[str, str] | None = None,
+) -> list[str]:
+    """Canonical operation sequence for one trace (order preserved)."""
+    return [
+        canonicalize_operation(step.operation, synonym_map) for step in trace.steps
+    ]

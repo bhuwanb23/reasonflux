@@ -14,31 +14,34 @@ Reasoning Trace → Invariant Discovery → Concept Formation → Skill Creation
 2. **Skill Creation Trigger Theory (SCT)** — create a skill when Skill Creation Value (SCV) > threshold (`src/skills`)
 3. **Capability Growth Metrics (CGM)** — measure transfer and capability growth, not only task accuracy (`src/evaluation`)
 
-## Install
+## Run
 
 ```bash
 pip install -e .
 # or
 pip install -r requirements.txt
-```
 
-## Run
+# end to end: tasks → traces → invariants → skills → reuse → capability growth
+python -c "from pipelines.full_asft_pipeline import run_full_asft_pipeline; print(run_full_asft_pipeline().summary)"
 
-Experiment runners and pipelines are stubs until later Phase 11 modules are implemented.
+# experiments (write reports/ + figures/)
+python experiments/exp05_end_to_end/run.py
 
-```bash
-# after pipelines are filled in:
-# python -m pipelines.full_asft_pipeline --config configs/default.yaml
 pytest tests/
 ```
 
+All pipelines are implemented; nothing under `src/` raises `NotImplementedError`.
+
 ## Architecture
 
-Repository layout maps directly to research contributions. See [docs/architecture.md](docs/architecture.md), [docs/metrics.md](docs/metrics.md), [docs/experiments.md](docs/experiments.md), and [docs/roadmap.md](docs/roadmap.md).
+The repository layout maps to contributions and now includes the solver that
+produces experience. See [architecture.md](../02_design/architecture.md),
+[metrics.md](../02_design/metrics.md), [experiments.md](../04_paper/experiments.md),
+and [roadmap.md](../00_project/roadmap.md).
 
 ```
-Task → Trace Logger → Trace Store → Invariant Detector → Skill Trigger
-    → Skill Library → Transfer Engine → Evaluation Engine → Reports
+Task → Solver → Trace Logger → Trace Store → Invariant Detector → Skill Trigger
+→ Skill Library → Reuse Engine → Capability Growth → Evaluation → Reports
 ```
 
 ## What is not in v0.1

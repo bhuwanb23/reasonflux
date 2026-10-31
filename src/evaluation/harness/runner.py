@@ -125,7 +125,7 @@ def run_benchmark(
         "ig": summarize([s.ig for s in run.snapshots], z=cfg.ci_z),
     }
 
-    ok_gate, kinds = gate_run(run)
+    ok_gate, kinds = gate_run(run, cfg)
     layer_ok = _success_from_layers(layers, level)
     # Flat baseline expected to fail growth success
     if baseline and str(baseline).upper() == "A":
