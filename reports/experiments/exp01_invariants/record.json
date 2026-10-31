@@ -1,0 +1,93 @@
+{
+  "configuration": {
+    "per_family": 6
+  },
+  "dataset": {},
+  "dataset_version": "synthetic-v1",
+  "experiment_id": "exp01_invariants",
+  "failure_cases": [],
+  "metric_definitions": {
+    "IS": {
+      "failure_condition": "<= 0",
+      "formula": "frequency * consistency * generality",
+      "interpretation": "invariant strength",
+      "name": "IS",
+      "valid_range": "[0, inf)"
+    }
+  },
+  "metrics": {
+    "IS": 7.875
+  },
+  "observations": {},
+  "record_schema": "phase-13a-v1",
+  "results": {
+    "configuration": {
+      "per_family": 6
+    },
+    "contribution": "IDT",
+    "dataset_version": "synthetic-v1",
+    "experiment": "exp01_invariants",
+    "experiment_id": "EXP-01",
+    "invariants": [
+      {
+        "consistency": 1.0,
+        "families": "counting, grouping, reflection",
+        "frequency": 12,
+        "generality": 0.75,
+        "is": 9.0,
+        "signature": "apply_reflection"
+      },
+      {
+        "consistency": 1.0,
+        "families": "counting, grouping, reflection",
+        "frequency": 12,
+        "generality": 0.75,
+        "is": 9.0,
+        "signature": "find_symmetry"
+      },
+      {
+        "consistency": 1.0,
+        "families": "counting, grouping, rotation",
+        "frequency": 9,
+        "generality": 0.75,
+        "is": 6.75,
+        "signature": "find_rotation"
+      },
+      {
+        "consistency": 1.0,
+        "families": "counting, grouping, rotation",
+        "frequency": 9,
+        "generality": 0.75,
+        "is": 6.75,
+        "signature": "apply_rotation"
+      }
+    ],
+    "is_summary": {
+      "above_threshold": 4.0,
+      "max": 9.0,
+      "mean": 7.875,
+      "min": 6.75,
+      "n": 4.0,
+      "threshold": 5.0
+    },
+    "metrics": {
+      "IS": 7.875
+    },
+    "n_candidates": 6,
+    "n_traces": 24,
+    "n_validated": 4,
+    "reflection_found": true,
+    "rotation_found": true,
+    "seed": 0,
+    "thresholds": {
+      "mean_is": 0.0,
+      "n_validated": 1
+    }
+  },
+  "seed": 0,
+  "thresholds": {
+    "mean_is": 0.0,
+    "n_validated": 1
+  },
+  "timestamp_utc": "2026-10-31T09:50:24.842221+00:00"
+}

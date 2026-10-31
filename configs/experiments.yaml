@@ -1,27 +1,102 @@
-# Experiment registry — maps to Phase 9C / experiments/
+# Experiment registry and Phase 13A governance.
+seed_policy:
+  minimum_seeds: [0, 1, 2, 3, 4]
+  preferred_seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  confidence_level: 0.95
+  discovery_seed_offset: 0
+  transfer_seed_offset: 1000
+
+dataset_policy:
+  version: "synthetic-v1"
+  discovery:
+    tier: 1
+    families: [reflection, rotation, counting, grouping]
+    per_family: 6
+  transfer:
+    tier: 2
+    families: [reflection, rotation, counting, grouping]
+    per_family: 2
+    disjoint_seed_offset: 1000
+  external:
+    tier: 3
+    name: arc
+    status: planned
+
+metric_policy:
+  IS:
+    interpretation: invariant strength
+    failure: "<= 0"
+  SCV:
+    interpretation: skill creation value
+    failure: "<= 0"
+  SU:
+    interpretation: skill utility
+    failure: "<= 0"
+  TS:
+    interpretation: transfer score
+    failure: "<= 0"
+  TU:
+    interpretation: transfer utility
+    failure: "<= 0"
+  NTR:
+    interpretation: normalized transfer reduction
+    failure: "<= 0"
+  CGR:
+    interpretation: capability growth rate
+    failure: "<= 0"
+  IG:
+    interpretation: intelligence growth
+    failure: "<= 0"
+  IGR:
+    interpretation: intelligence growth rate
+    failure: "<= 0"
+
 experiments:
   exp01_invariants:
+    id: EXP-01
     description: Validate Invariant Discovery Theory (IDT)
     contribution: IDT
     enabled: true
     entry: experiments/exp01_invariants/run.py
   exp02_skills:
+    id: EXP-02
     description: Validate Skill Creation Trigger Theory (SCT)
     contribution: SCT
     enabled: true
     entry: experiments/exp02_skills/run.py
   exp03_transfer:
+    id: EXP-03
     description: Measure Task A → Task B transfer effects
     contribution: transfer
     enabled: true
     entry: experiments/exp03_transfer/run.py
   exp04_growth:
+    id: EXP-04
     description: Validate Capability Growth Metrics (CGM)
     contribution: CGM
     enabled: true
     entry: experiments/exp04_growth/run.py
   exp05_end_to_end:
+    id: EXP-05
     description: Full ASFT pipeline smoke / paper end-to-end
     contribution: ASFT
     enabled: true
     entry: experiments/exp05_end_to_end/run.py
+  exp06_baselines:
+    id: EXP-06
+    description: Compare ASFT against baseline strategies
+    contribution: ASFT
+    enabled: true
+    entry: evaluation.harness.runner
+  exp07_ablations:
+    id: EXP-07
+    description: Measure contribution-specific ablation effects
+    contribution: ASFT
+    enabled: true
+    entry: evaluation.harness.runner
+  exp08_arc:
+    id: EXP-08
+    description: Validate ASFT on external ARC tasks
+    contribution: external-validity
+    enabled: false
+    entry: experiments/exp08_arc/run.py

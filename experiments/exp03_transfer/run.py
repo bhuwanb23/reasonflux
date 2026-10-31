@@ -15,12 +15,26 @@ for _p in (_ROOT, _ROOT / "src"):
     if str(_p) not in sys.path:
         sys.path.insert(0, str(_p))
 
+EXPERIMENT_META = {
+    "experiment_id": "EXP-03",
+    "hypothesis": "A skill learned on one task family improves performance on another.",
+    "claim": "IDT + SCT transfer",
+    "primary_metrics": ["TS", "TU", "NTR"],
+    "success_thresholds": {"positive_transfer": True, "mean_benefit": 0.0},
+    "failure_thresholds": {"positive_transfer": False, "mean_benefit": 0.0},
+}
+
 from pipelines.invariant_pipeline import run_invariant_pipeline  # noqa: E402
 from pipelines.skill_pipeline import run_skill_pipeline  # noqa: E402
 from pipelines.trace_pipeline import run_trace_pipeline  # noqa: E402
 from solver.tasks import FAMILIES, make_task_batch  # noqa: E402
 from transfer.reuse_engine import ReuseEngine  # noqa: E402
-from experiments._common import write_experiment, write_figure  # noqa: E402
+from experiments._common import (  # noqa: E402
+    default_seeds,
+    run_multi_seed,
+    write_experiment,
+    write_figure,
+)
 
 
 def main(*, seed: int = 0, per_family: int = 6, write: bool = True) -> dict:
@@ -30,7 +44,7 @@ def main(*, seed: int = 0, per_family: int = 6, write: bool = True) -> dict:
     skill_run = run_skill_pipeline(inv_run.promotable, allow_prior_evidence=True)
 
     engine = ReuseEngine(skill_run.library)
-    tasks = make_task_batch(FAMILIES, per_family=2, seed=100, difficulty=0.2)
+    tasks = make_task_batch(FAMILIES, per_family=2, seed=1000 + seed, difficulty=0.2)
     results = engine.apply_batch(tasks)
 
     by_family: dict[str, dict] = {}
@@ -51,16 +65,35 @@ def main(*, seed: int = 0, per_family: int = 6, write: bool = True) -> dict:
 
     records = engine.memory.all_records()
     cross = [r for r in records if r.source_family != r.target_family]
+    mean_benefit = (
+        sum(r.benefit for r in records) / len(records) if records else 0.0
+    )
+    mean_reduction = (
+        sum(r.reasoning_reduction for r in records) / len(records)
+        if records
+        else 0.0
+    )
     payload = {
         "experiment": "exp03_transfer",
+        "experiment_id": "EXP-03",
+        "seed": seed,
+        "dataset_version": "synthetic-v1",
+        "configuration": {
+            "discovery_per_family": per_family,
+            "transfer_per_family": 2,
+        },
+        "thresholds": EXPERIMENT_META["success_thresholds"],
         "contribution": "transfer",
         "n_transfer_records": len(records),
         "n_cross_family": len(cross),
-        "mean_benefit": round(
-            sum(r.benefit for r in records) / len(records), 4
-        )
-        if records
-        else 0.0,
+        "mean_benefit": round(mean_benefit, 4),
+        "mean_ts": round(mean_benefit, 4),
+        "mean_ntr": round(mean_reduction, 4),
+        "metrics": {
+            "TS": round(mean_benefit, 4),
+            "TU": round(mean_benefit, 4),
+            "NTR": round(mean_reduction, 4),
+        },
         "positive_transfer": len(records) > 0,
         "by_family": by_family,
         "records": [
@@ -85,6 +118,20 @@ def main(*, seed: int = 0, per_family: int = 6, write: bool = True) -> dict:
             ),
         }
     return payload
+
+
+def main_multi(*, seeds: tuple[int, ...] | None = None, write: bool = True) -> dict:
+    """Run EXP-03 under the governed multi-seed policy."""
+    return run_multi_seed(
+        main,
+        seeds=seeds or default_seeds(_ROOT),
+        metric_paths={"TS": "mean_ts", "TU": "mean_benefit", "NTR": "mean_ntr"},
+        experiment_id="EXP-03",
+        configuration={"discovery_per_family": 6, "transfer_per_family": 2},
+        thresholds=EXPERIMENT_META["success_thresholds"],
+        write=write,
+        root=_ROOT,
+    )
 
 
 if __name__ == "__main__":

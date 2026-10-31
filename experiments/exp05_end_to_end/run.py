@@ -15,12 +15,26 @@ for _p in (_ROOT, _ROOT / "src"):
     if str(_p) not in sys.path:
         sys.path.insert(0, str(_p))
 
+EXPERIMENT_META = {
+    "experiment_id": "EXP-05",
+    "hypothesis": "The complete ASFT loop produces transfer and capability growth.",
+    "claim": "ASFT",
+    "primary_metrics": ["CGR", "IG", "reuse"],
+    "success_thresholds": {"success": True, "beats_all_baselines": True},
+    "failure_thresholds": {"success": False, "beats_all_baselines": False},
+}
+
 from baselines.dreamcoder_like.run import run as dreamcoder  # noqa: E402
 from baselines.no_learning.run import run as no_learning  # noqa: E402
 from baselines.random_skill_creation.run import run as random_skills  # noqa: E402
 from baselines.skill_storage.run import run as skill_storage  # noqa: E402
 from pipelines.full_asft_pipeline import run_full_asft_pipeline  # noqa: E402
-from experiments._common import write_experiment, write_figure  # noqa: E402
+from experiments._common import (  # noqa: E402
+    default_seeds,
+    run_multi_seed,
+    write_experiment,
+    write_figure,
+)
 
 
 def main(*, seed: int = 0, write: bool = True) -> dict:
@@ -40,6 +54,11 @@ def main(*, seed: int = 0, write: bool = True) -> dict:
 
     payload = {
         "experiment": "exp05_end_to_end",
+        "experiment_id": "EXP-05",
+        "seed": seed,
+        "dataset_version": "synthetic-v1",
+        "configuration": {"pipeline": "full_asft_pipeline"},
+        "thresholds": EXPERIMENT_META["success_thresholds"],
         "contribution": "ASFT",
         "asft": asft,
         "baselines": [
@@ -56,6 +75,7 @@ def main(*, seed: int = 0, write: bool = True) -> dict:
         "success": bool(full.success),
         "rounds": [r.to_dict() for r in full.rounds],
         "summary": full.summary,
+        "metrics": {"CGR": asft["cgr"], "IG": asft["ig"]},
     }
     if write:
         payload["artifacts"] = {
@@ -73,6 +93,20 @@ def main(*, seed: int = 0, write: bool = True) -> dict:
             ),
         }
     return payload
+
+
+def main_multi(*, seeds: tuple[int, ...] | None = None, write: bool = True) -> dict:
+    """Run EXP-05 under the governed multi-seed policy."""
+    return run_multi_seed(
+        main,
+        seeds=seeds or default_seeds(_ROOT),
+        metric_paths={"CGR": "asft.cgr", "IG": "asft.ig"},
+        experiment_id="EXP-05",
+        configuration={"pipeline": "full_asft_pipeline"},
+        thresholds=EXPERIMENT_META["success_thresholds"],
+        write=write,
+        root=_ROOT,
+    )
 
 
 if __name__ == "__main__":
