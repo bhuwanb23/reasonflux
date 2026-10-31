@@ -1,0 +1,276 @@
+{
+  "run": {
+    "run_id": "exp04_intel_0",
+    "level": "intelligence",
+    "baseline": null,
+    "ablation": null,
+    "snapshots": [
+      {
+        "step": 0,
+        "capability_score": 0.25,
+        "cgr": 0.0,
+        "ig": 0.07750000000000001,
+        "igr": 0.07750000000000001,
+        "coverage": 0.4,
+        "mean_su": 0.3,
+        "mean_ts": 0.2,
+        "ntr": 0.0,
+        "metadata": {
+          "skill_count": 1,
+          "cap_count": 1,
+          "composition_success_rate": 0.0,
+          "new_families": 0,
+          "elasticity": 0.0
+        }
+      },
+      {
+        "step": 1,
+        "capability_score": 0.49250000000000005,
+        "cgr": 0.24250000000000005,
+        "ig": 0.22450000000000003,
+        "igr": 0.14700000000000002,
+        "coverage": 0.8,
+        "mean_su": 0.55,
+        "mean_ts": 0.45,
+        "ntr": 0.0,
+        "metadata": {
+          "skill_count": 2,
+          "cap_count": 1,
+          "composition_success_rate": 0.0,
+          "new_families": 0,
+          "elasticity": 0.0
+        }
+      },
+      {
+        "step": 2,
+        "capability_score": 0.7725000000000001,
+        "cgr": 0.28,
+        "ig": 0.380875,
+        "igr": 0.156375,
+        "coverage": 1.0,
+        "mean_su": 0.6499999999999999,
+        "mean_ts": 0.65,
+        "ntr": 0.0,
+        "metadata": {
+          "skill_count": 2,
+          "cap_count": 1,
+          "composition_success_rate": 0.5,
+          "new_families": 1,
+          "elasticity": 0.156375
+        }
+      },
+      {
+        "step": 3,
+        "capability_score": 0.8709375,
+        "cgr": 0.09843749999999996,
+        "ig": 0.37775000000000003,
+        "igr": -0.003124999999999989,
+        "coverage": 1.0,
+        "mean_su": 0.8125,
+        "mean_ts": 0.7875000000000001,
+        "ntr": 0.0,
+        "metadata": {
+          "skill_count": 4,
+          "cap_count": 2,
+          "composition_success_rate": 0.5,
+          "new_families": 1,
+          "elasticity": -0.003124999999999989
+        }
+      }
+    ],
+    "layers": [
+      {
+        "layer": "invariant",
+        "passed": true,
+        "metrics": {
+          "is_proxy": 4.0,
+          "precision": 1.0,
+          "n_categories": 4.0
+        },
+        "notes": []
+      },
+      {
+        "layer": "skill",
+        "passed": true,
+        "metrics": {
+          "mean_su": 0.8125,
+          "reuse": 20.0,
+          "mean_ts": 0.7875000000000001,
+          "health": 0.8612500000000001
+        },
+        "notes": []
+      },
+      {
+        "layer": "transfer",
+        "passed": true,
+        "metrics": {
+          "mean_ts": 0.7875000000000001,
+          "tu": 0.7875000000000001,
+          "ntr": 0.0,
+          "diversity": 7.0,
+          "attempts": 14.0
+        },
+        "notes": []
+      },
+      {
+        "layer": "capability",
+        "passed": true,
+        "metrics": {
+          "capability_score": 0.8709375,
+          "cgr": 0.09843749999999996,
+          "coverage": 1.0,
+          "n_caps": 2.0
+        },
+        "notes": []
+      },
+      {
+        "layer": "intelligence",
+        "passed": false,
+        "metrics": {
+          "ig": 0.37775000000000003,
+          "igr": -0.003124999999999989,
+          "ie": 0.0188875,
+          "elasticity": -0.003124999999999989
+        },
+        "notes": [
+          "weak_intelligence"
+        ]
+      }
+    ],
+    "maturity": 4,
+    "success": false,
+    "claims": [
+      {
+        "claim": "Skills reduce reasoning cost / grow utility",
+        "evidence": "mean_su increases across snapshots",
+        "metric": "mean_su",
+        "experiment": "skill_benchmark",
+        "supported": true
+      },
+      {
+        "claim": "Task A helps Task B",
+        "evidence": "positive mean_ts and low NTR",
+        "metric": "mean_ts",
+        "experiment": "transfer_benchmark",
+        "supported": true
+      },
+      {
+        "claim": "Capabilities grow over experience",
+        "evidence": "positive CGR",
+        "metric": "cgr",
+        "experiment": "capability_benchmark",
+        "supported": true
+      },
+      {
+        "claim": "Intelligence improves with experience",
+        "evidence": "positive IGR / IE",
+        "metric": "igr",
+        "experiment": "intelligence_benchmark",
+        "supported": true
+      }
+    ],
+    "stats": {
+      "cgr": {
+        "mean": 0.155234375,
+        "median": 0.17046875,
+        "variance": 0.01683511555989584,
+        "ci_low": 0.02807917461981907,
+        "ci_high": 0.28238957538018095,
+        "n": 4.0
+      },
+      "igr": {
+        "mean": 0.09443750000000001,
+        "median": 0.11225000000000002,
+        "variance": 0.005468130208333332,
+        "ci_low": 0.021969629518776873,
+        "ci_high": 0.16690537048122314,
+        "n": 4.0
+      },
+      "capability_score": {
+        "mean": 0.5964843750000001,
+        "median": 0.6325000000000001,
+        "variance": 0.07905673014322918,
+        "ci_low": 0.32093749399867694,
+        "ci_high": 0.8720312560013233,
+        "n": 4.0
+      },
+      "ig": {
+        "mean": 0.26515625000000004,
+        "median": 0.30112500000000003,
+        "variance": 0.02097866015625,
+        "ci_low": 0.12321293309475612,
+        "ci_high": 0.40709956690524396,
+        "n": 4.0
+      }
+    },
+    "metadata": {
+      "gate_ok": true,
+      "gate_failures": [
+        "adaptation_failure"
+      ],
+      "n_steps": 4,
+      "seed": 0
+    }
+  },
+  "reports": {
+    "invariant": {
+      "layer": "invariant",
+      "passed": true,
+      "metrics": {
+        "is_proxy": 4.0,
+        "precision": 1.0,
+        "n_categories": 4.0
+      },
+      "notes": []
+    },
+    "skill": {
+      "layer": "skill",
+      "passed": true,
+      "metrics": {
+        "mean_su": 0.8125,
+        "reuse": 20.0,
+        "mean_ts": 0.7875000000000001,
+        "health": 0.8612500000000001
+      },
+      "notes": []
+    },
+    "transfer": {
+      "layer": "transfer",
+      "passed": true,
+      "metrics": {
+        "mean_ts": 0.7875000000000001,
+        "tu": 0.7875000000000001,
+        "ntr": 0.0,
+        "diversity": 7.0,
+        "attempts": 14.0
+      },
+      "notes": []
+    },
+    "capability": {
+      "layer": "capability",
+      "passed": true,
+      "metrics": {
+        "capability_score": 0.8709375,
+        "cgr": 0.09843749999999996,
+        "coverage": 1.0,
+        "n_caps": 2.0
+      },
+      "notes": []
+    },
+    "intelligence": {
+      "layer": "intelligence",
+      "passed": false,
+      "metrics": {
+        "ig": 0.37775000000000003,
+        "igr": -0.003124999999999989,
+        "ie": 0.0188875,
+        "elasticity": -0.003124999999999989
+      },
+      "notes": [
+        "weak_intelligence"
+      ]
+    }
+  },
+  "maturity_label": "capability_growth",
+  "success": false
+}

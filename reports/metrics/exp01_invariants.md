@@ -1,6 +1,18 @@
 # exp01_invariants
 
 - **experiment**: `exp01_invariants`
+- **experiment_id**: `EXP-01`
+- **seed**: `0`
+- **dataset_version**: `synthetic-v1`
+## configuration
+
+- `per_family`: `6`
+
+## thresholds
+
+- `n_validated`: `1`
+- `mean_is`: `0.0`
+
 - **contribution**: `IDT`
 - **n_traces**: `24`
 - **n_candidates**: `6`
@@ -13,6 +25,10 @@
 - `min`: `6.75`
 - `above_threshold`: `4.0`
 - `threshold`: `5.0`
+
+## metrics
+
+- `IS`: `7.875`
 
 - **reflection_found**: `True`
 - **rotation_found**: `True`

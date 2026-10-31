@@ -1,6 +1,11 @@
 {
+  "configuration": {
+    "per_family": 6
+  },
   "contribution": "IDT",
+  "dataset_version": "synthetic-v1",
   "experiment": "exp01_invariants",
+  "experiment_id": "EXP-01",
   "invariants": [
     {
       "consistency": 1.0,
@@ -43,9 +48,17 @@
     "n": 4.0,
     "threshold": 5.0
   },
+  "metrics": {
+    "IS": 7.875
+  },
   "n_candidates": 6,
   "n_traces": 24,
   "n_validated": 4,
   "reflection_found": true,
-  "rotation_found": true
+  "rotation_found": true,
+  "seed": 0,
+  "thresholds": {
+    "mean_is": 0.0,
+    "n_validated": 1
+  }
 }
