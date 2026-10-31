@@ -100,6 +100,10 @@ pipelines  →  orchestrates the above
 evaluation must NOT depend on experiments
 ```
 
+Module-level build spec, status per module, and the stub inventory:
+[implementation_blueprint.md](implementation_blueprint.md). Its registry is
+[`configs/modules.yaml`](../../configs/modules.yaml), enforced by tests.
+
 ## Configuration
 
 | File | Role |

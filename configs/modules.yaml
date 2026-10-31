@@ -1,0 +1,516 @@
+# Phase 11F — ASFT v0.1 implementation registry.
+#
+# Machine-readable companion to docs/02_design/implementation_blueprint.md.
+# Read by tests/test_spec_module_registry.py and
+# tests/test_spec_claim_traceability.py. Not loaded by src/ at runtime.
+#
+# status semantics (must match disk reality, not the aspiration checklist):
+#   implemented — public entry points exist and import
+#   partial     — core libraries exist, but at least one entry point is a stub
+# Every `partial` module must own at least one entry in `stubs:`.
+
+version: 1
+phase: "11F"
+target: "ASFT v0.1"
+
+layers:
+  1: Experience
+  2: Invariant
+  3: Skill
+  4: Capability
+  5: Evaluation
+
+modules:
+  # ---------------------------------------------------------------- Layer 1
+  - id: M01
+    name: Task System
+    layer: 1
+    phase: A
+    contribution: foundation
+    status: implemented
+    paths: [src/core/task.py, datasets/synthetic, datasets/arc]
+    symbols:
+      - {module: core.task, name: Task}
+    metrics: [TFD]
+    experiments: []
+    claim: "Tasks are temporary learning stimuli grouped by family; they are not stored intelligence."
+    notes: "Task family/difficulty/metadata + synthetic dataset folders exist. ARC folder is a placeholder."
+
+  - id: M02
+    name: Reasoning Trace System
+    layer: 1
+    phase: A
+    contribution: foundation
+    status: partial
+    paths: [src/core/trace.py, src/traces/normalizer.py, src/traces/segmentation.py, src/traces/logger.py, src/pipelines/trace_pipeline.py]
+    symbols:
+      - {module: core.trace, name: ReasoningTrace}
+      - {module: traces.normalizer, name: normalize_traces}
+      - {module: traces.segmentation, name: segment_traces}
+    metrics: [TC]
+    experiments: []
+    claim: "The reasoning process, not just input/output, is the learnable asset."
+    notes: "Trace model, normalizer, and segmentation are real; TraceLogger and the trace pipeline are stubs."
+
+  - id: M03
+    name: Experience Memory
+    layer: 1
+    phase: A
+    contribution: foundation
+    status: partial
+    paths: [src/core/memory.py, src/traces/trace_store.py]
+    symbols:
+      - {module: core.memory, name: ExperienceMemory}
+    metrics: []
+    experiments: []
+    claim: "Historical experiences are retrievable by task, trace, and family."
+    notes: "In-memory ExperienceMemory works; durable TraceStore persistence is a stub."
+
+  # ---------------------------------------------------------------- Layer 2
+  - id: M04
+    name: Trace Mining Engine
+    layer: 2
+    phase: B
+    contribution: IDT
+    status: partial
+    paths: [src/invariants/pattern_mining.py, src/invariants/candidate_generation.py, src/invariants/detector.py, src/traces/trace_similarity.py, src/invariants/cluster.py]
+    symbols:
+      - {module: invariants.pattern_mining, name: mine_patterns}
+      - {module: invariants.candidate_generation, name: generate_candidates}
+      - {module: invariants.detector, name: TraceMiner}
+    metrics: [IER]
+    experiments: [exp01_invariants]
+    claim: "Recurring reasoning structures can be mined from traces without supervision."
+    notes: "Seven-stage mining pipeline works; trace similarity and clustering helpers are stubs."
+
+  - id: M05
+    name: Invariant Discovery Engine
+    layer: 2
+    phase: B
+    contribution: IDT
+    status: partial
+    paths: [src/invariants/validation/frequency.py, src/invariants/validation/consistency.py, src/invariants/validation/generality.py, src/invariants/validator.py, src/pipelines/invariant_pipeline.py]
+    symbols:
+      - {module: invariants.validator, name: validate_and_rank}
+      - {module: invariants.validation, name: ValidationScores}
+    metrics: [IS, VST]
+    experiments: [exp01_invariants]
+    claim: "Frequency, consistency, and generality separate real invariants from frequent noise."
+    notes: "Validation + scoring implemented; the invariants→ranked invariants pipeline entry point is a stub."
+
+  - id: M06
+    name: Invariant Ranking Engine
+    layer: 2
+    phase: B
+    contribution: IDT
+    status: implemented
+    paths: [src/invariants/ranking.py, src/invariants/promotion.py, src/invariants/strength.py]
+    symbols:
+      - {module: invariants.ranking, name: rank_invariants}
+      - {module: invariants.strength, name: compute_invariant_strength}
+      - {module: invariants.promotion, name: meets_promotion_criteria}
+    metrics: [IS]
+    experiments: [exp01_invariants]
+    claim: "Ranking surfaces the invariants worth paying for; false positives are rejected by rule."
+    notes: "Ranking, promotion eligibility, and rejection criteria implemented."
+
+  - id: M07
+    name: Invariant Robustness System
+    layer: 2
+    phase: B
+    contribution: IDT
+    status: implemented
+    paths: [src/invariants/robustness/vst.py, src/invariants/robustness/explosion.py, src/invariants/robustness/escalation.py, src/invariants/robustness/hard_gate.py]
+    symbols:
+      - {module: invariants.robustness, name: evaluate_hard_gate}
+      - {module: invariants.robustness, name: evaluate_escalation}
+    metrics: [VST, NTR, IER]
+    experiments: [exp01_invariants]
+    claim: "An invariant is trusted only after it survives variation and shows no negative transfer."
+    notes: "VST, explosion, escalation L1–L4, and the pre-SCT hard gate implemented."
+
+  # ---------------------------------------------------------------- Layer 3
+  - id: M08
+    name: Skill Candidate System
+    layer: 3
+    phase: C
+    contribution: SCT
+    status: implemented
+    paths: [src/skills/candidate.py, src/skills/birth.py, src/skills/evidence.py]
+    symbols:
+      - {module: skills.candidate, name: from_invariant}
+      - {module: skills.birth, name: make_birth_record}
+    metrics: []
+    experiments: [exp02_skills]
+    claim: "An invariant becomes a skill candidate with explicit evidence and confidence."
+    notes: "Candidate creation, birth records, and evidence seeding implemented."
+
+  - id: M09
+    name: Skill Economics Engine
+    layer: 3
+    phase: C
+    contribution: SCT
+    status: implemented
+    paths: [src/skills/economics.py, src/skills/utility.py, src/skills/utility_components.py]
+    symbols:
+      - {module: skills.economics, name: evaluate_promotion_economics}
+      - {module: skills.utility, name: compute_su}
+      - {module: skills.utility, name: classify_economic_status}
+    metrics: [SCV, SU, AG]
+    experiments: [exp02_skills]
+    claim: "Skills should exist only when their expected value exceeds their cost."
+    notes: "SCV, SU component breakdown, cost/benefit projection, economic status implemented."
+
+  - id: M10
+    name: Skill Promotion Engine
+    layer: 3
+    phase: C
+    contribution: SCT
+    status: partial
+    paths: [src/skills/promotion.py, src/skills/qualification.py, src/skills/intake.py, src/skills/pipeline.py, src/pipelines/skill_pipeline.py]
+    symbols:
+      - {module: skills.promotion, name: promote_skill}
+      - {module: skills.qualification, name: qualify_candidate}
+      - {module: skills.pipeline, name: create_skills_from_invariants}
+    metrics: [SCV, SU]
+    experiments: [exp02_skills]
+    claim: "Promotion is gated by SCV plus duplicate and negative-transfer checks."
+    notes: "Intake→qualify→promote library works; the skills pipeline entry point is a stub."
+
+  - id: M11
+    name: Skill Library
+    layer: 3
+    phase: C
+    contribution: SCT
+    status: implemented
+    paths: [src/skills/library.py, src/skills/retrieval.py, src/skills/portfolio.py]
+    symbols:
+      - {module: skills.library, name: SkillLibrary}
+      - {module: skills.retrieval, name: retrieve_skills}
+      - {module: skills.portfolio, name: compute_portfolio_metrics}
+    metrics: [ASU, TSU, PU]
+    experiments: [exp02_skills]
+    claim: "Stored skills are retrievable, ranked, and summarizable as a portfolio."
+    notes: "Storage, retrieval, similarity search, and portfolio statistics implemented."
+
+  - id: M12
+    name: Skill Lifecycle Manager
+    layer: 3
+    phase: C
+    contribution: SCT
+    status: implemented
+    paths: [src/skills/lifecycle/apply.py, src/skills/lifecycle/aging.py, src/skills/lifecycle/health.py, src/skills/retirement.py, src/skills/reactivation.py]
+    symbols:
+      - {module: skills.lifecycle, name: apply_lifecycle}
+      - {module: skills.lifecycle, name: compute_health}
+      - {module: skills.retirement, name: retire_skills}
+      - {module: skills.reactivation, name: reactivate_skill}
+    metrics: [SU, UG]
+    experiments: [exp02_skills]
+    claim: "Skills age, become core, go dormant, retire, archive, and can reactivate."
+    notes: "Full state machine plus aging, health, retirement, and reactivation implemented."
+
+  - id: M13
+    name: Skill Composition Engine
+    layer: 3
+    phase: C
+    contribution: SCT
+    status: implemented
+    paths: [src/skills/composition/propose.py, src/skills/composition/utility.py, src/skills/composition/evaluate.py, src/skills/composition/graph.py]
+    symbols:
+      - {module: skills.composition, name: try_compose}
+      - {module: skills.composition, name: compute_cu}
+      - {module: skills.composition, name: promote_composition}
+    metrics: [SU, PU]
+    experiments: [exp02_skills]
+    claim: "Sequential composition is admitted only when composition utility is positive."
+    notes: "Proposal, CU scoring, promotion, graph, and reuse tracking implemented."
+
+  - id: M14
+    name: Skill Robustness Engine
+    layer: 3
+    phase: C
+    contribution: SCT
+    status: implemented
+    paths: [src/skills/robustness/audit.py, src/skills/robustness/taxonomy.py, src/skills/robustness/recovery.py, src/skills/robustness/gates.py]
+    symbols:
+      - {module: skills.robustness, name: audit_library}
+      - {module: skills.robustness, name: diagnose_skill}
+    metrics: [NTR, SU, NTB]
+    experiments: [exp02_skills]
+    claim: "SF1–SF8 and EC1–EC4 keep the skill ecosystem from exploding or cannibalizing itself."
+    notes: "Nine-module robustness package with detect→diagnose→recover implemented."
+
+  # ---------------------------------------------------------------- Layer 4
+  - id: M15
+    name: Capability Representation System
+    layer: 4
+    phase: E
+    contribution: CGM
+    status: implemented
+    paths: [src/capability/models.py, src/capability/library.py, src/capability/graph.py, src/capability/portfolio.py, src/capability/evidence.py]
+    symbols:
+      - {module: capability.models, name: Capability}
+      - {module: capability.library, name: CapabilityLibrary}
+      - {module: capability.portfolio, name: compute_capability_portfolio}
+    metrics: [PU]
+    experiments: [exp04_growth]
+    claim: "Capabilities are stable, reusable, transferable skill collections — not task scores."
+    notes: "Identity, membership, multi-membership, graph, portfolio, and evidence implemented."
+
+  - id: M16
+    name: Capability Growth Engine
+    layer: 4
+    phase: E
+    contribution: CGM
+    status: implemented
+    paths: [src/capability/utility.py, src/capability/coverage.py, src/capability/lifecycle.py, src/evaluation/growth_metrics.py, src/evaluation/growth_components.py]
+    symbols:
+      - {module: evaluation.growth_metrics, name: compute_cgr}
+      - {module: evaluation.growth_metrics, name: compute_ca}
+      - {module: capability.portfolio, name: compute_system_capability_state}
+    metrics: [CGR, UG, AG]
+    experiments: [exp04_growth]
+    claim: "Capability growth is measurable as C_t and CGR over experience."
+    notes: "CapU, CCov, C_t, CGR, CA, CSR, and growth history implemented."
+
+  - id: M17
+    name: Intelligence Growth Engine
+    layer: 4
+    phase: E
+    contribution: CGM
+    status: implemented
+    paths: [src/evaluation/intelligence.py, src/evaluation/intelligence_state.py, src/evaluation/intelligence_graph.py]
+    symbols:
+      - {module: evaluation.intelligence, name: intelligence_score}
+      - {module: evaluation.intelligence, name: compute_igr}
+      - {module: evaluation.intelligence_state, name: compute_system_intelligence_state}
+    metrics: [IG, AG, SU, TS, CGR]
+    experiments: [exp04_growth]
+    claim: "Intelligence growth (IG/IGR/IA/IE) is a function of capability growth, not accuracy alone."
+    notes: "IG aggregator, IGR, IA, IE, elasticity, maturity stage, and intelligence graph implemented."
+
+  - id: M18
+    name: Capability Robustness Engine
+    layer: 4
+    phase: E
+    contribution: CGM
+    status: implemented
+    paths: [src/capability/robustness/audit.py, src/capability/robustness/detectors.py, src/capability/robustness/gates.py, src/capability/robustness/health.py, src/capability/robustness/recovery.py]
+    symbols:
+      - {module: capability.robustness, name: audit_capability_ecosystem}
+      - {module: capability.robustness, name: validate_growth_claim}
+      - {module: capability.robustness, name: plan_recovery}
+    metrics: [CGR]
+    experiments: [exp04_growth]
+    claim: "Fake growth is detectable: CF1–CF10 plus CHS/CS reject measurement illusions."
+    notes: "CF1–CF10 detectors, hard multi-signal gate, health bands, and recovery implemented."
+
+  # ---------------------------------------------------------------- Layer 5
+  - id: M19
+    name: Metrics Engine
+    layer: 5
+    phase: F
+    contribution: CGM
+    status: partial
+    paths: [src/evaluation/skill_metrics.py, src/evaluation/transfer_metrics.py, src/evaluation/invariant_metrics.py, src/evaluation/robustness_metrics.py, src/evaluation/lifecycle_metrics.py]
+    symbols:
+      - {module: evaluation.skill_metrics, name: compute_su}
+      - {module: evaluation.transfer_metrics, name: compute_ts}
+      - {module: evaluation.robustness_metrics, name: negative_transfer_rate}
+    metrics: [IS, SU, TS, CGR, IG]
+    experiments: [exp04_growth]
+    claim: "Every paper metric has one canonical implementation."
+    notes: "Metric homes exist per metric; compute_is is a stub (IS lives in invariants/strength.py)."
+
+  - id: M20
+    name: Benchmark Engine
+    layer: 5
+    phase: F
+    contribution: ASFT
+    status: partial
+    paths: [src/evaluation/harness/runner.py, src/evaluation/harness/scenarios.py, src/evaluation/harness/layers.py, src/evaluation/harness/evidence.py, src/pipelines/full_asft_pipeline.py]
+    symbols:
+      - {module: evaluation.harness.runner, name: run_benchmark}
+      - {module: evaluation.harness.evidence, name: gate_run}
+    metrics: [TS, CGR, IG]
+    experiments: [exp04_growth, exp05_end_to_end]
+    claim: "Synthetic L1–L4 benchmarks exercise every layer and gate growth claims."
+    notes: "Layered harness with hard gate works; the full end-to-end ASFT pipeline is a stub."
+
+  - id: M21
+    name: Baseline Engine
+    layer: 5
+    phase: F
+    contribution: ASFT
+    status: partial
+    paths: [src/evaluation/harness/baselines.py, baselines/no_learning/__init__.py, baselines/skill_storage/__init__.py, baselines/dreamcoder_like/__init__.py, baselines/random_skill_creation/__init__.py]
+    symbols:
+      - {module: evaluation.harness.baselines, name: apply_baseline}
+    metrics: [SU, TS]
+    experiments: [exp05_end_to_end]
+    claim: "ASFT must beat no-learning, storage-only, random-creation, and DreamCoder-like baselines."
+    notes: "Baselines A–D exist as harness transforms; the standalone baselines/ packages are empty."
+
+  - id: M22
+    name: Ablation Engine
+    layer: 5
+    phase: F
+    contribution: ASFT
+    status: implemented
+    paths: [src/evaluation/harness/baselines.py]
+    symbols:
+      - {module: evaluation.harness.baselines, name: apply_ablation}
+    metrics: [CGR, IG]
+    experiments: [exp05_end_to_end]
+    claim: "Removing IDT, SCT, transfer, library, or CGM must degrade capability growth."
+    notes: "Ablations A1–A5 implemented as scenario transforms."
+
+  - id: M23
+    name: Reporting Engine
+    layer: 5
+    phase: F
+    contribution: ASFT
+    status: partial
+    paths: [src/evaluation/reports.py, src/evaluation/harness/maturity.py, src/utils/visualization.py, src/utils/logging.py]
+    symbols:
+      - {module: evaluation.reports, name: write_report}
+      - {module: evaluation.harness.maturity, name: classify_evaluation_maturity}
+    metrics: []
+    experiments: [exp05_end_to_end]
+    claim: "Every claim ends in a reproducible table or figure, not a narrative."
+    notes: "JSON + Markdown reports work; figure plotting and the shared logger are stubs."
+
+  # ------------------------------------------------------- Cross-cutting
+  - id: T1
+    name: Transfer Engine
+    layer: 3
+    phase: D
+    contribution: transfer
+    status: partial
+    paths: [src/transfer/transfer_tracker.py, src/transfer/memory.py, src/transfer/metrics.py, src/transfer/graph.py, src/transfer/reuse_engine.py, src/invariants/transfer_aware.py]
+    symbols:
+      - {module: transfer.transfer_tracker, name: TransferTracker}
+      - {module: invariants.transfer_aware, name: rank_transfer_aware}
+      - {module: transfer.metrics, name: compute_transfer_score}
+    metrics: [TS, ITS, TU, NTR]
+    experiments: [exp03_transfer]
+    claim: "Task A helps Task B because transferable structure, not the task, is being learned."
+    notes: "Transfer memory, scores, graph, gate, and transfer-aware ranking work; ReuseEngine is a stub."
+
+# Entry points that still raise NotImplementedError. `module` says who owns the
+# work; `blocks` says which gate it unblocks.
+stubs:
+  - {path: src/traces/logger.py, symbol: TraceLogger.log, module: M02, blocks: "Phase A trace capture"}
+  - {path: src/pipelines/trace_pipeline.py, symbol: run_trace_pipeline, module: M02, blocks: "Phase A trace capture"}
+  - {path: src/traces/trace_store.py, symbol: TraceStore.save, module: M03, blocks: "durable experience memory"}
+  - {path: src/traces/trace_store.py, symbol: TraceStore.load, module: M03, blocks: "durable experience memory"}
+  - {path: src/traces/trace_similarity.py, symbol: trace_similarity, module: M04, blocks: "trace deduplication"}
+  - {path: src/invariants/cluster.py, symbol: cluster_traces, module: M04, blocks: "trace clustering"}
+  - {path: src/pipelines/invariant_pipeline.py, symbol: run_invariant_pipeline, module: M05, blocks: "Phase B pipeline"}
+  - {path: src/pipelines/skill_pipeline.py, symbol: run_skill_pipeline, module: M10, blocks: "Phase C pipeline"}
+  - {path: src/transfer/reuse_engine.py, symbol: ReuseEngine.apply, module: T1, blocks: "Phase D skill reuse"}
+  - {path: src/evaluation/invariant_metrics.py, symbol: compute_is, module: M19, blocks: "IS reporting"}
+  - {path: src/pipelines/full_asft_pipeline.py, symbol: run_full_asft_pipeline, module: M20, blocks: "Phase F end-to-end evidence"}
+  - {path: src/utils/visualization.py, symbol: plot_metric, module: M23, blocks: "paper figures"}
+  - {path: src/utils/logging.py, symbol: get_logger, module: M23, blocks: "shared logging"}
+  # M21 is partial because the standalone baseline packages are declarations
+  # only; no registry symbol lives there yet, so it has no NotImplementedError.
+  - {path: baselines/no_learning/__init__.py, symbol: "docstring-only package", module: M21, blocks: "standalone baseline implementations", kind: declaration}
+
+# Research claims → modules → metrics → experiments → paper artifact.
+# Layer 1 has no standalone claim: it is the instrument every claim depends on,
+# so it is registered as `foundation` and must still own metrics/experiments.
+contributions:
+  - id: FOUNDATION
+    claim: "Reliable reasoning traces are the precondition for every downstream claim."
+    modules: [M01, M02, M03]
+    metrics: [TC, TFD]
+    experiments: [exp01_invariants]
+    paper_artifact: "table: dataset and trace inventory per task family"
+  - id: IDT
+    claim: "Transferable knowledge emerges from invariants."
+    modules: [M04, M05, M06, M07]
+    metrics: [IS, VST, IER, TC]
+    experiments: [exp01_invariants]
+    paper_artifact: "table: invariant inventory vs IS; figure: IS distribution by task family"
+  - id: SCT
+    claim: "Skills should emerge only when economically justified."
+    modules: [M08, M09, M10, M11, M12, M13, M14]
+    metrics: [SCV, SU, ASU, PU, NTB]
+    experiments: [exp02_skills]
+    paper_artifact: "table: SCV decision outcomes; figure: SU distribution before/after promotion"
+  - id: transfer
+    claim: "Solving task A measurably improves task B through shared structure."
+    modules: [T1]
+    metrics: [TS, ITS, TU, NTR]
+    experiments: [exp03_transfer]
+    paper_artifact: "table: TS/ITS per source-target family pair; figure: transfer graph"
+  - id: CGM
+    claim: "Intelligence growth can be measured through capability growth."
+    modules: [M15, M16, M17, M18, M19]
+    metrics: [CGR, IG, AG, UG, PU]
+    experiments: [exp04_growth]
+    paper_artifact: "figure: C_t and IG trajectories; table: CGR by phase with CI"
+  - id: ASFT
+    claim: "The full pipeline beats baselines and degrades under ablation."
+    modules: [M20, M21, M22, M23]
+    metrics: [CGR, IG, SU, TS]
+    experiments: [exp05_end_to_end]
+    paper_artifact: "table: ASFT vs baselines A–D; table: ablations A1–A5"
+
+# MVP success gates. `status: blocked` requires a `blocker` file that still
+# contains NotImplementedError; `demonstrated` requires the verifier test to exist.
+gates:
+  - id: FOUNDATION
+    metric: TC
+    criterion: "Tasks produce persisted reasoning traces retrievable by task and family."
+    scope: end_to_end
+    verifier: "tests/test_spec_module_registry.py::test_partial_modules_own_a_stub"
+    status: blocked
+    blocker: src/traces/logger.py
+    note: "TraceLogger and run_trace_pipeline are stubs, so no real experience is produced yet."
+  - id: IDT
+    metric: IS
+    criterion: "Reflection and rotation invariants are discovered from synthetic traces above the IS floor."
+    scope: synthetic
+    verifier: "tests/test_trace_miner.py::test_end_to_end_reflection_and_rotation_emerge"
+    status: demonstrated
+  - id: SCT
+    metric: SCV
+    criterion: "A reflection skill is promoted while a low-value candidate is rejected; the skill is then reused."
+    scope: synthetic
+    verifier: "tests/test_skill_pipeline_e2e.py::test_reflection_promoted_verify_rejected"
+    status: demonstrated
+  - id: TRANSFER
+    metric: TS
+    criterion: "Transfer-aware ranking prefers an invariant with positive ITS over a higher-frequency zero-transfer one."
+    scope: synthetic
+    verifier: "tests/test_transfer_aware_ranking.py::test_high_its_outranks_zero_transfer_despite_lower_frequency"
+    status: demonstrated
+  - id: CGM
+    metric: CGR
+    criterion: "Positive, zero, and negative CGR/IG are computed from a capability series."
+    scope: harness
+    verifier: "tests/test_cgr_e2e.py::test_positive_zero_negative_cgr_and_ig"
+    status: demonstrated
+  - id: EVALUATION
+    metric: CGR
+    criterion: "A growth run passes the hard gate while the flat baseline fails it, end to end from a single ASFT entry point."
+    scope: end_to_end
+    verifier: "tests/test_cap_robustness_e2e.py::test_growth_passes_hard_gate"
+    status: blocked
+    blocker: src/pipelines/full_asft_pipeline.py
+    note: "Harness-level gating is demonstrated on synthetic scenarios; the single end-to-end entry point is still a stub, so no paper-facing evidence run exists yet."
+
+non_goals:
+  - LLM planner
+  - Autonomous agent
+  - Meta-reasoner
+  - World model
+  - Recursive self-improvement
+  - Concept graph engine
+  - Neural skill embeddings
+  - ARC leaderboard optimizer
+  - Multi-agent architecture
+  - AGI framework
