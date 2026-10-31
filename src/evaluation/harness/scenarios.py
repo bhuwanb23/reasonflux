@@ -109,8 +109,8 @@ def scenario_capability_growth() -> list[ScenarioStep]:
             _skill(
                 sk.skill_id,
                 category=cat,
-                utility=min(0.95, float(sk.utility) + 0.15),
-                ts=min(0.95, float(sk.transfer_score) + 0.15),
+                utility=min(0.98, float(sk.utility) + 0.25),
+                ts=min(0.98, float(sk.transfer_score) + 0.25),
                 families=["geo", "algebra", "objects", cat],
                 reuse=max(4, int(sk.reuse_count) + 2),
                 composed=True,
@@ -132,12 +132,12 @@ def scenario_capability_growth() -> list[ScenarioStep]:
             )
     c3 = CapabilityLibrary()
     ids = [s.skill_id for s in s3.list_skills()]
-    c3.add(_cap("multi", ids, utility=0.85))
+    c3.add(_cap("multi", ids, utility=0.95))
     c3.add(
         Capability(
             capability_id="emergent",
             skill_ids=ids[:2],
-            utility=0.8,
+            utility=0.9,
             capability_type=CapabilityType.EMERGENT,
         )
     )

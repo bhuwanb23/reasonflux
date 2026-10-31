@@ -16,7 +16,7 @@
       "passed": true
     },
     {
-      "details": "CGR=0.155234375 IG=0.26515625000000004 intelligence_harness_success=False",
+      "details": "CGR=0.167421875 IG=0.27253125 intelligence_harness_success=True",
       "name": "CGM readiness",
       "passed": true
     },
@@ -57,7 +57,7 @@
       "passed": true
     },
     {
-      "details": "CGR=0.155234375 IG=0.26515625000000004 intelligence_harness_success=False",
+      "details": "CGR=0.167421875 IG=0.27253125 intelligence_harness_success=True",
       "name": "CGM readiness",
       "passed": true
     },

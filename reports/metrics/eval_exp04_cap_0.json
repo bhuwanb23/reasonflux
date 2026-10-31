@@ -61,20 +61,20 @@
       },
       {
         "step": 3,
-        "capability_score": 0.8709375,
-        "cgr": 0.09843749999999996,
-        "ig": 0.37775000000000003,
-        "igr": -0.003124999999999989,
+        "capability_score": 0.9196875,
+        "cgr": 0.14718749999999992,
+        "ig": 0.40724999999999995,
+        "igr": 0.026374999999999926,
         "coverage": 1.0,
-        "mean_su": 0.8125,
-        "mean_ts": 0.7875000000000001,
+        "mean_su": 0.8625,
+        "mean_ts": 0.8375,
         "ntr": 0.0,
         "metadata": {
           "skill_count": 4,
           "cap_count": 2,
           "composition_success_rate": 0.5,
           "new_families": 1,
-          "elasticity": -0.003124999999999989
+          "elasticity": 0.026374999999999926
         }
       }
     ],
@@ -93,10 +93,10 @@
         "layer": "skill",
         "passed": true,
         "metrics": {
-          "mean_su": 0.8125,
+          "mean_su": 0.8625,
           "reuse": 20.0,
-          "mean_ts": 0.7875000000000001,
-          "health": 0.8612500000000001
+          "mean_ts": 0.8375,
+          "health": 0.89625
         },
         "notes": []
       },
@@ -104,8 +104,8 @@
         "layer": "transfer",
         "passed": true,
         "metrics": {
-          "mean_ts": 0.7875000000000001,
-          "tu": 0.7875000000000001,
+          "mean_ts": 0.8375,
+          "tu": 0.8375,
           "ntr": 0.0,
           "diversity": 7.0,
           "attempts": 14.0
@@ -116,8 +116,8 @@
         "layer": "capability",
         "passed": true,
         "metrics": {
-          "capability_score": 0.8709375,
-          "cgr": 0.09843749999999996,
+          "capability_score": 0.9196875,
+          "cgr": 0.14718749999999992,
           "coverage": 1.0,
           "n_caps": 2.0
         },
@@ -125,19 +125,17 @@
       },
       {
         "layer": "intelligence",
-        "passed": false,
+        "passed": true,
         "metrics": {
-          "ig": 0.37775000000000003,
-          "igr": -0.003124999999999989,
-          "ie": 0.0188875,
-          "elasticity": -0.003124999999999989
+          "ig": 0.40724999999999995,
+          "igr": 0.026374999999999926,
+          "ie": 0.0203625,
+          "elasticity": 0.026374999999999926
         },
-        "notes": [
-          "weak_intelligence"
-        ]
+        "notes": []
       }
     ],
-    "maturity": 4,
+    "maturity": 5,
     "success": true,
     "claims": [
       {
@@ -171,43 +169,41 @@
     ],
     "stats": {
       "cgr": {
-        "mean": 0.155234375,
-        "median": 0.17046875,
-        "variance": 0.01683511555989584,
-        "ci_low": 0.02807917461981907,
-        "ci_high": 0.28238957538018095,
+        "mean": 0.167421875,
+        "median": 0.19484374999999998,
+        "variance": 0.015583357747395839,
+        "ci_low": 0.04508522153670241,
+        "ci_high": 0.2897585284632976,
         "n": 4.0
       },
       "igr": {
-        "mean": 0.09443750000000001,
+        "mean": 0.10181249999999999,
         "median": 0.11225000000000002,
-        "variance": 0.005468130208333332,
-        "ci_low": 0.021969629518776873,
-        "ci_high": 0.16690537048122314,
+        "variance": 0.00376696354166667,
+        "ci_low": 0.04166441785753538,
+        "ci_high": 0.1619605821424646,
         "n": 4.0
       },
       "capability_score": {
-        "mean": 0.5964843750000001,
+        "mean": 0.608671875,
         "median": 0.6325000000000001,
-        "variance": 0.07905673014322918,
-        "ci_low": 0.32093749399867694,
-        "ci_high": 0.8720312560013233,
+        "variance": 0.08857059733072918,
+        "ci_low": 0.31701591041769916,
+        "ci_high": 0.9003278395823008,
         "n": 4.0
       },
       "ig": {
-        "mean": 0.26515625000000004,
-        "median": 0.30112500000000003,
-        "variance": 0.02097866015625,
-        "ci_low": 0.12321293309475612,
-        "ci_high": 0.40709956690524396,
+        "mean": 0.27253125,
+        "median": 0.3026875,
+        "variance": 0.023410566406249996,
+        "ci_low": 0.12258623348873846,
+        "ci_high": 0.4224762665112616,
         "n": 4.0
       }
     },
     "metadata": {
       "gate_ok": true,
-      "gate_failures": [
-        "adaptation_failure"
-      ],
+      "gate_failures": [],
       "n_steps": 4,
       "seed": 0
     }
@@ -227,10 +223,10 @@
       "layer": "skill",
       "passed": true,
       "metrics": {
-        "mean_su": 0.8125,
+        "mean_su": 0.8625,
         "reuse": 20.0,
-        "mean_ts": 0.7875000000000001,
-        "health": 0.8612500000000001
+        "mean_ts": 0.8375,
+        "health": 0.89625
       },
       "notes": []
     },
@@ -238,8 +234,8 @@
       "layer": "transfer",
       "passed": true,
       "metrics": {
-        "mean_ts": 0.7875000000000001,
-        "tu": 0.7875000000000001,
+        "mean_ts": 0.8375,
+        "tu": 0.8375,
         "ntr": 0.0,
         "diversity": 7.0,
         "attempts": 14.0
@@ -250,8 +246,8 @@
       "layer": "capability",
       "passed": true,
       "metrics": {
-        "capability_score": 0.8709375,
-        "cgr": 0.09843749999999996,
+        "capability_score": 0.9196875,
+        "cgr": 0.14718749999999992,
         "coverage": 1.0,
         "n_caps": 2.0
       },
@@ -259,18 +255,16 @@
     },
     "intelligence": {
       "layer": "intelligence",
-      "passed": false,
+      "passed": true,
       "metrics": {
-        "ig": 0.37775000000000003,
-        "igr": -0.003124999999999989,
-        "ie": 0.0188875,
-        "elasticity": -0.003124999999999989
+        "ig": 0.40724999999999995,
+        "igr": 0.026374999999999926,
+        "ie": 0.0203625,
+        "elasticity": 0.026374999999999926
       },
-      "notes": [
-        "weak_intelligence"
-      ]
+      "notes": []
     }
   },
-  "maturity_label": "capability_growth",
+  "maturity_label": "intelligence_growth",
   "success": true
 }
