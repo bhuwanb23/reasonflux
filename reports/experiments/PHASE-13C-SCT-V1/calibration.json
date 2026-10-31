@@ -1,0 +1,764 @@
+{
+  "birth_count_at_primary_threshold": 22,
+  "calibration_candidate_scv10_values": [
+    4.300000000000001,
+    0.46666666666666634,
+    0.9666666666666666,
+    2.7999999999999994,
+    0.9666666666666666,
+    0.46666666666666634,
+    0.7999999999999998,
+    0.9666666666666666,
+    0.9666666666666666,
+    0.7999999999999998,
+    0.6333333333333331,
+    0.9666666666666666,
+    0.9666666666666666,
+    0.6333333333333331,
+    0.6333333333333331,
+    0.9666666666666666,
+    0.9666666666666666,
+    0.6333333333333331,
+    0.7999999999999998,
+    0.9666666666666666,
+    0.9666666666666666,
+    0.7999999999999998
+  ],
+  "calibration_results": [
+    {
+      "birth_count_at_zero": 6,
+      "candidate_rows": [
+        {
+          "AG": 0.6666666666666666,
+          "AG_raw": 0.6666666666666666,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 4.300000000000001,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "reflection",
+          "creates_at_primary_threshold": true,
+          "frequency": 18,
+          "horizon": 10,
+          "invariant_id": "INV-02a30b2b5dd074b7",
+          "p_reuse": 1.0,
+          "p_reuse_raw": 1.0,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "detect_object",
+            "find_symmetry",
+            "apply_reflection"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ]
+        },
+        {
+          "AG": 0.2222222222222222,
+          "AG_raw": 0.2222222222222222,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 0.46666666666666634,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "rotation",
+          "creates_at_primary_threshold": true,
+          "frequency": 7,
+          "horizon": 10,
+          "invariant_id": "INV-489db88e598d48b3",
+          "p_reuse": 0.7,
+          "p_reuse_raw": 0.7,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "find_rotation"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "rotation"
+          ]
+        },
+        {
+          "AG": 0.2222222222222222,
+          "AG_raw": 0.2222222222222222,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 0.9666666666666666,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "reflection",
+          "creates_at_primary_threshold": true,
+          "frequency": 14,
+          "horizon": 10,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "p_reuse": 1.0,
+          "p_reuse_raw": 1.0,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "apply_reflection"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ]
+        },
+        {
+          "AG": 0.6666666666666666,
+          "AG_raw": 0.6666666666666666,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 2.7999999999999994,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "rotation",
+          "creates_at_primary_threshold": true,
+          "frequency": 7,
+          "horizon": 10,
+          "invariant_id": "INV-b2ef40c97323c287",
+          "p_reuse": 0.7,
+          "p_reuse_raw": 0.7,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "detect_object",
+            "find_rotation",
+            "apply_rotation"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "rotation"
+          ]
+        },
+        {
+          "AG": 0.2222222222222222,
+          "AG_raw": 0.2222222222222222,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 0.9666666666666666,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "reflection",
+          "creates_at_primary_threshold": true,
+          "frequency": 14,
+          "horizon": 10,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "p_reuse": 1.0,
+          "p_reuse_raw": 1.0,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "find_symmetry"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ]
+        },
+        {
+          "AG": 0.2222222222222222,
+          "AG_raw": 0.2222222222222222,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 0.46666666666666634,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "rotation",
+          "creates_at_primary_threshold": true,
+          "frequency": 7,
+          "horizon": 10,
+          "invariant_id": "INV-cd89c6e9697e31c5",
+          "p_reuse": 0.7,
+          "p_reuse_raw": 0.7,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "apply_rotation"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "rotation"
+          ]
+        }
+      ],
+      "discovery_seed": 1015,
+      "discovery_trace_count": 24,
+      "eligible_candidate_count": 6,
+      "promotable_count": 6,
+      "rejected_candidates": [],
+      "seed": 15
+    },
+    {
+      "birth_count_at_zero": 4,
+      "candidate_rows": [
+        {
+          "AG": 0.2222222222222222,
+          "AG_raw": 0.2222222222222222,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 0.7999999999999998,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "rotation",
+          "creates_at_primary_threshold": true,
+          "frequency": 9,
+          "horizon": 10,
+          "invariant_id": "INV-489db88e598d48b3",
+          "p_reuse": 0.9,
+          "p_reuse_raw": 0.9,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "find_rotation"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "rotation"
+          ]
+        },
+        {
+          "AG": 0.2222222222222222,
+          "AG_raw": 0.2222222222222222,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 0.9666666666666666,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "reflection",
+          "creates_at_primary_threshold": true,
+          "frequency": 12,
+          "horizon": 10,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "p_reuse": 1.0,
+          "p_reuse_raw": 1.0,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "apply_reflection"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ]
+        },
+        {
+          "AG": 0.2222222222222222,
+          "AG_raw": 0.2222222222222222,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 0.9666666666666666,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "reflection",
+          "creates_at_primary_threshold": true,
+          "frequency": 12,
+          "horizon": 10,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "p_reuse": 1.0,
+          "p_reuse_raw": 1.0,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "find_symmetry"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ]
+        },
+        {
+          "AG": 0.2222222222222222,
+          "AG_raw": 0.2222222222222222,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 0.7999999999999998,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "rotation",
+          "creates_at_primary_threshold": true,
+          "frequency": 9,
+          "horizon": 10,
+          "invariant_id": "INV-cd89c6e9697e31c5",
+          "p_reuse": 0.9,
+          "p_reuse_raw": 0.9,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "apply_rotation"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "rotation"
+          ]
+        }
+      ],
+      "discovery_seed": 1016,
+      "discovery_trace_count": 24,
+      "eligible_candidate_count": 4,
+      "promotable_count": 4,
+      "rejected_candidates": [],
+      "seed": 16
+    },
+    {
+      "birth_count_at_zero": 4,
+      "candidate_rows": [
+        {
+          "AG": 0.2222222222222222,
+          "AG_raw": 0.2222222222222222,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 0.6333333333333331,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "rotation",
+          "creates_at_primary_threshold": true,
+          "frequency": 8,
+          "horizon": 10,
+          "invariant_id": "INV-489db88e598d48b3",
+          "p_reuse": 0.8,
+          "p_reuse_raw": 0.8,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "find_rotation"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "rotation"
+          ]
+        },
+        {
+          "AG": 0.2222222222222222,
+          "AG_raw": 0.2222222222222222,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 0.9666666666666666,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "reflection",
+          "creates_at_primary_threshold": true,
+          "frequency": 13,
+          "horizon": 10,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "p_reuse": 1.0,
+          "p_reuse_raw": 1.0,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "apply_reflection"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ]
+        },
+        {
+          "AG": 0.2222222222222222,
+          "AG_raw": 0.2222222222222222,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 0.9666666666666666,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "reflection",
+          "creates_at_primary_threshold": true,
+          "frequency": 13,
+          "horizon": 10,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "p_reuse": 1.0,
+          "p_reuse_raw": 1.0,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "find_symmetry"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ]
+        },
+        {
+          "AG": 0.2222222222222222,
+          "AG_raw": 0.2222222222222222,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 0.6333333333333331,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "rotation",
+          "creates_at_primary_threshold": true,
+          "frequency": 8,
+          "horizon": 10,
+          "invariant_id": "INV-cd89c6e9697e31c5",
+          "p_reuse": 0.8,
+          "p_reuse_raw": 0.8,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "apply_rotation"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "rotation"
+          ]
+        }
+      ],
+      "discovery_seed": 1017,
+      "discovery_trace_count": 24,
+      "eligible_candidate_count": 4,
+      "promotable_count": 4,
+      "rejected_candidates": [],
+      "seed": 17
+    },
+    {
+      "birth_count_at_zero": 4,
+      "candidate_rows": [
+        {
+          "AG": 0.2222222222222222,
+          "AG_raw": 0.2222222222222222,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 0.6333333333333331,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "rotation",
+          "creates_at_primary_threshold": true,
+          "frequency": 8,
+          "horizon": 10,
+          "invariant_id": "INV-489db88e598d48b3",
+          "p_reuse": 0.8,
+          "p_reuse_raw": 0.8,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "find_rotation"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "rotation"
+          ]
+        },
+        {
+          "AG": 0.2222222222222222,
+          "AG_raw": 0.2222222222222222,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 0.9666666666666666,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "reflection",
+          "creates_at_primary_threshold": true,
+          "frequency": 13,
+          "horizon": 10,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "p_reuse": 1.0,
+          "p_reuse_raw": 1.0,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "apply_reflection"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ]
+        },
+        {
+          "AG": 0.2222222222222222,
+          "AG_raw": 0.2222222222222222,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 0.9666666666666666,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "reflection",
+          "creates_at_primary_threshold": true,
+          "frequency": 13,
+          "horizon": 10,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "p_reuse": 1.0,
+          "p_reuse_raw": 1.0,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "find_symmetry"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ]
+        },
+        {
+          "AG": 0.2222222222222222,
+          "AG_raw": 0.2222222222222222,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 0.6333333333333331,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "rotation",
+          "creates_at_primary_threshold": true,
+          "frequency": 8,
+          "horizon": 10,
+          "invariant_id": "INV-cd89c6e9697e31c5",
+          "p_reuse": 0.8,
+          "p_reuse_raw": 0.8,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "apply_rotation"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "rotation"
+          ]
+        }
+      ],
+      "discovery_seed": 1018,
+      "discovery_trace_count": 24,
+      "eligible_candidate_count": 4,
+      "promotable_count": 4,
+      "rejected_candidates": [],
+      "seed": 18
+    },
+    {
+      "birth_count_at_zero": 4,
+      "candidate_rows": [
+        {
+          "AG": 0.2222222222222222,
+          "AG_raw": 0.2222222222222222,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 0.7999999999999998,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "rotation",
+          "creates_at_primary_threshold": true,
+          "frequency": 9,
+          "horizon": 10,
+          "invariant_id": "INV-489db88e598d48b3",
+          "p_reuse": 0.9,
+          "p_reuse_raw": 0.9,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "find_rotation"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "rotation"
+          ]
+        },
+        {
+          "AG": 0.2222222222222222,
+          "AG_raw": 0.2222222222222222,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 0.9666666666666666,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "reflection",
+          "creates_at_primary_threshold": true,
+          "frequency": 12,
+          "horizon": 10,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "p_reuse": 1.0,
+          "p_reuse_raw": 1.0,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "apply_reflection"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ]
+        },
+        {
+          "AG": 0.2222222222222222,
+          "AG_raw": 0.2222222222222222,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 0.9666666666666666,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "reflection",
+          "creates_at_primary_threshold": true,
+          "frequency": 12,
+          "horizon": 10,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "p_reuse": 1.0,
+          "p_reuse_raw": 1.0,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "find_symmetry"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ]
+        },
+        {
+          "AG": 0.2222222222222222,
+          "AG_raw": 0.2222222222222222,
+          "AG_source": "prior_reasoning_value",
+          "CC": 0.1,
+          "CC_source": "SkillConfig.default_creation_cost",
+          "MC": 0.060000000000000005,
+          "MC_source": "base_maintenance_plus_storage_weight",
+          "SCV10": 0.7999999999999998,
+          "TS": 0.75,
+          "TS_raw": 0.75,
+          "TS_source": "metadata.prior_transfer",
+          "category": "rotation",
+          "creates_at_primary_threshold": true,
+          "frequency": 9,
+          "horizon": 10,
+          "invariant_id": "INV-cd89c6e9697e31c5",
+          "p_reuse": 0.9,
+          "p_reuse_raw": 0.9,
+          "p_reuse_source": "frequency/10_mapping",
+          "signature": [
+            "apply_rotation"
+          ],
+          "task_families": [
+            "counting",
+            "grouping",
+            "rotation"
+          ]
+        }
+      ],
+      "discovery_seed": 1019,
+      "discovery_trace_count": 24,
+      "eligible_candidate_count": 4,
+      "promotable_count": 4,
+      "rejected_candidates": [],
+      "seed": 19
+    }
+  ],
+  "calibration_seeds": [
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "candidate_count": 22,
+  "config_sha256": "3a416db80847e0d50ccb643cc88e3924c55e286afd26db523901a960785453c7",
+  "confirmation_opened": false,
+  "confirmation_seeds": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "eligible_candidate_count": 22,
+  "mc_per_opportunity_primary": 0.06,
+  "mc_sensitivity": [
+    0.0,
+    0.03,
+    0.06,
+    0.12
+  ],
+  "protocol_id": "PHASE-13C-SCT-V1",
+  "random_create_probability": 1.0,
+  "thresholds": {
+    "high_q75": 0.9666666666666666,
+    "low_q25": 0.6749999999999998,
+    "medium_q50": 0.9666666666666666,
+    "primary": 0.0
+  }
+}

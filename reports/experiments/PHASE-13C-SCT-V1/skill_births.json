@@ -1,0 +1,1594 @@
+[
+  {
+    "SCV10": 0.6333333333333331,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-489db88e598d48b3",
+    "category": "rotation",
+    "seed": 20,
+    "signature": [
+      "find_rotation"
+    ]
+  },
+  {
+    "SCV10": 0.9666666666666666,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-a4f872d69c07cbc0",
+    "category": "reflection",
+    "seed": 20,
+    "signature": [
+      "apply_reflection"
+    ]
+  },
+  {
+    "SCV10": 0.9666666666666666,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-b977e7292dcf8ad0",
+    "category": "reflection",
+    "seed": 20,
+    "signature": [
+      "find_symmetry"
+    ]
+  },
+  {
+    "SCV10": 0.6333333333333331,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-cd89c6e9697e31c5",
+    "category": "rotation",
+    "seed": 20,
+    "signature": [
+      "apply_rotation"
+    ]
+  },
+  {
+    "SCV10": 0.7999999999999998,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-489db88e598d48b3",
+    "category": "rotation",
+    "seed": 21,
+    "signature": [
+      "find_rotation"
+    ]
+  },
+  {
+    "SCV10": 0.9666666666666666,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-a4f872d69c07cbc0",
+    "category": "reflection",
+    "seed": 21,
+    "signature": [
+      "apply_reflection"
+    ]
+  },
+  {
+    "SCV10": 0.9666666666666666,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-b977e7292dcf8ad0",
+    "category": "reflection",
+    "seed": 21,
+    "signature": [
+      "find_symmetry"
+    ]
+  },
+  {
+    "SCV10": 0.7999999999999998,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-cd89c6e9697e31c5",
+    "category": "rotation",
+    "seed": 21,
+    "signature": [
+      "apply_rotation"
+    ]
+  },
+  {
+    "SCV10": 0.6333333333333331,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-489db88e598d48b3",
+    "category": "rotation",
+    "seed": 22,
+    "signature": [
+      "find_rotation"
+    ]
+  },
+  {
+    "SCV10": 0.9666666666666666,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-a4f872d69c07cbc0",
+    "category": "reflection",
+    "seed": 22,
+    "signature": [
+      "apply_reflection"
+    ]
+  },
+  {
+    "SCV10": 0.9666666666666666,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-b977e7292dcf8ad0",
+    "category": "reflection",
+    "seed": 22,
+    "signature": [
+      "find_symmetry"
+    ]
+  },
+  {
+    "SCV10": 0.6333333333333331,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-cd89c6e9697e31c5",
+    "category": "rotation",
+    "seed": 22,
+    "signature": [
+      "apply_rotation"
+    ]
+  },
+  {
+    "SCV10": 0.7999999999999998,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-489db88e598d48b3",
+    "category": "rotation",
+    "seed": 23,
+    "signature": [
+      "find_rotation"
+    ]
+  },
+  {
+    "SCV10": 0.9666666666666666,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-a4f872d69c07cbc0",
+    "category": "reflection",
+    "seed": 23,
+    "signature": [
+      "apply_reflection"
+    ]
+  },
+  {
+    "SCV10": 0.9666666666666666,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-b977e7292dcf8ad0",
+    "category": "reflection",
+    "seed": 23,
+    "signature": [
+      "find_symmetry"
+    ]
+  },
+  {
+    "SCV10": 0.7999999999999998,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-cd89c6e9697e31c5",
+    "category": "rotation",
+    "seed": 23,
+    "signature": [
+      "apply_rotation"
+    ]
+  },
+  {
+    "SCV10": 0.6333333333333331,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-489db88e598d48b3",
+    "category": "rotation",
+    "seed": 24,
+    "signature": [
+      "find_rotation"
+    ]
+  },
+  {
+    "SCV10": 0.9666666666666666,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-a4f872d69c07cbc0",
+    "category": "reflection",
+    "seed": 24,
+    "signature": [
+      "apply_reflection"
+    ]
+  },
+  {
+    "SCV10": 0.9666666666666666,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-b977e7292dcf8ad0",
+    "category": "reflection",
+    "seed": 24,
+    "signature": [
+      "find_symmetry"
+    ]
+  },
+  {
+    "SCV10": 0.6333333333333331,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-cd89c6e9697e31c5",
+    "category": "rotation",
+    "seed": 24,
+    "signature": [
+      "apply_rotation"
+    ]
+  },
+  {
+    "SCV10": 0.6333333333333331,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-489db88e598d48b3",
+    "category": "rotation",
+    "seed": 25,
+    "signature": [
+      "find_rotation"
+    ]
+  },
+  {
+    "SCV10": 0.9666666666666666,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-a4f872d69c07cbc0",
+    "category": "reflection",
+    "seed": 25,
+    "signature": [
+      "apply_reflection"
+    ]
+  },
+  {
+    "SCV10": 0.9666666666666666,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-b977e7292dcf8ad0",
+    "category": "reflection",
+    "seed": 25,
+    "signature": [
+      "find_symmetry"
+    ]
+  },
+  {
+    "SCV10": 0.6333333333333331,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-cd89c6e9697e31c5",
+    "category": "rotation",
+    "seed": 25,
+    "signature": [
+      "apply_rotation"
+    ]
+  },
+  {
+    "SCV10": 4.300000000000001,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-02a30b2b5dd074b7",
+    "category": "reflection",
+    "seed": 26,
+    "signature": [
+      "detect_object",
+      "find_symmetry",
+      "apply_reflection"
+    ]
+  },
+  {
+    "SCV10": 0.46666666666666634,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-489db88e598d48b3",
+    "category": "rotation",
+    "seed": 26,
+    "signature": [
+      "find_rotation"
+    ]
+  },
+  {
+    "SCV10": 0.9666666666666666,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-a4f872d69c07cbc0",
+    "category": "reflection",
+    "seed": 26,
+    "signature": [
+      "apply_reflection"
+    ]
+  },
+  {
+    "SCV10": 2.7999999999999994,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-b2ef40c97323c287",
+    "category": "rotation",
+    "seed": 26,
+    "signature": [
+      "detect_object",
+      "find_rotation",
+      "apply_rotation"
+    ]
+  },
+  {
+    "SCV10": 0.9666666666666666,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-b977e7292dcf8ad0",
+    "category": "reflection",
+    "seed": 26,
+    "signature": [
+      "find_symmetry"
+    ]
+  },
+  {
+    "SCV10": 0.46666666666666634,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-cd89c6e9697e31c5",
+    "category": "rotation",
+    "seed": 26,
+    "signature": [
+      "apply_rotation"
+    ]
+  },
+  {
+    "SCV10": 0.6333333333333331,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-489db88e598d48b3",
+    "category": "rotation",
+    "seed": 27,
+    "signature": [
+      "find_rotation"
+    ]
+  },
+  {
+    "SCV10": 0.9666666666666666,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-a4f872d69c07cbc0",
+    "category": "reflection",
+    "seed": 27,
+    "signature": [
+      "apply_reflection"
+    ]
+  },
+  {
+    "SCV10": 0.9666666666666666,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-b977e7292dcf8ad0",
+    "category": "reflection",
+    "seed": 27,
+    "signature": [
+      "find_symmetry"
+    ]
+  },
+  {
+    "SCV10": 0.6333333333333331,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-cd89c6e9697e31c5",
+    "category": "rotation",
+    "seed": 27,
+    "signature": [
+      "apply_rotation"
+    ]
+  },
+  {
+    "SCV10": 4.300000000000001,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-02a30b2b5dd074b7",
+    "category": "reflection",
+    "seed": 28,
+    "signature": [
+      "detect_object",
+      "find_symmetry",
+      "apply_reflection"
+    ]
+  },
+  {
+    "SCV10": 0.46666666666666634,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-489db88e598d48b3",
+    "category": "rotation",
+    "seed": 28,
+    "signature": [
+      "find_rotation"
+    ]
+  },
+  {
+    "SCV10": 0.9666666666666666,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-a4f872d69c07cbc0",
+    "category": "reflection",
+    "seed": 28,
+    "signature": [
+      "apply_reflection"
+    ]
+  },
+  {
+    "SCV10": 2.7999999999999994,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-b2ef40c97323c287",
+    "category": "rotation",
+    "seed": 28,
+    "signature": [
+      "detect_object",
+      "find_rotation",
+      "apply_rotation"
+    ]
+  },
+  {
+    "SCV10": 0.9666666666666666,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-b977e7292dcf8ad0",
+    "category": "reflection",
+    "seed": 28,
+    "signature": [
+      "find_symmetry"
+    ]
+  },
+  {
+    "SCV10": 0.46666666666666634,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-cd89c6e9697e31c5",
+    "category": "rotation",
+    "seed": 28,
+    "signature": [
+      "apply_rotation"
+    ]
+  },
+  {
+    "SCV10": 0.6333333333333331,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-489db88e598d48b3",
+    "category": "rotation",
+    "seed": 29,
+    "signature": [
+      "find_rotation"
+    ]
+  },
+  {
+    "SCV10": 0.9666666666666666,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-a4f872d69c07cbc0",
+    "category": "reflection",
+    "seed": 29,
+    "signature": [
+      "apply_reflection"
+    ]
+  },
+  {
+    "SCV10": 0.9666666666666666,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "core"
+      }
+    },
+    "candidate": "INV-b977e7292dcf8ad0",
+    "category": "reflection",
+    "seed": 29,
+    "signature": [
+      "find_symmetry"
+    ]
+  },
+  {
+    "SCV10": 0.6333333333333331,
+    "arms": {
+      "ALWAYS_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "MEMORY_ONLY": {
+        "created": true,
+        "selected": true,
+        "state_at_end": null
+      },
+      "NEVER_CREATE": {
+        "created": false,
+        "selected": false,
+        "state_at_end": null
+      },
+      "RANDOM_CREATE": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      },
+      "SCT": {
+        "created": true,
+        "selected": true,
+        "state_at_end": "growing"
+      }
+    },
+    "candidate": "INV-cd89c6e9697e31c5",
+    "category": "rotation",
+    "seed": 29,
+    "signature": [
+      "apply_rotation"
+    ]
+  }
+]

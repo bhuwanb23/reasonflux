@@ -1,4 +1,6 @@
-Phase 13C: Skill Formation Experiments (SCT Validation)
+# Phase 13C: Skill Formation Experiments (SCT Validation)
+
+> **Current status (2026-10-31):** Phase 13C-SCT-V1 completed: calibration seeds 15–19 and confirmation seeds 20–29. The primary SCT superiority gate **failed**: SCT tied always-create and random-create, and memory-only trace retrieval had higher mean net value. See `reports/experiments/PHASE-13C-SCT-V1/evidence_package.md` and the saved raw record. Results are conditional synthetic evidence only. Legacy EXP-02 is preliminary only; Phase 13B and EXP-IDT-14 evidence remain unchanged.
 
 This phase is dedicated to validating the strongest and most novel contribution of ASFT:
 

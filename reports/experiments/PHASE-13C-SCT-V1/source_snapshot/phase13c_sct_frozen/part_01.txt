@@ -1,0 +1,350 @@
+"""Phase 13C v1: controlled Skill Creation Trigger Theory experiments.
+
+Execution is deliberately split into calibration (seeds 15--19) and confirmation
+(seeds 20--29). The legacy global SCV and all Phase 13B/EXP-IDT-14 records remain
+untouched. Unit tests must stub the aggregation layer and never run these stages.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import math
+import random
+import sys
+from dataclasses import replace
+from pathlib import Path
+from statistics import mean
+from typing import Any
+
+import yaml
+
+ROOT = Path(__file__).resolve().parents[1]
+for path in (ROOT, ROOT / "src"):
+    if str(path) not in sys.path:
+        sys.path.insert(0, str(path))
+
+from core.invariant import Invariant
+from core.skill import Skill, SkillCandidate
+from evaluation.stats import summarize_metrics
+from evaluation.transfer_metrics import compute_ts
+from pipelines.invariant_pipeline import run_invariant_pipeline
+from pipelines.trace_pipeline import run_trace_pipeline
+from skills.candidate import from_invariant
+from skills.composition.evaluate import record_composition_outcome
+from skills.composition.lifecycle import advance_composition
+from skills.composition.propose import propose_sequential
+from skills.composition.trigger import should_compose
+from skills.config import SkillConfig
+from skills.library import SkillLibrary
+from skills.lifecycle.sweep import evaluate_library_lifecycle
+from skills.promotion import promote_skill
+from skills.qualification import qualify_candidate
+from skills.utility import score_skill_utility
+from solver.executor import GridSolver
+from solver.tasks import FAMILIES, GridTask, make_task, make_task_batch
+from transfer.reuse_engine import ReuseEngine
+
+CONFIG_PATH = ROOT / "configs" / "phase13c_sct_v1.yaml"
+OUT_DIR = ROOT / "reports" / "experiments" / "PHASE-13C-SCT-V1"
+MC_SENSITIVITY = (0.00, 0.03, 0.06, 0.12)
+
+
+def load_config() -> dict[str, Any]:
+    return yaml.safe_load(CONFIG_PATH.read_text(encoding="utf-8"))
+
+
+def clip01(value: float) -> float:
+    return max(0.0, min(1.0, float(value)))
+
+
+def _candidate_score(inv: Invariant, config: SkillConfig) -> tuple[SkillCandidate, dict[str, Any]]:
+    candidate = from_invariant(
+        inv, config=config, allow_prior_transfer=True
+    )
+    raw_reuse = float(candidate.reuse if candidate.reuse != 0 else candidate.expected_reuse)
+    raw_ag = float(candidate.abstraction_gain)
+    raw_ts = float(
+        candidate.transfer_score
+        if candidate.transfer_score != 0
+        else candidate.expected_transfer
+    )
+    p_reuse = clip01(raw_reuse)
+    ag = clip01(raw_ag)
+    ts = clip01(raw_ts)
+    cc = max(0.0, float(candidate.creation_cost))
+    mc = float(config.base_maintenance) + 0.01
+    horizon = 10
+    score = horizon * p_reuse * ag * ts - cc - horizon * mc
+    meta = inv.metadata or {}
+    validation = meta.get("validation") or {}
+    reuse_source = "metadata.expected_reuse" if "expected_reuse" in meta else "frequency/10_mapping"
+    ag_source = next((key for key in ("abstraction_gain", "reasoning_value", "prior_reasoning_value") if key in meta),
+                     "validation.reasoning_value" if "reasoning_value" in validation else "default_zero")
+    if "expected_transfer" in meta:
+        ts_source = "metadata.expected_transfer"
+    elif inv.transfer_contribution > 0:
+        ts_source = "invariant.transfer_contribution"
+    elif float(validation.get("transfer", 0.0) or 0.0) > 0:
+        ts_source = "validation.transfer"
+    elif "prior_transfer" in meta:
+        ts_source = "metadata.prior_transfer"
+    else:
+        ts_source = "default_zero"
+    details = {
+        "p_reuse_raw": raw_reuse,
+        "p_reuse": p_reuse,
+        "p_reuse_source": reuse_source,
+        "AG_raw": raw_ag,
+        "AG": ag,
+        "AG_source": ag_source,
+        "TS_raw": raw_ts,
+        "TS": ts,
+        "TS_source": ts_source,
+        "CC": cc,
+        "CC_source": "metadata.creation_cost" if "creation_cost" in meta else "SkillConfig.default_creation_cost",
+        "MC": mc,
+        "MC_source": "base_maintenance_plus_storage_weight",
+        "horizon": horizon,
+        "SCV10": score,
+        "creates_at_primary_threshold": score > 0.0,
+    }
+    candidate.scv = score
+    return candidate, details
+
+
+def _gate_config(config: SkillConfig) -> SkillConfig:
+    """Bypass only the legacy SCV inequality after applying SCV10 ourselves."""
+    return replace(config, skill_creation_threshold=-1.0e9)
+
+
+def _eligible_pool(
+    promotable: list[Invariant], config: SkillConfig
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Apply the common non-SCV qualification gate, retaining failed reasons."""
+    gate_cfg = _gate_config(config)
+    library = SkillLibrary()
+    eligible: list[dict[str, Any]] = []
+    rejected: list[dict[str, Any]] = []
+    for inv in sorted(promotable, key=lambda item: item.invariant_id):
+        candidate, score = _candidate_score(inv, config)
+        qualification = qualify_candidate(
+            candidate,
+            invariant=inv,
+            library=library,
+            config=gate_cfg,
+            allow_prior_evidence=True,
+        )
+        if not qualification.qualified:
+            rejected.append(
+                {
+                    "invariant_id": inv.invariant_id,
+                    "signature": list(inv.pattern_signature),
+                    "reasons": list(qualification.reasons),
+                    "SCV10": score["SCV10"],
+                }
+            )
+            continue
+        promoted = promote_skill(
+            candidate,
+            invariant=inv,
+            library=library,
+            config=gate_cfg,
+            allow_prior_evidence=True,
+        )
+        if not promoted.promoted or promoted.skill is None:
+            rejected.append(
+                {
+                    "invariant_id": inv.invariant_id,
+                    "signature": list(inv.pattern_signature),
+                    "reasons": list(promoted.reasons or ["promotion_rejected"]),
+                    "SCV10": score["SCV10"],
+                }
+            )
+            continue
+        eligible.append(
+            {
+                "invariant": inv,
+                "candidate": from_invariant(inv, config=config, allow_prior_transfer=True),
+                "score": score,
+                "source_skill_state": promoted.skill.state.value,
+                "source_provisional": bool((promoted.skill.metadata or {}).get("provisional")),
+                "birth_record": promoted.birth.to_dict() if promoted.birth else None,
+            }
+        )
+    return eligible, rejected
+
+
+def _macro_ops_for_signature(signature: list[str] | tuple[str, ...]) -> list[str]:
+    for operation in signature:
+        op = str(operation)
+        if op.startswith("apply_"):
+            return [op]
+        if op == "find_symmetry":
+            return ["apply_reflection"]
+        if op == "find_rotation":
+            return ["apply_rotation"]
+        if op in {"count_objects", "group_by_color"}:
+            return [op]
+    return []
+
+
+def _is_eligible_opportunity(inv: Invariant, task: GridTask) -> bool:
+    """Pre-outcome task eligibility; includes reflection cross-family symmetry."""
+    signature = list(inv.pattern_signature)
+    macro = _macro_ops_for_signature(signature)
+    source = str((inv.metadata or {}).get("mvp_category", ""))
+    if not source:
+        source = str((inv.metadata or {}).get("task_family", ""))
+    if macro and source == task.task_family:
+        return True
+    if (
+        macro == ["apply_reflection"]
+        and task.task_family in {"counting", "grouping"}
+        and bool(task.metadata.get("symmetric"))
+    ):
+        return True
+    # Mined invariants can be shared across their observed task families even
+    # when the category heuristic is absent; this is fixed before evaluation.
+    return task.task_family in set(inv.task_families or [])
+
+
+def _opportunities(inv: Invariant, all_tasks: list[GridTask], n: int = 10) -> list[GridTask]:
+    eligible = [task for task in all_tasks if _is_eligible_opportunity(inv, task)]
+    by_family: dict[str, list[GridTask]] = {}
+    for task in eligible:
+        by_family.setdefault(task.task_family, []).append(task)
+    families = sorted(by_family)
+    chosen: list[GridTask] = []
+    cursor = {family: 0 for family in families}
+    while len(chosen) < n:
+        advanced = False
+        for family in families:
+            if cursor[family] < len(by_family[family]) and len(chosen) < n:
+                chosen.append(by_family[family][cursor[family]])
+                cursor[family] += 1
+                advanced = True
+        if not advanced:
+            break
+    return chosen
+
+
+def _enforce_opportunity_horizon(
+    eligible: list[dict[str, Any]],
+    rejected: list[dict[str, Any]],
+    tasks: list[GridTask],
+    horizon: int,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Keep only candidates with the full predeclared held-out opportunity horizon."""
+    kept = []
+    for item in eligible:
+        inv = item["invariant"]
+        opportunities = _opportunities(inv, tasks, horizon)
+        if len(opportunities) == horizon and len({task.task_id for task in opportunities}) == horizon:
+            kept.append(item)
+        else:
+            rejected.append({
+                "invariant_id": inv.invariant_id,
+                "signature": list(inv.pattern_signature),
+                "reasons": ["insufficient_distinct_heldout_opportunities"],
+                "available_opportunities": len(opportunities),
+                "required_opportunities": horizon,
+                "SCV10": item["score"]["SCV10"],
+            })
+    return kept, rejected
+
+
+def _task_batches(run_seed: int, config_data: dict[str, Any]) -> tuple[Any, list[GridTask]]:
+    discovery_seed = run_seed + int(config_data["tasks"]["discovery_seed_offset"])
+    evaluation_seed = run_seed + int(config_data["tasks"]["evaluation_seed_offset"])
+    trace_run = run_trace_pipeline(
+        FAMILIES,
+        per_family=int(config_data["tasks"]["discovery_traces_per_family"]),
+        seed=discovery_seed,
+        difficulty=0.3,
+        persist=False,
+    )
+    eval_tasks = make_task_batch(
+        FAMILIES,
+        per_family=int(config_data["tasks"]["evaluation_opportunities_per_candidate"]),
+        seed=evaluation_seed,
+        difficulty=0.3,
+    )
+    discovery_ids = {task.task_id for task in trace_run.tasks}
+    evaluation_ids = {task.task_id for task in eval_tasks}
+    if discovery_ids & evaluation_ids:
+        raise AssertionError("discovery/evaluation task ID overlap")
+    return trace_run, eval_tasks
+
+
+def _summarize_reuse(skill: Skill, rows: list[dict[str, Any]], source_family: str) -> dict[str, Any]:
+    applied = [row for row in rows if row["applied"]]
+    cross = [row for row in applied if row["task_family"] != source_family]
+    if cross:
+        before = mean(1.0 / max(float(row["baseline_cost"]), 1e-9) for row in cross)
+        after = mean(
+            (1.0 / max(float(row["reused_cost"]), 1e-9)) if row["success"] else 0.0
+            for row in cross
+        )
+        ts = compute_ts(before, after)
+    else:
+        before = after = ts = 0.0
+    return {
+        "eligible_opportunities": len(rows),
+        "applied_attempts": len(applied),
+        "successful_applications": sum(bool(row["success"]) for row in applied),
+        "credited_reuses": sum(bool(row["transfer_credit"]) for row in applied),
+        "failed_applications": sum(not bool(row["success"]) for row in applied),
+        "no_match": sum(not bool(row["applied"]) for row in rows),
+        "reuse_rate_opportunity": (
+            sum(bool(row["transfer_credit"]) for row in applied) / len(rows) if rows else 0.0
+        ),
+        "TS_cross_family": ts,
+        "cross_family_performance_before": before,
+        "cross_family_performance_after": after,
+        "cross_family_opportunities": len(cross),
+        "cross_family_successes": sum(bool(row["transfer_credit"]) for row in cross),
+        "unique_skill_reused": int(bool(applied)),
+        "reuse_count": int(skill.reuse_count),
+    }
+
+
+def _evaluate_skill(
+    inv: Invariant,
+    candidate: SkillCandidate,
+    trace_run: Any,
+    tasks: list[GridTask],
+    config: SkillConfig,
+    *,
+    maintenance_per_opportunity: float,
+    lifecycle_enabled: bool = True,
+) -> dict[str, Any]:
+    gate_cfg = _gate_config(config)
+    library = SkillLibrary()
+    result = promote_skill(
+        candidate,
+        invariant=inv,
+        library=library,
+        config=gate_cfg,
+        allow_prior_evidence=True,
+    )
+    if not result.promoted or result.skill is None:
+        return {"created": False, "rejection_reasons": result.reasons, "task_results": []}
+    skill = result.skill
+    solver = GridSolver()
+    engine = ReuseEngine(library, solver=solver, config=config)
+    opportunities = _opportunities(inv, tasks, 10)
+    if len(opportunities) != 10 or len({task.task_id for task in opportunities}) != 10:
+        raise AssertionError("candidate evaluation lacks ten distinct eligible opportunities")
+    rows: list[dict[str, Any]] = []
+    utility_timeline: list[dict[str, Any]] = []
+    for index, task in enumerate(opportunities):
+        if lifecycle_enabled:
+            evaluate_library_lifecycle(
+                library, task_clock=index, config=config, tick_unused=True
+            )
+        baseline = solver.solve(task)
+        reuse = engine.apply(task, baseline=baseline, task_clock=index)
+        row = reuse.to_dict()
+        rows.append(row)
+        breakdown = score_skill_utility(skill, config)

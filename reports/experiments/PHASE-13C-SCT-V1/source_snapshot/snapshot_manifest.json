@@ -1,0 +1,65 @@
+{
+  "note": "Frozen pre-refactor sources are preserved as ordered text fragments to keep each source file below the project line limit. Concatenate parts in listed order to recreate exact bytes.",
+  "sources": [
+    {
+      "original_lines": 1463,
+      "original_sha256": "618682b3b77bd2c77dbb0e6a7dc927e8dd8f50a43857ded256970fec4cf5931d",
+      "parts": [
+        {
+          "file": "phase13c_sct_frozen/part_01.txt",
+          "lines": 350,
+          "sha256": "02c1d4792d79e5e1f4887143fb6911d52140127d9c9b64c1b2447f9f9a6978bf"
+        },
+        {
+          "file": "phase13c_sct_frozen/part_02.txt",
+          "lines": 350,
+          "sha256": "0cb152c85211ec418e16734239185e9d651e4a1e369b8ceadd6cb651ddde541b"
+        },
+        {
+          "file": "phase13c_sct_frozen/part_03.txt",
+          "lines": 350,
+          "sha256": "dd36916ac9ebbe464814e7f06a72fa841025c2068fa461d3fe4954c4a5e10c29"
+        },
+        {
+          "file": "phase13c_sct_frozen/part_04.txt",
+          "lines": 350,
+          "sha256": "88b7af67caf37c4a669d000c0f051feca4087e975bb25201a19de8d687da6e32"
+        },
+        {
+          "file": "phase13c_sct_frozen/part_05.txt",
+          "lines": 63,
+          "sha256": "a02771f63ad310cbc15afb3d908a47f7267380456a38326caea984175f58c094"
+        }
+      ],
+      "reassembly_order": [
+        "phase13c_sct_frozen/part_01.txt",
+        "phase13c_sct_frozen/part_02.txt",
+        "phase13c_sct_frozen/part_03.txt",
+        "phase13c_sct_frozen/part_04.txt",
+        "phase13c_sct_frozen/part_05.txt"
+      ],
+      "source_name": "phase13c_sct_frozen"
+    },
+    {
+      "original_lines": 397,
+      "original_sha256": "05beca948cdc2b547551d9613e0e8a386dd12b0484f47c8a4884ce18e87b0150",
+      "parts": [
+        {
+          "file": "phase13c_posthoc_pre_refactor/part_01.txt",
+          "lines": 200,
+          "sha256": "25d19edab68da2f5b9a543b117793d6de6841ff4338c4a45fe81ffba14961991"
+        },
+        {
+          "file": "phase13c_posthoc_pre_refactor/part_02.txt",
+          "lines": 197,
+          "sha256": "d50ab631a15b70c6279a3037b6a7b368ab04458505b1cddffa86e5bb31a06395"
+        }
+      ],
+      "reassembly_order": [
+        "phase13c_posthoc_pre_refactor/part_01.txt",
+        "phase13c_posthoc_pre_refactor/part_02.txt"
+      ],
+      "source_name": "phase13c_posthoc_pre_refactor"
+    }
+  ]
+}

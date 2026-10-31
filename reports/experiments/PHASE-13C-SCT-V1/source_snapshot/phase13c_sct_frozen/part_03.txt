@@ -1,0 +1,350 @@
+    assert isolated is not None
+    transitions = [{"task_clock": 0, "state": isolated.state.value, "action": "birth_or_validation"}]
+    for clock in range(1, config.dormant_after_tasks + 1):
+        result = evaluate_library_lifecycle(
+            library, task_clock=clock + 10, config=config, tick_unused=True
+        )
+        transitions.append(
+            {
+                "task_clock": clock + 10,
+                "state": isolated.state.value,
+                "action": "idle_tick",
+                "dormant": isolated.skill_id in result.dormant,
+            }
+        )
+    dormant_state = isolated.state.value
+    # Evidence is obtained on an isolated shadow copy before asking the lifecycle
+    # gate to reactivate; those probes do not mutate the dormant original.
+    shadow = _clone_skill(isolated)
+    shadow.state = type(shadow.state).ACTIVE
+    category = str((shadow.metadata or {}).get("mvp_category", "rotation"))
+    probe_family = category if category in FAMILIES else "rotation"
+    probe_tasks = [
+        make_task(
+            probe_family,
+            seed=run_seed + probe_seed_offset + i,
+            variant=i % 2,
+            difficulty=0.2,
+        )
+        for i in range(2)
+    ]
+    probe_library = SkillLibrary()
+    probe_library.add(shadow)
+    engine = ReuseEngine(probe_library, solver=GridSolver(), config=config)
+    probe = [engine.apply(task, task_clock=20 + i).to_dict() for i, task in enumerate(probe_tasks)]
+    evidence_count = sum(bool(row["transfer_credit"]) for row in probe)
+    expected_su = mean(float(row["benefit"]) for row in probe) if probe else 0.0
+    from skills.reactivation import reactivate_skill
+    react = reactivate_skill(
+        isolated,
+        evidence_count=evidence_count,
+        expected_su=expected_su,
+        config=config,
+        task_clock=30,
+    )
+    transitions.append(
+        {
+            "task_clock": 30,
+            "state": isolated.state.value,
+            "action": "reactivation_attempt",
+            "success": react.success,
+            "evidence_count": evidence_count,
+            "expected_su": expected_su,
+            "probe_task_results": probe,
+        }
+    )
+    return {
+        "skill_id": isolated.skill_id,
+        "state_before_idle": transitions[0]["state"],
+        "state_after_idle": dormant_state,
+        "dormant_observed": dormant_state == "dormant",
+        "reactivation_succeeded": react.success,
+        "final_state": isolated.state.value,
+        "transitions": transitions,
+    }
+
+
+def _operation_for_skill(skill: Skill) -> list[str]:
+    return _macro_ops_for_signature(skill.trigger_conditions)
+
+
+def _composition_eval(
+    library: SkillLibrary,
+    *,
+    run_seed: int,
+    config: SkillConfig,
+    training_seed_offset: int,
+    validation_seed_offset: int,
+    reuse_seed_offset: int,
+) -> list[dict[str, Any]]:
+    skills = library.list_skills()
+    categories = {str((s.metadata or {}).get("mvp_category", "general")): s for s in skills}
+    cases = [
+        ("reflection_counting", ("reflection", "counting"), "counting", False),
+        ("rotation_reflection", ("rotation", "reflection"), "reflection", True),
+        ("reflection_grouping_counting", ("reflection", "grouping", "counting"), "grouping", False),
+    ]
+    rows: list[dict[str, Any]] = []
+    for case_id, category_order, target_family, use_compose_generator in cases:
+        solver = GridSolver(compose=use_compose_generator)
+        missing = [category for category in category_order if category not in categories]
+        if missing:
+            rows.append(
+                {
+                    "case_id": case_id,
+                    "status": "not_evaluable_missing_component_skill",
+                    "missing_categories": missing,
+                    "n_tasks": 0,
+                }
+            )
+            continue
+        selected_skills = [categories[category] for category in category_order]
+        requirements = [op for skill in selected_skills for op in skill.trigger_conditions]
+        trigger = should_compose(requirements, skills, config)
+        proposed = propose_sequential(library, requirements, config)
+        wanted_ids = [skill.skill_id for skill in selected_skills]
+        composition = next(
+            (candidate for candidate in proposed if candidate.order == wanted_ids),
+            None,
+        )
+        if composition is None:
+            rows.append(
+                {
+                    "case_id": case_id,
+                    "status": "no_proposal_from_composition_engine",
+                    "n_tasks": 0,
+                    "trigger": trigger.to_dict(),
+                    "candidate_orders": [c.order for c in proposed],
+                }
+            )
+            continue
+        task_rows = []
+        n_tasks = 10
+        for index in range(n_tasks):
+            task = make_task(
+                target_family,
+                seed=run_seed + training_seed_offset + index,
+                variant=1 if case_id == "reflection_counting" else index % 2,
+                difficulty=0.2,
+                compose=use_compose_generator,
+            )
+            baseline = solver.solve(task)
+            single_rows = []
+            for skill in selected_skills:
+                single_macro = _operation_for_skill(skill)
+                single = solver.solve(task, macro_ops=single_macro)
+                single_rows.append(single)
+            composite_macros = [
+                op
+                for skill in selected_skills
+                for op in _operation_for_skill(skill)
+            ]
+            composite = solver.solve(task, macro_ops=composite_macros)
+            reduction = max(0.0, min(1.0, (baseline.cost - composite.cost) / baseline.cost)) if baseline.cost else 0.0
+            benefit = reduction if composite.success else 0.0
+            best_single_benefit = max(
+                (max(0.0, min(1.0, (baseline.cost - single.cost) / baseline.cost)) if baseline.cost else 0.0)
+                if single.success else 0.0
+                for single in single_rows
+            )
+            record_composition_outcome(
+                composition,
+                success=bool(composite.success),
+                transfer_gain=max(0.0, benefit - best_single_benefit),
+                reasoning_reduction=benefit,
+                task_family=task.task_family,
+                config=config,
+            )
+            advance_composition(composition, config)
+            task_rows.append(
+                {
+                    "task_id": task.task_id,
+                    "task_family": task.task_family,
+                    "baseline_cost": baseline.cost,
+                    "composition_cost": composite.cost,
+                    "baseline_success": baseline.success,
+                    "composition_success": composite.success,
+                    "composition_reduction": reduction,
+                    "composition_benefit": benefit,
+                    "best_single_success": any(item.success for item in single_rows),
+                    "best_single_cost": min(item.cost for item in single_rows),
+                    "composition_order": composition.order,
+                }
+            )
+        single_after = []
+        for skill in selected_skills:
+            macro = _operation_for_skill(skill)
+            task = make_task(target_family, seed=run_seed + validation_seed_offset, variant=1, difficulty=0.2,
+                             compose=use_compose_generator)
+            baseline = solver.solve(task)
+            applied = solver.solve(task, macro_ops=macro)
+            single_after.append({
+                "skill_id": skill.skill_id,
+                "task_id": task.task_id,
+                "success": applied.success,
+                "reduction": max(
+                    0.0,
+                    min(1.0, (baseline.cost - applied.cost) / baseline.cost)
+                    if baseline.cost else 0.0,
+                ),
+            })
+        # Reuse the same learned ordered composition on a separate task seed.
+        reuse_task = make_task(target_family, seed=run_seed + reuse_seed_offset, variant=1, difficulty=0.2,
+                               compose=use_compose_generator)
+        reuse_base = solver.solve(reuse_task)
+        reuse_composed = solver.solve(reuse_task, macro_ops=composite_macros)
+        reuse_benefit = max(0.0, min(1.0, (reuse_base.cost - reuse_composed.cost) / reuse_base.cost)) if reuse_base.cost else 0.0
+        rows.append(
+            {
+                "case_id": case_id,
+                "status": "evaluated",
+                "composition_id": composition.composition_id,
+                "order": composition.order,
+                "triggered": trigger.should_compose,
+                "proposal_state": composition.state.value,
+                "composition_utility": composition.cu,
+                "composition_confidence": composition.confidence,
+                "composition_ncr": composition.ncr,
+                "n_tasks": len(task_rows),
+                "success_rate": mean(float(r["composition_success"]) for r in task_rows),
+                "mean_reasoning_reduction": mean(float(r["composition_benefit"]) for r in task_rows),
+                "mean_composition_cost": mean(float(r["composition_cost"]) for r in task_rows),
+                "composition_reused_on_new_task": bool(reuse_composed.success),
+                "new_task_task_id": reuse_task.task_id,
+                "new_task_reasoning_reduction": reuse_benefit if reuse_composed.success else 0.0,
+                "new_task_baseline_cost": reuse_base.cost,
+                "new_task_composition_cost": reuse_composed.cost,
+                "task_results": task_rows,
+                "single_skill_probe": single_after,
+                "final_candidate": composition.to_dict(),
+            }
+        )
+    return rows
+
+
+def _bootstrap_mean_ci(values: list[float], *, seed: int, n_boot: int = 4000) -> tuple[float, float]:
+    if not values:
+        return (0.0, 0.0)
+    rng = random.Random(seed)
+    draws = []
+    for _ in range(n_boot):
+        sample = [rng.choice(values) for _ in values]
+        draws.append(mean(sample))
+    return _quantile(draws, 0.025), _quantile(draws, 0.975)
+
+
+def _rank(values: list[float]) -> list[float]:
+    order = sorted(range(len(values)), key=lambda i: values[i])
+    ranks = [0.0] * len(values)
+    i = 0
+    while i < len(order):
+        j = i + 1
+        while j < len(order) and values[order[j]] == values[order[i]]:
+            j += 1
+        rank = (i + 1 + j) / 2.0
+        for index in order[i:j]:
+            ranks[index] = rank
+        i = j
+    return ranks
+
+
+def _spearman(x: list[float], y: list[float]) -> float:
+    if len(x) < 2 or len(x) != len(y):
+        return 0.0
+    rx, ry = _rank(x), _rank(y)
+    mx, my = mean(rx), mean(ry)
+    numerator = sum((a - mx) * (b - my) for a, b in zip(rx, ry))
+    denominator = math.sqrt(
+        sum((a - mx) ** 2 for a in rx) * sum((b - my) ** 2 for b in ry)
+    )
+    return numerator / denominator if denominator else 0.0
+
+
+def run_confirmation_seed(run_seed: int, frozen: dict[str, Any]) -> dict[str, Any]:
+    config_data = load_config()
+    skill_config = SkillConfig()
+    trace_run, eval_tasks = _task_batches(run_seed, config_data)
+    inv_run = run_invariant_pipeline(trace_run.traces, bootstrap=True)
+    eligible, rejected = _eligible_pool(inv_run.promotable, skill_config)
+    eligible, rejected = _enforce_opportunity_horizon(
+        eligible, rejected, eval_tasks,
+        int(config_data["tasks"]["evaluation_opportunities_per_candidate"]),
+    )
+    rng = random.Random(run_seed + 8173)
+    candidates_out: list[dict[str, Any]] = []
+    skill_objects: list[Skill] = []
+    for item in eligible:
+        inv = item["invariant"]
+        candidate = item["candidate"]
+        arm_results: dict[str, Any] = {}
+        for arm in ("SCT", "NEVER_CREATE", "ALWAYS_CREATE", "RANDOM_CREATE", "MEMORY_ONLY"):
+            row, skill = _candidate_arm_result(
+                item,
+                arm,
+                trace_run,
+                eval_tasks,
+                skill_config,
+                float(frozen["random_create_probability"]),
+                rng,
+            )
+            arm_results[arm] = row
+            if arm == "SCT" and skill is not None:
+                skill_objects.append(skill)
+        # Isolated shadow outcome for every common eligible candidate, irrespective
+        # of SCT decision; this avoids selecting only positive-SCV candidates.
+        primary_mc = float(skill_config.base_maintenance) + 0.01
+        shadow = _evaluate_skill(
+            inv,
+            from_invariant(inv, config=skill_config, allow_prior_transfer=True),
+            trace_run,
+            eval_tasks,
+            skill_config,
+            maintenance_per_opportunity=primary_mc,
+            lifecycle_enabled=True,
+        )
+        shadow_skill = shadow.pop("skill", None)
+        no_lifecycle = _evaluate_skill(
+            inv,
+            from_invariant(inv, config=skill_config, allow_prior_transfer=True),
+            trace_run,
+            eval_tasks,
+            skill_config,
+            maintenance_per_opportunity=primary_mc,
+            lifecycle_enabled=False,
+        )
+        no_lifecycle.pop("skill", None)
+        candidate_metrics = {
+            "invariant_id": inv.invariant_id,
+            "signature": list(inv.pattern_signature),
+            "category": str((candidate.metadata or {}).get("mvp_category", "general")),
+            "frequency": int(inv.frequency),
+            "task_families": list(inv.task_families),
+            **item["score"],
+            "shadow_realized_net_value": float(shadow.get("realized_net_value", 0.0)),
+            "shadow_mean_SU_at_end": float(shadow.get("mean_SU_at_end", 0.0)),
+            "shadow_reuse_count": int(shadow.get("reuse_statistics", {}).get("reuse_count", 0)),
+            "shadow_TS_cross_family": float(shadow.get("reuse_statistics", {}).get("TS_cross_family", 0.0)),
+            "no_lifecycle_realized_net_value": float(no_lifecycle.get("realized_net_value", 0.0)),
+            "shadow_task_results": shadow.get("task_results", []),
+            "no_lifecycle_task_results": no_lifecycle.get("task_results", []),
+            "no_lifecycle_utility_timeline": no_lifecycle.get("utility_timeline", []),
+            "arms": arm_results,
+        }
+        candidates_out.append(candidate_metrics)
+        if shadow_skill is not None:
+            del shadow_skill
+    arm_values = {}
+    arm_values_by_mc = {}
+    for arm in ("SCT", "NEVER_CREATE", "ALWAYS_CREATE", "RANDOM_CREATE", "MEMORY_ONLY"):
+        values = [float(row["arms"][arm]["realized_net_value"]) for row in candidates_out]
+        arm_values[arm] = mean(values) if values else 0.0
+        arm_values_by_mc[arm] = {
+            f"{mc:.2f}": mean(
+                float(row["arms"][arm].get("realized_net_value_by_mc", {}).get(f"{mc:.2f}", 0.0))
+                for row in candidates_out
+            ) if candidates_out else 0.0
+            for mc in MC_SENSITIVITY
+        }
+    thresholds = {"primary": 0.0, **dict(frozen["thresholds"])}
+    threshold_sensitivity = {
+        name: mean(
