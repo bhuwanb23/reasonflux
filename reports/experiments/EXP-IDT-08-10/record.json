@@ -24,23 +24,39 @@
     "TS": {
       "failure_condition": "<= 0",
       "formula": "performance_after - performance_before",
-      "interpretation": "transfer score",
+      "interpretation": "transfer score (normalized reasoning-efficiency gain)",
       "name": "TS",
       "valid_range": "(-inf, inf)"
     },
     "TU": {
       "failure_condition": "<= 0",
-      "formula": "transfer benefit per reuse",
+      "formula": "transfer_success * coverage * reasoning_reduction",
       "interpretation": "transfer utility",
       "name": "TU",
       "valid_range": "(-inf, inf)"
+    },
+    "correlation_n": {
+      "failure_condition": "< 4",
+      "formula": "number of invariant-level transfer pairs",
+      "interpretation": "correlation sample size",
+      "name": "CORRELATION_N",
+      "valid_range": "[0, inf)"
+    },
+    "cross_family_reuse": {
+      "failure_condition": "== 0",
+      "formula": "credited reuse across source and target families",
+      "interpretation": "cross-family transfer count",
+      "name": "CROSS_FAMILY_REUSE",
+      "valid_range": "[0, inf)"
     }
   },
   "metrics": {
-    "PEARSON": 0.43123657749350297,
-    "SPEARMAN": 0.588095238095238,
-    "TS": 0.30238095238095236,
-    "TU": 0.14094047619047617
+    "PEARSON": 1.0,
+    "SPEARMAN": 0.9999999999999998,
+    "TS": 0.043015873015872994,
+    "TU": 0.0970353835978836,
+    "correlation_n": 4.4,
+    "cross_family_reuse": 10.8
   },
   "observations": {},
   "raw_results": [
@@ -54,87 +70,150 @@
       "experiment_id": "EXP-IDT-08-10",
       "failure_cases": [],
       "metrics": {
-        "PEARSON": 0.39999999999999997,
-        "SPEARMAN": 0.5357142857142857,
-        "TS": 0.2928571428571428,
-        "TU": 0.13708333333333333,
-        "cross_family_reuse": 2
+        "PEARSON": 1.0,
+        "SPEARMAN": 0.9999999999999998,
+        "TS": 0.04206349206349204,
+        "TU": 0.0931878306878307,
+        "correlation_n": 4.0,
+        "cross_family_reuse": 8
       },
-      "n_transfer_records": 7,
+      "n_transfer_records": 18,
       "observations": {
-        "credited_pairs": 7
+        "applied_attempts": 20,
+        "correlation_invariants": 4,
+        "correlation_population": "pre-registered promoted executable skills",
+        "credited_pairs": 2,
+        "unique_invariants": 6
       },
       "pairs": [
         {
+          "attempts": 7,
           "invariant_id": "INV-a4f872d69c07cbc0",
           "is": 9.0,
+          "performance_after": 0.3333333333333333,
+          "performance_before": 0.22142857142857145,
           "source_family": "reflection",
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
           "target_family": "reflection",
-          "ts": 0.25,
-          "tu": 0.25
+          "ts": 0.11190476190476187,
+          "tu": 0.2517857142857143
         },
         {
+          "attempts": 7,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "is": 9.0,
+          "performance_after": 0.3333333333333333,
+          "performance_before": 0.22142857142857145,
+          "source_family": "reflection",
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "target_family": "reflection",
+          "ts": 0.11190476190476187,
+          "tu": 0.2517857142857143
+        },
+        {
+          "attempts": 3,
           "invariant_id": "INV-cd89c6e9697e31c5",
           "is": 6.75,
+          "performance_after": 0.2222222222222222,
+          "performance_before": 0.25,
           "source_family": "rotation",
+          "target_families": [
+            "rotation"
+          ],
           "target_family": "rotation",
-          "ts": 0.25,
-          "tu": 0.25
+          "ts": -0.02777777777777779,
+          "tu": 0.027777777777777776
         },
         {
-          "invariant_id": "INV-a4f872d69c07cbc0",
-          "is": 9.0,
-          "source_family": "reflection",
-          "target_family": "reflection",
-          "ts": 0.25,
-          "tu": 0.25
-        },
-        {
-          "invariant_id": "INV-a4f872d69c07cbc0",
-          "is": 9.0,
-          "source_family": "reflection",
-          "target_family": "counting",
-          "ts": 0.4,
-          "tu": 0.4
-        },
-        {
-          "invariant_id": "INV-a4f872d69c07cbc0",
-          "is": 9.0,
-          "source_family": "reflection",
-          "target_family": "grouping",
-          "ts": 0.4,
-          "tu": 0.4
-        },
-        {
-          "invariant_id": "INV-a4f872d69c07cbc0",
-          "is": 9.0,
-          "source_family": "reflection",
-          "target_family": "reflection",
-          "ts": 0.25,
-          "tu": 0.25
-        },
-        {
-          "invariant_id": "INV-cd89c6e9697e31c5",
+          "attempts": 3,
+          "invariant_id": "INV-489db88e598d48b3",
           "is": 6.75,
+          "performance_after": 0.2222222222222222,
+          "performance_before": 0.25,
           "source_family": "rotation",
+          "target_families": [
+            "rotation"
+          ],
           "target_family": "rotation",
-          "ts": 0.25,
-          "tu": 0.25
+          "ts": -0.02777777777777779,
+          "tu": 0.027777777777777776
+        },
+        {
+          "attempts": 0,
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "is": 1.5,
+          "performance_after": 0.0,
+          "performance_before": 0.0,
+          "source_family": "",
+          "target_families": [],
+          "target_family": "",
+          "ts": 0.0,
+          "tu": 0.0
+        },
+        {
+          "attempts": 0,
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "is": 1.5,
+          "performance_after": 0.0,
+          "performance_before": 0.0,
+          "source_family": "",
+          "target_families": [],
+          "target_family": "",
+          "ts": 0.0,
+          "tu": 0.0
         }
       ],
       "seed": 0,
       "transfer_utility_ranking": [
         {
+          "attempts": 7,
           "coverage": 0.75,
           "invariant_id": "INV-a4f872d69c07cbc0",
           "is": 9.0,
-          "tu": 0.23249999999999998
+          "tu": 0.2517857142857143
         },
         {
+          "attempts": 7,
+          "coverage": 0.75,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "is": 9.0,
+          "tu": 0.2517857142857143
+        },
+        {
+          "attempts": 3,
+          "coverage": 0.25,
+          "invariant_id": "INV-489db88e598d48b3",
+          "is": 6.75,
+          "tu": 0.027777777777777776
+        },
+        {
+          "attempts": 3,
           "coverage": 0.25,
           "invariant_id": "INV-cd89c6e9697e31c5",
           "is": 6.75,
-          "tu": 0.041666666666666664
+          "tu": 0.027777777777777776
+        },
+        {
+          "attempts": 0,
+          "coverage": 0.0,
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "is": 1.5,
+          "tu": 0.0
+        },
+        {
+          "attempts": 0,
+          "coverage": 0.0,
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "is": 1.5,
+          "tu": 0.0
         }
       ]
     },
@@ -148,103 +227,150 @@
       "experiment_id": "EXP-IDT-08-10",
       "failure_cases": [],
       "metrics": {
-        "PEARSON": 0.4780914437337574,
-        "SPEARMAN": 0.6666666666666666,
-        "TS": 0.31666666666666665,
-        "TU": 0.14672619047619048,
-        "cross_family_reuse": 4
+        "PEARSON": 1.0,
+        "SPEARMAN": 0.9999999999999998,
+        "TS": 0.044444444444444425,
+        "TU": 0.09675925925925927,
+        "correlation_n": 4.0,
+        "cross_family_reuse": 12
       },
-      "n_transfer_records": 9,
+      "n_transfer_records": 22,
       "observations": {
-        "credited_pairs": 9
+        "applied_attempts": 24,
+        "correlation_invariants": 4,
+        "correlation_population": "pre-registered promoted executable skills",
+        "credited_pairs": 2,
+        "unique_invariants": 6
       },
       "pairs": [
         {
+          "attempts": 9,
           "invariant_id": "INV-a4f872d69c07cbc0",
           "is": 10.5,
+          "performance_after": 0.3333333333333333,
+          "performance_before": 0.21666666666666667,
           "source_family": "reflection",
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
           "target_family": "reflection",
-          "ts": 0.25,
-          "tu": 0.25
+          "ts": 0.11666666666666664,
+          "tu": 0.2625
         },
         {
+          "attempts": 9,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "is": 10.5,
+          "performance_after": 0.3333333333333333,
+          "performance_before": 0.21666666666666667,
+          "source_family": "reflection",
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "target_family": "reflection",
+          "ts": 0.11666666666666664,
+          "tu": 0.2625
+        },
+        {
+          "attempts": 3,
           "invariant_id": "INV-cd89c6e9697e31c5",
           "is": 5.25,
+          "performance_after": 0.2222222222222222,
+          "performance_before": 0.25,
           "source_family": "rotation",
+          "target_families": [
+            "rotation"
+          ],
           "target_family": "rotation",
-          "ts": 0.25,
-          "tu": 0.25
+          "ts": -0.02777777777777779,
+          "tu": 0.027777777777777776
         },
         {
-          "invariant_id": "INV-a4f872d69c07cbc0",
-          "is": 10.5,
-          "source_family": "reflection",
-          "target_family": "grouping",
-          "ts": 0.4,
-          "tu": 0.4
-        },
-        {
-          "invariant_id": "INV-a4f872d69c07cbc0",
-          "is": 10.5,
-          "source_family": "reflection",
-          "target_family": "reflection",
-          "ts": 0.25,
-          "tu": 0.25
-        },
-        {
-          "invariant_id": "INV-a4f872d69c07cbc0",
-          "is": 10.5,
-          "source_family": "reflection",
-          "target_family": "counting",
-          "ts": 0.4,
-          "tu": 0.4
-        },
-        {
-          "invariant_id": "INV-a4f872d69c07cbc0",
-          "is": 10.5,
-          "source_family": "reflection",
-          "target_family": "grouping",
-          "ts": 0.4,
-          "tu": 0.4
-        },
-        {
-          "invariant_id": "INV-a4f872d69c07cbc0",
-          "is": 10.5,
-          "source_family": "reflection",
-          "target_family": "reflection",
-          "ts": 0.25,
-          "tu": 0.25
-        },
-        {
-          "invariant_id": "INV-cd89c6e9697e31c5",
+          "attempts": 3,
+          "invariant_id": "INV-489db88e598d48b3",
           "is": 5.25,
+          "performance_after": 0.2222222222222222,
+          "performance_before": 0.25,
           "source_family": "rotation",
+          "target_families": [
+            "rotation"
+          ],
           "target_family": "rotation",
-          "ts": 0.25,
-          "tu": 0.25
+          "ts": -0.02777777777777779,
+          "tu": 0.027777777777777776
         },
         {
-          "invariant_id": "INV-a4f872d69c07cbc0",
-          "is": 10.5,
-          "source_family": "reflection",
-          "target_family": "grouping",
-          "ts": 0.4,
-          "tu": 0.4
+          "attempts": 0,
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "is": 1.5,
+          "performance_after": 0.0,
+          "performance_before": 0.0,
+          "source_family": "",
+          "target_families": [],
+          "target_family": "",
+          "ts": 0.0,
+          "tu": 0.0
+        },
+        {
+          "attempts": 0,
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "is": 1.5,
+          "performance_after": 0.0,
+          "performance_before": 0.0,
+          "source_family": "",
+          "target_families": [],
+          "target_family": "",
+          "ts": 0.0,
+          "tu": 0.0
         }
       ],
       "seed": 1,
       "transfer_utility_ranking": [
         {
+          "attempts": 9,
           "coverage": 0.75,
           "invariant_id": "INV-a4f872d69c07cbc0",
           "is": 10.5,
-          "tu": 0.2517857142857143
+          "tu": 0.2625
         },
         {
+          "attempts": 9,
+          "coverage": 0.75,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "is": 10.5,
+          "tu": 0.2625
+        },
+        {
+          "attempts": 3,
+          "coverage": 0.25,
+          "invariant_id": "INV-489db88e598d48b3",
+          "is": 5.25,
+          "tu": 0.027777777777777776
+        },
+        {
+          "attempts": 3,
           "coverage": 0.25,
           "invariant_id": "INV-cd89c6e9697e31c5",
           "is": 5.25,
-          "tu": 0.041666666666666664
+          "tu": 0.027777777777777776
+        },
+        {
+          "attempts": 0,
+          "coverage": 0.0,
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "is": 1.5,
+          "tu": 0.0
+        },
+        {
+          "attempts": 0,
+          "coverage": 0.0,
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "is": 1.5,
+          "tu": 0.0
         }
       ]
     },
@@ -258,87 +384,150 @@
       "experiment_id": "EXP-IDT-08-10",
       "failure_cases": [],
       "metrics": {
-        "PEARSON": 0.4,
-        "SPEARMAN": 0.5357142857142857,
-        "TS": 0.2928571428571428,
-        "TU": 0.13708333333333333,
-        "cross_family_reuse": 2
+        "PEARSON": 1.0,
+        "SPEARMAN": 0.9999999999999998,
+        "TS": 0.04206349206349204,
+        "TU": 0.0931878306878307,
+        "correlation_n": 4.0,
+        "cross_family_reuse": 8
       },
-      "n_transfer_records": 7,
+      "n_transfer_records": 18,
       "observations": {
-        "credited_pairs": 7
+        "applied_attempts": 20,
+        "correlation_invariants": 4,
+        "correlation_population": "pre-registered promoted executable skills",
+        "credited_pairs": 2,
+        "unique_invariants": 6
       },
       "pairs": [
         {
+          "attempts": 7,
           "invariant_id": "INV-a4f872d69c07cbc0",
           "is": 9.75,
+          "performance_after": 0.3333333333333333,
+          "performance_before": 0.22142857142857145,
           "source_family": "reflection",
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
           "target_family": "reflection",
-          "ts": 0.25,
-          "tu": 0.25
+          "ts": 0.11190476190476187,
+          "tu": 0.2517857142857143
         },
         {
+          "attempts": 7,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "is": 9.75,
+          "performance_after": 0.3333333333333333,
+          "performance_before": 0.22142857142857145,
+          "source_family": "reflection",
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "target_family": "reflection",
+          "ts": 0.11190476190476187,
+          "tu": 0.2517857142857143
+        },
+        {
+          "attempts": 3,
           "invariant_id": "INV-cd89c6e9697e31c5",
           "is": 6.0,
+          "performance_after": 0.2222222222222222,
+          "performance_before": 0.25,
           "source_family": "rotation",
+          "target_families": [
+            "rotation"
+          ],
           "target_family": "rotation",
-          "ts": 0.25,
-          "tu": 0.25
+          "ts": -0.02777777777777779,
+          "tu": 0.027777777777777776
         },
         {
-          "invariant_id": "INV-a4f872d69c07cbc0",
-          "is": 9.75,
-          "source_family": "reflection",
-          "target_family": "reflection",
-          "ts": 0.25,
-          "tu": 0.25
-        },
-        {
-          "invariant_id": "INV-a4f872d69c07cbc0",
-          "is": 9.75,
-          "source_family": "reflection",
-          "target_family": "counting",
-          "ts": 0.4,
-          "tu": 0.4
-        },
-        {
-          "invariant_id": "INV-a4f872d69c07cbc0",
-          "is": 9.75,
-          "source_family": "reflection",
-          "target_family": "grouping",
-          "ts": 0.4,
-          "tu": 0.4
-        },
-        {
-          "invariant_id": "INV-a4f872d69c07cbc0",
-          "is": 9.75,
-          "source_family": "reflection",
-          "target_family": "reflection",
-          "ts": 0.25,
-          "tu": 0.25
-        },
-        {
-          "invariant_id": "INV-cd89c6e9697e31c5",
+          "attempts": 3,
+          "invariant_id": "INV-489db88e598d48b3",
           "is": 6.0,
+          "performance_after": 0.2222222222222222,
+          "performance_before": 0.25,
           "source_family": "rotation",
+          "target_families": [
+            "rotation"
+          ],
           "target_family": "rotation",
-          "ts": 0.25,
-          "tu": 0.25
+          "ts": -0.02777777777777779,
+          "tu": 0.027777777777777776
+        },
+        {
+          "attempts": 0,
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "is": 1.5,
+          "performance_after": 0.0,
+          "performance_before": 0.0,
+          "source_family": "",
+          "target_families": [],
+          "target_family": "",
+          "ts": 0.0,
+          "tu": 0.0
+        },
+        {
+          "attempts": 0,
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "is": 1.5,
+          "performance_after": 0.0,
+          "performance_before": 0.0,
+          "source_family": "",
+          "target_families": [],
+          "target_family": "",
+          "ts": 0.0,
+          "tu": 0.0
         }
       ],
       "seed": 2,
       "transfer_utility_ranking": [
         {
+          "attempts": 7,
           "coverage": 0.75,
           "invariant_id": "INV-a4f872d69c07cbc0",
           "is": 9.75,
-          "tu": 0.23249999999999998
+          "tu": 0.2517857142857143
         },
         {
+          "attempts": 7,
+          "coverage": 0.75,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "is": 9.75,
+          "tu": 0.2517857142857143
+        },
+        {
+          "attempts": 3,
+          "coverage": 0.25,
+          "invariant_id": "INV-489db88e598d48b3",
+          "is": 6.0,
+          "tu": 0.027777777777777776
+        },
+        {
+          "attempts": 3,
           "coverage": 0.25,
           "invariant_id": "INV-cd89c6e9697e31c5",
           "is": 6.0,
-          "tu": 0.041666666666666664
+          "tu": 0.027777777777777776
+        },
+        {
+          "attempts": 0,
+          "coverage": 0.0,
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "is": 1.5,
+          "tu": 0.0
+        },
+        {
+          "attempts": 0,
+          "coverage": 0.0,
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "is": 1.5,
+          "tu": 0.0
         }
       ]
     },
@@ -352,103 +541,194 @@
       "experiment_id": "EXP-IDT-08-10",
       "failure_cases": [],
       "metrics": {
-        "PEARSON": 0.4780914437337574,
-        "SPEARMAN": 0.6666666666666666,
-        "TS": 0.31666666666666665,
-        "TU": 0.14672619047619048,
-        "cross_family_reuse": 4
+        "PEARSON": 1.0,
+        "SPEARMAN": 1.0,
+        "TS": 0.044444444444444425,
+        "TU": 0.10885416666666667,
+        "correlation_n": 6.0,
+        "cross_family_reuse": 18
       },
-      "n_transfer_records": 9,
+      "n_transfer_records": 33,
       "observations": {
-        "credited_pairs": 9
+        "applied_attempts": 36,
+        "correlation_invariants": 6,
+        "correlation_population": "pre-registered promoted executable skills",
+        "credited_pairs": 3,
+        "unique_invariants": 8
       },
       "pairs": [
         {
+          "attempts": 9,
           "invariant_id": "INV-02a30b2b5dd074b7",
           "is": 10.5,
+          "performance_after": 0.3333333333333333,
+          "performance_before": 0.21666666666666667,
           "source_family": "reflection",
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
           "target_family": "reflection",
-          "ts": 0.25,
-          "tu": 0.25
+          "ts": 0.11666666666666664,
+          "tu": 0.2625
         },
         {
+          "attempts": 9,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "is": 10.5,
+          "performance_after": 0.3333333333333333,
+          "performance_before": 0.21666666666666667,
+          "source_family": "reflection",
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "target_family": "reflection",
+          "ts": 0.11666666666666664,
+          "tu": 0.2625
+        },
+        {
+          "attempts": 9,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "is": 10.5,
+          "performance_after": 0.3333333333333333,
+          "performance_before": 0.21666666666666667,
+          "source_family": "reflection",
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "target_family": "reflection",
+          "ts": 0.11666666666666664,
+          "tu": 0.2625
+        },
+        {
+          "attempts": 3,
           "invariant_id": "INV-b2ef40c97323c287",
           "is": 5.25,
+          "performance_after": 0.2222222222222222,
+          "performance_before": 0.25,
           "source_family": "rotation",
+          "target_families": [
+            "rotation"
+          ],
           "target_family": "rotation",
-          "ts": 0.25,
-          "tu": 0.25
+          "ts": -0.02777777777777779,
+          "tu": 0.027777777777777776
         },
         {
-          "invariant_id": "INV-02a30b2b5dd074b7",
-          "is": 10.5,
-          "source_family": "reflection",
-          "target_family": "grouping",
-          "ts": 0.4,
-          "tu": 0.4
-        },
-        {
-          "invariant_id": "INV-02a30b2b5dd074b7",
-          "is": 10.5,
-          "source_family": "reflection",
-          "target_family": "reflection",
-          "ts": 0.25,
-          "tu": 0.25
-        },
-        {
-          "invariant_id": "INV-02a30b2b5dd074b7",
-          "is": 10.5,
-          "source_family": "reflection",
-          "target_family": "counting",
-          "ts": 0.4,
-          "tu": 0.4
-        },
-        {
-          "invariant_id": "INV-02a30b2b5dd074b7",
-          "is": 10.5,
-          "source_family": "reflection",
-          "target_family": "grouping",
-          "ts": 0.4,
-          "tu": 0.4
-        },
-        {
-          "invariant_id": "INV-02a30b2b5dd074b7",
-          "is": 10.5,
-          "source_family": "reflection",
-          "target_family": "reflection",
-          "ts": 0.25,
-          "tu": 0.25
-        },
-        {
-          "invariant_id": "INV-b2ef40c97323c287",
+          "attempts": 3,
+          "invariant_id": "INV-cd89c6e9697e31c5",
           "is": 5.25,
+          "performance_after": 0.2222222222222222,
+          "performance_before": 0.25,
           "source_family": "rotation",
+          "target_families": [
+            "rotation"
+          ],
           "target_family": "rotation",
-          "ts": 0.25,
-          "tu": 0.25
+          "ts": -0.02777777777777779,
+          "tu": 0.027777777777777776
         },
         {
-          "invariant_id": "INV-02a30b2b5dd074b7",
-          "is": 10.5,
-          "source_family": "reflection",
-          "target_family": "grouping",
-          "ts": 0.4,
-          "tu": 0.4
+          "attempts": 3,
+          "invariant_id": "INV-489db88e598d48b3",
+          "is": 5.25,
+          "performance_after": 0.2222222222222222,
+          "performance_before": 0.25,
+          "source_family": "rotation",
+          "target_families": [
+            "rotation"
+          ],
+          "target_family": "rotation",
+          "ts": -0.02777777777777779,
+          "tu": 0.027777777777777776
+        },
+        {
+          "attempts": 0,
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "is": 1.5,
+          "performance_after": 0.0,
+          "performance_before": 0.0,
+          "source_family": "",
+          "target_families": [],
+          "target_family": "",
+          "ts": 0.0,
+          "tu": 0.0
+        },
+        {
+          "attempts": 0,
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "is": 1.5,
+          "performance_after": 0.0,
+          "performance_before": 0.0,
+          "source_family": "",
+          "target_families": [],
+          "target_family": "",
+          "ts": 0.0,
+          "tu": 0.0
         }
       ],
       "seed": 3,
       "transfer_utility_ranking": [
         {
+          "attempts": 9,
           "coverage": 0.75,
           "invariant_id": "INV-02a30b2b5dd074b7",
           "is": 10.5,
-          "tu": 0.2517857142857143
+          "tu": 0.2625
         },
         {
+          "attempts": 9,
+          "coverage": 0.75,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "is": 10.5,
+          "tu": 0.2625
+        },
+        {
+          "attempts": 9,
+          "coverage": 0.75,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "is": 10.5,
+          "tu": 0.2625
+        },
+        {
+          "attempts": 3,
+          "coverage": 0.25,
+          "invariant_id": "INV-489db88e598d48b3",
+          "is": 5.25,
+          "tu": 0.027777777777777776
+        },
+        {
+          "attempts": 3,
           "coverage": 0.25,
           "invariant_id": "INV-b2ef40c97323c287",
           "is": 5.25,
-          "tu": 0.041666666666666664
+          "tu": 0.027777777777777776
+        },
+        {
+          "attempts": 3,
+          "coverage": 0.25,
+          "invariant_id": "INV-cd89c6e9697e31c5",
+          "is": 5.25,
+          "tu": 0.027777777777777776
+        },
+        {
+          "attempts": 0,
+          "coverage": 0.0,
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "is": 1.5,
+          "tu": 0.0
+        },
+        {
+          "attempts": 0,
+          "coverage": 0.0,
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "is": 1.5,
+          "tu": 0.0
         }
       ]
     },
@@ -462,87 +742,150 @@
       "experiment_id": "EXP-IDT-08-10",
       "failure_cases": [],
       "metrics": {
-        "PEARSON": 0.39999999999999997,
-        "SPEARMAN": 0.5357142857142857,
-        "TS": 0.2928571428571428,
-        "TU": 0.13708333333333333,
-        "cross_family_reuse": 2
+        "PEARSON": 1.0,
+        "SPEARMAN": 0.9999999999999998,
+        "TS": 0.04206349206349204,
+        "TU": 0.0931878306878307,
+        "correlation_n": 4.0,
+        "cross_family_reuse": 8
       },
-      "n_transfer_records": 7,
+      "n_transfer_records": 18,
       "observations": {
-        "credited_pairs": 7
+        "applied_attempts": 20,
+        "correlation_invariants": 4,
+        "correlation_population": "pre-registered promoted executable skills",
+        "credited_pairs": 2,
+        "unique_invariants": 6
       },
       "pairs": [
         {
+          "attempts": 7,
           "invariant_id": "INV-a4f872d69c07cbc0",
           "is": 10.5,
+          "performance_after": 0.3333333333333333,
+          "performance_before": 0.22142857142857145,
           "source_family": "reflection",
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
           "target_family": "reflection",
-          "ts": 0.25,
-          "tu": 0.25
+          "ts": 0.11190476190476187,
+          "tu": 0.2517857142857143
         },
         {
+          "attempts": 7,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "is": 10.5,
+          "performance_after": 0.3333333333333333,
+          "performance_before": 0.22142857142857145,
+          "source_family": "reflection",
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "target_family": "reflection",
+          "ts": 0.11190476190476187,
+          "tu": 0.2517857142857143
+        },
+        {
+          "attempts": 3,
           "invariant_id": "INV-cd89c6e9697e31c5",
           "is": 5.25,
+          "performance_after": 0.2222222222222222,
+          "performance_before": 0.25,
           "source_family": "rotation",
+          "target_families": [
+            "rotation"
+          ],
           "target_family": "rotation",
-          "ts": 0.25,
-          "tu": 0.25
+          "ts": -0.02777777777777779,
+          "tu": 0.027777777777777776
         },
         {
-          "invariant_id": "INV-a4f872d69c07cbc0",
-          "is": 10.5,
-          "source_family": "reflection",
-          "target_family": "reflection",
-          "ts": 0.25,
-          "tu": 0.25
-        },
-        {
-          "invariant_id": "INV-a4f872d69c07cbc0",
-          "is": 10.5,
-          "source_family": "reflection",
-          "target_family": "counting",
-          "ts": 0.4,
-          "tu": 0.4
-        },
-        {
-          "invariant_id": "INV-a4f872d69c07cbc0",
-          "is": 10.5,
-          "source_family": "reflection",
-          "target_family": "grouping",
-          "ts": 0.4,
-          "tu": 0.4
-        },
-        {
-          "invariant_id": "INV-a4f872d69c07cbc0",
-          "is": 10.5,
-          "source_family": "reflection",
-          "target_family": "reflection",
-          "ts": 0.25,
-          "tu": 0.25
-        },
-        {
-          "invariant_id": "INV-cd89c6e9697e31c5",
+          "attempts": 3,
+          "invariant_id": "INV-489db88e598d48b3",
           "is": 5.25,
+          "performance_after": 0.2222222222222222,
+          "performance_before": 0.25,
           "source_family": "rotation",
+          "target_families": [
+            "rotation"
+          ],
           "target_family": "rotation",
-          "ts": 0.25,
-          "tu": 0.25
+          "ts": -0.02777777777777779,
+          "tu": 0.027777777777777776
+        },
+        {
+          "attempts": 0,
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "is": 1.5,
+          "performance_after": 0.0,
+          "performance_before": 0.0,
+          "source_family": "",
+          "target_families": [],
+          "target_family": "",
+          "ts": 0.0,
+          "tu": 0.0
+        },
+        {
+          "attempts": 0,
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "is": 1.5,
+          "performance_after": 0.0,
+          "performance_before": 0.0,
+          "source_family": "",
+          "target_families": [],
+          "target_family": "",
+          "ts": 0.0,
+          "tu": 0.0
         }
       ],
       "seed": 4,
       "transfer_utility_ranking": [
         {
+          "attempts": 7,
           "coverage": 0.75,
           "invariant_id": "INV-a4f872d69c07cbc0",
           "is": 10.5,
-          "tu": 0.23249999999999998
+          "tu": 0.2517857142857143
         },
         {
+          "attempts": 7,
+          "coverage": 0.75,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "is": 10.5,
+          "tu": 0.2517857142857143
+        },
+        {
+          "attempts": 3,
+          "coverage": 0.25,
+          "invariant_id": "INV-489db88e598d48b3",
+          "is": 5.25,
+          "tu": 0.027777777777777776
+        },
+        {
+          "attempts": 3,
           "coverage": 0.25,
           "invariant_id": "INV-cd89c6e9697e31c5",
           "is": 5.25,
-          "tu": 0.041666666666666664
+          "tu": 0.027777777777777776
+        },
+        {
+          "attempts": 0,
+          "coverage": 0.0,
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "is": 1.5,
+          "tu": 0.0
+        },
+        {
+          "attempts": 0,
+          "coverage": 0.0,
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "is": 1.5,
+          "tu": 0.0
         }
       ]
     }
@@ -550,40 +893,58 @@
   "record_schema": "phase-13a-v1",
   "results": {
     "PEARSON": {
-      "ci_high": 0.4687275898979869,
-      "ci_low": 0.39374556508901903,
+      "ci_high": 1.0,
+      "ci_low": 1.0,
       "confidence": 0.95,
-      "mean": 0.43123657749350297,
+      "mean": 1.0,
       "n": 5.0,
-      "std": 0.04277244528112439,
-      "variance": 0.0018294820753267796
+      "std": 0.0,
+      "variance": 0.0
     },
     "SPEARMAN": {
-      "ci_high": 0.6509643195713194,
-      "ci_low": 0.5252261566191566,
+      "ci_high": 0.9999999999999999,
+      "ci_low": 0.9999999999999997,
       "confidence": 0.95,
-      "mean": 0.588095238095238,
+      "mean": 0.9999999999999998,
       "n": 5.0,
-      "std": 0.07172557300662888,
-      "variance": 0.00514455782312925
+      "std": 1.1102230246251565e-16,
+      "variance": 1.232595164407831e-32
     },
     "TS": {
-      "ci_high": 0.3138116944675126,
-      "ci_low": 0.2909502102943921,
+      "ci_high": 0.044158947224529024,
+      "ci_low": 0.04187279880721696,
       "confidence": 0.95,
-      "mean": 0.30238095238095236,
+      "mean": 0.043015873015872994,
       "n": 5.0,
-      "std": 0.01304101327393254,
-      "variance": 0.00017006802721088472
+      "std": 0.0013041013273932555,
+      "variance": 1.7006802721088512e-06
     },
     "TU": {
-      "ci_high": 0.14556992673553307,
-      "ci_low": 0.13631102564541928,
+      "ci_high": 0.10298300835756925,
+      "ci_low": 0.09108775883819796,
       "confidence": 0.95,
-      "mean": 0.14094047619047617,
+      "mean": 0.0970353835978836,
       "n": 5.0,
-      "std": 0.005281610375942676,
-      "variance": 2.7895408163265335e-05
+      "std": 0.006785478392573065,
+      "variance": 4.604271701607595e-05
+    },
+    "correlation_n": {
+      "ci_high": 5.183985593816022,
+      "ci_low": 3.6160144061839787,
+      "confidence": 0.95,
+      "mean": 4.4,
+      "n": 5.0,
+      "std": 0.8944271909999159,
+      "variance": 0.7999999999999999
+    },
+    "cross_family_reuse": {
+      "ci_high": 14.640729341084247,
+      "ci_low": 6.959270658915754,
+      "confidence": 0.95,
+      "mean": 10.8,
+      "n": 5.0,
+      "std": 4.381780460041329,
+      "variance": 19.2
     }
   },
   "seed": null,
@@ -596,42 +957,60 @@
   ],
   "statistics": {
     "PEARSON": {
-      "ci_high": 0.4687275898979869,
-      "ci_low": 0.39374556508901903,
+      "ci_high": 1.0,
+      "ci_low": 1.0,
       "confidence": 0.95,
-      "mean": 0.43123657749350297,
+      "mean": 1.0,
       "n": 5.0,
-      "std": 0.04277244528112439,
-      "variance": 0.0018294820753267796
+      "std": 0.0,
+      "variance": 0.0
     },
     "SPEARMAN": {
-      "ci_high": 0.6509643195713194,
-      "ci_low": 0.5252261566191566,
+      "ci_high": 0.9999999999999999,
+      "ci_low": 0.9999999999999997,
       "confidence": 0.95,
-      "mean": 0.588095238095238,
+      "mean": 0.9999999999999998,
       "n": 5.0,
-      "std": 0.07172557300662888,
-      "variance": 0.00514455782312925
+      "std": 1.1102230246251565e-16,
+      "variance": 1.232595164407831e-32
     },
     "TS": {
-      "ci_high": 0.3138116944675126,
-      "ci_low": 0.2909502102943921,
+      "ci_high": 0.044158947224529024,
+      "ci_low": 0.04187279880721696,
       "confidence": 0.95,
-      "mean": 0.30238095238095236,
+      "mean": 0.043015873015872994,
       "n": 5.0,
-      "std": 0.01304101327393254,
-      "variance": 0.00017006802721088472
+      "std": 0.0013041013273932555,
+      "variance": 1.7006802721088512e-06
     },
     "TU": {
-      "ci_high": 0.14556992673553307,
-      "ci_low": 0.13631102564541928,
+      "ci_high": 0.10298300835756925,
+      "ci_low": 0.09108775883819796,
       "confidence": 0.95,
-      "mean": 0.14094047619047617,
+      "mean": 0.0970353835978836,
       "n": 5.0,
-      "std": 0.005281610375942676,
-      "variance": 2.7895408163265335e-05
+      "std": 0.006785478392573065,
+      "variance": 4.604271701607595e-05
+    },
+    "correlation_n": {
+      "ci_high": 5.183985593816022,
+      "ci_low": 3.6160144061839787,
+      "confidence": 0.95,
+      "mean": 4.4,
+      "n": 5.0,
+      "std": 0.8944271909999159,
+      "variance": 0.7999999999999999
+    },
+    "cross_family_reuse": {
+      "ci_high": 14.640729341084247,
+      "ci_low": 6.959270658915754,
+      "confidence": 0.95,
+      "mean": 10.8,
+      "n": 5.0,
+      "std": 4.381780460041329,
+      "variance": 19.2
     }
   },
   "thresholds": {},
-  "timestamp_utc": "2026-10-31T10:31:11.215609+00:00"
+  "timestamp_utc": "2026-10-31T12:10:03.423291+00:00"
 }

@@ -1,6 +1,6 @@
 # IDT Evidence Package
 
-- **Phase 13B success:** `True`
+- **Phase 13B success:** `False`
 - **Seeds:** `[0, 1, 2, 3, 4]`
 
 ## Discovery
@@ -18,14 +18,14 @@
 
 ## Transfer
 
-- Pearson IS–TS: `0.431`
-- Spearman IS–TS: `0.588`
-- TU: `0.141`
+- Pearson IS–TS: `1.000`
+- Spearman IS–TS: `1.000`
+- TU: `0.097`
 
 ## Robustness
 
 - VST: `1.000`
-- Rank stability: `0.760`
+- Rank stability: `0.720`
 
 ## Interpretation
 

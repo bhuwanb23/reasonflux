@@ -28,11 +28,13 @@ METRICS: dict[str, MetricDefinition] = {
         "(-inf, inf)", "<= 0",
     ),
     "TS": MetricDefinition(
-        "TS", "performance_after - performance_before", "transfer score",
+        "TS", "performance_after - performance_before",
+        "transfer score (normalized reasoning-efficiency gain)",
         "(-inf, inf)", "<= 0",
     ),
     "TU": MetricDefinition(
-        "TU", "transfer benefit per reuse", "transfer utility",
+        "TU", "transfer_success * coverage * reasoning_reduction",
+        "transfer utility",
         "(-inf, inf)", "<= 0",
     ),
     "NTR": MetricDefinition(
@@ -107,17 +109,58 @@ METRICS: dict[str, MetricDefinition] = {
         "CLEAN_CANDIDATES", "candidate count under full traces",
         "reference candidate count", "[0, inf)", "< 0",
     ),
+    "SPARSE_STRONG_FRACTION": MetricDefinition(
+        "SPARSE_STRONG_FRACTION", "strong sparse invariants / sparse invariants",
+        "sparse over-promotion rate", "[0, 1]", "> clean rate",
+    ),
+    "CLEAN_STRONG_FRACTION": MetricDefinition(
+        "CLEAN_STRONG_FRACTION", "strong full-data invariants / full invariants",
+        "reference strong-confidence rate", "[0, 1]", "< 0",
+    ),
+    "SPARSE_PRECISION": MetricDefinition(
+        "SPARSE_PRECISION", "valid sparse invariants / sparse invariants",
+        "sparse-data precision", "[0, 1]", "< 0.70",
+    ),
+    "SPARSE_RECALL": MetricDefinition(
+        "SPARSE_RECALL", "discovered sparse expected / expected invariants",
+        "sparse-data recall", "[0, 1]", "< 0",
+    ),
     "ASFT": MetricDefinition(
-        "ASFT", "valid top-k invariants / k", "ASFT ranking quality",
-        "[0, 1]", "< 0.70",
+        "ASFT", "mean TU of top-k transfer-aware invariants",
+        "ASFT transfer-aware ranking utility", "(-inf, inf)", "<= baseline",
     ),
     "FREQUENCY_ONLY": MetricDefinition(
-        "FREQUENCY_ONLY", "valid top-k frequency-ranked invariants / k",
-        "frequency-only ranking quality", "[0, 1]", "< 0.70",
+        "FREQUENCY_ONLY", "mean TU of top-k frequency-ranked invariants",
+        "frequency-only ranking utility", "(-inf, inf)", ">= ASFT",
+    ),
+    "NO_TRANSFER": MetricDefinition(
+        "NO_TRANSFER", "mean TU of top-k IS-ranked invariants",
+        "transfer-blind intrinsic-strength ranking utility",
+        "(-inf, inf)", ">= ASFT",
     ),
     "RANDOM_PATTERN": MetricDefinition(
-        "RANDOM_PATTERN", "valid top-k random patterns / k",
-        "random-pattern quality", "[0, 1]", "< 0.70",
+        "RANDOM_PATTERN", "mean TU of top-k random patterns",
+        "random-pattern ranking utility", "(-inf, inf)", ">= ASFT",
+    ),
+    "ASFT_ADVANTAGE": MetricDefinition(
+        "ASFT_ADVANTAGE", "ASFT TU - frequency-only TU",
+        "transfer-aware ranking advantage", "(-inf, inf)", "<= 0",
+    ),
+    "ASFT_VALID_TOP_RATE": MetricDefinition(
+        "ASFT_VALID_TOP_RATE", "valid ASFT top-k / k",
+        "validity of ASFT top-k", "[0, 1]", "< 0.70",
+    ),
+    "FREQUENCY_VALID_TOP_RATE": MetricDefinition(
+        "FREQUENCY_VALID_TOP_RATE", "valid frequency top-k / k",
+        "validity of frequency top-k", "[0, 1]", "< 0.70",
+    ),
+    "CROSS_FAMILY_REUSE": MetricDefinition(
+        "CROSS_FAMILY_REUSE", "credited reuse across source and target families",
+        "cross-family transfer count", "[0, inf)", "== 0",
+    ),
+    "CORRELATION_N": MetricDefinition(
+        "CORRELATION_N", "number of invariant-level transfer pairs",
+        "correlation sample size", "[0, inf)", "< 4",
     ),
 }
 
@@ -134,4 +177,4 @@ def metric_definition(name: str) -> dict[str, str]:
 def metric_definitions(names: list[str] | None = None) -> dict[str, dict[str, str]]:
     """Return definitions for selected metrics, or all governed metrics."""
     selected = list(METRICS) if names is None else names
-    return {name.upper(): metric_definition(name) for name in selected}
+    return {str(name): metric_definition(name) for name in selected}

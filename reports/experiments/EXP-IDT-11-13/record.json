@@ -14,25 +14,81 @@
       "name": "RANK_STABILITY",
       "valid_range": "[0, 1]"
     },
-    "SPARSE_MEAN_IS": {
-      "failure_condition": "< 0",
-      "formula": "mean IS under sparse traces",
-      "interpretation": "sparse-data invariant strength",
-      "name": "SPARSE_MEAN_IS",
-      "valid_range": "[0, inf)"
-    },
     "VST": {
       "failure_condition": "< 0.60",
       "formula": "successful_variations / total_variations",
       "interpretation": "variation survival",
       "name": "VST",
       "valid_range": "[0, 1]"
+    },
+    "clean_candidates": {
+      "failure_condition": "< 0",
+      "formula": "candidate count under full traces",
+      "interpretation": "reference candidate count",
+      "name": "CLEAN_CANDIDATES",
+      "valid_range": "[0, inf)"
+    },
+    "clean_mean_IS": {
+      "failure_condition": "< 0",
+      "formula": "mean IS under full traces",
+      "interpretation": "reference invariant strength",
+      "name": "CLEAN_MEAN_IS",
+      "valid_range": "[0, inf)"
+    },
+    "clean_strong_fraction": {
+      "failure_condition": "< 0",
+      "formula": "strong full-data invariants / full invariants",
+      "interpretation": "reference strong-confidence rate",
+      "name": "CLEAN_STRONG_FRACTION",
+      "valid_range": "[0, 1]"
+    },
+    "sparse_candidates": {
+      "failure_condition": "< 0",
+      "formula": "candidate count under sparse traces",
+      "interpretation": "sparse candidate count",
+      "name": "SPARSE_CANDIDATES",
+      "valid_range": "[0, inf)"
+    },
+    "sparse_mean_IS": {
+      "failure_condition": "< 0",
+      "formula": "mean IS under sparse traces",
+      "interpretation": "sparse-data invariant strength",
+      "name": "SPARSE_MEAN_IS",
+      "valid_range": "[0, inf)"
+    },
+    "sparse_precision": {
+      "failure_condition": "< 0.70",
+      "formula": "valid sparse invariants / sparse invariants",
+      "interpretation": "sparse-data precision",
+      "name": "SPARSE_PRECISION",
+      "valid_range": "[0, 1]"
+    },
+    "sparse_recall": {
+      "failure_condition": "< 0",
+      "formula": "discovered sparse expected / expected invariants",
+      "interpretation": "sparse-data recall",
+      "name": "SPARSE_RECALL",
+      "valid_range": "[0, 1]"
+    },
+    "sparse_strong_fraction": {
+      "failure_condition": "> clean rate",
+      "formula": "strong sparse invariants / sparse invariants",
+      "interpretation": "sparse over-promotion rate",
+      "name": "SPARSE_STRONG_FRACTION",
+      "valid_range": "[0, 1]"
     }
   },
   "metrics": {
-    "RANK_STABILITY": 0.76,
+    "RANK_STABILITY": 0.72,
     "VST": 1.0,
-    "sparse_mean_IS": 1.8
+    "clean_candidates": 6.4,
+    "clean_mean_IS": 5.85625,
+    "clean_strong_fraction": 0.0,
+    "sparse_candidates": 2.4,
+    "sparse_mean_IS": 1.8,
+    "sparse_precision": 1.0,
+    "sparse_recall": 0.2,
+    "sparse_strong_fraction": 0.0
   },
   "observations": {},
   "raw_results": [
@@ -67,8 +123,12 @@
         "VST": 1.0,
         "clean_candidates": 6.0,
         "clean_mean_IS": 5.75,
+        "clean_strong_fraction": 0.0,
         "sparse_candidates": 3.0,
-        "sparse_mean_IS": 2.25
+        "sparse_mean_IS": 2.25,
+        "sparse_precision": 1.0,
+        "sparse_recall": 0.25,
+        "sparse_strong_fraction": 0.0
       },
       "noise_rank_overlap": 0.8,
       "noisy_top": [
@@ -91,7 +151,7 @@
       ],
       "observations": {
         "clean_validation_count": 4,
-        "noise_candidate_count": 13
+        "noise_candidate_count": 11
       },
       "seed": 0,
       "sparse_observations": 4,
@@ -133,8 +193,12 @@
         "VST": 1.0,
         "clean_candidates": 6.0,
         "clean_mean_IS": 5.75,
+        "clean_strong_fraction": 0.0,
         "sparse_candidates": 0.0,
-        "sparse_mean_IS": 0.0
+        "sparse_mean_IS": 0.0,
+        "sparse_precision": 1.0,
+        "sparse_recall": 0.0,
+        "sparse_strong_fraction": 0.0
       },
       "noise_rank_overlap": 0.8,
       "noisy_top": [
@@ -148,10 +212,11 @@
           "find_rotation"
         ],
         [
+          "find_rotation",
           "apply_rotation"
         ],
         [
-          "verify_output"
+          "apply_rotation"
         ]
       ],
       "observations": {
@@ -198,8 +263,12 @@
         "VST": 1.0,
         "clean_candidates": 6.0,
         "clean_mean_IS": 5.75,
+        "clean_strong_fraction": 0.0,
         "sparse_candidates": 3.0,
-        "sparse_mean_IS": 2.25
+        "sparse_mean_IS": 2.25,
+        "sparse_precision": 1.0,
+        "sparse_recall": 0.25,
+        "sparse_strong_fraction": 0.0
       },
       "noise_rank_overlap": 0.8,
       "noisy_top": [
@@ -213,15 +282,16 @@
           "find_rotation"
         ],
         [
+          "find_rotation",
           "apply_rotation"
         ],
         [
-          "verify_output"
+          "apply_rotation"
         ]
       ],
       "observations": {
         "clean_validation_count": 4,
-        "noise_candidate_count": 9
+        "noise_candidate_count": 11
       },
       "seed": 2,
       "sparse_observations": 4,
@@ -267,8 +337,12 @@
         "VST": 1.0,
         "clean_candidates": 8.0,
         "clean_mean_IS": 6.28125,
+        "clean_strong_fraction": 0.0,
         "sparse_candidates": 3.0,
-        "sparse_mean_IS": 2.25
+        "sparse_mean_IS": 2.25,
+        "sparse_precision": 1.0,
+        "sparse_recall": 0.25,
+        "sparse_strong_fraction": 0.0
       },
       "noise_rank_overlap": 0.6,
       "noisy_top": [
@@ -279,18 +353,20 @@
           "find_symmetry"
         ],
         [
+          "find_symmetry",
+          "apply_reflection"
+        ],
+        [
           "find_rotation"
         ],
         [
+          "find_rotation",
           "apply_rotation"
-        ],
-        [
-          "count_objects"
         ]
       ],
       "observations": {
         "clean_validation_count": 6,
-        "noise_candidate_count": 8
+        "noise_candidate_count": 10
       },
       "seed": 3,
       "sparse_observations": 4,
@@ -328,14 +404,18 @@
       "experiment_id": "EXP-IDT-11-13",
       "failure_cases": [],
       "metrics": {
-        "RANK_STABILITY": 0.8,
+        "RANK_STABILITY": 0.6,
         "VST": 1.0,
         "clean_candidates": 6.0,
         "clean_mean_IS": 5.75,
+        "clean_strong_fraction": 0.0,
         "sparse_candidates": 3.0,
-        "sparse_mean_IS": 2.25
+        "sparse_mean_IS": 2.25,
+        "sparse_precision": 1.0,
+        "sparse_recall": 0.25,
+        "sparse_strong_fraction": 0.0
       },
-      "noise_rank_overlap": 0.8,
+      "noise_rank_overlap": 0.6,
       "noisy_top": [
         [
           "apply_reflection"
@@ -344,20 +424,20 @@
           "find_symmetry"
         ],
         [
+          "detect_object",
+          "find_symmetry"
+        ],
+        [
           "find_rotation"
         ],
         [
-          "detect_object",
           "find_rotation",
-          "apply_rotation"
-        ],
-        [
           "apply_rotation"
         ]
       ],
       "observations": {
         "clean_validation_count": 4,
-        "noise_candidate_count": 12
+        "noise_candidate_count": 13
       },
       "seed": 4,
       "sparse_observations": 4,
@@ -372,13 +452,13 @@
   "record_schema": "phase-13a-v1",
   "results": {
     "RANK_STABILITY": {
-      "ci_high": 0.8383985593816021,
-      "ci_low": 0.6816014406183979,
+      "ci_high": 0.8160182335271062,
+      "ci_low": 0.6239817664728937,
       "confidence": 0.95,
-      "mean": 0.76,
+      "mean": 0.72,
       "n": 5.0,
-      "std": 0.08944271909999162,
-      "variance": 0.008000000000000005
+      "std": 0.10954451150103327,
+      "variance": 0.012000000000000009
     },
     "VST": {
       "ci_high": 1.0,
@@ -389,6 +469,42 @@
       "std": 0.0,
       "variance": 0.0
     },
+    "clean_candidates": {
+      "ci_high": 7.183985593816022,
+      "ci_low": 5.616014406183979,
+      "confidence": 0.95,
+      "mean": 6.4,
+      "n": 5.0,
+      "std": 0.8944271909999159,
+      "variance": 0.7999999999999999
+    },
+    "clean_mean_IS": {
+      "ci_high": 6.064496173357381,
+      "ci_low": 5.648003826642619,
+      "confidence": 0.95,
+      "mean": 5.85625,
+      "n": 5.0,
+      "std": 0.23758222260935266,
+      "variance": 0.0564453125
+    },
+    "clean_strong_fraction": {
+      "ci_high": 0.0,
+      "ci_low": 0.0,
+      "confidence": 0.95,
+      "mean": 0.0,
+      "n": 5.0,
+      "std": 0.0,
+      "variance": 0.0
+    },
+    "sparse_candidates": {
+      "ci_high": 3.575978390724032,
+      "ci_low": 1.2240216092759677,
+      "confidence": 0.95,
+      "mean": 2.4,
+      "n": 5.0,
+      "std": 1.3416407864998738,
+      "variance": 1.8
+    },
     "sparse_mean_IS": {
       "ci_high": 2.681983793043024,
       "ci_low": 0.9180162069569759,
@@ -397,6 +513,33 @@
       "n": 5.0,
       "std": 1.0062305898749053,
       "variance": 1.0125
+    },
+    "sparse_precision": {
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "confidence": 0.95,
+      "mean": 1.0,
+      "n": 5.0,
+      "std": 0.0,
+      "variance": 0.0
+    },
+    "sparse_recall": {
+      "ci_high": 0.2979981992270027,
+      "ci_low": 0.10200180077299732,
+      "confidence": 0.95,
+      "mean": 0.2,
+      "n": 5.0,
+      "std": 0.11180339887498948,
+      "variance": 0.0125
+    },
+    "sparse_strong_fraction": {
+      "ci_high": 0.0,
+      "ci_low": 0.0,
+      "confidence": 0.95,
+      "mean": 0.0,
+      "n": 5.0,
+      "std": 0.0,
+      "variance": 0.0
     }
   },
   "seed": null,
@@ -409,13 +552,13 @@
   ],
   "statistics": {
     "RANK_STABILITY": {
-      "ci_high": 0.8383985593816021,
-      "ci_low": 0.6816014406183979,
+      "ci_high": 0.8160182335271062,
+      "ci_low": 0.6239817664728937,
       "confidence": 0.95,
-      "mean": 0.76,
+      "mean": 0.72,
       "n": 5.0,
-      "std": 0.08944271909999162,
-      "variance": 0.008000000000000005
+      "std": 0.10954451150103327,
+      "variance": 0.012000000000000009
     },
     "VST": {
       "ci_high": 1.0,
@@ -426,6 +569,42 @@
       "std": 0.0,
       "variance": 0.0
     },
+    "clean_candidates": {
+      "ci_high": 7.183985593816022,
+      "ci_low": 5.616014406183979,
+      "confidence": 0.95,
+      "mean": 6.4,
+      "n": 5.0,
+      "std": 0.8944271909999159,
+      "variance": 0.7999999999999999
+    },
+    "clean_mean_IS": {
+      "ci_high": 6.064496173357381,
+      "ci_low": 5.648003826642619,
+      "confidence": 0.95,
+      "mean": 5.85625,
+      "n": 5.0,
+      "std": 0.23758222260935266,
+      "variance": 0.0564453125
+    },
+    "clean_strong_fraction": {
+      "ci_high": 0.0,
+      "ci_low": 0.0,
+      "confidence": 0.95,
+      "mean": 0.0,
+      "n": 5.0,
+      "std": 0.0,
+      "variance": 0.0
+    },
+    "sparse_candidates": {
+      "ci_high": 3.575978390724032,
+      "ci_low": 1.2240216092759677,
+      "confidence": 0.95,
+      "mean": 2.4,
+      "n": 5.0,
+      "std": 1.3416407864998738,
+      "variance": 1.8
+    },
     "sparse_mean_IS": {
       "ci_high": 2.681983793043024,
       "ci_low": 0.9180162069569759,
@@ -434,8 +613,35 @@
       "n": 5.0,
       "std": 1.0062305898749053,
       "variance": 1.0125
+    },
+    "sparse_precision": {
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "confidence": 0.95,
+      "mean": 1.0,
+      "n": 5.0,
+      "std": 0.0,
+      "variance": 0.0
+    },
+    "sparse_recall": {
+      "ci_high": 0.2979981992270027,
+      "ci_low": 0.10200180077299732,
+      "confidence": 0.95,
+      "mean": 0.2,
+      "n": 5.0,
+      "std": 0.11180339887498948,
+      "variance": 0.0125
+    },
+    "sparse_strong_fraction": {
+      "ci_high": 0.0,
+      "ci_low": 0.0,
+      "confidence": 0.95,
+      "mean": 0.0,
+      "n": 5.0,
+      "std": 0.0,
+      "variance": 0.0
     }
   },
   "thresholds": {},
-  "timestamp_utc": "2026-10-31T10:31:11.410466+00:00"
+  "timestamp_utc": "2026-10-31T12:10:03.869821+00:00"
 }

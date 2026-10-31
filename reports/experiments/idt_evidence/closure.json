@@ -1,13 +1,27 @@
 {
   "checks": {
-    "baseline_comparison": true,
+    "baseline_comparison": false,
+    "correlation_sample_size": true,
+    "cross_family_transfer": true,
+    "evidence_package_success": false,
     "four_discovery_families": true,
+    "noise_rank_stability": true,
+    "per_seed_transfer_sample_size": true,
     "positive_is_ts_correlation": true,
+    "positive_rank_is_ts_correlation": true,
+    "positive_transfer_score": true,
+    "positive_transfer_utility": true,
     "precision_target": true,
     "recall_target": true,
+    "seed_stability": false,
+    "sparse_data_avoids_strong_overpromotion": true,
+    "sparse_data_is_conservative": true,
+    "sparse_data_reduces_strength": true,
+    "sparse_precision": true,
+    "sparse_recall_floor": true,
     "variation_survival": true
   },
   "evidence": "reports/experiments/idt_evidence/summary.json",
   "phase": "13B",
-  "success": true
+  "success": false
 }

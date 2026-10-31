@@ -8,19 +8,19 @@
   "experiment_id": "EXP-IDT-03",
   "failure_cases": [],
   "metric_definitions": {
-    "DISCOVERY": {
-      "failure_condition": "< 1",
-      "formula": "expected_invariant_found",
-      "interpretation": "discovery success",
-      "name": "DISCOVERY",
-      "valid_range": "[0, 1]"
-    },
     "IS": {
       "failure_condition": "<= 0",
       "formula": "frequency * consistency * generality",
       "interpretation": "invariant strength",
       "name": "IS",
       "valid_range": "[0, inf)"
+    },
+    "discovery": {
+      "failure_condition": "< 1",
+      "formula": "expected_invariant_found",
+      "interpretation": "discovery success",
+      "name": "DISCOVERY",
+      "valid_range": "[0, 1]"
     }
   },
   "metrics": {
@@ -755,5 +755,5 @@
     }
   },
   "thresholds": {},
-  "timestamp_utc": "2026-10-31T10:31:11.126852+00:00"
+  "timestamp_utc": "2026-10-31T12:10:03.195147+00:00"
 }

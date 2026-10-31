@@ -7,13 +7,6 @@
   "experiment_id": "EXP-IDT-05-07",
   "failure_cases": [],
   "metric_definitions": {
-    "CONFIDENCE": {
-      "failure_condition": "< 0.70",
-      "formula": "mean evidence confidence",
-      "interpretation": "invariant confidence",
-      "name": "CONFIDENCE",
-      "valid_range": "[0, 1]"
-    },
     "IP": {
       "failure_condition": "< 0.70",
       "formula": "valid_invariants / detected_invariants",
@@ -34,6 +27,13 @@
       "interpretation": "invariant strength",
       "name": "IS",
       "valid_range": "[0, inf)"
+    },
+    "confidence": {
+      "failure_condition": "< 0.70",
+      "formula": "mean evidence confidence",
+      "interpretation": "invariant confidence",
+      "name": "CONFIDENCE",
+      "valid_range": "[0, 1]"
     }
   },
   "metrics": {
@@ -338,5 +338,5 @@
     }
   },
   "thresholds": {},
-  "timestamp_utc": "2026-10-31T10:31:11.176694+00:00"
+  "timestamp_utc": "2026-10-31T12:10:03.303231+00:00"
 }

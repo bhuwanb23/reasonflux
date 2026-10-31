@@ -226,10 +226,17 @@ def _output_for(family: str, grid: Grid) -> Any:
 
 def _apply_macro(op: str, grid: Grid, family: str) -> Grid:
     """Apply one canonical apply-step during skill reuse."""
-    if op == "apply_reflection" and family == "reflection":
+    if op == "apply_reflection":
         return reflect_horizontal(grid)
-    if op == "apply_rotation" and family == "rotation":
+    if op == "apply_rotation":
         return rotate_90(grid)
+    if op in {"count_objects", "group_by_color"} and family in {
+        "counting",
+        "grouping",
+    }:
+        # The family output is computed after replay; this marker only
+        # collapses the reasoning steps and leaves the grid as its input.
+        return grid
     return grid
 
 

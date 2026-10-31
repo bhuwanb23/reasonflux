@@ -243,11 +243,21 @@ def _macro_ops(skill: Skill) -> list[str]:
     for trigger in skill.trigger_conditions:
         if str(trigger).startswith("apply_"):
             return [str(trigger)]
+        if str(trigger) == "find_symmetry":
+            return ["apply_reflection"]
+        if str(trigger) == "find_rotation":
+            return ["apply_rotation"]
+        if str(trigger) in {"count_objects", "group_by_color"}:
+            return [str(trigger)]
     meta = skill.metadata or {}
     sig = meta.get("pattern_signature") or []
     for op in sig:
         if str(op).startswith("apply_"):
             return [str(op)]
+        if str(op) == "find_symmetry":
+            return ["apply_reflection"]
+        if str(op) == "find_rotation":
+            return ["apply_rotation"]
     return []
 
 

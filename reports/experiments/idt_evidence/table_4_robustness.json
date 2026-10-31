@@ -1,12 +1,12 @@
 {
   "RANK_STABILITY": {
-    "ci_high": 0.8383985593816021,
-    "ci_low": 0.6816014406183979,
+    "ci_high": 0.8160182335271062,
+    "ci_low": 0.6239817664728937,
     "confidence": 0.95,
-    "mean": 0.76,
+    "mean": 0.72,
     "n": 5.0,
-    "std": 0.08944271909999162,
-    "variance": 0.008000000000000005
+    "std": 0.10954451150103327,
+    "variance": 0.012000000000000009
   },
   "VST": {
     "ci_high": 1.0,
@@ -17,6 +17,42 @@
     "std": 0.0,
     "variance": 0.0
   },
+  "clean_candidates": {
+    "ci_high": 7.183985593816022,
+    "ci_low": 5.616014406183979,
+    "confidence": 0.95,
+    "mean": 6.4,
+    "n": 5.0,
+    "std": 0.8944271909999159,
+    "variance": 0.7999999999999999
+  },
+  "clean_mean_IS": {
+    "ci_high": 6.064496173357381,
+    "ci_low": 5.648003826642619,
+    "confidence": 0.95,
+    "mean": 5.85625,
+    "n": 5.0,
+    "std": 0.23758222260935266,
+    "variance": 0.0564453125
+  },
+  "clean_strong_fraction": {
+    "ci_high": 0.0,
+    "ci_low": 0.0,
+    "confidence": 0.95,
+    "mean": 0.0,
+    "n": 5.0,
+    "std": 0.0,
+    "variance": 0.0
+  },
+  "sparse_candidates": {
+    "ci_high": 3.575978390724032,
+    "ci_low": 1.2240216092759677,
+    "confidence": 0.95,
+    "mean": 2.4,
+    "n": 5.0,
+    "std": 1.3416407864998738,
+    "variance": 1.8
+  },
   "sparse_mean_IS": {
     "ci_high": 2.681983793043024,
     "ci_low": 0.9180162069569759,
@@ -25,5 +61,32 @@
     "n": 5.0,
     "std": 1.0062305898749053,
     "variance": 1.0125
+  },
+  "sparse_precision": {
+    "ci_high": 1.0,
+    "ci_low": 1.0,
+    "confidence": 0.95,
+    "mean": 1.0,
+    "n": 5.0,
+    "std": 0.0,
+    "variance": 0.0
+  },
+  "sparse_recall": {
+    "ci_high": 0.2979981992270027,
+    "ci_low": 0.10200180077299732,
+    "confidence": 0.95,
+    "mean": 0.2,
+    "n": 5.0,
+    "std": 0.11180339887498948,
+    "variance": 0.0125
+  },
+  "sparse_strong_fraction": {
+    "ci_high": 0.0,
+    "ci_low": 0.0,
+    "confidence": 0.95,
+    "mean": 0.0,
+    "n": 5.0,
+    "std": 0.0,
+    "variance": 0.0
   }
 }
