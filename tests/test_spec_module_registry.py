@@ -155,3 +155,26 @@ def test_blueprint_documents_every_stub(registry: dict[str, Any]):
         s["path"] for s in registry.get("stubs") or [] if s["path"] not in text
     ]
     assert not undocumented, f"blueprint omits stubs: {undocumented}"
+
+
+def test_no_stubs_remain():
+    """Completion guard: no entry point under src/ may raise NotImplementedError.
+
+    This is the assertion that makes flipping every module to `implemented`
+    legitimate rather than aspirational.
+    """
+    offenders = [
+        str(p.relative_to(ROOT))
+        for p in (ROOT / "src").rglob("*.py")
+        if "NotImplementedError" in p.read_text(encoding="utf-8")
+    ]
+    assert not offenders, f"unimplemented entry points remain: {offenders}"
+
+
+def test_registry_declares_no_stubs(registry: dict[str, Any]):
+    assert registry.get("stubs") == [], "stub list must stay empty once complete"
+
+
+def test_all_gates_demonstrated(registry: dict[str, Any]):
+    blocked = [g["id"] for g in registry["gates"] if g["status"] != "demonstrated"]
+    assert not blocked, f"gates not demonstrated: {blocked}"

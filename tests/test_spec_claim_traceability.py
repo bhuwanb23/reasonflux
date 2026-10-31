@@ -131,15 +131,26 @@ def test_gate_verifiers_exist(registry: dict[str, Any]):
 
 
 def test_blocked_gates_name_a_live_stub(registry: dict[str, Any]):
+    """Any gate still marked blocked must name a live stub.
+
+    As of Phase 11 completion there are zero blocked gates, so this validates the
+    invariant conditionally rather than requiring a blocker to exist. The
+    companion guard (``test_no_stubs_remain`` in the registry spec) is what stops
+    the gate list from silently drifting back to ``blocked``.
+    """
     stub_paths = {s["path"] for s in registry["stubs"]}
-    blocked = [g for g in registry["gates"] if g["status"] == "blocked"]
-    assert blocked, "expected at least one blocked gate while Phase A is unimplemented"
-    for gate in blocked:
+    for gate in registry["gates"]:
+        if gate["status"] != "blocked":
+            continue
         blocker = gate.get("blocker")
         assert blocker, f"{gate['id']} is blocked but names no blocker"
-        assert blocker in stub_paths, f"{gate['id']} blocker {blocker} is not a registered stub"
+        assert blocker in stub_paths, (
+            f"{gate['id']} blocker {blocker} is not a registered stub"
+        )
         text = (ROOT / blocker).read_text(encoding="utf-8")
-        assert "NotImplementedError" in text, f"{blocker} no longer a stub; update the gate"
+        assert "NotImplementedError" in text, (
+            f"{blocker} no longer a stub; update the gate"
+        )
 
 
 def test_demonstrated_gates_are_not_blocked(registry: dict[str, Any]):
