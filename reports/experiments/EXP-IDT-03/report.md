@@ -1,0 +1,51 @@
+# EXP-IDT-03
+
+- **experiment_id**: `EXP-IDT-03`
+- **claim**: `IDT`
+- **dataset_version**: `synthetic-v1`
+- **seeds**: `[0, 1, 2, 3, 4]`
+## configuration
+
+- `family`: `counting`
+- `per_family`: `6`
+
+## thresholds
+
+
+## metrics
+
+- `IS`: `5.066666666666666`
+- `discovery`: `1.0`
+
+## statistics
+
+- `IS`: `{'n': 5.0, 'mean': 5.066666666666666, 'std': 0.5348935511960404, 'variance': 0.28611111111111115, 'ci_low': 4.597820412234284, 'ci_high': 5.535512921099049, 'confidence': 0.95}`
+- `discovery`: `{'n': 5.0, 'mean': 1.0, 'std': 0.0, 'variance': 0.0, 'ci_low': 1.0, 'ci_high': 1.0, 'confidence': 0.95}`
+
+## raw_results
+
+| experiment_id | experiment | claim | seed | dataset_version | configuration | thresholds | metrics | n_traces | n_candidates | n_ranked | expected_signature | expected_found | top_invariants | failure_cases | observations |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| EXP-IDT-03 | counting_discovery | IDT | 0 | synthetic-v1 | {'family': 'counting', 'per_family': 6} | {'discovery': True} | {'IS': 4.5, 'discovery': 1.0, 'rank': 2.0} | 6 | 8 | 8 | ['count_objects'] | True | [{'rank': 1, 'invariant_id': 'INV-21fc62fe0f5c3383', 'signature': ['detect_object'], 'frequency': 6, 'consistency': 1.0, 'generality': 1.0, 'is': 6.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 2, 'invariant_id': 'INV-2ded58d63d2e262a', 'signature': ['count_objects'], 'frequency': 6, 'consistency': 1.0, 'generality': 1.0, 'is': 6.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 3, 'invariant_id': 'INV-5851606191e6a4cf', 'signature': ['verify_output'], 'frequency': 6, 'consistency': 1.0, 'generality': 1.0, 'is': 6.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 4, 'invariant_id': 'INV-ad958e0e59557250', 'signature': ['count_objects', 'verify_output'], 'frequency': 6, 'consistency': 1.0, 'generality': 1.0, 'is': 6.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 5, 'invariant_id': 'INV-489db88e598d48b3', 'signature': ['find_rotation'], 'frequency': 3, 'consistency': 1.0, 'generality': 1.0, 'is': 3.0, 'confidence': 'weak', 'families': ['counting']}, {'rank': 6, 'invariant_id': 'INV-a4f872d69c07cbc0', 'signature': ['apply_reflection'], 'frequency': 3, 'consistency': 1.0, 'generality': 1.0, 'is': 3.0, 'confidence': 'weak', 'families': ['counting']}, {'rank': 7, 'invariant_id': 'INV-b977e7292dcf8ad0', 'signature': ['find_symmetry'], 'frequency': 3, 'consistency': 1.0, 'generality': 1.0, 'is': 3.0, 'confidence': 'weak', 'families': ['counting']}, {'rank': 8, 'invariant_id': 'INV-cd89c6e9697e31c5', 'signature': ['apply_rotation'], 'frequency': 3, 'consistency': 1.0, 'generality': 1.0, 'is': 3.0, 'confidence': 'weak', 'families': ['counting']}] | [] | {'validated': 8} |
+| EXP-IDT-03 | counting_discovery | IDT | 1 | synthetic-v1 | {'family': 'counting', 'per_family': 6} | {'discovery': True} | {'IS': 4.5, 'discovery': 1.0, 'rank': 2.0} | 6 | 8 | 8 | ['count_objects'] | True | [{'rank': 1, 'invariant_id': 'INV-21fc62fe0f5c3383', 'signature': ['detect_object'], 'frequency': 6, 'consistency': 1.0, 'generality': 1.0, 'is': 6.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 2, 'invariant_id': 'INV-2ded58d63d2e262a', 'signature': ['count_objects'], 'frequency': 6, 'consistency': 1.0, 'generality': 1.0, 'is': 6.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 3, 'invariant_id': 'INV-5851606191e6a4cf', 'signature': ['verify_output'], 'frequency': 6, 'consistency': 1.0, 'generality': 1.0, 'is': 6.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 4, 'invariant_id': 'INV-ad958e0e59557250', 'signature': ['count_objects', 'verify_output'], 'frequency': 6, 'consistency': 1.0, 'generality': 1.0, 'is': 6.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 5, 'invariant_id': 'INV-489db88e598d48b3', 'signature': ['find_rotation'], 'frequency': 3, 'consistency': 1.0, 'generality': 1.0, 'is': 3.0, 'confidence': 'weak', 'families': ['counting']}, {'rank': 6, 'invariant_id': 'INV-a4f872d69c07cbc0', 'signature': ['apply_reflection'], 'frequency': 3, 'consistency': 1.0, 'generality': 1.0, 'is': 3.0, 'confidence': 'weak', 'families': ['counting']}, {'rank': 7, 'invariant_id': 'INV-b977e7292dcf8ad0', 'signature': ['find_symmetry'], 'frequency': 3, 'consistency': 1.0, 'generality': 1.0, 'is': 3.0, 'confidence': 'weak', 'families': ['counting']}, {'rank': 8, 'invariant_id': 'INV-cd89c6e9697e31c5', 'signature': ['apply_rotation'], 'frequency': 3, 'consistency': 1.0, 'generality': 1.0, 'is': 3.0, 'confidence': 'weak', 'families': ['counting']}] | [] | {'validated': 8} |
+| EXP-IDT-03 | counting_discovery | IDT | 2 | synthetic-v1 | {'family': 'counting', 'per_family': 6} | {'discovery': True} | {'IS': 5.333333333333333, 'discovery': 1.0, 'rank': 2.0} | 6 | 6 | 6 | ['count_objects'] | True | [{'rank': 1, 'invariant_id': 'INV-21fc62fe0f5c3383', 'signature': ['detect_object'], 'frequency': 6, 'consistency': 1.0, 'generality': 1.0, 'is': 6.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 2, 'invariant_id': 'INV-2ded58d63d2e262a', 'signature': ['count_objects'], 'frequency': 6, 'consistency': 1.0, 'generality': 1.0, 'is': 6.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 3, 'invariant_id': 'INV-5851606191e6a4cf', 'signature': ['verify_output'], 'frequency': 6, 'consistency': 1.0, 'generality': 1.0, 'is': 6.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 4, 'invariant_id': 'INV-ad958e0e59557250', 'signature': ['count_objects', 'verify_output'], 'frequency': 6, 'consistency': 1.0, 'generality': 1.0, 'is': 6.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 5, 'invariant_id': 'INV-a4f872d69c07cbc0', 'signature': ['apply_reflection'], 'frequency': 4, 'consistency': 1.0, 'generality': 1.0, 'is': 4.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 6, 'invariant_id': 'INV-b977e7292dcf8ad0', 'signature': ['find_symmetry'], 'frequency': 4, 'consistency': 1.0, 'generality': 1.0, 'is': 4.0, 'confidence': 'moderate', 'families': ['counting']}] | [] | {'validated': 6} |
+| EXP-IDT-03 | counting_discovery | IDT | 3 | synthetic-v1 | {'family': 'counting', 'per_family': 6} | {'discovery': True} | {'IS': 5.333333333333333, 'discovery': 1.0, 'rank': 2.0} | 6 | 6 | 6 | ['count_objects'] | True | [{'rank': 1, 'invariant_id': 'INV-21fc62fe0f5c3383', 'signature': ['detect_object'], 'frequency': 6, 'consistency': 1.0, 'generality': 1.0, 'is': 6.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 2, 'invariant_id': 'INV-2ded58d63d2e262a', 'signature': ['count_objects'], 'frequency': 6, 'consistency': 1.0, 'generality': 1.0, 'is': 6.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 3, 'invariant_id': 'INV-5851606191e6a4cf', 'signature': ['verify_output'], 'frequency': 6, 'consistency': 1.0, 'generality': 1.0, 'is': 6.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 4, 'invariant_id': 'INV-ad958e0e59557250', 'signature': ['count_objects', 'verify_output'], 'frequency': 6, 'consistency': 1.0, 'generality': 1.0, 'is': 6.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 5, 'invariant_id': 'INV-a4f872d69c07cbc0', 'signature': ['apply_reflection'], 'frequency': 4, 'consistency': 1.0, 'generality': 1.0, 'is': 4.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 6, 'invariant_id': 'INV-b977e7292dcf8ad0', 'signature': ['find_symmetry'], 'frequency': 4, 'consistency': 1.0, 'generality': 1.0, 'is': 4.0, 'confidence': 'moderate', 'families': ['counting']}] | [] | {'validated': 6} |
+| EXP-IDT-03 | counting_discovery | IDT | 4 | synthetic-v1 | {'family': 'counting', 'per_family': 6} | {'discovery': True} | {'IS': 5.666666666666667, 'discovery': 1.0, 'rank': 2.0} | 6 | 6 | 6 | ['count_objects'] | True | [{'rank': 1, 'invariant_id': 'INV-21fc62fe0f5c3383', 'signature': ['detect_object'], 'frequency': 6, 'consistency': 1.0, 'generality': 1.0, 'is': 6.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 2, 'invariant_id': 'INV-2ded58d63d2e262a', 'signature': ['count_objects'], 'frequency': 6, 'consistency': 1.0, 'generality': 1.0, 'is': 6.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 3, 'invariant_id': 'INV-5851606191e6a4cf', 'signature': ['verify_output'], 'frequency': 6, 'consistency': 1.0, 'generality': 1.0, 'is': 6.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 4, 'invariant_id': 'INV-ad958e0e59557250', 'signature': ['count_objects', 'verify_output'], 'frequency': 6, 'consistency': 1.0, 'generality': 1.0, 'is': 6.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 5, 'invariant_id': 'INV-a4f872d69c07cbc0', 'signature': ['apply_reflection'], 'frequency': 5, 'consistency': 1.0, 'generality': 1.0, 'is': 5.0, 'confidence': 'moderate', 'families': ['counting']}, {'rank': 6, 'invariant_id': 'INV-b977e7292dcf8ad0', 'signature': ['find_symmetry'], 'frequency': 5, 'consistency': 1.0, 'generality': 1.0, 'is': 5.0, 'confidence': 'moderate', 'families': ['counting']}] | [] | {'validated': 6} |
+
+## results
+
+- `IS`: `{'n': 5.0, 'mean': 5.066666666666666, 'std': 0.5348935511960404, 'variance': 0.28611111111111115, 'ci_low': 4.597820412234284, 'ci_high': 5.535512921099049, 'confidence': 0.95}`
+- `discovery`: `{'n': 5.0, 'mean': 1.0, 'std': 0.0, 'variance': 0.0, 'ci_low': 1.0, 'ci_high': 1.0, 'confidence': 0.95}`
+
+- **failure_cases**: `[]`
+## observations
+
+
+- **seed**: `None`
+## metric_definitions
+
+- `IS`: `{'name': 'IS', 'formula': 'frequency * consistency * generality', 'interpretation': 'invariant strength', 'valid_range': '[0, inf)', 'failure_condition': '<= 0'}`
+- `DISCOVERY`: `{'name': 'DISCOVERY', 'formula': 'expected_invariant_found', 'interpretation': 'discovery success', 'valid_range': '[0, 1]', 'failure_condition': '< 1'}`
+
+- **timestamp_utc**: `2026-10-31T10:31:11.126852+00:00`
+- **record_schema**: `phase-13a-v1`

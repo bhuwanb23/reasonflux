@@ -1,0 +1,639 @@
+{
+  "claim": "IDT",
+  "configuration": {
+    "family": "reflection",
+    "per_family": 6
+  },
+  "dataset_version": "synthetic-v1",
+  "experiment_id": "EXP-IDT-01",
+  "failure_cases": [],
+  "metric_definitions": {
+    "DISCOVERY": {
+      "failure_condition": "< 1",
+      "formula": "expected_invariant_found",
+      "interpretation": "discovery success",
+      "name": "DISCOVERY",
+      "valid_range": "[0, 1]"
+    },
+    "IS": {
+      "failure_condition": "<= 0",
+      "formula": "frequency * consistency * generality",
+      "interpretation": "invariant strength",
+      "name": "IS",
+      "valid_range": "[0, inf)"
+    }
+  },
+  "metrics": {
+    "IS": 6.0,
+    "discovery": 1.0
+  },
+  "observations": {},
+  "raw_results": [
+    {
+      "claim": "IDT",
+      "configuration": {
+        "family": "reflection",
+        "per_family": 6
+      },
+      "dataset_version": "synthetic-v1",
+      "expected_found": true,
+      "expected_signature": [
+        "find_symmetry",
+        "apply_reflection"
+      ],
+      "experiment": "reflection_discovery",
+      "experiment_id": "EXP-IDT-01",
+      "failure_cases": [],
+      "metrics": {
+        "IS": 6.0,
+        "discovery": 1.0,
+        "rank": 3.0
+      },
+      "n_candidates": 5,
+      "n_ranked": 5,
+      "n_traces": 6,
+      "observations": {
+        "validated": 5
+      },
+      "seed": 0,
+      "thresholds": {
+        "discovery": true
+      },
+      "top_invariants": [
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-21fc62fe0f5c3383",
+          "is": 6.0,
+          "rank": 1,
+          "signature": [
+            "detect_object"
+          ]
+        },
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-5851606191e6a4cf",
+          "is": 6.0,
+          "rank": 2,
+          "signature": [
+            "verify_output"
+          ]
+        },
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-8cb21a2c4411f507",
+          "is": 6.0,
+          "rank": 3,
+          "signature": [
+            "detect_object",
+            "find_symmetry",
+            "apply_reflection",
+            "verify_output"
+          ]
+        },
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "is": 6.0,
+          "rank": 4,
+          "signature": [
+            "apply_reflection"
+          ]
+        },
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "is": 6.0,
+          "rank": 5,
+          "signature": [
+            "find_symmetry"
+          ]
+        }
+      ]
+    },
+    {
+      "claim": "IDT",
+      "configuration": {
+        "family": "reflection",
+        "per_family": 6
+      },
+      "dataset_version": "synthetic-v1",
+      "expected_found": true,
+      "expected_signature": [
+        "find_symmetry",
+        "apply_reflection"
+      ],
+      "experiment": "reflection_discovery",
+      "experiment_id": "EXP-IDT-01",
+      "failure_cases": [],
+      "metrics": {
+        "IS": 6.0,
+        "discovery": 1.0,
+        "rank": 3.0
+      },
+      "n_candidates": 5,
+      "n_ranked": 5,
+      "n_traces": 6,
+      "observations": {
+        "validated": 5
+      },
+      "seed": 1,
+      "thresholds": {
+        "discovery": true
+      },
+      "top_invariants": [
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-21fc62fe0f5c3383",
+          "is": 6.0,
+          "rank": 1,
+          "signature": [
+            "detect_object"
+          ]
+        },
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-5851606191e6a4cf",
+          "is": 6.0,
+          "rank": 2,
+          "signature": [
+            "verify_output"
+          ]
+        },
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-8cb21a2c4411f507",
+          "is": 6.0,
+          "rank": 3,
+          "signature": [
+            "detect_object",
+            "find_symmetry",
+            "apply_reflection",
+            "verify_output"
+          ]
+        },
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "is": 6.0,
+          "rank": 4,
+          "signature": [
+            "apply_reflection"
+          ]
+        },
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "is": 6.0,
+          "rank": 5,
+          "signature": [
+            "find_symmetry"
+          ]
+        }
+      ]
+    },
+    {
+      "claim": "IDT",
+      "configuration": {
+        "family": "reflection",
+        "per_family": 6
+      },
+      "dataset_version": "synthetic-v1",
+      "expected_found": true,
+      "expected_signature": [
+        "find_symmetry",
+        "apply_reflection"
+      ],
+      "experiment": "reflection_discovery",
+      "experiment_id": "EXP-IDT-01",
+      "failure_cases": [],
+      "metrics": {
+        "IS": 6.0,
+        "discovery": 1.0,
+        "rank": 3.0
+      },
+      "n_candidates": 5,
+      "n_ranked": 5,
+      "n_traces": 6,
+      "observations": {
+        "validated": 5
+      },
+      "seed": 2,
+      "thresholds": {
+        "discovery": true
+      },
+      "top_invariants": [
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-21fc62fe0f5c3383",
+          "is": 6.0,
+          "rank": 1,
+          "signature": [
+            "detect_object"
+          ]
+        },
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-5851606191e6a4cf",
+          "is": 6.0,
+          "rank": 2,
+          "signature": [
+            "verify_output"
+          ]
+        },
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-8cb21a2c4411f507",
+          "is": 6.0,
+          "rank": 3,
+          "signature": [
+            "detect_object",
+            "find_symmetry",
+            "apply_reflection",
+            "verify_output"
+          ]
+        },
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "is": 6.0,
+          "rank": 4,
+          "signature": [
+            "apply_reflection"
+          ]
+        },
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "is": 6.0,
+          "rank": 5,
+          "signature": [
+            "find_symmetry"
+          ]
+        }
+      ]
+    },
+    {
+      "claim": "IDT",
+      "configuration": {
+        "family": "reflection",
+        "per_family": 6
+      },
+      "dataset_version": "synthetic-v1",
+      "expected_found": true,
+      "expected_signature": [
+        "find_symmetry",
+        "apply_reflection"
+      ],
+      "experiment": "reflection_discovery",
+      "experiment_id": "EXP-IDT-01",
+      "failure_cases": [],
+      "metrics": {
+        "IS": 6.0,
+        "discovery": 1.0,
+        "rank": 3.0
+      },
+      "n_candidates": 5,
+      "n_ranked": 5,
+      "n_traces": 6,
+      "observations": {
+        "validated": 5
+      },
+      "seed": 3,
+      "thresholds": {
+        "discovery": true
+      },
+      "top_invariants": [
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-21fc62fe0f5c3383",
+          "is": 6.0,
+          "rank": 1,
+          "signature": [
+            "detect_object"
+          ]
+        },
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-5851606191e6a4cf",
+          "is": 6.0,
+          "rank": 2,
+          "signature": [
+            "verify_output"
+          ]
+        },
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-8cb21a2c4411f507",
+          "is": 6.0,
+          "rank": 3,
+          "signature": [
+            "detect_object",
+            "find_symmetry",
+            "apply_reflection",
+            "verify_output"
+          ]
+        },
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "is": 6.0,
+          "rank": 4,
+          "signature": [
+            "apply_reflection"
+          ]
+        },
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "is": 6.0,
+          "rank": 5,
+          "signature": [
+            "find_symmetry"
+          ]
+        }
+      ]
+    },
+    {
+      "claim": "IDT",
+      "configuration": {
+        "family": "reflection",
+        "per_family": 6
+      },
+      "dataset_version": "synthetic-v1",
+      "expected_found": true,
+      "expected_signature": [
+        "find_symmetry",
+        "apply_reflection"
+      ],
+      "experiment": "reflection_discovery",
+      "experiment_id": "EXP-IDT-01",
+      "failure_cases": [],
+      "metrics": {
+        "IS": 6.0,
+        "discovery": 1.0,
+        "rank": 3.0
+      },
+      "n_candidates": 5,
+      "n_ranked": 5,
+      "n_traces": 6,
+      "observations": {
+        "validated": 5
+      },
+      "seed": 4,
+      "thresholds": {
+        "discovery": true
+      },
+      "top_invariants": [
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-21fc62fe0f5c3383",
+          "is": 6.0,
+          "rank": 1,
+          "signature": [
+            "detect_object"
+          ]
+        },
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-5851606191e6a4cf",
+          "is": 6.0,
+          "rank": 2,
+          "signature": [
+            "verify_output"
+          ]
+        },
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-8cb21a2c4411f507",
+          "is": 6.0,
+          "rank": 3,
+          "signature": [
+            "detect_object",
+            "find_symmetry",
+            "apply_reflection",
+            "verify_output"
+          ]
+        },
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "is": 6.0,
+          "rank": 4,
+          "signature": [
+            "apply_reflection"
+          ]
+        },
+        {
+          "confidence": "moderate",
+          "consistency": 1.0,
+          "families": [
+            "reflection"
+          ],
+          "frequency": 6,
+          "generality": 1.0,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "is": 6.0,
+          "rank": 5,
+          "signature": [
+            "find_symmetry"
+          ]
+        }
+      ]
+    }
+  ],
+  "record_schema": "phase-13a-v1",
+  "results": {
+    "IS": {
+      "ci_high": 6.0,
+      "ci_low": 6.0,
+      "confidence": 0.95,
+      "mean": 6.0,
+      "n": 5.0,
+      "std": 0.0,
+      "variance": 0.0
+    },
+    "discovery": {
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "confidence": 0.95,
+      "mean": 1.0,
+      "n": 5.0,
+      "std": 0.0,
+      "variance": 0.0
+    }
+  },
+  "seed": null,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "statistics": {
+    "IS": {
+      "ci_high": 6.0,
+      "ci_low": 6.0,
+      "confidence": 0.95,
+      "mean": 6.0,
+      "n": 5.0,
+      "std": 0.0,
+      "variance": 0.0
+    },
+    "discovery": {
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "confidence": 0.95,
+      "mean": 1.0,
+      "n": 5.0,
+      "std": 0.0,
+      "variance": 0.0
+    }
+  },
+  "thresholds": {},
+  "timestamp_utc": "2026-10-31T10:31:11.110949+00:00"
+}

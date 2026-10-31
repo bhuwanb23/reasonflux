@@ -55,6 +55,70 @@ METRICS: dict[str, MetricDefinition] = {
         "coverage", "covered task-family proportion", "capability coverage",
         "[0, 1]", "<= 0",
     ),
+    "IP": MetricDefinition(
+        "IP", "valid_invariants / detected_invariants",
+        "invariant precision", "[0, 1]", "< 0.70",
+    ),
+    "IR": MetricDefinition(
+        "IR", "discovered_expected / expected_invariants",
+        "invariant recall", "[0, 1]", "< 0.75",
+    ),
+    "VST": MetricDefinition(
+        "VST", "successful_variations / total_variations",
+        "variation survival", "[0, 1]", "< 0.60",
+    ),
+    "PEARSON": MetricDefinition(
+        "PEARSON", "corr(IS, TS)", "linear IS-transfer correlation",
+        "[-1, 1]", "<= 0",
+    ),
+    "SPEARMAN": MetricDefinition(
+        "SPEARMAN", "corr(rank(IS), rank(TS))",
+        "rank IS-transfer correlation", "[-1, 1]", "<= 0",
+    ),
+    "RANK_STABILITY": MetricDefinition(
+        "RANK_STABILITY", "overlap(top_k_clean, top_k_perturbed) / k",
+        "invariant ranking stability", "[0, 1]", "< 0.60",
+    ),
+    "DISCOVERY": MetricDefinition(
+        "DISCOVERY", "expected_invariant_found", "discovery success",
+        "[0, 1]", "< 1",
+    ),
+    "RANK": MetricDefinition(
+        "RANK", "rank of expected invariant", "discovery rank",
+        "[0, inf)", "== 0",
+    ),
+    "CONFIDENCE": MetricDefinition(
+        "CONFIDENCE", "mean evidence confidence", "invariant confidence",
+        "[0, 1]", "< 0.70",
+    ),
+    "SPARSE_MEAN_IS": MetricDefinition(
+        "SPARSE_MEAN_IS", "mean IS under sparse traces",
+        "sparse-data invariant strength", "[0, inf)", "< 0",
+    ),
+    "CLEAN_MEAN_IS": MetricDefinition(
+        "CLEAN_MEAN_IS", "mean IS under full traces",
+        "reference invariant strength", "[0, inf)", "< 0",
+    ),
+    "SPARSE_CANDIDATES": MetricDefinition(
+        "SPARSE_CANDIDATES", "candidate count under sparse traces",
+        "sparse candidate count", "[0, inf)", "< 0",
+    ),
+    "CLEAN_CANDIDATES": MetricDefinition(
+        "CLEAN_CANDIDATES", "candidate count under full traces",
+        "reference candidate count", "[0, inf)", "< 0",
+    ),
+    "ASFT": MetricDefinition(
+        "ASFT", "valid top-k invariants / k", "ASFT ranking quality",
+        "[0, 1]", "< 0.70",
+    ),
+    "FREQUENCY_ONLY": MetricDefinition(
+        "FREQUENCY_ONLY", "valid top-k frequency-ranked invariants / k",
+        "frequency-only ranking quality", "[0, 1]", "< 0.70",
+    ),
+    "RANDOM_PATTERN": MetricDefinition(
+        "RANDOM_PATTERN", "valid top-k random patterns / k",
+        "random-pattern quality", "[0, 1]", "< 0.70",
+    ),
 }
 
 

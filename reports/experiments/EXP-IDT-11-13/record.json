@@ -1,0 +1,441 @@
+{
+  "claim": "IDT",
+  "configuration": {
+    "noise": "trace operation insertion"
+  },
+  "dataset_version": "synthetic-v1",
+  "experiment_id": "EXP-IDT-11-13",
+  "failure_cases": [],
+  "metric_definitions": {
+    "RANK_STABILITY": {
+      "failure_condition": "< 0.60",
+      "formula": "overlap(top_k_clean, top_k_perturbed) / k",
+      "interpretation": "invariant ranking stability",
+      "name": "RANK_STABILITY",
+      "valid_range": "[0, 1]"
+    },
+    "SPARSE_MEAN_IS": {
+      "failure_condition": "< 0",
+      "formula": "mean IS under sparse traces",
+      "interpretation": "sparse-data invariant strength",
+      "name": "SPARSE_MEAN_IS",
+      "valid_range": "[0, inf)"
+    },
+    "VST": {
+      "failure_condition": "< 0.60",
+      "formula": "successful_variations / total_variations",
+      "interpretation": "variation survival",
+      "name": "VST",
+      "valid_range": "[0, 1]"
+    }
+  },
+  "metrics": {
+    "RANK_STABILITY": 0.76,
+    "VST": 1.0,
+    "sparse_mean_IS": 1.8
+  },
+  "observations": {},
+  "raw_results": [
+    {
+      "claim": "IDT",
+      "clean_top": [
+        [
+          "apply_reflection"
+        ],
+        [
+          "find_symmetry"
+        ],
+        [
+          "find_rotation"
+        ],
+        [
+          "apply_rotation"
+        ],
+        [
+          "count_objects"
+        ]
+      ],
+      "configuration": {
+        "sparse_per_family": 1,
+        "variations": 4
+      },
+      "dataset_version": "synthetic-v1",
+      "experiment_id": "EXP-IDT-11-13",
+      "failure_cases": [],
+      "metrics": {
+        "RANK_STABILITY": 0.8,
+        "VST": 1.0,
+        "clean_candidates": 6.0,
+        "clean_mean_IS": 5.75,
+        "sparse_candidates": 3.0,
+        "sparse_mean_IS": 2.25
+      },
+      "noise_rank_overlap": 0.8,
+      "noisy_top": [
+        [
+          "apply_reflection"
+        ],
+        [
+          "find_symmetry"
+        ],
+        [
+          "detect_object",
+          "find_symmetry"
+        ],
+        [
+          "find_rotation"
+        ],
+        [
+          "apply_rotation"
+        ]
+      ],
+      "observations": {
+        "clean_validation_count": 4,
+        "noise_candidate_count": 13
+      },
+      "seed": 0,
+      "sparse_observations": 4,
+      "variation_scores": {
+        "counting": 1.0,
+        "grouping": 1.0,
+        "reflection": 1.0,
+        "rotation": 1.0
+      }
+    },
+    {
+      "claim": "IDT",
+      "clean_top": [
+        [
+          "apply_reflection"
+        ],
+        [
+          "find_symmetry"
+        ],
+        [
+          "find_rotation"
+        ],
+        [
+          "apply_rotation"
+        ],
+        [
+          "count_objects"
+        ]
+      ],
+      "configuration": {
+        "sparse_per_family": 1,
+        "variations": 4
+      },
+      "dataset_version": "synthetic-v1",
+      "experiment_id": "EXP-IDT-11-13",
+      "failure_cases": [],
+      "metrics": {
+        "RANK_STABILITY": 0.8,
+        "VST": 1.0,
+        "clean_candidates": 6.0,
+        "clean_mean_IS": 5.75,
+        "sparse_candidates": 0.0,
+        "sparse_mean_IS": 0.0
+      },
+      "noise_rank_overlap": 0.8,
+      "noisy_top": [
+        [
+          "apply_reflection"
+        ],
+        [
+          "find_symmetry"
+        ],
+        [
+          "find_rotation"
+        ],
+        [
+          "apply_rotation"
+        ],
+        [
+          "verify_output"
+        ]
+      ],
+      "observations": {
+        "clean_validation_count": 4,
+        "noise_candidate_count": 9
+      },
+      "seed": 1,
+      "sparse_observations": 4,
+      "variation_scores": {
+        "counting": 1.0,
+        "grouping": 1.0,
+        "reflection": 1.0,
+        "rotation": 1.0
+      }
+    },
+    {
+      "claim": "IDT",
+      "clean_top": [
+        [
+          "apply_reflection"
+        ],
+        [
+          "find_symmetry"
+        ],
+        [
+          "find_rotation"
+        ],
+        [
+          "apply_rotation"
+        ],
+        [
+          "count_objects"
+        ]
+      ],
+      "configuration": {
+        "sparse_per_family": 1,
+        "variations": 4
+      },
+      "dataset_version": "synthetic-v1",
+      "experiment_id": "EXP-IDT-11-13",
+      "failure_cases": [],
+      "metrics": {
+        "RANK_STABILITY": 0.8,
+        "VST": 1.0,
+        "clean_candidates": 6.0,
+        "clean_mean_IS": 5.75,
+        "sparse_candidates": 3.0,
+        "sparse_mean_IS": 2.25
+      },
+      "noise_rank_overlap": 0.8,
+      "noisy_top": [
+        [
+          "apply_reflection"
+        ],
+        [
+          "find_symmetry"
+        ],
+        [
+          "find_rotation"
+        ],
+        [
+          "apply_rotation"
+        ],
+        [
+          "verify_output"
+        ]
+      ],
+      "observations": {
+        "clean_validation_count": 4,
+        "noise_candidate_count": 9
+      },
+      "seed": 2,
+      "sparse_observations": 4,
+      "variation_scores": {
+        "counting": 1.0,
+        "grouping": 1.0,
+        "reflection": 1.0,
+        "rotation": 1.0
+      }
+    },
+    {
+      "claim": "IDT",
+      "clean_top": [
+        [
+          "detect_object",
+          "find_symmetry",
+          "apply_reflection"
+        ],
+        [
+          "apply_reflection"
+        ],
+        [
+          "find_symmetry"
+        ],
+        [
+          "find_rotation"
+        ],
+        [
+          "detect_object",
+          "find_rotation",
+          "apply_rotation"
+        ]
+      ],
+      "configuration": {
+        "sparse_per_family": 1,
+        "variations": 4
+      },
+      "dataset_version": "synthetic-v1",
+      "experiment_id": "EXP-IDT-11-13",
+      "failure_cases": [],
+      "metrics": {
+        "RANK_STABILITY": 0.6,
+        "VST": 1.0,
+        "clean_candidates": 8.0,
+        "clean_mean_IS": 6.28125,
+        "sparse_candidates": 3.0,
+        "sparse_mean_IS": 2.25
+      },
+      "noise_rank_overlap": 0.6,
+      "noisy_top": [
+        [
+          "apply_reflection"
+        ],
+        [
+          "find_symmetry"
+        ],
+        [
+          "find_rotation"
+        ],
+        [
+          "apply_rotation"
+        ],
+        [
+          "count_objects"
+        ]
+      ],
+      "observations": {
+        "clean_validation_count": 6,
+        "noise_candidate_count": 8
+      },
+      "seed": 3,
+      "sparse_observations": 4,
+      "variation_scores": {
+        "counting": 1.0,
+        "grouping": 1.0,
+        "reflection": 1.0,
+        "rotation": 1.0
+      }
+    },
+    {
+      "claim": "IDT",
+      "clean_top": [
+        [
+          "apply_reflection"
+        ],
+        [
+          "find_symmetry"
+        ],
+        [
+          "find_rotation"
+        ],
+        [
+          "apply_rotation"
+        ],
+        [
+          "count_objects"
+        ]
+      ],
+      "configuration": {
+        "sparse_per_family": 1,
+        "variations": 4
+      },
+      "dataset_version": "synthetic-v1",
+      "experiment_id": "EXP-IDT-11-13",
+      "failure_cases": [],
+      "metrics": {
+        "RANK_STABILITY": 0.8,
+        "VST": 1.0,
+        "clean_candidates": 6.0,
+        "clean_mean_IS": 5.75,
+        "sparse_candidates": 3.0,
+        "sparse_mean_IS": 2.25
+      },
+      "noise_rank_overlap": 0.8,
+      "noisy_top": [
+        [
+          "apply_reflection"
+        ],
+        [
+          "find_symmetry"
+        ],
+        [
+          "find_rotation"
+        ],
+        [
+          "detect_object",
+          "find_rotation",
+          "apply_rotation"
+        ],
+        [
+          "apply_rotation"
+        ]
+      ],
+      "observations": {
+        "clean_validation_count": 4,
+        "noise_candidate_count": 12
+      },
+      "seed": 4,
+      "sparse_observations": 4,
+      "variation_scores": {
+        "counting": 1.0,
+        "grouping": 1.0,
+        "reflection": 1.0,
+        "rotation": 1.0
+      }
+    }
+  ],
+  "record_schema": "phase-13a-v1",
+  "results": {
+    "RANK_STABILITY": {
+      "ci_high": 0.8383985593816021,
+      "ci_low": 0.6816014406183979,
+      "confidence": 0.95,
+      "mean": 0.76,
+      "n": 5.0,
+      "std": 0.08944271909999162,
+      "variance": 0.008000000000000005
+    },
+    "VST": {
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "confidence": 0.95,
+      "mean": 1.0,
+      "n": 5.0,
+      "std": 0.0,
+      "variance": 0.0
+    },
+    "sparse_mean_IS": {
+      "ci_high": 2.681983793043024,
+      "ci_low": 0.9180162069569759,
+      "confidence": 0.95,
+      "mean": 1.8,
+      "n": 5.0,
+      "std": 1.0062305898749053,
+      "variance": 1.0125
+    }
+  },
+  "seed": null,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "statistics": {
+    "RANK_STABILITY": {
+      "ci_high": 0.8383985593816021,
+      "ci_low": 0.6816014406183979,
+      "confidence": 0.95,
+      "mean": 0.76,
+      "n": 5.0,
+      "std": 0.08944271909999162,
+      "variance": 0.008000000000000005
+    },
+    "VST": {
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "confidence": 0.95,
+      "mean": 1.0,
+      "n": 5.0,
+      "std": 0.0,
+      "variance": 0.0
+    },
+    "sparse_mean_IS": {
+      "ci_high": 2.681983793043024,
+      "ci_low": 0.9180162069569759,
+      "confidence": 0.95,
+      "mean": 1.8,
+      "n": 5.0,
+      "std": 1.0062305898749053,
+      "variance": 1.0125
+    }
+  },
+  "thresholds": {},
+  "timestamp_utc": "2026-10-31T10:31:11.410466+00:00"
+}

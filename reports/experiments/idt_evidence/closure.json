@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "baseline_comparison": true,
+    "four_discovery_families": true,
+    "positive_is_ts_correlation": true,
+    "precision_target": true,
+    "recall_target": true,
+    "variation_survival": true
+  },
+  "evidence": "reports/experiments/idt_evidence/summary.json",
+  "phase": "13B",
+  "success": true
+}

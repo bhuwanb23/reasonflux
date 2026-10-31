@@ -1,0 +1,38 @@
+{
+  "IP": {
+    "ci_high": 1.0,
+    "ci_low": 1.0,
+    "confidence": 0.95,
+    "mean": 1.0,
+    "n": 5.0,
+    "std": 0.0,
+    "variance": 0.0
+  },
+  "IR": {
+    "ci_high": 1.0,
+    "ci_low": 1.0,
+    "confidence": 0.95,
+    "mean": 1.0,
+    "n": 5.0,
+    "std": 0.0,
+    "variance": 0.0
+  },
+  "IS": {
+    "ci_high": 6.064496173357381,
+    "ci_low": 5.648003826642619,
+    "confidence": 0.95,
+    "mean": 5.85625,
+    "n": 5.0,
+    "std": 0.23758222260935266,
+    "variance": 0.0564453125
+  },
+  "confidence": {
+    "ci_high": 0.66,
+    "ci_low": 0.66,
+    "confidence": 0.95,
+    "mean": 0.66,
+    "n": 5.0,
+    "std": 0.0,
+    "variance": 0.0
+  }
+}

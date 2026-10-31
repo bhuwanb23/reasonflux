@@ -1,0 +1,314 @@
+{
+  "claim": "IDT",
+  "configuration": {
+    "comparison": "top-k valid invariant rate"
+  },
+  "dataset_version": "synthetic-v1",
+  "experiment_id": "EXP-IDT-BASELINES",
+  "failure_cases": [],
+  "metric_definitions": {
+    "ASFT": {
+      "failure_condition": "< 0.70",
+      "formula": "valid top-k invariants / k",
+      "interpretation": "ASFT ranking quality",
+      "name": "ASFT",
+      "valid_range": "[0, 1]"
+    },
+    "FREQUENCY_ONLY": {
+      "failure_condition": "< 0.70",
+      "formula": "valid top-k frequency-ranked invariants / k",
+      "interpretation": "frequency-only ranking quality",
+      "name": "FREQUENCY_ONLY",
+      "valid_range": "[0, 1]"
+    },
+    "RANDOM_PATTERN": {
+      "failure_condition": "< 0.70",
+      "formula": "valid top-k random patterns / k",
+      "interpretation": "random-pattern quality",
+      "name": "RANDOM_PATTERN",
+      "valid_range": "[0, 1]"
+    }
+  },
+  "metrics": {
+    "ASFT": 0.14094047619047617,
+    "frequency_only": 0.12010714285714286,
+    "random_pattern": 0.03767857142857143
+  },
+  "observations": {},
+  "raw_results": [
+    {
+      "asft_outperforms_frequency": true,
+      "asft_outperforms_random": true,
+      "claim": "IDT",
+      "comparison": [
+        {
+          "baseline": "ASFT transfer-aware",
+          "score": 0.13708333333333333
+        },
+        {
+          "baseline": "frequency-only",
+          "score": 0.11624999999999999
+        },
+        {
+          "baseline": "random pattern",
+          "score": 0.020833333333333332
+        },
+        {
+          "baseline": "no-transfer validation",
+          "score": 0.11624999999999999
+        }
+      ],
+      "configuration": {
+        "top_k": 4
+      },
+      "dataset_version": "synthetic-v1",
+      "experiment_id": "EXP-IDT-BASELINES",
+      "failure_cases": [],
+      "metrics": {
+        "ASFT": 0.13708333333333333,
+        "ASFT_advantage": 0.020833333333333343,
+        "ASFT_valid_top_rate": 1.0,
+        "frequency_only": 0.11624999999999999,
+        "frequency_valid_top_rate": 1.0,
+        "random_pattern": 0.020833333333333332
+      },
+      "observations": {
+        "n_candidates": 6
+      },
+      "seed": 0
+    },
+    {
+      "asft_outperforms_frequency": true,
+      "asft_outperforms_random": true,
+      "claim": "IDT",
+      "comparison": [
+        {
+          "baseline": "ASFT transfer-aware",
+          "score": 0.14672619047619048
+        },
+        {
+          "baseline": "frequency-only",
+          "score": 0.12589285714285714
+        },
+        {
+          "baseline": "random pattern",
+          "score": 0.020833333333333332
+        },
+        {
+          "baseline": "no-transfer validation",
+          "score": 0.12589285714285714
+        }
+      ],
+      "configuration": {
+        "top_k": 4
+      },
+      "dataset_version": "synthetic-v1",
+      "experiment_id": "EXP-IDT-BASELINES",
+      "failure_cases": [],
+      "metrics": {
+        "ASFT": 0.14672619047619048,
+        "ASFT_advantage": 0.020833333333333343,
+        "ASFT_valid_top_rate": 1.0,
+        "frequency_only": 0.12589285714285714,
+        "frequency_valid_top_rate": 1.0,
+        "random_pattern": 0.020833333333333332
+      },
+      "observations": {
+        "n_candidates": 6
+      },
+      "seed": 1
+    },
+    {
+      "asft_outperforms_frequency": true,
+      "asft_outperforms_random": true,
+      "claim": "IDT",
+      "comparison": [
+        {
+          "baseline": "ASFT transfer-aware",
+          "score": 0.13708333333333333
+        },
+        {
+          "baseline": "frequency-only",
+          "score": 0.11624999999999999
+        },
+        {
+          "baseline": "random pattern",
+          "score": 0.020833333333333332
+        },
+        {
+          "baseline": "no-transfer validation",
+          "score": 0.11624999999999999
+        }
+      ],
+      "configuration": {
+        "top_k": 4
+      },
+      "dataset_version": "synthetic-v1",
+      "experiment_id": "EXP-IDT-BASELINES",
+      "failure_cases": [],
+      "metrics": {
+        "ASFT": 0.13708333333333333,
+        "ASFT_advantage": 0.020833333333333343,
+        "ASFT_valid_top_rate": 1.0,
+        "frequency_only": 0.11624999999999999,
+        "frequency_valid_top_rate": 1.0,
+        "random_pattern": 0.020833333333333332
+      },
+      "observations": {
+        "n_candidates": 6
+      },
+      "seed": 2
+    },
+    {
+      "asft_outperforms_frequency": true,
+      "asft_outperforms_random": true,
+      "claim": "IDT",
+      "comparison": [
+        {
+          "baseline": "ASFT transfer-aware",
+          "score": 0.14672619047619048
+        },
+        {
+          "baseline": "frequency-only",
+          "score": 0.12589285714285714
+        },
+        {
+          "baseline": "random pattern",
+          "score": 0.12589285714285714
+        },
+        {
+          "baseline": "no-transfer validation",
+          "score": 0.12589285714285714
+        }
+      ],
+      "configuration": {
+        "top_k": 4
+      },
+      "dataset_version": "synthetic-v1",
+      "experiment_id": "EXP-IDT-BASELINES",
+      "failure_cases": [],
+      "metrics": {
+        "ASFT": 0.14672619047619048,
+        "ASFT_advantage": 0.020833333333333343,
+        "ASFT_valid_top_rate": 1.0,
+        "frequency_only": 0.12589285714285714,
+        "frequency_valid_top_rate": 1.0,
+        "random_pattern": 0.12589285714285714
+      },
+      "observations": {
+        "n_candidates": 8
+      },
+      "seed": 3
+    },
+    {
+      "asft_outperforms_frequency": true,
+      "asft_outperforms_random": true,
+      "claim": "IDT",
+      "comparison": [
+        {
+          "baseline": "ASFT transfer-aware",
+          "score": 0.13708333333333333
+        },
+        {
+          "baseline": "frequency-only",
+          "score": 0.11624999999999999
+        },
+        {
+          "baseline": "random pattern",
+          "score": 0.0
+        },
+        {
+          "baseline": "no-transfer validation",
+          "score": 0.11624999999999999
+        }
+      ],
+      "configuration": {
+        "top_k": 4
+      },
+      "dataset_version": "synthetic-v1",
+      "experiment_id": "EXP-IDT-BASELINES",
+      "failure_cases": [],
+      "metrics": {
+        "ASFT": 0.13708333333333333,
+        "ASFT_advantage": 0.020833333333333343,
+        "ASFT_valid_top_rate": 1.0,
+        "frequency_only": 0.11624999999999999,
+        "frequency_valid_top_rate": 1.0,
+        "random_pattern": 0.0
+      },
+      "observations": {
+        "n_candidates": 6
+      },
+      "seed": 4
+    }
+  ],
+  "record_schema": "phase-13a-v1",
+  "results": {
+    "ASFT": {
+      "ci_high": 0.14556992673553307,
+      "ci_low": 0.13631102564541928,
+      "confidence": 0.95,
+      "mean": 0.14094047619047617,
+      "n": 5.0,
+      "std": 0.005281610375942676,
+      "variance": 2.7895408163265335e-05
+    },
+    "frequency_only": {
+      "ci_high": 0.12473659340219977,
+      "ci_low": 0.11547769231208595,
+      "confidence": 0.95,
+      "mean": 0.12010714285714286,
+      "n": 5.0,
+      "std": 0.005281610375942675,
+      "variance": 2.7895408163265332e-05
+    },
+    "random_pattern": {
+      "ci_high": 0.08162007464429444,
+      "ci_low": -0.0062629317871515724,
+      "confidence": 0.95,
+      "mean": 0.03767857142857143,
+      "n": 5.0,
+      "std": 0.05013162945794644,
+      "variance": 0.0025131802721088435
+    }
+  },
+  "seed": null,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "statistics": {
+    "ASFT": {
+      "ci_high": 0.14556992673553307,
+      "ci_low": 0.13631102564541928,
+      "confidence": 0.95,
+      "mean": 0.14094047619047617,
+      "n": 5.0,
+      "std": 0.005281610375942676,
+      "variance": 2.7895408163265335e-05
+    },
+    "frequency_only": {
+      "ci_high": 0.12473659340219977,
+      "ci_low": 0.11547769231208595,
+      "confidence": 0.95,
+      "mean": 0.12010714285714286,
+      "n": 5.0,
+      "std": 0.005281610375942675,
+      "variance": 2.7895408163265332e-05
+    },
+    "random_pattern": {
+      "ci_high": 0.08162007464429444,
+      "ci_low": -0.0062629317871515724,
+      "confidence": 0.95,
+      "mean": 0.03767857142857143,
+      "n": 5.0,
+      "std": 0.05013162945794644,
+      "variance": 0.0025131802721088435
+    }
+  },
+  "thresholds": {},
+  "timestamp_utc": "2026-10-31T10:31:11.468338+00:00"
+}

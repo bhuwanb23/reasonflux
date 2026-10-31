@@ -100,3 +100,16 @@ experiments:
     contribution: external-validity
     enabled: false
     entry: experiments/exp08_arc/run.py
+
+idt:
+  runner: experiments/idt_experiments.py
+  expected_signatures:
+    reflection: [find_symmetry, apply_reflection]
+    rotation: [find_rotation, apply_rotation]
+    counting: [count_objects]
+    grouping: [group_by_color]
+  precision_target: 0.70
+  recall_target: 0.75
+  vst_target: 0.60
+  noise_level: 0.10
+  sparse_per_family: 1

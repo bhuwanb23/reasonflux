@@ -1,0 +1,426 @@
+[
+  {
+    "confidence": "moderate",
+    "consistency": 1.0,
+    "families": [
+      "reflection"
+    ],
+    "family": "reflection",
+    "frequency": 6,
+    "generality": 1.0,
+    "invariant_id": "INV-21fc62fe0f5c3383",
+    "is": 6.0,
+    "rank": 1,
+    "signature": [
+      "detect_object"
+    ]
+  },
+  {
+    "confidence": "moderate",
+    "consistency": 1.0,
+    "families": [
+      "reflection"
+    ],
+    "family": "reflection",
+    "frequency": 6,
+    "generality": 1.0,
+    "invariant_id": "INV-5851606191e6a4cf",
+    "is": 6.0,
+    "rank": 2,
+    "signature": [
+      "verify_output"
+    ]
+  },
+  {
+    "confidence": "moderate",
+    "consistency": 1.0,
+    "families": [
+      "reflection"
+    ],
+    "family": "reflection",
+    "frequency": 6,
+    "generality": 1.0,
+    "invariant_id": "INV-8cb21a2c4411f507",
+    "is": 6.0,
+    "rank": 3,
+    "signature": [
+      "detect_object",
+      "find_symmetry",
+      "apply_reflection",
+      "verify_output"
+    ]
+  },
+  {
+    "confidence": "moderate",
+    "consistency": 1.0,
+    "families": [
+      "reflection"
+    ],
+    "family": "reflection",
+    "frequency": 6,
+    "generality": 1.0,
+    "invariant_id": "INV-a4f872d69c07cbc0",
+    "is": 6.0,
+    "rank": 4,
+    "signature": [
+      "apply_reflection"
+    ]
+  },
+  {
+    "confidence": "moderate",
+    "consistency": 1.0,
+    "families": [
+      "reflection"
+    ],
+    "family": "reflection",
+    "frequency": 6,
+    "generality": 1.0,
+    "invariant_id": "INV-b977e7292dcf8ad0",
+    "is": 6.0,
+    "rank": 5,
+    "signature": [
+      "find_symmetry"
+    ]
+  },
+  {
+    "confidence": "weak",
+    "consistency": 1.0,
+    "families": [
+      "rotation"
+    ],
+    "family": "rotation",
+    "frequency": 3,
+    "generality": 1.0,
+    "invariant_id": "INV-21fc62fe0f5c3383",
+    "is": 3.0,
+    "rank": 1,
+    "signature": [
+      "detect_object"
+    ]
+  },
+  {
+    "confidence": "weak",
+    "consistency": 1.0,
+    "families": [
+      "rotation"
+    ],
+    "family": "rotation",
+    "frequency": 3,
+    "generality": 1.0,
+    "invariant_id": "INV-489db88e598d48b3",
+    "is": 3.0,
+    "rank": 2,
+    "signature": [
+      "find_rotation"
+    ]
+  },
+  {
+    "confidence": "weak",
+    "consistency": 1.0,
+    "families": [
+      "rotation"
+    ],
+    "family": "rotation",
+    "frequency": 3,
+    "generality": 1.0,
+    "invariant_id": "INV-5851606191e6a4cf",
+    "is": 3.0,
+    "rank": 3,
+    "signature": [
+      "verify_output"
+    ]
+  },
+  {
+    "confidence": "moderate",
+    "consistency": 1.0,
+    "families": [
+      "rotation"
+    ],
+    "family": "rotation",
+    "frequency": 3,
+    "generality": 1.0,
+    "invariant_id": "INV-6ba811ae991258da",
+    "is": 3.0,
+    "rank": 4,
+    "signature": [
+      "detect_object",
+      "find_rotation",
+      "apply_rotation",
+      "verify_output"
+    ]
+  },
+  {
+    "confidence": "weak",
+    "consistency": 1.0,
+    "families": [
+      "rotation"
+    ],
+    "family": "rotation",
+    "frequency": 3,
+    "generality": 1.0,
+    "invariant_id": "INV-cd89c6e9697e31c5",
+    "is": 3.0,
+    "rank": 5,
+    "signature": [
+      "apply_rotation"
+    ]
+  },
+  {
+    "confidence": "moderate",
+    "consistency": 1.0,
+    "families": [
+      "counting"
+    ],
+    "family": "counting",
+    "frequency": 6,
+    "generality": 1.0,
+    "invariant_id": "INV-21fc62fe0f5c3383",
+    "is": 6.0,
+    "rank": 1,
+    "signature": [
+      "detect_object"
+    ]
+  },
+  {
+    "confidence": "moderate",
+    "consistency": 1.0,
+    "families": [
+      "counting"
+    ],
+    "family": "counting",
+    "frequency": 6,
+    "generality": 1.0,
+    "invariant_id": "INV-2ded58d63d2e262a",
+    "is": 6.0,
+    "rank": 2,
+    "signature": [
+      "count_objects"
+    ]
+  },
+  {
+    "confidence": "moderate",
+    "consistency": 1.0,
+    "families": [
+      "counting"
+    ],
+    "family": "counting",
+    "frequency": 6,
+    "generality": 1.0,
+    "invariant_id": "INV-5851606191e6a4cf",
+    "is": 6.0,
+    "rank": 3,
+    "signature": [
+      "verify_output"
+    ]
+  },
+  {
+    "confidence": "moderate",
+    "consistency": 1.0,
+    "families": [
+      "counting"
+    ],
+    "family": "counting",
+    "frequency": 6,
+    "generality": 1.0,
+    "invariant_id": "INV-ad958e0e59557250",
+    "is": 6.0,
+    "rank": 4,
+    "signature": [
+      "count_objects",
+      "verify_output"
+    ]
+  },
+  {
+    "confidence": "weak",
+    "consistency": 1.0,
+    "families": [
+      "counting"
+    ],
+    "family": "counting",
+    "frequency": 3,
+    "generality": 1.0,
+    "invariant_id": "INV-489db88e598d48b3",
+    "is": 3.0,
+    "rank": 5,
+    "signature": [
+      "find_rotation"
+    ]
+  },
+  {
+    "confidence": "weak",
+    "consistency": 1.0,
+    "families": [
+      "counting"
+    ],
+    "family": "counting",
+    "frequency": 3,
+    "generality": 1.0,
+    "invariant_id": "INV-a4f872d69c07cbc0",
+    "is": 3.0,
+    "rank": 6,
+    "signature": [
+      "apply_reflection"
+    ]
+  },
+  {
+    "confidence": "weak",
+    "consistency": 1.0,
+    "families": [
+      "counting"
+    ],
+    "family": "counting",
+    "frequency": 3,
+    "generality": 1.0,
+    "invariant_id": "INV-b977e7292dcf8ad0",
+    "is": 3.0,
+    "rank": 7,
+    "signature": [
+      "find_symmetry"
+    ]
+  },
+  {
+    "confidence": "weak",
+    "consistency": 1.0,
+    "families": [
+      "counting"
+    ],
+    "family": "counting",
+    "frequency": 3,
+    "generality": 1.0,
+    "invariant_id": "INV-cd89c6e9697e31c5",
+    "is": 3.0,
+    "rank": 8,
+    "signature": [
+      "apply_rotation"
+    ]
+  },
+  {
+    "confidence": "moderate",
+    "consistency": 1.0,
+    "families": [
+      "grouping"
+    ],
+    "family": "grouping",
+    "frequency": 6,
+    "generality": 1.0,
+    "invariant_id": "INV-21fc62fe0f5c3383",
+    "is": 6.0,
+    "rank": 1,
+    "signature": [
+      "detect_object"
+    ]
+  },
+  {
+    "confidence": "moderate",
+    "consistency": 1.0,
+    "families": [
+      "grouping"
+    ],
+    "family": "grouping",
+    "frequency": 6,
+    "generality": 1.0,
+    "invariant_id": "INV-5851606191e6a4cf",
+    "is": 6.0,
+    "rank": 2,
+    "signature": [
+      "verify_output"
+    ]
+  },
+  {
+    "confidence": "moderate",
+    "consistency": 1.0,
+    "families": [
+      "grouping"
+    ],
+    "family": "grouping",
+    "frequency": 6,
+    "generality": 1.0,
+    "invariant_id": "INV-aa6f0561d26c6211",
+    "is": 6.0,
+    "rank": 3,
+    "signature": [
+      "group_by_color"
+    ]
+  },
+  {
+    "confidence": "moderate",
+    "consistency": 1.0,
+    "families": [
+      "grouping"
+    ],
+    "family": "grouping",
+    "frequency": 6,
+    "generality": 1.0,
+    "invariant_id": "INV-c01cfb1c1abd8818",
+    "is": 6.0,
+    "rank": 4,
+    "signature": [
+      "group_by_color",
+      "verify_output"
+    ]
+  },
+  {
+    "confidence": "weak",
+    "consistency": 1.0,
+    "families": [
+      "grouping"
+    ],
+    "family": "grouping",
+    "frequency": 3,
+    "generality": 1.0,
+    "invariant_id": "INV-489db88e598d48b3",
+    "is": 3.0,
+    "rank": 5,
+    "signature": [
+      "find_rotation"
+    ]
+  },
+  {
+    "confidence": "weak",
+    "consistency": 1.0,
+    "families": [
+      "grouping"
+    ],
+    "family": "grouping",
+    "frequency": 3,
+    "generality": 1.0,
+    "invariant_id": "INV-a4f872d69c07cbc0",
+    "is": 3.0,
+    "rank": 6,
+    "signature": [
+      "apply_reflection"
+    ]
+  },
+  {
+    "confidence": "weak",
+    "consistency": 1.0,
+    "families": [
+      "grouping"
+    ],
+    "family": "grouping",
+    "frequency": 3,
+    "generality": 1.0,
+    "invariant_id": "INV-b977e7292dcf8ad0",
+    "is": 3.0,
+    "rank": 7,
+    "signature": [
+      "find_symmetry"
+    ]
+  },
+  {
+    "confidence": "weak",
+    "consistency": 1.0,
+    "families": [
+      "grouping"
+    ],
+    "family": "grouping",
+    "frequency": 3,
+    "generality": 1.0,
+    "invariant_id": "INV-cd89c6e9697e31c5",
+    "is": 3.0,
+    "rank": 8,
+    "signature": [
+      "apply_rotation"
+    ]
+  }
+]

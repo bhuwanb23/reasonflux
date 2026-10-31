@@ -1,0 +1,342 @@
+{
+  "claim": "IDT",
+  "configuration": {
+    "per_family": 6
+  },
+  "dataset_version": "synthetic-v1",
+  "experiment_id": "EXP-IDT-05-07",
+  "failure_cases": [],
+  "metric_definitions": {
+    "CONFIDENCE": {
+      "failure_condition": "< 0.70",
+      "formula": "mean evidence confidence",
+      "interpretation": "invariant confidence",
+      "name": "CONFIDENCE",
+      "valid_range": "[0, 1]"
+    },
+    "IP": {
+      "failure_condition": "< 0.70",
+      "formula": "valid_invariants / detected_invariants",
+      "interpretation": "invariant precision",
+      "name": "IP",
+      "valid_range": "[0, 1]"
+    },
+    "IR": {
+      "failure_condition": "< 0.75",
+      "formula": "discovered_expected / expected_invariants",
+      "interpretation": "invariant recall",
+      "name": "IR",
+      "valid_range": "[0, 1]"
+    },
+    "IS": {
+      "failure_condition": "<= 0",
+      "formula": "frequency * consistency * generality",
+      "interpretation": "invariant strength",
+      "name": "IS",
+      "valid_range": "[0, inf)"
+    }
+  },
+  "metrics": {
+    "IP": 1.0,
+    "IR": 1.0,
+    "IS": 5.85625,
+    "confidence": 0.66
+  },
+  "observations": {},
+  "raw_results": [
+    {
+      "claim": "IDT",
+      "confidence_distribution": [
+        0.66,
+        0.66,
+        0.66,
+        0.66,
+        0.66,
+        0.66
+      ],
+      "configuration": {
+        "families": [
+          "reflection",
+          "rotation",
+          "counting",
+          "grouping"
+        ],
+        "per_family": 6
+      },
+      "dataset_version": "synthetic-v1",
+      "detected_invariants": 6,
+      "expected_invariants": 4,
+      "experiment_id": "EXP-IDT-05-07",
+      "failure_cases": [],
+      "metrics": {
+        "IP": 1.0,
+        "IR": 1.0,
+        "IS": 5.75,
+        "confidence": 0.66
+      },
+      "observations": {
+        "expected_families_found": 4.0,
+        "validated": 4
+      },
+      "seed": 0,
+      "thresholds": {
+        "precision": 0.7,
+        "recall": 0.75
+      },
+      "valid_invariants": 6
+    },
+    {
+      "claim": "IDT",
+      "confidence_distribution": [
+        0.66,
+        0.66,
+        0.66,
+        0.66,
+        0.66,
+        0.66
+      ],
+      "configuration": {
+        "families": [
+          "reflection",
+          "rotation",
+          "counting",
+          "grouping"
+        ],
+        "per_family": 6
+      },
+      "dataset_version": "synthetic-v1",
+      "detected_invariants": 6,
+      "expected_invariants": 4,
+      "experiment_id": "EXP-IDT-05-07",
+      "failure_cases": [],
+      "metrics": {
+        "IP": 1.0,
+        "IR": 1.0,
+        "IS": 5.75,
+        "confidence": 0.66
+      },
+      "observations": {
+        "expected_families_found": 4.0,
+        "validated": 4
+      },
+      "seed": 1,
+      "thresholds": {
+        "precision": 0.7,
+        "recall": 0.75
+      },
+      "valid_invariants": 6
+    },
+    {
+      "claim": "IDT",
+      "confidence_distribution": [
+        0.66,
+        0.66,
+        0.66,
+        0.66,
+        0.66,
+        0.66
+      ],
+      "configuration": {
+        "families": [
+          "reflection",
+          "rotation",
+          "counting",
+          "grouping"
+        ],
+        "per_family": 6
+      },
+      "dataset_version": "synthetic-v1",
+      "detected_invariants": 6,
+      "expected_invariants": 4,
+      "experiment_id": "EXP-IDT-05-07",
+      "failure_cases": [],
+      "metrics": {
+        "IP": 1.0,
+        "IR": 1.0,
+        "IS": 5.75,
+        "confidence": 0.66
+      },
+      "observations": {
+        "expected_families_found": 4.0,
+        "validated": 4
+      },
+      "seed": 2,
+      "thresholds": {
+        "precision": 0.7,
+        "recall": 0.75
+      },
+      "valid_invariants": 6
+    },
+    {
+      "claim": "IDT",
+      "confidence_distribution": [
+        0.66,
+        0.66,
+        0.66,
+        0.66,
+        0.66,
+        0.66,
+        0.66,
+        0.66
+      ],
+      "configuration": {
+        "families": [
+          "reflection",
+          "rotation",
+          "counting",
+          "grouping"
+        ],
+        "per_family": 6
+      },
+      "dataset_version": "synthetic-v1",
+      "detected_invariants": 8,
+      "expected_invariants": 4,
+      "experiment_id": "EXP-IDT-05-07",
+      "failure_cases": [],
+      "metrics": {
+        "IP": 1.0,
+        "IR": 1.0,
+        "IS": 6.28125,
+        "confidence": 0.66
+      },
+      "observations": {
+        "expected_families_found": 4.0,
+        "validated": 6
+      },
+      "seed": 3,
+      "thresholds": {
+        "precision": 0.7,
+        "recall": 0.75
+      },
+      "valid_invariants": 8
+    },
+    {
+      "claim": "IDT",
+      "confidence_distribution": [
+        0.66,
+        0.66,
+        0.66,
+        0.66,
+        0.66,
+        0.66
+      ],
+      "configuration": {
+        "families": [
+          "reflection",
+          "rotation",
+          "counting",
+          "grouping"
+        ],
+        "per_family": 6
+      },
+      "dataset_version": "synthetic-v1",
+      "detected_invariants": 6,
+      "expected_invariants": 4,
+      "experiment_id": "EXP-IDT-05-07",
+      "failure_cases": [],
+      "metrics": {
+        "IP": 1.0,
+        "IR": 1.0,
+        "IS": 5.75,
+        "confidence": 0.66
+      },
+      "observations": {
+        "expected_families_found": 4.0,
+        "validated": 4
+      },
+      "seed": 4,
+      "thresholds": {
+        "precision": 0.7,
+        "recall": 0.75
+      },
+      "valid_invariants": 6
+    }
+  ],
+  "record_schema": "phase-13a-v1",
+  "results": {
+    "IP": {
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "confidence": 0.95,
+      "mean": 1.0,
+      "n": 5.0,
+      "std": 0.0,
+      "variance": 0.0
+    },
+    "IR": {
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "confidence": 0.95,
+      "mean": 1.0,
+      "n": 5.0,
+      "std": 0.0,
+      "variance": 0.0
+    },
+    "IS": {
+      "ci_high": 6.064496173357381,
+      "ci_low": 5.648003826642619,
+      "confidence": 0.95,
+      "mean": 5.85625,
+      "n": 5.0,
+      "std": 0.23758222260935266,
+      "variance": 0.0564453125
+    },
+    "confidence": {
+      "ci_high": 0.66,
+      "ci_low": 0.66,
+      "confidence": 0.95,
+      "mean": 0.66,
+      "n": 5.0,
+      "std": 0.0,
+      "variance": 0.0
+    }
+  },
+  "seed": null,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "statistics": {
+    "IP": {
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "confidence": 0.95,
+      "mean": 1.0,
+      "n": 5.0,
+      "std": 0.0,
+      "variance": 0.0
+    },
+    "IR": {
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "confidence": 0.95,
+      "mean": 1.0,
+      "n": 5.0,
+      "std": 0.0,
+      "variance": 0.0
+    },
+    "IS": {
+      "ci_high": 6.064496173357381,
+      "ci_low": 5.648003826642619,
+      "confidence": 0.95,
+      "mean": 5.85625,
+      "n": 5.0,
+      "std": 0.23758222260935266,
+      "variance": 0.0564453125
+    },
+    "confidence": {
+      "ci_high": 0.66,
+      "ci_low": 0.66,
+      "confidence": 0.95,
+      "mean": 0.66,
+      "n": 5.0,
+      "std": 0.0,
+      "variance": 0.0
+    }
+  },
+  "thresholds": {},
+  "timestamp_utc": "2026-10-31T10:31:11.176694+00:00"
+}

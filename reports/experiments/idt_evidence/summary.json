@@ -1,0 +1,4422 @@
+{
+  "baselines": {
+    "artifacts": {
+      "json": "C:\\Users\\bhuwan.bhawarlal\\Desktop\\projects\\ReasonFlux\\reports\\experiments\\EXP-IDT-BASELINES\\record.json",
+      "md": "C:\\Users\\bhuwan.bhawarlal\\Desktop\\projects\\ReasonFlux\\reports\\experiments\\EXP-IDT-BASELINES\\report.md"
+    },
+    "claim": "IDT",
+    "configuration": {
+      "comparison": "top-k valid invariant rate"
+    },
+    "dataset_version": "synthetic-v1",
+    "experiment_id": "EXP-IDT-BASELINES",
+    "failure_cases": [],
+    "metrics": {
+      "ASFT": 0.14094047619047617,
+      "frequency_only": 0.12010714285714286,
+      "random_pattern": 0.03767857142857143
+    },
+    "observations": {},
+    "raw_results": [
+      {
+        "asft_outperforms_frequency": true,
+        "asft_outperforms_random": true,
+        "claim": "IDT",
+        "comparison": [
+          {
+            "baseline": "ASFT transfer-aware",
+            "score": 0.13708333333333333
+          },
+          {
+            "baseline": "frequency-only",
+            "score": 0.11624999999999999
+          },
+          {
+            "baseline": "random pattern",
+            "score": 0.020833333333333332
+          },
+          {
+            "baseline": "no-transfer validation",
+            "score": 0.11624999999999999
+          }
+        ],
+        "configuration": {
+          "top_k": 4
+        },
+        "dataset_version": "synthetic-v1",
+        "experiment_id": "EXP-IDT-BASELINES",
+        "failure_cases": [],
+        "metrics": {
+          "ASFT": 0.13708333333333333,
+          "ASFT_advantage": 0.020833333333333343,
+          "ASFT_valid_top_rate": 1.0,
+          "frequency_only": 0.11624999999999999,
+          "frequency_valid_top_rate": 1.0,
+          "random_pattern": 0.020833333333333332
+        },
+        "observations": {
+          "n_candidates": 6
+        },
+        "seed": 0
+      },
+      {
+        "asft_outperforms_frequency": true,
+        "asft_outperforms_random": true,
+        "claim": "IDT",
+        "comparison": [
+          {
+            "baseline": "ASFT transfer-aware",
+            "score": 0.14672619047619048
+          },
+          {
+            "baseline": "frequency-only",
+            "score": 0.12589285714285714
+          },
+          {
+            "baseline": "random pattern",
+            "score": 0.020833333333333332
+          },
+          {
+            "baseline": "no-transfer validation",
+            "score": 0.12589285714285714
+          }
+        ],
+        "configuration": {
+          "top_k": 4
+        },
+        "dataset_version": "synthetic-v1",
+        "experiment_id": "EXP-IDT-BASELINES",
+        "failure_cases": [],
+        "metrics": {
+          "ASFT": 0.14672619047619048,
+          "ASFT_advantage": 0.020833333333333343,
+          "ASFT_valid_top_rate": 1.0,
+          "frequency_only": 0.12589285714285714,
+          "frequency_valid_top_rate": 1.0,
+          "random_pattern": 0.020833333333333332
+        },
+        "observations": {
+          "n_candidates": 6
+        },
+        "seed": 1
+      },
+      {
+        "asft_outperforms_frequency": true,
+        "asft_outperforms_random": true,
+        "claim": "IDT",
+        "comparison": [
+          {
+            "baseline": "ASFT transfer-aware",
+            "score": 0.13708333333333333
+          },
+          {
+            "baseline": "frequency-only",
+            "score": 0.11624999999999999
+          },
+          {
+            "baseline": "random pattern",
+            "score": 0.020833333333333332
+          },
+          {
+            "baseline": "no-transfer validation",
+            "score": 0.11624999999999999
+          }
+        ],
+        "configuration": {
+          "top_k": 4
+        },
+        "dataset_version": "synthetic-v1",
+        "experiment_id": "EXP-IDT-BASELINES",
+        "failure_cases": [],
+        "metrics": {
+          "ASFT": 0.13708333333333333,
+          "ASFT_advantage": 0.020833333333333343,
+          "ASFT_valid_top_rate": 1.0,
+          "frequency_only": 0.11624999999999999,
+          "frequency_valid_top_rate": 1.0,
+          "random_pattern": 0.020833333333333332
+        },
+        "observations": {
+          "n_candidates": 6
+        },
+        "seed": 2
+      },
+      {
+        "asft_outperforms_frequency": true,
+        "asft_outperforms_random": true,
+        "claim": "IDT",
+        "comparison": [
+          {
+            "baseline": "ASFT transfer-aware",
+            "score": 0.14672619047619048
+          },
+          {
+            "baseline": "frequency-only",
+            "score": 0.12589285714285714
+          },
+          {
+            "baseline": "random pattern",
+            "score": 0.12589285714285714
+          },
+          {
+            "baseline": "no-transfer validation",
+            "score": 0.12589285714285714
+          }
+        ],
+        "configuration": {
+          "top_k": 4
+        },
+        "dataset_version": "synthetic-v1",
+        "experiment_id": "EXP-IDT-BASELINES",
+        "failure_cases": [],
+        "metrics": {
+          "ASFT": 0.14672619047619048,
+          "ASFT_advantage": 0.020833333333333343,
+          "ASFT_valid_top_rate": 1.0,
+          "frequency_only": 0.12589285714285714,
+          "frequency_valid_top_rate": 1.0,
+          "random_pattern": 0.12589285714285714
+        },
+        "observations": {
+          "n_candidates": 8
+        },
+        "seed": 3
+      },
+      {
+        "asft_outperforms_frequency": true,
+        "asft_outperforms_random": true,
+        "claim": "IDT",
+        "comparison": [
+          {
+            "baseline": "ASFT transfer-aware",
+            "score": 0.13708333333333333
+          },
+          {
+            "baseline": "frequency-only",
+            "score": 0.11624999999999999
+          },
+          {
+            "baseline": "random pattern",
+            "score": 0.0
+          },
+          {
+            "baseline": "no-transfer validation",
+            "score": 0.11624999999999999
+          }
+        ],
+        "configuration": {
+          "top_k": 4
+        },
+        "dataset_version": "synthetic-v1",
+        "experiment_id": "EXP-IDT-BASELINES",
+        "failure_cases": [],
+        "metrics": {
+          "ASFT": 0.13708333333333333,
+          "ASFT_advantage": 0.020833333333333343,
+          "ASFT_valid_top_rate": 1.0,
+          "frequency_only": 0.11624999999999999,
+          "frequency_valid_top_rate": 1.0,
+          "random_pattern": 0.0
+        },
+        "observations": {
+          "n_candidates": 6
+        },
+        "seed": 4
+      }
+    ],
+    "results": {
+      "ASFT": {
+        "ci_high": 0.14556992673553307,
+        "ci_low": 0.13631102564541928,
+        "confidence": 0.95,
+        "mean": 0.14094047619047617,
+        "n": 5.0,
+        "std": 0.005281610375942676,
+        "variance": 2.7895408163265335e-05
+      },
+      "frequency_only": {
+        "ci_high": 0.12473659340219977,
+        "ci_low": 0.11547769231208595,
+        "confidence": 0.95,
+        "mean": 0.12010714285714286,
+        "n": 5.0,
+        "std": 0.005281610375942675,
+        "variance": 2.7895408163265332e-05
+      },
+      "random_pattern": {
+        "ci_high": 0.08162007464429444,
+        "ci_low": -0.0062629317871515724,
+        "confidence": 0.95,
+        "mean": 0.03767857142857143,
+        "n": 5.0,
+        "std": 0.05013162945794644,
+        "variance": 0.0025131802721088435
+      }
+    },
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "statistics": {
+      "ASFT": {
+        "ci_high": 0.14556992673553307,
+        "ci_low": 0.13631102564541928,
+        "confidence": 0.95,
+        "mean": 0.14094047619047617,
+        "n": 5.0,
+        "std": 0.005281610375942676,
+        "variance": 2.7895408163265335e-05
+      },
+      "frequency_only": {
+        "ci_high": 0.12473659340219977,
+        "ci_low": 0.11547769231208595,
+        "confidence": 0.95,
+        "mean": 0.12010714285714286,
+        "n": 5.0,
+        "std": 0.005281610375942675,
+        "variance": 2.7895408163265332e-05
+      },
+      "random_pattern": {
+        "ci_high": 0.08162007464429444,
+        "ci_low": -0.0062629317871515724,
+        "confidence": 0.95,
+        "mean": 0.03767857142857143,
+        "n": 5.0,
+        "std": 0.05013162945794644,
+        "variance": 0.0025131802721088435
+      }
+    },
+    "thresholds": {}
+  },
+  "claim": "IDT",
+  "configuration": {
+    "min_seeds": 5,
+    "phase": "13B"
+  },
+  "dataset_version": "synthetic-v1",
+  "discovery": {
+    "counting": {
+      "artifacts": {
+        "json": "C:\\Users\\bhuwan.bhawarlal\\Desktop\\projects\\ReasonFlux\\reports\\experiments\\EXP-IDT-03\\record.json",
+        "md": "C:\\Users\\bhuwan.bhawarlal\\Desktop\\projects\\ReasonFlux\\reports\\experiments\\EXP-IDT-03\\report.md"
+      },
+      "claim": "IDT",
+      "configuration": {
+        "family": "counting",
+        "per_family": 6
+      },
+      "dataset_version": "synthetic-v1",
+      "experiment_id": "EXP-IDT-03",
+      "failure_cases": [],
+      "metrics": {
+        "IS": 5.066666666666666,
+        "discovery": 1.0
+      },
+      "observations": {},
+      "raw_results": [
+        {
+          "claim": "IDT",
+          "configuration": {
+            "family": "counting",
+            "per_family": 6
+          },
+          "dataset_version": "synthetic-v1",
+          "expected_found": true,
+          "expected_signature": [
+            "count_objects"
+          ],
+          "experiment": "counting_discovery",
+          "experiment_id": "EXP-IDT-03",
+          "failure_cases": [],
+          "metrics": {
+            "IS": 4.5,
+            "discovery": 1.0,
+            "rank": 2.0
+          },
+          "n_candidates": 8,
+          "n_ranked": 8,
+          "n_traces": 6,
+          "observations": {
+            "validated": 8
+          },
+          "seed": 0,
+          "thresholds": {
+            "discovery": true
+          },
+          "top_invariants": [
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-21fc62fe0f5c3383",
+              "is": 6.0,
+              "rank": 1,
+              "signature": [
+                "detect_object"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-2ded58d63d2e262a",
+              "is": 6.0,
+              "rank": 2,
+              "signature": [
+                "count_objects"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-5851606191e6a4cf",
+              "is": 6.0,
+              "rank": 3,
+              "signature": [
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-ad958e0e59557250",
+              "is": 6.0,
+              "rank": 4,
+              "signature": [
+                "count_objects",
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-489db88e598d48b3",
+              "is": 3.0,
+              "rank": 5,
+              "signature": [
+                "find_rotation"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-a4f872d69c07cbc0",
+              "is": 3.0,
+              "rank": 6,
+              "signature": [
+                "apply_reflection"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-b977e7292dcf8ad0",
+              "is": 3.0,
+              "rank": 7,
+              "signature": [
+                "find_symmetry"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-cd89c6e9697e31c5",
+              "is": 3.0,
+              "rank": 8,
+              "signature": [
+                "apply_rotation"
+              ]
+            }
+          ]
+        },
+        {
+          "claim": "IDT",
+          "configuration": {
+            "family": "counting",
+            "per_family": 6
+          },
+          "dataset_version": "synthetic-v1",
+          "expected_found": true,
+          "expected_signature": [
+            "count_objects"
+          ],
+          "experiment": "counting_discovery",
+          "experiment_id": "EXP-IDT-03",
+          "failure_cases": [],
+          "metrics": {
+            "IS": 4.5,
+            "discovery": 1.0,
+            "rank": 2.0
+          },
+          "n_candidates": 8,
+          "n_ranked": 8,
+          "n_traces": 6,
+          "observations": {
+            "validated": 8
+          },
+          "seed": 1,
+          "thresholds": {
+            "discovery": true
+          },
+          "top_invariants": [
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-21fc62fe0f5c3383",
+              "is": 6.0,
+              "rank": 1,
+              "signature": [
+                "detect_object"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-2ded58d63d2e262a",
+              "is": 6.0,
+              "rank": 2,
+              "signature": [
+                "count_objects"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-5851606191e6a4cf",
+              "is": 6.0,
+              "rank": 3,
+              "signature": [
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-ad958e0e59557250",
+              "is": 6.0,
+              "rank": 4,
+              "signature": [
+                "count_objects",
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-489db88e598d48b3",
+              "is": 3.0,
+              "rank": 5,
+              "signature": [
+                "find_rotation"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-a4f872d69c07cbc0",
+              "is": 3.0,
+              "rank": 6,
+              "signature": [
+                "apply_reflection"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-b977e7292dcf8ad0",
+              "is": 3.0,
+              "rank": 7,
+              "signature": [
+                "find_symmetry"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-cd89c6e9697e31c5",
+              "is": 3.0,
+              "rank": 8,
+              "signature": [
+                "apply_rotation"
+              ]
+            }
+          ]
+        },
+        {
+          "claim": "IDT",
+          "configuration": {
+            "family": "counting",
+            "per_family": 6
+          },
+          "dataset_version": "synthetic-v1",
+          "expected_found": true,
+          "expected_signature": [
+            "count_objects"
+          ],
+          "experiment": "counting_discovery",
+          "experiment_id": "EXP-IDT-03",
+          "failure_cases": [],
+          "metrics": {
+            "IS": 5.333333333333333,
+            "discovery": 1.0,
+            "rank": 2.0
+          },
+          "n_candidates": 6,
+          "n_ranked": 6,
+          "n_traces": 6,
+          "observations": {
+            "validated": 6
+          },
+          "seed": 2,
+          "thresholds": {
+            "discovery": true
+          },
+          "top_invariants": [
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-21fc62fe0f5c3383",
+              "is": 6.0,
+              "rank": 1,
+              "signature": [
+                "detect_object"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-2ded58d63d2e262a",
+              "is": 6.0,
+              "rank": 2,
+              "signature": [
+                "count_objects"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-5851606191e6a4cf",
+              "is": 6.0,
+              "rank": 3,
+              "signature": [
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-ad958e0e59557250",
+              "is": 6.0,
+              "rank": 4,
+              "signature": [
+                "count_objects",
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 4,
+              "generality": 1.0,
+              "invariant_id": "INV-a4f872d69c07cbc0",
+              "is": 4.0,
+              "rank": 5,
+              "signature": [
+                "apply_reflection"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 4,
+              "generality": 1.0,
+              "invariant_id": "INV-b977e7292dcf8ad0",
+              "is": 4.0,
+              "rank": 6,
+              "signature": [
+                "find_symmetry"
+              ]
+            }
+          ]
+        },
+        {
+          "claim": "IDT",
+          "configuration": {
+            "family": "counting",
+            "per_family": 6
+          },
+          "dataset_version": "synthetic-v1",
+          "expected_found": true,
+          "expected_signature": [
+            "count_objects"
+          ],
+          "experiment": "counting_discovery",
+          "experiment_id": "EXP-IDT-03",
+          "failure_cases": [],
+          "metrics": {
+            "IS": 5.333333333333333,
+            "discovery": 1.0,
+            "rank": 2.0
+          },
+          "n_candidates": 6,
+          "n_ranked": 6,
+          "n_traces": 6,
+          "observations": {
+            "validated": 6
+          },
+          "seed": 3,
+          "thresholds": {
+            "discovery": true
+          },
+          "top_invariants": [
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-21fc62fe0f5c3383",
+              "is": 6.0,
+              "rank": 1,
+              "signature": [
+                "detect_object"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-2ded58d63d2e262a",
+              "is": 6.0,
+              "rank": 2,
+              "signature": [
+                "count_objects"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-5851606191e6a4cf",
+              "is": 6.0,
+              "rank": 3,
+              "signature": [
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-ad958e0e59557250",
+              "is": 6.0,
+              "rank": 4,
+              "signature": [
+                "count_objects",
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 4,
+              "generality": 1.0,
+              "invariant_id": "INV-a4f872d69c07cbc0",
+              "is": 4.0,
+              "rank": 5,
+              "signature": [
+                "apply_reflection"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 4,
+              "generality": 1.0,
+              "invariant_id": "INV-b977e7292dcf8ad0",
+              "is": 4.0,
+              "rank": 6,
+              "signature": [
+                "find_symmetry"
+              ]
+            }
+          ]
+        },
+        {
+          "claim": "IDT",
+          "configuration": {
+            "family": "counting",
+            "per_family": 6
+          },
+          "dataset_version": "synthetic-v1",
+          "expected_found": true,
+          "expected_signature": [
+            "count_objects"
+          ],
+          "experiment": "counting_discovery",
+          "experiment_id": "EXP-IDT-03",
+          "failure_cases": [],
+          "metrics": {
+            "IS": 5.666666666666667,
+            "discovery": 1.0,
+            "rank": 2.0
+          },
+          "n_candidates": 6,
+          "n_ranked": 6,
+          "n_traces": 6,
+          "observations": {
+            "validated": 6
+          },
+          "seed": 4,
+          "thresholds": {
+            "discovery": true
+          },
+          "top_invariants": [
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-21fc62fe0f5c3383",
+              "is": 6.0,
+              "rank": 1,
+              "signature": [
+                "detect_object"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-2ded58d63d2e262a",
+              "is": 6.0,
+              "rank": 2,
+              "signature": [
+                "count_objects"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-5851606191e6a4cf",
+              "is": 6.0,
+              "rank": 3,
+              "signature": [
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-ad958e0e59557250",
+              "is": 6.0,
+              "rank": 4,
+              "signature": [
+                "count_objects",
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 5,
+              "generality": 1.0,
+              "invariant_id": "INV-a4f872d69c07cbc0",
+              "is": 5.0,
+              "rank": 5,
+              "signature": [
+                "apply_reflection"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "counting"
+              ],
+              "frequency": 5,
+              "generality": 1.0,
+              "invariant_id": "INV-b977e7292dcf8ad0",
+              "is": 5.0,
+              "rank": 6,
+              "signature": [
+                "find_symmetry"
+              ]
+            }
+          ]
+        }
+      ],
+      "results": {
+        "IS": {
+          "ci_high": 5.535512921099049,
+          "ci_low": 4.597820412234284,
+          "confidence": 0.95,
+          "mean": 5.066666666666666,
+          "n": 5.0,
+          "std": 0.5348935511960404,
+          "variance": 0.28611111111111115
+        },
+        "discovery": {
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence": 0.95,
+          "mean": 1.0,
+          "n": 5.0,
+          "std": 0.0,
+          "variance": 0.0
+        }
+      },
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "statistics": {
+        "IS": {
+          "ci_high": 5.535512921099049,
+          "ci_low": 4.597820412234284,
+          "confidence": 0.95,
+          "mean": 5.066666666666666,
+          "n": 5.0,
+          "std": 0.5348935511960404,
+          "variance": 0.28611111111111115
+        },
+        "discovery": {
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence": 0.95,
+          "mean": 1.0,
+          "n": 5.0,
+          "std": 0.0,
+          "variance": 0.0
+        }
+      },
+      "thresholds": {}
+    },
+    "grouping": {
+      "artifacts": {
+        "json": "C:\\Users\\bhuwan.bhawarlal\\Desktop\\projects\\ReasonFlux\\reports\\experiments\\EXP-IDT-04\\record.json",
+        "md": "C:\\Users\\bhuwan.bhawarlal\\Desktop\\projects\\ReasonFlux\\reports\\experiments\\EXP-IDT-04\\report.md"
+      },
+      "claim": "IDT",
+      "configuration": {
+        "family": "grouping",
+        "per_family": 6
+      },
+      "dataset_version": "synthetic-v1",
+      "experiment_id": "EXP-IDT-04",
+      "failure_cases": [],
+      "metrics": {
+        "IS": 4.9,
+        "discovery": 1.0
+      },
+      "observations": {},
+      "raw_results": [
+        {
+          "claim": "IDT",
+          "configuration": {
+            "family": "grouping",
+            "per_family": 6
+          },
+          "dataset_version": "synthetic-v1",
+          "expected_found": true,
+          "expected_signature": [
+            "group_by_color"
+          ],
+          "experiment": "grouping_discovery",
+          "experiment_id": "EXP-IDT-04",
+          "failure_cases": [],
+          "metrics": {
+            "IS": 4.5,
+            "discovery": 1.0,
+            "rank": 3.0
+          },
+          "n_candidates": 8,
+          "n_ranked": 8,
+          "n_traces": 6,
+          "observations": {
+            "validated": 8
+          },
+          "seed": 0,
+          "thresholds": {
+            "discovery": true
+          },
+          "top_invariants": [
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-21fc62fe0f5c3383",
+              "is": 6.0,
+              "rank": 1,
+              "signature": [
+                "detect_object"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-5851606191e6a4cf",
+              "is": 6.0,
+              "rank": 2,
+              "signature": [
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-aa6f0561d26c6211",
+              "is": 6.0,
+              "rank": 3,
+              "signature": [
+                "group_by_color"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-c01cfb1c1abd8818",
+              "is": 6.0,
+              "rank": 4,
+              "signature": [
+                "group_by_color",
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-489db88e598d48b3",
+              "is": 3.0,
+              "rank": 5,
+              "signature": [
+                "find_rotation"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-a4f872d69c07cbc0",
+              "is": 3.0,
+              "rank": 6,
+              "signature": [
+                "apply_reflection"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-b977e7292dcf8ad0",
+              "is": 3.0,
+              "rank": 7,
+              "signature": [
+                "find_symmetry"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-cd89c6e9697e31c5",
+              "is": 3.0,
+              "rank": 8,
+              "signature": [
+                "apply_rotation"
+              ]
+            }
+          ]
+        },
+        {
+          "claim": "IDT",
+          "configuration": {
+            "family": "grouping",
+            "per_family": 6
+          },
+          "dataset_version": "synthetic-v1",
+          "expected_found": true,
+          "expected_signature": [
+            "group_by_color"
+          ],
+          "experiment": "grouping_discovery",
+          "experiment_id": "EXP-IDT-04",
+          "failure_cases": [],
+          "metrics": {
+            "IS": 5.666666666666667,
+            "discovery": 1.0,
+            "rank": 3.0
+          },
+          "n_candidates": 6,
+          "n_ranked": 6,
+          "n_traces": 6,
+          "observations": {
+            "validated": 6
+          },
+          "seed": 1,
+          "thresholds": {
+            "discovery": true
+          },
+          "top_invariants": [
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-21fc62fe0f5c3383",
+              "is": 6.0,
+              "rank": 1,
+              "signature": [
+                "detect_object"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-5851606191e6a4cf",
+              "is": 6.0,
+              "rank": 2,
+              "signature": [
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-aa6f0561d26c6211",
+              "is": 6.0,
+              "rank": 3,
+              "signature": [
+                "group_by_color"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-c01cfb1c1abd8818",
+              "is": 6.0,
+              "rank": 4,
+              "signature": [
+                "group_by_color",
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 5,
+              "generality": 1.0,
+              "invariant_id": "INV-a4f872d69c07cbc0",
+              "is": 5.0,
+              "rank": 5,
+              "signature": [
+                "apply_reflection"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 5,
+              "generality": 1.0,
+              "invariant_id": "INV-b977e7292dcf8ad0",
+              "is": 5.0,
+              "rank": 6,
+              "signature": [
+                "find_symmetry"
+              ]
+            }
+          ]
+        },
+        {
+          "claim": "IDT",
+          "configuration": {
+            "family": "grouping",
+            "per_family": 6
+          },
+          "dataset_version": "synthetic-v1",
+          "expected_found": true,
+          "expected_signature": [
+            "group_by_color"
+          ],
+          "experiment": "grouping_discovery",
+          "experiment_id": "EXP-IDT-04",
+          "failure_cases": [],
+          "metrics": {
+            "IS": 4.5,
+            "discovery": 1.0,
+            "rank": 3.0
+          },
+          "n_candidates": 8,
+          "n_ranked": 8,
+          "n_traces": 6,
+          "observations": {
+            "validated": 8
+          },
+          "seed": 2,
+          "thresholds": {
+            "discovery": true
+          },
+          "top_invariants": [
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-21fc62fe0f5c3383",
+              "is": 6.0,
+              "rank": 1,
+              "signature": [
+                "detect_object"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-5851606191e6a4cf",
+              "is": 6.0,
+              "rank": 2,
+              "signature": [
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-aa6f0561d26c6211",
+              "is": 6.0,
+              "rank": 3,
+              "signature": [
+                "group_by_color"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-c01cfb1c1abd8818",
+              "is": 6.0,
+              "rank": 4,
+              "signature": [
+                "group_by_color",
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-489db88e598d48b3",
+              "is": 3.0,
+              "rank": 5,
+              "signature": [
+                "find_rotation"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-a4f872d69c07cbc0",
+              "is": 3.0,
+              "rank": 6,
+              "signature": [
+                "apply_reflection"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-b977e7292dcf8ad0",
+              "is": 3.0,
+              "rank": 7,
+              "signature": [
+                "find_symmetry"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-cd89c6e9697e31c5",
+              "is": 3.0,
+              "rank": 8,
+              "signature": [
+                "apply_rotation"
+              ]
+            }
+          ]
+        },
+        {
+          "claim": "IDT",
+          "configuration": {
+            "family": "grouping",
+            "per_family": 6
+          },
+          "dataset_version": "synthetic-v1",
+          "expected_found": true,
+          "expected_signature": [
+            "group_by_color"
+          ],
+          "experiment": "grouping_discovery",
+          "experiment_id": "EXP-IDT-04",
+          "failure_cases": [],
+          "metrics": {
+            "IS": 5.333333333333333,
+            "discovery": 1.0,
+            "rank": 3.0
+          },
+          "n_candidates": 6,
+          "n_ranked": 6,
+          "n_traces": 6,
+          "observations": {
+            "validated": 6
+          },
+          "seed": 3,
+          "thresholds": {
+            "discovery": true
+          },
+          "top_invariants": [
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-21fc62fe0f5c3383",
+              "is": 6.0,
+              "rank": 1,
+              "signature": [
+                "detect_object"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-5851606191e6a4cf",
+              "is": 6.0,
+              "rank": 2,
+              "signature": [
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-aa6f0561d26c6211",
+              "is": 6.0,
+              "rank": 3,
+              "signature": [
+                "group_by_color"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-c01cfb1c1abd8818",
+              "is": 6.0,
+              "rank": 4,
+              "signature": [
+                "group_by_color",
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 4,
+              "generality": 1.0,
+              "invariant_id": "INV-a4f872d69c07cbc0",
+              "is": 4.0,
+              "rank": 5,
+              "signature": [
+                "apply_reflection"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 4,
+              "generality": 1.0,
+              "invariant_id": "INV-b977e7292dcf8ad0",
+              "is": 4.0,
+              "rank": 6,
+              "signature": [
+                "find_symmetry"
+              ]
+            }
+          ]
+        },
+        {
+          "claim": "IDT",
+          "configuration": {
+            "family": "grouping",
+            "per_family": 6
+          },
+          "dataset_version": "synthetic-v1",
+          "expected_found": true,
+          "expected_signature": [
+            "group_by_color"
+          ],
+          "experiment": "grouping_discovery",
+          "experiment_id": "EXP-IDT-04",
+          "failure_cases": [],
+          "metrics": {
+            "IS": 4.5,
+            "discovery": 1.0,
+            "rank": 3.0
+          },
+          "n_candidates": 8,
+          "n_ranked": 8,
+          "n_traces": 6,
+          "observations": {
+            "validated": 8
+          },
+          "seed": 4,
+          "thresholds": {
+            "discovery": true
+          },
+          "top_invariants": [
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-21fc62fe0f5c3383",
+              "is": 6.0,
+              "rank": 1,
+              "signature": [
+                "detect_object"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-5851606191e6a4cf",
+              "is": 6.0,
+              "rank": 2,
+              "signature": [
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-aa6f0561d26c6211",
+              "is": 6.0,
+              "rank": 3,
+              "signature": [
+                "group_by_color"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-c01cfb1c1abd8818",
+              "is": 6.0,
+              "rank": 4,
+              "signature": [
+                "group_by_color",
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-489db88e598d48b3",
+              "is": 3.0,
+              "rank": 5,
+              "signature": [
+                "find_rotation"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-a4f872d69c07cbc0",
+              "is": 3.0,
+              "rank": 6,
+              "signature": [
+                "apply_reflection"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-b977e7292dcf8ad0",
+              "is": 3.0,
+              "rank": 7,
+              "signature": [
+                "find_symmetry"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "grouping"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-cd89c6e9697e31c5",
+              "is": 3.0,
+              "rank": 8,
+              "signature": [
+                "apply_rotation"
+              ]
+            }
+          ]
+        }
+      ],
+      "results": {
+        "IS": {
+          "ci_high": 5.391078657842122,
+          "ci_low": 4.408921342157878,
+          "confidence": 0.95,
+          "mean": 4.9,
+          "n": 5.0,
+          "std": 0.5602578771323871,
+          "variance": 0.31388888888888894
+        },
+        "discovery": {
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence": 0.95,
+          "mean": 1.0,
+          "n": 5.0,
+          "std": 0.0,
+          "variance": 0.0
+        }
+      },
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "statistics": {
+        "IS": {
+          "ci_high": 5.391078657842122,
+          "ci_low": 4.408921342157878,
+          "confidence": 0.95,
+          "mean": 4.9,
+          "n": 5.0,
+          "std": 0.5602578771323871,
+          "variance": 0.31388888888888894
+        },
+        "discovery": {
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence": 0.95,
+          "mean": 1.0,
+          "n": 5.0,
+          "std": 0.0,
+          "variance": 0.0
+        }
+      },
+      "thresholds": {}
+    },
+    "reflection": {
+      "artifacts": {
+        "json": "C:\\Users\\bhuwan.bhawarlal\\Desktop\\projects\\ReasonFlux\\reports\\experiments\\EXP-IDT-01\\record.json",
+        "md": "C:\\Users\\bhuwan.bhawarlal\\Desktop\\projects\\ReasonFlux\\reports\\experiments\\EXP-IDT-01\\report.md"
+      },
+      "claim": "IDT",
+      "configuration": {
+        "family": "reflection",
+        "per_family": 6
+      },
+      "dataset_version": "synthetic-v1",
+      "experiment_id": "EXP-IDT-01",
+      "failure_cases": [],
+      "metrics": {
+        "IS": 6.0,
+        "discovery": 1.0
+      },
+      "observations": {},
+      "raw_results": [
+        {
+          "claim": "IDT",
+          "configuration": {
+            "family": "reflection",
+            "per_family": 6
+          },
+          "dataset_version": "synthetic-v1",
+          "expected_found": true,
+          "expected_signature": [
+            "find_symmetry",
+            "apply_reflection"
+          ],
+          "experiment": "reflection_discovery",
+          "experiment_id": "EXP-IDT-01",
+          "failure_cases": [],
+          "metrics": {
+            "IS": 6.0,
+            "discovery": 1.0,
+            "rank": 3.0
+          },
+          "n_candidates": 5,
+          "n_ranked": 5,
+          "n_traces": 6,
+          "observations": {
+            "validated": 5
+          },
+          "seed": 0,
+          "thresholds": {
+            "discovery": true
+          },
+          "top_invariants": [
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-21fc62fe0f5c3383",
+              "is": 6.0,
+              "rank": 1,
+              "signature": [
+                "detect_object"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-5851606191e6a4cf",
+              "is": 6.0,
+              "rank": 2,
+              "signature": [
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-8cb21a2c4411f507",
+              "is": 6.0,
+              "rank": 3,
+              "signature": [
+                "detect_object",
+                "find_symmetry",
+                "apply_reflection",
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-a4f872d69c07cbc0",
+              "is": 6.0,
+              "rank": 4,
+              "signature": [
+                "apply_reflection"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-b977e7292dcf8ad0",
+              "is": 6.0,
+              "rank": 5,
+              "signature": [
+                "find_symmetry"
+              ]
+            }
+          ]
+        },
+        {
+          "claim": "IDT",
+          "configuration": {
+            "family": "reflection",
+            "per_family": 6
+          },
+          "dataset_version": "synthetic-v1",
+          "expected_found": true,
+          "expected_signature": [
+            "find_symmetry",
+            "apply_reflection"
+          ],
+          "experiment": "reflection_discovery",
+          "experiment_id": "EXP-IDT-01",
+          "failure_cases": [],
+          "metrics": {
+            "IS": 6.0,
+            "discovery": 1.0,
+            "rank": 3.0
+          },
+          "n_candidates": 5,
+          "n_ranked": 5,
+          "n_traces": 6,
+          "observations": {
+            "validated": 5
+          },
+          "seed": 1,
+          "thresholds": {
+            "discovery": true
+          },
+          "top_invariants": [
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-21fc62fe0f5c3383",
+              "is": 6.0,
+              "rank": 1,
+              "signature": [
+                "detect_object"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-5851606191e6a4cf",
+              "is": 6.0,
+              "rank": 2,
+              "signature": [
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-8cb21a2c4411f507",
+              "is": 6.0,
+              "rank": 3,
+              "signature": [
+                "detect_object",
+                "find_symmetry",
+                "apply_reflection",
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-a4f872d69c07cbc0",
+              "is": 6.0,
+              "rank": 4,
+              "signature": [
+                "apply_reflection"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-b977e7292dcf8ad0",
+              "is": 6.0,
+              "rank": 5,
+              "signature": [
+                "find_symmetry"
+              ]
+            }
+          ]
+        },
+        {
+          "claim": "IDT",
+          "configuration": {
+            "family": "reflection",
+            "per_family": 6
+          },
+          "dataset_version": "synthetic-v1",
+          "expected_found": true,
+          "expected_signature": [
+            "find_symmetry",
+            "apply_reflection"
+          ],
+          "experiment": "reflection_discovery",
+          "experiment_id": "EXP-IDT-01",
+          "failure_cases": [],
+          "metrics": {
+            "IS": 6.0,
+            "discovery": 1.0,
+            "rank": 3.0
+          },
+          "n_candidates": 5,
+          "n_ranked": 5,
+          "n_traces": 6,
+          "observations": {
+            "validated": 5
+          },
+          "seed": 2,
+          "thresholds": {
+            "discovery": true
+          },
+          "top_invariants": [
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-21fc62fe0f5c3383",
+              "is": 6.0,
+              "rank": 1,
+              "signature": [
+                "detect_object"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-5851606191e6a4cf",
+              "is": 6.0,
+              "rank": 2,
+              "signature": [
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-8cb21a2c4411f507",
+              "is": 6.0,
+              "rank": 3,
+              "signature": [
+                "detect_object",
+                "find_symmetry",
+                "apply_reflection",
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-a4f872d69c07cbc0",
+              "is": 6.0,
+              "rank": 4,
+              "signature": [
+                "apply_reflection"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-b977e7292dcf8ad0",
+              "is": 6.0,
+              "rank": 5,
+              "signature": [
+                "find_symmetry"
+              ]
+            }
+          ]
+        },
+        {
+          "claim": "IDT",
+          "configuration": {
+            "family": "reflection",
+            "per_family": 6
+          },
+          "dataset_version": "synthetic-v1",
+          "expected_found": true,
+          "expected_signature": [
+            "find_symmetry",
+            "apply_reflection"
+          ],
+          "experiment": "reflection_discovery",
+          "experiment_id": "EXP-IDT-01",
+          "failure_cases": [],
+          "metrics": {
+            "IS": 6.0,
+            "discovery": 1.0,
+            "rank": 3.0
+          },
+          "n_candidates": 5,
+          "n_ranked": 5,
+          "n_traces": 6,
+          "observations": {
+            "validated": 5
+          },
+          "seed": 3,
+          "thresholds": {
+            "discovery": true
+          },
+          "top_invariants": [
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-21fc62fe0f5c3383",
+              "is": 6.0,
+              "rank": 1,
+              "signature": [
+                "detect_object"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-5851606191e6a4cf",
+              "is": 6.0,
+              "rank": 2,
+              "signature": [
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-8cb21a2c4411f507",
+              "is": 6.0,
+              "rank": 3,
+              "signature": [
+                "detect_object",
+                "find_symmetry",
+                "apply_reflection",
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-a4f872d69c07cbc0",
+              "is": 6.0,
+              "rank": 4,
+              "signature": [
+                "apply_reflection"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-b977e7292dcf8ad0",
+              "is": 6.0,
+              "rank": 5,
+              "signature": [
+                "find_symmetry"
+              ]
+            }
+          ]
+        },
+        {
+          "claim": "IDT",
+          "configuration": {
+            "family": "reflection",
+            "per_family": 6
+          },
+          "dataset_version": "synthetic-v1",
+          "expected_found": true,
+          "expected_signature": [
+            "find_symmetry",
+            "apply_reflection"
+          ],
+          "experiment": "reflection_discovery",
+          "experiment_id": "EXP-IDT-01",
+          "failure_cases": [],
+          "metrics": {
+            "IS": 6.0,
+            "discovery": 1.0,
+            "rank": 3.0
+          },
+          "n_candidates": 5,
+          "n_ranked": 5,
+          "n_traces": 6,
+          "observations": {
+            "validated": 5
+          },
+          "seed": 4,
+          "thresholds": {
+            "discovery": true
+          },
+          "top_invariants": [
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-21fc62fe0f5c3383",
+              "is": 6.0,
+              "rank": 1,
+              "signature": [
+                "detect_object"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-5851606191e6a4cf",
+              "is": 6.0,
+              "rank": 2,
+              "signature": [
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-8cb21a2c4411f507",
+              "is": 6.0,
+              "rank": 3,
+              "signature": [
+                "detect_object",
+                "find_symmetry",
+                "apply_reflection",
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-a4f872d69c07cbc0",
+              "is": 6.0,
+              "rank": 4,
+              "signature": [
+                "apply_reflection"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "reflection"
+              ],
+              "frequency": 6,
+              "generality": 1.0,
+              "invariant_id": "INV-b977e7292dcf8ad0",
+              "is": 6.0,
+              "rank": 5,
+              "signature": [
+                "find_symmetry"
+              ]
+            }
+          ]
+        }
+      ],
+      "results": {
+        "IS": {
+          "ci_high": 6.0,
+          "ci_low": 6.0,
+          "confidence": 0.95,
+          "mean": 6.0,
+          "n": 5.0,
+          "std": 0.0,
+          "variance": 0.0
+        },
+        "discovery": {
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence": 0.95,
+          "mean": 1.0,
+          "n": 5.0,
+          "std": 0.0,
+          "variance": 0.0
+        }
+      },
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "statistics": {
+        "IS": {
+          "ci_high": 6.0,
+          "ci_low": 6.0,
+          "confidence": 0.95,
+          "mean": 6.0,
+          "n": 5.0,
+          "std": 0.0,
+          "variance": 0.0
+        },
+        "discovery": {
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence": 0.95,
+          "mean": 1.0,
+          "n": 5.0,
+          "std": 0.0,
+          "variance": 0.0
+        }
+      },
+      "thresholds": {}
+    },
+    "rotation": {
+      "artifacts": {
+        "json": "C:\\Users\\bhuwan.bhawarlal\\Desktop\\projects\\ReasonFlux\\reports\\experiments\\EXP-IDT-02\\record.json",
+        "md": "C:\\Users\\bhuwan.bhawarlal\\Desktop\\projects\\ReasonFlux\\reports\\experiments\\EXP-IDT-02\\report.md"
+      },
+      "claim": "IDT",
+      "configuration": {
+        "family": "rotation",
+        "per_family": 6
+      },
+      "dataset_version": "synthetic-v1",
+      "experiment_id": "EXP-IDT-02",
+      "failure_cases": [],
+      "metrics": {
+        "IS": 3.0,
+        "discovery": 1.0
+      },
+      "observations": {},
+      "raw_results": [
+        {
+          "claim": "IDT",
+          "configuration": {
+            "family": "rotation",
+            "per_family": 6
+          },
+          "dataset_version": "synthetic-v1",
+          "expected_found": true,
+          "expected_signature": [
+            "find_rotation",
+            "apply_rotation"
+          ],
+          "experiment": "rotation_discovery",
+          "experiment_id": "EXP-IDT-02",
+          "failure_cases": [],
+          "metrics": {
+            "IS": 3.0,
+            "discovery": 1.0,
+            "rank": 2.0
+          },
+          "n_candidates": 5,
+          "n_ranked": 5,
+          "n_traces": 6,
+          "observations": {
+            "validated": 5
+          },
+          "seed": 0,
+          "thresholds": {
+            "discovery": true
+          },
+          "top_invariants": [
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-21fc62fe0f5c3383",
+              "is": 3.0,
+              "rank": 1,
+              "signature": [
+                "detect_object"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-489db88e598d48b3",
+              "is": 3.0,
+              "rank": 2,
+              "signature": [
+                "find_rotation"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-5851606191e6a4cf",
+              "is": 3.0,
+              "rank": 3,
+              "signature": [
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-6ba811ae991258da",
+              "is": 3.0,
+              "rank": 4,
+              "signature": [
+                "detect_object",
+                "find_rotation",
+                "apply_rotation",
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-cd89c6e9697e31c5",
+              "is": 3.0,
+              "rank": 5,
+              "signature": [
+                "apply_rotation"
+              ]
+            }
+          ]
+        },
+        {
+          "claim": "IDT",
+          "configuration": {
+            "family": "rotation",
+            "per_family": 6
+          },
+          "dataset_version": "synthetic-v1",
+          "expected_found": true,
+          "expected_signature": [
+            "find_rotation",
+            "apply_rotation"
+          ],
+          "experiment": "rotation_discovery",
+          "experiment_id": "EXP-IDT-02",
+          "failure_cases": [],
+          "metrics": {
+            "IS": 3.0,
+            "discovery": 1.0,
+            "rank": 2.0
+          },
+          "n_candidates": 5,
+          "n_ranked": 5,
+          "n_traces": 6,
+          "observations": {
+            "validated": 5
+          },
+          "seed": 1,
+          "thresholds": {
+            "discovery": true
+          },
+          "top_invariants": [
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-21fc62fe0f5c3383",
+              "is": 3.0,
+              "rank": 1,
+              "signature": [
+                "detect_object"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-489db88e598d48b3",
+              "is": 3.0,
+              "rank": 2,
+              "signature": [
+                "find_rotation"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-5851606191e6a4cf",
+              "is": 3.0,
+              "rank": 3,
+              "signature": [
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-6ba811ae991258da",
+              "is": 3.0,
+              "rank": 4,
+              "signature": [
+                "detect_object",
+                "find_rotation",
+                "apply_rotation",
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-cd89c6e9697e31c5",
+              "is": 3.0,
+              "rank": 5,
+              "signature": [
+                "apply_rotation"
+              ]
+            }
+          ]
+        },
+        {
+          "claim": "IDT",
+          "configuration": {
+            "family": "rotation",
+            "per_family": 6
+          },
+          "dataset_version": "synthetic-v1",
+          "expected_found": true,
+          "expected_signature": [
+            "find_rotation",
+            "apply_rotation"
+          ],
+          "experiment": "rotation_discovery",
+          "experiment_id": "EXP-IDT-02",
+          "failure_cases": [],
+          "metrics": {
+            "IS": 3.0,
+            "discovery": 1.0,
+            "rank": 2.0
+          },
+          "n_candidates": 5,
+          "n_ranked": 5,
+          "n_traces": 6,
+          "observations": {
+            "validated": 5
+          },
+          "seed": 2,
+          "thresholds": {
+            "discovery": true
+          },
+          "top_invariants": [
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-21fc62fe0f5c3383",
+              "is": 3.0,
+              "rank": 1,
+              "signature": [
+                "detect_object"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-489db88e598d48b3",
+              "is": 3.0,
+              "rank": 2,
+              "signature": [
+                "find_rotation"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-5851606191e6a4cf",
+              "is": 3.0,
+              "rank": 3,
+              "signature": [
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-6ba811ae991258da",
+              "is": 3.0,
+              "rank": 4,
+              "signature": [
+                "detect_object",
+                "find_rotation",
+                "apply_rotation",
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-cd89c6e9697e31c5",
+              "is": 3.0,
+              "rank": 5,
+              "signature": [
+                "apply_rotation"
+              ]
+            }
+          ]
+        },
+        {
+          "claim": "IDT",
+          "configuration": {
+            "family": "rotation",
+            "per_family": 6
+          },
+          "dataset_version": "synthetic-v1",
+          "expected_found": true,
+          "expected_signature": [
+            "find_rotation",
+            "apply_rotation"
+          ],
+          "experiment": "rotation_discovery",
+          "experiment_id": "EXP-IDT-02",
+          "failure_cases": [],
+          "metrics": {
+            "IS": 3.0,
+            "discovery": 1.0,
+            "rank": 2.0
+          },
+          "n_candidates": 5,
+          "n_ranked": 5,
+          "n_traces": 6,
+          "observations": {
+            "validated": 5
+          },
+          "seed": 3,
+          "thresholds": {
+            "discovery": true
+          },
+          "top_invariants": [
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-21fc62fe0f5c3383",
+              "is": 3.0,
+              "rank": 1,
+              "signature": [
+                "detect_object"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-489db88e598d48b3",
+              "is": 3.0,
+              "rank": 2,
+              "signature": [
+                "find_rotation"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-5851606191e6a4cf",
+              "is": 3.0,
+              "rank": 3,
+              "signature": [
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-6ba811ae991258da",
+              "is": 3.0,
+              "rank": 4,
+              "signature": [
+                "detect_object",
+                "find_rotation",
+                "apply_rotation",
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-cd89c6e9697e31c5",
+              "is": 3.0,
+              "rank": 5,
+              "signature": [
+                "apply_rotation"
+              ]
+            }
+          ]
+        },
+        {
+          "claim": "IDT",
+          "configuration": {
+            "family": "rotation",
+            "per_family": 6
+          },
+          "dataset_version": "synthetic-v1",
+          "expected_found": true,
+          "expected_signature": [
+            "find_rotation",
+            "apply_rotation"
+          ],
+          "experiment": "rotation_discovery",
+          "experiment_id": "EXP-IDT-02",
+          "failure_cases": [],
+          "metrics": {
+            "IS": 3.0,
+            "discovery": 1.0,
+            "rank": 2.0
+          },
+          "n_candidates": 5,
+          "n_ranked": 5,
+          "n_traces": 6,
+          "observations": {
+            "validated": 5
+          },
+          "seed": 4,
+          "thresholds": {
+            "discovery": true
+          },
+          "top_invariants": [
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-21fc62fe0f5c3383",
+              "is": 3.0,
+              "rank": 1,
+              "signature": [
+                "detect_object"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-489db88e598d48b3",
+              "is": 3.0,
+              "rank": 2,
+              "signature": [
+                "find_rotation"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-5851606191e6a4cf",
+              "is": 3.0,
+              "rank": 3,
+              "signature": [
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "moderate",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-6ba811ae991258da",
+              "is": 3.0,
+              "rank": 4,
+              "signature": [
+                "detect_object",
+                "find_rotation",
+                "apply_rotation",
+                "verify_output"
+              ]
+            },
+            {
+              "confidence": "weak",
+              "consistency": 1.0,
+              "families": [
+                "rotation"
+              ],
+              "frequency": 3,
+              "generality": 1.0,
+              "invariant_id": "INV-cd89c6e9697e31c5",
+              "is": 3.0,
+              "rank": 5,
+              "signature": [
+                "apply_rotation"
+              ]
+            }
+          ]
+        }
+      ],
+      "results": {
+        "IS": {
+          "ci_high": 3.0,
+          "ci_low": 3.0,
+          "confidence": 0.95,
+          "mean": 3.0,
+          "n": 5.0,
+          "std": 0.0,
+          "variance": 0.0
+        },
+        "discovery": {
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence": 0.95,
+          "mean": 1.0,
+          "n": 5.0,
+          "std": 0.0,
+          "variance": 0.0
+        }
+      },
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "statistics": {
+        "IS": {
+          "ci_high": 3.0,
+          "ci_low": 3.0,
+          "confidence": 0.95,
+          "mean": 3.0,
+          "n": 5.0,
+          "std": 0.0,
+          "variance": 0.0
+        },
+        "discovery": {
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence": 0.95,
+          "mean": 1.0,
+          "n": 5.0,
+          "std": 0.0,
+          "variance": 0.0
+        }
+      },
+      "thresholds": {}
+    }
+  },
+  "experiment_id": "EXP-IDT-EVIDENCE",
+  "failure_cases": [],
+  "observations": {
+    "all_results_are_multi_seed": true,
+    "thresholds_fixed_before_execution": true
+  },
+  "quality": {
+    "artifacts": {
+      "json": "C:\\Users\\bhuwan.bhawarlal\\Desktop\\projects\\ReasonFlux\\reports\\experiments\\EXP-IDT-05-07\\record.json",
+      "md": "C:\\Users\\bhuwan.bhawarlal\\Desktop\\projects\\ReasonFlux\\reports\\experiments\\EXP-IDT-05-07\\report.md"
+    },
+    "claim": "IDT",
+    "configuration": {
+      "per_family": 6
+    },
+    "dataset_version": "synthetic-v1",
+    "experiment_id": "EXP-IDT-05-07",
+    "failure_cases": [],
+    "metrics": {
+      "IP": 1.0,
+      "IR": 1.0,
+      "IS": 5.85625,
+      "confidence": 0.66
+    },
+    "observations": {},
+    "raw_results": [
+      {
+        "claim": "IDT",
+        "confidence_distribution": [
+          0.66,
+          0.66,
+          0.66,
+          0.66,
+          0.66,
+          0.66
+        ],
+        "configuration": {
+          "families": [
+            "reflection",
+            "rotation",
+            "counting",
+            "grouping"
+          ],
+          "per_family": 6
+        },
+        "dataset_version": "synthetic-v1",
+        "detected_invariants": 6,
+        "expected_invariants": 4,
+        "experiment_id": "EXP-IDT-05-07",
+        "failure_cases": [],
+        "metrics": {
+          "IP": 1.0,
+          "IR": 1.0,
+          "IS": 5.75,
+          "confidence": 0.66
+        },
+        "observations": {
+          "expected_families_found": 4.0,
+          "validated": 4
+        },
+        "seed": 0,
+        "thresholds": {
+          "precision": 0.7,
+          "recall": 0.75
+        },
+        "valid_invariants": 6
+      },
+      {
+        "claim": "IDT",
+        "confidence_distribution": [
+          0.66,
+          0.66,
+          0.66,
+          0.66,
+          0.66,
+          0.66
+        ],
+        "configuration": {
+          "families": [
+            "reflection",
+            "rotation",
+            "counting",
+            "grouping"
+          ],
+          "per_family": 6
+        },
+        "dataset_version": "synthetic-v1",
+        "detected_invariants": 6,
+        "expected_invariants": 4,
+        "experiment_id": "EXP-IDT-05-07",
+        "failure_cases": [],
+        "metrics": {
+          "IP": 1.0,
+          "IR": 1.0,
+          "IS": 5.75,
+          "confidence": 0.66
+        },
+        "observations": {
+          "expected_families_found": 4.0,
+          "validated": 4
+        },
+        "seed": 1,
+        "thresholds": {
+          "precision": 0.7,
+          "recall": 0.75
+        },
+        "valid_invariants": 6
+      },
+      {
+        "claim": "IDT",
+        "confidence_distribution": [
+          0.66,
+          0.66,
+          0.66,
+          0.66,
+          0.66,
+          0.66
+        ],
+        "configuration": {
+          "families": [
+            "reflection",
+            "rotation",
+            "counting",
+            "grouping"
+          ],
+          "per_family": 6
+        },
+        "dataset_version": "synthetic-v1",
+        "detected_invariants": 6,
+        "expected_invariants": 4,
+        "experiment_id": "EXP-IDT-05-07",
+        "failure_cases": [],
+        "metrics": {
+          "IP": 1.0,
+          "IR": 1.0,
+          "IS": 5.75,
+          "confidence": 0.66
+        },
+        "observations": {
+          "expected_families_found": 4.0,
+          "validated": 4
+        },
+        "seed": 2,
+        "thresholds": {
+          "precision": 0.7,
+          "recall": 0.75
+        },
+        "valid_invariants": 6
+      },
+      {
+        "claim": "IDT",
+        "confidence_distribution": [
+          0.66,
+          0.66,
+          0.66,
+          0.66,
+          0.66,
+          0.66,
+          0.66,
+          0.66
+        ],
+        "configuration": {
+          "families": [
+            "reflection",
+            "rotation",
+            "counting",
+            "grouping"
+          ],
+          "per_family": 6
+        },
+        "dataset_version": "synthetic-v1",
+        "detected_invariants": 8,
+        "expected_invariants": 4,
+        "experiment_id": "EXP-IDT-05-07",
+        "failure_cases": [],
+        "metrics": {
+          "IP": 1.0,
+          "IR": 1.0,
+          "IS": 6.28125,
+          "confidence": 0.66
+        },
+        "observations": {
+          "expected_families_found": 4.0,
+          "validated": 6
+        },
+        "seed": 3,
+        "thresholds": {
+          "precision": 0.7,
+          "recall": 0.75
+        },
+        "valid_invariants": 8
+      },
+      {
+        "claim": "IDT",
+        "confidence_distribution": [
+          0.66,
+          0.66,
+          0.66,
+          0.66,
+          0.66,
+          0.66
+        ],
+        "configuration": {
+          "families": [
+            "reflection",
+            "rotation",
+            "counting",
+            "grouping"
+          ],
+          "per_family": 6
+        },
+        "dataset_version": "synthetic-v1",
+        "detected_invariants": 6,
+        "expected_invariants": 4,
+        "experiment_id": "EXP-IDT-05-07",
+        "failure_cases": [],
+        "metrics": {
+          "IP": 1.0,
+          "IR": 1.0,
+          "IS": 5.75,
+          "confidence": 0.66
+        },
+        "observations": {
+          "expected_families_found": 4.0,
+          "validated": 4
+        },
+        "seed": 4,
+        "thresholds": {
+          "precision": 0.7,
+          "recall": 0.75
+        },
+        "valid_invariants": 6
+      }
+    ],
+    "results": {
+      "IP": {
+        "ci_high": 1.0,
+        "ci_low": 1.0,
+        "confidence": 0.95,
+        "mean": 1.0,
+        "n": 5.0,
+        "std": 0.0,
+        "variance": 0.0
+      },
+      "IR": {
+        "ci_high": 1.0,
+        "ci_low": 1.0,
+        "confidence": 0.95,
+        "mean": 1.0,
+        "n": 5.0,
+        "std": 0.0,
+        "variance": 0.0
+      },
+      "IS": {
+        "ci_high": 6.064496173357381,
+        "ci_low": 5.648003826642619,
+        "confidence": 0.95,
+        "mean": 5.85625,
+        "n": 5.0,
+        "std": 0.23758222260935266,
+        "variance": 0.0564453125
+      },
+      "confidence": {
+        "ci_high": 0.66,
+        "ci_low": 0.66,
+        "confidence": 0.95,
+        "mean": 0.66,
+        "n": 5.0,
+        "std": 0.0,
+        "variance": 0.0
+      }
+    },
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "statistics": {
+      "IP": {
+        "ci_high": 1.0,
+        "ci_low": 1.0,
+        "confidence": 0.95,
+        "mean": 1.0,
+        "n": 5.0,
+        "std": 0.0,
+        "variance": 0.0
+      },
+      "IR": {
+        "ci_high": 1.0,
+        "ci_low": 1.0,
+        "confidence": 0.95,
+        "mean": 1.0,
+        "n": 5.0,
+        "std": 0.0,
+        "variance": 0.0
+      },
+      "IS": {
+        "ci_high": 6.064496173357381,
+        "ci_low": 5.648003826642619,
+        "confidence": 0.95,
+        "mean": 5.85625,
+        "n": 5.0,
+        "std": 0.23758222260935266,
+        "variance": 0.0564453125
+      },
+      "confidence": {
+        "ci_high": 0.66,
+        "ci_low": 0.66,
+        "confidence": 0.95,
+        "mean": 0.66,
+        "n": 5.0,
+        "std": 0.0,
+        "variance": 0.0
+      }
+    },
+    "thresholds": {}
+  },
+  "robustness": {
+    "artifacts": {
+      "json": "C:\\Users\\bhuwan.bhawarlal\\Desktop\\projects\\ReasonFlux\\reports\\experiments\\EXP-IDT-11-13\\record.json",
+      "md": "C:\\Users\\bhuwan.bhawarlal\\Desktop\\projects\\ReasonFlux\\reports\\experiments\\EXP-IDT-11-13\\report.md"
+    },
+    "claim": "IDT",
+    "configuration": {
+      "noise": "trace operation insertion"
+    },
+    "dataset_version": "synthetic-v1",
+    "experiment_id": "EXP-IDT-11-13",
+    "failure_cases": [],
+    "metrics": {
+      "RANK_STABILITY": 0.76,
+      "VST": 1.0,
+      "sparse_mean_IS": 1.8
+    },
+    "observations": {},
+    "raw_results": [
+      {
+        "claim": "IDT",
+        "clean_top": [
+          [
+            "apply_reflection"
+          ],
+          [
+            "find_symmetry"
+          ],
+          [
+            "find_rotation"
+          ],
+          [
+            "apply_rotation"
+          ],
+          [
+            "count_objects"
+          ]
+        ],
+        "configuration": {
+          "sparse_per_family": 1,
+          "variations": 4
+        },
+        "dataset_version": "synthetic-v1",
+        "experiment_id": "EXP-IDT-11-13",
+        "failure_cases": [],
+        "metrics": {
+          "RANK_STABILITY": 0.8,
+          "VST": 1.0,
+          "clean_candidates": 6.0,
+          "clean_mean_IS": 5.75,
+          "sparse_candidates": 3.0,
+          "sparse_mean_IS": 2.25
+        },
+        "noise_rank_overlap": 0.8,
+        "noisy_top": [
+          [
+            "apply_reflection"
+          ],
+          [
+            "find_symmetry"
+          ],
+          [
+            "detect_object",
+            "find_symmetry"
+          ],
+          [
+            "find_rotation"
+          ],
+          [
+            "apply_rotation"
+          ]
+        ],
+        "observations": {
+          "clean_validation_count": 4,
+          "noise_candidate_count": 13
+        },
+        "seed": 0,
+        "sparse_observations": 4,
+        "variation_scores": {
+          "counting": 1.0,
+          "grouping": 1.0,
+          "reflection": 1.0,
+          "rotation": 1.0
+        }
+      },
+      {
+        "claim": "IDT",
+        "clean_top": [
+          [
+            "apply_reflection"
+          ],
+          [
+            "find_symmetry"
+          ],
+          [
+            "find_rotation"
+          ],
+          [
+            "apply_rotation"
+          ],
+          [
+            "count_objects"
+          ]
+        ],
+        "configuration": {
+          "sparse_per_family": 1,
+          "variations": 4
+        },
+        "dataset_version": "synthetic-v1",
+        "experiment_id": "EXP-IDT-11-13",
+        "failure_cases": [],
+        "metrics": {
+          "RANK_STABILITY": 0.8,
+          "VST": 1.0,
+          "clean_candidates": 6.0,
+          "clean_mean_IS": 5.75,
+          "sparse_candidates": 0.0,
+          "sparse_mean_IS": 0.0
+        },
+        "noise_rank_overlap": 0.8,
+        "noisy_top": [
+          [
+            "apply_reflection"
+          ],
+          [
+            "find_symmetry"
+          ],
+          [
+            "find_rotation"
+          ],
+          [
+            "apply_rotation"
+          ],
+          [
+            "verify_output"
+          ]
+        ],
+        "observations": {
+          "clean_validation_count": 4,
+          "noise_candidate_count": 9
+        },
+        "seed": 1,
+        "sparse_observations": 4,
+        "variation_scores": {
+          "counting": 1.0,
+          "grouping": 1.0,
+          "reflection": 1.0,
+          "rotation": 1.0
+        }
+      },
+      {
+        "claim": "IDT",
+        "clean_top": [
+          [
+            "apply_reflection"
+          ],
+          [
+            "find_symmetry"
+          ],
+          [
+            "find_rotation"
+          ],
+          [
+            "apply_rotation"
+          ],
+          [
+            "count_objects"
+          ]
+        ],
+        "configuration": {
+          "sparse_per_family": 1,
+          "variations": 4
+        },
+        "dataset_version": "synthetic-v1",
+        "experiment_id": "EXP-IDT-11-13",
+        "failure_cases": [],
+        "metrics": {
+          "RANK_STABILITY": 0.8,
+          "VST": 1.0,
+          "clean_candidates": 6.0,
+          "clean_mean_IS": 5.75,
+          "sparse_candidates": 3.0,
+          "sparse_mean_IS": 2.25
+        },
+        "noise_rank_overlap": 0.8,
+        "noisy_top": [
+          [
+            "apply_reflection"
+          ],
+          [
+            "find_symmetry"
+          ],
+          [
+            "find_rotation"
+          ],
+          [
+            "apply_rotation"
+          ],
+          [
+            "verify_output"
+          ]
+        ],
+        "observations": {
+          "clean_validation_count": 4,
+          "noise_candidate_count": 9
+        },
+        "seed": 2,
+        "sparse_observations": 4,
+        "variation_scores": {
+          "counting": 1.0,
+          "grouping": 1.0,
+          "reflection": 1.0,
+          "rotation": 1.0
+        }
+      },
+      {
+        "claim": "IDT",
+        "clean_top": [
+          [
+            "detect_object",
+            "find_symmetry",
+            "apply_reflection"
+          ],
+          [
+            "apply_reflection"
+          ],
+          [
+            "find_symmetry"
+          ],
+          [
+            "find_rotation"
+          ],
+          [
+            "detect_object",
+            "find_rotation",
+            "apply_rotation"
+          ]
+        ],
+        "configuration": {
+          "sparse_per_family": 1,
+          "variations": 4
+        },
+        "dataset_version": "synthetic-v1",
+        "experiment_id": "EXP-IDT-11-13",
+        "failure_cases": [],
+        "metrics": {
+          "RANK_STABILITY": 0.6,
+          "VST": 1.0,
+          "clean_candidates": 8.0,
+          "clean_mean_IS": 6.28125,
+          "sparse_candidates": 3.0,
+          "sparse_mean_IS": 2.25
+        },
+        "noise_rank_overlap": 0.6,
+        "noisy_top": [
+          [
+            "apply_reflection"
+          ],
+          [
+            "find_symmetry"
+          ],
+          [
+            "find_rotation"
+          ],
+          [
+            "apply_rotation"
+          ],
+          [
+            "count_objects"
+          ]
+        ],
+        "observations": {
+          "clean_validation_count": 6,
+          "noise_candidate_count": 8
+        },
+        "seed": 3,
+        "sparse_observations": 4,
+        "variation_scores": {
+          "counting": 1.0,
+          "grouping": 1.0,
+          "reflection": 1.0,
+          "rotation": 1.0
+        }
+      },
+      {
+        "claim": "IDT",
+        "clean_top": [
+          [
+            "apply_reflection"
+          ],
+          [
+            "find_symmetry"
+          ],
+          [
+            "find_rotation"
+          ],
+          [
+            "apply_rotation"
+          ],
+          [
+            "count_objects"
+          ]
+        ],
+        "configuration": {
+          "sparse_per_family": 1,
+          "variations": 4
+        },
+        "dataset_version": "synthetic-v1",
+        "experiment_id": "EXP-IDT-11-13",
+        "failure_cases": [],
+        "metrics": {
+          "RANK_STABILITY": 0.8,
+          "VST": 1.0,
+          "clean_candidates": 6.0,
+          "clean_mean_IS": 5.75,
+          "sparse_candidates": 3.0,
+          "sparse_mean_IS": 2.25
+        },
+        "noise_rank_overlap": 0.8,
+        "noisy_top": [
+          [
+            "apply_reflection"
+          ],
+          [
+            "find_symmetry"
+          ],
+          [
+            "find_rotation"
+          ],
+          [
+            "detect_object",
+            "find_rotation",
+            "apply_rotation"
+          ],
+          [
+            "apply_rotation"
+          ]
+        ],
+        "observations": {
+          "clean_validation_count": 4,
+          "noise_candidate_count": 12
+        },
+        "seed": 4,
+        "sparse_observations": 4,
+        "variation_scores": {
+          "counting": 1.0,
+          "grouping": 1.0,
+          "reflection": 1.0,
+          "rotation": 1.0
+        }
+      }
+    ],
+    "results": {
+      "RANK_STABILITY": {
+        "ci_high": 0.8383985593816021,
+        "ci_low": 0.6816014406183979,
+        "confidence": 0.95,
+        "mean": 0.76,
+        "n": 5.0,
+        "std": 0.08944271909999162,
+        "variance": 0.008000000000000005
+      },
+      "VST": {
+        "ci_high": 1.0,
+        "ci_low": 1.0,
+        "confidence": 0.95,
+        "mean": 1.0,
+        "n": 5.0,
+        "std": 0.0,
+        "variance": 0.0
+      },
+      "sparse_mean_IS": {
+        "ci_high": 2.681983793043024,
+        "ci_low": 0.9180162069569759,
+        "confidence": 0.95,
+        "mean": 1.8,
+        "n": 5.0,
+        "std": 1.0062305898749053,
+        "variance": 1.0125
+      }
+    },
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "statistics": {
+      "RANK_STABILITY": {
+        "ci_high": 0.8383985593816021,
+        "ci_low": 0.6816014406183979,
+        "confidence": 0.95,
+        "mean": 0.76,
+        "n": 5.0,
+        "std": 0.08944271909999162,
+        "variance": 0.008000000000000005
+      },
+      "VST": {
+        "ci_high": 1.0,
+        "ci_low": 1.0,
+        "confidence": 0.95,
+        "mean": 1.0,
+        "n": 5.0,
+        "std": 0.0,
+        "variance": 0.0
+      },
+      "sparse_mean_IS": {
+        "ci_high": 2.681983793043024,
+        "ci_low": 0.9180162069569759,
+        "confidence": 0.95,
+        "mean": 1.8,
+        "n": 5.0,
+        "std": 1.0062305898749053,
+        "variance": 1.0125
+      }
+    },
+    "thresholds": {}
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "success": true,
+  "transfer": {
+    "artifacts": {
+      "json": "C:\\Users\\bhuwan.bhawarlal\\Desktop\\projects\\ReasonFlux\\reports\\experiments\\EXP-IDT-08-10\\record.json",
+      "md": "C:\\Users\\bhuwan.bhawarlal\\Desktop\\projects\\ReasonFlux\\reports\\experiments\\EXP-IDT-08-10\\report.md"
+    },
+    "claim": "IDT",
+    "configuration": {
+      "transfer_tasks": "held-out synthetic batch"
+    },
+    "dataset_version": "synthetic-v1",
+    "experiment_id": "EXP-IDT-08-10",
+    "failure_cases": [],
+    "metrics": {
+      "PEARSON": 0.43123657749350297,
+      "SPEARMAN": 0.588095238095238,
+      "TS": 0.30238095238095236,
+      "TU": 0.14094047619047617
+    },
+    "observations": {},
+    "raw_results": [
+      {
+        "claim": "IDT",
+        "configuration": {
+          "discovery_per_family": 6,
+          "transfer_per_family": 3
+        },
+        "dataset_version": "synthetic-v1",
+        "experiment_id": "EXP-IDT-08-10",
+        "failure_cases": [],
+        "metrics": {
+          "PEARSON": 0.39999999999999997,
+          "SPEARMAN": 0.5357142857142857,
+          "TS": 0.2928571428571428,
+          "TU": 0.13708333333333333,
+          "cross_family_reuse": 2
+        },
+        "n_transfer_records": 7,
+        "observations": {
+          "credited_pairs": 7
+        },
+        "pairs": [
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 9.0,
+            "source_family": "reflection",
+            "target_family": "reflection",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-cd89c6e9697e31c5",
+            "is": 6.75,
+            "source_family": "rotation",
+            "target_family": "rotation",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 9.0,
+            "source_family": "reflection",
+            "target_family": "reflection",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 9.0,
+            "source_family": "reflection",
+            "target_family": "counting",
+            "ts": 0.4,
+            "tu": 0.4
+          },
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 9.0,
+            "source_family": "reflection",
+            "target_family": "grouping",
+            "ts": 0.4,
+            "tu": 0.4
+          },
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 9.0,
+            "source_family": "reflection",
+            "target_family": "reflection",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-cd89c6e9697e31c5",
+            "is": 6.75,
+            "source_family": "rotation",
+            "target_family": "rotation",
+            "ts": 0.25,
+            "tu": 0.25
+          }
+        ],
+        "seed": 0,
+        "transfer_utility_ranking": [
+          {
+            "coverage": 0.75,
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 9.0,
+            "tu": 0.23249999999999998
+          },
+          {
+            "coverage": 0.25,
+            "invariant_id": "INV-cd89c6e9697e31c5",
+            "is": 6.75,
+            "tu": 0.041666666666666664
+          }
+        ]
+      },
+      {
+        "claim": "IDT",
+        "configuration": {
+          "discovery_per_family": 6,
+          "transfer_per_family": 3
+        },
+        "dataset_version": "synthetic-v1",
+        "experiment_id": "EXP-IDT-08-10",
+        "failure_cases": [],
+        "metrics": {
+          "PEARSON": 0.4780914437337574,
+          "SPEARMAN": 0.6666666666666666,
+          "TS": 0.31666666666666665,
+          "TU": 0.14672619047619048,
+          "cross_family_reuse": 4
+        },
+        "n_transfer_records": 9,
+        "observations": {
+          "credited_pairs": 9
+        },
+        "pairs": [
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 10.5,
+            "source_family": "reflection",
+            "target_family": "reflection",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-cd89c6e9697e31c5",
+            "is": 5.25,
+            "source_family": "rotation",
+            "target_family": "rotation",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 10.5,
+            "source_family": "reflection",
+            "target_family": "grouping",
+            "ts": 0.4,
+            "tu": 0.4
+          },
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 10.5,
+            "source_family": "reflection",
+            "target_family": "reflection",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 10.5,
+            "source_family": "reflection",
+            "target_family": "counting",
+            "ts": 0.4,
+            "tu": 0.4
+          },
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 10.5,
+            "source_family": "reflection",
+            "target_family": "grouping",
+            "ts": 0.4,
+            "tu": 0.4
+          },
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 10.5,
+            "source_family": "reflection",
+            "target_family": "reflection",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-cd89c6e9697e31c5",
+            "is": 5.25,
+            "source_family": "rotation",
+            "target_family": "rotation",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 10.5,
+            "source_family": "reflection",
+            "target_family": "grouping",
+            "ts": 0.4,
+            "tu": 0.4
+          }
+        ],
+        "seed": 1,
+        "transfer_utility_ranking": [
+          {
+            "coverage": 0.75,
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 10.5,
+            "tu": 0.2517857142857143
+          },
+          {
+            "coverage": 0.25,
+            "invariant_id": "INV-cd89c6e9697e31c5",
+            "is": 5.25,
+            "tu": 0.041666666666666664
+          }
+        ]
+      },
+      {
+        "claim": "IDT",
+        "configuration": {
+          "discovery_per_family": 6,
+          "transfer_per_family": 3
+        },
+        "dataset_version": "synthetic-v1",
+        "experiment_id": "EXP-IDT-08-10",
+        "failure_cases": [],
+        "metrics": {
+          "PEARSON": 0.4,
+          "SPEARMAN": 0.5357142857142857,
+          "TS": 0.2928571428571428,
+          "TU": 0.13708333333333333,
+          "cross_family_reuse": 2
+        },
+        "n_transfer_records": 7,
+        "observations": {
+          "credited_pairs": 7
+        },
+        "pairs": [
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 9.75,
+            "source_family": "reflection",
+            "target_family": "reflection",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-cd89c6e9697e31c5",
+            "is": 6.0,
+            "source_family": "rotation",
+            "target_family": "rotation",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 9.75,
+            "source_family": "reflection",
+            "target_family": "reflection",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 9.75,
+            "source_family": "reflection",
+            "target_family": "counting",
+            "ts": 0.4,
+            "tu": 0.4
+          },
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 9.75,
+            "source_family": "reflection",
+            "target_family": "grouping",
+            "ts": 0.4,
+            "tu": 0.4
+          },
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 9.75,
+            "source_family": "reflection",
+            "target_family": "reflection",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-cd89c6e9697e31c5",
+            "is": 6.0,
+            "source_family": "rotation",
+            "target_family": "rotation",
+            "ts": 0.25,
+            "tu": 0.25
+          }
+        ],
+        "seed": 2,
+        "transfer_utility_ranking": [
+          {
+            "coverage": 0.75,
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 9.75,
+            "tu": 0.23249999999999998
+          },
+          {
+            "coverage": 0.25,
+            "invariant_id": "INV-cd89c6e9697e31c5",
+            "is": 6.0,
+            "tu": 0.041666666666666664
+          }
+        ]
+      },
+      {
+        "claim": "IDT",
+        "configuration": {
+          "discovery_per_family": 6,
+          "transfer_per_family": 3
+        },
+        "dataset_version": "synthetic-v1",
+        "experiment_id": "EXP-IDT-08-10",
+        "failure_cases": [],
+        "metrics": {
+          "PEARSON": 0.4780914437337574,
+          "SPEARMAN": 0.6666666666666666,
+          "TS": 0.31666666666666665,
+          "TU": 0.14672619047619048,
+          "cross_family_reuse": 4
+        },
+        "n_transfer_records": 9,
+        "observations": {
+          "credited_pairs": 9
+        },
+        "pairs": [
+          {
+            "invariant_id": "INV-02a30b2b5dd074b7",
+            "is": 10.5,
+            "source_family": "reflection",
+            "target_family": "reflection",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-b2ef40c97323c287",
+            "is": 5.25,
+            "source_family": "rotation",
+            "target_family": "rotation",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-02a30b2b5dd074b7",
+            "is": 10.5,
+            "source_family": "reflection",
+            "target_family": "grouping",
+            "ts": 0.4,
+            "tu": 0.4
+          },
+          {
+            "invariant_id": "INV-02a30b2b5dd074b7",
+            "is": 10.5,
+            "source_family": "reflection",
+            "target_family": "reflection",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-02a30b2b5dd074b7",
+            "is": 10.5,
+            "source_family": "reflection",
+            "target_family": "counting",
+            "ts": 0.4,
+            "tu": 0.4
+          },
+          {
+            "invariant_id": "INV-02a30b2b5dd074b7",
+            "is": 10.5,
+            "source_family": "reflection",
+            "target_family": "grouping",
+            "ts": 0.4,
+            "tu": 0.4
+          },
+          {
+            "invariant_id": "INV-02a30b2b5dd074b7",
+            "is": 10.5,
+            "source_family": "reflection",
+            "target_family": "reflection",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-b2ef40c97323c287",
+            "is": 5.25,
+            "source_family": "rotation",
+            "target_family": "rotation",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-02a30b2b5dd074b7",
+            "is": 10.5,
+            "source_family": "reflection",
+            "target_family": "grouping",
+            "ts": 0.4,
+            "tu": 0.4
+          }
+        ],
+        "seed": 3,
+        "transfer_utility_ranking": [
+          {
+            "coverage": 0.75,
+            "invariant_id": "INV-02a30b2b5dd074b7",
+            "is": 10.5,
+            "tu": 0.2517857142857143
+          },
+          {
+            "coverage": 0.25,
+            "invariant_id": "INV-b2ef40c97323c287",
+            "is": 5.25,
+            "tu": 0.041666666666666664
+          }
+        ]
+      },
+      {
+        "claim": "IDT",
+        "configuration": {
+          "discovery_per_family": 6,
+          "transfer_per_family": 3
+        },
+        "dataset_version": "synthetic-v1",
+        "experiment_id": "EXP-IDT-08-10",
+        "failure_cases": [],
+        "metrics": {
+          "PEARSON": 0.39999999999999997,
+          "SPEARMAN": 0.5357142857142857,
+          "TS": 0.2928571428571428,
+          "TU": 0.13708333333333333,
+          "cross_family_reuse": 2
+        },
+        "n_transfer_records": 7,
+        "observations": {
+          "credited_pairs": 7
+        },
+        "pairs": [
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 10.5,
+            "source_family": "reflection",
+            "target_family": "reflection",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-cd89c6e9697e31c5",
+            "is": 5.25,
+            "source_family": "rotation",
+            "target_family": "rotation",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 10.5,
+            "source_family": "reflection",
+            "target_family": "reflection",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 10.5,
+            "source_family": "reflection",
+            "target_family": "counting",
+            "ts": 0.4,
+            "tu": 0.4
+          },
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 10.5,
+            "source_family": "reflection",
+            "target_family": "grouping",
+            "ts": 0.4,
+            "tu": 0.4
+          },
+          {
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 10.5,
+            "source_family": "reflection",
+            "target_family": "reflection",
+            "ts": 0.25,
+            "tu": 0.25
+          },
+          {
+            "invariant_id": "INV-cd89c6e9697e31c5",
+            "is": 5.25,
+            "source_family": "rotation",
+            "target_family": "rotation",
+            "ts": 0.25,
+            "tu": 0.25
+          }
+        ],
+        "seed": 4,
+        "transfer_utility_ranking": [
+          {
+            "coverage": 0.75,
+            "invariant_id": "INV-a4f872d69c07cbc0",
+            "is": 10.5,
+            "tu": 0.23249999999999998
+          },
+          {
+            "coverage": 0.25,
+            "invariant_id": "INV-cd89c6e9697e31c5",
+            "is": 5.25,
+            "tu": 0.041666666666666664
+          }
+        ]
+      }
+    ],
+    "results": {
+      "PEARSON": {
+        "ci_high": 0.4687275898979869,
+        "ci_low": 0.39374556508901903,
+        "confidence": 0.95,
+        "mean": 0.43123657749350297,
+        "n": 5.0,
+        "std": 0.04277244528112439,
+        "variance": 0.0018294820753267796
+      },
+      "SPEARMAN": {
+        "ci_high": 0.6509643195713194,
+        "ci_low": 0.5252261566191566,
+        "confidence": 0.95,
+        "mean": 0.588095238095238,
+        "n": 5.0,
+        "std": 0.07172557300662888,
+        "variance": 0.00514455782312925
+      },
+      "TS": {
+        "ci_high": 0.3138116944675126,
+        "ci_low": 0.2909502102943921,
+        "confidence": 0.95,
+        "mean": 0.30238095238095236,
+        "n": 5.0,
+        "std": 0.01304101327393254,
+        "variance": 0.00017006802721088472
+      },
+      "TU": {
+        "ci_high": 0.14556992673553307,
+        "ci_low": 0.13631102564541928,
+        "confidence": 0.95,
+        "mean": 0.14094047619047617,
+        "n": 5.0,
+        "std": 0.005281610375942676,
+        "variance": 2.7895408163265335e-05
+      }
+    },
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "statistics": {
+      "PEARSON": {
+        "ci_high": 0.4687275898979869,
+        "ci_low": 0.39374556508901903,
+        "confidence": 0.95,
+        "mean": 0.43123657749350297,
+        "n": 5.0,
+        "std": 0.04277244528112439,
+        "variance": 0.0018294820753267796
+      },
+      "SPEARMAN": {
+        "ci_high": 0.6509643195713194,
+        "ci_low": 0.5252261566191566,
+        "confidence": 0.95,
+        "mean": 0.588095238095238,
+        "n": 5.0,
+        "std": 0.07172557300662888,
+        "variance": 0.00514455782312925
+      },
+      "TS": {
+        "ci_high": 0.3138116944675126,
+        "ci_low": 0.2909502102943921,
+        "confidence": 0.95,
+        "mean": 0.30238095238095236,
+        "n": 5.0,
+        "std": 0.01304101327393254,
+        "variance": 0.00017006802721088472
+      },
+      "TU": {
+        "ci_high": 0.14556992673553307,
+        "ci_low": 0.13631102564541928,
+        "confidence": 0.95,
+        "mean": 0.14094047619047617,
+        "n": 5.0,
+        "std": 0.005281610375942676,
+        "variance": 2.7895408163265335e-05
+      }
+    },
+    "thresholds": {}
+  }
+}

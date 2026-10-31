@@ -62,3 +62,24 @@ Phase 13B may begin only after the registry, seed policy, metric definitions,
 statistical summaries, reproducibility records, and smoke-test gate report are
 present. Thresholds are configuration inputs and must not be changed after
 observing results.
+
+## Phase 13B IDT experiment map
+
+| ID | Experiment | Runner | Primary metrics |
+| --- | --- | --- | --- |
+| EXP-IDT-01 | Reflection discovery | `experiments/idt_experiments.py` | IS, discovery |
+| EXP-IDT-02 | Rotation discovery | `experiments/idt_experiments.py` | IS, discovery |
+| EXP-IDT-03 | Counting discovery | `experiments/idt_experiments.py` | IS, discovery |
+| EXP-IDT-04 | Grouping discovery | `experiments/idt_experiments.py` | IS, discovery |
+| EXP-IDT-05 | Invariant precision | `experiments/idt_experiments.py` | IP |
+| EXP-IDT-06 | Invariant recall | `experiments/idt_experiments.py` | IR |
+| EXP-IDT-07 | Invariant confidence | `experiments/idt_experiments.py` | confidence, IS |
+| EXP-IDT-08 | IS versus TS correlation | `experiments/idt_experiments.py` | Pearson, Spearman |
+| EXP-IDT-09 | Cross-family transfer | `experiments/idt_experiments.py` | TS, TU, reuse |
+| EXP-IDT-10 | Transfer utility ranking | `experiments/idt_experiments.py` | TU |
+| EXP-IDT-11 | Variation survival | `experiments/idt_experiments.py` | VST |
+| EXP-IDT-12 | Noise resistance | `experiments/idt_experiments.py` | rank stability |
+| EXP-IDT-13 | Sparse data | `experiments/idt_experiments.py` | IS, confidence |
+
+The runner uses the Phase 13A seed policy and writes the consolidated evidence
+package to `reports/experiments/idt_evidence/`.

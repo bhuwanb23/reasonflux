@@ -1,0 +1,8 @@
+# Ground-truth labels for the governed synthetic IDT benchmark.
+# These labels define mechanism-level validity for precision/recall only;
+# they are never inferred from the experiment result.
+expected_signatures:
+  reflection: [find_symmetry, apply_reflection]
+  rotation: [find_rotation, apply_rotation]
+  counting: [count_objects]
+  grouping: [group_by_color]
