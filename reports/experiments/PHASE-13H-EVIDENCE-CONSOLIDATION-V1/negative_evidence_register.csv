@@ -1,0 +1,21 @@
+id,phase,finding,status,why_it_matters,source
+NEG-01,13B,ASFT top-k2 TU 0.095809 ties frequency-only and no-transfer,failed_primary_gate,Original transfer-aware ranking superiority criterion failed,docs/03_implementation/validation/phase_13b_results.md
+NEG-02,EXP-IDT-14,Top-1 stress test was deliberately designed after original tie,exploratory_only,Does not repair the original Phase 13B gate,reports/experiments/EXP-IDT-14/report.md
+NEG-03,13C,SCT net value 0.345 ties always/random and below memory-only 1.325,failed_superiority,No demonstrated SCT policy advantage,reports/experiments/PHASE-13C-SCT-V1/evidence_package.md
+NEG-04,13C,Zero counting/grouping skill births and composition only rotation-to-reflection,unavailable_coverage,Limits skill diversity and general composition claims,reports/experiments/PHASE-13C-SCT-V1/evidence_package.md
+NEG-05,13D,Corrected all-mandatory-baseline criterion fails on B4,failed_gate,Preserve B4 contrast; no all-baseline superiority claim,reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_analysis.md
+NEG-06,13D,IS-TS r=-0.0424 and SU-TS r=-0.0129,failed_association,No positive general predictor relation,reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_analysis.md
+NEG-07,13D,Mean CGR=-0.060 across 9 evaluable seeds,adverse_result,Positive TS-CGR correlation does not imply positive net growth,reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_analysis.md
+NEG-08,13D,No component coverage and zero active composition applications,unavailable_not_zero,Full composition and structural-transfer claim not testable,reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_analysis.md
+NEG-09,13E,"IE slope=-0.00394 with CI [-0.00421,-0.00367]",adverse_result,Contradicts sustained monotonic efficiency interpretation,reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md
+NEG-10,13E,TS-to-CGR r=-0.5027 and CI includes zero,not_positive,Transfer not shown to drive capability growth,reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md
+NEG-11,13E,No accepted higher-order capability and 0/10 post-composition growth cases,unavailable_or_not_observed,No high-order emergence evidence,reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md
+NEG-12,13E,Composition value mean=-0.1429,failed_or_null,No positive composition-value conclusion,reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md
+NEG-13,13E,ASFT task utility vs B1=-0.0361,failed_baseline,Positive final capability count does not erase utility failure,reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md
+NEG-14,13F,Joint task utility+CGR comparison fails B1 and B3,failed_or_tied,No universal baseline advantage,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/evidence_package.md
+NEG-15,13F,No-SCV/random-SCV/lifecycle contrasts equal zero,null_component_effect,No incremental effect observed in the frozen setting,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/evidence_package.md
+NEG-16,13F,Very large standardized effects due near-zero paired SD,statistical_caution,Raw differences preferred; huge d/g not practical effect size,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/evidence_package.md
+NEG-17,13G,"Exact demonstration fits 3/600 discovery, 5/200 transfer, 2/200 holdout",low_adapter_coverage,ARC results bound to this DSL,reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md
+NEG-18,13G,Zero invariants skills capabilities and 1/200 exact tasks per arm,not_demonstrated,No ARC mechanism replication or accuracy advantage,reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md
+NEG-19,13G,Attempt 01 holdout predictions followed by same-holdout rerun,non_independent_confirmation,Disclose exposure; not pristine independent evidence,reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md
+NEG-20,13H,No cross-phase pooled estimate created,design_constraint,"Phases differ in task generator, metrics, and unit",master_evidence_package.md

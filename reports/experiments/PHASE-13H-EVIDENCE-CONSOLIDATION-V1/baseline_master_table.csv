@@ -1,0 +1,24 @@
+phase,comparator,endpoint,asft_value_or_delta,sd,ci95_low,ci95_high,n,decision,scope_notes,source
+13B,frequency-only,held-out TU top-k2,0.000000,0,0,0,5,failed strict all-control gate,ASFT TU 0.095809 equals comparator,docs/03_implementation/validation/phase_13b_results.md
+13B,no-transfer,held-out TU top-k2,0.000000,0,0,0,5,failed strict all-control gate,ASFT TU 0.095809 equals comparator,docs/03_implementation/validation/phase_13b_results.md
+13B,random control,held-out TU top-k2,+0.032696,0.007866,0.025800,0.039590,5,lower than ASFT but gate still fails,ASFT 0.095809 vs random 0.063113,docs/03_implementation/validation/phase_13b_results.md
+EXP-IDT-14,frequency/no-transfer,held-out TU top-k1,0.164866,0.0011,0.1639,0.1658,5,exploratory pass on injected no-op stress test,Separate posthoc stress test not a Phase 13B repair,reports/experiments/EXP-IDT-14/report.md
+13C,ALWAYS_CREATE,primary net value,0.000000,0,0,0,10,tied,ASFT/SCT mean 0.345,reports/experiments/PHASE-13C-SCT-V1/evidence_package.md
+13C,RANDOM_CREATE,primary net value,0.000000,0,0,0,10,tied,ASFT/SCT mean 0.345,reports/experiments/PHASE-13C-SCT-V1/evidence_package.md
+13C,MEMORY_ONLY,primary net value,-0.980000,0.063246,-1.019199,-0.940801,10,ASFT lower,ASFT 0.345 vs memory-only 1.325,reports/experiments/PHASE-13C-SCT-V1/evidence_package.md
+13D,B1_NO_LEARNING,corrected transfer utility ASFT minus baseline,0.018909,0.003450,0.016727,0.020000,10,passed this baseline,Corrected saved-record analysis,reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_corrected_criteria.json
+13D,B2_MEMORY_ONLY,corrected transfer utility ASFT minus baseline,0.015273,0.003450,0.013091,0.016364,10,passed this baseline,Corrected saved-record analysis,reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_corrected_criteria.json
+13D,B3_RANDOM_SKILLS,corrected transfer utility ASFT minus baseline,0.728909,0.049113,0.706364,0.761273,10,passed this baseline,Large comparator-specific contrast,reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_corrected_criteria.json
+13D,B4_COMPRESSION_PROXY,corrected transfer utility ASFT minus baseline,-0.001091,0.003450,-0.003273,0.000000,10,failed; all-mandatory gate failed,Proxy is not canonical DreamCoder,reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_corrected_criteria.json
+13E,B1_NO_LEARNING,all-task utility delta,-0.036078,,-0.036292,,10,failed_or_null,Final Ct delta +1.1785 does not override utility failure,reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md
+13E,B2_SKILL_STORAGE_ONLY,all-task utility delta,0.077344,,0.077344,,10,pass,Joint criterion also requires final Ct delta,reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md
+13E,B3_RANDOM_SKILL_CREATION,all-task utility delta,0.077641,,0.076969,,10,pass,Joint criterion also requires final Ct delta,reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md
+13E,B4_COMPRESSION_PROXY,all-task utility delta,0.075172,,0.074958,,10,pass,Proxy caveat applies,reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md
+13F,B1_NO_LEARNING,paired all-task utility delta,-0.036344,0.000339,-0.036586,-0.036101,10,fail_or_null,Paired CGR delta +0.287172; joint criterion fails,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/analysis.json
+13F,B2_MEMORY_SKILL_STORE,paired all-task utility delta,0.074906,0.000339,0.074664,0.075149,10,pass,Paired CGR delta +0.287172,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/analysis.json
+13F,B3_RANDOM_SKILL_CREATION,paired all-task utility delta,0.000000,0.000000,0.000000,0.000000,10,fail_or_null,Exact tie; effect size undefined,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/analysis.json
+13F,B4_COMPRESSION_PROXY,paired all-task utility delta,0.074906,0.000339,0.074664,0.075149,10,pass,Proxy caveat; paired CGR delta +0.081372,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/analysis.json
+13G,B1_NO_LEARNING,exact ARC holdout task accuracy,0.005000,,,,200,tied all arms,Each arm 1/200 exact; same-holdout rerun caveat,reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md
+13G,B2_MEMORY_ONLY,exact ARC holdout task accuracy,0.005000,,,,200,tied all arms,Each arm 1/200 exact; same-holdout rerun caveat,reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md
+13G,B3_RANDOM_SKILLS,exact ARC holdout task accuracy,0.005000,,,,200,tied all arms,Each arm 1/200 exact; same-holdout rerun caveat,reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md
+13G,B4_COMPRESSION_PROXY,exact ARC holdout task accuracy,0.005000,,,,200,tied all arms,Each arm 1/200 exact; same-holdout rerun caveat,reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md

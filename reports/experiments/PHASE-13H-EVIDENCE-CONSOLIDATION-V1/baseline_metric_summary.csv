@@ -1,0 +1,51 @@
+phase,arm,metric,mean,sd,ci95_low,ci95_high,n_seeds,status_or_method,source
+13E,ASFT,IS,,,,,0,not_reported_or_not_defined,seed_summary.csv
+13E,ASFT,SU,1.832593,0.167210,1.712978,1.952207,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13E,ASFT,TS,0.258811,0.000964,0.258121,0.259501,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13E,ASFT,CGR,0.294625,0.012481,0.285697,0.303553,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13E,ASFT,IG,0.229428,0.006853,0.224526,0.234330,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13E,B1_NO_LEARNING,IS,,,,,0,not_reported_or_not_defined,seed_summary.csv
+13E,B1_NO_LEARNING,SU,0.000000,0.000000,0.000000,0.000000,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13E,B1_NO_LEARNING,TS,0.000000,0.000000,0.000000,0.000000,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13E,B1_NO_LEARNING,CGR,0.000000,0.000000,0.000000,0.000000,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13E,B1_NO_LEARNING,IG,0.000000,0.000000,0.000000,0.000000,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13E,B2_SKILL_STORAGE_ONLY,IS,,,,,0,not_reported_or_not_defined,seed_summary.csv
+13E,B2_SKILL_STORAGE_ONLY,SU,1.751111,0.198258,1.609286,1.892937,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13E,B2_SKILL_STORAGE_ONLY,TS,0.236245,0.001037,0.235503,0.236987,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13E,B2_SKILL_STORAGE_ONLY,CGR,0.000000,0.000000,0.000000,0.000000,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13E,B2_SKILL_STORAGE_ONLY,IG,0.014544,0.000036,0.014518,0.014569,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13E,B3_RANDOM_SKILL_CREATION,IS,,,,,0,not_reported_or_not_defined,seed_summary.csv
+13E,B3_RANDOM_SKILL_CREATION,SU,1.697639,0.155448,1.586438,1.808840,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13E,B3_RANDOM_SKILL_CREATION,TS,0.237681,0.004446,0.234501,0.240862,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13E,B3_RANDOM_SKILL_CREATION,CGR,0.254543,0.014426,0.244223,0.264863,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13E,B3_RANDOM_SKILL_CREATION,IG,0.190277,0.010794,0.182555,0.197999,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13E,B4_COMPRESSION_PROXY,IS,,,,,0,not_reported_or_not_defined,seed_summary.csv
+13E,B4_COMPRESSION_PROXY,SU,1.315000,0.013176,1.305574,1.324426,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13E,B4_COMPRESSION_PROXY,TS,0.227678,0.001411,0.226668,0.228688,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13E,B4_COMPRESSION_PROXY,CGR,0.208253,0.005170,0.204554,0.211951,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13E,B4_COMPRESSION_PROXY,IG,0.166292,0.002743,0.164329,0.168254,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13F,ASFT,IS,10.500000,0.000000,10.500000,10.500000,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13F,ASFT,SU,1.709769,0.042675,1.679240,1.740297,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13F,ASFT,TS,0.252442,0.001628,0.251278,0.253606,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13F,ASFT,CGR,0.287172,0.000030,0.287151,0.287193,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13F,ASFT,IG,0.223802,0.000046,0.223769,0.223835,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13F,B1_NO_LEARNING,IS,,,,,0,not_reported_or_not_defined,seed_summary.csv
+13F,B1_NO_LEARNING,SU,,,,,0,not_reported_or_not_defined,seed_summary.csv
+13F,B1_NO_LEARNING,TS,,,,,0,not_reported_or_not_defined,seed_summary.csv
+13F,B1_NO_LEARNING,CGR,0.000000,0.000000,0.000000,0.000000,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13F,B1_NO_LEARNING,IG,0.000000,0.000000,0.000000,0.000000,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13F,B2_MEMORY_SKILL_STORE,IS,,,,,0,not_reported_or_not_defined,seed_summary.csv
+13F,B2_MEMORY_SKILL_STORE,SU,1.366250,0.016084,1.354745,1.377755,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13F,B2_MEMORY_SKILL_STORE,TS,0.224085,0.000626,0.223637,0.224533,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13F,B2_MEMORY_SKILL_STORE,CGR,0.000000,0.000000,0.000000,0.000000,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13F,B2_MEMORY_SKILL_STORE,IG,0.013910,0.000016,0.013899,0.013922,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13F,B3_RANDOM_SKILL_CREATION,IS,10.575000,0.799740,10.002901,11.147099,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13F,B3_RANDOM_SKILL_CREATION,SU,1.709769,0.042675,1.679240,1.740297,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13F,B3_RANDOM_SKILL_CREATION,TS,0.252442,0.001628,0.251278,0.253606,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13F,B3_RANDOM_SKILL_CREATION,CGR,0.287172,0.000030,0.287151,0.287193,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13F,B3_RANDOM_SKILL_CREATION,IG,0.223802,0.000046,0.223769,0.223835,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13F,B4_COMPRESSION_PROXY,IS,,,,,0,not_reported_or_not_defined,seed_summary.csv
+13F,B4_COMPRESSION_PROXY,SU,1.308750,0.000000,1.308750,1.308750,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13F,B4_COMPRESSION_PROXY,TS,0.228347,0.000000,0.228347,0.228347,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13F,B4_COMPRESSION_PROXY,CGR,0.205800,0.000000,0.205800,0.205800,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv
+13F,B4_COMPRESSION_PROXY,IG,0.164990,0.000000,0.164990,0.164990,10,descriptive t interval across saved seed-level arm summaries,seed_summary.csv

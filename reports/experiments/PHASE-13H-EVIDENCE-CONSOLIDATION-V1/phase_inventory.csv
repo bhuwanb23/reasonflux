@@ -1,0 +1,10 @@
+phase,artifact,role,scope,seed_or_task_unit,primary_outcome_status,used_in_13H_as
+13A,docs/03_implementation/validation/phase_13a.md,readiness smoke only,software/process checks,not a benchmark,not scientific outcome,implementation readiness context only
+13B,docs/03_implementation/validation/phase_13b_results.md,original confirmatory synthetic-v1 gate,synthetic-v1,seeds 0-4,strict baseline gate failed; preserve,primary IDT negative evidence
+EXP-IDT-14,reports/experiments/EXP-IDT-14/report.md,posthoc supplemental stress test,synthetic confound stress,seeds per report,exploratory only,not a 13B repair
+13C,reports/experiments/PHASE-13C-SCT-V1/evidence_package.md,SCT confirmation,synthetic SCT,seeds 20-29,strict superiority failed,skill/SCV/reuse evidence
+13D,reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_analysis.md,corrected saved-record analysis,synthetic-transfer-v1,10 seed clusters; 9 CGR evaluable,mandatory baseline gate failed; composition unavailable,authoritative corrected contrasts
+13E,reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md,CGM confirmation,synthetic,seeds 60-69,positive growth metrics but mixed/adverse criteria,metric and baseline evidence
+13F,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/evidence_package.md,baseline/ablation confirmation,synthetic,seeds 70-79,passed B2/B4; failed B1/B3; several nulls,paired comparative evidence
+13G,reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md,bounded external-validity probe,ARC-AGI-2 public training split,600/200/200 tasks; repeated holdout caveat,low coverage; no mechanism chain,external-validity limitation
+13H,reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/master_evidence_package.md,evidence consolidation only,no new benchmark,no new experimental unit,deliverables complete; scientific claims remain bounded,Phase 14 readiness decision

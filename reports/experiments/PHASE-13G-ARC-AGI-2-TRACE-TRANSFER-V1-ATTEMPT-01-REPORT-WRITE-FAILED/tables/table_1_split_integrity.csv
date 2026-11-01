@@ -1,0 +1,5 @@
+split,tasks,train_pairs,test_pairs,sha256_ids,overlap
+discovery,600,1932,646,af59871601d8382fad0ef8edc5e125a137a79464922c7c74abf92ed001fe911d,False
+transfer,200,649,212,7d4a02f559440d7380e301a64168d3ebc358a2018b05cbded80f34e7b6c8e73d,False
+holdout,200,651,218,9b82dd54e903a5dc05a5ffd6120882deb280aa075cf78f2db4d3d163ac6e27ce,False
+official_evaluation,120,not accessed,not accessed,not computed,excluded; archive transport deviation disclosed

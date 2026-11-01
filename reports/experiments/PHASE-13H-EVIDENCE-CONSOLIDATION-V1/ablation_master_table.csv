@@ -1,0 +1,22 @@
+phase,ablation_or_control,metric,asft_minus_comparison,ci95_low,ci95_high,n,status,interpretation_limit,source
+13C,ALWAYS_CREATE,primary_net_value,0.000,,,10,tied,No SCT policy superiority,reports/experiments/PHASE-13C-SCT-V1/evidence_package.md
+13C,RANDOM_CREATE,primary_net_value,0.000,,,10,tied,Random-create probability degenerate at 1.0,reports/experiments/PHASE-13C-SCT-V1/evidence_package.md
+13C,MEMORY_ONLY,primary_net_value,-0.980,,,10,ASFT lower,Memory-only mean 1.325 vs SCT 0.345,reports/experiments/PHASE-13C-SCT-V1/evidence_package.md
+13D,A1_NO_INVARIANTS,corrected transfer utility,0.018909,0.016727,0.020000,10,positive ASFT contrast,Within synthetic transfer metric,reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_corrected_criteria.json
+13D,A2_NO_SCT,corrected transfer utility,0.000,0.000,0.000,10,null,No SCT effect detected,reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_corrected_criteria.json
+13D,A3_NO_PERSISTENCE,corrected transfer utility,0.017018,0.015055,0.018000,10,positive ASFT contrast,Within synthetic transfer metric,reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_corrected_criteria.json
+13D,A4_NO_COMPOSITION,corrected transfer utility,0.000,0.000,0.000,10,unavailable_missing_component_skills,No active applications and missing source skills,reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_corrected_criteria.json
+13E,A1_NO_IDT,growth_metric,0.059499,0.041976,,10,pass,Metric growth does not equal task utility,reports/experiments/PHASE-13E-CAP-GROWTH-V1/analysis.json
+13E,A2_NO_SCT,growth_metric,0.000,0.000,,10,fail_or_null,No growth effect detected,reports/experiments/PHASE-13E-CAP-GROWTH-V1/analysis.json
+13E,A3_NO_SKILL_LIBRARY,growth_metric,0.294625,0.285696,,10,pass,Metric pathway dependence,reports/experiments/PHASE-13E-CAP-GROWTH-V1/analysis.json
+13E,A4_NO_COMPOSITION,growth_metric,0.034970,0.030506,,10,pass,Composition value itself mean -0.1429,reports/experiments/PHASE-13E-CAP-GROWTH-V1/analysis.json
+13F,A1_NO_IDT,task utility,-0.002438,-0.002680,-0.002195,10,mixed with CGR +0.015001,Task utility and CGR diverge,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/analysis.json
+13F,A1_NO_IDT,CGR,0.015001,0.012947,0.017056,10,positive metric contrast,Near-deterministic paired stream,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/analysis.json
+13F,A1_1_FREQUENCY_ONLY,task utility and CGR,0.000,0.000,0.000,10,null,Effect sizes undefined at zero SD,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/analysis.json
+13F,A2_NO_SCV,task utility and CGR,0.000,0.000,0.000,10,null,No incremental effect observed,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/analysis.json
+13F,A2_1_RANDOM_SCV,task utility and CGR,0.000,0.000,0.000,10,null,Randomized predictor ties full system,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/analysis.json
+13F,A2_2_NO_LIFECYCLE,task utility and CGR,0.000,0.000,0.000,10,null,Lifecycle effect not detected,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/analysis.json
+13F,A2_3_NO_COMPOSITION,task utility,+0.077344,,,10,positive,Specific synthetic endpoint; composition-specific utility +0.6188,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/evidence_package.md
+13F,A3_NO_CAPABILITY_LAYER,CGR,0.287172,0.287151,0.287193,10,metric difference,No task-utility difference,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/analysis.json
+13F,X1_NO_TRANSFER,task utility,-0.036344,-0.036586,-0.036101,10,ASFT lower on this contrast,Other outcomes differ,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/analysis.json
+13G,bounded ARC pipeline,invariants skills capabilities,0,,,,unavailable/no events,Not evidence of equivalence; DSL coverage low,reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md

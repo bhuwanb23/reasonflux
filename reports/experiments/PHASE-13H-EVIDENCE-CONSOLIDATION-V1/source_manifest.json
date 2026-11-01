@@ -1,0 +1,163 @@
+{
+  "package": "PHASE-13H-EVIDENCE-CONSOLIDATION-V1",
+  "purpose": "saved-record-only evidence consolidation; no Phase 13A-13G experiment rerun",
+  "hash_algorithm": "SHA-256",
+  "source_count": 31,
+  "sources": [
+    {
+      "path": "docs/03_implementation/validation/phase_13.md",
+      "sha256": "56fb756dd38353ac96c7dae37f8507513cc88eb6d4f9ac8e57d0bb9cdb471ba4",
+      "size_bytes": 4582
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13_checklist.md",
+      "sha256": "01d76f69958b6ca747c7a085aa2aed37c32d278e2bbdb6151f0eb42366fa067e",
+      "size_bytes": 6914
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13a.md",
+      "sha256": "bd432e74d5ff2434025dd7e15080225c33096ec79d9414b1faa45db6e7a04608",
+      "size_bytes": 6062
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13b_results.md",
+      "sha256": "3fe2b148cb59766c5988c06279bc93f16dca94a91cbb3462191b80b502ab3c7f",
+      "size_bytes": 8487
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13c.md",
+      "sha256": "949372ca72c164eae4fef027124826977de7978e421667cf4fa959592ebe37b6",
+      "size_bytes": 8206
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13d.md",
+      "sha256": "c0d905a62d667e15f2027bba401d03aafc7ba5ba4108883ac5384c7ee88a4352",
+      "size_bytes": 8135
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13e.md",
+      "sha256": "5f40c0587385874433171078cb5fcd1f9933850a09e55db97f5d85d9c2c9d378",
+      "size_bytes": 8962
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13f.md",
+      "sha256": "24ad586193a9b56ed9b0398eeaafcdb1a38091de782ead297358656c0f5a0f7e",
+      "size_bytes": 8104
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13g.md",
+      "sha256": "f23414a94f395b550f9c2fd9de2375d3c50901ff4aa7f423cfe52044ce1a4b05",
+      "size_bytes": 7379
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13h.md",
+      "sha256": "75da296aebe66f1a7fc8bd10838d6fb554754105e130a0697b94d9b8239dc339",
+      "size_bytes": 6811
+    },
+    {
+      "path": "reports/experiments/EXP-IDT-14/report.md",
+      "sha256": "8204cf65679a29bf7b4b1297abee912d02afa9b6c61b3c3bb4158687e1a1ba2d",
+      "size_bytes": 119852
+    },
+    {
+      "path": "reports/experiments/EXP-IDT-14/record.json",
+      "sha256": "83e19ebea43e0538dec1b692d6346f7dd9f546ef5bf04d6bba9761bf737f6c04",
+      "size_bytes": 215827
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/evidence_package.md",
+      "sha256": "bdaf81eae3923dd66c2ea158a4fc3d8fc6f3cae0c7fb1cfc298174f2015131d3",
+      "size_bytes": 10362
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/correlations.json",
+      "sha256": "8b95e02faf46e4793bbf4b42f849674549f1bb730d491b58c10852e0ef9034a9",
+      "size_bytes": 1699
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/preregistration_v1_frozen_preconfirmation.md",
+      "sha256": "2b107c916a3c9d2c09cb1d97e89b934e5e374eb2cbe3940b4218a4f98d1399f1",
+      "size_bytes": 12195
+    },
+    {
+      "path": "reports/experiments/PHASE-13D-TRANSFER-V1/phase13d_results.md",
+      "sha256": "183e40153bf8e8eab9dff8ef4bc56723ba51df391b7db796b7e1e4865970af48",
+      "size_bytes": 11011
+    },
+    {
+      "path": "reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_analysis.md",
+      "sha256": "fd93a2b999f0d0620420213ded433b9f7638eae7ae4bbe8036ac61dfefcd175e",
+      "size_bytes": 2775
+    },
+    {
+      "path": "reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_corrected_criteria.json",
+      "sha256": "0c91030b7c0a92285bf48480f0c96fe4fa806c90ad6a02bcc6262eed42a23a07",
+      "size_bytes": 33527
+    },
+    {
+      "path": "reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_pairwise_baselines.csv",
+      "sha256": "39cf3fcdbdbb2416dbd4a641ea0b0d11cd5db5b8cde51fea15eaecb20514907f",
+      "size_bytes": 4241
+    },
+    {
+      "path": "reports/experiments/PHASE-13D-TRANSFER-V1/seed_metrics.json",
+      "sha256": "2193799ca0258068f9b20d524e85d87a4d9c2d48f86bf4ac6b49942a86f480d5",
+      "size_bytes": 1952907
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md",
+      "sha256": "b12c706818452c8033699f9dc5bbdc1246349760a307d3b4085951060d223f54",
+      "size_bytes": 8909
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/analysis.json",
+      "sha256": "5b04b3cf37b17962797853b103e31d3a2af7bfb87de45f341d525976400d6268",
+      "size_bytes": 255400
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/seed_summary.csv",
+      "sha256": "c9a359abe3c3b16338f36001d2be51de1ff41297f2eefb445c9dbbf94b9807ed",
+      "size_bytes": 43870
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/frozen_run_manifest.json",
+      "sha256": "cf6ef50f4bd7f4f78bd43e2ca7c13a2cd1309a141e58ad73062bc642a12c1790",
+      "size_bytes": 32250
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/evidence_package.md",
+      "sha256": "42443a38d0b6f9e0ee95931339c3a9d8344dbfee4a8247ad992fd9e74a85b6cd",
+      "size_bytes": 8225
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/analysis.json",
+      "sha256": "0e91cbf333fe40598ee0dcce36b9d5a6c5aa7c5ff5b8720f5c5901b733f69d11",
+      "size_bytes": 352058
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/seed_summary.csv",
+      "sha256": "25b230b4eebeec69fe7981e7932b40393cfe730cc7cf85e02588d266f4112e22",
+      "size_bytes": 57116
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/frozen_run_manifest.json",
+      "sha256": "f8aa7fa72db5cb097846dcc98de0dc80ecf612dcb813062a23dc1ff2e273f2c7",
+      "size_bytes": 22741
+    },
+    {
+      "path": "reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md",
+      "sha256": "ca9e71eee2092dcbb352dacc67a083bcb1b81bc409e67ecb1783f2c6b1fc7158",
+      "size_bytes": 6671
+    },
+    {
+      "path": "reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/frozen_run_manifest.json",
+      "sha256": "790ae52b75164288a84cc11639f48eb22b9576248a2b67cd59cf6ef219c19c04",
+      "size_bytes": 30979
+    },
+    {
+      "path": "reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/run_manifest.json",
+      "sha256": "5a39c13cfb97045a4c1f3203be7f964ef5d700699c445c65c4bc395d84c544a9",
+      "size_bytes": 31832
+    }
+  ]
+}
