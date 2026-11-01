@@ -1,0 +1,17 @@
+{
+  "asft_programs": [],
+  "b2_memory_source_count": 3,
+  "decision_rule": "No config, DSL, split, or routing changes after this lock.",
+  "discovery_task_count": 600,
+  "eligible_programs": [],
+  "experiment_id": "PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1",
+  "holdout_scored": false,
+  "holdout_task_count": 200,
+  "skills": [],
+  "support": {
+    "recolor_bijection": 1,
+    "reflect_vertical": 1,
+    "rotate_270": 1
+  },
+  "transfer_task_count": 200
+}

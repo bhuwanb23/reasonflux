@@ -1,0 +1,29 @@
+category,split,task_count,status
+reflection,discovery,1,bounded DSL outcome
+reflection,transfer,0,bounded DSL outcome
+reflection,holdout,1,bounded DSL outcome
+rotation,discovery,1,bounded DSL outcome
+rotation,transfer,1,bounded DSL outcome
+rotation,holdout,1,bounded DSL outcome
+rotation_or_reflection,discovery,0,bounded DSL outcome
+rotation_or_reflection,transfer,2,bounded DSL outcome
+rotation_or_reflection,holdout,0,bounded DSL outcome
+translation,discovery,0,bounded DSL outcome
+translation,transfer,1,bounded DSL outcome
+translation,holdout,0,bounded DSL outcome
+recoloring,discovery,1,bounded DSL outcome
+recoloring,transfer,1,bounded DSL outcome
+recoloring,holdout,0,bounded DSL outcome
+identity_or_other,discovery,0,bounded DSL outcome
+identity_or_other,transfer,0,bounded DSL outcome
+identity_or_other,holdout,0,bounded DSL outcome
+unsupported_v1,discovery,597,bounded DSL outcome
+unsupported_v1,transfer,195,bounded DSL outcome
+unsupported_v1,holdout,198,bounded DSL outcome
+counting,all,not estimated,not_operationalized_v1
+grouping,all,not estimated,not_operationalized_v1
+object_detection,all,not estimated,not_operationalized_v1
+pattern_completion,all,not estimated,not_operationalized_v1
+symmetry_property,discovery,167,demonstration grid property only; not solver family
+symmetry_property,transfer,53,demonstration grid property only; not solver family
+symmetry_property,holdout,63,demonstration grid property only; not solver family
