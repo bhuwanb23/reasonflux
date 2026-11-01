@@ -1,0 +1,49 @@
+{
+  "phase": "13G",
+  "experiment_id": "PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1",
+  "status": "frozen_pre_run",
+  "dataset": {
+    "name": "ARC-AGI-2 public training split only",
+    "repository": "https://github.com/arcprize/ARC-AGI-2",
+    "commit": "f3283f727488ad98fe575ea6a5ac981e4a188e49",
+    "official_evaluation_downloaded": "unpacked individually: false; one temporary upstream archive contained evaluation blobs",
+    "official_evaluation_blobs_read_or_scored": false,
+    "official_evaluation_used": false,
+    "official_public_evaluation_used_as_feedback": false,
+    "pre_run_training_json_schema_audit_included_holdout_grids": "yes, rectangular/color-domain checks only; no input-output comparisons or outcome scoring",
+    "license": "Apache-2.0",
+    "task_split": {"discovery": 600, "transfer": 200, "holdout": 200, "method": "sort training task IDs by SHA256('phase13g-v1:' + task_id); assign first 600, next 200, final 200"}
+  },
+  "dsl": {
+    "programs_in_fixed_order": ["identity", "reflect_horizontal", "reflect_vertical", "rotate_90", "rotate_180", "rotate_270", "transpose", "anti_transpose", "translate_constant", "recolor_bijection"],
+    "translation_inference": "rare-color anchor search using up to 16 deterministic source positions; all demos then replayed exactly", 
+    "per_task_candidate_budget": 3,
+    "exact_demo_fit_required": true,
+    "task_success": "exact grid equality for every test pair in task",
+    "unknown_or_unmatched": "retain as unsupported; do not force a family or infer a program"
+  },
+  "trace": {
+    "steps": ["validate_grid_schema", "enumerate_candidate_programs", "apply_program", "verify_demonstrations"],
+    "stability_permutations": 10,
+    "stability_seed": 1307,
+    "trace_success": "candidate program fits every demonstration pair exactly",
+    "primary_trace_quality": "proportion of emitted traces meeting schema and independent exact-fit checks"
+  },
+  "invariants": {"min_distinct_discovery_tasks": 5, "consistency_threshold": 1.0, "is_definition": "frequency * consistency * generality using existing core.Invariant strength; family breadth is operational transform signatures only"},
+  "skills": {"min_support": 5, "promotion": "candidate invariant is formed into a reusable program skill only after internal transfer split validation; require >=3 applicable transfer tasks and a passing existing qualify_candidate gate; transfer split never tunes DSL, threshold, or candidate order", "scv": "existing SkillCandidate SCV formula; reuse=min(1, successful transfer tasks/SkillConfig.reuse_norm=10), abstraction_gain=max(0, mean positive B1 candidate trials saved/10 programs), transfer_score=successes/applicable exact-demo-fit attempts; creation cost=existing default 0.1; no prior transfer counted as observed evidence"},
+  "transfer": {"near": "same recognized program signature on a distinct task ID", "cross_family": "same recognized signature on a distinct observable structural bucket; reported only when both buckets are independently observed", "structural": "same transformation remains exact under changed dimensions/colors/object counts; post hoc categorized descriptively and not a primary pass gate", "accuracy_unit": "task exact-match across all test pairs"},
+  "reasoning_cost": {"unit": "candidate programs tested on demonstrations", "budget": 3, "baseline_order": "fixed DSL order", "asft_order": "skills sorted by discovery support, then remaining fixed DSL order; every trial still requires exact demo validation", "no_unbounded_fallback": true},
+  "arms": {
+    "ASFT": "trace-mined invariants, transfer-validated skills, reusable skill-first ordering, 3-candidate budget",
+    "B1_NO_LEARNING": "fixed-order DSL search, no learned records",
+    "B2_MEMORY_SKILL_STORE": "episodic discovery traces ranked by nearest non-label grid-statistic distance; no invariant abstraction; exact-demo verification required",
+    "B3_RANDOM_SKILL_CREATION": "seed-keyed random permutation of the same qualified operator pool; no invariant-strength or SCV ordering",
+    "B4_COMPRESSION_PROXY": "exact repeated trace-signature compression only; no generalized motif mining; not canonical DreamCoder"
+  },
+  "primary_experiments": ["EXP-ARC-07", "EXP-ARC-10", "EXP-ARC-13", "EXP-ARC-15", "EXP-ARC-17"],
+  "growth": {"capability_unit": "independently validated reusable transform skill; capability groups require >=2 skills and successful transfer", "report_capability_coverage_and_family_coverage": true, "ig": "existing Phase 13E compute_ig pathway and frozen weights; unavailable if required validated capabilities or components are missing; no ARC-specific replacement formula"},
+  "stats": {"independent_unit": "ARC task ID", "confidence_interval": "paired bootstrap by task ID, 10000 resamples, RNG seed 1307", "nulls": "retain and report; no imputation or outcome-based threshold changes", "primary_comparison": "ASFT vs each B1-B4 on holdout exact task accuracy and candidate trials"},
+  "evidence": {"figures": 6, "tables": 6, "include_failures_and_nulls": true},
+  "constraints": ["No claim that ASFT solves ARC", "No claim of general ARC-AGI-2 score; public official evaluation untouched", "No discovery/transfer/holdout task overlap", "No edits to Phase 13C-13F artifacts or metrics", "No training on transfer/holdout outputs before their designated use", "Report DSL coverage ceiling and unsupported requested families explicitly"],
+  "run_integrity_addendum": {"attempt_01": "holdout predictions generated in memory; evidence write failed at missing task_id; no outcome rows persisted or inspected", "software_fix": "serialize discovery task_id and set program-order stability unavailable for unsupported tasks (excluded from preregistered stability denominator)", "attempt_02_reuses_same_holdout": true, "independent_replication": false}
+}
