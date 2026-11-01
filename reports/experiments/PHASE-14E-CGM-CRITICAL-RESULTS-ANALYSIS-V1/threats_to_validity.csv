@@ -1,0 +1,13 @@
+id,severity,threat,impact,mitigation_or_boundary
+CGM-01,high,"C_t aggregates skill utility, transfer, coverage, composition","Score movement can reflect skill accumulation and internal evidence rather than an independent capability construct","Separate score growth from capability-count growth"
+CGM-02,high,"No accepted higher-order emergent-type capability","Capability aggregation may be mistaken for emergent abstract competence","Limit CGM-1 to validated representation/aggregation"
+CGM-03,high,"CGR sign changes across 13D and 13E contexts","Robust growth across generators is unestablished","Report phases separately; do not pool"
+CGM-04,high,"TS-to-CGR association unstable across phases","No reliable transfer-growth direction or causal chain","Report both correlations and no causal inference"
+CGM-05,high,"IG/IGR constructed from internal deltas; IE equals IG divided by experience","Index labels may be overinterpreted as intelligence","Call computed repository indices; require external validation"
+CGM-06,medium-high,"Round means hide initialization and non-monotone IG/IGR path","Positive mean can be mistaken for sustained growth","Show round-level trajectories and zero-prior initialization"
+CGM-07,high,"Composition gain negative and no capability-count growth","Composition cannot be claimed as capability generator in this cohort","Report negative incremental value and unavailable higher-order outcome"
+CGM-08,high,"Baseline outcomes differ by phase/comparator/endpoint","Universal superiority claim unsupported","State protocol, comparator, metric, accounting"
+CGM-09,medium-high,"C_t future-utility association small and same-generator","Potentially statistically positive but practically weak and unvalidated","Preserve preregistered pass, qualify effect size/scope"
+CGM-10,high,"No independent intelligence criterion","IG/IGR/IE construct validity untested","Require external behavioral criterion"
+CGM-11,high,"No valid ARC capability units","External CGM result unavailable","Do not interpret as ARC-specific negative evidence"
+CGM-12,medium,"CCG uses four generator-defined families","Coverage growth may be generator-dependent","Do not equate synthetic coverage with semantic breadth"

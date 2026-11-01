@@ -1,0 +1,5 @@
+round,mean_C_t,mean_CGR,mean_IG,mean_IGR,mean_IE,mean_CCG,mean_CompG,interpretation
+1,0.840453,0.840453,0.657258,0.657258,0.013693,0.90,0,"Initial transition from prior C_t/IG zero dominates early values"
+2,0.959855,0.119402,0.080073,-0.577186,0.001251,0.10,0,"C_t rises; IGR sharply negative after round-1 IG spike"
+3,1.112151,0.152295,0.144206,0.064133,0.001803,0.00,1,"Composition count delta enters IG; no new capability count"
+4,1.178500,0.066350,0.036175,-0.108031,0.000377,0.00,0,"C_t still rises; IG and IGR not monotonic"

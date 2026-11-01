@@ -1,0 +1,11 @@
+split,arm,tasks,exact_successes,exact_accuracy,mean_candidate_trials,interpretation
+transfer,ASFT,200,0,0.000,3.000,"Bounded task solver; no learned skill pool"
+transfer,B1_NO_LEARNING,200,0,0.000,3.000,"Fixed-order baseline"
+transfer,B2_MEMORY_SKILL_STORE,200,1,0.005,2.990,"One nearest-episode memory success"
+transfer,B3_RANDOM_SKILL_CREATION,200,0,0.000,3.000,"Qualified operator pool empty; no learned candidate"
+transfer,B4_COMPRESSION_PROXY,200,0,0.000,3.000,"Qualified repeated-trace pool empty"
+holdout,ASFT,200,1,0.005,2.995,"One reflection task; same score as all arms"
+holdout,B1_NO_LEARNING,200,1,0.005,2.995,"One reflection task; fixed DSL solves"
+holdout,B2_MEMORY_SKILL_STORE,200,1,0.005,3.000,"One reflection task"
+holdout,B3_RANDOM_SKILL_CREATION,200,1,0.005,2.995,"One reflection task; no candidate pool"
+holdout,B4_COMPRESSION_PROXY,200,1,0.005,2.995,"One reflection task; no candidate pool"

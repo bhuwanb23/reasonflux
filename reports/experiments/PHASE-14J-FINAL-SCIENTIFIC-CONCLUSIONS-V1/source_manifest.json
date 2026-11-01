@@ -1,0 +1,492 @@
+{
+  "phase": "14J",
+  "package": "PHASE-14J-FINAL-SCIENTIFIC-CONCLUSIONS-V1",
+  "method": "final evidence synthesis only, using saved Phase 11-14 records and completed critical reviews; no new experiments, metrics, or analyses; no Phase 13 edits",
+  "source_hash_count": 95,
+  "sources": [
+    {
+      "path": "reports/experiments/PHASE-14B-IDT-CRITICAL-ANALYSIS-V1/phase14b_idt_analysis.md",
+      "sha256": "2427878888e470b7e9d76773a0891b55c158972e4ae9afbd242bc83d036016b1",
+      "bytes": 19139
+    },
+    {
+      "path": "reports/experiments/PHASE-14B-IDT-CRITICAL-ANALYSIS-V1/idt_scorecard.csv",
+      "sha256": "13a1b5be5cb76a1fa627c615b8b2a24436b47e13bcd96233ed10d475493f4d18",
+      "bytes": 2445
+    },
+    {
+      "path": "reports/experiments/PHASE-14B-IDT-CRITICAL-ANALYSIS-V1/phase13b_accounting_versions.csv",
+      "sha256": "71509f927e94df67ab6232941308e0f40e0420cd4852394d34eb087aa8ccc81d",
+      "bytes": 610
+    },
+    {
+      "path": "reports/experiments/PHASE-14B-IDT-CRITICAL-ANALYSIS-V1/source_manifest.json",
+      "sha256": "3a5cef0c100e5a91c95c7a66dabf92efef2a03b81fdca3fe163a1d27b2548954",
+      "bytes": 2371
+    },
+    {
+      "path": "reports/experiments/PHASE-14C-SCT-CRITICAL-ANALYSIS-V1/phase14c_sct_analysis.md",
+      "sha256": "d23e9cf08c3c7d932c285af0aff523efa617e85b0fa27dba03e43ab255f0d977",
+      "bytes": 22369
+    },
+    {
+      "path": "reports/experiments/PHASE-14C-SCT-CRITICAL-ANALYSIS-V1/sct_scorecard.csv",
+      "sha256": "98cb04b8dbcea29f1dea1ad082f5f6f8ce7ed125fc99144b47f2f27a1a22c78b",
+      "bytes": 2391
+    },
+    {
+      "path": "reports/experiments/PHASE-14C-SCT-CRITICAL-ANALYSIS-V1/memory_interpretation.md",
+      "sha256": "be03e4081c6691bada2e16419ccd493840936af7c7859498b9b1da0b53776436",
+      "bytes": 1994
+    },
+    {
+      "path": "reports/experiments/PHASE-14C-SCT-CRITICAL-ANALYSIS-V1/scv_predictor_comparison.csv",
+      "sha256": "3fabde78aa0c15e01e254bfc41c34cba0935384084dc7f62fd09ce2ea78bd784",
+      "bytes": 847
+    },
+    {
+      "path": "reports/experiments/PHASE-14D-TRANSFER-CRITICAL-ANALYSIS-V1/phase14d_transfer_analysis.md",
+      "sha256": "104b1af7cd33ee25e293cb43293084bf55da5a4dd7c2fb450aae52f6405077ce",
+      "bytes": 21374
+    },
+    {
+      "path": "reports/experiments/PHASE-14D-TRANSFER-CRITICAL-ANALYSIS-V1/revised_transfer_claim.md",
+      "sha256": "831edffe17f44b3ac29f64471451e136104d067449e168db2edb24bfb9c407bb",
+      "bytes": 752
+    },
+    {
+      "path": "reports/experiments/PHASE-14D-TRANSFER-CRITICAL-ANALYSIS-V1/transfer_scorecard.csv",
+      "sha256": "f0cb51f50038758019044b2d6289c68e87b1ed1363f7da29e4d6f7c6bcc3f95d",
+      "bytes": 1491
+    },
+    {
+      "path": "reports/experiments/PHASE-14E-CGM-CRITICAL-RESULTS-ANALYSIS-V1/phase14e_cgm_critical_analysis.md",
+      "sha256": "55b1c9543e9fc997e910329fd5d9a8c449205008c86a52943764a2472674460a",
+      "bytes": 20514
+    },
+    {
+      "path": "reports/experiments/PHASE-14E-CGM-CRITICAL-RESULTS-ANALYSIS-V1/revised_cgm_claim.md",
+      "sha256": "a40e647dd929913e80568beb255ba15a868729c4fb92920b56c01f445e66684a",
+      "bytes": 944
+    },
+    {
+      "path": "reports/experiments/PHASE-14E-CGM-CRITICAL-RESULTS-ANALYSIS-V1/cgm_scorecard.csv",
+      "sha256": "6f12fca900692f3e2f085e8e2319c62fd47b64f97fa2f515a92238ab9e6dfe51",
+      "bytes": 2080
+    },
+    {
+      "path": "reports/experiments/PHASE-14F-BASELINE-ABLATION-CRITICAL-ANALYSIS-V1/phase14f_baselines_ablations_analysis.md",
+      "sha256": "b9e9bbf4aa8e14b66776e038ce92dc361bda23cf5147de11524c068820e78402",
+      "bytes": 21121
+    },
+    {
+      "path": "reports/experiments/PHASE-14F-BASELINE-ABLATION-CRITICAL-ANALYSIS-V1/component_evidence_matrix.csv",
+      "sha256": "f0aaba3de28d3ff8656156fb0c6c14ffaf06ce3cb4dd440ab95a0936f4e69c4d",
+      "bytes": 2776
+    },
+    {
+      "path": "reports/experiments/PHASE-14F-BASELINE-ABLATION-CRITICAL-ANALYSIS-V1/alternative_explanation_analysis.md",
+      "sha256": "223c90feb0acdc6f202d0253b350a91c7f704a132a74a94abb1c96ac18bc8855",
+      "bytes": 2650
+    },
+    {
+      "path": "reports/experiments/PHASE-14F-BASELINE-ABLATION-CRITICAL-ANALYSIS-V1/baseline_ablation_scorecard.csv",
+      "sha256": "af6109630fbc8576675164812b17e5de1478ed91a5164e6cc30062f1b1d6d326",
+      "bytes": 2193
+    },
+    {
+      "path": "reports/experiments/PHASE-14G-ARC-FAILURE-ANALYSIS-V1/phase14g_arc_failure_analysis.md",
+      "sha256": "d01b08a9539dd3f5197e72ee5e6766f7957623333ce4d5bad42126ae9fa3b05b",
+      "bytes": 18243
+    },
+    {
+      "path": "reports/experiments/PHASE-14G-ARC-FAILURE-ANALYSIS-V1/revised_arc_claim.md",
+      "sha256": "58859544c471359d97b305e9e9e9b9283bc1dc73b775625457d1aae2458262ff",
+      "bytes": 1075
+    },
+    {
+      "path": "reports/experiments/PHASE-14G-ARC-FAILURE-ANALYSIS-V1/arc_failure_scorecard.csv",
+      "sha256": "b58ec8cf175ac3d26574183177eb2ab057de20656f67025618e991d0da537b43",
+      "bytes": 2361
+    },
+    {
+      "path": "reports/experiments/PHASE-14G-ARC-FAILURE-ANALYSIS-V1/arc_arm_outcomes.csv",
+      "sha256": "03d8a554e480ab8da93a1f1ada1b183b7eda2e38f0751c13e6127b22c57cddc0",
+      "bytes": 912
+    },
+    {
+      "path": "reports/experiments/PHASE-14G-ARC-FAILURE-ANALYSIS-V1/arc_coverage_summary.csv",
+      "sha256": "0055713b63f1ffe10af716f76d2d0dc7a5bd74f0b94009b23472f6234220822a",
+      "bytes": 923
+    },
+    {
+      "path": "reports/experiments/PHASE-14G-ARC-FAILURE-ANALYSIS-V1/source_manifest.json",
+      "sha256": "a5e2a954cd044166c748c87748dc2f3e32089edf16a74c5a8d6a8e7c610cc114",
+      "bytes": 7280
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13b_results.md",
+      "sha256": "3fe2b148cb59766c5988c06279bc93f16dca94a91cbb3462191b80b502ab3c7f",
+      "bytes": 8487
+    },
+    {
+      "path": "reports/experiments/idt_evidence/summary.json",
+      "sha256": "b31b6de139ed1528070c957714838271ee042f927af92dd4be11c4fe8183562a",
+      "bytes": 155193
+    },
+    {
+      "path": "reports/experiments/EXP-IDT-BASELINES/report.md",
+      "sha256": "45b1988b3426d75d66f1f5879c775972abf73cbd8430cfb435c4f6fda5e4fa34",
+      "bytes": 13994
+    },
+    {
+      "path": "reports/experiments/EXP-IDT-14/report.md",
+      "sha256": "8204cf65679a29bf7b4b1297abee912d02afa9b6c61b3c3bb4158687e1a1ba2d",
+      "bytes": 119852
+    },
+    {
+      "path": "reports/experiments/EXP-IDT-14/record.json",
+      "sha256": "83e19ebea43e0538dec1b692d6346f7dd9f546ef5bf04d6bba9761bf737f6c04",
+      "bytes": 215827
+    },
+    {
+      "path": "reports/experiments/EXP-IDT-01/report.md",
+      "sha256": "6d731f50f2871e4b263bcf33cc92b19f99780deb7e569537824047e449b3a872",
+      "bytes": 8335
+    },
+    {
+      "path": "reports/experiments/EXP-IDT-02/report.md",
+      "sha256": "b359b8a86fa5ab9403c7b94699c17f5a94bf41913e3f8a4f8b38da8b8aea8ff8",
+      "bytes": 8153
+    },
+    {
+      "path": "reports/experiments/EXP-IDT-03/report.md",
+      "sha256": "2242621a8506948fe2fb0d00a0789fffd80efb2e911d4b3e39e01870688d1882",
+      "bytes": 9977
+    },
+    {
+      "path": "reports/experiments/EXP-IDT-04/report.md",
+      "sha256": "c2e8d37f98a9ceb331267a5d7d1bb19d34326a87c91dd14b63329fb2b225bced",
+      "bytes": 10327
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/master_evidence_package.md",
+      "sha256": "f35ff3774672db5fd4619d0ce4802d07a0ea6d97793251002094a5a88303cd31",
+      "bytes": 26290
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/package_A_IDT.md",
+      "sha256": "369f624ac3400c62988fee7cc4837ab80d21c38bc0c9785d9cbdd89da8225717",
+      "bytes": 3518
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/package_B_SCT.md",
+      "sha256": "2fbbf59dc5e147b03a2c6e815076d999ddbcd9d586d7a5c9f366a1d7796fb012",
+      "bytes": 4672
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/package_C_CGM.md",
+      "sha256": "1fa26fec56189cd034e2fba253222ea1616d13925ed0870a04dc646e0439818b",
+      "bytes": 3482
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/package_D_Baselines.md",
+      "sha256": "a13e987b15f713ac15236288f86fcd1f64feb6d34cb98757460983a66929491e",
+      "bytes": 4173
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/package_E_Ablations.md",
+      "sha256": "805b3863350917be8582571f2a17a76c3e8de3235e87c0a9e8e092ac64d0789a",
+      "bytes": 4638
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/package_F_ARC.md",
+      "sha256": "e9c331f69bc6805515932bea8d46bdcd10ce6e1632ce903731e4c46f99c51ee2",
+      "bytes": 3105
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/package_G_Statistics.md",
+      "sha256": "32a1938f801613b129b7058407e1e7f29cee046293b3bea38a709858ed762c5c",
+      "bytes": 5866
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/package_H_Failure_Analysis.md",
+      "sha256": "49250ef771f33d4a2db93de89189ca4c43aa76baa26a2483e99ad26fe8f5f3a8",
+      "bytes": 4787
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/claim_evidence_matrix.csv",
+      "sha256": "cd33974a405995d0e8dbbdd2ec62dddc60e3f78e3d00cc89922b264090369f6d",
+      "bytes": 3871
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/negative_evidence_register.csv",
+      "sha256": "8ea4f686a6e51032a4bcea78161d25dfc220ae49526bae89f8706c2cc94b1b78",
+      "bytes": 3975
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/source_manifest.json",
+      "sha256": "79d25536b88c0780e49d70e7142bef79c527930475426bb228a40afa4eaca777",
+      "bytes": 6413
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/evidence_package.md",
+      "sha256": "bdaf81eae3923dd66c2ea158a4fc3d8fc6f3cae0c7fb1cfc298174f2015131d3",
+      "bytes": 10362
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/reuse_statistics.csv",
+      "sha256": "55cbabb3aa7d1903cc88431441069fbfce058ecc0f334f8c82a4e9880b765a3d",
+      "bytes": 16618
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/matched_controls.csv",
+      "sha256": "a0f1e4ccedd553978dd7f54d8b0da293a311dd8899dd474433dc954484765a57",
+      "bytes": 1601
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/candidate_level.csv",
+      "sha256": "ba614eeb77a42ee37d83ac99bd7460c4c61aa2a38e32d8c278565ced1a67a1c0",
+      "bytes": 11434
+    },
+    {
+      "path": "reports/experiments/PHASE-13D-TRANSFER-V1/phase13d_results.md",
+      "sha256": "183e40153bf8e8eab9dff8ef4bc56723ba51df391b7db796b7e1e4865970af48",
+      "bytes": 11011
+    },
+    {
+      "path": "reports/experiments/PHASE-13D-TRANSFER-V1/aggregate_metrics.json",
+      "sha256": "0f43fba081554ce6436812790b8c58238d7b2844cb47679376cef08d4f8433d9",
+      "bytes": 792644
+    },
+    {
+      "path": "reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_analysis.md",
+      "sha256": "fd93a2b999f0d0620420213ded433b9f7638eae7ae4bbe8036ac61dfefcd175e",
+      "bytes": 2775
+    },
+    {
+      "path": "reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_corrected_criteria.json",
+      "sha256": "0c91030b7c0a92285bf48480f0c96fe4fa806c90ad6a02bcc6262eed42a23a07",
+      "bytes": 33527
+    },
+    {
+      "path": "reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_pairwise_baselines.csv",
+      "sha256": "39cf3fcdbdbb2416dbd4a641ea0b0d11cd5db5b8cde51fea15eaecb20514907f",
+      "bytes": 4241
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md",
+      "sha256": "b12c706818452c8033699f9dc5bbdc1246349760a307d3b4085951060d223f54",
+      "bytes": 8909
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/seed_summary.csv",
+      "sha256": "c9a359abe3c3b16338f36001d2be51de1ff41297f2eefb445c9dbbf94b9807ed",
+      "bytes": 43870
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/seed_round_arm.csv",
+      "sha256": "e12b721160ecb732c79658458ee1ce94ce515ee10fe66127b3c53b0c5292375a",
+      "bytes": 112583
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/analysis.json",
+      "sha256": "5b04b3cf37b17962797853b103e31d3a2af7bfb87de45f341d525976400d6268",
+      "bytes": 255400
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/evidence_package.md",
+      "sha256": "42443a38d0b6f9e0ee95931339c3a9d8344dbfee4a8247ad992fd9e74a85b6cd",
+      "bytes": 8225
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/master_result_matrix.csv",
+      "sha256": "35c52b770312d9914cf640acd78f1cdd2ad63ef981c1c6d93ccb8a3092a15e1e",
+      "bytes": 2312
+    },
+    {
+      "path": "reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md",
+      "sha256": "ca9e71eee2092dcbb352dacc67a083bcb1b81bc409e67ecb1783f2c6b1fc7158",
+      "bytes": 6671
+    },
+    {
+      "path": "reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/summary.json",
+      "sha256": "56d2bdccbcc21a5857f1eb125830b29ec75882461bf093a5942f3335216f1a1c",
+      "bytes": 4357
+    },
+    {
+      "path": "reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/task_outcomes.csv",
+      "sha256": "2af7633521db2fbe7b982d95595e9a933f9b7fb4cc3ea95d75d5b08ed7336fd2",
+      "bytes": 277695
+    },
+    {
+      "path": "reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/discovery_trace_quality.csv",
+      "sha256": "a343c7cf65f8e302c5464bfc450b75019a66f9d569ff702daa6e0fcc540fd8b6",
+      "bytes": 43264
+    },
+    {
+      "path": "reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/invariants.csv",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/skills.csv",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/growth.csv",
+      "sha256": "77d2a562b2da3d9ed084df12a0485937c902dce4ddf7943815af13b5cc49e8d0",
+      "bytes": 590
+    },
+    {
+      "path": "experiments/phase13g/config.json",
+      "sha256": "ba9e4979b651bedacd7262411e9434e9502c3d52db093383752853ead255b098",
+      "bytes": 5831
+    },
+    {
+      "path": "experiments/phase13g/runner.py",
+      "sha256": "9bf757523399d1541e09e14e78d6304fe9a2aec015284d5d8830b9bb2fbaa52e",
+      "bytes": 21655
+    },
+    {
+      "path": "experiments/phase13g/preregistration.md",
+      "sha256": "3a07ea4195e7c3a504505bd711780e91230314f12fe15e13c9b4bf3720f4e015",
+      "bytes": 13275
+    },
+    {
+      "path": "experiments/phase13g/reporting.py",
+      "sha256": "e10164546f8150721ecfd3c01f1ca59f922dace5cb3034fe1a5de64174d59507",
+      "bytes": 24996
+    },
+    {
+      "path": "reports/experiments/PHASE-14A-EVIDENCE-INTEGRITY-REVIEW-V1/evidence_integrity_report.md",
+      "sha256": "d93935b014726d3bf59d5e97aaebe04b38bbfaf75dcaee598d5b7707331e1f61",
+      "bytes": 21365
+    },
+    {
+      "path": "reports/experiments/PHASE-14B-IDT-CRITICAL-ANALYSIS-V1/threats_to_validity.csv",
+      "sha256": "52362dd3e9c93a98fc933ca64332466d8c5a2e70b6250c6f37a03075b945cf16",
+      "bytes": 3202
+    },
+    {
+      "path": "reports/experiments/PHASE-14C-SCT-CRITICAL-ANALYSIS-V1/threats_to_validity.csv",
+      "sha256": "8b9c550fa93a454f8449891a2ad0411d5ba88427f7b7bfdeab36c21399a80404",
+      "bytes": 2857
+    },
+    {
+      "path": "reports/experiments/PHASE-14D-TRANSFER-CRITICAL-ANALYSIS-V1/threats_to_validity.csv",
+      "sha256": "b97001aeb86ab2de5666e4c90248562c139cbc7b8a9758841d6a236d3a60ab7d",
+      "bytes": 2034
+    },
+    {
+      "path": "reports/experiments/PHASE-14E-CGM-CRITICAL-RESULTS-ANALYSIS-V1/threats_to_validity.csv",
+      "sha256": "d3c5d61e4d4887f10793b664903c10285d314dc93406637b19441316fa922398",
+      "bytes": 2213
+    },
+    {
+      "path": "reports/experiments/PHASE-14F-BASELINE-ABLATION-CRITICAL-ANALYSIS-V1/threats_to_validity.csv",
+      "sha256": "ca82c69ef7dbc4f36beeeb2b6c7c0a9e1b5a9731e0f9f154e94cf1a2b203637c",
+      "bytes": 2086
+    },
+    {
+      "path": "reports/experiments/PHASE-14G-ARC-FAILURE-ANALYSIS-V1/arc_threats_to_validity.csv",
+      "sha256": "5e2438167ab435b5f0eb4a5396b3f35d77c2497a804df33e2f3cbdc128d76513",
+      "bytes": 2231
+    },
+    {
+      "path": "reports/experiments/PHASE-14G-ARC-FAILURE-ANALYSIS-V1/source_hashes.csv",
+      "sha256": "0e4428b84dbb968884ba10a88fcb15d622325fb8897a5778af03e52e2b03093e",
+      "bytes": 4557
+    },
+    {
+      "path": "reports/experiments/PHASE-14H-CROSS-CONTRIBUTION-ANALYSIS-V1/phase14h_cross_contribution_analysis.md",
+      "sha256": "a2af72c6353a1980f54a035913d3d8a58164be642c0f9155921f55561315204e",
+      "bytes": 20857
+    },
+    {
+      "path": "reports/experiments/PHASE-14H-CROSS-CONTRIBUTION-ANALYSIS-V1/cross_contribution_dependency_matrix.csv",
+      "sha256": "36627f70c0b289426c4bc1362b452e850e41bd04e164046b1b2438aceaa79321",
+      "bytes": 2468
+    },
+    {
+      "path": "reports/experiments/PHASE-14H-CROSS-CONTRIBUTION-ANALYSIS-V1/end_to_end_scorecard.csv",
+      "sha256": "406084f0ebcdb4b08d55a1a67b2fec9eeeaf3164950fba18e81e312540c81de7",
+      "bytes": 2311
+    },
+    {
+      "path": "docs/03_implementation/notes/phase_11_completion.md",
+      "sha256": "7928cff1ca5a12a3093c7214412b8b0edc774f02fee210e0bbf92dcf4a50b386",
+      "bytes": 5240
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_12.md",
+      "sha256": "fb1e8c3b586e44ececfc68d1f5b7ea47dd0fa04200acab0f60f863d67b12e964",
+      "bytes": 4942
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_12_closure_checklist.md",
+      "sha256": "095dbf66e9732a0e162abaf47b1e24bb1591ca4bfa6372cedb72dec9c6b31809",
+      "bytes": 6224
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13a.md",
+      "sha256": "bd432e74d5ff2434025dd7e15080225c33096ec79d9414b1faa45db6e7a04608",
+      "bytes": 6062
+    },
+    {
+      "path": "reports/experiments/phase13a_gates/report.md",
+      "sha256": "58edad627cd3158f9572147e04d0b0b8491e192da4028237950428e7c26bc3fe",
+      "bytes": 1797
+    },
+    {
+      "path": "reports/experiments/phase13a_gates/record.json",
+      "sha256": "740301ae812a089594e0210870285be32ceeca845cece2727812392246ac7640",
+      "bytes": 2319
+    },
+    {
+      "path": "reports/metrics/phase13a_gates.md",
+      "sha256": "a9b44485b84f82880e0cb2c31b7687f1c534c3b41c4e4c005f3ec4f409118474",
+      "bytes": 1103
+    },
+    {
+      "path": "reports/metrics/phase13a_gates.json",
+      "sha256": "68be4c2e8cc7af2c2228b9f69b2104caca33d029ba3a86f8efd710093468f51b",
+      "bytes": 1711
+    },
+    {
+      "path": "reports/experiments/PHASE-14I-THREATS-TO-VALIDITY-V1/phase14i_threats_to_validity.md",
+      "sha256": "f91b18f0eac2c8d66cf8fcaef19626c5e4edae6b1ecc328b9d1148487574ae47",
+      "bytes": 22957
+    },
+    {
+      "path": "reports/experiments/PHASE-14I-THREATS-TO-VALIDITY-V1/validity_scorecard.csv",
+      "sha256": "2967c1845086e14233c1c92f0486bb934566b492e3fc26e0bac2f2ae65675c55",
+      "bytes": 1333
+    },
+    {
+      "path": "reports/experiments/PHASE-14I-THREATS-TO-VALIDITY-V1/safe_vs_unsafe_conclusions.csv",
+      "sha256": "4a1bf54a7608d9ebadf759e2a4f465f29aa8df6533ca130bdb4a4c381e742dd8",
+      "bytes": 3141
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/phase_inventory.csv",
+      "sha256": "5aa6145be2c3967f26070e3ed411ccd8b617e19fc4cd19d299b411876f564359",
+      "bytes": 1883
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/phase14_readiness.md",
+      "sha256": "f80b5123e5afd91915bd9bec9f3c49934107f8b71ec99658cebcf7140d9488a6",
+      "bytes": 4690
+    }
+  ],
+  "deliverables": [
+    "phase14j_final_scientific_conclusions.md",
+    "final_claim_classification.csv",
+    "final_scientific_scorecard.csv",
+    "publication_claim_ceiling.md",
+    "future_research_priorities.md",
+    "phase14j_readme.md",
+    "source_hashes.csv"
+  ]
+}

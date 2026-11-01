@@ -1,0 +1,12 @@
+threat,impact,mitigation_in_interpretation,residual_limit
+Synthetic generator/task vocabulary,Transfer may reflect shared operation definitions rather than open-world abstraction,Scope claims to generated synthetic tasks,No external distribution replication
+Limited skill inventory,Only reflection/rotation skills recur; count/group skills absent,Report component-coverage gaps explicitly,Composition/general multi-skill not testable in corrected 13D
+Nested observations,Task/application rows share seeds and task generators,Use seed-level contrasts and report seed clusters,Small number of independent seeds
+Metric construct validity,Step savings and success-probability changes proxy reasoning cost/harm,Call them simulator step-cost and probability proxies,No compute/time or direct external-cost estimate
+Missing component/fallback,"Complex task positive raw TS may reflect a partial skill with reference fallback",Use corrected coverage audit; mark unavailable,Original dashboard remains historically distinct
+Posthoc reporting correction,Original 13D dashboard had lookup/coverage defects,Use corrected posthoc files for baseline and composition conclusions,Correction does not create a preregistered replication
+Comparator/endpoints differ,Apparent contradictory wins can be phase/metric artifacts,"Report phase, comparator, endpoint separately",No pooled universal effect
+Growth instability,13D/13E correlation direction differs; 13D mean CGR negative,Do not infer causal transfer-to-growth link,No robust causal identification
+Negative diagnostic selection,Forced mismatches are purpose-built and not broad balanced samples,Limit claim to forced diagnostic and guard rejection,Specificity/false-positive rate unknown
+ARC adapter coverage,No skills produced and exact fit low,Call transfer unavailable/not demonstrated,Cannot assess ARC transfer mechanism with zero eligible skills
+13G rerun history,Fixed holdout rerun followed reporting failure,Disclose as non-pristine independent confirmation,Potential dependence remains

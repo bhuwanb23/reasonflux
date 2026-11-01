@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<title id="title">ASFT Cross-Contribution Dependency Matrix</title>
+<desc id="desc">The first three causal links have narrow synthetic operational support. Transfer to capability growth is the first unestablished link. Capability growth to intelligence growth is not validated. The ARC chain fails upstream at bounded representation and coverage.</desc>
+<rect width="1200" height="760" fill="#f4f7fb"/>
+<rect x="0" y="0" width="1200" height="126" fill="#10243a"/>
+<text x="54" y="54" fill="#ffffff" font-family="Arial, sans-serif" font-size="30" font-weight="700">ASFT Cross-Contribution Dependency Matrix</text>
+<text x="54" y="91" fill="#c8d7e7" font-family="Arial, sans-serif" font-size="16">Evidence-weighted status across saved Phase 13 synthetic and ARC evidence</text>
+
+<text x="64" y="164" fill="#52677c" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1">LINK</text>
+<text x="350" y="164" fill="#52677c" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1">EVIDENCE SNAPSHOT</text>
+<text x="932" y="164" fill="#52677c" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1">ASSESSMENT</text>
+
+<!-- C1 -->
+<rect x="42" y="181" width="1116" height="75" rx="12" fill="#e6f4ef" stroke="#9ecfbb"/>
+<rect x="55" y="195" width="62" height="46" rx="9" fill="#11785f"/>
+<text x="86" y="224" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="700">C1</text>
+<text x="137" y="212" fill="#163a34" font-family="Arial, sans-serif" font-size="18" font-weight="700">Experience → Invariants</text>
+<text x="137" y="235" fill="#45635c" font-family="Arial, sans-serif" font-size="13">13B: expected operation signatures in 5/5 seeds</text>
+<text x="566" y="212" fill="#2d4d43" font-family="Arial, sans-serif" font-size="14">Known synthetic generator; vocabulary and labels overlap.</text>
+<text x="566" y="235" fill="#2d4d43" font-family="Arial, sans-serif" font-size="14">Not blinded or open-ended discovery.</text>
+<rect x="929" y="197" width="208" height="42" rx="21" fill="#11785f"/>
+<text x="1033" y="223" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="700">NARROW SUPPORT</text>
+
+<!-- C2 -->
+<rect x="42" y="268" width="1116" height="75" rx="12" fill="#e6f4ef" stroke="#9ecfbb"/>
+<rect x="55" y="282" width="62" height="46" rx="9" fill="#11785f"/>
+<text x="86" y="311" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="700">C2</text>
+<text x="137" y="299" fill="#163a34" font-family="Arial, sans-serif" font-size="18" font-weight="700">Invariants → Skills</text>
+<text x="137" y="322" fill="#45635c" font-family="Arial, sans-serif" font-size="13">13C: 44 reflection / rotation skill instances</text>
+<text x="566" y="299" fill="#2d4d43" font-family="Arial, sans-serif" font-size="14">Objects formed; every eligible candidate was selected.</text>
+<text x="566" y="322" fill="#2d4d43" font-family="Arial, sans-serif" font-size="14">SCT / SCV selection advantage not shown.</text>
+<rect x="929" y="284" width="208" height="42" rx="21" fill="#11785f"/>
+<text x="1033" y="310" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="700">OPERATIONAL / NARROW</text>
+
+<!-- C3 -->
+<rect x="42" y="355" width="1116" height="75" rx="12" fill="#e6f4ef" stroke="#9ecfbb"/>
+<rect x="55" y="369" width="62" height="46" rx="9" fill="#11785f"/>
+<text x="86" y="398" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="700">C3</text>
+<text x="137" y="386" fill="#163a34" font-family="Arial, sans-serif" font-size="18" font-weight="700">Skills → Transfer</text>
+<text x="137" y="409" fill="#45635c" font-family="Arial, sans-serif" font-size="13">201 correct reuses; 91/91 attempted cross-family</text>
+<text x="566" y="386" fill="#2d4d43" font-family="Arial, sans-serif" font-size="14">Synthetic tasks; simulator step-cost proxy.</text>
+<text x="566" y="409" fill="#2d4d43" font-family="Arial, sans-serif" font-size="14">Memory is a live competing explanation.</text>
+<rect x="929" y="371" width="208" height="42" rx="21" fill="#11785f"/>
+<text x="1033" y="397" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="700">NARROW SUPPORT</text>
+
+<!-- C4 -->
+<rect x="42" y="442" width="1116" height="75" rx="12" fill="#fff2df" stroke="#e7bd78"/>
+<rect x="55" y="456" width="62" height="46" rx="9" fill="#a15b08"/>
+<text x="86" y="485" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="700">C4</text>
+<text x="137" y="473" fill="#53340f" font-family="Arial, sans-serif" font-size="18" font-weight="700">Transfer → Capability Growth</text>
+<text x="137" y="496" fill="#77582e" font-family="Arial, sans-serif" font-size="13">First major evidential break</text>
+<text x="566" y="473" fill="#65471d" font-family="Arial, sans-serif" font-size="14">CGR / transfer evidence inconsistent across phases.</text>
+<text x="566" y="496" fill="#65471d" font-family="Arial, sans-serif" font-size="14">No causal transition demonstrated.</text>
+<rect x="929" y="458" width="208" height="42" rx="21" fill="#a15b08"/>
+<text x="1033" y="484" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="700">NOT ESTABLISHED</text>
+
+<!-- C5 -->
+<rect x="42" y="529" width="1116" height="75" rx="12" fill="#edf0f4" stroke="#c2ccd7"/>
+<rect x="55" y="543" width="62" height="46" rx="9" fill="#596779"/>
+<text x="86" y="572" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="700">C5</text>
+<text x="137" y="560" fill="#273746" font-family="Arial, sans-serif" font-size="18" font-weight="700">Capability → Intelligence Growth</text>
+<text x="137" y="583" fill="#586979" font-family="Arial, sans-serif" font-size="13">Indices are computable; construct not validated</text>
+<text x="566" y="560" fill="#465768" font-family="Arial, sans-serif" font-size="14">No independent intelligence criterion.</text>
+<text x="566" y="583" fill="#465768" font-family="Arial, sans-serif" font-size="14">Positive formula output is not construct evidence.</text>
+<rect x="929" y="545" width="208" height="42" rx="21" fill="#596779"/>
+<text x="1033" y="571" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="700">NOT VALIDATED</text>
+
+<!-- ARC band -->
+<rect x="42" y="626" width="1116" height="91" rx="14" fill="#e7eff8" stroke="#aec1d5"/>
+<rect x="59" y="646" width="112" height="48" rx="10" fill="#23527b"/>
+<text x="115" y="676" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="700">ARC</text>
+<text x="194" y="657" fill="#173a59" font-family="Arial, sans-serif" font-size="17" font-weight="700">Upstream break in bounded representation / coverage</text>
+<text x="194" y="682" fill="#405f7b" font-family="Arial, sans-serif" font-size="14">3/600 discovery demo fits in full 10-program scan → 0 invariants → skills/capabilities unavailable.</text>
+<text x="194" y="702" fill="#405f7b" font-family="Arial, sans-serif" font-size="13">Config budget=3; discover() defaults to 10. Downstream ARC links were not independently tested.</text>
+</svg>

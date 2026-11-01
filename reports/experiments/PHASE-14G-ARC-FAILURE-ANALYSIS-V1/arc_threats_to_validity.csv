@@ -1,0 +1,13 @@
+id,severity,threat,consequence_or_boundary
+ARC-01,Critical,"Fixed ten-program DSL has very low exact-demo coverage","3/600 discovery; 5/200 transfer; 2/200 holdout full-inventory fits; no broad ARC claim"
+ARC-02,Critical,"Sparse successful discovery traces plus min-support gates","Three successful traces, one per program; minimum frequency/cross-trace and skill support are five; invariant stage cannot activate"
+ARC-03,Critical,"Budget mismatch: frozen config declares three trials; discover() defaults to ten; coverage scan uses ten; scored arms use three","Discovery and coverage counts are not realized rates under the declared three-candidate limit; only reflection fit among the three observed successes is within first three"
+ARC-04,High,"Main-arm candidate budget and fixed ordering","A full-inventory demo-fit task may not be tried within the three-candidate scored-arm budget"
+ARC-05,High,"Counting/grouping/object detection/pattern completion not operationalized","Unsupported-v1 is not a semantic ARC task taxonomy; excluded concepts are not estimated"
+ARC-06,Critical,"No invariant population","Skills, learned transfer precision, capabilities, and CGM are unavailable; do not translate nulls into theory failures or successes"
+ARC-07,Medium,"Same frozen holdout reused after attempt-01 predictions were generated in memory","Attempt 02 is not pristine independent confirmation; caveat remains"
+ARC-08,High,"Bounded task accuracy is poor and all arms tie","Implementation failure remains; no ASFT advantage or mechanism attribution"
+ARC-09,Medium,"Temporary archive contained evaluation blobs","Only filenames listed; no evaluation JSON extracted/parsed/scored; do not claim zero evaluation bytes downloaded"
+ARC-10,Medium,"growth.csv field mislabels prefix length as successful-trace count","Do not cite 100-600 as successful traces; actual successful discovery count is 3 under the ten-candidate scan"
+ARC-11,High,"No controlled DSL expansion or threshold perturbation","Representation, task difficulty, and miner limitations are not causally isolated"
+ARC-12,Medium-high,"One fit per reflection/rotation/recoloring discovery operation","Stability 1.0 on these three cases is not broad trace-reliability evidence"

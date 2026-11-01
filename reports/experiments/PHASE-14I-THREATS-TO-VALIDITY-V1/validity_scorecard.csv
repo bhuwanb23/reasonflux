@@ -1,0 +1,7 @@
+category,overall_risk,claim_specific_peak,verdict
+Internal,Moderate for descriptive outcomes; High for causal/superiority claims,"High / Critical for selection and ranking superiority","Frozen within-phase behavior is reportable; low decision pressure, alternatives, and cross-phase stitching limit causal claims"
+Construct,High; Critical for intelligence claims,"Critical for IG/IGR/IE as intelligence growth","Metrics are operational and internally coherent, but broad constructs lack independent validation"
+External,Very High,"Critical for general ASFT and ARC generalization","Positive evidence is synthetic and narrow; ARC adapter coverage is low and downstream mechanisms unavailable"
+Statistical,Moderate-High,"High for correlations with sparse candidates or few seed clusters","Use correct independent unit; beware multiplicity, nested rows, exact ties, and endpoint differences"
+Implementation,High; Critical for ARC-specific inference,"Critical for config/code budget mismatch and bounded ARC DSL","Source is inspectable but ARC discovery budget differs from config; reporting/holdout caveats remain"
+Interpretation,High; Critical for intelligence/general theory claims,"Critical for metric inflation and mechanism-to-theory leap","Use operational language; neither broad theory validation nor falsification is justified"

@@ -1,0 +1,15 @@
+question,status,evidence,limitation
+Better than no learning,mixed,"13C net value .345 vs NEVER_CREATE 0; 13D TS +.018909; 13E utility -.0361; 13F utility -.036344; 13B tie no-transfer",Endpoints differ
+Better than random alternatives,mixed_to_often_favorable,"13D/13E and 13B random-pattern favor ASFT; 13C RANDOM_CREATE and 13F B3 tie",Random controls differ across phases
+Better than memory,not_established,"13C raw MEMORY_ONLY 1.325 vs SCT .345; later B2 variants are beaten on selected outcomes",Do not pool raw trace memory with skill-store B2
+Better than compression,not_universal,"13D B4 contrast -.001091; 13E/13F pass B4 comparisons","B4 compression proxy, not canonical DreamCoder"
+IDT necessary,partial_local,"13D no-invariants endpoint lower; 13E CGR lower without IDT; 13F mixed and frequency-only tie",No consistent task-utility superiority
+SCT necessary,not_established,"13C always/random-create tie; 13D no-SCT difference 0; 13E no-SCT CGR difference 0",Selection often did not diverge
+SCV unique/necessary,not_supported_in_tested_pools,"13C selects all; 13F no-SCV/random-SCV ties; SCV rho .700 below frequency .748 and p_reuse .884",Correlations do not show policy increment
+Skill persistence matters,local_support,"13D ASFT minus no-persistence +.017018 on transfer utility",One phase/endpoint
+Lifecycle necessary,not_established,"13C and 13F primary toggles have zero differences",No evidence of consequential lifecycle pressure
+Transfer improves task utility generally,not_established,"13F ASFT-minus-no-transfer utility -.036344; 13D transfer endpoint positive",Endpoint and context dependent
+Composition valuable,mixed,"13C and 13F positive in specific streams; 13D unavailable; 13E incremental gain -.1429",Not general capability generation
+CGM adds task performance,not_established,"13F capability layer removal leaves utility unchanged while CGR changes",Metric change is not behavior change
+Alternatives eliminated,no,"Memory, frequency, compression, generator coupling remain viable",No single alternative explains all phases
+ARC mechanism ranking,unavailable,"13G zero invariant/skill/capability pipeline; all main arms accuracy .005",Bounded low-coverage adapter

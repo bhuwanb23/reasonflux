@@ -1,0 +1,9 @@
+claim,status,phase_scope,key_evidence,limitation
+Synthetic transfer/reuse,pass_narrow,13C and corrected 13D,"201 correct positive-credit 13C reuses; covered positive 13D near/moderate cells","synthetic generated tasks; skill pool limited; positive TS ties BEST_SINGLE and is not ASFT superiority"
+Reasoning-step cost reduction,pass_narrow,13C and corrected 13D,"13C normalized reduction 0.227; 13D success-gated RCR 0.149288 (95% CI 0.131979-0.157943)","not compute time/FLOPs; no search reduction verified"
+Cross-family transfer,pass_narrow,13C,"91/91 attempted cross-family SCT applications","attempt-level and same synthetic task generator"
+Negative-transfer detection,limited_support,corrected 13D,"P decrement 190/190 forced cases; guard rejected 90/90 evaluable negative probes","accuracy NTR 0; no broad specificity or false-positive estimate"
+Transfer drives capability growth,not_established,13D/13E/13F,"13D mean CGR -0.060; 13E TS-CGR r -0.5027, CI includes zero","13D correlation r 0.483 descriptive and does not establish causality"
+Compositional/structural transfer,unavailable,corrected 13D,"0 active composition; required source skills absent","positive raw TS is not coverage-qualified"
+All-baseline superiority,fail,corrected 13D,"ASFT-B4 -0.001091; CI [-0.003273,0]","B4 compression proxy, not DreamCoder"
+ARC transfer,not_demonstrated,13G,"zero candidates/skills/capabilities; transfer denominator unavailable","bounded DSL with low task fit; not impossibility evidence"
