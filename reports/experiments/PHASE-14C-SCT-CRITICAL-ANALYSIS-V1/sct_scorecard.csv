@@ -1,0 +1,13 @@
+claim_id,claim,status,evidence,limitation
+SCT-1,Skills emerge from validated synthetic candidates,Supported narrowly,Phase 13C: 44 skill instances across 10 seeds; 22 reflection and 22 rotation,Zero counting/grouping births; synthetic task generator and candidate vocabulary
+SCT-1b,Broad skill emergence across families/domains,Unsupported,Only two of four planned synthetic families produced skills,No ARC skills; bounded adapter and limited exact-fit support
+SCT-R,Skills are reused,Supported narrowly,201 correct positive-credit reuses; 44/44 skill instances had at least one positive reuse,201/440 eligible applications correct for SCT; synthetic cases
+SCT-C,Skills reduce reasoning cost,Supported in simulator,Mean normalized reduction 0.227 among correct SCT applications,"Step-cost proxy, not wall-clock or compute savings"
+SCT-2a,SCV associated with future value,Partially supported,"SCV10 Spearman rho 0.700, seed-cluster CI 0.545 to 0.931; 44 rows nested in 10 seeds",Association is not an independent policy effect or causality
+SCT-2b,SCV is superior to simpler predictors,Not demonstrated,Frequency rho 0.748; p_reuse rho 0.884; no direct correlation-superiority test,Do not claim SCV is the best signal
+SCT-3a,SCT beats ALWAYS_CREATE,Failed on primary criterion,Both mean net value 0.345; paired difference zero,All primary candidates selected at cutoff zero
+SCT-3b,SCT beats RANDOM_CREATE,Failed on primary criterion,Both mean net value 0.345; random-create probability froze at 1.0,Random arm degenerated to always-create
+SCT-3c,SCT beats memory-based retrieval,Not demonstrated across designs,Phase 13C MEMORY_ONLY mean net value 1.325 vs SCT 0.345; Phase 13F different B2 baseline favors ASFT on its joint metric,"Controls, metrics, task streams, seeds differ; no pooling"
+SCT-COMP,Composition adds value,Promising but limited,One rotation-to-reflection pair; Phase 13F no-composition contrast supports synthetic effect,Single pair and limited component coverage; no general chains
+SCT-LIFE,Lifecycle control adds value,Not demonstrated,22/44 reactivation probes succeeded; no-lifecycle primary outcome ties SCT,"Mechanism exercised, incremental value not shown"
+SCT-ARC,ARC skill emergence,Not demonstrated,"Phase 13G: zero accepted skills/capabilities; exact fit 3/600 discovery, 5/200 transfer, 2/200 holdout",Null for bounded adapter only; low DSL coverage
