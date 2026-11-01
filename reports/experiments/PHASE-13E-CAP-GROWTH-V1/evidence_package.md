@@ -40,16 +40,16 @@
 | positive_coverage_growth | pass | 0.2500 | 0.2500 |  |
 | positive_utility_growth | pass | 0.2946 | 0.2857 |  |
 | positive_IE_trend | fail_or_null | -0.0039 | -0.0042 |  |
-| ASFT_beats_B1_NO_LEARNING | fail_or_null | {'final_ct': {'mean': 1.178500319122083, 'ci95_low': 1.1427870618185505}, 'mean_task_utility_all_tasks': {'mean': -0.03607812499999996, 'ci95_low': -0.03629183235202641}} | unavailable |  |
-| ASFT_beats_B2_SKILL_STORAGE_ONLY | pass | {'final_ct': {'mean': 1.178500319122083, 'ci95_low': 1.1427870618185505}, 'mean_task_utility_all_tasks': {'mean': 0.07734374999999999, 'ci95_low': 0.07734374999999995}} | unavailable |  |
-| ASFT_beats_B3_RANDOM_SKILL_CREATION | pass | {'final_ct': {'mean': 0.16032986689398482, 'ci95_low': 0.12349389507547684}, 'mean_task_utility_all_tasks': {'mean': 0.07764062499999999, 'ci95_low': 0.07696904714062498}} | unavailable |  |
-| ASFT_beats_B4_COMPRESSION_PROXY | pass | {'final_ct': {'mean': 0.34548944955686584, 'ci95_low': 0.324570337205708}, 'mean_task_utility_all_tasks': {'mean': 0.075171875, 'ci95_low': 0.07495816764797356}} | unavailable |  |
-| ablation_reduces_growth_A1_NO_IDT | pass | 0.0420 | 0.0420 |  |
+| ASFT_beats_B1_NO_LEARNING | fail_or_null | final_ct Δ=1.1785 (95% CI lower=1.1428); mean_task_utility_all_tasks Δ=-0.0361 (95% CI lower=-0.0363) | unavailable |  |
+| ASFT_beats_B2_SKILL_STORAGE_ONLY | pass | final_ct Δ=1.1785 (95% CI lower=1.1428); mean_task_utility_all_tasks Δ=0.0773 (95% CI lower=0.0773) | unavailable |  |
+| ASFT_beats_B3_RANDOM_SKILL_CREATION | pass | final_ct Δ=0.1603 (95% CI lower=0.1235); mean_task_utility_all_tasks Δ=0.0776 (95% CI lower=0.0770) | unavailable |  |
+| ASFT_beats_B4_COMPRESSION_PROXY | pass | final_ct Δ=0.3455 (95% CI lower=0.3246); mean_task_utility_all_tasks Δ=0.0752 (95% CI lower=0.0750) | unavailable |  |
+| ablation_reduces_growth_A1_NO_IDT | pass | 0.0595 | 0.0420 |  |
 | ablation_reduces_growth_A2_NO_SCT | fail_or_null | 0.0000 | 0.0000 |  |
-| ablation_reduces_growth_A3_NO_SKILL_LIBRARY | pass | 0.2857 | 0.2857 |  |
-| ablation_reduces_growth_A4_NO_COMPOSITION | pass | 0.0305 | 0.0305 |  |
+| ablation_reduces_growth_A3_NO_SKILL_LIBRARY | pass | 0.2946 | 0.2857 |  |
+| ablation_reduces_growth_A4_NO_COMPOSITION | pass | 0.0350 | 0.0305 |  |
 | composition_creates_value | fail_or_null_or_unavailable | -0.1429 | -0.1429 |  |
-| A5_NO_CGM | unavailable_by_design |  | unavailable | A5 preserves ASFT behavior and masks all growth measurements |
+| A5_NO_CGM | unavailable_by_design | unavailable | unavailable | A5 preserves ASFT behavior and masks all growth measurements |
 | growth_predicts_future_performance | pass | 0.0498 | 0.0163 |  |
 | trajectory_monotonicity_descriptive | descriptive_not_a_pass_gate | 10/10 seeds | unavailable |  |
 | EXP-CAP-20_natural_saturation | descriptive_not_a_pass_gate | 0/10 seeds saturated in both final rounds by the frozen CGM classifier | unavailable |  |
@@ -92,7 +92,7 @@ Future prediction (C_t at round t → task utility in round t+1): **r=0.0498**, 
 
 ## Interpretation and caveats
 
-Capability formation is counted only after the existing proposal and validity checks. Empty or unavailable portfolios are not assigned favorable synthetic values. The two IG pathways in the repository remain distinct; only `growth_metrics.compute_ig` with the preregistered GrowthConfig weights is confirmatory. Positive correlations are descriptive at n=10 and do not establish causality. A5_NO_CGM is intentionally behavior-matched and its growth metrics are masked, so it is not a performance comparator. B4_COMPRESSION_PROXY is not canonical DreamCoder. The adversarial dummy-skill test and seeded regression probe are reported separately from learned outcomes. Prior Phase 13C/13D evidence and its limitations remain unchanged. Posthoc audit: Corrected IE-slope aggregation and criterion-table field rendering; no runner, seed generation, task outcome, metric formula, or threshold changed. Saved-record SHA-256 `4099e98cc7b609b64e9da29566b2c46b0a5747b0b52afa2e4a936a2cfb5c2188`; posthoc analysis source SHA-256 `33c89e81b63deafba150005cad09eb3434e6cf9d31e2ab175d36bb49a3f627fc`. Benchmark rerun: `False`.
+Capability formation is counted only after the existing proposal and validity checks. Empty or unavailable portfolios are not assigned favorable synthetic values. The two IG pathways in the repository remain distinct; only `growth_metrics.compute_ig` with the preregistered GrowthConfig weights is confirmatory. Positive correlations are descriptive at n=10 and do not establish causality. A5_NO_CGM is intentionally behavior-matched and its growth metrics are masked, so it is not a performance comparator. B4_COMPRESSION_PROXY is not canonical DreamCoder. The adversarial dummy-skill test and seeded regression probe are reported separately from learned outcomes. Prior Phase 13C/13D evidence and its limitations remain unchanged. Posthoc audit: Corrected IE-slope aggregation and criterion-table rendering of observed paired contrasts; no runner, seed generation, task outcome, metric formula, or threshold changed. Saved-record SHA-256 `4099e98cc7b609b64e9da29566b2c46b0a5747b0b52afa2e4a936a2cfb5c2188`; posthoc analysis source SHA-256 `975e28ca62c2983e335c9a99f09c1f2fbd92afcc42f3a4dc8ea4534f26aa13ce`. Benchmark rerun: `False`.
 
 ## EXP-CAP-01–22 mapping
 

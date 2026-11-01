@@ -27,9 +27,11 @@ def rebuild_from_saved_records() -> Path:
     posthoc_path = OUT / "posthoc_analysis_manifest.json"
     if not records_path.exists() or not frozen_path.exists() or not current_path.exists():
         raise FileNotFoundError("Complete saved records and both run manifests are required")
-    if posthoc_path.exists():
-        raise FileExistsError(f"Refusing to overwrite existing posthoc manifest: {posthoc_path}")
     records_hash_before = _sha(records_path)
+    if posthoc_path.exists():
+        prior = json.loads(posthoc_path.read_text(encoding="utf-8"))
+        if prior.get("saved_records_sha256_before") != records_hash_before:
+            raise FileExistsError("Refusing posthoc refresh because saved run records changed")
     run: dict[str, Any] = json.loads(records_path.read_text(encoding="utf-8"))
     frozen = json.loads(frozen_path.read_text(encoding="utf-8"))
     manifest = json.loads(current_path.read_text(encoding="utf-8"))
@@ -46,7 +48,7 @@ def rebuild_from_saved_records() -> Path:
     posthoc = {
         "status": "complete_saved_records_only",
         "completed_at_utc": datetime.now(timezone.utc).isoformat(),
-        "reason": "Corrected IE-slope aggregation and criterion-table field rendering; no runner, seed generation, task outcome, metric formula, or threshold changed.",
+        "reason": "Corrected IE-slope aggregation and criterion-table rendering of observed paired contrasts; no runner, seed generation, task outcome, metric formula, or threshold changed.",
         "benchmark_rerun": False,
         "saved_records_sha256_before": records_hash_before,
         "frozen_run_source_tree_sha256": frozen.get("source_tree_sha256"),

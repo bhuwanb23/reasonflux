@@ -44,6 +44,19 @@ def _fmt(value: Any, digits: int = 4) -> str:
     return str(value)
 
 
+def _decision_observed(row: dict[str, Any]) -> Any:
+    if row.get("metrics"):
+        return "; ".join(
+            f"{name} Δ={_fmt(values.get('mean'))} (95% CI lower={_fmt(values.get('ci95_low'))})"
+            for name, values in row["metrics"].items()
+        )
+    for key in ("observed", "observed_mean", "observed_mean_difference", "observed_r"):
+        if row.get(key) is not None:
+            value = row[key]
+            return _fmt(value) if isinstance(value, (int, float)) else value
+    return "unavailable"
+
+
 def _markdown_table(rows: list[dict[str, Any]], columns: list[tuple[str, str]]) -> str:
     if not rows:
         return "_No rows._"
@@ -107,7 +120,7 @@ def write_evidence_package(run: dict[str, Any], manifest: dict[str, Any]) -> Pat
         {
             "criterion": row.get("criterion"),
             "status": row.get("status"),
-            "observed": row.get("observed", row.get("observed_mean", row.get("observed_r", row.get("metrics", row.get("ci95_low", ""))))),
+            "observed": _decision_observed(row),
             "ci95_low": row.get("ci95_low"),
             "reason": row.get("reason", ""),
         }

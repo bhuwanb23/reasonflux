@@ -1,0 +1,57 @@
+{
+  "phase": "13F",
+  "experiment_id": "PHASE-13F-BASELINE-ABLATION-V1",
+  "status": "frozen_preconfirmation",
+  "seeds": [70, 71, 72, 73, 74, 75, 76, 77, 78, 79],
+  "task_families": ["reflection", "rotation", "counting", "grouping"],
+  "discovery": {"seed_offset": 23000, "traces_per_family": 8, "difficulty": 0.3, "use_existing_trace_and_invariant_pipelines": true, "common_non_scv_eligibility_gate": "Phase 13C _eligible_pool gate; no changes to its metric definitions"},
+  "rounds": {"count": 4, "tasks_per_family_per_round": 4, "difficulty": 0.3, "seed_offset": 24000, "paired_tasks_across_arms": true, "composition_rounds": [3, 4]},
+  "arms": {
+    "primary": "ASFT",
+    "b3_random_fraction": 0.75,
+    "baselines": ["B1_NO_LEARNING", "B2_MEMORY_SKILL_STORE", "B3_RANDOM_SKILL_CREATION", "B4_COMPRESSION_PROXY"],
+    "ablations": ["A1_NO_IDT", "A1_1_FREQUENCY_ONLY", "A2_NO_SCV", "A2_1_RANDOM_SCV", "A2_2_NO_LIFECYCLE", "A2_3_NO_COMPOSITION", "A3_NO_CAPABILITY_LAYER", "A3_1_NO_GROWTH_TRACKING", "A3_2_INDEPENDENT_CAPABILITIES", "X1_NO_TRANSFER", "X2_NO_SKILL_LIBRARY", "X3_NO_EXPERIENCE_MEMORY", "X4_NO_CAPABILITY_FORMATION"],
+    "B2_MEMORY_SKILL_STORE": "stores raw trace episodes as executable memory; no invariant discovery, SCV, capability formation, or composition",
+    "B3_RANDOM_SKILL_CREATION": "randomly creates 75% of the commonly qualified pool, sampled without replacement by a seed-keyed RNG; no SCV selection",
+    "B4_COMPRESSION_PROXY": "compresses repeated observed operation subsequences; not canonical DreamCoder",
+    "A1_NO_IDT": "consolidates only exact full trace sequences repeated at least three times; no invariant representation",
+    "A1_1_FREQUENCY_ONLY": "selects top-k common qualified invariants by observed frequency only, with k matched to ASFT births",
+    "A2_NO_SCV": "creates every member of the common eligible pool",
+    "A2_1_RANDOM_SCV": "randomly selects k members from the common eligible pool, where k equals ASFT selected count for that seed",
+    "A2_2_NO_LIFECYCLE": "disables skill lifecycle advancement while retaining ASFT candidate selection, skill storage, reuse, capability formation, and composition",
+    "A2_3_NO_COMPOSITION": "disables composition only",
+    "A3_NO_CAPABILITY_LAYER": "skills and reuse remain; no capability objects or capability-derived C_t",
+    "A3_1_NO_GROWTH_TRACKING": "ASFT behavior is identical; all growth tracking outputs are masked as unavailable",
+    "A3_2_INDEPENDENT_CAPABILITIES": "forms valid capabilities but reports only individual capability outcomes; no portfolio aggregate C_t/CGM",
+    "X1_NO_TRANSFER": "skills remain stored but retrieval and execution of stored skills is disabled",
+    "X2_NO_SKILL_LIBRARY": "skills are created and counted, then discarded before evaluation; no persistent library or reuse",
+    "X3_NO_EXPERIENCE_MEMORY": "same one-shot discovery and skills as ASFT; discovery traces and episodic records are discarded after skill creation",
+    "X4_NO_CAPABILITY_FORMATION": "skills and transfer remain; capability proposal/formation is disabled while CGM instrumentation remains available"
+  },
+  "sensitivity": {
+    "scv_thresholds": [0.0, 0.675, 0.9666666666666666],
+    "scv_threshold_source": "Phase 13C frozen calibration q25 and q75; used here only as fixed sensitivity points, not retuned on Phase 13F outcomes",
+    "invariant_strength_thresholds": [5.0, 7.5, 10.0],
+    "invariant_strength_default": 5.0,
+    "composition_requirements": {"loose": {"compose_min_successes_validate": 1, "compose_min_reuse_promote": 2}, "default": {"compose_min_successes_validate": 1, "compose_min_reuse_promote": 3}, "strict": {"compose_min_successes_validate": 2, "compose_min_reuse_promote": 4}}
+  },
+  "capability_config": {"min_skills": 1, "min_transfer_events": 1, "min_utility": 0.0, "min_confidence": 0.3, "min_coverage": 0.1, "ccov_family_norm": 5, "capu_weights": {"su": 0.4, "ts": 0.25, "coverage": 0.2, "composition": 0.15}, "max_capabilities": 30},
+  "growth_config": {"ct_weights": {"su": 0.4, "ts": 0.25, "coverage": 0.2, "composition": 0.15}, "ig_formula": "evaluation.growth_metrics.compute_ig", "ig_weights": {"cgr": 0.35, "tg": 0.25, "ug": 0.2, "ccg": 0.15, "compg": 0.05}, "igr_formula": "evaluation.intelligence.compute_igr", "ie_formula": "evaluation.intelligence.compute_ie", "dt_per_round": 1.0, "saturation_low_csr": 0.05, "skill_count_illusion_max_cgr": 0.01},
+  "metrics": {
+    "IS": "mean stored invariant strength across created invariant-backed skills; raw trace baselines are not applicable",
+    "SU": "mean repository Skill Utility over persistent non-provisional skills",
+    "TS": "mean measured transfer score using only successful observed transfer events",
+    "CGR": "repository capability growth rate from frozen Phase 13E metric pathway",
+    "IG": "repository growth_metrics.compute_ig with Phase 13E frozen weights; no alternate intelligence formula",
+    "task_utility": "observed success indicator minus observed reasoning cost / 100, per Phase 13E",
+    "coverage": "repository capability portfolio and union of successful target families; report both"
+  },
+  "statistics": {"independent_seed_count": 10, "confidence_level": 0.95, "ci": "two-sided Student-t across seed-level summaries, df=n-1", "paired_comparisons": "within-seed ASFT-minus-comparator differences on common task streams", "effect_sizes": "paired Cohen dz and Hedges-corrected g; report undefined when paired SD is zero", "missing_outcomes": "retain null/unavailable with reason; never impute"},
+  "primary_decisions": {
+    "ASFT_beats_each_baseline": "paired 95% CI lower bound above zero for both mean task utility and mean CGR; report all metrics regardless",
+    "component_matters": "ASFT-minus-ablation paired 95% CI lower bound above zero on task utility or CGR, by preregistered component; report both outcomes and do not substitute",
+    "sensitivity_stability": "report point estimates and intervals across frozen settings; no threshold winner selection or post-hoc tolerance",
+    "no_claim_of_canonical_DreamCoder": true
+  },
+  "runtime": {"record_seed_arm_round_and_task_level": true, "preserve_13C_13D_13E_artifacts": true, "freeze_source_and_config_hashes_before_confirmation": true, "synthetic_only_no_arc_external_validation": true}
+}
