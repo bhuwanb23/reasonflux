@@ -1,0 +1,127 @@
+experiment:
+  id: PHASE-13D-TRANSFER-V1
+  dataset_version: synthetic-transfer-v1
+  status: frozen_pre_run
+  scope: synthetic transfer validation; no ARC external-validity claim
+  historical_evidence_policy: keep_original_records_unmodified
+
+seeds:
+  confirmation: [50, 51, 52, 53, 54, 55, 56, 57, 58, 59]
+  independent_unit: run_seed
+
+tasks:
+  families: [reflection, rotation, counting, grouping]
+  training_seed_offset: 1000
+  near_test_seed_offset: 2000
+  moderate_test_seed_offset: 3000
+  composition_test_seed_offset: 4000
+  structural_test_seed_offset: 5000
+  negative_test_seed_offset: 6000
+  random_policy_seed_offset: 7000
+  training_traces_per_family: 12
+  evaluation_tasks_per_cell: 10
+  difficulty_training: 0.25
+  difficulty_evaluation: 0.35
+  require_distinct_task_ids: true
+
+learning:
+  use_existing_invariant_pipeline: true
+  use_existing_skill_qualification: true
+  allow_prior_evidence_for_trial_only: true
+  use_phase13c_scv10_mapping: true
+  scv_primary_threshold: 0.0
+  equality_creates: false
+  no_gate_or_threshold_changes: true
+  duplicate_signatures_not_counted_as_distinct_skills: true
+
+performance:
+  definition: "P = correctness_indicator - 0.02 * reasoning_steps"
+  correctness_indicator: "1 if exact expected output, else 0"
+  step_penalty: 0.02
+  performance_bounds: null
+  TS: "mean(P_after) - mean(P_before), using matched tasks"
+  TU: "existing compute_tu(success_rate, mean_success_gated_fractional_RCR, target_family_coverage)"
+  ITS: "existing compute_its(all_attempts, success_gated_fractional_benefits)"
+  NTR_accuracy: "incorrect transfer-task episodes / assigned transfer-task episodes"
+  NTR_harm: "matched applications where P_after < P_before / assigned_skill_applications"
+  RCR_steps: "baseline_reasoning_steps - transferred_reasoning_steps"
+  RCR_fraction: "(baseline_steps - transferred_steps) / baseline_steps; success-gated value reported separately"
+  reuse_rate: "task episodes with at least one retrieved/forced learned representation / eligible held-out task episodes"
+  transfer_success: "exact correctness and positive matched performance delta, reported separately"
+
+cost_model:
+  unit: reasoning step count from the experiment-local deterministic solver
+  baseline_transform_steps: 3
+  baseline_reducer_steps: 2
+  final_verification_steps: 1
+  learned_single_skill_steps: 2
+  composition_selection_steps: 1
+  composition_operation_execution_steps: 1
+  forced_skill_steps: 2
+  empirical_compute_claim: false
+  task_outputs_are_exact: true
+
+baselines:
+  no_learning: "Run the frozen task solver without learned retrieval or macros."
+  memory_only: "Retrieve one matched successful raw training trace; no executable Skill object or persistent SkillLibrary."
+  random_skill: "Uniformly sample a learned skill using the separate random stream; force the diagnostic application and retain false/harmful outcomes."
+  dreamcoder_like_compression_proxy: "Budget-matched library of repeated canonical operation subsequences mined from traces; explicitly not a canonical DreamCoder reproduction."
+
+ablations:
+  remove_invariants: "Use literal raw-trace programs capped at the same slot budget; no invariant score, recurrence mining, or abstraction/generalization."
+  remove_sct: "Create all candidates passing common non-SCV qualification."
+  remove_skill_library: "Allow a trained skill for one matching held-out opportunity, then clear it before the next opportunity."
+  disable_composition: "Permit only single-skill operation macros; same tasks and candidate pool."
+
+experiments:
+  EXP-TR-01: {taxonomy: near, source: reflection, target_ops: [apply_reflection]}
+  EXP-TR-02: {taxonomy: near, source: rotation, target_ops: [apply_rotation]}
+  EXP-TR-03: {taxonomy: near, source: counting, target_ops: [count_objects]}
+  EXP-TR-04: {taxonomy: moderate, source: reflection, target_ops: [apply_reflection, group_by_color]}
+  EXP-TR-05: {taxonomy: moderate, source: rotation, target_ops: [apply_rotation, count_objects]}
+  EXP-TR-06: {taxonomy: moderate, source: grouping, target_ops: [group_by_color, count_groups]}
+  EXP-TR-07: {taxonomy: compositional, sources: [reflection, counting], target_ops: [apply_reflection, count_objects]}
+  EXP-TR-08: {taxonomy: compositional, sources: [reflection, grouping], target_ops: [apply_reflection, group_by_color]}
+  EXP-TR-09: {taxonomy: compositional, sources: [rotation, counting], target_ops: [apply_rotation, count_objects]}
+  EXP-TR-10: {taxonomy: structural, sources: [reflection, rotation, grouping], target_ops: [apply_reflection, apply_rotation, group_by_color]}
+  EXP-TR-11: {taxonomy: structural_novel_order, sources: [reflection, rotation, counting, grouping], target_ops: [apply_rotation, apply_reflection, group_by_color, count_objects]}
+  EXP-TR-12: {taxonomy: cost, outcome: matched_reasoning_cost_reduction}
+  EXP-TR-13: {taxonomy: cost, outcome: operations_steps_and_candidates_evaluated}
+  EXP-TR-14: {taxonomy: cost, outcome: retrieval_reuse_vs_reconstruction}
+  EXP-TR-15: {taxonomy: negative, forced_skill: apply_reflection, target_ops: [count_objects]}
+  EXP-TR-16: {taxonomy: negative, policy: random_skill_application}
+  EXP-TR-17: {taxonomy: negative, policy: wrong_composition}
+
+statistics:
+  minimum_seeds: 10
+  confidence_level: 0.95
+  independent_unit: run_seed
+  resampling_cluster: run_seed
+  report: [n, mean, sd, ci95, per_seed_values, paired_effect_size]
+  correlations: [IS_vs_TS, SU_vs_TS, TS_vs_CGR]
+  retain_task_level_rows: true
+  no_outcome_dependent_changes: true
+
+reporting:
+  figures:
+    - transfer_taxonomy
+    - transfer_score_by_family
+    - reasoning_cost_reduction
+    - transfer_growth_over_time
+    - positive_vs_negative_transfer
+  tables:
+    - near_transfer
+    - moderate_transfer
+    - compositional_transfer
+    - structural_transfer
+    - matched_baselines
+    - matched_ablations
+  retain_unavailable_cells: true
+  retain_failures_and_nulls: true
+  synthetic_only_disclaimer: true
+
+execution:
+  contract_tests_must_not_call_benchmarks: true
+  no_full_run_until_prereg_and_hash_frozen: true
+  original_synthetic_v1_unchanged: true
+  global_metrics_unchanged: true

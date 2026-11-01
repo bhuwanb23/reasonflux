@@ -1,0 +1,103 @@
+{
+  "phase": "13E",
+  "experiment_id": "PHASE-13E-CAP-GROWTH-V1",
+  "status": "preregistered_before_confirmation_outcomes",
+  "seeds": [60, 61, 62, 63, 64, 65, 66, 67, 68, 69],
+  "task_families": ["reflection", "rotation", "counting", "grouping"],
+  "discovery": {
+    "seed_offset": 13000,
+    "traces_per_family": 8,
+    "difficulty": 0.3,
+    "use_existing_trace_pipeline": true,
+    "use_existing_invariant_pipeline": true,
+    "bootstrap_validated_invariants_as_provisional_trials": true,
+    "sct_primary_rule": "Phase-13C SCV10 > 0.0 after the shared non-SCV qualification gate"
+  },
+  "rounds": {
+    "count": 4,
+    "tasks_per_family_per_round": 4,
+    "difficulty": 0.3,
+    "seed_offset": 14000,
+    "round_1": "ordinary held-out tasks",
+    "round_2": "ordinary tasks; counting/grouping variants alternate, including symmetric grids",
+    "round_3": "composition training/validation and promotion opportunity; reflection tasks use genuine rotate-then-reflect composed generator",
+    "round_4": "held-out composition confirmation plus ordinary tasks; same construction as round 3 with independent task seeds"
+  },
+  "arms": {
+    "primary": "ASFT",
+    "baselines": ["B1_NO_LEARNING", "B2_SKILL_STORAGE_ONLY", "B3_RANDOM_SKILL_CREATION", "B4_COMPRESSION_PROXY"],
+    "ablations": ["A1_NO_IDT", "A2_NO_SCT", "A3_NO_SKILL_LIBRARY", "A4_NO_COMPOSITION", "A5_NO_CGM"],
+    "B2_SKILL_STORAGE_ONLY": "persistent skill storage/reuse and existing SkillConfig/skill-lifecycle APIs; only atomic capability proposals from genuinely core/anchored skills, no clustering or composition",
+    "A1_NO_IDT": "family-specific exact full trace sequences repeated at least three times; no invariant representation",
+    "B4_COMPRESSION_PROXY": "repeated traces compressed to observed task-operation subsequences; not canonical DreamCoder"
+  },
+  "capability_config": {
+    "min_skills": 1,
+    "min_transfer_events": 1,
+    "min_utility": 0.0,
+    "min_confidence": 0.3,
+    "min_coverage": 0.1,
+    "ccov_family_norm": 5,
+    "capu_weights": {"su": 0.4, "ts": 0.25, "coverage": 0.2, "composition": 0.15},
+    "max_capabilities": 30,
+    "proposal_api": "propose_capabilities_from_library(require_valid=True)"
+  },
+  "growth_config": {
+    "ct_weights": {"su": 0.4, "ts": 0.25, "coverage": 0.2, "composition": 0.15},
+    "ig_formula": "evaluation.growth_metrics.compute_ig",
+    "ig_weights": {"cgr": 0.35, "tg": 0.25, "ug": 0.2, "ccg": 0.15, "compg": 0.05},
+    "igr_formula": "evaluation.intelligence.compute_igr",
+    "ie_formula": "evaluation.intelligence.compute_ie",
+    "dt_per_round": 1.0,
+    "saturation_low_csr": 0.05,
+    "skill_count_illusion_max_cgr": 0.01,
+    "system_ct_aggregation": "mean capability_score over non-archived capabilities; empty portfolio is 0.0",
+    "component_deltas": "round-to-round differences of system mean measured transfer_score across non-provisional skills, portfolio mean CapU, global supported-family coverage (union of successful target families divided by four), and promoted composition-skill count",
+    "measured_transfer_score": "for Phase 13E-created skills, mean observed positive transfer benefit from successful ReuseEngine events; expected transfer priors are retained separately and not used as measured TS",
+    "system_su_ts_population": "all non-provisional skills in the arm library; portfolio CapU remains restricted to capability members",
+    "experience_count": "32 discovery traces plus cumulative held-out tasks through the current round; identical denominator across arms",
+    "coverage_reporting": "repository portfolio total_coverage plus union of capability-member successful target families divided by four families",
+    "task_utility": "observed task success indicator minus observed reasoning cost / 100; baseline solver when no reuse is applied"
+  },
+  "composition": {
+    "api": "skills.composition.propose.propose_sequential + record_composition_outcome + advance_composition + promote_composition",
+    "primary_order": ["rotation", "reflection"],
+    "primary_task_family": "reflection",
+    "task_generator": "make_task(compose=True), whose reference operation is rotation followed by reflection",
+    "require_observed_success_before_promotion": true,
+    "round_3_role": "promotion_validation",
+    "round_4_role": "heldout_confirmation_used_for_composition_value_criterion",
+    "no_hand_created_learned_component_skills": true
+  },
+  "statistics": {
+    "independent_seed_count": 10,
+    "confidence_level": 0.95,
+    "interval": "two-sided Student-t CI across available independent seed-level values using df=n-1; for the complete n=10 block df=9, critical value=2.262157",
+    "paired_comparisons": "within-seed differences; same tasks and seed streams across arms",
+    "correlation_unit": "within each seed, arithmetic mean of the four round-level values; Pearson r across ten seed-level summaries; descriptive",
+    "capability_value_correlations": "EXP-CAP-10/11: per-seed mean accepted capability CapU versus mean member measured TS and mean member reuse count; Pearson r across seeds, descriptive",
+    "correlation_decision": "report r, n, and two-sided Fisher-z 95% CI for every preregistered correlation; positive r is directionally supportive only, no significance threshold or causal claim",
+    "future_prediction_pairs": "within each seed, C_t at rounds 1-3 paired with mean task utility in rounds 2-4; cluster bootstrap resamples whole seeds, 4000 replicates, RNG seed 87213",
+    "missing_outcomes": "retain as null/unavailable with reason; never impute as positive",
+    "regression_probe": "in an isolated cloned final ASFT portfolio, remove the lexicographically first measured successful-transfer skill from all memberships; recompute C_t and CGR"
+  },
+  "preregistered_decisions": {
+    "capability_emergence_replicated": "at least one valid capability persists across at least two consecutive rounds in at least 8 of 10 ASFT seeds",
+    "positive_directional_metric": "seed-level mean > 0 and two-sided 95% CI lower bound > 0",
+    "positive_IE_trend": "mean across-seed OLS slope of IE over rounds 1-4 > 0 and 95% CI lower bound > 0",
+    "ASFT_beats_baseline": "paired 95% CI lower bound > 0 for final C_t and mean held-out task utility across all four rounds; report each baseline separately",
+    "ablation_reduces_growth": "paired ASFT-minus-ablation CGR 95% CI lower bound > 0 for A1-A4; A5 is measurement-only and must be unavailable",
+    "composition_creates_value": "positive mean paired composition-vs-best-single task benefit difference and 95% CI lower bound > 0",
+    "growth_predicts_future_performance": "positive seed-clustered Pearson association between C_t at round t and next-round task utility, with lower 95% CI > 0; if insufficient pairs, unavailable",
+    "trajectory_monotonicity": "descriptive share of seeds with non-decreasing C_t across all four rounds; do not redefine other criteria",
+    "composition_capability_count": "descriptive fraction of seeds with round-4 count greater than round-2 count and a successful held-out composition",
+    "higher_order_emergence": "report accepted emergent capability type count/seed occurrences; unavailable if none; no manual insertion"
+  },
+  "runtime": {
+    "record_task_level_rows": true,
+    "record_seed_round_arm_rows": true,
+    "freeze_source_and_config_hashes_before_runs": true,
+    "no_replay_of_phase13c_or_13d_benchmarks": true,
+    "synthetic_only_no_arc_external_validation": true
+  }
+}
