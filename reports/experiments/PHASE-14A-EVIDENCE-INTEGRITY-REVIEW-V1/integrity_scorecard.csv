@@ -1,0 +1,12 @@
+category,status,basis,limitation
+Frozen criteria,PASS WITH LIMITATION,C–G pre/run hashes and seed blocks; 13B fixed top-k/strict gate documented,13B per-run hash provenance weaker; full private/unlogged history cannot be proven
+Failed gates remain failed,PASS,"Original 13B, 13C, corrected 13D and later adverse/null comparisons retained",None of these statuses implies theory failure globally; interpret by scope
+Exploratory vs confirmatory,PASS,EXP-IDT-14 separate; corrections and same-holdout rerun labeled,Phase14 claims must retain these labels
+Negative evidence preserved,PASS,"Nulls, failed comparisons, unavailable skills/composition, ARC null and report failures remain in packages",Use unavailable distinctly from zero effect
+Claim traceability,PASS AFTER SUPPLEMENT,14A adds explicit experiment/metric/evidence columns for all 11 major claims,Original Phase13H matrix uses free-text evidence column
+Baseline transparency,PASS,"Named baselines, paired comparisons, B4 proxy caveats and failed decisions present",Different endpoints cannot be pooled
+Ablation transparency,PASS,"Null, positive, adverse and unavailable ablations are recorded",Ablation effects are phase/metric-specific; causal generalization not established
+ARC transparency,PASS WITH EXPOSURE LIMIT,"DSL fit rates, no mechanism chain, attempt 01 and same-holdout reuse disclosed",No pristine independent holdout inference
+Reproducibility,PARTIAL / ADEQUATE FOR SAVED-RECORD ANALYSIS,Seed/task records and hashes are extensive from 13C onward,Git SHA/environment lock/dirty-state not uniform; clean replay not certified
+Provenance completeness,LIMITED,Phase13H source manifest verifies consolidation inputs; multiple frozen source hashes available,13A/13B weaker; current tree dirty; stale preflight docs need contextual reading
+Phase 13B measurement lineage,DISCLOSED / CARRY FORWARD,A post-result accounting correction changed TU versus local HEAD; strict gate failed in both versions,Corrected result has weaker run provenance; preserve both versions and identify version in magnitude claims
