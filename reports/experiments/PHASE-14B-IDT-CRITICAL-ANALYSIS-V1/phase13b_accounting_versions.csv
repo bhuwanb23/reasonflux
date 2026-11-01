@@ -1,0 +1,3 @@
+version,source,ASFT_mean_TU_topk2,frequency_mean_TU_topk2,no_transfer_mean_TU_topk2,policy_relation,strict_gate,scope_note
+Pre-correction,Local tracked HEAD summary (as inspected in Phase 14A),0.1431299603,0.1431299603,0.1431299603,Tie across ASFT/frequency/no-transfer,Failed,Historical locally recoverable snapshot; no configured remote available to verify upstream history
+Corrected,Current saved Phase 13B summary/report,0.0958085317,0.0958085317,0.0958085317,Tie across ASFT/frequency/no-transfer,Failed,Output-cost accounting correction disclosed in Phase 13B report; use as current saved worktree value
