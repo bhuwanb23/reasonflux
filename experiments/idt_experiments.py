@@ -829,11 +829,11 @@ def baselines(seed: int = 0, *, write: bool = False) -> dict[str, Any]:
     random_order = unique_order(random_order)
     random_orders = [unique_order(order) for order in random_orders]
 
-    def utility_score(items: list[Any]) -> float:
-        top = items[:top_k]
+    def utility_score(items: list[Any], k: int = top_k) -> float:
+        top = items[:k]
         return sum(
             evaluation_utility.get(inv.invariant_id, 0.0) for inv in top
-        ) / max(1, top_k)
+        ) / max(1, k)
 
     asft_score = utility_score(asft_order)
     frequency_score = utility_score(frequency_order)
@@ -841,6 +841,37 @@ def baselines(seed: int = 0, *, write: bool = False) -> dict[str, Any]:
     random_score = sum(utility_score(order) for order in random_orders) / len(
         random_orders
     )
+    max_k = max(
+        1,
+        min(
+            len(order)
+            for order in (asft_order, frequency_order, no_transfer_order)
+        ),
+    )
+    ranking_diagnostics = {
+        "asft_order": [semantic_key(inv) for inv in asft_order],
+        "frequency_order": [semantic_key(inv) for inv in frequency_order],
+        "no_transfer_order": [semantic_key(inv) for inv in no_transfer_order],
+        "asft_equals_frequency_order": [semantic_key(inv) for inv in asft_order]
+        == [semantic_key(inv) for inv in frequency_order],
+        "asft_equals_no_transfer_order": [semantic_key(inv) for inv in asft_order]
+        == [semantic_key(inv) for inv in no_transfer_order],
+        "distinct_semantic_candidates": len(
+            {semantic_key(inv) for inv in candidate_pool}
+        ),
+        "held_out_utility_by_semantic_candidate": {
+            semantic_key(inv): evaluation_utility.get(inv.invariant_id, 0.0)
+            for inv in asft_order
+        },
+        "mean_transfer_utility_at_k": {
+            str(k): {
+                "ASFT": utility_score(asft_order, k),
+                "frequency_only": utility_score(frequency_order, k),
+                "no_transfer": utility_score(no_transfer_order, k),
+            }
+            for k in range(1, max_k + 1)
+        },
+    }
     payload = {
         "experiment_id": "EXP-IDT-BASELINES",
         "claim": "IDT",
@@ -857,10 +888,13 @@ def baselines(seed: int = 0, *, write: bool = False) -> dict[str, Any]:
             "no_transfer": no_transfer_score,
             "random_pattern": random_score,
             "ASFT_advantage": asft_score - frequency_score,
+            "ASFT_minus_no_transfer": asft_score - no_transfer_score,
+            "ASFT_minus_random": asft_score - random_score,
             "ASFT_valid_top_rate": quality_score(asft_order),
             "frequency_valid_top_rate": quality_score(frequency_order),
             "no_transfer_valid_top_rate": quality_score(no_transfer_order),
         },
+        "ranking_diagnostics": ranking_diagnostics,
         "comparison": [
             {"baseline": "ASFT transfer-aware", "score": asft_score},
             {"baseline": "frequency-only", "score": frequency_score},
@@ -887,7 +921,15 @@ def baselines_multi(
         baselines,
         seeds=seeds or default_seeds(ROOT),
         experiment_id="EXP-IDT-BASELINES",
-        metric_names=("ASFT", "frequency_only", "no_transfer", "random_pattern"),
+        metric_names=(
+            "ASFT",
+            "frequency_only",
+            "no_transfer",
+            "random_pattern",
+            "ASFT_advantage",
+            "ASFT_minus_no_transfer",
+            "ASFT_minus_random",
+        ),
         configuration={
             "comparison": "top-k unique-semantic mean transfer utility",
         },
@@ -951,6 +993,46 @@ def run_idt_evidence(
             ("ASFT", "frequency_only", "no_transfer", "random_pattern"),
         )
     )
+    baseline_raw = baseline_result["raw_results"]
+    baseline_diagnostic = {
+        "predeclared_top_k": 2,
+        "asft_same_order_as_frequency_seeds": [
+            raw["ranking_diagnostics"]["asft_equals_frequency_order"]
+            for raw in baseline_raw
+        ],
+        "asft_same_order_as_no_transfer_seeds": [
+            raw["ranking_diagnostics"]["asft_equals_no_transfer_order"]
+            for raw in baseline_raw
+        ],
+        "per_seed": [
+            {
+                "seed": raw["seed"],
+                "asft_minus_frequency": raw["metrics"]["ASFT_advantage"],
+                "asft_minus_no_transfer": raw["metrics"]["ASFT_minus_no_transfer"],
+                "asft_minus_random": raw["metrics"]["ASFT_minus_random"],
+                "ranking_diagnostics": raw["ranking_diagnostics"],
+            }
+            for raw in baseline_raw
+        ],
+        "asft_order_identical_to_frequency_all_seeds": all(
+            raw["ranking_diagnostics"]["asft_equals_frequency_order"]
+            for raw in baseline_raw
+        ),
+        "asft_order_identical_to_no_transfer_all_seeds": all(
+            raw["ranking_diagnostics"]["asft_equals_no_transfer_order"]
+            for raw in baseline_raw
+        ),
+        "strict_superiority_all_seeds": all(
+            raw["metrics"]["ASFT"] > raw["metrics"]["frequency_only"]
+            and raw["metrics"]["ASFT"] > raw["metrics"]["no_transfer"]
+            and raw["metrics"]["ASFT"] > raw["metrics"]["random_pattern"]
+            for raw in baseline_raw
+        ),
+        "interpretation": (
+            "Ranking-level diagnostics explain equality; they do not replace "
+            "the strict superiority gate."
+        ),
+    }
     success = (
         all(
             result["statistics"]["discovery"]["mean"] >= 1.0
@@ -982,6 +1064,24 @@ def run_idt_evidence(
         )
         and seed_stable
     )
+    failure_cases = []
+    if any(
+        not (
+            raw["metrics"]["ASFT"] > raw["metrics"]["frequency_only"]
+            and raw["metrics"]["ASFT"] > raw["metrics"]["no_transfer"]
+            and raw["metrics"]["ASFT"] > raw["metrics"]["random_pattern"]
+        )
+        for raw in baseline_raw
+    ):
+        failure_cases.append(
+            "baseline_comparison: transfer-aware ranking did not strictly beat "
+            "all controls for every seed"
+        )
+    if not seed_stable:
+        failure_cases.append("seed_stability: one or more seed stability checks failed")
+    if not success and not failure_cases:
+        failure_cases.append("one or more IDT acceptance checks failed")
+
     evidence = {
         "experiment_id": "EXP-IDT-EVIDENCE",
         "claim": "IDT",
@@ -994,11 +1094,12 @@ def run_idt_evidence(
         "transfer": transfer_result,
         "robustness": robustness_result,
         "baselines": baseline_result,
-        "failure_cases": [] if success else ["one or more IDT gates failed"],
+        "failure_cases": failure_cases,
         "observations": {
             "all_results_are_multi_seed": True,
             "seed_stable": seed_stable,
             "thresholds_fixed_before_execution": True,
+            "baseline_diagnostic": baseline_diagnostic,
         },
     }
     if write:
@@ -1068,6 +1169,8 @@ def _summary_markdown(evidence: dict[str, Any]) -> str:
     quality = evidence["quality"]["statistics"]
     transfer = evidence["transfer"]["statistics"]
     robustness_result = evidence["robustness"]["statistics"]
+    baseline = evidence["baselines"]["statistics"]
+    baseline_diagnostic = evidence["observations"]["baseline_diagnostic"]
     lines = [
         "# IDT Evidence Package",
         "",
@@ -1098,6 +1201,23 @@ def _summary_markdown(evidence: dict[str, Any]) -> str:
             f"- Spearman IS–TS: `{transfer['SPEARMAN']['mean']:.3f}`",
             f"- TU: `{transfer['TU']['mean']:.3f}`",
             "",
+            "## Baseline comparison (predeclared top-k = 2)",
+            "",
+            f"- ASFT mean transfer utility: `{baseline['ASFT']['mean']:.6f}`",
+            f"- Frequency-only: `{baseline['frequency_only']['mean']:.6f}`",
+            f"- No-transfer: `{baseline['no_transfer']['mean']:.6f}`",
+            f"- Random pattern: `{baseline['random_pattern']['mean']:.6f}`",
+            f"- Paired ASFT − frequency-only: `{baseline['ASFT_advantage']['mean']:.6f}` "
+            f"(95% normal CI `{baseline['ASFT_advantage']['ci_low']:.6f}` to "
+            f"`{baseline['ASFT_advantage']['ci_high']:.6f}`)",
+            f"- Paired ASFT − no-transfer: `{baseline['ASFT_minus_no_transfer']['mean']:.6f}`",
+            f"- ASFT ranking identical to frequency on all seeds: "
+            f"`{baseline_diagnostic['asft_order_identical_to_frequency_all_seeds']}`",
+            f"- ASFT ranking identical to no-transfer on all seeds: "
+            f"`{baseline_diagnostic['asft_order_identical_to_no_transfer_all_seeds']}`",
+            f"- Strict per-seed superiority gate passed: "
+            f"`{baseline_diagnostic['strict_superiority_all_seeds']}`; a tie is not a win.",
+            "",
             "## Robustness",
             "",
             f"- VST: `{robustness_result['VST']['mean']:.3f}`",
@@ -1123,6 +1243,14 @@ def _write_tables(evidence: dict[str, Any], evidence_dir: Path) -> None:
         "table_1_top_invariants.json": top_rows,
         "table_2_precision_recall.json": evidence["quality"]["statistics"],
         "table_3_baselines.json": evidence["baselines"]["statistics"],
+        "table_3_baselines_by_seed.json": [
+            {
+                "seed": raw["seed"],
+                "metrics": raw["metrics"],
+                "ranking_diagnostics": raw["ranking_diagnostics"],
+            }
+            for raw in evidence["baselines"]["raw_results"]
+        ],
         "table_4_robustness.json": evidence["robustness"]["statistics"],
         "table_5_transfer.json": evidence["transfer"]["statistics"],
     }

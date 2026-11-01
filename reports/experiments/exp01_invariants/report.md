@@ -45,5 +45,5 @@
 
 - `IS`: `{'name': 'IS', 'formula': 'frequency * consistency * generality', 'interpretation': 'invariant strength', 'valid_range': '[0, inf)', 'failure_condition': '<= 0'}`
 
-- **timestamp_utc**: `2026-10-31T12:31:08.612021+00:00`
+- **timestamp_utc**: `2026-10-31T14:08:48.328038+00:00`
 - **record_schema**: `phase-13a-v1`

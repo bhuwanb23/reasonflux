@@ -146,7 +146,11 @@ def write_experiment_record(
             list(payload.get("metrics", {}))
         ),
         "timestamp_utc": timestamp,
-        "record_schema": "phase-13a-v1",
+        "record_schema": (
+            "exp-idt-14-v1"
+            if experiment_id == "EXP-IDT-14"
+            else "phase-13a-v1"
+        ),
     }
     json_path = directory / "record.json"
     md_path = directory / "report.md"

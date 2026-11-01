@@ -146,6 +146,16 @@ METRICS: dict[str, MetricDefinition] = {
         "ASFT_ADVANTAGE", "ASFT TU - frequency-only TU",
         "transfer-aware ranking advantage", "(-inf, inf)", "<= 0",
     ),
+    "ASFT_MINUS_NO_TRANSFER": MetricDefinition(
+        "ASFT_MINUS_NO_TRANSFER", "ASFT TU - no-transfer TU",
+        "transfer-aware versus no-transfer paired advantage",
+        "(-inf, inf)", "<= 0",
+    ),
+    "ASFT_MINUS_RANDOM": MetricDefinition(
+        "ASFT_MINUS_RANDOM", "ASFT TU - random-pattern TU",
+        "transfer-aware versus random-pattern paired advantage",
+        "(-inf, inf)", "<= 0",
+    ),
     "ASFT_VALID_TOP_RATE": MetricDefinition(
         "ASFT_VALID_TOP_RATE", "valid ASFT top-k / k",
         "validity of ASFT top-k", "[0, 1]", "< 0.70",

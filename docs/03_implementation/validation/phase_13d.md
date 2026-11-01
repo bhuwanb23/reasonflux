@@ -1,4 +1,6 @@
-Phase 13D: Transfer Learning Experiments
+# Phase 13D: Transfer Learning Experiments
+
+> **Status (2026-10-31):** preflight, v1 protocol/config, experiment-local implementation, and stub contracts are complete; 6 contract tests pass. No confirmation benchmark or seed-level results have run. Isolated contract fixtures used labels 40/42, which are excluded; the untouched confirmation set is 50–59. Hash freeze and confirmation run are next. See `phase_13d_preflight.md` and `phase_13d_preregistration_v1.md`.
 
 This is arguably the most important experimental phase in the entire ASFT project.
 

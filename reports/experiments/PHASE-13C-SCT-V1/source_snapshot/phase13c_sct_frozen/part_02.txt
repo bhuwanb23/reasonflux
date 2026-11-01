@@ -1,0 +1,350 @@
+        utility_timeline.append(
+            {
+                "task_index": index,
+                "task_id": task.task_id,
+                "state": skill.state.value,
+                **breakdown.to_dict(),
+            }
+        )
+    reuse_stats = _summarize_reuse(
+        skill,
+        rows,
+        str((skill.metadata or {}).get("mvp_category", "general")),
+    )
+    cc = max(0.0, float(candidate.creation_cost))
+    total_benefit = sum(float(row["benefit"]) for row in rows)
+    net_value = total_benefit - cc - len(opportunities) * maintenance_per_opportunity
+    return {
+        "created": True,
+        "skill": skill,
+        "birth": result.birth.to_dict() if result.birth else None,
+        "state_at_end": skill.state.value,
+        "provisional_at_end": bool((skill.metadata or {}).get("provisional")),
+        "creation_cost": cc,
+        "maintenance_cost": len(opportunities) * maintenance_per_opportunity,
+        "total_success_gated_benefit": total_benefit,
+        "realized_net_value": net_value,
+        "mean_SU_at_end": float(skill.utility),
+        "utility_breakdown_at_end": score_skill_utility(skill, config).to_dict(),
+        "reuse_statistics": reuse_stats,
+        "utility_timeline": utility_timeline,
+        "task_results": rows,
+    }
+
+
+def _evaluate_memory_only(
+    inv: Invariant,
+    trace_run: Any,
+    tasks: list[GridTask],
+    *,
+    creation_cost: float,
+    maintenance_per_opportunity: float,
+) -> dict[str, Any]:
+    """Raw-trace exemplar retrieval; no Skill or executable skill object is made."""
+    source_traces = [
+        trace for trace in trace_run.traces
+        if set(inv.pattern_signature).issubset({step.operation for step in trace.steps})
+    ]
+    source_trace = source_traces[0] if source_traces else None
+    macro = []
+    if source_trace is not None:
+        for step in source_trace.steps:
+            op = str(step.operation)
+            if op.startswith("apply_"):
+                macro = [op]
+                break
+            if op in {"count_objects", "group_by_color"}:
+                macro = [op]
+                break
+    opportunities = _opportunities(inv, tasks, 10)
+    if len(opportunities) != 10 or len({task.task_id for task in opportunities}) != 10:
+        raise AssertionError("memory evaluation lacks ten distinct eligible opportunities")
+    solver = GridSolver()
+    rows = []
+    for task in opportunities:
+        baseline = solver.solve(task)
+        if macro:
+            reused = solver.solve(task, macro_ops=macro)
+            reduction = (
+                max(0.0, min(1.0, (baseline.cost - reused.cost) / baseline.cost))
+                if baseline.cost > 0 else 0.0
+            )
+            benefit = reduction if reused.success else 0.0
+            rows.append(
+                {
+                    "task_id": task.task_id,
+                    "task_family": task.task_family,
+                    "applied": True,
+                    "success": bool(reused.success),
+                    "baseline_cost": baseline.cost,
+                    "reused_cost": reused.cost,
+                    "reasoning_reduction": reduction,
+                    "benefit": benefit,
+                    "transfer_credit": bool(reused.success and benefit > 0.0),
+                    "retrieved_trace_id": source_trace.trace_id,
+                }
+            )
+        else:
+            rows.append(
+                {
+                    "task_id": task.task_id,
+                    "task_family": task.task_family,
+                    "applied": False,
+                    "success": bool(baseline.success),
+                    "baseline_cost": baseline.cost,
+                    "reused_cost": baseline.cost,
+                    "reasoning_reduction": 0.0,
+                    "benefit": 0.0,
+                    "transfer_credit": False,
+                    "retrieved_trace_id": "",
+                }
+            )
+    opportunities_n = len(opportunities)
+    cc = max(0.0, float(creation_cost)) if source_trace else 0.0
+    benefit = sum(float(row["benefit"]) for row in rows)
+    net = benefit - cc - opportunities_n * maintenance_per_opportunity if source_trace else 0.0
+    return {
+        "created": bool(source_trace),
+        "representation": "raw_trace_exemplar_no_Skill_object",
+        "source_trace_id": source_trace.trace_id if source_trace else "",
+        "macro_retrieved": macro,
+        "creation_cost_proxy": cc,
+        "maintenance_cost": opportunities_n * maintenance_per_opportunity if source_trace else 0.0,
+        "total_success_gated_benefit": benefit,
+        "realized_net_value": net,
+        "task_results": rows,
+        "reuse_statistics": {
+            "eligible_opportunities": opportunities_n,
+            "applied_attempts": sum(bool(row["applied"]) for row in rows),
+            "successful_applications": sum(bool(row["success"]) for row in rows if row["applied"]),
+            "credited_reuses": sum(bool(row["transfer_credit"]) for row in rows),
+            "no_match": sum(not bool(row["applied"]) for row in rows),
+        },
+    }
+
+
+def run_calibration_seed(run_seed: int) -> dict[str, Any]:
+    config_data = load_config()
+    skill_config = SkillConfig()
+    trace_run, eval_tasks = _task_batches(run_seed, config_data)
+    inv_run = run_invariant_pipeline(trace_run.traces, bootstrap=True)
+    eligible, rejected = _eligible_pool(inv_run.promotable, skill_config)
+    eligible, rejected = _enforce_opportunity_horizon(
+        eligible, rejected, eval_tasks,
+        int(config_data["tasks"]["evaluation_opportunities_per_candidate"]),
+    )
+    candidates = [
+        {
+            "invariant_id": item["invariant"].invariant_id,
+            "signature": list(item["invariant"].pattern_signature),
+            "category": str((item["candidate"].metadata or {}).get("mvp_category", "general")),
+            "frequency": int(item["invariant"].frequency),
+            "task_families": list(item["invariant"].task_families),
+            **item["score"],
+        }
+        for item in eligible
+    ]
+    return {
+        "seed": run_seed,
+        "discovery_seed": run_seed + config_data["tasks"]["discovery_seed_offset"],
+        "discovery_trace_count": len(trace_run.traces),
+        "promotable_count": len(inv_run.promotable),
+        "eligible_candidate_count": len(eligible),
+        "birth_count_at_zero": sum(row["SCV10"] > 0 for row in candidates),
+        "candidate_rows": candidates,
+        "rejected_candidates": rejected,
+    }
+
+
+def _quantile(values: list[float], probability: float) -> float:
+    if not values:
+        return 0.0
+    ordered = sorted(float(x) for x in values)
+    position = (len(ordered) - 1) * probability
+    low = int(math.floor(position))
+    high = int(math.ceil(position))
+    if low == high:
+        return ordered[low]
+    weight = position - low
+    return ordered[low] * (1.0 - weight) + ordered[high] * weight
+
+
+def _config_digest(config_data: dict[str, Any]) -> str:
+    encoded = json.dumps(config_data, sort_keys=True, separators=(",", ":")).encode()
+    return hashlib.sha256(encoded).hexdigest()
+
+
+def run_calibration(*, write: bool = True) -> dict[str, Any]:
+    """Run only seeds 15--19 and freeze calibration-derived values."""
+    config_data = load_config()
+    seeds = tuple(config_data["seeds"]["calibration"])
+    if len(seeds) != 5 or set(seeds) & set(config_data["seeds"]["confirmation"]):
+        raise ValueError("invalid Phase 13C calibration/confirmation split")
+    raw = [run_calibration_seed(seed) for seed in seeds]
+    candidate_rows = [row for seed in raw for row in seed["candidate_rows"]]
+    scores = [float(row["SCV10"]) for row in candidate_rows]
+    eligible_count = sum(int(seed["eligible_candidate_count"]) for seed in raw)
+    birth_count = sum(int(seed["birth_count_at_zero"]) for seed in raw)
+    p_random = birth_count / eligible_count if eligible_count else 0.0
+    frozen = {
+        "protocol_id": "PHASE-13C-SCT-V1",
+        "calibration_seeds": list(seeds),
+        "confirmation_seeds": list(config_data["seeds"]["confirmation"]),
+        "config_sha256": _config_digest(config_data),
+        "candidate_count": len(candidate_rows),
+        "eligible_candidate_count": eligible_count,
+        "birth_count_at_primary_threshold": birth_count,
+        "random_create_probability": p_random,
+        "thresholds": {
+            "low_q25": _quantile(scores, 0.25),
+            "medium_q50": _quantile(scores, 0.50),
+            "high_q75": _quantile(scores, 0.75),
+            "primary": 0.0,
+        },
+        "mc_per_opportunity_primary": 0.06,
+        "mc_sensitivity": list(MC_SENSITIVITY),
+        "calibration_candidate_scv10_values": scores,
+        "calibration_results": raw,
+        "confirmation_opened": False,
+    }
+    if write:
+        OUT_DIR.mkdir(parents=True, exist_ok=True)
+        (OUT_DIR / "calibration.json").write_text(
+            json.dumps(frozen, indent=2, sort_keys=True), encoding="utf-8"
+        )
+        (OUT_DIR / "calibration_frozen.json").write_text(
+            json.dumps({k: v for k, v in frozen.items() if k != "calibration_results"}, indent=2, sort_keys=True),
+            encoding="utf-8",
+        )
+        lines = [
+            "# Phase 13C calibration (seeds 15–19)",
+            "",
+            "Calibration only; not confirmatory evidence.",
+            f"- Eligible candidates: {eligible_count}",
+            f"- SCT births at primary threshold: {birth_count}",
+            f"- Frozen random-create probability: {p_random:.6f}",
+            f"- Low/medium/high cutoffs: {frozen['thresholds']['low_q25']:.6f} / {frozen['thresholds']['medium_q50']:.6f} / {frozen['thresholds']['high_q75']:.6f}",
+            "- Confirmation seeds remain unopened by this stage.",
+        ]
+        (OUT_DIR / "calibration_summary.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return frozen
+
+
+def _candidate_arm_result(
+    item: dict[str, Any],
+    arm: str,
+    trace_run: Any,
+    eval_tasks: list[GridTask],
+    skill_config: SkillConfig,
+    random_create_probability: float,
+    rng: random.Random,
+) -> tuple[dict[str, Any], Skill | None]:
+    inv = item["invariant"]
+    candidate, score = _candidate_score(inv, skill_config)
+    selected = {
+        "SCT": score["SCV10"] > 0.0,
+        "NEVER_CREATE": False,
+        "ALWAYS_CREATE": True,
+        "RANDOM_CREATE": rng.random() < random_create_probability,
+        "MEMORY_ONLY": False,
+    }[arm]
+    source_family = str((candidate.metadata or {}).get("mvp_category", "general"))
+    opportunities = _opportunities(inv, eval_tasks, 10)
+    cc = max(0.0, float(candidate.creation_cost))
+    primary_mc = float(skill_config.base_maintenance) + 0.01
+    if arm == "MEMORY_ONLY":
+        result = _evaluate_memory_only(
+            inv,
+            trace_run,
+            eval_tasks,
+            creation_cost=cc,
+            maintenance_per_opportunity=primary_mc,
+        )
+        result["realized_net_value_by_mc"] = {
+            f"{mc:.2f}": (
+                float(result["total_success_gated_benefit"])
+                - float(result["creation_cost_proxy"])
+                - len(opportunities) * mc
+                if result["created"] else 0.0
+            )
+            for mc in MC_SENSITIVITY
+        }
+        return (
+            {
+                "arm": arm,
+                "selected": bool(result["created"]),
+                "created": bool(result["created"]),
+                "creation_cost": result["creation_cost_proxy"],
+                "maintenance_cost": result["maintenance_cost"],
+                "total_success_gated_benefit": result["total_success_gated_benefit"],
+                "realized_net_value": result["realized_net_value"],
+                "realized_net_value_by_mc": result["realized_net_value_by_mc"],
+                "reuse_statistics": result["reuse_statistics"],
+                "task_results": result["task_results"],
+                "utility_timeline": [],
+                "representation": result["representation"],
+                "retrieved_trace_id": result["source_trace_id"],
+                "macro_retrieved": result["macro_retrieved"],
+            },
+            None,
+        )
+    if not selected:
+        return (
+            {
+                "arm": arm,
+                "selected": False,
+                "created": False,
+                "creation_cost": 0.0,
+                "maintenance_cost": 0.0,
+                "total_success_gated_benefit": 0.0,
+                "realized_net_value": 0.0,
+                "realized_net_value_by_mc": {f"{mc:.2f}": 0.0 for mc in MC_SENSITIVITY},
+                "reuse_statistics": {
+                    "eligible_opportunities": len(opportunities),
+                    "applied_attempts": 0,
+                    "successful_applications": 0,
+                    "credited_reuses": 0,
+                    "failed_applications": 0,
+                    "no_match": len(opportunities),
+                    "reuse_rate_opportunity": 0.0,
+                    "TS_cross_family": 0.0,
+                    "unique_skill_reused": 0,
+                    "reuse_count": 0,
+                },
+                "task_results": [],
+                "utility_timeline": [],
+                "representation": "no_executable_skill",
+            },
+            None,
+        )
+    evaluation = _evaluate_skill(
+        inv,
+        candidate,
+        trace_run,
+        eval_tasks,
+        skill_config,
+        maintenance_per_opportunity=primary_mc,
+    )
+    skill = evaluation.pop("skill", None)
+    evaluation["realized_net_value_by_mc"] = {
+        f"{mc:.2f}": (
+            float(evaluation["total_success_gated_benefit"])
+            - float(evaluation["creation_cost"])
+            - int(evaluation["reuse_statistics"]["eligible_opportunities"]) * mc
+        )
+        if evaluation["created"] else 0.0
+        for mc in MC_SENSITIVITY
+    }
+    return ({"arm": arm, "selected": selected, **evaluation, "representation": "Skill"}, skill)
+
+
+def _clone_skill(skill: Skill) -> Skill:
+    return Skill.from_dict(skill.to_dict())
+
+
+def _run_lifecycle(
+    skill: Skill, run_seed: int, config: SkillConfig, *, probe_seed_offset: int
+) -> dict[str, Any]:
+    library = SkillLibrary()
+    library.add(_clone_skill(skill))
+    isolated = library.get(skill.skill_id)

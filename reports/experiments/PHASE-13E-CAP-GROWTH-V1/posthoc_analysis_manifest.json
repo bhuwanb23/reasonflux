@@ -1,0 +1,17 @@
+{
+  "benchmark_rerun": false,
+  "completed_at_utc": "2026-11-01T02:53:04.644299+00:00",
+  "frozen_run_source_tree_sha256": "71f2a2aa663e2026e9acd707ace581b54b3f666dbe491841280a09aed711ca67",
+  "posthoc_source_files": {
+    "experiments/phase13e/figures.py": "d21104dd0b02934377c3df2d47845b96c13d6d158743c2f6e9a017f5dd1045d4",
+    "experiments/phase13e/posthoc.py": "2a704f7e9fb724b761b4c5362bb52dc01ad55363e4d6f16ed170d9c5d8e013a9",
+    "experiments/phase13e/reporting.py": "3b489153620efd09911acb27a11a514c87db30563ce60560bcabfaccd60c47a1",
+    "experiments/phase13e/statistics.py": "2d1aff4ae0b5058e9d4adb180620ce4190b948fda3ff8371d8068fec20745fc2"
+  },
+  "posthoc_source_tree_sha256": "975e28ca62c2983e335c9a99f09c1f2fbd92afcc42f3a4dc8ea4534f26aa13ce",
+  "python": "3.13.16 (main, Oct  6 2026, 04:38:44) [GCC 14.2.0]",
+  "reason": "Corrected IE-slope aggregation and criterion-table rendering of observed paired contrasts; no runner, seed generation, task outcome, metric formula, or threshold changed.",
+  "saved_records_sha256_after": "4099e98cc7b609b64e9da29566b2c46b0a5747b0b52afa2e4a936a2cfb5c2188",
+  "saved_records_sha256_before": "4099e98cc7b609b64e9da29566b2c46b0a5747b0b52afa2e4a936a2cfb5c2188",
+  "status": "complete_saved_records_only"
+}

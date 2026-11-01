@@ -1,0 +1,49 @@
+phase,metric,estimate,sd,ci95_low,ci95_high,unit_n,independent_clusters,uncertainty_method,interpretation,source
+13B,IS_mean,5.856,0.238,5.648,6.064,5,5,seed-level 95% CI,Controlled synthetic-v1 only,docs/03_implementation/validation/phase_13b_results.md
+13B,IS_to_TS_correlation,1.000,,,,approx 4.4 candidates per seed,5,reported correlation,Fragile small constructed population,docs/03_implementation/validation/phase_13b_results.md
+13B,topk2_TU_ASFT,0.095809,,,,5,5,seed-level result,Equal to frequency-only and no-transfer,docs/03_implementation/validation/phase_13b_results.md
+13C,SCV10_to_shadow_net_value_spearman,0.700427,,0.544724,0.930595,44,10,seed-cluster bootstrap,Association; frequency rho 0.747752 and p_reuse rho 0.883509,reports/experiments/PHASE-13C-SCT-V1/correlations.json
+13C,frequency_to_shadow_net_value_spearman,0.747752,,0.708908,0.884802,44,10,seed-cluster bootstrap,Association only,reports/experiments/PHASE-13C-SCT-V1/correlations.json
+13C,p_reuse_to_shadow_net_value_spearman,0.883509,,0.873660,0.936839,44,10,seed-cluster bootstrap,Association only,reports/experiments/PHASE-13C-SCT-V1/correlations.json
+13C,SCT_primary_net_value_mean,0.345,0.063,0.306,0.384,10,10,seed-level 95% CI,Tied always/random and below memory-only,reports/experiments/PHASE-13C-SCT-V1/evidence_package.md
+13C,MEMORY_ONLY_primary_net_value_mean,1.325,0,1.325,1.325,10,10,seed-level,No between-seed variance in this setup,reports/experiments/PHASE-13C-SCT-V1/evidence_package.md
+13D,IS_to_TS_pearson,-0.042374,,-0.131807,0,114,10,seed-cluster bootstrap,114 rows are clustered within 10 seeds,reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_corrected_criteria.json
+13D,SU_to_TS_pearson,-0.012946,,-0.072548,0,114,10,seed-cluster bootstrap,114 rows are clustered within 10 seeds,reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_corrected_criteria.json
+13D,TS_to_CGR_pearson,0.483393,,0.482037,0.484200,36,9,seed-cluster bootstrap,Descriptive association; mean CGR is negative,reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_corrected_criteria.json
+13D,CGR_mean,-0.060,,,,9,9,per-seed mean,Negative across evaluable seeds,reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_analysis.md
+13D,success_gated_RCR_mean,0.1493,,0.132,0.158,10,10,seed-level 95% interval,Measured step-cost proxy not compute time,reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_analysis.md
+13E,ct_mean,1.0227,0.0667,0.9750,1.0705,10,10,seed-level 95% CI,Metric level not general intelligence,reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md
+13E,CGR_mean,0.2946,0.0125,0.2857,0.3036,10,10,seed-level 95% CI,Positive in this cohort,reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md
+13E,IG_mean,0.2294,0.0069,0.2245,0.2343,10,10,seed-level 95% CI,Repository metric only,reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md
+13E,IGR_mean,0.0090,0.0000,0.0090,0.0091,10,10,seed-level 95% CI,Repository metric only,reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md
+13E,IE_mean,0.0043,0.0002,0.0041,0.0044,10,10,seed-level 95% CI,IE level positive but trend negative,reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md
+13E,IE_slope,-0.0039,0.0004,-0.0042,-0.0037,10,10,seed-level 95% CI,Adverse trend,reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md
+13E,TS_to_CGR_pearson,-0.5027,,-0.8601,0.1857,10,10,Fisher CI,Non-positive/uncertain relation,reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md
+13E,SU_to_CGR_pearson,0.9930,,0.9695,0.9984,10,10,Fisher CI,Descriptive association,reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md
+13E,all_task_utility_ASFT,0.7902,0.0003,0.7900,0.7904,10,10,seed-level 95% CI,ASFT mean; utility delta vs B1 is negative,reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md
+13F,utility_delta_vs_B1,-0.036344,0.000339,-0.036586,-0.036101,10,10,paired t interval,Paired SD very small,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/analysis.json
+13F,utility_delta_vs_B2,0.074906,0.000339,0.074664,0.075149,10,10,paired t interval,Paired SD very small,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/analysis.json
+13F,utility_delta_vs_B3,0.000000,0.000000,0.000000,0.000000,10,10,degenerate paired contrast,Tie; standardized effect undefined,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/analysis.json
+13F,utility_delta_vs_B4,0.074906,0.000339,0.074664,0.075149,10,10,paired t interval,Proxy baseline; tiny SD,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/analysis.json
+13F,CGR_delta_vs_B1,0.287172,0.000030,0.287151,0.287193,10,10,paired t interval,Large standardized d caused by near-zero SD,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/analysis.json
+13G,ARC_holdout_accuracy_all_arms,0.005,,,,200,200,exact task accuracy; task-bootstrap in source,Each arm scored 1/200; same holdout rerun caveat,reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md
+13G,ARC_exact_fit_discovery,3/600,,,,600,600,coverage count,Only 10-program bounded DSL,reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md
+13G,ARC_exact_fit_transfer,5/200,,,,200,200,coverage count,Only 10-program bounded DSL,reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md
+13G,ARC_exact_fit_holdout,2/200,,,,200,200,coverage count,Only 10-program bounded DSL,reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md
+13B,TS_mean,0.0176,0.0009,0.0169,0.0184,5,5,seed-level 95% normal CI,Controlled synthetic-v1; task-step transfer score,docs/03_implementation/validation/phase_13b_results.md
+13B,SU_mean,,,,,0,0,not defined,No SCT skill-utility metric in this IDT benchmark,docs/03_implementation/validation/phase_13b_results.md
+13B,VST_mean,1.000,0.000,1.000,1.000,5,5,seed-level 95% normal CI,Variation survival in synthetic-v1,docs/03_implementation/validation/phase_13b_results.md
+13B,noise_top_rank_stability,0.720,0.110,0.624,0.816,5,5,seed-level 95% normal CI,Robustness statistic; not external validity,docs/03_implementation/validation/phase_13b_results.md
+13C,SU_to_future_net_value_spearman,0.936961,,0.896692,1.000000,44,10,seed-cluster bootstrap,"Candidate association, not policy advantage",reports/experiments/PHASE-13C-SCT-V1/correlations.json
+13C,SU_to_reuse_count_spearman,0.936961,,0.897818,1.000000,44,10,seed-cluster bootstrap,Candidate association only,reports/experiments/PHASE-13C-SCT-V1/correlations.json
+13E,SU_mean,1.832593,0.167210,1.712978,1.952207,10,10,Phase 13H descriptive t interval from saved seed_summary.csv,Phase 13E ASFT mean skill utility,reports/experiments/PHASE-13E-CAP-GROWTH-V1/seed_summary.csv
+13E,TS_mean,0.258811,0.000964,0.258121,0.259501,10,10,Phase 13H descriptive t interval from saved seed_summary.csv,Phase 13E ASFT mean transfer score,reports/experiments/PHASE-13E-CAP-GROWTH-V1/seed_summary.csv
+13E,CCG_mean,0.250000,0.000000,0.250000,0.250000,10,10,Phase 13H descriptive t interval from saved seed_summary.csv,Coverage growth metric,reports/experiments/PHASE-13E-CAP-GROWTH-V1/seed_summary.csv
+13E,UG_mean,0.294625,0.012481,0.285697,0.303553,10,10,Phase 13H descriptive t interval from saved seed_summary.csv,Utility growth metric; not general intelligence,reports/experiments/PHASE-13E-CAP-GROWTH-V1/seed_summary.csv
+13F,SU_mean_ASFT,1.709769,0.042675,1.679240,1.740297,10,10,Phase 13H descriptive t interval from saved seed_summary.csv,Per-arm metric; comparator summaries in baseline_metric_summary.csv,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/seed_summary.csv
+13F,TS_mean_ASFT,0.252442,0.001628,0.251278,0.253606,10,10,Phase 13H descriptive t interval from saved seed_summary.csv,Per-arm metric; comparator summaries in baseline_metric_summary.csv,reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/seed_summary.csv
+13G,IS_mean,,,,,0,0,unavailable,No invariant candidates,reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md
+13G,SU_mean,,,,,0,0,unavailable,No skills formed,reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md
+13G,TS_mean,,,,,0,0,unavailable_for_mechanism_chain,No validated invariant/skill transfer events; task accuracy separately reported,reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md
+13G,CGR_mean,,,,,0,0,unavailable,No capability groups formed,reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md
+13G,IG_mean,,,,,0,0,unavailable,No capability groups formed,reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md

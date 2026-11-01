@@ -1,0 +1,350 @@
+            float(row["shadow_realized_net_value"])
+            if float(row["SCV10"]) > float(cutoff) else 0.0
+            for row in candidates_out
+        ) if candidates_out else 0.0
+        for name, cutoff in thresholds.items()
+    }
+    no_lifecycle_mean = mean(
+        float(row["no_lifecycle_realized_net_value"]) for row in candidates_out
+    ) if candidates_out else 0.0
+    lifecycle_mean = mean(
+        float(row["shadow_realized_net_value"]) for row in candidates_out
+    ) if candidates_out else 0.0
+    contrasts = {
+        f"SCT_minus_{control}": arm_values["SCT"] - arm_values[control]
+        for control in ("NEVER_CREATE", "ALWAYS_CREATE", "RANDOM_CREATE", "MEMORY_ONLY")
+    }
+    lifecycle_rows = []
+    for skill in skill_objects:
+        lifecycle_rows.append(
+            _run_lifecycle(
+                skill,
+                run_seed,
+                skill_config,
+                probe_seed_offset=int(config_data["tasks"]["lifecycle_probe_seed_offset"]),
+            )
+        )
+    sct_library = SkillLibrary()
+    for skill in skill_objects:
+        # Only the SCT policy-created skills are exposed to composition.
+        if sct_library.get(skill.skill_id) is None:
+            sct_library.add(_clone_skill(skill))
+    composition_rows = _composition_eval(
+        sct_library,
+        run_seed=run_seed,
+        config=skill_config,
+        training_seed_offset=int(config_data["tasks"]["composition_training_seed_offset"]),
+        validation_seed_offset=int(config_data["tasks"]["composition_validation_seed_offset"]),
+        reuse_seed_offset=int(config_data["tasks"]["composition_reuse_seed_offset"]),
+    )
+    lifecycle_task_ids = {
+        str(probe["task_id"])
+        for row in lifecycle_rows
+        for transition in row.get("transitions", [])
+        for probe in transition.get("probe_task_results", [])
+    }
+    composition_task_ids = {
+        str(task["task_id"])
+        for row in composition_rows
+        for task in row.get("task_results", [])
+    }
+    composition_task_ids.update(
+        str(task["task_id"])
+        for row in composition_rows
+        for task in row.get("single_skill_probe", [])
+        if task.get("task_id")
+    )
+    composition_task_ids.update(
+        str(row["new_task_task_id"])
+        for row in composition_rows
+        if row.get("new_task_task_id")
+    )
+    if lifecycle_task_ids & composition_task_ids:
+        raise AssertionError("lifecycle and composition task IDs overlap")
+    return {
+        "seed": run_seed,
+        "discovery_seed": run_seed + config_data["tasks"]["discovery_seed_offset"],
+        "evaluation_seed": run_seed + config_data["tasks"]["evaluation_seed_offset"],
+        "trace_count": len(trace_run.traces),
+        "promotable_count": len(inv_run.promotable),
+        "eligible_candidate_count": len(eligible),
+        "rejected_candidates": rejected,
+        "candidates": candidates_out,
+        "arm_mean_net_values": arm_values,
+        "arm_mean_net_values_by_mc": arm_values_by_mc,
+        "threshold_sensitivity": threshold_sensitivity,
+        "lifecycle_ablation": {
+            "lifecycle_enabled_mean_net_value": lifecycle_mean,
+            "lifecycle_disabled_mean_net_value": no_lifecycle_mean,
+            "paired_difference_enabled_minus_disabled": lifecycle_mean - no_lifecycle_mean,
+        },
+        "paired_contrasts": contrasts,
+        "lifecycle": lifecycle_rows,
+        "composition": composition_rows,
+        "failure_cases": [
+            {"candidate_id": row["invariant_id"], "arm": arm, "reasons": row["arms"][arm].get("rejection_reasons", [])}
+            for row in candidates_out
+            for arm in ("SCT", "ALWAYS_CREATE", "RANDOM_CREATE")
+            if row["arms"][arm].get("selected") and not row["arms"][arm].get("created")
+        ],
+    }
+
+
+def _correlation_report(rows: list[dict[str, Any]], seeds: list[int]) -> dict[str, Any]:
+    metrics = {
+        "SCV10": [float(row["SCV10"]) for row in rows],
+        "frequency": [float(row["frequency"]) for row in rows],
+        "p_reuse": [float(row["p_reuse"]) for row in rows],
+        "AG": [float(row["AG"]) for row in rows],
+        "TS": [float(row["TS"]) for row in rows],
+    }
+    net = [float(row["shadow_realized_net_value"]) for row in rows]
+    utility = [float(row["shadow_mean_SU_at_end"]) for row in rows]
+    reuse_count = [float(row["shadow_reuse_count"]) for row in rows]
+    transfer = [float(row["shadow_TS_cross_family"]) for row in rows]
+    by_seed = {seed: [i for i, row in enumerate(rows) if row["seed"] == seed] for seed in seeds}
+
+    def report_corr(left: list[float], right: list[float], salt: int) -> dict[str, Any]:
+        boot = []
+        rng = random.Random(13000 + len(rows) + salt)
+        for _ in range(2000):
+            sampled_seeds = [rng.choice(seeds) for _ in seeds]
+            indices = [i for seed in sampled_seeds for i in by_seed.get(seed, [])]
+            boot.append(_spearman([left[i] for i in indices], [right[i] for i in indices]))
+        return {
+            "spearman": _spearman(left, right),
+            "seed_cluster_bootstrap_ci95": [_quantile(boot, 0.025), _quantile(boot, 0.975)] if boot else [0.0, 0.0],
+            "candidate_n": len(rows),
+            "seed_n": len(seeds),
+        }
+
+    predictors = {name: report_corr(values, net, i) for i, (name, values) in enumerate(metrics.items())}
+    utility_associations = {
+        "SU_vs_future_net_value": report_corr(utility, net, 21),
+        "SU_vs_reuse_count": report_corr(utility, reuse_count, 22),
+        "SU_vs_cross_family_transfer": report_corr(utility, transfer, 23),
+    }
+    return {"scv_predictors_of_future_net_value": predictors, "utility_associations": utility_associations}
+
+
+def run_confirmation(*, write: bool = True) -> dict[str, Any]:
+    """Run only confirmation seeds after a saved calibration freeze exists."""
+    config_data = load_config()
+    if not OUT_DIR.exists() or not (OUT_DIR / "calibration_frozen.json").exists():
+        raise FileNotFoundError("Run Phase 13C calibration before confirmation")
+    frozen = json.loads((OUT_DIR / "calibration_frozen.json").read_text(encoding="utf-8"))
+    if frozen.get("config_sha256") != _config_digest(config_data):
+        raise ValueError("frozen calibration/config hash mismatch")
+    seeds = list(config_data["seeds"]["confirmation"])
+    if len(seeds) != 10 or set(seeds) & set(frozen["calibration_seeds"]):
+        raise ValueError("invalid Phase 13C confirmation seed split")
+    raw = [run_confirmation_seed(seed, frozen) for seed in seeds]
+    candidate_rows = [
+        {"seed": record["seed"], **candidate}
+        for record in raw
+        for candidate in record["candidates"]
+    ]
+    arm_names = ("SCT", "NEVER_CREATE", "ALWAYS_CREATE", "RANDOM_CREATE", "MEMORY_ONLY")
+    arm_by_seed = {
+        arm: [float(record["arm_mean_net_values"][arm]) for record in raw]
+        for arm in arm_names
+    }
+    arm_stats = summarize_metrics(arm_by_seed)
+    contrast_names = ("NEVER_CREATE", "ALWAYS_CREATE", "RANDOM_CREATE", "MEMORY_ONLY")
+    contrast_by_seed = {
+        control: [float(record["paired_contrasts"][f"SCT_minus_{control}"]) for record in raw]
+        for control in contrast_names
+    }
+    contrast_stats = summarize_metrics(contrast_by_seed)
+    arm_bootstrap_ci = {
+        arm: list(_bootstrap_mean_ci(values, seed=14000 + i))
+        for i, (arm, values) in enumerate(arm_by_seed.items())
+    }
+    contrast_bootstrap_ci = {
+        control: list(_bootstrap_mean_ci(values, seed=15000 + i))
+        for i, (control, values) in enumerate(contrast_by_seed.items())
+    }
+    mc_sensitivity_stats = {
+        f"MC={mc:.2f}": summarize_metrics({
+            arm: [float(record["arm_mean_net_values_by_mc"][arm][f"{mc:.2f}"]) for record in raw]
+            for arm in arm_names
+        })
+        for mc in MC_SENSITIVITY
+    }
+    threshold_names = sorted({name for record in raw for name in record["threshold_sensitivity"]})
+    threshold_sensitivity_stats = summarize_metrics({
+        name: [float(record["threshold_sensitivity"].get(name, 0.0)) for record in raw]
+        for name in threshold_names
+    })
+    threshold_sensitivity_bootstrap_ci = {
+        name: list(_bootstrap_mean_ci(values, seed=16000 + i))
+        for i, (name, values) in enumerate({
+            name: [float(record["threshold_sensitivity"].get(name, 0.0)) for record in raw]
+            for name in threshold_names
+        }.items())
+    }
+    lifecycle_ablation_stats = summarize_metrics({
+        name: [float(record["lifecycle_ablation"][field]) for record in raw]
+        for name, field in (
+            ("lifecycle_enabled", "lifecycle_enabled_mean_net_value"),
+            ("lifecycle_disabled", "lifecycle_disabled_mean_net_value"),
+            ("enabled_minus_disabled", "paired_difference_enabled_minus_disabled"),
+        )
+    })
+    lifecycle_ablation_bootstrap_ci = {
+        name: list(_bootstrap_mean_ci(
+            [float(record["lifecycle_ablation"][field]) for record in raw],
+            seed=17000 + i,
+        ))
+        for i, (name, field) in enumerate((
+            ("lifecycle_enabled", "lifecycle_enabled_mean_net_value"),
+            ("lifecycle_disabled", "lifecycle_disabled_mean_net_value"),
+            ("enabled_minus_disabled", "paired_difference_enabled_minus_disabled"),
+        ))
+    }
+    correlations = _correlation_report(candidate_rows, seeds)
+    strict_success = all(
+        contrast_bootstrap_ci[control][0] > 0.0 for control in contrast_names
+    )
+    result = {
+        "experiment_id": "PHASE-13C-SCT-V1",
+        "claim": "SCT",
+        "dataset_version": "synthetic-sct-v1",
+        "seeds": seeds,
+        "calibration_seeds": frozen["calibration_seeds"],
+        "configuration": config_data,
+        "calibration_frozen": {k: v for k, v in frozen.items() if k not in {"calibration_results", "calibration_candidate_scv10_values"}},
+        "primary_outcome": {
+            "arm_statistics": arm_stats,
+            "arm_seed_cluster_bootstrap_ci95": arm_bootstrap_ci,
+            "paired_contrast_statistics": contrast_stats,
+            "paired_contrast_seed_cluster_bootstrap_ci95": contrast_bootstrap_ci,
+            "strict_superiority_success": strict_success,
+            "rule": "paired seed-resampled 95% CI lower bound > 0 vs each of never, always, random, and memory-only",
+        },
+        "scv10_statistics": summarize_metrics({
+            "SCV10": [float(row["SCV10"]) for row in candidate_rows]
+        }),
+        "mc_sensitivity": mc_sensitivity_stats,
+        "threshold_sensitivity": {
+            "statistics": threshold_sensitivity_stats,
+            "seed_cluster_bootstrap_ci95": threshold_sensitivity_bootstrap_ci,
+        },
+        "lifecycle_ablation": {
+            "statistics": lifecycle_ablation_stats,
+            "seed_cluster_bootstrap_ci95": lifecycle_ablation_bootstrap_ci,
+        },
+        "composition_ablation": "composition benefit and held-out reuse are compared against paired best-single results in composition.csv",
+        "no_scv_ablation": "ALWAYS_CREATE matched arm; it bypasses only SCV selection after common non-SCV eligibility",
+        "scv_predictiveness": correlations,
+        "raw_results": raw,
+        "candidate_level_results": candidate_rows,
+        "failure_cases": [case for record in raw for case in record["failure_cases"]],
+        "interpretation": (
+            "Controlled synthetic SCT evidence only. Legacy EXP-02 is preliminary; "
+            "Phase 13B remains failed and is not changed by this result."
+        ),
+    }
+    if write:
+        OUT_DIR.mkdir(parents=True, exist_ok=True)
+        (OUT_DIR / "record.json").write_text(json.dumps(result, indent=2, sort_keys=True), encoding="utf-8")
+        (OUT_DIR / "skill_births.json").write_text(
+            json.dumps(
+                [
+                    {"seed": record["seed"], "candidate": candidate["invariant_id"],
+                     "signature": candidate["signature"], "category": candidate["category"],
+                     "SCV10": candidate["SCV10"], "arms": {
+                         arm: {"selected": candidate["arms"][arm].get("selected"),
+                               "created": candidate["arms"][arm].get("created"),
+                               "state_at_end": candidate["arms"][arm].get("state_at_end")}
+                         for arm in arm_names
+                     }}
+                    for record in raw for candidate in record["candidates"]
+                ],
+                indent=2,
+                sort_keys=True,
+            ),
+            encoding="utf-8",
+        )
+        (OUT_DIR / "correlations.json").write_text(json.dumps(correlations, indent=2, sort_keys=True), encoding="utf-8")
+        summary = _render_summary(result)
+        (OUT_DIR / "summary.md").write_text(summary, encoding="utf-8")
+        _write_csvs(raw, candidate_rows, OUT_DIR)
+        # Schema label specific to this experiment; don't use Phase 13A's generic label.
+        record_path = OUT_DIR / "record.json"
+        result["record_schema"] = "phase-13c-sct-v1"
+        record_path.write_text(json.dumps(result, indent=2, sort_keys=True), encoding="utf-8")
+    return result
+
+
+def _render_summary(result: dict[str, Any]) -> str:
+    primary = result["primary_outcome"]
+    lines = [
+        "# Phase 13C — SCT Validation (synthetic-sct-v1)",
+        "",
+        "Confirmatory block: seeds 20–29. Calibration block: seeds 15–19.",
+        "Results are conditional on the current synthetic invariant/task generator; they do not validate ARC or repair Phase 13B.",
+        "",
+        f"- Strict SCT superiority gate: **{primary['strict_superiority_success']}**",
+        f"- Unique eligible candidate rows: {len(result['candidate_level_results'])}",
+        "",
+        "## Primary net value by creation policy",
+        "",
+        "| Policy | Mean | SD | Normal 95% CI | Seed-bootstrap 95% CI |",
+        "|---|---:|---:|---:|---:|",
+    ]
+    for arm, stats in primary["arm_statistics"].items():
+        ci = primary["arm_seed_cluster_bootstrap_ci95"][arm]
+        lines.append(f"| {arm} | {stats['mean']:.6f} | {stats['std']:.6f} | {stats['ci_low']:.6f}–{stats['ci_high']:.6f} | {ci[0]:.6f}–{ci[1]:.6f} |")
+    lines += ["", "## Paired SCT-minus-control contrasts", "", "| Control | Mean | SD | Normal 95% CI | Seed-bootstrap 95% CI |", "|---|---:|---:|---:|---:|"]
+    for control, stats in primary["paired_contrast_statistics"].items():
+        ci = primary["paired_contrast_seed_cluster_bootstrap_ci95"][control]
+        lines.append(f"| {control} | {stats['mean']:.6f} | {stats['std']:.6f} | {stats['ci_low']:.6f}–{stats['ci_high']:.6f} | {ci[0]:.6f}–{ci[1]:.6f} |")
+    lines += ["", "## SCV10 predictiveness (seed-cluster bootstrap)", "", "| Predictor | Spearman ρ | 95% cluster-bootstrap CI | n candidates |", "|---|---:|---:|---:|"]
+    for key, item in result["scv_predictiveness"]["scv_predictors_of_future_net_value"].items():
+        ci = item["seed_cluster_bootstrap_ci95"]
+        lines.append(f"| {key} | {item['spearman']:.6f} | {ci[0]:.6f}–{ci[1]:.6f} | {item['candidate_n']} |")
+    lines += ["", "## Skill utility associations (descriptive, seed-cluster bootstrap)", "", "| Association | Spearman ρ | 95% cluster-bootstrap CI |", "|---|---:|---:|"]
+    for key, item in result["scv_predictiveness"]["utility_associations"].items():
+        ci = item["seed_cluster_bootstrap_ci95"]
+        lines.append(f"| {key} | {item['spearman']:.6f} | {ci[0]:.6f}–{ci[1]:.6f} |")
+    lines += ["", "## Sensitivity and ablations", ""]
+    lines.append("Primary MC is a modeled normalized maintenance cost, not empirical compute cost.")
+    lines.append("")
+    lines.append("| MC per eligible opportunity | SCT mean net value |")
+    lines.append("|---:|---:|")
+    for label, by_arm in result["mc_sensitivity"].items():
+        mc_value = label.split("=", 1)[1]
+        lines.append(f"| {mc_value} | {by_arm['SCT']['mean']:.6f} |")
+    lines += ["", "| Threshold | Mean net value |", "|---|---:|"]
+    for name, stats in result["threshold_sensitivity"]["statistics"].items():
+        lines.append(f"| {name} | {stats['mean']:.6f} |")
+    lines += ["", "| Lifecycle mode | Mean net value |", "|---|---:|"]
+    for name, stats in result["lifecycle_ablation"]["statistics"].items():
+        lines.append(f"| {name} | {stats['mean']:.6f} |")
+    lines += ["", "No-SCV ablation is the matched ALWAYS_CREATE arm. Composition is tested against paired best-single results and on a separate task stream.", ""]
+    family_counts: dict[str, int] = {}
+    for row in result["candidate_level_results"]:
+        family_counts[row["category"]] = family_counts.get(row["category"], 0) + 1
+    lines += ["", "## Candidate birth categories", "", "| Category | Candidate rows |", "|---|---:|"]
+    for category, count in sorted(family_counts.items()):
+        lines.append(f"| {category} | {count} |")
+    lines += [
+        "",
+        "Detailed evidence: `skill_births.json`, `candidate_level.csv`, `matched_controls.csv`, `mc_sensitivity.csv`, `threshold_sensitivity.csv`, `reuse_statistics.csv`, `utility_trajectories.csv`, `lifecycle.csv`, `lifecycle_ablation.csv`, and `composition.csv`.",
+        "",
+        "Nulls, rejected candidates, failed applications, no-match opportunities, and missing-family compositions are retained in the full record.",
+        "",
+    ]
+    return "\n".join(lines)
+
+
+def _write_csvs(raw: list[dict[str, Any]], candidates: list[dict[str, Any]], directory: Path) -> None:
+    import csv
+    with (directory / "candidate_level.csv").open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=[
+            "seed", "invariant_id", "signature", "category", "frequency",
+            "task_families", "SCV10", "p_reuse", "AG", "TS", "CC", "MC",
+            "shadow_realized_net_value", "shadow_mean_SU_at_end",
+            "shadow_reuse_count", "shadow_TS_cross_family",
+            "no_lifecycle_realized_net_value",

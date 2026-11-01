@@ -1,0 +1,5 @@
+family,n,schema_valid_rate,independent_demo_fit_rate,mean_order_stability,stability_permutations_per_task
+recoloring,1,1.0,1.0,1.0,10
+reflection,1,1.0,1.0,1.0,10
+rotation,1,1.0,1.0,1.0,10
+unsupported_v1_failed_trace,597,1.0,0.0,,10

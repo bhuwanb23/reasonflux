@@ -113,6 +113,21 @@ class GridSolver:
             for op in macro_ops:
                 emit(op, "macro")
                 grid = _apply_macro(op, grid, task.task_family)
+            # The target's output operation is real work even when a reused
+            # invariant transforms or preserves the grid. Charge it explicitly;
+            # _output_for below is only the deterministic output adapter, not a
+            # free reasoning step that a macro may silently omit.
+            required_output_op = {
+                "counting": "count_objects",
+                "grouping": "group_by_color",
+            }.get(task.task_family)
+            if required_output_op and required_output_op not in macro_ops:
+                output_payload = (
+                    count_objects(grid)
+                    if required_output_op == "count_objects"
+                    else group_by_color(grid)
+                )
+                emit(required_output_op, output_payload)
             emit("verify_output", "reused")
         else:
             emit("detect_object", grid.height * grid.width)

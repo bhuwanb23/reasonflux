@@ -1,0 +1,7 @@
+discovery_prefix,n_successful_traces,n_invariants,n_skills,n_capabilities,capability_ids,ct,cgr,mean_ts,capu,capability_coverage,ig,ig_status,tg,ug,ccg,skill_rows
+100,100,0,0,0,[],,,,,,,unavailable_no_validated_capability_group,,,,0
+200,200,0,0,0,[],,,,,,,unavailable_no_validated_capability_group,,,,0
+300,300,0,0,0,[],,,,,,,unavailable_no_validated_capability_group,,,,0
+400,400,0,0,0,[],,,,,,,unavailable_no_validated_capability_group,,,,0
+500,500,0,0,0,[],,,,,,,unavailable_no_validated_capability_group,,,,0
+600,600,0,0,0,[],,,,,,,unavailable_no_validated_capability_group,,,,0

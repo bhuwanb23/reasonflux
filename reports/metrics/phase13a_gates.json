@@ -11,7 +11,7 @@
       "passed": true
     },
     {
-      "details": "records=5 mean_benefit=0.31",
+      "details": "records=5 mean_benefit=0.23",
       "name": "Transfer readiness",
       "passed": true
     },
@@ -52,7 +52,7 @@
       "passed": true
     },
     {
-      "details": "records=5 mean_benefit=0.31",
+      "details": "records=5 mean_benefit=0.23",
       "name": "Transfer readiness",
       "passed": true
     },

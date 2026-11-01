@@ -1,0 +1,44 @@
+{
+  "calibration_seeds": [
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "calibration_summary": {
+    "births_at_primary_threshold": 22,
+    "eligible_candidates": 22,
+    "note": "Calibration only; not confirmatory evidence. Confirmation block remains unopened.",
+    "random_create_probability": 1.0,
+    "scv10_cutoffs": {
+      "high_q75": 0.9666666666666666,
+      "low_q25": 0.675,
+      "medium_q50": 0.9666666666666666
+    }
+  },
+  "confirmation_seeds": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "contract_test_command": "python -m pytest tests/test_phase13c_sct.py tests/test_skill_candidate_factory.py tests/test_skill_composition_propose.py tests/test_skill_composition_evaluate.py tests/test_skill_composition_lifecycle.py tests/test_reuse_engine.py tests/test_skill_promotion.py tests/test_skill_qualification.py tests/test_skill_utility_components.py tests/test_skill_lifecycle_sweep.py tests/test_skill_reactivation.py -q",
+  "contract_test_result": "33 passed total (7 Phase 13C contract tests; 26 repository API tests); compileall passed",
+  "experiment_id": "PHASE-13C-SCT-V1",
+  "file_sha256": {
+    "calibration": "0d34bd02af0831992d4a02ee5acb67675597aaa4c60fc1d5803ffce4551c5177",
+    "config": "3c60c334050f8ce934fe3bab04c4e4df4c2d36e1209d0702b8c75a58945b0b4b",
+    "contract_tests": "ed008bc6c2e6b24416bc8a604e538e315b74727afd63c4289d9a27bcf9007195",
+    "preregistration": "2b107c916a3c9d2c09cb1d97e89b934e5e374eb2cbe3940b4218a4f98d1399f1",
+    "runner": "618682b3b77bd2c77dbb0e6a7dc927e8dd8f50a43857ded256970fec4cf5931d"
+  },
+  "frozen_parameters_unchanged": true,
+  "status": "frozen_pre_confirmation"
+}

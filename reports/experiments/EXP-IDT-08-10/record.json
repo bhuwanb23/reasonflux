@@ -48,15 +48,23 @@
       "interpretation": "cross-family transfer count",
       "name": "CROSS_FAMILY_REUSE",
       "valid_range": "[0, inf)"
+    },
+    "cross_family_reuse_rate": {
+      "failure_condition": "== 0",
+      "formula": "cross-family credited reuse / credited reuse",
+      "interpretation": "normalized cross-family transfer rate",
+      "name": "CROSS_FAMILY_REUSE_RATE",
+      "valid_range": "[0, 1]"
     }
   },
   "metrics": {
     "PEARSON": 1.0,
     "SPEARMAN": 0.9999999999999998,
-    "TS": 0.043015873015872994,
-    "TU": 0.0970353835978836,
+    "TS": 0.017619047619047604,
+    "TU": 0.06572585978835979,
     "correlation_n": 4.4,
-    "cross_family_reuse": 10.8
+    "cross_family_reuse": 10.8,
+    "cross_family_reuse_rate": 0.48484848484848475
   },
   "observations": {},
   "raw_results": [
@@ -72,10 +80,11 @@
       "metrics": {
         "PEARSON": 1.0,
         "SPEARMAN": 0.9999999999999998,
-        "TS": 0.04206349206349204,
-        "TU": 0.0931878306878307,
+        "TS": 0.01825396825396823,
+        "TU": 0.06461640211640213,
         "correlation_n": 4.0,
-        "cross_family_reuse": 8
+        "cross_family_reuse": 8,
+        "cross_family_reuse_rate": 0.4444444444444444
       },
       "n_transfer_records": 18,
       "observations": {
@@ -90,7 +99,7 @@
           "attempts": 7,
           "invariant_id": "INV-a4f872d69c07cbc0",
           "is": 9.0,
-          "performance_after": 0.3333333333333333,
+          "performance_after": 0.2857142857142857,
           "performance_before": 0.22142857142857145,
           "source_family": "reflection",
           "target_families": [
@@ -99,14 +108,14 @@
             "reflection"
           ],
           "target_family": "reflection",
-          "ts": 0.11190476190476187,
-          "tu": 0.2517857142857143
+          "ts": 0.06428571428571425,
+          "tu": 0.1660714285714286
         },
         {
           "attempts": 7,
           "invariant_id": "INV-b977e7292dcf8ad0",
           "is": 9.0,
-          "performance_after": 0.3333333333333333,
+          "performance_after": 0.2857142857142857,
           "performance_before": 0.22142857142857145,
           "source_family": "reflection",
           "target_families": [
@@ -115,8 +124,8 @@
             "reflection"
           ],
           "target_family": "reflection",
-          "ts": 0.11190476190476187,
-          "tu": 0.2517857142857143
+          "ts": 0.06428571428571425,
+          "tu": 0.1660714285714286
         },
         {
           "attempts": 3,
@@ -178,14 +187,14 @@
           "coverage": 0.75,
           "invariant_id": "INV-a4f872d69c07cbc0",
           "is": 9.0,
-          "tu": 0.2517857142857143
+          "tu": 0.1660714285714286
         },
         {
           "attempts": 7,
           "coverage": 0.75,
           "invariant_id": "INV-b977e7292dcf8ad0",
           "is": 9.0,
-          "tu": 0.2517857142857143
+          "tu": 0.1660714285714286
         },
         {
           "attempts": 3,
@@ -229,10 +238,11 @@
       "metrics": {
         "PEARSON": 1.0,
         "SPEARMAN": 0.9999999999999998,
-        "TS": 0.044444444444444425,
-        "TU": 0.09675925925925927,
+        "TS": 0.016666666666666663,
+        "TU": 0.06342592592592593,
         "correlation_n": 4.0,
-        "cross_family_reuse": 12
+        "cross_family_reuse": 12,
+        "cross_family_reuse_rate": 0.5454545454545454
       },
       "n_transfer_records": 22,
       "observations": {
@@ -247,7 +257,7 @@
           "attempts": 9,
           "invariant_id": "INV-a4f872d69c07cbc0",
           "is": 10.5,
-          "performance_after": 0.3333333333333333,
+          "performance_after": 0.2777777777777778,
           "performance_before": 0.21666666666666667,
           "source_family": "reflection",
           "target_families": [
@@ -256,14 +266,14 @@
             "reflection"
           ],
           "target_family": "reflection",
-          "ts": 0.11666666666666664,
-          "tu": 0.2625
+          "ts": 0.061111111111111116,
+          "tu": 0.1625
         },
         {
           "attempts": 9,
           "invariant_id": "INV-b977e7292dcf8ad0",
           "is": 10.5,
-          "performance_after": 0.3333333333333333,
+          "performance_after": 0.2777777777777778,
           "performance_before": 0.21666666666666667,
           "source_family": "reflection",
           "target_families": [
@@ -272,8 +282,8 @@
             "reflection"
           ],
           "target_family": "reflection",
-          "ts": 0.11666666666666664,
-          "tu": 0.2625
+          "ts": 0.061111111111111116,
+          "tu": 0.1625
         },
         {
           "attempts": 3,
@@ -335,14 +345,14 @@
           "coverage": 0.75,
           "invariant_id": "INV-a4f872d69c07cbc0",
           "is": 10.5,
-          "tu": 0.2625
+          "tu": 0.1625
         },
         {
           "attempts": 9,
           "coverage": 0.75,
           "invariant_id": "INV-b977e7292dcf8ad0",
           "is": 10.5,
-          "tu": 0.2625
+          "tu": 0.1625
         },
         {
           "attempts": 3,
@@ -386,10 +396,11 @@
       "metrics": {
         "PEARSON": 1.0,
         "SPEARMAN": 0.9999999999999998,
-        "TS": 0.04206349206349204,
-        "TU": 0.0931878306878307,
+        "TS": 0.01825396825396823,
+        "TU": 0.06461640211640213,
         "correlation_n": 4.0,
-        "cross_family_reuse": 8
+        "cross_family_reuse": 8,
+        "cross_family_reuse_rate": 0.4444444444444444
       },
       "n_transfer_records": 18,
       "observations": {
@@ -404,7 +415,7 @@
           "attempts": 7,
           "invariant_id": "INV-a4f872d69c07cbc0",
           "is": 9.75,
-          "performance_after": 0.3333333333333333,
+          "performance_after": 0.2857142857142857,
           "performance_before": 0.22142857142857145,
           "source_family": "reflection",
           "target_families": [
@@ -413,14 +424,14 @@
             "reflection"
           ],
           "target_family": "reflection",
-          "ts": 0.11190476190476187,
-          "tu": 0.2517857142857143
+          "ts": 0.06428571428571425,
+          "tu": 0.1660714285714286
         },
         {
           "attempts": 7,
           "invariant_id": "INV-b977e7292dcf8ad0",
           "is": 9.75,
-          "performance_after": 0.3333333333333333,
+          "performance_after": 0.2857142857142857,
           "performance_before": 0.22142857142857145,
           "source_family": "reflection",
           "target_families": [
@@ -429,8 +440,8 @@
             "reflection"
           ],
           "target_family": "reflection",
-          "ts": 0.11190476190476187,
-          "tu": 0.2517857142857143
+          "ts": 0.06428571428571425,
+          "tu": 0.1660714285714286
         },
         {
           "attempts": 3,
@@ -492,14 +503,14 @@
           "coverage": 0.75,
           "invariant_id": "INV-a4f872d69c07cbc0",
           "is": 9.75,
-          "tu": 0.2517857142857143
+          "tu": 0.1660714285714286
         },
         {
           "attempts": 7,
           "coverage": 0.75,
           "invariant_id": "INV-b977e7292dcf8ad0",
           "is": 9.75,
-          "tu": 0.2517857142857143
+          "tu": 0.1660714285714286
         },
         {
           "attempts": 3,
@@ -541,12 +552,13 @@
       "experiment_id": "EXP-IDT-08-10",
       "failure_cases": [],
       "metrics": {
-        "PEARSON": 1.0,
+        "PEARSON": 1.0000000000000002,
         "SPEARMAN": 1.0,
-        "TS": 0.044444444444444425,
-        "TU": 0.10885416666666667,
+        "TS": 0.016666666666666663,
+        "TU": 0.07135416666666666,
         "correlation_n": 6.0,
-        "cross_family_reuse": 18
+        "cross_family_reuse": 18,
+        "cross_family_reuse_rate": 0.5454545454545454
       },
       "n_transfer_records": 33,
       "observations": {
@@ -561,7 +573,7 @@
           "attempts": 9,
           "invariant_id": "INV-02a30b2b5dd074b7",
           "is": 10.5,
-          "performance_after": 0.3333333333333333,
+          "performance_after": 0.2777777777777778,
           "performance_before": 0.21666666666666667,
           "source_family": "reflection",
           "target_families": [
@@ -570,14 +582,14 @@
             "reflection"
           ],
           "target_family": "reflection",
-          "ts": 0.11666666666666664,
-          "tu": 0.2625
+          "ts": 0.061111111111111116,
+          "tu": 0.1625
         },
         {
           "attempts": 9,
           "invariant_id": "INV-a4f872d69c07cbc0",
           "is": 10.5,
-          "performance_after": 0.3333333333333333,
+          "performance_after": 0.2777777777777778,
           "performance_before": 0.21666666666666667,
           "source_family": "reflection",
           "target_families": [
@@ -586,14 +598,14 @@
             "reflection"
           ],
           "target_family": "reflection",
-          "ts": 0.11666666666666664,
-          "tu": 0.2625
+          "ts": 0.061111111111111116,
+          "tu": 0.1625
         },
         {
           "attempts": 9,
           "invariant_id": "INV-b977e7292dcf8ad0",
           "is": 10.5,
-          "performance_after": 0.3333333333333333,
+          "performance_after": 0.2777777777777778,
           "performance_before": 0.21666666666666667,
           "source_family": "reflection",
           "target_families": [
@@ -602,8 +614,8 @@
             "reflection"
           ],
           "target_family": "reflection",
-          "ts": 0.11666666666666664,
-          "tu": 0.2625
+          "ts": 0.061111111111111116,
+          "tu": 0.1625
         },
         {
           "attempts": 3,
@@ -679,21 +691,21 @@
           "coverage": 0.75,
           "invariant_id": "INV-02a30b2b5dd074b7",
           "is": 10.5,
-          "tu": 0.2625
+          "tu": 0.1625
         },
         {
           "attempts": 9,
           "coverage": 0.75,
           "invariant_id": "INV-a4f872d69c07cbc0",
           "is": 10.5,
-          "tu": 0.2625
+          "tu": 0.1625
         },
         {
           "attempts": 9,
           "coverage": 0.75,
           "invariant_id": "INV-b977e7292dcf8ad0",
           "is": 10.5,
-          "tu": 0.2625
+          "tu": 0.1625
         },
         {
           "attempts": 3,
@@ -744,10 +756,11 @@
       "metrics": {
         "PEARSON": 1.0,
         "SPEARMAN": 0.9999999999999998,
-        "TS": 0.04206349206349204,
-        "TU": 0.0931878306878307,
+        "TS": 0.01825396825396823,
+        "TU": 0.06461640211640213,
         "correlation_n": 4.0,
-        "cross_family_reuse": 8
+        "cross_family_reuse": 8,
+        "cross_family_reuse_rate": 0.4444444444444444
       },
       "n_transfer_records": 18,
       "observations": {
@@ -762,7 +775,7 @@
           "attempts": 7,
           "invariant_id": "INV-a4f872d69c07cbc0",
           "is": 10.5,
-          "performance_after": 0.3333333333333333,
+          "performance_after": 0.2857142857142857,
           "performance_before": 0.22142857142857145,
           "source_family": "reflection",
           "target_families": [
@@ -771,14 +784,14 @@
             "reflection"
           ],
           "target_family": "reflection",
-          "ts": 0.11190476190476187,
-          "tu": 0.2517857142857143
+          "ts": 0.06428571428571425,
+          "tu": 0.1660714285714286
         },
         {
           "attempts": 7,
           "invariant_id": "INV-b977e7292dcf8ad0",
           "is": 10.5,
-          "performance_after": 0.3333333333333333,
+          "performance_after": 0.2857142857142857,
           "performance_before": 0.22142857142857145,
           "source_family": "reflection",
           "target_families": [
@@ -787,8 +800,8 @@
             "reflection"
           ],
           "target_family": "reflection",
-          "ts": 0.11190476190476187,
-          "tu": 0.2517857142857143
+          "ts": 0.06428571428571425,
+          "tu": 0.1660714285714286
         },
         {
           "attempts": 3,
@@ -850,14 +863,14 @@
           "coverage": 0.75,
           "invariant_id": "INV-a4f872d69c07cbc0",
           "is": 10.5,
-          "tu": 0.2517857142857143
+          "tu": 0.1660714285714286
         },
         {
           "attempts": 7,
           "coverage": 0.75,
           "invariant_id": "INV-b977e7292dcf8ad0",
           "is": 10.5,
-          "tu": 0.2517857142857143
+          "tu": 0.1660714285714286
         },
         {
           "attempts": 3,
@@ -894,12 +907,12 @@
   "results": {
     "PEARSON": {
       "ci_high": 1.0,
-      "ci_low": 1.0,
+      "ci_low": 0.9999999999999999,
       "confidence": 0.95,
       "mean": 1.0,
       "n": 5.0,
-      "std": 0.0,
-      "variance": 0.0
+      "std": 1.1102230246251565e-16,
+      "variance": 1.232595164407831e-32
     },
     "SPEARMAN": {
       "ci_high": 0.9999999999999999,
@@ -911,22 +924,22 @@
       "variance": 1.232595164407831e-32
     },
     "TS": {
-      "ci_high": 0.044158947224529024,
-      "ci_low": 0.04187279880721696,
+      "ci_high": 0.018381097091484944,
+      "ci_low": 0.016856998146610264,
       "confidence": 0.95,
-      "mean": 0.043015873015872994,
+      "mean": 0.017619047619047604,
       "n": 5.0,
-      "std": 0.0013041013273932555,
-      "variance": 1.7006802721088512e-06
+      "std": 0.0008694008849288244,
+      "variance": 7.55857898715023e-07
     },
     "TU": {
-      "ci_high": 0.10298300835756925,
-      "ci_low": 0.09108775883819796,
+      "ci_high": 0.06852044895804646,
+      "ci_low": 0.06293127061867312,
       "confidence": 0.95,
-      "mean": 0.0970353835978836,
+      "mean": 0.06572585978835979,
       "n": 5.0,
-      "std": 0.006785478392573065,
-      "variance": 4.604271701607595e-05
+      "std": 0.0031882684589587006,
+      "variance": 1.0165055766390888e-05
     },
     "correlation_n": {
       "ci_high": 5.183985593816022,
@@ -945,6 +958,15 @@
       "n": 5.0,
       "std": 4.381780460041329,
       "variance": 19.2
+    },
+    "cross_family_reuse_rate": {
+      "ci_high": 0.533342542185407,
+      "ci_low": 0.43635442751156245,
+      "confidence": 0.95,
+      "mean": 0.48484848484848475,
+      "n": 5.0,
+      "std": 0.055325510859107675,
+      "variance": 0.0030609121518212416
     }
   },
   "seed": null,
@@ -958,12 +980,12 @@
   "statistics": {
     "PEARSON": {
       "ci_high": 1.0,
-      "ci_low": 1.0,
+      "ci_low": 0.9999999999999999,
       "confidence": 0.95,
       "mean": 1.0,
       "n": 5.0,
-      "std": 0.0,
-      "variance": 0.0
+      "std": 1.1102230246251565e-16,
+      "variance": 1.232595164407831e-32
     },
     "SPEARMAN": {
       "ci_high": 0.9999999999999999,
@@ -975,22 +997,22 @@
       "variance": 1.232595164407831e-32
     },
     "TS": {
-      "ci_high": 0.044158947224529024,
-      "ci_low": 0.04187279880721696,
+      "ci_high": 0.018381097091484944,
+      "ci_low": 0.016856998146610264,
       "confidence": 0.95,
-      "mean": 0.043015873015872994,
+      "mean": 0.017619047619047604,
       "n": 5.0,
-      "std": 0.0013041013273932555,
-      "variance": 1.7006802721088512e-06
+      "std": 0.0008694008849288244,
+      "variance": 7.55857898715023e-07
     },
     "TU": {
-      "ci_high": 0.10298300835756925,
-      "ci_low": 0.09108775883819796,
+      "ci_high": 0.06852044895804646,
+      "ci_low": 0.06293127061867312,
       "confidence": 0.95,
-      "mean": 0.0970353835978836,
+      "mean": 0.06572585978835979,
       "n": 5.0,
-      "std": 0.006785478392573065,
-      "variance": 4.604271701607595e-05
+      "std": 0.0031882684589587006,
+      "variance": 1.0165055766390888e-05
     },
     "correlation_n": {
       "ci_high": 5.183985593816022,
@@ -1009,8 +1031,17 @@
       "n": 5.0,
       "std": 4.381780460041329,
       "variance": 19.2
+    },
+    "cross_family_reuse_rate": {
+      "ci_high": 0.533342542185407,
+      "ci_low": 0.43635442751156245,
+      "confidence": 0.95,
+      "mean": 0.48484848484848475,
+      "n": 5.0,
+      "std": 0.055325510859107675,
+      "variance": 0.0030609121518212416
     }
   },
   "thresholds": {},
-  "timestamp_utc": "2026-10-31T12:10:03.423291+00:00"
+  "timestamp_utc": "2026-10-31T13:42:26.584466+00:00"
 }

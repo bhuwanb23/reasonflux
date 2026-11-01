@@ -1,0 +1,17 @@
+{
+  "benchmark_rerun": false,
+  "completed_at_utc": "2026-11-01T03:09:39.269872+00:00",
+  "frozen_run_source_tree_sha256": "b0fca9ac9ff0b1453fab83d61180a182b88b568a880592c0504fe20da3e3ce76",
+  "posthoc_source_files": {
+    "experiments/phase13f/figures.py": "dee98699eb5ce51ee816a10e759346fb845af25a07e9315081012888f92ffa9e",
+    "experiments/phase13f/posthoc.py": "78ecb25843f69d5acaab53ebfe1f5f31693e0556722f1e104120066cd660895e",
+    "experiments/phase13f/reporting.py": "9b7594def76dc241f13d0385e8a98d16016bfc170ae6d084b0e330d188276509",
+    "experiments/phase13f/statistics.py": "877791a7c6bb57be19300749ba4d9b463e46a81151859fc8571345220b385c3f"
+  },
+  "posthoc_source_tree_sha256": "29d73705f953d65ab19f74bb7706237eb373fe6f6e6423f8037906c357785fdb",
+  "python": "3.13.16 (main, Oct  6 2026, 04:38:44) [GCC 14.2.0]",
+  "reason": "Expanded the result interpretation and raw-difference contribution figure; corrected only report presentation. No metric formula, threshold, decision gate, runner, or task outcome changed.",
+  "saved_records_sha256_after": "d07682b197bad3d3d5164ba1c90bfef3a17697500025667c3bd0631bc1db7d70",
+  "saved_records_sha256_before": "d07682b197bad3d3d5164ba1c90bfef3a17697500025667c3bd0631bc1db7d70",
+  "status": "complete_saved_records_only"
+}

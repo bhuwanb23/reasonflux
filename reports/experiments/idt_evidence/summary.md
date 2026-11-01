@@ -20,7 +20,19 @@
 
 - Pearson IS–TS: `1.000`
 - Spearman IS–TS: `1.000`
-- TU: `0.097`
+- TU: `0.066`
+
+## Baseline comparison (predeclared top-k = 2)
+
+- ASFT mean transfer utility: `0.095809`
+- Frequency-only: `0.095809`
+- No-transfer: `0.095809`
+- Random pattern: `0.063113`
+- Paired ASFT − frequency-only: `0.000000` (95% normal CI `0.000000` to `0.000000`)
+- Paired ASFT − no-transfer: `0.000000`
+- ASFT ranking identical to frequency on all seeds: `True`
+- ASFT ranking identical to no-transfer on all seeds: `True`
+- Strict per-seed superiority gate passed: `False`; a tie is not a win.
 
 ## Robustness
 

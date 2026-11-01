@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="780" viewBox="0 0 1500 780" role="img" aria-labelledby="title desc">
+<title id="title">Phase 13 evidence chain and claim status</title>
+<desc id="desc">Evidence remains generator-bound and the proposed chain does not reach ARC. The ARC bounded DSL produced no invariants, skills, or capabilities.</desc>
+<rect width="1500" height="780" fill="#f5f7fb"/>
+<text x="70" y="58" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#15263f">Phase 13 — evidence chain, not a success claim</text>
+<text x="70" y="91" font-family="Arial,sans-serif" font-size="16" fill="#50617a">Evidence scope changes by phase; arrows show tested links, not causal proof.</text>
+<defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11" fill="none" stroke="#66758b" stroke-width="2"/></marker></defs>
+<!-- chain nodes -->
+<g font-family="Arial,sans-serif">
+<rect x="62" y="160" width="205" height="135" rx="14" fill="#e4f3ec" stroke="#24845a" stroke-width="2"/>
+<text x="164" y="194" text-anchor="middle" font-size="18" font-weight="700" fill="#1b5d43">Traces</text>
+<text x="164" y="224" text-anchor="middle" font-size="14" fill="#24364c">Synthetic evidence</text>
+<text x="164" y="247" text-anchor="middle" font-size="14" fill="#24364c">13B–13D</text>
+<text x="164" y="273" text-anchor="middle" font-size="13" font-weight="700" fill="#1b5d43">Observed, generator-bound</text>
+
+<rect x="332" y="160" width="205" height="135" rx="14" fill="#fff2d8" stroke="#c88a14" stroke-width="2"/>
+<text x="434" y="194" text-anchor="middle" font-size="18" font-weight="700" fill="#80540a">Invariants</text>
+<text x="434" y="224" text-anchor="middle" font-size="14" fill="#24364c">13B synthetic recurrence</text>
+<text x="434" y="247" text-anchor="middle" font-size="14" fill="#24364c">13D IS→TS r = −0.042</text>
+<text x="434" y="273" text-anchor="middle" font-size="13" font-weight="700" fill="#80540a">Prediction not established</text>
+
+<rect x="602" y="160" width="205" height="135" rx="14" fill="#fff2d8" stroke="#c88a14" stroke-width="2"/>
+<text x="704" y="194" text-anchor="middle" font-size="18" font-weight="700" fill="#80540a">Skills</text>
+<text x="704" y="224" text-anchor="middle" font-size="14" fill="#24364c">Reflection / rotation only</text>
+<text x="704" y="247" text-anchor="middle" font-size="14" fill="#24364c">13C–13D; 13G = 0</text>
+<text x="704" y="273" text-anchor="middle" font-size="13" font-weight="700" fill="#80540a">Policy superiority failed</text>
+
+<rect x="872" y="160" width="205" height="135" rx="14" fill="#fff2d8" stroke="#c88a14" stroke-width="2"/>
+<text x="974" y="194" text-anchor="middle" font-size="18" font-weight="700" fill="#80540a">Transfer</text>
+<text x="974" y="224" text-anchor="middle" font-size="14" fill="#24364c">Some synthetic reuse</text>
+<text x="974" y="247" text-anchor="middle" font-size="14" fill="#24364c">Composition incomplete</text>
+<text x="974" y="273" text-anchor="middle" font-size="13" font-weight="700" fill="#80540a">Baseline gate failed</text>
+
+<rect x="1142" y="160" width="280" height="135" rx="14" fill="#fce6e5" stroke="#c6534d" stroke-width="2"/>
+<text x="1282" y="194" text-anchor="middle" font-size="18" font-weight="700" fill="#8b302c">Capability / IG</text>
+<text x="1282" y="224" text-anchor="middle" font-size="14" fill="#24364c">13E positive metrics; IE trend negative</text>
+<text x="1282" y="247" text-anchor="middle" font-size="14" fill="#24364c">13D CGR mean −0.060; 13G unavailable</text>
+<text x="1282" y="273" text-anchor="middle" font-size="13" font-weight="700" fill="#8b302c">General claim unsupported</text>
+
+<line x1="268" y1="227" x2="324" y2="227" stroke="#66758b" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="538" y1="227" x2="594" y2="227" stroke="#66758b" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="808" y1="227" x2="864" y2="227" stroke="#66758b" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="1078" y1="227" x2="1134" y2="227" stroke="#c6534d" stroke-width="3" stroke-dasharray="8 7" marker-end="url(#arrow)"/>
+
+<rect x="62" y="370" width="1360" height="122" rx="14" fill="#e8edf5" stroke="#9aa9bd"/>
+<text x="88" y="407" font-size="18" font-weight="700" fill="#24364c">ARC bounded validation (Phase 13G)</text>
+<text x="88" y="439" font-size="15" fill="#24364c">Exact demonstration fit: discovery 3/600 · transfer 5/200 · holdout 2/200</text>
+<text x="88" y="466" font-size="15" fill="#24364c">0 invariants · 0 skills · 0 capabilities · every main arm 1/200 exact holdout tasks (0.5%)</text>
+<text x="1385" y="442" text-anchor="end" font-size="17" font-weight="700" fill="#8b302c">ARC mechanism chain not demonstrated</text>
+
+<rect x="62" y="535" width="1360" height="170" rx="14" fill="#ffffff" stroke="#ccd5e1"/>
+<text x="88" y="572" font-size="18" font-weight="700" fill="#24364c">Overall evidence status</text>
+<circle cx="100" cy="614" r="8" fill="#24845a"/><text x="120" y="620" font-size="15" fill="#24364c">Software behavior and selected synthetic effects are observed.</text>
+<circle cx="100" cy="650" r="8" fill="#c88a14"/><text x="120" y="656" font-size="15" fill="#24364c">Baseline superiority, predictive validity, and component contributions are mixed or fail required gates.</text>
+<circle cx="100" cy="686" r="8" fill="#c6534d"/><text x="120" y="692" font-size="15" fill="#24364c">General capability/intelligence growth and ARC external validity are not established.</text>
+<text x="1395" y="686" text-anchor="end" font-size="13" fill="#66758b">Phase 13H consolidation · no experiments rerun</text>
+</g></svg>

@@ -1,0 +1,6109 @@
+[
+  {
+    "candidate_rows": [
+      {
+        "IS": 22.5,
+        "calibration": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "target_families": [],
+          "task_results": []
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "target_families": [],
+          "task_results": []
+        },
+        "frequency": 30,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-4d65cfb0dddc59b4",
+        "semantic_key": "normalize_grid",
+        "signature": [
+          "normalize_grid"
+        ],
+        "task_families": [
+          "counting",
+          "reflection",
+          "rotation"
+        ]
+      },
+      {
+        "IS": 20.25,
+        "calibration": {
+          "TS": 0.0625,
+          "TU": 0.1640625,
+          "applied_attempts": 8,
+          "credited_reuses": 8,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "mean_baseline_cost": 4.625,
+          "mean_reasoning_reduction": 0.21875,
+          "mean_reused_cost": 3.625,
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1010-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1010-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1011-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1011-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1011-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1012-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1110-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1111-v1",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.0625,
+          "TU": 0.1640625,
+          "applied_attempts": 8,
+          "credited_reuses": 8,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "mean_baseline_cost": 4.625,
+          "mean_reasoning_reduction": 0.21875,
+          "mean_reused_cost": 3.625,
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2010-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2011-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2011-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2011-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2012-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2012-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2110-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2111-v1",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "frequency": 27,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-a4f872d69c07cbc0",
+        "semantic_key": "reflection",
+        "signature": [
+          "apply_reflection"
+        ],
+        "task_families": [
+          "counting",
+          "grouping",
+          "reflection"
+        ]
+      },
+      {
+        "IS": 20.25,
+        "calibration": {
+          "TS": 0.0625,
+          "TU": 0.1640625,
+          "applied_attempts": 8,
+          "credited_reuses": 8,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "mean_baseline_cost": 4.625,
+          "mean_reasoning_reduction": 0.21875,
+          "mean_reused_cost": 3.625,
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1010-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1010-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1011-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1011-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1011-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1012-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1110-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1111-v1",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.0625,
+          "TU": 0.1640625,
+          "applied_attempts": 8,
+          "credited_reuses": 8,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "mean_baseline_cost": 4.625,
+          "mean_reasoning_reduction": 0.21875,
+          "mean_reused_cost": 3.625,
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2010-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2011-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2011-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2011-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2012-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2012-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2110-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2111-v1",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "frequency": 27,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-b977e7292dcf8ad0",
+        "semantic_key": "reflection",
+        "signature": [
+          "find_symmetry"
+        ],
+        "task_families": [
+          "counting",
+          "grouping",
+          "reflection"
+        ]
+      },
+      {
+        "IS": 11.25,
+        "calibration": {
+          "TS": -0.02777777777777779,
+          "TU": 0.027777777777777776,
+          "applied_attempts": 3,
+          "credited_reuses": 2,
+          "invariant_id": "INV-489db88e598d48b3",
+          "mean_baseline_cost": 4.0,
+          "mean_reasoning_reduction": 0.16666666666666666,
+          "mean_reused_cost": 3.0,
+          "target_families": [
+            "rotation"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-1010-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.0,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": false,
+              "task_family": "rotation",
+              "task_id": "rotation-1011-v1",
+              "transfer_credit": false
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-1012-v0",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": -0.02777777777777779,
+          "TU": 0.027777777777777776,
+          "applied_attempts": 3,
+          "credited_reuses": 2,
+          "invariant_id": "INV-489db88e598d48b3",
+          "mean_baseline_cost": 4.0,
+          "mean_reasoning_reduction": 0.16666666666666666,
+          "mean_reused_cost": 3.0,
+          "target_families": [
+            "rotation"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-2010-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.0,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": false,
+              "task_family": "rotation",
+              "task_id": "rotation-2011-v1",
+              "transfer_credit": false
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-2012-v0",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "frequency": 15,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-489db88e598d48b3",
+        "semantic_key": "rotation",
+        "signature": [
+          "find_rotation"
+        ],
+        "task_families": [
+          "counting",
+          "grouping",
+          "rotation"
+        ]
+      },
+      {
+        "IS": 11.25,
+        "calibration": {
+          "TS": -0.02777777777777779,
+          "TU": 0.027777777777777776,
+          "applied_attempts": 3,
+          "credited_reuses": 2,
+          "invariant_id": "INV-cd89c6e9697e31c5",
+          "mean_baseline_cost": 4.0,
+          "mean_reasoning_reduction": 0.16666666666666666,
+          "mean_reused_cost": 3.0,
+          "target_families": [
+            "rotation"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-1010-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.0,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": false,
+              "task_family": "rotation",
+              "task_id": "rotation-1011-v1",
+              "transfer_credit": false
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-1012-v0",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": -0.02777777777777779,
+          "TU": 0.027777777777777776,
+          "applied_attempts": 3,
+          "credited_reuses": 2,
+          "invariant_id": "INV-cd89c6e9697e31c5",
+          "mean_baseline_cost": 4.0,
+          "mean_reasoning_reduction": 0.16666666666666666,
+          "mean_reused_cost": 3.0,
+          "target_families": [
+            "rotation"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-2010-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.0,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": false,
+              "task_family": "rotation",
+              "task_id": "rotation-2011-v1",
+              "transfer_credit": false
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-2012-v0",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "frequency": 15,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-cd89c6e9697e31c5",
+        "semantic_key": "rotation",
+        "signature": [
+          "apply_rotation"
+        ],
+        "task_families": [
+          "counting",
+          "grouping",
+          "rotation"
+        ]
+      },
+      {
+        "IS": 3.0,
+        "calibration": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "target_families": [],
+          "task_results": []
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "target_families": [],
+          "task_results": []
+        },
+        "frequency": 12,
+        "generality": 0.25,
+        "has_skill": false,
+        "invariant_id": "INV-2ded58d63d2e262a",
+        "semantic_key": "count_objects",
+        "signature": [
+          "count_objects"
+        ],
+        "task_families": [
+          "counting"
+        ]
+      },
+      {
+        "IS": 3.0,
+        "calibration": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "target_families": [],
+          "task_results": []
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "target_families": [],
+          "task_results": []
+        },
+        "frequency": 12,
+        "generality": 0.25,
+        "has_skill": false,
+        "invariant_id": "INV-aa6f0561d26c6211",
+        "semantic_key": "group_by_color",
+        "signature": [
+          "group_by_color"
+        ],
+        "task_families": [
+          "grouping"
+        ]
+      }
+    ],
+    "ranking_diagnostics": {
+      "frequency_order": [
+        {
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "semantic_key": "normalize_grid"
+        },
+        {
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "semantic_key": "reflection"
+        },
+        {
+          "invariant_id": "INV-489db88e598d48b3",
+          "semantic_key": "rotation"
+        },
+        {
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "semantic_key": "count_objects"
+        },
+        {
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "semantic_key": "group_by_color"
+        }
+      ],
+      "mean_held_out_TU_at_k": {
+        "1": {
+          "ASFT": 0.1640625,
+          "frequency_only": 0.0,
+          "no_transfer": 0.0
+        },
+        "2": {
+          "ASFT": 0.0959201388888889,
+          "frequency_only": 0.08203125,
+          "no_transfer": 0.08203125
+        },
+        "3": {
+          "ASFT": 0.06394675925925926,
+          "frequency_only": 0.06394675925925926,
+          "no_transfer": 0.06394675925925926
+        },
+        "4": {
+          "ASFT": 0.04796006944444445,
+          "frequency_only": 0.04796006944444445,
+          "no_transfer": 0.04796006944444445
+        },
+        "5": {
+          "ASFT": 0.03836805555555556,
+          "frequency_only": 0.03836805555555556,
+          "no_transfer": 0.03836805555555556
+        }
+      },
+      "no_transfer_order": [
+        {
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "semantic_key": "normalize_grid"
+        },
+        {
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "semantic_key": "reflection"
+        },
+        {
+          "invariant_id": "INV-489db88e598d48b3",
+          "semantic_key": "rotation"
+        },
+        {
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "semantic_key": "count_objects"
+        },
+        {
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "semantic_key": "group_by_color"
+        }
+      ],
+      "primary_top_k": 1,
+      "random_permutations": 16,
+      "transfer_order": [
+        {
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "semantic_key": "reflection"
+        },
+        {
+          "invariant_id": "INV-cd89c6e9697e31c5",
+          "semantic_key": "rotation"
+        },
+        {
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "semantic_key": "count_objects"
+        },
+        {
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "semantic_key": "normalize_grid"
+        },
+        {
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "semantic_key": "group_by_color"
+        }
+      ]
+    },
+    "seed": 10
+  },
+  {
+    "candidate_rows": [
+      {
+        "IS": 22.5,
+        "calibration": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "target_families": [],
+          "task_results": []
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "target_families": [],
+          "task_results": []
+        },
+        "frequency": 30,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-4d65cfb0dddc59b4",
+        "semantic_key": "normalize_grid",
+        "signature": [
+          "normalize_grid"
+        ],
+        "task_families": [
+          "counting",
+          "reflection",
+          "rotation"
+        ]
+      },
+      {
+        "IS": 18.75,
+        "calibration": {
+          "TS": 0.0625,
+          "TU": 0.1640625,
+          "applied_attempts": 8,
+          "credited_reuses": 8,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "mean_baseline_cost": 4.625,
+          "mean_reasoning_reduction": 0.21875,
+          "mean_reused_cost": 3.625,
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1011-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1012-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1012-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1012-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1013-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1013-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1111-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1112-v1",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.06428571428571425,
+          "TU": 0.1660714285714286,
+          "applied_attempts": 7,
+          "credited_reuses": 7,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "mean_baseline_cost": 4.571428571428571,
+          "mean_reasoning_reduction": 0.22142857142857145,
+          "mean_reused_cost": 3.5714285714285716,
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2011-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2012-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2012-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2012-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2013-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2111-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2112-v1",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "frequency": 25,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-a4f872d69c07cbc0",
+        "semantic_key": "reflection",
+        "signature": [
+          "apply_reflection"
+        ],
+        "task_families": [
+          "counting",
+          "grouping",
+          "reflection"
+        ]
+      },
+      {
+        "IS": 18.75,
+        "calibration": {
+          "TS": 0.0625,
+          "TU": 0.1640625,
+          "applied_attempts": 8,
+          "credited_reuses": 8,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "mean_baseline_cost": 4.625,
+          "mean_reasoning_reduction": 0.21875,
+          "mean_reused_cost": 3.625,
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1011-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1012-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1012-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1012-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1013-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1013-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1111-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1112-v1",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.06428571428571425,
+          "TU": 0.1660714285714286,
+          "applied_attempts": 7,
+          "credited_reuses": 7,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "mean_baseline_cost": 4.571428571428571,
+          "mean_reasoning_reduction": 0.22142857142857145,
+          "mean_reused_cost": 3.5714285714285716,
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2011-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2012-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2012-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2012-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2013-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2111-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2112-v1",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "frequency": 25,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-b977e7292dcf8ad0",
+        "semantic_key": "reflection",
+        "signature": [
+          "find_symmetry"
+        ],
+        "task_families": [
+          "counting",
+          "grouping",
+          "reflection"
+        ]
+      },
+      {
+        "IS": 12.75,
+        "calibration": {
+          "TS": -0.02777777777777779,
+          "TU": 0.027777777777777776,
+          "applied_attempts": 3,
+          "credited_reuses": 2,
+          "invariant_id": "INV-489db88e598d48b3",
+          "mean_baseline_cost": 4.0,
+          "mean_reasoning_reduction": 0.16666666666666666,
+          "mean_reused_cost": 3.0,
+          "target_families": [
+            "rotation"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-1011-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.0,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": false,
+              "task_family": "rotation",
+              "task_id": "rotation-1012-v1",
+              "transfer_credit": false
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-1013-v0",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": -0.02777777777777779,
+          "TU": 0.027777777777777776,
+          "applied_attempts": 3,
+          "credited_reuses": 2,
+          "invariant_id": "INV-489db88e598d48b3",
+          "mean_baseline_cost": 4.0,
+          "mean_reasoning_reduction": 0.16666666666666666,
+          "mean_reused_cost": 3.0,
+          "target_families": [
+            "rotation"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-2011-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.0,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": false,
+              "task_family": "rotation",
+              "task_id": "rotation-2012-v1",
+              "transfer_credit": false
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-2013-v0",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "frequency": 17,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-489db88e598d48b3",
+        "semantic_key": "rotation",
+        "signature": [
+          "find_rotation"
+        ],
+        "task_families": [
+          "counting",
+          "grouping",
+          "rotation"
+        ]
+      },
+      {
+        "IS": 12.75,
+        "calibration": {
+          "TS": -0.02777777777777779,
+          "TU": 0.027777777777777776,
+          "applied_attempts": 3,
+          "credited_reuses": 2,
+          "invariant_id": "INV-cd89c6e9697e31c5",
+          "mean_baseline_cost": 4.0,
+          "mean_reasoning_reduction": 0.16666666666666666,
+          "mean_reused_cost": 3.0,
+          "target_families": [
+            "rotation"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-1011-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.0,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": false,
+              "task_family": "rotation",
+              "task_id": "rotation-1012-v1",
+              "transfer_credit": false
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-1013-v0",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": -0.02777777777777779,
+          "TU": 0.027777777777777776,
+          "applied_attempts": 3,
+          "credited_reuses": 2,
+          "invariant_id": "INV-cd89c6e9697e31c5",
+          "mean_baseline_cost": 4.0,
+          "mean_reasoning_reduction": 0.16666666666666666,
+          "mean_reused_cost": 3.0,
+          "target_families": [
+            "rotation"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-2011-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.0,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": false,
+              "task_family": "rotation",
+              "task_id": "rotation-2012-v1",
+              "transfer_credit": false
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-2013-v0",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "frequency": 17,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-cd89c6e9697e31c5",
+        "semantic_key": "rotation",
+        "signature": [
+          "apply_rotation"
+        ],
+        "task_families": [
+          "counting",
+          "grouping",
+          "rotation"
+        ]
+      },
+      {
+        "IS": 3.0,
+        "calibration": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "target_families": [],
+          "task_results": []
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "target_families": [],
+          "task_results": []
+        },
+        "frequency": 12,
+        "generality": 0.25,
+        "has_skill": false,
+        "invariant_id": "INV-2ded58d63d2e262a",
+        "semantic_key": "count_objects",
+        "signature": [
+          "count_objects"
+        ],
+        "task_families": [
+          "counting"
+        ]
+      },
+      {
+        "IS": 3.0,
+        "calibration": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "target_families": [],
+          "task_results": []
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "target_families": [],
+          "task_results": []
+        },
+        "frequency": 12,
+        "generality": 0.25,
+        "has_skill": false,
+        "invariant_id": "INV-aa6f0561d26c6211",
+        "semantic_key": "group_by_color",
+        "signature": [
+          "group_by_color"
+        ],
+        "task_families": [
+          "grouping"
+        ]
+      }
+    ],
+    "ranking_diagnostics": {
+      "frequency_order": [
+        {
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "semantic_key": "normalize_grid"
+        },
+        {
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "semantic_key": "reflection"
+        },
+        {
+          "invariant_id": "INV-489db88e598d48b3",
+          "semantic_key": "rotation"
+        },
+        {
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "semantic_key": "count_objects"
+        },
+        {
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "semantic_key": "group_by_color"
+        }
+      ],
+      "mean_held_out_TU_at_k": {
+        "1": {
+          "ASFT": 0.1660714285714286,
+          "frequency_only": 0.0,
+          "no_transfer": 0.0
+        },
+        "2": {
+          "ASFT": 0.09692460317460319,
+          "frequency_only": 0.0830357142857143,
+          "no_transfer": 0.0830357142857143
+        },
+        "3": {
+          "ASFT": 0.06461640211640213,
+          "frequency_only": 0.06461640211640213,
+          "no_transfer": 0.06461640211640213
+        },
+        "4": {
+          "ASFT": 0.048462301587301596,
+          "frequency_only": 0.048462301587301596,
+          "no_transfer": 0.048462301587301596
+        },
+        "5": {
+          "ASFT": 0.038769841269841274,
+          "frequency_only": 0.038769841269841274,
+          "no_transfer": 0.038769841269841274
+        }
+      },
+      "no_transfer_order": [
+        {
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "semantic_key": "normalize_grid"
+        },
+        {
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "semantic_key": "reflection"
+        },
+        {
+          "invariant_id": "INV-489db88e598d48b3",
+          "semantic_key": "rotation"
+        },
+        {
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "semantic_key": "count_objects"
+        },
+        {
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "semantic_key": "group_by_color"
+        }
+      ],
+      "primary_top_k": 1,
+      "random_permutations": 16,
+      "transfer_order": [
+        {
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "semantic_key": "reflection"
+        },
+        {
+          "invariant_id": "INV-cd89c6e9697e31c5",
+          "semantic_key": "rotation"
+        },
+        {
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "semantic_key": "count_objects"
+        },
+        {
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "semantic_key": "normalize_grid"
+        },
+        {
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "semantic_key": "group_by_color"
+        }
+      ]
+    },
+    "seed": 11
+  },
+  {
+    "candidate_rows": [
+      {
+        "IS": 22.5,
+        "calibration": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "target_families": [],
+          "task_results": []
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "target_families": [],
+          "task_results": []
+        },
+        "frequency": 30,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-4d65cfb0dddc59b4",
+        "semantic_key": "normalize_grid",
+        "signature": [
+          "normalize_grid"
+        ],
+        "task_families": [
+          "counting",
+          "reflection",
+          "rotation"
+        ]
+      },
+      {
+        "IS": 19.5,
+        "calibration": {
+          "TS": 0.0625,
+          "TU": 0.1640625,
+          "applied_attempts": 8,
+          "credited_reuses": 8,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "mean_baseline_cost": 4.625,
+          "mean_reasoning_reduction": 0.21875,
+          "mean_reused_cost": 3.625,
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1012-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1013-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1013-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1013-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1014-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1014-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1112-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1113-v1",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.0625,
+          "TU": 0.1640625,
+          "applied_attempts": 8,
+          "credited_reuses": 8,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "mean_baseline_cost": 4.625,
+          "mean_reasoning_reduction": 0.21875,
+          "mean_reused_cost": 3.625,
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2012-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2012-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2013-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2013-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2013-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2014-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2112-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2113-v1",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "frequency": 26,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-a4f872d69c07cbc0",
+        "semantic_key": "reflection",
+        "signature": [
+          "apply_reflection"
+        ],
+        "task_families": [
+          "counting",
+          "grouping",
+          "reflection"
+        ]
+      },
+      {
+        "IS": 19.5,
+        "calibration": {
+          "TS": 0.0625,
+          "TU": 0.1640625,
+          "applied_attempts": 8,
+          "credited_reuses": 8,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "mean_baseline_cost": 4.625,
+          "mean_reasoning_reduction": 0.21875,
+          "mean_reused_cost": 3.625,
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1012-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1013-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1013-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1013-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1014-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1014-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1112-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1113-v1",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.0625,
+          "TU": 0.1640625,
+          "applied_attempts": 8,
+          "credited_reuses": 8,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "mean_baseline_cost": 4.625,
+          "mean_reasoning_reduction": 0.21875,
+          "mean_reused_cost": 3.625,
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2012-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2012-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2013-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2013-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2013-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2014-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2112-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2113-v1",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "frequency": 26,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-b977e7292dcf8ad0",
+        "semantic_key": "reflection",
+        "signature": [
+          "find_symmetry"
+        ],
+        "task_families": [
+          "counting",
+          "grouping",
+          "reflection"
+        ]
+      },
+      {
+        "IS": 12.0,
+        "calibration": {
+          "TS": -0.02777777777777779,
+          "TU": 0.027777777777777776,
+          "applied_attempts": 3,
+          "credited_reuses": 2,
+          "invariant_id": "INV-489db88e598d48b3",
+          "mean_baseline_cost": 4.0,
+          "mean_reasoning_reduction": 0.16666666666666666,
+          "mean_reused_cost": 3.0,
+          "target_families": [
+            "rotation"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-1012-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.0,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": false,
+              "task_family": "rotation",
+              "task_id": "rotation-1013-v1",
+              "transfer_credit": false
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-1014-v0",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": -0.02777777777777779,
+          "TU": 0.027777777777777776,
+          "applied_attempts": 3,
+          "credited_reuses": 2,
+          "invariant_id": "INV-489db88e598d48b3",
+          "mean_baseline_cost": 4.0,
+          "mean_reasoning_reduction": 0.16666666666666666,
+          "mean_reused_cost": 3.0,
+          "target_families": [
+            "rotation"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-2012-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.0,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": false,
+              "task_family": "rotation",
+              "task_id": "rotation-2013-v1",
+              "transfer_credit": false
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-2014-v0",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "frequency": 16,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-489db88e598d48b3",
+        "semantic_key": "rotation",
+        "signature": [
+          "find_rotation"
+        ],
+        "task_families": [
+          "counting",
+          "grouping",
+          "rotation"
+        ]
+      },
+      {
+        "IS": 12.0,
+        "calibration": {
+          "TS": -0.02777777777777779,
+          "TU": 0.027777777777777776,
+          "applied_attempts": 3,
+          "credited_reuses": 2,
+          "invariant_id": "INV-cd89c6e9697e31c5",
+          "mean_baseline_cost": 4.0,
+          "mean_reasoning_reduction": 0.16666666666666666,
+          "mean_reused_cost": 3.0,
+          "target_families": [
+            "rotation"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-1012-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.0,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": false,
+              "task_family": "rotation",
+              "task_id": "rotation-1013-v1",
+              "transfer_credit": false
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-1014-v0",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": -0.02777777777777779,
+          "TU": 0.027777777777777776,
+          "applied_attempts": 3,
+          "credited_reuses": 2,
+          "invariant_id": "INV-cd89c6e9697e31c5",
+          "mean_baseline_cost": 4.0,
+          "mean_reasoning_reduction": 0.16666666666666666,
+          "mean_reused_cost": 3.0,
+          "target_families": [
+            "rotation"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-2012-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.0,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": false,
+              "task_family": "rotation",
+              "task_id": "rotation-2013-v1",
+              "transfer_credit": false
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-2014-v0",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "frequency": 16,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-cd89c6e9697e31c5",
+        "semantic_key": "rotation",
+        "signature": [
+          "apply_rotation"
+        ],
+        "task_families": [
+          "counting",
+          "grouping",
+          "rotation"
+        ]
+      },
+      {
+        "IS": 3.0,
+        "calibration": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "target_families": [],
+          "task_results": []
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "target_families": [],
+          "task_results": []
+        },
+        "frequency": 12,
+        "generality": 0.25,
+        "has_skill": false,
+        "invariant_id": "INV-2ded58d63d2e262a",
+        "semantic_key": "count_objects",
+        "signature": [
+          "count_objects"
+        ],
+        "task_families": [
+          "counting"
+        ]
+      },
+      {
+        "IS": 3.0,
+        "calibration": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "target_families": [],
+          "task_results": []
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "target_families": [],
+          "task_results": []
+        },
+        "frequency": 12,
+        "generality": 0.25,
+        "has_skill": false,
+        "invariant_id": "INV-aa6f0561d26c6211",
+        "semantic_key": "group_by_color",
+        "signature": [
+          "group_by_color"
+        ],
+        "task_families": [
+          "grouping"
+        ]
+      }
+    ],
+    "ranking_diagnostics": {
+      "frequency_order": [
+        {
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "semantic_key": "normalize_grid"
+        },
+        {
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "semantic_key": "reflection"
+        },
+        {
+          "invariant_id": "INV-489db88e598d48b3",
+          "semantic_key": "rotation"
+        },
+        {
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "semantic_key": "count_objects"
+        },
+        {
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "semantic_key": "group_by_color"
+        }
+      ],
+      "mean_held_out_TU_at_k": {
+        "1": {
+          "ASFT": 0.1640625,
+          "frequency_only": 0.0,
+          "no_transfer": 0.0
+        },
+        "2": {
+          "ASFT": 0.0959201388888889,
+          "frequency_only": 0.08203125,
+          "no_transfer": 0.08203125
+        },
+        "3": {
+          "ASFT": 0.06394675925925926,
+          "frequency_only": 0.06394675925925926,
+          "no_transfer": 0.06394675925925926
+        },
+        "4": {
+          "ASFT": 0.04796006944444445,
+          "frequency_only": 0.04796006944444445,
+          "no_transfer": 0.04796006944444445
+        },
+        "5": {
+          "ASFT": 0.03836805555555556,
+          "frequency_only": 0.03836805555555556,
+          "no_transfer": 0.03836805555555556
+        }
+      },
+      "no_transfer_order": [
+        {
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "semantic_key": "normalize_grid"
+        },
+        {
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "semantic_key": "reflection"
+        },
+        {
+          "invariant_id": "INV-489db88e598d48b3",
+          "semantic_key": "rotation"
+        },
+        {
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "semantic_key": "count_objects"
+        },
+        {
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "semantic_key": "group_by_color"
+        }
+      ],
+      "primary_top_k": 1,
+      "random_permutations": 16,
+      "transfer_order": [
+        {
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "semantic_key": "reflection"
+        },
+        {
+          "invariant_id": "INV-cd89c6e9697e31c5",
+          "semantic_key": "rotation"
+        },
+        {
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "semantic_key": "count_objects"
+        },
+        {
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "semantic_key": "normalize_grid"
+        },
+        {
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "semantic_key": "group_by_color"
+        }
+      ]
+    },
+    "seed": 12
+  },
+  {
+    "candidate_rows": [
+      {
+        "IS": 22.5,
+        "calibration": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "target_families": [],
+          "task_results": []
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "target_families": [],
+          "task_results": []
+        },
+        "frequency": 30,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-4d65cfb0dddc59b4",
+        "semantic_key": "normalize_grid",
+        "signature": [
+          "normalize_grid"
+        ],
+        "task_families": [
+          "counting",
+          "reflection",
+          "rotation"
+        ]
+      },
+      {
+        "IS": 18.75,
+        "calibration": {
+          "TS": 0.061111111111111116,
+          "TU": 0.1625,
+          "applied_attempts": 9,
+          "credited_reuses": 9,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "mean_baseline_cost": 4.666666666666667,
+          "mean_reasoning_reduction": 0.21666666666666667,
+          "mean_reused_cost": 3.6666666666666665,
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1013-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1013-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1014-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1014-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1014-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1015-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1015-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1113-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1114-v1",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.0625,
+          "TU": 0.1640625,
+          "applied_attempts": 8,
+          "credited_reuses": 8,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "mean_baseline_cost": 4.625,
+          "mean_reasoning_reduction": 0.21875,
+          "mean_reused_cost": 3.625,
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2013-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2014-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2014-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2014-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2015-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2015-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2113-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2114-v1",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "frequency": 25,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-a4f872d69c07cbc0",
+        "semantic_key": "reflection",
+        "signature": [
+          "apply_reflection"
+        ],
+        "task_families": [
+          "counting",
+          "grouping",
+          "reflection"
+        ]
+      },
+      {
+        "IS": 18.75,
+        "calibration": {
+          "TS": 0.061111111111111116,
+          "TU": 0.1625,
+          "applied_attempts": 9,
+          "credited_reuses": 9,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "mean_baseline_cost": 4.666666666666667,
+          "mean_reasoning_reduction": 0.21666666666666667,
+          "mean_reused_cost": 3.6666666666666665,
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1013-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1013-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1014-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1014-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1014-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1015-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1015-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1113-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1114-v1",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.0625,
+          "TU": 0.1640625,
+          "applied_attempts": 8,
+          "credited_reuses": 8,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "mean_baseline_cost": 4.625,
+          "mean_reasoning_reduction": 0.21875,
+          "mean_reused_cost": 3.625,
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2013-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2014-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2014-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2014-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2015-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2015-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2113-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2114-v1",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "frequency": 25,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-b977e7292dcf8ad0",
+        "semantic_key": "reflection",
+        "signature": [
+          "find_symmetry"
+        ],
+        "task_families": [
+          "counting",
+          "grouping",
+          "reflection"
+        ]
+      },
+      {
+        "IS": 12.75,
+        "calibration": {
+          "TS": -0.02777777777777779,
+          "TU": 0.027777777777777776,
+          "applied_attempts": 3,
+          "credited_reuses": 2,
+          "invariant_id": "INV-489db88e598d48b3",
+          "mean_baseline_cost": 4.0,
+          "mean_reasoning_reduction": 0.16666666666666666,
+          "mean_reused_cost": 3.0,
+          "target_families": [
+            "rotation"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-1013-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.0,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": false,
+              "task_family": "rotation",
+              "task_id": "rotation-1014-v1",
+              "transfer_credit": false
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-1015-v0",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": -0.02777777777777779,
+          "TU": 0.027777777777777776,
+          "applied_attempts": 3,
+          "credited_reuses": 2,
+          "invariant_id": "INV-489db88e598d48b3",
+          "mean_baseline_cost": 4.0,
+          "mean_reasoning_reduction": 0.16666666666666666,
+          "mean_reused_cost": 3.0,
+          "target_families": [
+            "rotation"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-2013-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.0,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": false,
+              "task_family": "rotation",
+              "task_id": "rotation-2014-v1",
+              "transfer_credit": false
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-2015-v0",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "frequency": 17,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-489db88e598d48b3",
+        "semantic_key": "rotation",
+        "signature": [
+          "find_rotation"
+        ],
+        "task_families": [
+          "counting",
+          "grouping",
+          "rotation"
+        ]
+      },
+      {
+        "IS": 12.75,
+        "calibration": {
+          "TS": -0.02777777777777779,
+          "TU": 0.027777777777777776,
+          "applied_attempts": 3,
+          "credited_reuses": 2,
+          "invariant_id": "INV-cd89c6e9697e31c5",
+          "mean_baseline_cost": 4.0,
+          "mean_reasoning_reduction": 0.16666666666666666,
+          "mean_reused_cost": 3.0,
+          "target_families": [
+            "rotation"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-1013-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.0,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": false,
+              "task_family": "rotation",
+              "task_id": "rotation-1014-v1",
+              "transfer_credit": false
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-1015-v0",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": -0.02777777777777779,
+          "TU": 0.027777777777777776,
+          "applied_attempts": 3,
+          "credited_reuses": 2,
+          "invariant_id": "INV-cd89c6e9697e31c5",
+          "mean_baseline_cost": 4.0,
+          "mean_reasoning_reduction": 0.16666666666666666,
+          "mean_reused_cost": 3.0,
+          "target_families": [
+            "rotation"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-2013-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.0,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": false,
+              "task_family": "rotation",
+              "task_id": "rotation-2014-v1",
+              "transfer_credit": false
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-2015-v0",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "frequency": 17,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-cd89c6e9697e31c5",
+        "semantic_key": "rotation",
+        "signature": [
+          "apply_rotation"
+        ],
+        "task_families": [
+          "counting",
+          "grouping",
+          "rotation"
+        ]
+      },
+      {
+        "IS": 3.0,
+        "calibration": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "target_families": [],
+          "task_results": []
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "target_families": [],
+          "task_results": []
+        },
+        "frequency": 12,
+        "generality": 0.25,
+        "has_skill": false,
+        "invariant_id": "INV-2ded58d63d2e262a",
+        "semantic_key": "count_objects",
+        "signature": [
+          "count_objects"
+        ],
+        "task_families": [
+          "counting"
+        ]
+      },
+      {
+        "IS": 3.0,
+        "calibration": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "target_families": [],
+          "task_results": []
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "target_families": [],
+          "task_results": []
+        },
+        "frequency": 12,
+        "generality": 0.25,
+        "has_skill": false,
+        "invariant_id": "INV-aa6f0561d26c6211",
+        "semantic_key": "group_by_color",
+        "signature": [
+          "group_by_color"
+        ],
+        "task_families": [
+          "grouping"
+        ]
+      }
+    ],
+    "ranking_diagnostics": {
+      "frequency_order": [
+        {
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "semantic_key": "normalize_grid"
+        },
+        {
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "semantic_key": "reflection"
+        },
+        {
+          "invariant_id": "INV-489db88e598d48b3",
+          "semantic_key": "rotation"
+        },
+        {
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "semantic_key": "count_objects"
+        },
+        {
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "semantic_key": "group_by_color"
+        }
+      ],
+      "mean_held_out_TU_at_k": {
+        "1": {
+          "ASFT": 0.1640625,
+          "frequency_only": 0.0,
+          "no_transfer": 0.0
+        },
+        "2": {
+          "ASFT": 0.0959201388888889,
+          "frequency_only": 0.08203125,
+          "no_transfer": 0.08203125
+        },
+        "3": {
+          "ASFT": 0.06394675925925926,
+          "frequency_only": 0.06394675925925926,
+          "no_transfer": 0.06394675925925926
+        },
+        "4": {
+          "ASFT": 0.04796006944444445,
+          "frequency_only": 0.04796006944444445,
+          "no_transfer": 0.04796006944444445
+        },
+        "5": {
+          "ASFT": 0.03836805555555556,
+          "frequency_only": 0.03836805555555556,
+          "no_transfer": 0.03836805555555556
+        }
+      },
+      "no_transfer_order": [
+        {
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "semantic_key": "normalize_grid"
+        },
+        {
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "semantic_key": "reflection"
+        },
+        {
+          "invariant_id": "INV-489db88e598d48b3",
+          "semantic_key": "rotation"
+        },
+        {
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "semantic_key": "count_objects"
+        },
+        {
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "semantic_key": "group_by_color"
+        }
+      ],
+      "primary_top_k": 1,
+      "random_permutations": 16,
+      "transfer_order": [
+        {
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "semantic_key": "reflection"
+        },
+        {
+          "invariant_id": "INV-cd89c6e9697e31c5",
+          "semantic_key": "rotation"
+        },
+        {
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "semantic_key": "count_objects"
+        },
+        {
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "semantic_key": "normalize_grid"
+        },
+        {
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "semantic_key": "group_by_color"
+        }
+      ]
+    },
+    "seed": 13
+  },
+  {
+    "candidate_rows": [
+      {
+        "IS": 22.5,
+        "calibration": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "target_families": [],
+          "task_results": []
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "target_families": [],
+          "task_results": []
+        },
+        "frequency": 30,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-4d65cfb0dddc59b4",
+        "semantic_key": "normalize_grid",
+        "signature": [
+          "normalize_grid"
+        ],
+        "task_families": [
+          "counting",
+          "reflection",
+          "rotation"
+        ]
+      },
+      {
+        "IS": 19.5,
+        "calibration": {
+          "TS": 0.0625,
+          "TU": 0.1640625,
+          "applied_attempts": 8,
+          "credited_reuses": 8,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "mean_baseline_cost": 4.625,
+          "mean_reasoning_reduction": 0.21875,
+          "mean_reused_cost": 3.625,
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1014-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1014-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1015-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1015-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1015-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1016-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1114-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1115-v1",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.06428571428571425,
+          "TU": 0.1660714285714286,
+          "applied_attempts": 7,
+          "credited_reuses": 7,
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "mean_baseline_cost": 4.571428571428571,
+          "mean_reasoning_reduction": 0.22142857142857145,
+          "mean_reused_cost": 3.5714285714285716,
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2014-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2015-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2015-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2015-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2016-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2114-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "apply_reflection"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-a4f872d69c07cbc0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2115-v1",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "frequency": 26,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-a4f872d69c07cbc0",
+        "semantic_key": "reflection",
+        "signature": [
+          "apply_reflection"
+        ],
+        "task_families": [
+          "counting",
+          "grouping",
+          "reflection"
+        ]
+      },
+      {
+        "IS": 19.5,
+        "calibration": {
+          "TS": 0.0625,
+          "TU": 0.1640625,
+          "applied_attempts": 8,
+          "credited_reuses": 8,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "mean_baseline_cost": 4.625,
+          "mean_reasoning_reduction": 0.21875,
+          "mean_reused_cost": 3.625,
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1014-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1014-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1015-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1015-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1015-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-1016-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-1114-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-1115-v1",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.06428571428571425,
+          "TU": 0.1660714285714286,
+          "applied_attempts": 7,
+          "credited_reuses": 7,
+          "invariant_id": "INV-b977e7292dcf8ad0",
+          "mean_baseline_cost": 4.571428571428571,
+          "mean_reasoning_reduction": 0.22142857142857145,
+          "mean_reused_cost": 3.5714285714285716,
+          "target_families": [
+            "counting",
+            "grouping",
+            "reflection"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2014-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2015-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2015-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2015-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "reflection",
+              "task_id": "reflection-2016-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "counting",
+              "task_id": "counting-2114-v1",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 5.0,
+              "benefit": 0.2,
+              "metadata": {
+                "baseline_steps": 5,
+                "reused_steps": 4,
+                "skill_triggers": [
+                  "find_symmetry"
+                ]
+              },
+              "reasoning_reduction": 0.2,
+              "reused_cost": 4.0,
+              "skill_id": "SC-INV-b977e7292dcf8ad0",
+              "success": true,
+              "task_family": "grouping",
+              "task_id": "grouping-2115-v1",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "frequency": 26,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-b977e7292dcf8ad0",
+        "semantic_key": "reflection",
+        "signature": [
+          "find_symmetry"
+        ],
+        "task_families": [
+          "counting",
+          "grouping",
+          "reflection"
+        ]
+      },
+      {
+        "IS": 12.0,
+        "calibration": {
+          "TS": -0.02777777777777779,
+          "TU": 0.027777777777777776,
+          "applied_attempts": 3,
+          "credited_reuses": 2,
+          "invariant_id": "INV-489db88e598d48b3",
+          "mean_baseline_cost": 4.0,
+          "mean_reasoning_reduction": 0.16666666666666666,
+          "mean_reused_cost": 3.0,
+          "target_families": [
+            "rotation"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-1014-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.0,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": false,
+              "task_family": "rotation",
+              "task_id": "rotation-1015-v1",
+              "transfer_credit": false
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-1016-v0",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": -0.02777777777777779,
+          "TU": 0.027777777777777776,
+          "applied_attempts": 3,
+          "credited_reuses": 2,
+          "invariant_id": "INV-489db88e598d48b3",
+          "mean_baseline_cost": 4.0,
+          "mean_reasoning_reduction": 0.16666666666666666,
+          "mean_reused_cost": 3.0,
+          "target_families": [
+            "rotation"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-2014-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.0,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": false,
+              "task_family": "rotation",
+              "task_id": "rotation-2015-v1",
+              "transfer_credit": false
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "find_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-489db88e598d48b3",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-2016-v0",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "frequency": 16,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-489db88e598d48b3",
+        "semantic_key": "rotation",
+        "signature": [
+          "find_rotation"
+        ],
+        "task_families": [
+          "counting",
+          "grouping",
+          "rotation"
+        ]
+      },
+      {
+        "IS": 12.0,
+        "calibration": {
+          "TS": -0.02777777777777779,
+          "TU": 0.027777777777777776,
+          "applied_attempts": 3,
+          "credited_reuses": 2,
+          "invariant_id": "INV-cd89c6e9697e31c5",
+          "mean_baseline_cost": 4.0,
+          "mean_reasoning_reduction": 0.16666666666666666,
+          "mean_reused_cost": 3.0,
+          "target_families": [
+            "rotation"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-1014-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.0,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": false,
+              "task_family": "rotation",
+              "task_id": "rotation-1015-v1",
+              "transfer_credit": false
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-1016-v0",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": -0.02777777777777779,
+          "TU": 0.027777777777777776,
+          "applied_attempts": 3,
+          "credited_reuses": 2,
+          "invariant_id": "INV-cd89c6e9697e31c5",
+          "mean_baseline_cost": 4.0,
+          "mean_reasoning_reduction": 0.16666666666666666,
+          "mean_reused_cost": 3.0,
+          "target_families": [
+            "rotation"
+          ],
+          "task_results": [
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-2014-v0",
+              "transfer_credit": true
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.0,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": false,
+              "task_family": "rotation",
+              "task_id": "rotation-2015-v1",
+              "transfer_credit": false
+            },
+            {
+              "applied": true,
+              "baseline_cost": 4.0,
+              "benefit": 0.25,
+              "metadata": {
+                "baseline_steps": 4,
+                "reused_steps": 3,
+                "skill_triggers": [
+                  "apply_rotation"
+                ]
+              },
+              "reasoning_reduction": 0.25,
+              "reused_cost": 3.0,
+              "skill_id": "SC-INV-cd89c6e9697e31c5",
+              "success": true,
+              "task_family": "rotation",
+              "task_id": "rotation-2016-v0",
+              "transfer_credit": true
+            }
+          ]
+        },
+        "frequency": 16,
+        "generality": 0.75,
+        "has_skill": true,
+        "invariant_id": "INV-cd89c6e9697e31c5",
+        "semantic_key": "rotation",
+        "signature": [
+          "apply_rotation"
+        ],
+        "task_families": [
+          "counting",
+          "grouping",
+          "rotation"
+        ]
+      },
+      {
+        "IS": 3.0,
+        "calibration": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "target_families": [],
+          "task_results": []
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "target_families": [],
+          "task_results": []
+        },
+        "frequency": 12,
+        "generality": 0.25,
+        "has_skill": false,
+        "invariant_id": "INV-2ded58d63d2e262a",
+        "semantic_key": "count_objects",
+        "signature": [
+          "count_objects"
+        ],
+        "task_families": [
+          "counting"
+        ]
+      },
+      {
+        "IS": 3.0,
+        "calibration": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "target_families": [],
+          "task_results": []
+        },
+        "consistency": 1.0,
+        "evaluation": {
+          "TS": 0.0,
+          "TU": 0.0,
+          "applied_attempts": 0,
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "target_families": [],
+          "task_results": []
+        },
+        "frequency": 12,
+        "generality": 0.25,
+        "has_skill": false,
+        "invariant_id": "INV-aa6f0561d26c6211",
+        "semantic_key": "group_by_color",
+        "signature": [
+          "group_by_color"
+        ],
+        "task_families": [
+          "grouping"
+        ]
+      }
+    ],
+    "ranking_diagnostics": {
+      "frequency_order": [
+        {
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "semantic_key": "normalize_grid"
+        },
+        {
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "semantic_key": "reflection"
+        },
+        {
+          "invariant_id": "INV-489db88e598d48b3",
+          "semantic_key": "rotation"
+        },
+        {
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "semantic_key": "count_objects"
+        },
+        {
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "semantic_key": "group_by_color"
+        }
+      ],
+      "mean_held_out_TU_at_k": {
+        "1": {
+          "ASFT": 0.1660714285714286,
+          "frequency_only": 0.0,
+          "no_transfer": 0.0
+        },
+        "2": {
+          "ASFT": 0.09692460317460319,
+          "frequency_only": 0.0830357142857143,
+          "no_transfer": 0.0830357142857143
+        },
+        "3": {
+          "ASFT": 0.06461640211640213,
+          "frequency_only": 0.06461640211640213,
+          "no_transfer": 0.06461640211640213
+        },
+        "4": {
+          "ASFT": 0.048462301587301596,
+          "frequency_only": 0.048462301587301596,
+          "no_transfer": 0.048462301587301596
+        },
+        "5": {
+          "ASFT": 0.038769841269841274,
+          "frequency_only": 0.038769841269841274,
+          "no_transfer": 0.038769841269841274
+        }
+      },
+      "no_transfer_order": [
+        {
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "semantic_key": "normalize_grid"
+        },
+        {
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "semantic_key": "reflection"
+        },
+        {
+          "invariant_id": "INV-489db88e598d48b3",
+          "semantic_key": "rotation"
+        },
+        {
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "semantic_key": "count_objects"
+        },
+        {
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "semantic_key": "group_by_color"
+        }
+      ],
+      "primary_top_k": 1,
+      "random_permutations": 16,
+      "transfer_order": [
+        {
+          "invariant_id": "INV-a4f872d69c07cbc0",
+          "semantic_key": "reflection"
+        },
+        {
+          "invariant_id": "INV-cd89c6e9697e31c5",
+          "semantic_key": "rotation"
+        },
+        {
+          "invariant_id": "INV-2ded58d63d2e262a",
+          "semantic_key": "count_objects"
+        },
+        {
+          "invariant_id": "INV-4d65cfb0dddc59b4",
+          "semantic_key": "normalize_grid"
+        },
+        {
+          "invariant_id": "INV-aa6f0561d26c6211",
+          "semantic_key": "group_by_color"
+        }
+      ]
+    },
+    "seed": 14
+  }
+]

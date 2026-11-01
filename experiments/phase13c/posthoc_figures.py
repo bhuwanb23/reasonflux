@@ -1,0 +1,152 @@
+"""Figures from saved Phase 13C JSON/CSV; no experiment execution."""
+from __future__ import annotations
+
+import csv
+from collections import Counter, defaultdict
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import numpy as np
+from .analysis_common import FIG, OUT, candidates, mean, raw, record, sample_sd
+
+def write_figures():
+    plt.rcParams.update({"figure.dpi": 150, "axes.spines.top": False, "axes.spines.right": False})
+    # 1. Emergence by category and terminal state.
+    categories = ["reflection", "rotation", "counting", "grouping"]
+    states = ["core", "growing", "active", "promoted", "not_created"]
+    counts = {cat: Counter() for cat in categories}
+    for row in candidates:
+        arm = row["arms"]["SCT"]
+        counts[row["category"]][arm.get("state_at_end", "not_created")] += int(bool(arm.get("created")))
+    fig, ax = plt.subplots(figsize=(7.6, 4.2))
+    bottom = np.zeros(len(categories))
+    colors = {"core": "#275d8c", "growing": "#4c9f70", "active": "#78b7a5", "promoted": "#e0a458", "not_created": "#c7c7c7"}
+    for state in states:
+        vals = [counts[cat][state] for cat in categories]
+        ax.bar(categories, vals, bottom=bottom, label=state, color=colors[state])
+        bottom += np.array(vals)
+    ax.set_title("Phase 13C skill emergence by category")
+    ax.set_ylabel("Candidate rows (confirmation, 10 seeds)")
+    ax.legend(frameon=False, ncol=3)
+    fig.tight_layout()
+    fig.savefig(FIG / "phase13c_01_emergence.png")
+    plt.close(fig)
+
+    # 2. SCV distribution and held-out value.
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4.2))
+    scores = [float(x["SCV10"]) for x in candidates]
+    net = [float(x["shadow_realized_net_value"]) for x in candidates]
+    ax1.hist(scores, bins=12, color="#397da8", edgecolor="white")
+    ax1.axvline(0, color="#b23a48", linestyle="--", label="primary cutoff 0")
+    thresholds = record["calibration_frozen"]["thresholds"]
+    ax1.axvline(thresholds["low_q25"], color="#da8a24", linestyle=":", label="calibration q25")
+    ax1.axvline(thresholds["high_q75"], color="#5d5d5d", linestyle=":", label="calibration q75")
+    ax1.set(title="SCV10 distribution", xlabel="SCV10", ylabel="Candidate count")
+    ax1.legend(frameon=False, fontsize=8)
+    ax2.scatter(scores, net, color="#397da8", alpha=.8)
+    ax2.axvline(0, color="#b23a48", linestyle="--")
+    ax2.set(title="SCV10 vs held-out realized net value", xlabel="SCV10", ylabel="Net value / candidate")
+    fig.tight_layout()
+    fig.savefig(FIG / "phase13c_02_scv.png")
+    plt.close(fig)
+
+    # 3. Utility trajectory; average candidate value within each seed, then across seeds.
+    utility_csv = list(csv.DictReader((OUT / "utility_trajectories.csv").open(encoding="utf-8")))
+    seed_index = defaultdict(list)
+    for row in utility_csv:
+        if row["arm"] == "SCT":
+            seed_index[(int(row["seed"]), int(row["task_index"]))].append(float(row["su"]))
+    by_task = defaultdict(list)
+    for (seed, index), vals in seed_index.items():
+        by_task[index].append(mean(vals))
+    x = sorted(by_task)
+    y = [mean(by_task[i]) for i in x]
+    e = [sample_sd(by_task[i]) for i in x]
+    fig, ax = plt.subplots(figsize=(7.6, 4.2))
+    ax.errorbar(x, y, yerr=e, marker="o", color="#397da8", capsize=3)
+    ax.set(title="SCT-arm skill utility over the 10-opportunity horizon", xlabel="Eligible opportunity index", ylabel="Mean SU (between-seed SD)")
+    fig.tight_layout()
+    fig.savefig(FIG / "phase13c_03_utility.png")
+    plt.close(fig)
+
+    # 4. Reuse outcomes per eligible opportunity, deriving memory-only failures from task rows.
+    arms = ["SCT", "NEVER_CREATE", "ALWAYS_CREATE", "RANDOM_CREATE", "MEMORY_ONLY"]
+    outcome = {arm: Counter() for arm in arms}
+    total_eligible = Counter()
+    for seed in raw:
+        for candidate in seed["candidates"]:
+            for arm in arms:
+                a = candidate["arms"][arm]
+                rs = a.get("reuse_statistics", {})
+                total_eligible[arm] += int(rs.get("eligible_opportunities", 0) or 0)
+                for task in a.get("task_results", []):
+                    if task.get("applied"):
+                        outcome[arm]["success" if task.get("success") else "failed"] += 1
+                    else:
+                        outcome[arm]["no_match"] += 1
+                # no-task-result path only for a not-created policy arm: the candidate horizon is no-match.
+                if not a.get("task_results") and int(rs.get("eligible_opportunities", 0) or 0):
+                    outcome[arm]["no_match"] += int(rs.get("eligible_opportunities", 0) or 0)
+    fig, ax = plt.subplots(figsize=(8.2, 4.4))
+    bottom = np.zeros(len(arms))
+    for key, label, color in (("success", "successful applications", "#4c9f70"), ("failed", "failed applications", "#bd4b4b"), ("no_match", "no-match / no skill", "#b9c2cb")):
+        vals = [outcome[a][key] / max(1, total_eligible[a]) for a in arms]
+        ax.bar(arms, vals, bottom=bottom, label=label, color=color)
+        bottom += np.array(vals)
+    ax.set(title="Reuse outcomes per eligible opportunity", ylabel="Share of opportunity slots", ylim=(0, 1))
+    ax.tick_params(axis="x", rotation=20)
+    ax.legend(frameon=False, ncol=3, fontsize=8)
+    fig.tight_layout()
+    fig.savefig(FIG / "phase13c_04_reuse.png")
+    plt.close(fig)
+
+    # 5. Composition: only evaluable rotation→reflection pair.
+    comps = [c for s in raw for c in s["composition"] if c["status"] == "evaluated"]
+    n = sum(c["n_tasks"] for c in comps)
+    comp_success = sum(c["success_rate"] * c["n_tasks"] for c in comps) / n if n else 0
+    baseline_success = sum(sum(bool(t["baseline_success"]) for t in c["task_results"]) for c in comps) / n if n else 0
+    single_success = sum(sum(bool(t["best_single_success"]) for t in c["task_results"]) for c in comps) / n if n else 0
+    new_reuse = mean(bool(c["composition_reused_on_new_task"]) for c in comps)
+    fig, ax = plt.subplots(figsize=(7.6, 4.2))
+    labels = ["No-skill baseline", "Best single skill", "Ordered composition", "New-task composition reuse"]
+    vals = [baseline_success, single_success, comp_success, new_reuse]
+    ax.bar(labels, vals, color=["#888888", "#d99b42", "#397da8", "#4c9f70"])
+    ax.set(title="Task-grounded rotation→reflection composition", ylabel="Success rate", ylim=(0, 1.08))
+    ax.tick_params(axis="x", rotation=15)
+    for i, value in enumerate(vals):
+        ax.text(i, value + .025, f"{value:.0%}", ha="center")
+    fig.tight_layout()
+    fig.savefig(FIG / "phase13c_05_composition.png")
+    plt.close(fig)
+
+    # 6. Matched policy outcomes with seed-cluster bootstrap CIs.
+    primary = record["primary_outcome"]
+    labels = list(primary["arm_statistics"])
+    means = [primary["arm_statistics"][name]["mean"] for name in labels]
+    cis = [primary["arm_seed_cluster_bootstrap_ci95"][name] for name in labels]
+    yerr = np.array([[m - ci[0] for m, ci in zip(means, cis)], [ci[1] - m for m, ci in zip(means, cis)]])
+    fig, ax = plt.subplots(figsize=(7.6, 4.4))
+    ax.bar(labels, means, color=["#397da8", "#b9c2cb", "#da8a24", "#8e77a8", "#4c9f70"])
+    ax.errorbar(range(len(labels)), means, yerr=yerr, fmt="none", ecolor="#222222", capsize=4)
+    ax.axhline(0, color="#444444", linewidth=.8)
+    ax.set(title="Matched control comparison: mean net value per eligible candidate", ylabel="Net value (normalized simulator units)")
+    ax.tick_params(axis="x", rotation=18)
+    fig.tight_layout()
+    fig.savefig(FIG / "phase13c_06_matched_controls.png")
+    plt.close(fig)
+
+    # 7. Ablations and threshold/MC sensitivity.
+    fig, axes = plt.subplots(1, 2, figsize=(10, 4.2))
+    mc_names = list(record["mc_sensitivity"])
+    mc_vals = [record["mc_sensitivity"][name]["SCT"]["mean"] for name in mc_names]
+    axes[0].plot([float(name.split("=")[1]) for name in mc_names], mc_vals, marker="o", color="#397da8")
+    axes[0].axvline(.06, color="#b23a48", linestyle="--", label="primary MC")
+    axes[0].set(title="Maintenance-cost sensitivity", xlabel="MC / opportunity", ylabel="SCT net value")
+    axes[0].legend(frameon=False)
+    abl = record["lifecycle_ablation"]["statistics"]
+    names = ["lifecycle_enabled", "lifecycle_disabled"]
+    axes[1].bar(["Lifecycle on", "Lifecycle off"], [abl[n]["mean"] for n in names], color=["#4c9f70", "#888888"])
+    axes[1].set(title="Lifecycle ablation (paired primary horizon)", ylabel="Net value")
+    fig.tight_layout()
+    fig.savefig(FIG / "phase13c_07_ablations.png")
+    plt.close(fig)

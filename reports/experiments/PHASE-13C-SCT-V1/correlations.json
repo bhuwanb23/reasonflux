@@ -1,0 +1,78 @@
+{
+  "scv_predictors_of_future_net_value": {
+    "AG": {
+      "candidate_n": 44,
+      "seed_cluster_bootstrap_ci95": [
+        -0.11007516718675771,
+        0.0
+      ],
+      "seed_n": 10,
+      "spearman": -0.07442075473293705
+    },
+    "SCV10": {
+      "candidate_n": 44,
+      "seed_cluster_bootstrap_ci95": [
+        0.5447240106787921,
+        0.9305950021129076
+      ],
+      "seed_n": 10,
+      "spearman": 0.7004272164658744
+    },
+    "TS": {
+      "candidate_n": 44,
+      "seed_cluster_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "seed_n": 10,
+      "spearman": 0.0
+    },
+    "frequency": {
+      "candidate_n": 44,
+      "seed_cluster_bootstrap_ci95": [
+        0.7089082483306098,
+        0.8848020217749296
+      ],
+      "seed_n": 10,
+      "spearman": 0.747752297166495
+    },
+    "p_reuse": {
+      "candidate_n": 44,
+      "seed_cluster_bootstrap_ci95": [
+        0.8736595983399669,
+        0.9368388895960552
+      ],
+      "seed_n": 10,
+      "spearman": 0.8835087540432829
+    }
+  },
+  "utility_associations": {
+    "SU_vs_cross_family_transfer": {
+      "candidate_n": 44,
+      "seed_cluster_bootstrap_ci95": [
+        0.903732070605737,
+        0.9603741428078366
+      ],
+      "seed_n": 10,
+      "spearman": 0.9215888427355434
+    },
+    "SU_vs_future_net_value": {
+      "candidate_n": 44,
+      "seed_cluster_bootstrap_ci95": [
+        0.8966919631980146,
+        1.0
+      ],
+      "seed_n": 10,
+      "spearman": 0.9369600364296339
+    },
+    "SU_vs_reuse_count": {
+      "candidate_n": 44,
+      "seed_cluster_bootstrap_ci95": [
+        0.8978177709629868,
+        1.0
+      ],
+      "seed_n": 10,
+      "spearman": 0.9369600364296339
+    }
+  }
+}

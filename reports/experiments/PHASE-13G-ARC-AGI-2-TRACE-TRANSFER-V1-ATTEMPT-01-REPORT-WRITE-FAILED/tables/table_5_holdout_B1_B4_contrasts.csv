@@ -1,0 +1,5 @@
+baseline,n_tasks,asft_accuracy,baseline_accuracy,paired_accuracy_delta_asft_minus_baseline,accuracy_ci_low,accuracy_ci_high,asft_mean_candidate_trials,baseline_mean_candidate_trials,paired_trial_delta_asft_minus_baseline,trial_ci_low,trial_ci_high
+B1_NO_LEARNING,200,0.005,0.005,0.0,0.0,0.0,2.995,2.995,0.0,0.0,0.0
+B2_MEMORY_SKILL_STORE,200,0.005,0.005,0.0,0.0,0.0,2.995,3.0,-0.005,-0.015,0.0
+B3_RANDOM_SKILL_CREATION,200,0.005,0.005,0.0,0.0,0.0,2.995,2.995,0.0,0.0,0.0
+B4_COMPRESSION_PROXY,200,0.005,0.005,0.0,0.0,0.0,2.995,2.995,0.0,0.0,0.0

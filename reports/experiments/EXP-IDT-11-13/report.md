@@ -78,5 +78,5 @@
 - `sparse_precision`: `{'name': 'SPARSE_PRECISION', 'formula': 'valid sparse invariants / sparse invariants', 'interpretation': 'sparse-data precision', 'valid_range': '[0, 1]', 'failure_condition': '< 0.70'}`
 - `sparse_recall`: `{'name': 'SPARSE_RECALL', 'formula': 'discovered sparse expected / expected invariants', 'interpretation': 'sparse-data recall', 'valid_range': '[0, 1]', 'failure_condition': '< 0'}`
 
-- **timestamp_utc**: `2026-10-31T12:10:03.869821+00:00`
+- **timestamp_utc**: `2026-10-31T13:42:26.791382+00:00`
 - **record_schema**: `phase-13a-v1`

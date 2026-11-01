@@ -54,5 +54,5 @@
 - `confidence`: `{'name': 'CONFIDENCE', 'formula': 'mean evidence confidence', 'interpretation': 'invariant confidence', 'valid_range': '[0, 1]', 'failure_condition': '< 0.70'}`
 - `IS`: `{'name': 'IS', 'formula': 'frequency * consistency * generality', 'interpretation': 'invariant strength', 'valid_range': '[0, inf)', 'failure_condition': '<= 0'}`
 
-- **timestamp_utc**: `2026-10-31T12:10:03.303231+00:00`
+- **timestamp_utc**: `2026-10-31T13:42:26.531912+00:00`
 - **record_schema**: `phase-13a-v1`

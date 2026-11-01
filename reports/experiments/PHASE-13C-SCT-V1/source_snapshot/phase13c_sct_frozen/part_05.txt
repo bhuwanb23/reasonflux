@@ -1,0 +1,63 @@
+        ])
+        writer.writeheader()
+        for row in candidates:
+            writer.writerow({key: json.dumps(row.get(key)) if isinstance(row.get(key), (list, dict)) else row.get(key) for key in writer.fieldnames})
+    reuse_rows = []
+    utility_rows = []
+    lifecycle_rows = []
+    composition_rows = []
+    for record in raw:
+        for candidate in record["candidates"]:
+            for arm, result in candidate["arms"].items():
+                reuse_rows.append({"seed": record["seed"], "invariant_id": candidate["invariant_id"], "arm": arm, **result.get("reuse_statistics", {})})
+                for point in result.get("utility_timeline", []):
+                    utility_rows.append({"seed": record["seed"], "invariant_id": candidate["invariant_id"], "arm": arm, **point})
+        lifecycle_rows.extend({"seed": record["seed"], **row} for row in record["lifecycle"])
+        composition_rows.extend({"seed": record["seed"], **row} for row in record["composition"])
+    policy_rows = []
+    mc_rows = []
+    threshold_rows = []
+    lifecycle_ablation_rows = []
+    for record in raw:
+        for arm, value in record["arm_mean_net_values"].items():
+            policy_rows.append({"seed": record["seed"], "policy": arm, "mean_net_value": value})
+        for arm, mc_values in record["arm_mean_net_values_by_mc"].items():
+            for mc, value in mc_values.items():
+                mc_rows.append({"seed": record["seed"], "policy": arm, "MC_per_opportunity": mc, "mean_net_value": value})
+        for threshold, value in record["threshold_sensitivity"].items():
+            threshold_rows.append({"seed": record["seed"], "threshold": threshold, "mean_net_value": value})
+        lifecycle_ablation_rows.append({"seed": record["seed"], **record["lifecycle_ablation"]})
+
+    all_rows = (
+        ("reuse_statistics.csv", reuse_rows),
+        ("utility_trajectories.csv", utility_rows),
+        ("lifecycle.csv", lifecycle_rows),
+        ("composition.csv", composition_rows),
+        ("matched_controls.csv", policy_rows),
+        ("mc_sensitivity.csv", mc_rows),
+        ("threshold_sensitivity.csv", threshold_rows),
+        ("lifecycle_ablation.csv", lifecycle_ablation_rows),
+    )
+    for filename, rows in all_rows:
+        if not rows:
+            (directory / filename).write_text("\n", encoding="utf-8")
+            continue
+        fields = sorted({key for row in rows for key in row})
+        with (directory / filename).open("w", newline="", encoding="utf-8") as handle:
+            writer = csv.DictWriter(handle, fieldnames=fields)
+            writer.writeheader()
+            for row in rows:
+                writer.writerow({key: json.dumps(value) if isinstance(value, (list, dict)) else value for key, value in row.items()})
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("stage", choices=("calibrate", "confirm"))
+    parser.add_argument("--no-write", action="store_true")
+    args = parser.parse_args()
+    result = run_calibration(write=not args.no_write) if args.stage == "calibrate" else run_confirmation(write=not args.no_write)
+    print(json.dumps({"stage": args.stage, "seeds": result.get("calibration_seeds", result.get("seeds")), "status": "complete"}, indent=2))
+
+
+if __name__ == "__main__":
+    main()

@@ -26,7 +26,7 @@
         "passed": true
       },
       {
-        "details": "records=5 mean_benefit=0.31",
+        "details": "records=5 mean_benefit=0.23",
         "name": "Transfer readiness",
         "passed": true
       },
@@ -67,7 +67,7 @@
         "passed": true
       },
       {
-        "details": "records=5 mean_benefit=0.31",
+        "details": "records=5 mean_benefit=0.23",
         "name": "Transfer readiness",
         "passed": true
       },
@@ -91,5 +91,5 @@
   },
   "seed": null,
   "thresholds": {},
-  "timestamp_utc": "2026-10-31T10:06:44.245352+00:00"
+  "timestamp_utc": "2026-10-31T13:47:48.854192+00:00"
 }
