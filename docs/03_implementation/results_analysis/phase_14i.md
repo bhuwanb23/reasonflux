@@ -1,0 +1,706 @@
+Phase 14I: Threats to Validity
+Purpose
+
+Phases 14A-14H answered:
+
+What happened?
+
+Why did it happen?
+
+Which claims survived?
+
+
+Phase 14I asks a harder question:
+
+Even if our conclusions are correct, what factors could make them misleading, incomplete, biased, or non-generalizable?
+
+This is the most important phase for scientific credibility.
+
+A strong paper is not one that claims:
+
+"We proved everything."
+
+
+A strong paper is one that clearly states:
+
+"Here is exactly where our evidence is trustworthy,
+and here is where it is not."
+
+14I-1 Threat Classification Framework
+
+We will analyze four classes of validity threats:
+
+14I-A
+Internal Validity
+
+14I-B
+Construct Validity
+
+14I-C
+External Validity
+
+14I-D
+Statistical Validity
+
+
+Plus:
+
+14I-E
+Implementation Validity
+
+14I-F
+Interpretation Validity
+
+14I-A: Internal Validity
+Question
+
+Are the observed results actually caused by ASFT, or by something else in the experiment?
+
+Threat IV-01
+Shared Generator–Solver Vocabulary
+
+Observed:
+
+Synthetic generator
+
+↓
+
+Synthetic solver
+
+↓
+
+Trace vocabulary
+
+↓
+
+Invariant labels
+
+
+all come from the same ecosystem.
+
+Risk:
+
+Discovered invariants may reflect
+generator structure rather than
+general reasoning structure.
+
+
+Impact
+
+High
+
+
+Affected Phases
+
+13B
+
+13C
+
+13D
+
+Threat IV-02
+Benchmark Alignment Bias
+
+Observed:
+
+Synthetic tasks were designed
+around reflection, rotation,
+counting, grouping.
+
+
+Risk:
+
+ASFT may perform well because
+the benchmark naturally aligns
+with the implemented skills.
+
+
+Impact
+
+High
+
+Threat IV-03
+Low Selection Pressure
+
+Observed:
+
+All SCT candidates
+
+SCV > 0
+
+
+Result:
+
+SCT
+
+=
+
+Always Create
+
+
+Risk:
+
+Experiments never tested
+real skill-selection decisions.
+
+
+Impact
+
+Critical
+
+Threat IV-04
+Low Ranking Pressure
+
+Observed:
+
+Transfer-aware ranking
+
+=
+
+Frequency ranking
+
+
+Risk:
+
+IDT superiority was never truly tested.
+
+
+Impact
+
+Critical
+
+Internal Validity Verdict
+Moderate Risk
+
+
+Core mechanisms were tested.
+
+Several superiority claims were not.
+
+14I-B: Construct Validity
+Question
+
+Do the metrics actually measure the concepts they claim to measure?
+
+Threat CV-01
+Invariant Strength (IS)
+
+Claim:
+
+Measures invariant quality.
+
+
+Evidence:
+
+IS failed to consistently
+predict transfer.
+
+
+Risk:
+
+IS may measure recurrence
+rather than usefulness.
+
+
+Impact
+
+High
+
+Threat CV-02
+SCV
+
+Claim:
+
+Measures future skill value.
+
+
+Evidence:
+
+SCV correlated with value.
+
+But frequency often correlated similarly.
+
+
+Risk:
+
+SCV may not uniquely identify
+valuable skills.
+
+
+Impact
+
+Medium
+
+Threat CV-03
+Capability Growth Rate
+
+Claim:
+
+Measures capability growth.
+
+
+Evidence:
+
+Positive CGR
+
+but
+
+negative TS→CGR relation.
+
+
+Risk:
+
+CGR may track accumulation
+rather than capability.
+
+
+Impact
+
+High
+
+Threat CV-04
+Intelligence Growth
+
+Claim:
+
+Measures intelligence growth.
+
+
+Evidence:
+
+Positive IG
+
+Negative IE trend
+
+No external validation.
+
+
+Risk:
+
+IG may be an internal score,
+not intelligence.
+
+
+Impact
+
+Critical
+
+Construct Validity Verdict
+High Risk
+
+
+Especially for:
+
+CGR
+
+IG
+
+IGR
+
+14I-C: External Validity
+Question
+
+Can the results generalize beyond the synthetic environment?
+
+Threat EV-01
+Synthetic Task Dependence
+
+Observed:
+
+Most positive results
+occurred only on synthetic tasks.
+
+
+Impact
+
+Critical
+
+Threat EV-02
+ARC Failure
+
+Observed:
+
+0 invariants
+
+0 skills
+
+0 capabilities
+
+
+Risk:
+
+Synthetic success
+does not transfer.
+
+
+Impact
+
+Critical
+
+Threat EV-03
+Limited Skill Diversity
+
+Observed:
+
+Reflection
+
+Rotation
+
+Only
+
+
+Risk:
+
+Results may depend on
+a narrow skill family.
+
+
+Impact
+
+High
+
+Threat EV-04
+DSL Coverage Bottleneck
+
+Observed:
+
+3/600 discovery tasks fit.
+
+
+Risk:
+
+Most ARC tasks never entered
+the ASFT pipeline.
+
+
+Impact
+
+Critical
+
+External Validity Verdict
+Very High Risk
+
+
+Current evidence supports:
+
+Synthetic ASFT
+
+
+not:
+
+General ASFT
+
+14I-D: Statistical Validity
+Question
+
+Are the numerical conclusions statistically trustworthy?
+
+Threat SV-01
+Small Candidate Population
+
+Observed:
+
+~4.4 promoted candidates/seed
+
+
+for some IDT analyses.
+
+Risk:
+
+Correlations unstable.
+
+
+Impact
+
+High
+
+Threat SV-02
+Small Seed Counts
+
+Observed:
+
+5 seeds
+
+10 seeds
+
+
+Risk:
+
+Wide uncertainty.
+
+
+Impact
+
+Medium
+
+Threat SV-03
+Near-Zero Variance
+
+Observed:
+
+Several baselines tied exactly.
+
+
+Risk:
+
+Effect sizes become unstable.
+
+
+Impact
+
+Medium
+
+Threat SV-04
+Multiple Comparisons
+
+Observed:
+
+Many experiments
+
+Many metrics
+
+Many correlations
+
+
+Risk:
+
+False positive findings.
+
+
+Impact
+
+Medium
+
+Statistical Validity Verdict
+Moderate Risk
+
+
+Results are useful.
+
+Precision should not be overstated.
+
+14I-E: Implementation Validity
+Question
+
+Could software limitations explain outcomes?
+
+Threat IM-01
+Bounded ARC Adapter
+
+Observed:
+
+10-program DSL
+
+
+Impact
+
+Critical
+
+Threat IM-02
+Cost Model Assumptions
+
+Observed:
+
+MC = 0.06
+
+
+modeled value.
+
+Risk:
+
+Different assumptions
+may change SCT outcomes.
+
+
+Impact
+
+Medium
+
+Threat IM-03
+Synthetic Trace Dependence
+
+Observed:
+
+Traces generated by
+known solver logic.
+
+
+Impact
+
+High
+
+Implementation Validity Verdict
+Moderate–High Risk
+
+14I-F: Interpretation Validity
+Question
+
+Are we over-interpreting what the evidence shows?
+
+Threat IN-01
+Metric Inflation
+
+Risk:
+
+Positive metric
+
+≠
+
+Positive capability.
+
+
+Impact
+
+Critical
+
+Threat IN-02
+Mechanism vs Theory
+
+Observed:
+
+Mechanism works
+
+Theory partially fails
+
+
+Risk:
+
+Treating mechanism success
+as theory validation.
+
+
+Impact
+
+Critical
+
+Threat IN-03
+ARC Misinterpretation
+
+Risk:
+
+ARC failure
+=
+Theory failure
+
+
+Evidence:
+
+Not supported.
+
+Actual finding:
+
+Representation bottleneck.
+
+
+Impact
+
+High
+
+Interpretation Validity Verdict
+High Risk
+
+
+Requires careful wording in the paper.
+
+14I-2 Master Threat Register
+Threat	SeverityShared generator vocabulary	High
+Low ranking pressure	Critical
+Low SCT selection pressure	Critical
+IS construct validity	High
+IG construct validity	Critical
+Synthetic dependence	Critical
+ARC failure	Critical
+DSL coverage	Critical
+Small candidate populations	High
+Bounded ARC adapter	Critical
+Metric inflation	Critical
+Mechanism-theory confusion	Critical
+14I-3 What Conclusions Remain Safe?
+Safe Conclusions
+
+✅ Trace recurrence exists
+
+✅ Skills emerge synthetically
+
+✅ Synthetic transfer exists
+
+✅ Reasoning reduction exists
+
+✅ End-to-end architecture functions
+
+Unsafe Conclusions
+
+❌ General invariant discovery
+
+❌ Transfer-aware superiority
+
+❌ SCT superiority
+
+❌ Capability growth theory
+
+❌ Intelligence growth theory
+
+❌ ARC replication
+
+❌ General learning claims
+
+14I-4 Threats-to-Validity Scorecard
+Category	RiskInternal Validity	🟡 Moderate
+Construct Validity	🔴 High
+External Validity	🔴 Very High
+Statistical Validity	🟡 Moderate
+Implementation Validity	🔴 High
+Interpretation Validity	🔴 High
+14I Conclusion
+Scientific Verdict
+
+The evidence base is credible enough to support:
+
+Synthetic mechanism claims.
+
+
+However, the largest threats arise from:
+
+Construct validity
+
+External validity
+
+ARC coverage limitations
+
+Metric interpretation
+
+
+The dominant risk is not that the experiments were performed incorrectly.
+
+The dominant risk is that:
+
+internally consistent synthetic metrics are interpreted as evidence of general capability growth, intelligence growth, or ARC-relevant learning when the current evidence does not justify those conclusions.
+
+Deliverables of Phase 14I
+
+✅ Internal Validity Analysis
+
+✅ Construct Validity Analysis
+
+✅ External Validity Analysis
+
+✅ Statistical Validity Analysis
+
+✅ Implementation Validity Analysis
+
+✅ Interpretation Validity Analysis
+
+✅ Master Threat Register
+
+✅ Safe vs Unsafe Conclusion Inventory
+
+✅ Threats-to-Validity Scorecard
+
+Exit Decision
+Phase 14I
+✅ COMPLETE
+
+
+The strongest defensible conclusion is:
+
+ASFT's synthetic mechanism results are credible within their experimental scope, but significant construct, external, and interpretation-validity threats prevent broader claims about capability growth, intelligence growth, transfer-aware superiority, or ARC generalization.
