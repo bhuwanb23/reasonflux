@@ -1,0 +1,1048 @@
+[
+  [
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-01",
+      "mean_TS": 0.019999999999999907,
+      "n_tasks": 10,
+      "run_seed": 50,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-02",
+      "mean_TS": 0.019999999999999907,
+      "n_tasks": 10,
+      "run_seed": 50,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-04",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 50,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-05",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 50,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-07",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 50,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-08",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 50,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-09",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 50,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-10",
+      "mean_TS": 0.039999999999999925,
+      "n_tasks": 10,
+      "run_seed": 50,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-10",
+      "mean_TS": 0.039999999999999925,
+      "n_tasks": 10,
+      "run_seed": 50,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-11",
+      "mean_TS": 0.040000000000000036,
+      "n_tasks": 10,
+      "run_seed": 50,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-11",
+      "mean_TS": 0.040000000000000036,
+      "n_tasks": 10,
+      "run_seed": 50,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-17",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 50,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    }
+  ],
+  [
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-01",
+      "mean_TS": 0.019999999999999907,
+      "n_tasks": 10,
+      "run_seed": 51,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-02",
+      "mean_TS": 0.019999999999999907,
+      "n_tasks": 10,
+      "run_seed": 51,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-04",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 51,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-05",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 51,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-07",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 51,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-08",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 51,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-09",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 51,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-10",
+      "mean_TS": 0.039999999999999925,
+      "n_tasks": 10,
+      "run_seed": 51,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-10",
+      "mean_TS": 0.039999999999999925,
+      "n_tasks": 10,
+      "run_seed": 51,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-11",
+      "mean_TS": 0.040000000000000036,
+      "n_tasks": 10,
+      "run_seed": 51,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-11",
+      "mean_TS": 0.040000000000000036,
+      "n_tasks": 10,
+      "run_seed": 51,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-17",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 51,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    }
+  ],
+  [
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-01",
+      "mean_TS": 0.019999999999999907,
+      "n_tasks": 10,
+      "run_seed": 52,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-02",
+      "mean_TS": 0.019999999999999907,
+      "n_tasks": 10,
+      "run_seed": 52,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-04",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 52,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-05",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 52,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-07",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 52,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-08",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 52,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-09",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 52,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-10",
+      "mean_TS": 0.039999999999999925,
+      "n_tasks": 10,
+      "run_seed": 52,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-10",
+      "mean_TS": 0.039999999999999925,
+      "n_tasks": 10,
+      "run_seed": 52,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-11",
+      "mean_TS": 0.040000000000000036,
+      "n_tasks": 10,
+      "run_seed": 52,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-11",
+      "mean_TS": 0.040000000000000036,
+      "n_tasks": 10,
+      "run_seed": 52,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-17",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 52,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    }
+  ],
+  [
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-01",
+      "mean_TS": 0.019999999999999907,
+      "n_tasks": 10,
+      "run_seed": 53,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-02",
+      "mean_TS": 0.019999999999999907,
+      "n_tasks": 10,
+      "run_seed": 53,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-04",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 53,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-05",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 53,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-07",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 53,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-08",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 53,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-09",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 53,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-10",
+      "mean_TS": 0.039999999999999925,
+      "n_tasks": 10,
+      "run_seed": 53,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-10",
+      "mean_TS": 0.039999999999999925,
+      "n_tasks": 10,
+      "run_seed": 53,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 10.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-11",
+      "mean_TS": 0.040000000000000036,
+      "n_tasks": 10,
+      "run_seed": 53,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-11",
+      "mean_TS": 0.040000000000000036,
+      "n_tasks": 10,
+      "run_seed": 53,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 25.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-17",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 53,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    }
+  ],
+  [
+    {
+      "IS": 6.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-01",
+      "mean_TS": 0.019999999999999907,
+      "n_tasks": 10,
+      "run_seed": 54,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 26.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-02",
+      "mean_TS": 0.019999999999999907,
+      "n_tasks": 10,
+      "run_seed": 54,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 6.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-04",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 54,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 26.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-05",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 54,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 6.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-07",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 54,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 6.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-08",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 54,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 26.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-09",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 54,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 6.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-10",
+      "mean_TS": 0.039999999999999925,
+      "n_tasks": 10,
+      "run_seed": 54,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 26.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-10",
+      "mean_TS": 0.039999999999999925,
+      "n_tasks": 10,
+      "run_seed": 54,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 6.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-11",
+      "mean_TS": 0.040000000000000036,
+      "n_tasks": 10,
+      "run_seed": 54,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 26.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-11",
+      "mean_TS": 0.040000000000000036,
+      "n_tasks": 10,
+      "run_seed": 54,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 26.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-17",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 54,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    }
+  ],
+  [
+    {
+      "IS": 27.0,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-02",
+      "mean_TS": 0.019999999999999907,
+      "n_tasks": 10,
+      "run_seed": 55,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 27.0,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-05",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 55,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 27.0,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-09",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 55,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 27.0,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-10",
+      "mean_TS": 0.019999999999999907,
+      "n_tasks": 10,
+      "run_seed": 55,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 27.0,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-11",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 55,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 27.0,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-17",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 55,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    }
+  ],
+  [
+    {
+      "IS": 6.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-01",
+      "mean_TS": 0.019999999999999907,
+      "n_tasks": 10,
+      "run_seed": 56,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 26.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-02",
+      "mean_TS": 0.019999999999999907,
+      "n_tasks": 10,
+      "run_seed": 56,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 6.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-04",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 56,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 26.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-05",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 56,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 6.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-07",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 56,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 6.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-08",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 56,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 26.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-09",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 56,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 6.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-10",
+      "mean_TS": 0.039999999999999925,
+      "n_tasks": 10,
+      "run_seed": 56,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 26.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-10",
+      "mean_TS": 0.039999999999999925,
+      "n_tasks": 10,
+      "run_seed": 56,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 6.5,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-11",
+      "mean_TS": 0.040000000000000036,
+      "n_tasks": 10,
+      "run_seed": 56,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 26.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-11",
+      "mean_TS": 0.040000000000000036,
+      "n_tasks": 10,
+      "run_seed": 56,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 26.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-17",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 56,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    }
+  ],
+  [
+    {
+      "IS": 11.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-01",
+      "mean_TS": 0.019999999999999907,
+      "n_tasks": 10,
+      "run_seed": 57,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 24.75,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-02",
+      "mean_TS": 0.019999999999999907,
+      "n_tasks": 10,
+      "run_seed": 57,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 11.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-04",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 57,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 24.75,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-05",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 57,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 11.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-07",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 57,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 11.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-08",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 57,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 24.75,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-09",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 57,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 11.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-10",
+      "mean_TS": 0.039999999999999925,
+      "n_tasks": 10,
+      "run_seed": 57,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 24.75,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-10",
+      "mean_TS": 0.039999999999999925,
+      "n_tasks": 10,
+      "run_seed": 57,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 11.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-11",
+      "mean_TS": 0.040000000000000036,
+      "n_tasks": 10,
+      "run_seed": 57,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 24.75,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-11",
+      "mean_TS": 0.040000000000000036,
+      "n_tasks": 10,
+      "run_seed": 57,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 24.75,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-17",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 57,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    }
+  ],
+  [
+    {
+      "IS": 11.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-01",
+      "mean_TS": 0.019999999999999907,
+      "n_tasks": 10,
+      "run_seed": 58,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 24.75,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-02",
+      "mean_TS": 0.019999999999999907,
+      "n_tasks": 10,
+      "run_seed": 58,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 11.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-04",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 58,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 24.75,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-05",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 58,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 11.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-07",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 58,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 11.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-08",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 58,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 24.75,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-09",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 58,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 11.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-10",
+      "mean_TS": 0.039999999999999925,
+      "n_tasks": 10,
+      "run_seed": 58,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 24.75,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-10",
+      "mean_TS": 0.039999999999999925,
+      "n_tasks": 10,
+      "run_seed": 58,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 11.25,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-11",
+      "mean_TS": 0.040000000000000036,
+      "n_tasks": 10,
+      "run_seed": 58,
+      "skill_id": "SC-INV-02a30b2b5dd074b7"
+    },
+    {
+      "IS": 24.75,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-11",
+      "mean_TS": 0.040000000000000036,
+      "n_tasks": 10,
+      "run_seed": 58,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    },
+    {
+      "IS": 24.75,
+      "SU": 2.2066666666666666,
+      "experiment_id": "EXP-TR-17",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 58,
+      "skill_id": "SC-INV-b2ef40c97323c287"
+    }
+  ],
+  [
+    {
+      "IS": 12.0,
+      "SU": 1.7622222222222224,
+      "experiment_id": "EXP-TR-01",
+      "mean_TS": 0.019999999999999907,
+      "n_tasks": 10,
+      "run_seed": 59,
+      "skill_id": "SC-INV-a4f872d69c07cbc0"
+    },
+    {
+      "IS": 24.0,
+      "SU": 1.7622222222222224,
+      "experiment_id": "EXP-TR-02",
+      "mean_TS": 0.019999999999999907,
+      "n_tasks": 10,
+      "run_seed": 59,
+      "skill_id": "SC-INV-489db88e598d48b3"
+    },
+    {
+      "IS": 12.0,
+      "SU": 1.7622222222222224,
+      "experiment_id": "EXP-TR-04",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 59,
+      "skill_id": "SC-INV-a4f872d69c07cbc0"
+    },
+    {
+      "IS": 24.0,
+      "SU": 1.7622222222222224,
+      "experiment_id": "EXP-TR-05",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 59,
+      "skill_id": "SC-INV-489db88e598d48b3"
+    },
+    {
+      "IS": 12.0,
+      "SU": 1.7622222222222224,
+      "experiment_id": "EXP-TR-07",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 59,
+      "skill_id": "SC-INV-a4f872d69c07cbc0"
+    },
+    {
+      "IS": 12.0,
+      "SU": 1.7622222222222224,
+      "experiment_id": "EXP-TR-08",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 59,
+      "skill_id": "SC-INV-a4f872d69c07cbc0"
+    },
+    {
+      "IS": 24.0,
+      "SU": 1.7622222222222224,
+      "experiment_id": "EXP-TR-09",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 59,
+      "skill_id": "SC-INV-489db88e598d48b3"
+    },
+    {
+      "IS": 24.0,
+      "SU": 1.7622222222222224,
+      "experiment_id": "EXP-TR-10",
+      "mean_TS": 0.039999999999999925,
+      "n_tasks": 10,
+      "run_seed": 59,
+      "skill_id": "SC-INV-489db88e598d48b3"
+    },
+    {
+      "IS": 12.0,
+      "SU": 1.7622222222222224,
+      "experiment_id": "EXP-TR-10",
+      "mean_TS": 0.039999999999999925,
+      "n_tasks": 10,
+      "run_seed": 59,
+      "skill_id": "SC-INV-a4f872d69c07cbc0"
+    },
+    {
+      "IS": 24.0,
+      "SU": 1.7622222222222224,
+      "experiment_id": "EXP-TR-11",
+      "mean_TS": 0.040000000000000036,
+      "n_tasks": 10,
+      "run_seed": 59,
+      "skill_id": "SC-INV-489db88e598d48b3"
+    },
+    {
+      "IS": 12.0,
+      "SU": 1.7622222222222224,
+      "experiment_id": "EXP-TR-11",
+      "mean_TS": 0.040000000000000036,
+      "n_tasks": 10,
+      "run_seed": 59,
+      "skill_id": "SC-INV-a4f872d69c07cbc0"
+    },
+    {
+      "IS": 24.0,
+      "SU": 1.7622222222222224,
+      "experiment_id": "EXP-TR-17",
+      "mean_TS": 0.020000000000000018,
+      "n_tasks": 10,
+      "run_seed": 59,
+      "skill_id": "SC-INV-489db88e598d48b3"
+    }
+  ]
+]

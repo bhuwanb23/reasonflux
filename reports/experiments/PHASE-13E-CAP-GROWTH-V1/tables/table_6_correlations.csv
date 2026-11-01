@@ -1,0 +1,8 @@
+correlation,x,y,n,pearson_r,ci95_low,ci95_high,ci_method,status,n_seed_clusters,n_seed_round_pairs,bootstrap_seed,bootstrap_replicates
+TS_to_CGR,mean_mean_transfer_score_ts,mean_cgr,10,-0.5027073391422425,-0.8601010451397315,0.18570774383289052,Fisher z,available,,,,
+SU_to_CGR,mean_mean_skill_utility_su,mean_cgr,10,0.9929786851278719,0.9694701335923772,0.9983999318053662,Fisher z,available,,,,
+coverage_to_IG,mean_supported_family_coverage,mean_ig,10,0.40850050683179556,-0.29770571021816833,0.8257477354770473,Fisher z,available,,,,
+composition_to_IG,mean_composition_skill_count,mean_ig,10,,,,Fisher z,unavailable_constant_or_insufficient,,,,
+capability_utility_to_transfer,per_seed_mean_capability_utility,per_seed_mean_member_ts,10,-0.5765939802199337,-0.8849523302246265,0.0832718308172291,Fisher z,available,,,,
+capability_utility_to_reuse,per_seed_mean_capability_utility,per_seed_mean_member_reuse,10,0.6702498793257895,0.07027030854290452,0.9141160387558819,Fisher z,available,,,,
+,,,,0.04981672143749448,0.01630867176413102,0.09216344913083403,,available,10,30,87213,4000

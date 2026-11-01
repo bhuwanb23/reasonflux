@@ -1,0 +1,1142 @@
+[
+  [
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-01",
+      "run_seed": 50,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-02",
+      "run_seed": 50,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-03",
+      "run_seed": 50,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-04",
+      "run_seed": 50,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-05",
+      "run_seed": 50,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-06",
+      "run_seed": 50,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-07",
+      "run_seed": 50,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-08",
+      "run_seed": 50,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-09",
+      "run_seed": 50,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": 1.2701666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-10",
+      "run_seed": 50,
+      "status": "evaluated_initial_CGR_unavailable"
+    },
+    {
+      "CGR": 0.0,
+      "C_t": 1.2701666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-11",
+      "run_seed": 50,
+      "status": "evaluated"
+    },
+    {
+      "CGR": -0.48,
+      "C_t": 0.7901666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-15",
+      "run_seed": 50,
+      "status": "evaluated"
+    },
+    {
+      "CGR": 0.0,
+      "C_t": 0.7901666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-16",
+      "run_seed": 50,
+      "status": "evaluated"
+    },
+    {
+      "CGR": 0.24,
+      "C_t": 1.0301666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-17",
+      "run_seed": 50,
+      "status": "evaluated"
+    }
+  ],
+  [
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-01",
+      "run_seed": 51,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-02",
+      "run_seed": 51,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-03",
+      "run_seed": 51,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-04",
+      "run_seed": 51,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-05",
+      "run_seed": 51,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-06",
+      "run_seed": 51,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-07",
+      "run_seed": 51,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-08",
+      "run_seed": 51,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-09",
+      "run_seed": 51,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": 1.2701666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-10",
+      "run_seed": 51,
+      "status": "evaluated_initial_CGR_unavailable"
+    },
+    {
+      "CGR": 0.0,
+      "C_t": 1.2701666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-11",
+      "run_seed": 51,
+      "status": "evaluated"
+    },
+    {
+      "CGR": -0.48,
+      "C_t": 0.7901666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-15",
+      "run_seed": 51,
+      "status": "evaluated"
+    },
+    {
+      "CGR": 0.0,
+      "C_t": 0.7901666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-16",
+      "run_seed": 51,
+      "status": "evaluated"
+    },
+    {
+      "CGR": 0.24,
+      "C_t": 1.0301666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-17",
+      "run_seed": 51,
+      "status": "evaluated"
+    }
+  ],
+  [
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-01",
+      "run_seed": 52,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-02",
+      "run_seed": 52,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-03",
+      "run_seed": 52,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-04",
+      "run_seed": 52,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-05",
+      "run_seed": 52,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-06",
+      "run_seed": 52,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-07",
+      "run_seed": 52,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-08",
+      "run_seed": 52,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-09",
+      "run_seed": 52,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": 1.2701666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-10",
+      "run_seed": 52,
+      "status": "evaluated_initial_CGR_unavailable"
+    },
+    {
+      "CGR": 0.0,
+      "C_t": 1.2701666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-11",
+      "run_seed": 52,
+      "status": "evaluated"
+    },
+    {
+      "CGR": -0.48,
+      "C_t": 0.7901666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-15",
+      "run_seed": 52,
+      "status": "evaluated"
+    },
+    {
+      "CGR": 0.0,
+      "C_t": 0.7901666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-16",
+      "run_seed": 52,
+      "status": "evaluated"
+    },
+    {
+      "CGR": 0.24,
+      "C_t": 1.0301666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-17",
+      "run_seed": 52,
+      "status": "evaluated"
+    }
+  ],
+  [
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-01",
+      "run_seed": 53,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-02",
+      "run_seed": 53,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-03",
+      "run_seed": 53,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-04",
+      "run_seed": 53,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-05",
+      "run_seed": 53,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-06",
+      "run_seed": 53,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-07",
+      "run_seed": 53,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-08",
+      "run_seed": 53,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-09",
+      "run_seed": 53,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": 1.2701666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-10",
+      "run_seed": 53,
+      "status": "evaluated_initial_CGR_unavailable"
+    },
+    {
+      "CGR": 0.0,
+      "C_t": 1.2701666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-11",
+      "run_seed": 53,
+      "status": "evaluated"
+    },
+    {
+      "CGR": -0.48,
+      "C_t": 0.7901666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-15",
+      "run_seed": 53,
+      "status": "evaluated"
+    },
+    {
+      "CGR": 0.0,
+      "C_t": 0.7901666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-16",
+      "run_seed": 53,
+      "status": "evaluated"
+    },
+    {
+      "CGR": 0.24,
+      "C_t": 1.0301666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-17",
+      "run_seed": 53,
+      "status": "evaluated"
+    }
+  ],
+  [
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-01",
+      "run_seed": 54,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-02",
+      "run_seed": 54,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-03",
+      "run_seed": 54,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-04",
+      "run_seed": 54,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-05",
+      "run_seed": 54,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-06",
+      "run_seed": 54,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-07",
+      "run_seed": 54,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-08",
+      "run_seed": 54,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-09",
+      "run_seed": 54,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": 1.2389166666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-10",
+      "run_seed": 54,
+      "status": "evaluated_initial_CGR_unavailable"
+    },
+    {
+      "CGR": 0.0,
+      "C_t": 1.2389166666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-11",
+      "run_seed": 54,
+      "status": "evaluated"
+    },
+    {
+      "CGR": -0.48,
+      "C_t": 0.7589166666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-15",
+      "run_seed": 54,
+      "status": "evaluated"
+    },
+    {
+      "CGR": 0.0,
+      "C_t": 0.7589166666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-16",
+      "run_seed": 54,
+      "status": "evaluated"
+    },
+    {
+      "CGR": 0.24,
+      "C_t": 0.9989166666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-17",
+      "run_seed": 54,
+      "status": "evaluated"
+    }
+  ],
+  [
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-01",
+      "run_seed": 55,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-02",
+      "run_seed": 55,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-03",
+      "run_seed": 55,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-04",
+      "run_seed": 55,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-05",
+      "run_seed": 55,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-06",
+      "run_seed": 55,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-07",
+      "run_seed": 55,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-08",
+      "run_seed": 55,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-09",
+      "run_seed": 55,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-10",
+      "run_seed": 55,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-11",
+      "run_seed": 55,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-15",
+      "run_seed": 55,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-16",
+      "run_seed": 55,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-17",
+      "run_seed": 55,
+      "status": "unavailable_no_valid_capability"
+    }
+  ],
+  [
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-01",
+      "run_seed": 56,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-02",
+      "run_seed": 56,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-03",
+      "run_seed": 56,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-04",
+      "run_seed": 56,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-05",
+      "run_seed": 56,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-06",
+      "run_seed": 56,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-07",
+      "run_seed": 56,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-08",
+      "run_seed": 56,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-09",
+      "run_seed": 56,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": 1.2389166666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-10",
+      "run_seed": 56,
+      "status": "evaluated_initial_CGR_unavailable"
+    },
+    {
+      "CGR": 0.0,
+      "C_t": 1.2389166666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-11",
+      "run_seed": 56,
+      "status": "evaluated"
+    },
+    {
+      "CGR": -0.48,
+      "C_t": 0.7589166666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-15",
+      "run_seed": 56,
+      "status": "evaluated"
+    },
+    {
+      "CGR": 0.0,
+      "C_t": 0.7589166666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-16",
+      "run_seed": 56,
+      "status": "evaluated"
+    },
+    {
+      "CGR": 0.24,
+      "C_t": 0.9989166666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-17",
+      "run_seed": 56,
+      "status": "evaluated"
+    }
+  ],
+  [
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-01",
+      "run_seed": 57,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-02",
+      "run_seed": 57,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-03",
+      "run_seed": 57,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-04",
+      "run_seed": 57,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-05",
+      "run_seed": 57,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-06",
+      "run_seed": 57,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-07",
+      "run_seed": 57,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-08",
+      "run_seed": 57,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-09",
+      "run_seed": 57,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": 1.2701666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-10",
+      "run_seed": 57,
+      "status": "evaluated_initial_CGR_unavailable"
+    },
+    {
+      "CGR": 0.0,
+      "C_t": 1.2701666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-11",
+      "run_seed": 57,
+      "status": "evaluated"
+    },
+    {
+      "CGR": -0.48,
+      "C_t": 0.7901666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-15",
+      "run_seed": 57,
+      "status": "evaluated"
+    },
+    {
+      "CGR": 0.0,
+      "C_t": 0.7901666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-16",
+      "run_seed": 57,
+      "status": "evaluated"
+    },
+    {
+      "CGR": 0.24,
+      "C_t": 1.0301666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-17",
+      "run_seed": 57,
+      "status": "evaluated"
+    }
+  ],
+  [
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-01",
+      "run_seed": 58,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-02",
+      "run_seed": 58,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-03",
+      "run_seed": 58,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-04",
+      "run_seed": 58,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-05",
+      "run_seed": 58,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-06",
+      "run_seed": 58,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-07",
+      "run_seed": 58,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-08",
+      "run_seed": 58,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-09",
+      "run_seed": 58,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": 1.2701666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-10",
+      "run_seed": 58,
+      "status": "evaluated_initial_CGR_unavailable"
+    },
+    {
+      "CGR": 0.0,
+      "C_t": 1.2701666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-11",
+      "run_seed": 58,
+      "status": "evaluated"
+    },
+    {
+      "CGR": -0.48,
+      "C_t": 0.7901666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-15",
+      "run_seed": 58,
+      "status": "evaluated"
+    },
+    {
+      "CGR": 0.0,
+      "C_t": 0.7901666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-16",
+      "run_seed": 58,
+      "status": "evaluated"
+    },
+    {
+      "CGR": 0.24,
+      "C_t": 1.0301666666666667,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-17",
+      "run_seed": 58,
+      "status": "evaluated"
+    }
+  ],
+  [
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-01",
+      "run_seed": 59,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-02",
+      "run_seed": 59,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-03",
+      "run_seed": 59,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-04",
+      "run_seed": 59,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-05",
+      "run_seed": 59,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-06",
+      "run_seed": 59,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-07",
+      "run_seed": 59,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-08",
+      "run_seed": 59,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": null,
+      "capability_count": 0,
+      "experiment_id": "EXP-TR-09",
+      "run_seed": 59,
+      "status": "unavailable_no_valid_capability"
+    },
+    {
+      "CGR": null,
+      "C_t": 1.092388888888889,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-10",
+      "run_seed": 59,
+      "status": "evaluated_initial_CGR_unavailable"
+    },
+    {
+      "CGR": 0.0,
+      "C_t": 1.092388888888889,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-11",
+      "run_seed": 59,
+      "status": "evaluated"
+    },
+    {
+      "CGR": -0.5200000000000001,
+      "C_t": 0.572388888888889,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-15",
+      "run_seed": 59,
+      "status": "evaluated"
+    },
+    {
+      "CGR": 0.0,
+      "C_t": 0.572388888888889,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-16",
+      "run_seed": 59,
+      "status": "evaluated"
+    },
+    {
+      "CGR": 0.2799999999999999,
+      "C_t": 0.8523888888888889,
+      "capability_count": 1,
+      "experiment_id": "EXP-TR-17",
+      "run_seed": 59,
+      "status": "evaluated"
+    }
+  ]
+]

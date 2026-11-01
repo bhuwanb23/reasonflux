@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="90" y="34" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#18313d">Composition-associated portfolio growth</text>
+<text x="90" y="58" font-family="Arial,sans-serif" font-size="13" fill="#52636a">Composition task outcomes are separately reported in Table 3 and task-level data</text>
+<line x1="90" y1="468.0" x2="730" y2="468.0" stroke="#e2e8eb"/>
+<text x="78" y="472.0" text-anchor="end" font-family="Arial" font-size="12" fill="#60727a">-0.100</text>
+<line x1="90" y1="371.5" x2="730" y2="371.5" stroke="#e2e8eb"/>
+<text x="78" y="375.5" text-anchor="end" font-family="Arial" font-size="12" fill="#60727a">0.200</text>
+<line x1="90" y1="275.0" x2="730" y2="275.0" stroke="#e2e8eb"/>
+<text x="78" y="279.0" text-anchor="end" font-family="Arial" font-size="12" fill="#60727a">0.500</text>
+<line x1="90" y1="178.5" x2="730" y2="178.5" stroke="#e2e8eb"/>
+<text x="78" y="182.5" text-anchor="end" font-family="Arial" font-size="12" fill="#60727a">0.800</text>
+<line x1="90" y1="82.0" x2="730" y2="82.0" stroke="#e2e8eb"/>
+<text x="78" y="86.0" text-anchor="end" font-family="Arial" font-size="12" fill="#60727a">1.100</text>
+<line x1="90.0" y1="82" x2="90.0" y2="468" stroke="#f1f4f5"/>
+<text x="90.0" y="492" text-anchor="middle" font-family="Arial" font-size="13" fill="#52636a">Round 1</text>
+<line x1="303.3" y1="82" x2="303.3" y2="468" stroke="#f1f4f5"/>
+<text x="303.3" y="492" text-anchor="middle" font-family="Arial" font-size="13" fill="#52636a">Round 2</text>
+<line x1="516.7" y1="82" x2="516.7" y2="468" stroke="#f1f4f5"/>
+<text x="516.7" y="492" text-anchor="middle" font-family="Arial" font-size="13" fill="#52636a">Round 3</text>
+<line x1="730.0" y1="82" x2="730.0" y2="468" stroke="#f1f4f5"/>
+<text x="730.0" y="492" text-anchor="middle" font-family="Arial" font-size="13" fill="#52636a">Round 4</text>
+<line x1="90" y1="82" x2="90" y2="468" stroke="#65777f"/>
+<line x1="90" y1="468" x2="730" y2="468" stroke="#65777f"/>
+<text transform="translate(24 275.0) rotate(-90)" text-anchor="middle" font-family="Arial" font-size="14" fill="#354b53">Promoted composition skills</text>
+<line x1="90.0" y1="435.8" x2="90.0" y2="435.8" stroke="#176b87" stroke-width="1.5" opacity="0.72"/>
+<line x1="86.0" y1="435.8" x2="94.0" y2="435.8" stroke="#176b87"/>
+<line x1="86.0" y1="435.8" x2="94.0" y2="435.8" stroke="#176b87"/>
+<line x1="303.3" y1="435.8" x2="303.3" y2="435.8" stroke="#176b87" stroke-width="1.5" opacity="0.72"/>
+<line x1="299.3" y1="435.8" x2="307.3" y2="435.8" stroke="#176b87"/>
+<line x1="299.3" y1="435.8" x2="307.3" y2="435.8" stroke="#176b87"/>
+<line x1="516.7" y1="114.2" x2="516.7" y2="114.2" stroke="#176b87" stroke-width="1.5" opacity="0.72"/>
+<line x1="512.7" y1="114.2" x2="520.7" y2="114.2" stroke="#176b87"/>
+<line x1="512.7" y1="114.2" x2="520.7" y2="114.2" stroke="#176b87"/>
+<line x1="730.0" y1="114.2" x2="730.0" y2="114.2" stroke="#176b87" stroke-width="1.5" opacity="0.72"/>
+<line x1="726.0" y1="114.2" x2="734.0" y2="114.2" stroke="#176b87"/>
+<line x1="726.0" y1="114.2" x2="734.0" y2="114.2" stroke="#176b87"/>
+<polyline points="90.0,435.8 303.3,435.8 516.7,114.2 730.0,114.2" fill="none" stroke="#176b87" stroke-width="3"/>
+<circle cx="90.0" cy="435.8" r="4.5" fill="#176b87" stroke="#fff" stroke-width="1.5"/>
+<circle cx="303.3" cy="435.8" r="4.5" fill="#176b87" stroke="#fff" stroke-width="1.5"/>
+<circle cx="516.7" cy="114.2" r="4.5" fill="#176b87" stroke="#fff" stroke-width="1.5"/>
+<circle cx="730.0" cy="114.2" r="4.5" fill="#176b87" stroke="#fff" stroke-width="1.5"/>
+<line x1="90.0" y1="435.8" x2="90.0" y2="435.8" stroke="#6b7280" stroke-width="1.5" opacity="0.72"/>
+<line x1="86.0" y1="435.8" x2="94.0" y2="435.8" stroke="#6b7280"/>
+<line x1="86.0" y1="435.8" x2="94.0" y2="435.8" stroke="#6b7280"/>
+<line x1="303.3" y1="435.8" x2="303.3" y2="435.8" stroke="#6b7280" stroke-width="1.5" opacity="0.72"/>
+<line x1="299.3" y1="435.8" x2="307.3" y2="435.8" stroke="#6b7280"/>
+<line x1="299.3" y1="435.8" x2="307.3" y2="435.8" stroke="#6b7280"/>
+<line x1="516.7" y1="435.8" x2="516.7" y2="435.8" stroke="#6b7280" stroke-width="1.5" opacity="0.72"/>
+<line x1="512.7" y1="435.8" x2="520.7" y2="435.8" stroke="#6b7280"/>
+<line x1="512.7" y1="435.8" x2="520.7" y2="435.8" stroke="#6b7280"/>
+<line x1="730.0" y1="435.8" x2="730.0" y2="435.8" stroke="#6b7280" stroke-width="1.5" opacity="0.72"/>
+<line x1="726.0" y1="435.8" x2="734.0" y2="435.8" stroke="#6b7280"/>
+<line x1="726.0" y1="435.8" x2="734.0" y2="435.8" stroke="#6b7280"/>
+<polyline points="90.0,435.8 303.3,435.8 516.7,435.8 730.0,435.8" fill="none" stroke="#6b7280" stroke-width="3"/>
+<circle cx="90.0" cy="435.8" r="4.5" fill="#6b7280" stroke="#fff" stroke-width="1.5"/>
+<circle cx="303.3" cy="435.8" r="4.5" fill="#6b7280" stroke="#fff" stroke-width="1.5"/>
+<circle cx="516.7" cy="435.8" r="4.5" fill="#6b7280" stroke="#fff" stroke-width="1.5"/>
+<circle cx="730.0" cy="435.8" r="4.5" fill="#6b7280" stroke="#fff" stroke-width="1.5"/>
+<line x1="90.0" y1="435.8" x2="90.0" y2="435.8" stroke="#d18f00" stroke-width="1.5" opacity="0.72"/>
+<line x1="86.0" y1="435.8" x2="94.0" y2="435.8" stroke="#d18f00"/>
+<line x1="86.0" y1="435.8" x2="94.0" y2="435.8" stroke="#d18f00"/>
+<line x1="303.3" y1="435.8" x2="303.3" y2="435.8" stroke="#d18f00" stroke-width="1.5" opacity="0.72"/>
+<line x1="299.3" y1="435.8" x2="307.3" y2="435.8" stroke="#d18f00"/>
+<line x1="299.3" y1="435.8" x2="307.3" y2="435.8" stroke="#d18f00"/>
+<line x1="516.7" y1="435.8" x2="516.7" y2="435.8" stroke="#d18f00" stroke-width="1.5" opacity="0.72"/>
+<line x1="512.7" y1="435.8" x2="520.7" y2="435.8" stroke="#d18f00"/>
+<line x1="512.7" y1="435.8" x2="520.7" y2="435.8" stroke="#d18f00"/>
+<line x1="730.0" y1="435.8" x2="730.0" y2="435.8" stroke="#d18f00" stroke-width="1.5" opacity="0.72"/>
+<line x1="726.0" y1="435.8" x2="734.0" y2="435.8" stroke="#d18f00"/>
+<line x1="726.0" y1="435.8" x2="734.0" y2="435.8" stroke="#d18f00"/>
+<polyline points="90.0,435.8 303.3,435.8 516.7,435.8 730.0,435.8" fill="none" stroke="#d18f00" stroke-width="3"/>
+<circle cx="90.0" cy="435.8" r="4.5" fill="#d18f00" stroke="#fff" stroke-width="1.5"/>
+<circle cx="303.3" cy="435.8" r="4.5" fill="#d18f00" stroke="#fff" stroke-width="1.5"/>
+<circle cx="516.7" cy="435.8" r="4.5" fill="#d18f00" stroke="#fff" stroke-width="1.5"/>
+<circle cx="730.0" cy="435.8" r="4.5" fill="#d18f00" stroke="#fff" stroke-width="1.5"/>
+<line x1="90.0" y1="435.8" x2="90.0" y2="435.8" stroke="#c2413b" stroke-width="1.5" opacity="0.72"/>
+<line x1="86.0" y1="435.8" x2="94.0" y2="435.8" stroke="#c2413b"/>
+<line x1="86.0" y1="435.8" x2="94.0" y2="435.8" stroke="#c2413b"/>
+<line x1="303.3" y1="435.8" x2="303.3" y2="435.8" stroke="#c2413b" stroke-width="1.5" opacity="0.72"/>
+<line x1="299.3" y1="435.8" x2="307.3" y2="435.8" stroke="#c2413b"/>
+<line x1="299.3" y1="435.8" x2="307.3" y2="435.8" stroke="#c2413b"/>
+<line x1="516.7" y1="435.8" x2="516.7" y2="435.8" stroke="#c2413b" stroke-width="1.5" opacity="0.72"/>
+<line x1="512.7" y1="435.8" x2="520.7" y2="435.8" stroke="#c2413b"/>
+<line x1="512.7" y1="435.8" x2="520.7" y2="435.8" stroke="#c2413b"/>
+<line x1="730.0" y1="435.8" x2="730.0" y2="435.8" stroke="#c2413b" stroke-width="1.5" opacity="0.72"/>
+<line x1="726.0" y1="435.8" x2="734.0" y2="435.8" stroke="#c2413b"/>
+<line x1="726.0" y1="435.8" x2="734.0" y2="435.8" stroke="#c2413b"/>
+<polyline points="90.0,435.8 303.3,435.8 516.7,435.8 730.0,435.8" fill="none" stroke="#c2413b" stroke-width="3"/>
+<circle cx="90.0" cy="435.8" r="4.5" fill="#c2413b" stroke="#fff" stroke-width="1.5"/>
+<circle cx="303.3" cy="435.8" r="4.5" fill="#c2413b" stroke="#fff" stroke-width="1.5"/>
+<circle cx="516.7" cy="435.8" r="4.5" fill="#c2413b" stroke="#fff" stroke-width="1.5"/>
+<circle cx="730.0" cy="435.8" r="4.5" fill="#c2413b" stroke="#fff" stroke-width="1.5"/>
+<line x1="90.0" y1="435.8" x2="90.0" y2="435.8" stroke="#7952a0" stroke-width="1.5" opacity="0.72"/>
+<line x1="86.0" y1="435.8" x2="94.0" y2="435.8" stroke="#7952a0"/>
+<line x1="86.0" y1="435.8" x2="94.0" y2="435.8" stroke="#7952a0"/>
+<line x1="303.3" y1="435.8" x2="303.3" y2="435.8" stroke="#7952a0" stroke-width="1.5" opacity="0.72"/>
+<line x1="299.3" y1="435.8" x2="307.3" y2="435.8" stroke="#7952a0"/>
+<line x1="299.3" y1="435.8" x2="307.3" y2="435.8" stroke="#7952a0"/>
+<line x1="516.7" y1="435.8" x2="516.7" y2="435.8" stroke="#7952a0" stroke-width="1.5" opacity="0.72"/>
+<line x1="512.7" y1="435.8" x2="520.7" y2="435.8" stroke="#7952a0"/>
+<line x1="512.7" y1="435.8" x2="520.7" y2="435.8" stroke="#7952a0"/>
+<line x1="730.0" y1="435.8" x2="730.0" y2="435.8" stroke="#7952a0" stroke-width="1.5" opacity="0.72"/>
+<line x1="726.0" y1="435.8" x2="734.0" y2="435.8" stroke="#7952a0"/>
+<line x1="726.0" y1="435.8" x2="734.0" y2="435.8" stroke="#7952a0"/>
+<polyline points="90.0,435.8 303.3,435.8 516.7,435.8 730.0,435.8" fill="none" stroke="#7952a0" stroke-width="3"/>
+<circle cx="90.0" cy="435.8" r="4.5" fill="#7952a0" stroke="#fff" stroke-width="1.5"/>
+<circle cx="303.3" cy="435.8" r="4.5" fill="#7952a0" stroke="#fff" stroke-width="1.5"/>
+<circle cx="516.7" cy="435.8" r="4.5" fill="#7952a0" stroke="#fff" stroke-width="1.5"/>
+<circle cx="730.0" cy="435.8" r="4.5" fill="#7952a0" stroke="#fff" stroke-width="1.5"/>
+<line x1="90.0" y1="435.8" x2="90.0" y2="435.8" stroke="#2e8b57" stroke-width="1.5" opacity="0.72"/>
+<line x1="86.0" y1="435.8" x2="94.0" y2="435.8" stroke="#2e8b57"/>
+<line x1="86.0" y1="435.8" x2="94.0" y2="435.8" stroke="#2e8b57"/>
+<line x1="303.3" y1="435.8" x2="303.3" y2="435.8" stroke="#2e8b57" stroke-width="1.5" opacity="0.72"/>
+<line x1="299.3" y1="435.8" x2="307.3" y2="435.8" stroke="#2e8b57"/>
+<line x1="299.3" y1="435.8" x2="307.3" y2="435.8" stroke="#2e8b57"/>
+<line x1="516.7" y1="435.8" x2="516.7" y2="435.8" stroke="#2e8b57" stroke-width="1.5" opacity="0.72"/>
+<line x1="512.7" y1="435.8" x2="520.7" y2="435.8" stroke="#2e8b57"/>
+<line x1="512.7" y1="435.8" x2="520.7" y2="435.8" stroke="#2e8b57"/>
+<line x1="730.0" y1="435.8" x2="730.0" y2="435.8" stroke="#2e8b57" stroke-width="1.5" opacity="0.72"/>
+<line x1="726.0" y1="435.8" x2="734.0" y2="435.8" stroke="#2e8b57"/>
+<line x1="726.0" y1="435.8" x2="734.0" y2="435.8" stroke="#2e8b57"/>
+<polyline points="90.0,435.8 303.3,435.8 516.7,435.8 730.0,435.8" fill="none" stroke="#2e8b57" stroke-width="3"/>
+<circle cx="90.0" cy="435.8" r="4.5" fill="#2e8b57" stroke="#fff" stroke-width="1.5"/>
+<circle cx="303.3" cy="435.8" r="4.5" fill="#2e8b57" stroke="#fff" stroke-width="1.5"/>
+<circle cx="516.7" cy="435.8" r="4.5" fill="#2e8b57" stroke="#fff" stroke-width="1.5"/>
+<circle cx="730.0" cy="435.8" r="4.5" fill="#2e8b57" stroke="#fff" stroke-width="1.5"/>
+<line x1="755" y1="108" x2="782" y2="108" stroke="#176b87" stroke-width="3"/>
+<text x="790" y="112" font-family="Arial" font-size="12" fill="#31464e">ASFT</text>
+<line x1="755" y1="137" x2="782" y2="137" stroke="#6b7280" stroke-width="3"/>
+<text x="790" y="141" font-family="Arial" font-size="12" fill="#31464e">B1 NO LEARNING</text>
+<line x1="755" y1="166" x2="782" y2="166" stroke="#d18f00" stroke-width="3"/>
+<text x="790" y="170" font-family="Arial" font-size="12" fill="#31464e">B2 SKILL STORAGE ONLY</text>
+<line x1="755" y1="195" x2="782" y2="195" stroke="#c2413b" stroke-width="3"/>
+<text x="790" y="199" font-family="Arial" font-size="12" fill="#31464e">B3 RANDOM SKILL CREATION</text>
+<line x1="755" y1="224" x2="782" y2="224" stroke="#7952a0" stroke-width="3"/>
+<text x="790" y="228" font-family="Arial" font-size="12" fill="#31464e">B4 COMPRESSION PROXY</text>
+<line x1="755" y1="253" x2="782" y2="253" stroke="#2e8b57" stroke-width="3"/>
+<text x="790" y="257" font-family="Arial" font-size="12" fill="#31464e">A4 NO COMPOSITION</text>
+</svg>

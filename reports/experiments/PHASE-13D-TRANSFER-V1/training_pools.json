@@ -1,0 +1,686 @@
+[
+  {
+    "n_candidates": 8,
+    "n_eligible_skills": 6,
+    "n_promotable": 6,
+    "n_traces": 48,
+    "rejected": [],
+    "run_seed": 50,
+    "skills": [
+      {
+        "IS": 10.5,
+        "SCV10": 4.300000000000001,
+        "op": "apply_reflection",
+        "signature": [
+          "detect_object",
+          "find_symmetry",
+          "apply_reflection"
+        ],
+        "skill_id": "SC-INV-02a30b2b5dd074b7",
+        "source_family": "general"
+      },
+      {
+        "IS": 25.5,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_rotation",
+        "signature": [
+          "find_rotation"
+        ],
+        "skill_id": "SC-INV-489db88e598d48b3",
+        "source_family": "general"
+      },
+      {
+        "IS": 10.5,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_reflection",
+        "signature": [
+          "apply_reflection"
+        ],
+        "skill_id": "SC-INV-a4f872d69c07cbc0",
+        "source_family": "general"
+      },
+      {
+        "IS": 25.5,
+        "SCV10": 4.300000000000001,
+        "op": "apply_rotation",
+        "signature": [
+          "detect_object",
+          "find_rotation",
+          "apply_rotation"
+        ],
+        "skill_id": "SC-INV-b2ef40c97323c287",
+        "source_family": "general"
+      },
+      {
+        "IS": 10.5,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_reflection",
+        "signature": [
+          "find_symmetry"
+        ],
+        "skill_id": "SC-INV-b977e7292dcf8ad0",
+        "source_family": "general"
+      },
+      {
+        "IS": 25.5,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_rotation",
+        "signature": [
+          "apply_rotation"
+        ],
+        "skill_id": "SC-INV-cd89c6e9697e31c5",
+        "source_family": "general"
+      }
+    ]
+  },
+  {
+    "n_candidates": 8,
+    "n_eligible_skills": 6,
+    "n_promotable": 6,
+    "n_traces": 48,
+    "rejected": [],
+    "run_seed": 51,
+    "skills": [
+      {
+        "IS": 10.5,
+        "SCV10": 4.300000000000001,
+        "op": "apply_reflection",
+        "signature": [
+          "detect_object",
+          "find_symmetry",
+          "apply_reflection"
+        ],
+        "skill_id": "SC-INV-02a30b2b5dd074b7",
+        "source_family": "general"
+      },
+      {
+        "IS": 25.5,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_rotation",
+        "signature": [
+          "find_rotation"
+        ],
+        "skill_id": "SC-INV-489db88e598d48b3",
+        "source_family": "general"
+      },
+      {
+        "IS": 10.5,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_reflection",
+        "signature": [
+          "apply_reflection"
+        ],
+        "skill_id": "SC-INV-a4f872d69c07cbc0",
+        "source_family": "general"
+      },
+      {
+        "IS": 25.5,
+        "SCV10": 4.300000000000001,
+        "op": "apply_rotation",
+        "signature": [
+          "detect_object",
+          "find_rotation",
+          "apply_rotation"
+        ],
+        "skill_id": "SC-INV-b2ef40c97323c287",
+        "source_family": "general"
+      },
+      {
+        "IS": 10.5,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_reflection",
+        "signature": [
+          "find_symmetry"
+        ],
+        "skill_id": "SC-INV-b977e7292dcf8ad0",
+        "source_family": "general"
+      },
+      {
+        "IS": 25.5,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_rotation",
+        "signature": [
+          "apply_rotation"
+        ],
+        "skill_id": "SC-INV-cd89c6e9697e31c5",
+        "source_family": "general"
+      }
+    ]
+  },
+  {
+    "n_candidates": 8,
+    "n_eligible_skills": 6,
+    "n_promotable": 6,
+    "n_traces": 48,
+    "rejected": [],
+    "run_seed": 52,
+    "skills": [
+      {
+        "IS": 10.5,
+        "SCV10": 4.300000000000001,
+        "op": "apply_reflection",
+        "signature": [
+          "detect_object",
+          "find_symmetry",
+          "apply_reflection"
+        ],
+        "skill_id": "SC-INV-02a30b2b5dd074b7",
+        "source_family": "general"
+      },
+      {
+        "IS": 25.5,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_rotation",
+        "signature": [
+          "find_rotation"
+        ],
+        "skill_id": "SC-INV-489db88e598d48b3",
+        "source_family": "general"
+      },
+      {
+        "IS": 10.5,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_reflection",
+        "signature": [
+          "apply_reflection"
+        ],
+        "skill_id": "SC-INV-a4f872d69c07cbc0",
+        "source_family": "general"
+      },
+      {
+        "IS": 25.5,
+        "SCV10": 4.300000000000001,
+        "op": "apply_rotation",
+        "signature": [
+          "detect_object",
+          "find_rotation",
+          "apply_rotation"
+        ],
+        "skill_id": "SC-INV-b2ef40c97323c287",
+        "source_family": "general"
+      },
+      {
+        "IS": 10.5,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_reflection",
+        "signature": [
+          "find_symmetry"
+        ],
+        "skill_id": "SC-INV-b977e7292dcf8ad0",
+        "source_family": "general"
+      },
+      {
+        "IS": 25.5,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_rotation",
+        "signature": [
+          "apply_rotation"
+        ],
+        "skill_id": "SC-INV-cd89c6e9697e31c5",
+        "source_family": "general"
+      }
+    ]
+  },
+  {
+    "n_candidates": 8,
+    "n_eligible_skills": 6,
+    "n_promotable": 6,
+    "n_traces": 48,
+    "rejected": [],
+    "run_seed": 53,
+    "skills": [
+      {
+        "IS": 10.5,
+        "SCV10": 4.300000000000001,
+        "op": "apply_reflection",
+        "signature": [
+          "detect_object",
+          "find_symmetry",
+          "apply_reflection"
+        ],
+        "skill_id": "SC-INV-02a30b2b5dd074b7",
+        "source_family": "general"
+      },
+      {
+        "IS": 25.5,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_rotation",
+        "signature": [
+          "find_rotation"
+        ],
+        "skill_id": "SC-INV-489db88e598d48b3",
+        "source_family": "general"
+      },
+      {
+        "IS": 10.5,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_reflection",
+        "signature": [
+          "apply_reflection"
+        ],
+        "skill_id": "SC-INV-a4f872d69c07cbc0",
+        "source_family": "general"
+      },
+      {
+        "IS": 25.5,
+        "SCV10": 4.300000000000001,
+        "op": "apply_rotation",
+        "signature": [
+          "detect_object",
+          "find_rotation",
+          "apply_rotation"
+        ],
+        "skill_id": "SC-INV-b2ef40c97323c287",
+        "source_family": "general"
+      },
+      {
+        "IS": 10.5,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_reflection",
+        "signature": [
+          "find_symmetry"
+        ],
+        "skill_id": "SC-INV-b977e7292dcf8ad0",
+        "source_family": "general"
+      },
+      {
+        "IS": 25.5,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_rotation",
+        "signature": [
+          "apply_rotation"
+        ],
+        "skill_id": "SC-INV-cd89c6e9697e31c5",
+        "source_family": "general"
+      }
+    ]
+  },
+  {
+    "n_candidates": 8,
+    "n_eligible_skills": 6,
+    "n_promotable": 6,
+    "n_traces": 48,
+    "rejected": [],
+    "run_seed": 54,
+    "skills": [
+      {
+        "IS": 6.5,
+        "SCV10": 2.633333333333333,
+        "op": "apply_reflection",
+        "signature": [
+          "detect_object",
+          "find_symmetry",
+          "apply_reflection"
+        ],
+        "skill_id": "SC-INV-02a30b2b5dd074b7",
+        "source_family": "general"
+      },
+      {
+        "IS": 26.25,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_rotation",
+        "signature": [
+          "find_rotation"
+        ],
+        "skill_id": "SC-INV-489db88e598d48b3",
+        "source_family": "general"
+      },
+      {
+        "IS": 6.5,
+        "SCV10": 0.411111111111111,
+        "op": "apply_reflection",
+        "signature": [
+          "apply_reflection"
+        ],
+        "skill_id": "SC-INV-a4f872d69c07cbc0",
+        "source_family": "general"
+      },
+      {
+        "IS": 26.25,
+        "SCV10": 4.300000000000001,
+        "op": "apply_rotation",
+        "signature": [
+          "detect_object",
+          "find_rotation",
+          "apply_rotation"
+        ],
+        "skill_id": "SC-INV-b2ef40c97323c287",
+        "source_family": "general"
+      },
+      {
+        "IS": 6.5,
+        "SCV10": 0.411111111111111,
+        "op": "apply_reflection",
+        "signature": [
+          "find_symmetry"
+        ],
+        "skill_id": "SC-INV-b977e7292dcf8ad0",
+        "source_family": "general"
+      },
+      {
+        "IS": 26.25,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_rotation",
+        "signature": [
+          "apply_rotation"
+        ],
+        "skill_id": "SC-INV-cd89c6e9697e31c5",
+        "source_family": "general"
+      }
+    ]
+  },
+  {
+    "n_candidates": 8,
+    "n_eligible_skills": 3,
+    "n_promotable": 3,
+    "n_traces": 48,
+    "rejected": [],
+    "run_seed": 55,
+    "skills": [
+      {
+        "IS": 27.0,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_rotation",
+        "signature": [
+          "find_rotation"
+        ],
+        "skill_id": "SC-INV-489db88e598d48b3",
+        "source_family": "general"
+      },
+      {
+        "IS": 27.0,
+        "SCV10": 4.300000000000001,
+        "op": "apply_rotation",
+        "signature": [
+          "detect_object",
+          "find_rotation",
+          "apply_rotation"
+        ],
+        "skill_id": "SC-INV-b2ef40c97323c287",
+        "source_family": "general"
+      },
+      {
+        "IS": 27.0,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_rotation",
+        "signature": [
+          "apply_rotation"
+        ],
+        "skill_id": "SC-INV-cd89c6e9697e31c5",
+        "source_family": "general"
+      }
+    ]
+  },
+  {
+    "n_candidates": 8,
+    "n_eligible_skills": 6,
+    "n_promotable": 6,
+    "n_traces": 48,
+    "rejected": [],
+    "run_seed": 56,
+    "skills": [
+      {
+        "IS": 6.5,
+        "SCV10": 2.633333333333333,
+        "op": "apply_reflection",
+        "signature": [
+          "detect_object",
+          "find_symmetry",
+          "apply_reflection"
+        ],
+        "skill_id": "SC-INV-02a30b2b5dd074b7",
+        "source_family": "general"
+      },
+      {
+        "IS": 26.25,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_rotation",
+        "signature": [
+          "find_rotation"
+        ],
+        "skill_id": "SC-INV-489db88e598d48b3",
+        "source_family": "general"
+      },
+      {
+        "IS": 6.5,
+        "SCV10": 0.411111111111111,
+        "op": "apply_reflection",
+        "signature": [
+          "apply_reflection"
+        ],
+        "skill_id": "SC-INV-a4f872d69c07cbc0",
+        "source_family": "general"
+      },
+      {
+        "IS": 26.25,
+        "SCV10": 4.300000000000001,
+        "op": "apply_rotation",
+        "signature": [
+          "detect_object",
+          "find_rotation",
+          "apply_rotation"
+        ],
+        "skill_id": "SC-INV-b2ef40c97323c287",
+        "source_family": "general"
+      },
+      {
+        "IS": 6.5,
+        "SCV10": 0.411111111111111,
+        "op": "apply_reflection",
+        "signature": [
+          "find_symmetry"
+        ],
+        "skill_id": "SC-INV-b977e7292dcf8ad0",
+        "source_family": "general"
+      },
+      {
+        "IS": 26.25,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_rotation",
+        "signature": [
+          "apply_rotation"
+        ],
+        "skill_id": "SC-INV-cd89c6e9697e31c5",
+        "source_family": "general"
+      }
+    ]
+  },
+  {
+    "n_candidates": 8,
+    "n_eligible_skills": 6,
+    "n_promotable": 6,
+    "n_traces": 48,
+    "rejected": [],
+    "run_seed": 57,
+    "skills": [
+      {
+        "IS": 11.25,
+        "SCV10": 4.300000000000001,
+        "op": "apply_reflection",
+        "signature": [
+          "detect_object",
+          "find_symmetry",
+          "apply_reflection"
+        ],
+        "skill_id": "SC-INV-02a30b2b5dd074b7",
+        "source_family": "general"
+      },
+      {
+        "IS": 24.75,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_rotation",
+        "signature": [
+          "find_rotation"
+        ],
+        "skill_id": "SC-INV-489db88e598d48b3",
+        "source_family": "general"
+      },
+      {
+        "IS": 11.25,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_reflection",
+        "signature": [
+          "apply_reflection"
+        ],
+        "skill_id": "SC-INV-a4f872d69c07cbc0",
+        "source_family": "general"
+      },
+      {
+        "IS": 24.75,
+        "SCV10": 4.300000000000001,
+        "op": "apply_rotation",
+        "signature": [
+          "detect_object",
+          "find_rotation",
+          "apply_rotation"
+        ],
+        "skill_id": "SC-INV-b2ef40c97323c287",
+        "source_family": "general"
+      },
+      {
+        "IS": 11.25,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_reflection",
+        "signature": [
+          "find_symmetry"
+        ],
+        "skill_id": "SC-INV-b977e7292dcf8ad0",
+        "source_family": "general"
+      },
+      {
+        "IS": 24.75,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_rotation",
+        "signature": [
+          "apply_rotation"
+        ],
+        "skill_id": "SC-INV-cd89c6e9697e31c5",
+        "source_family": "general"
+      }
+    ]
+  },
+  {
+    "n_candidates": 8,
+    "n_eligible_skills": 6,
+    "n_promotable": 6,
+    "n_traces": 48,
+    "rejected": [],
+    "run_seed": 58,
+    "skills": [
+      {
+        "IS": 11.25,
+        "SCV10": 4.300000000000001,
+        "op": "apply_reflection",
+        "signature": [
+          "detect_object",
+          "find_symmetry",
+          "apply_reflection"
+        ],
+        "skill_id": "SC-INV-02a30b2b5dd074b7",
+        "source_family": "general"
+      },
+      {
+        "IS": 24.75,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_rotation",
+        "signature": [
+          "find_rotation"
+        ],
+        "skill_id": "SC-INV-489db88e598d48b3",
+        "source_family": "general"
+      },
+      {
+        "IS": 11.25,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_reflection",
+        "signature": [
+          "apply_reflection"
+        ],
+        "skill_id": "SC-INV-a4f872d69c07cbc0",
+        "source_family": "general"
+      },
+      {
+        "IS": 24.75,
+        "SCV10": 4.300000000000001,
+        "op": "apply_rotation",
+        "signature": [
+          "detect_object",
+          "find_rotation",
+          "apply_rotation"
+        ],
+        "skill_id": "SC-INV-b2ef40c97323c287",
+        "source_family": "general"
+      },
+      {
+        "IS": 11.25,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_reflection",
+        "signature": [
+          "find_symmetry"
+        ],
+        "skill_id": "SC-INV-b977e7292dcf8ad0",
+        "source_family": "general"
+      },
+      {
+        "IS": 24.75,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_rotation",
+        "signature": [
+          "apply_rotation"
+        ],
+        "skill_id": "SC-INV-cd89c6e9697e31c5",
+        "source_family": "general"
+      }
+    ]
+  },
+  {
+    "n_candidates": 6,
+    "n_eligible_skills": 4,
+    "n_promotable": 4,
+    "n_traces": 48,
+    "rejected": [],
+    "run_seed": 59,
+    "skills": [
+      {
+        "IS": 24.0,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_rotation",
+        "signature": [
+          "find_rotation"
+        ],
+        "skill_id": "SC-INV-489db88e598d48b3",
+        "source_family": "general"
+      },
+      {
+        "IS": 12.0,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_reflection",
+        "signature": [
+          "apply_reflection"
+        ],
+        "skill_id": "SC-INV-a4f872d69c07cbc0",
+        "source_family": "general"
+      },
+      {
+        "IS": 12.0,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_reflection",
+        "signature": [
+          "find_symmetry"
+        ],
+        "skill_id": "SC-INV-b977e7292dcf8ad0",
+        "source_family": "general"
+      },
+      {
+        "IS": 24.0,
+        "SCV10": 0.9666666666666666,
+        "op": "apply_rotation",
+        "signature": [
+          "apply_rotation"
+        ],
+        "skill_id": "SC-INV-cd89c6e9697e31c5",
+        "source_family": "general"
+      }
+    ]
+  }
+]
