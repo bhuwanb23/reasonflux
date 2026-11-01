@@ -1,0 +1,30 @@
+{
+  "review_id": "PHASE-14C-SCT-CRITICAL-ANALYSIS-V1",
+  "method": "read-only critical analysis of saved Phase 13 evidence; no experiments rerun",
+  "sources": [
+    {"path": "../PHASE-13C-SCT-V1/evidence_package.md", "role": "confirmatory SCT results, selection gate, reuse, composition, lifecycle, cost sensitivities"},
+    {"path": "../PHASE-13C-SCT-V1/summary.md", "role": "compact primary and correlational results"},
+    {"path": "../PHASE-13C-SCT-V1/correlations.json", "role": "SCV/SU predictor statistics and cluster bootstrap intervals"},
+    {"path": "../PHASE-13C-SCT-V1/candidate_level.csv", "role": "candidate and selection outcomes"},
+    {"path": "../PHASE-13C-SCT-V1/matched_controls.csv", "role": "policy comparison and paired outcomes"},
+    {"path": "../PHASE-13C-SCT-V1/composition.csv", "role": "pair-level composition evidence and unavailable families"},
+    {"path": "../PHASE-13C-SCT-V1/lifecycle.csv", "role": "dormancy/reactivation outcomes"},
+    {"path": "../PHASE-13C-SCT-V1/calibration_summary.md", "role": "calibration cutoff and random-create probability"},
+    {"path": "../PHASE-13C-SCT-V1/record.json", "role": "saved confirmation record; source of truth for run seeds"},
+    {"path": "../PHASE-13F-BASELINE-ABLATION-V1/evidence_package.md", "role": "baseline and ablation comparisons; explicit limitations"},
+    {"path": "../PHASE-13F-BASELINE-ABLATION-V1/master_result_matrix.csv", "role": "per-arm summarized outcomes"},
+    {"path": "../PHASE-13F-BASELINE-ABLATION-V1/candidate_selection.csv", "role": "eligible pool and created/persistent skill counts"},
+    {"path": "../PHASE-13F-BASELINE-ABLATION-V1/skill_lifecycle.csv", "role": "lifecycle events in Phase 13F arms"},
+    {"path": "../PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md", "role": "bounded ARC skill formation, fit rates, holdout and attempt-history caveat"},
+    {"path": "../PHASE-13H-EVIDENCE-CONSOLIDATION-V1/package_B_SCT.md", "role": "consolidated SCT interpretation"},
+    {"path": "../PHASE-13H-EVIDENCE-CONSOLIDATION-V1/claim_evidence_matrix.csv", "role": "cross-phase claim status and defensible wording"},
+    {"path": "../PHASE-13H-EVIDENCE-CONSOLIDATION-V1/negative_evidence_register.csv", "role": "preserved null and failed findings"}
+  ],
+  "notes": [
+    "Phase 13C confirmatory seeds are 20-29; calibration seeds are 15-19. Its saved record is authoritative where a CLI completion line displayed calibration seeds.",
+    "Phase 13F seeds are 70-79. Interrupted attempt 01 remains preserved and excluded from the completed evidence package.",
+    "Phase 13C MEMORY_ONLY and Phase 13F B2_MEMORY_SKILL_STORE are different baselines in different protocols and metrics; they are not pooled.",
+    "Phase 13G is treated as a null for the bounded ARC adapter, not a general disproof of SCT or evidence that ARC lacks skills.",
+    "No Phase 13 outputs were modified; no experiment was rerun."
+  ]
+}

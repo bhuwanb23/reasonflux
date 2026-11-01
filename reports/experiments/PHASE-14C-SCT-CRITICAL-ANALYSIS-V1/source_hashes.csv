@@ -1,0 +1,18 @@
+source_path,role,bytes,sha256
+../PHASE-13C-SCT-V1/evidence_package.md,"confirmatory SCT results, selection gate, reuse, composition, lifecycle, cost sensitivities",10362,bdaf81eae3923dd66c2ea158a4fc3d8fc6f3cae0c7fb1cfc298174f2015131d3
+../PHASE-13C-SCT-V1/summary.md,compact primary and correlational results,3231,bac4148d7ddd5c19b011c25fa14a230156fc7260ab1da4739a9dbe0e0090be96
+../PHASE-13C-SCT-V1/correlations.json,SCV/SU predictor statistics and cluster bootstrap intervals,1699,8b95e02faf46e4793bbf4b42f849674549f1bb730d491b58c10852e0ef9034a9
+../PHASE-13C-SCT-V1/candidate_level.csv,candidate and selection outcomes,11434,ba614eeb77a42ee37d83ac99bd7460c4c61aa2a38e32d8c278565ced1a67a1c0
+../PHASE-13C-SCT-V1/matched_controls.csv,policy comparison and paired outcomes,1601,a0f1e4ccedd553978dd7f54d8b0da293a311dd8899dd474433dc954484765a57
+../PHASE-13C-SCT-V1/composition.csv,pair-level composition evidence and unavailable families,71726,32e0433d0ae75d7591f7e471c664593f15907ce089797e1cdd5b7233e24d1709
+../PHASE-13C-SCT-V1/lifecycle.csv,dormancy/reactivation outcomes,87876,bb7d4998475e13ff3d0d08bd59f75912e547d3fe84d68ecc8d54176c3ee322e5
+../PHASE-13C-SCT-V1/calibration_summary.md,calibration cutoff and random-create probability,305,82b84faef3fc1556d5fb7b8013c04a852f77b92e6baaae4e089d44d1f96539c4
+../PHASE-13C-SCT-V1/record.json,saved confirmation record; source of truth for run seeds,5951957,26a1dae6d53c189630728528d42621927f611138be215ee2677e657b98b87f6b
+../PHASE-13F-BASELINE-ABLATION-V1/evidence_package.md,baseline and ablation comparisons; explicit limitations,8225,42443a38d0b6f9e0ee95931339c3a9d8344dbfee4a8247ad992fd9e74a85b6cd
+../PHASE-13F-BASELINE-ABLATION-V1/master_result_matrix.csv,per-arm summarized outcomes,2312,35c52b770312d9914cf640acd78f1cdd2ad63ef981c1c6d93ccb8a3092a15e1e
+../PHASE-13F-BASELINE-ABLATION-V1/candidate_selection.csv,eligible pool and created/persistent skill counts,6780,0145b558d9a74f6457fcc4be07dd767908ad70d10d88208ff6f2dc7921875dfe
+../PHASE-13F-BASELINE-ABLATION-V1/skill_lifecycle.csv,lifecycle events in Phase 13F arms,176209,23e68a1e490befe6c75d521de41dccdade5f3b1ed17a27711a1cb07fb3b3d353
+../PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md,"bounded ARC skill formation, fit rates, holdout and attempt-history caveat",6671,ca9e71eee2092dcbb352dacc67a083bcb1b81bc409e67ecb1783f2c6b1fc7158
+../PHASE-13H-EVIDENCE-CONSOLIDATION-V1/package_B_SCT.md,consolidated SCT interpretation,4672,2fbbf59dc5e147b03a2c6e815076d999ddbcd9d586d7a5c9f366a1d7796fb012
+../PHASE-13H-EVIDENCE-CONSOLIDATION-V1/claim_evidence_matrix.csv,cross-phase claim status and defensible wording,3871,cd33974a405995d0e8dbbdd2ec62dddc60e3f78e3d00cc89922b264090369f6d
+../PHASE-13H-EVIDENCE-CONSOLIDATION-V1/negative_evidence_register.csv,preserved null and failed findings,3975,8ea4f686a6e51032a4bcea78161d25dfc220ae49526bae89f8706c2cc94b1b78

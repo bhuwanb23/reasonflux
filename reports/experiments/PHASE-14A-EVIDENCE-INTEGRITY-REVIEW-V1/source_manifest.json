@@ -1,0 +1,435 @@
+{
+  "review_id": "PHASE-14A-EVIDENCE-INTEGRITY-REVIEW-V1",
+  "purpose": "documentary integrity audit of frozen/saved Phase 13 evidence; no benchmark run",
+  "hash_algorithm": "SHA-256 for current file bytes; Git blob SHA-1 where available",
+  "source_count": 58,
+  "sources": [
+    {
+      "path": "docs/03_implementation/validation/phase_13a.md",
+      "sha256_worktree": "bd432e74d5ff2434025dd7e15080225c33096ec79d9414b1faa45db6e7a04608",
+      "size_bytes": 6062,
+      "git_head_blob_sha1": "be641dcdb088def3b538efb446966070d9015106",
+      "git_head_content_sha256": "bd432e74d5ff2434025dd7e15080225c33096ec79d9414b1faa45db6e7a04608",
+      "differs_from_head": false
+    },
+    {
+      "path": "docs/03_implementation/validation/experiment_registry.md",
+      "sha256_worktree": "7172b1df124218c2ed3fcadedca0905e0defa2eef0f5d4c9f9281803e896f113",
+      "size_bytes": 4173,
+      "git_head_blob_sha1": "0fd6b3931765524d81c18705d02100227db4fefa",
+      "git_head_content_sha256": "7172b1df124218c2ed3fcadedca0905e0defa2eef0f5d4c9f9281803e896f113",
+      "differs_from_head": false
+    },
+    {
+      "path": "docs/02_design/metrics.md",
+      "sha256_worktree": "f80f413bdb15f251a3314d4b9843391578506f5de546152de3d3b223ca7b493a",
+      "size_bytes": 2928,
+      "git_head_blob_sha1": "4ccb575393963fb338f5d614e8efd2d879ff6b70",
+      "git_head_content_sha256": "f80f413bdb15f251a3314d4b9843391578506f5de546152de3d3b223ca7b493a",
+      "differs_from_head": false
+    },
+    {
+      "path": "reports/experiments/phase13a_gates/report.md",
+      "sha256_worktree": "58edad627cd3158f9572147e04d0b0b8491e192da4028237950428e7c26bc3fe",
+      "size_bytes": 1797,
+      "git_head_blob_sha1": "a79372f0123099a1b218a5085640206e79137aaf",
+      "git_head_content_sha256": "83f1de0d6d394c673956d2d8c70de4049dfe9e24fb5826a12e46ba1944cbde1d",
+      "differs_from_head": true
+    },
+    {
+      "path": "reports/experiments/phase13a_gates/record.json",
+      "sha256_worktree": "740301ae812a089594e0210870285be32ceeca845cece2727812392246ac7640",
+      "size_bytes": 2319,
+      "git_head_blob_sha1": "dbd84f1a46bfb28d8d044b38539a86958339fea1",
+      "git_head_content_sha256": "1475ca6e6245362d50160a73b80085c1a4800822376f1c7d00bafc8944a2a086",
+      "differs_from_head": true
+    },
+    {
+      "path": "reports/metrics/phase13a_gates.md",
+      "sha256_worktree": "a9b44485b84f82880e0cb2c31b7687f1c534c3b41c4e4c005f3ec4f409118474",
+      "size_bytes": 1103,
+      "git_head_blob_sha1": "6393182642a6dcc76c46f753b611bcfb679b98fb",
+      "git_head_content_sha256": "86f97e862e8dd952e31a9fa6de08559ab8273dd9dae4afcde2df9680e5e0d3c2",
+      "differs_from_head": true
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13b.md",
+      "sha256_worktree": "70aa60b9f520bf6b32a041ad9095cf9eb15704e2eb44fe90a97069574bd2674b",
+      "size_bytes": 7513,
+      "git_head_blob_sha1": "9ca02da9b595f8df5ccb5375742e657bf4932f1d",
+      "git_head_content_sha256": "70aa60b9f520bf6b32a041ad9095cf9eb15704e2eb44fe90a97069574bd2674b",
+      "differs_from_head": false
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13b_results.md",
+      "sha256_worktree": "3fe2b148cb59766c5988c06279bc93f16dca94a91cbb3462191b80b502ab3c7f",
+      "size_bytes": 8487,
+      "tracked_at_head": false
+    },
+    {
+      "path": "configs/experiments.yaml",
+      "sha256_worktree": "0ec6b1b5ca39e345d555c73cfc6d0dddf7f8ca6dee49baa9bc687d83ca09d363",
+      "size_bytes": 3239,
+      "git_head_blob_sha1": "5e8ee5f84ee7ce6a6cdd3b75892270b060349ab0",
+      "git_head_content_sha256": "9730d900124ff34de660d9945be61d147d9488cbc950c10bd80b75b3a531ddd4",
+      "differs_from_head": true
+    },
+    {
+      "path": "configs/thresholds.yaml",
+      "sha256_worktree": "8225cd61e90c2f97e4bc9181b1c4241a9d225467f9d2e0c5af75d1592cb9af52",
+      "size_bytes": 5350,
+      "git_head_blob_sha1": "a6da4da64d21a3d13068a97d88eeff843213aa34",
+      "git_head_content_sha256": "8225cd61e90c2f97e4bc9181b1c4241a9d225467f9d2e0c5af75d1592cb9af52",
+      "differs_from_head": false
+    },
+    {
+      "path": "experiments/idt_experiments.py",
+      "sha256_worktree": "0e7d4d503780caafe9e9aa3ccce0949e72c4fa03d044b2fb8f6d215aec82a5f0",
+      "size_bytes": 47184,
+      "git_head_blob_sha1": "04a3b3555cd79a96c7236820651f8b3f68eb4bfb",
+      "git_head_content_sha256": "c52ea21238ab92bcdc534193bda6fcafb8b9ce9432eb43363fbaa14f11dd6cf6",
+      "differs_from_head": true
+    },
+    {
+      "path": "src/solver/executor.py",
+      "sha256_worktree": "ea01892664546e9b513d1e64bd7883a12bd50cabfe532bf23013cfab576407d8",
+      "size_bytes": 9627,
+      "git_head_blob_sha1": "3ec804d1c0b271f17fac3c982b211719c6bcab38",
+      "git_head_content_sha256": "5057c7ba00d58dd7e6272248c4be95fdf3805573884d846fa4c89633d5a8484f",
+      "differs_from_head": true
+    },
+    {
+      "path": "reports/experiments/idt_evidence/summary.json",
+      "sha256_worktree": "b31b6de139ed1528070c957714838271ee042f927af92dd4be11c4fe8183562a",
+      "size_bytes": 155193,
+      "git_head_blob_sha1": "bcdb45d4c6498dca82750d33b97044f9d39d697d",
+      "git_head_content_sha256": "860592ad77d1a9d7520aecb0ed46ba683149070a67637621a151dfae328e473a",
+      "differs_from_head": true
+    },
+    {
+      "path": "reports/experiments/EXP-IDT-BASELINES/record.json",
+      "sha256_worktree": "da777a02ba83c51c9052cce93be63c3bb9122eb447ba863e2783864e93f10e22",
+      "size_bytes": 20330,
+      "git_head_blob_sha1": "c888378822db6421724e60e700018f6ba1851a94",
+      "git_head_content_sha256": "e26d017a6a94f827b8380527b123f3ce69d205ffd5bc462d24a0417bd2263c11",
+      "differs_from_head": true
+    },
+    {
+      "path": "reports/experiments/EXP-IDT-BASELINES/report.md",
+      "sha256_worktree": "45b1988b3426d75d66f1f5879c775972abf73cbd8430cfb435c4f6fda5e4fa34",
+      "size_bytes": 13994,
+      "git_head_blob_sha1": "f1e197ac94d5c7cdd76d66ae38e5c2c0af4fff91",
+      "git_head_content_sha256": "641fa77db6f441373de65e8553a7b14bc643a9868afc7845074fca9728665b52",
+      "differs_from_head": true
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13c.md",
+      "sha256_worktree": "949372ca72c164eae4fef027124826977de7978e421667cf4fa959592ebe37b6",
+      "size_bytes": 8206,
+      "git_head_blob_sha1": "09ec02c1df57f780789fa276f7e8a29c100ad46d",
+      "git_head_content_sha256": "5ae5a0aa8a431806f04a5a12c3d5b811c707d4d5841e3145451f0c5b9aa96347",
+      "differs_from_head": true
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13c_preflight.md",
+      "sha256_worktree": "cc5d865198e9757d46636aff8407f13010268c35dfc4bfb250fb9f06c1f1ae71",
+      "size_bytes": 14501,
+      "tracked_at_head": false
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13c_preregistration_v1.md",
+      "sha256_worktree": "7b42590f7cd79c86f3f0e2d5b1048ecc42add3574067a07e71aeb02ca17e0261",
+      "size_bytes": 12242,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/pre_confirmation_freeze.json",
+      "sha256_worktree": "56916382a2dd1253a2e988396f864b7256ad7308ccd7a9f2ef07278b6e0b8096",
+      "size_bytes": 1676,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/analysis_manifest.json",
+      "sha256_worktree": "c0c406ae64ca6e4b815b237b49337b86135e6f7815f7380416fae68cf4547944",
+      "size_bytes": 5002,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/evidence_package.md",
+      "sha256_worktree": "bdaf81eae3923dd66c2ea158a4fc3d8fc6f3cae0c7fb1cfc298174f2015131d3",
+      "size_bytes": 10362,
+      "tracked_at_head": false
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13d.md",
+      "sha256_worktree": "c0d905a62d667e15f2027bba401d03aafc7ba5ba4108883ac5384c7ee88a4352",
+      "size_bytes": 8135,
+      "git_head_blob_sha1": "a5ecc155e7047e55ee5a4f8951bb4ea712dbb21a",
+      "git_head_content_sha256": "dbce4320ab13de330c23de713e8170a542fa46e6e7194d83088b3412e7765325",
+      "differs_from_head": true
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13d_preflight.md",
+      "sha256_worktree": "b22803e284d97b91ef07fe634c3e9f1a99db3f5581711da4954e4bc9f11b08a5",
+      "size_bytes": 5358,
+      "tracked_at_head": false
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13d_preregistration_v1.md",
+      "sha256_worktree": "3c3512ebef26b2bc8313d5579f1ceca6ce178ada01c47f8c8e9ba3fefd2d9d0c",
+      "size_bytes": 14099,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13D-TRANSFER-V1/preregistration_hashes.json",
+      "sha256_worktree": "8f5ea370175cc929dadeb46196c935c3febbaab94826e34e66a373eb2ad5bf13",
+      "size_bytes": 21884,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_analysis.md",
+      "sha256_worktree": "fd93a2b999f0d0620420213ded433b9f7638eae7ae4bbe8036ac61dfefcd175e",
+      "size_bytes": 2775,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_corrected_criteria.json",
+      "sha256_worktree": "0c91030b7c0a92285bf48480f0c96fe4fa806c90ad6a02bcc6262eed42a23a07",
+      "size_bytes": 33527,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13D-TRANSFER-V1/task_level.jsonl",
+      "sha256_worktree": "e580e1cd0e952a4824bbdbd03c3cecec83f18719a8c86c0b9a72ea58ee6289c2",
+      "size_bytes": 12007407,
+      "tracked_at_head": false
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13e.md",
+      "sha256_worktree": "5f40c0587385874433171078cb5fcd1f9933850a09e55db97f5d85d9c2c9d378",
+      "size_bytes": 8962,
+      "git_head_blob_sha1": "420879e5a8da09bccfbef0068d0c3709a644e19f",
+      "git_head_content_sha256": "5f40c0587385874433171078cb5fcd1f9933850a09e55db97f5d85d9c2c9d378",
+      "differs_from_head": false
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13e_preflight.md",
+      "sha256_worktree": "bcf6fd9cdcf262b79e9532934c84801e226f3131f6348781c4b5d5097ec31102",
+      "size_bytes": 3378,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md",
+      "sha256_worktree": "b12c706818452c8033699f9dc5bbdc1246349760a307d3b4085951060d223f54",
+      "size_bytes": 8909,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/frozen_run_manifest.json",
+      "sha256_worktree": "cf6ef50f4bd7f4f78bd43e2ca7c13a2cd1309a141e58ad73062bc642a12c1790",
+      "size_bytes": 32250,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/run_manifest.json",
+      "sha256_worktree": "3cb40e0844ab01ebfb2fbeac72a376ff238e5f9a04c530a6686ba6429e679a5d",
+      "size_bytes": 33647,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/posthoc_analysis_manifest.json",
+      "sha256_worktree": "2edac56433fd66e4ca6d9e3fe4b0c0ada7394499df29a00d7cb1180d7692673b",
+      "size_bytes": 1252,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/analysis.json",
+      "sha256_worktree": "5b04b3cf37b17962797853b103e31d3a2af7bfb87de45f341d525976400d6268",
+      "size_bytes": 255400,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/seed_summary.csv",
+      "sha256_worktree": "c9a359abe3c3b16338f36001d2be51de1ff41297f2eefb445c9dbbf94b9807ed",
+      "size_bytes": 43870,
+      "tracked_at_head": false
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13f.md",
+      "sha256_worktree": "24ad586193a9b56ed9b0398eeaafcdb1a38091de782ead297358656c0f5a0f7e",
+      "size_bytes": 8104,
+      "git_head_blob_sha1": "0f07ff2f4df0ccaed63a6a024b39eff70cd4ad41",
+      "git_head_content_sha256": "24ad586193a9b56ed9b0398eeaafcdb1a38091de782ead297358656c0f5a0f7e",
+      "differs_from_head": false
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13f_preflight.md",
+      "sha256_worktree": "ae00ace3aadb582f8d310b6381d6b1b1b9b080108c2c50438259909549040e78",
+      "size_bytes": 2598,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/evidence_package.md",
+      "sha256_worktree": "42443a38d0b6f9e0ee95931339c3a9d8344dbfee4a8247ad992fd9e74a85b6cd",
+      "size_bytes": 8225,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/frozen_run_manifest.json",
+      "sha256_worktree": "f8aa7fa72db5cb097846dcc98de0dc80ecf612dcb813062a23dc1ff2e273f2c7",
+      "size_bytes": 22741,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/run_manifest.json",
+      "sha256_worktree": "4e6025dca0b33855090243cb71fc451a20c817c66408011c669c5cf4a7fb993f",
+      "size_bytes": 24053,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/posthoc_analysis_manifest.json",
+      "sha256_worktree": "90e2ee3e9960ecb869e228a467871e705a280829eb423cc6fa61f8060fb5a213",
+      "size_bytes": 1270,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/analysis.json",
+      "sha256_worktree": "0e91cbf333fe40598ee0dcce36b9d5a6c5aa7c5ff5b8720f5c5901b733f69d11",
+      "size_bytes": 352058,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/seed_summary.csv",
+      "sha256_worktree": "25b230b4eebeec69fe7981e7932b40393cfe730cc7cf85e02588d266f4112e22",
+      "size_bytes": 57116,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1-ATTEMPT-01-INTERRUPTED/execution_note.md",
+      "sha256_worktree": "6f73cbbf32fb7bb3b30b19826d07261b241e0c59fa5d4b62e8a3886b143edacb",
+      "size_bytes": 876,
+      "tracked_at_head": false
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13g.md",
+      "sha256_worktree": "f23414a94f395b550f9c2fd9de2375d3c50901ff4aa7f423cfe52044ce1a4b05",
+      "size_bytes": 7379,
+      "git_head_blob_sha1": "0242efcf41032600f4f17d6404c4b3218ede187a",
+      "git_head_content_sha256": "f23414a94f395b550f9c2fd9de2375d3c50901ff4aa7f423cfe52044ce1a4b05",
+      "differs_from_head": false
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13g_preflight.md",
+      "sha256_worktree": "2222fc4cde7bf051dfe6b42336c27bf7c04dea6d4c25f098d2bf35b27fe26b48",
+      "size_bytes": 5733,
+      "tracked_at_head": false
+    },
+    {
+      "path": "experiments/phase13g/preregistration.md",
+      "sha256_worktree": "3a07ea4195e7c3a504505bd711780e91230314f12fe15e13c9b4bf3720f4e015",
+      "size_bytes": 13275,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md",
+      "sha256_worktree": "ca9e71eee2092dcbb352dacc67a083bcb1b81bc409e67ecb1783f2c6b1fc7158",
+      "size_bytes": 6671,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/frozen_run_manifest.json",
+      "sha256_worktree": "790ae52b75164288a84cc11639f48eb22b9576248a2b67cd59cf6ef219c19c04",
+      "size_bytes": 30979,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/run_manifest.json",
+      "sha256_worktree": "5a39c13cfb97045a4c1f3203be7f964ef5d700699c445c65c4bc395d84c544a9",
+      "size_bytes": 31832,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1-ATTEMPT-01-REPORT-WRITE-FAILED/run_manifest.json",
+      "sha256_worktree": "08a6f57f81456602d8157babcde3ee136409c847692a1540cbcae20808c0471c",
+      "size_bytes": 30925,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1-ATTEMPT-01-REPORT-WRITE-FAILED/frozen_run_manifest.json",
+      "sha256_worktree": "7558ebf1897da8f2f9a7da8679c9064ab51ae79d612b96ea6508437340c55971",
+      "size_bytes": 30537,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1-ATTEMPT-01-REPORT-WRITE-FAILED/attempt_note.md",
+      "sha256_worktree": "c2b97b33302fea825f85e64e960a14652e0d78105348a2578ba6bac3657fd682",
+      "size_bytes": 1411,
+      "tracked_at_head": false
+    },
+    {
+      "path": "docs/03_implementation/validation/phase_13h.md",
+      "sha256_worktree": "75da296aebe66f1a7fc8bd10838d6fb554754105e130a0697b94d9b8239dc339",
+      "size_bytes": 6811,
+      "git_head_blob_sha1": "19d351c3d5c2f946d83fb6580fb3e8f9549cfb82",
+      "git_head_content_sha256": "75da296aebe66f1a7fc8bd10838d6fb554754105e130a0697b94d9b8239dc339",
+      "differs_from_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/master_evidence_package.md",
+      "sha256_worktree": "f35ff3774672db5fd4619d0ce4802d07a0ea6d97793251002094a5a88303cd31",
+      "size_bytes": 26290,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/claim_evidence_matrix.csv",
+      "sha256_worktree": "cd33974a405995d0e8dbbdd2ec62dddc60e3f78e3d00cc89922b264090369f6d",
+      "size_bytes": 3871,
+      "tracked_at_head": false
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/source_manifest.json",
+      "sha256_worktree": "79d25536b88c0780e49d70e7142bef79c527930475426bb228a40afa4eaca777",
+      "size_bytes": 6413,
+      "tracked_at_head": false
+    }
+  ],
+  "checkout_state": {
+    "branch": "main",
+    "head_commit": "8f0213878998e2cea492d564469d4ee1936fc5c5",
+    "local_refs_origin_main": "8f0213878998e2cea492d564469d4ee1936fc5c5",
+    "configured_remotes": [],
+    "audit_start_worktree_counts_before_14A_folder": {
+      "modified": 42,
+      "untracked": 39,
+      "deleted": 21
+    },
+    "manifest_creation_worktree_counts": {
+      "modified": 42,
+      "deleted": 21,
+      "untracked": 40
+    },
+    "note": "The audit-start counts were captured by the initial git-status command before this report folder was created. The worktree is now additionally untracked as one report folder. These counts are not historical run-time dirty-tree records."
+  },
+  "phase13b_head_vs_worktree": {
+    "note": "Local HEAD is a historical comparison only; no configured remote permits upstream verification. The post-result family-output cost accounting correction is disclosed in current Phase 13B report. Both versions tie ASFT/frequency/no-transfer, while absolute TU differs.",
+    "head_metrics": {
+      "ASFT": 0.14312996031746034,
+      "frequency_only": 0.14312996031746034,
+      "no_transfer": 0.14312996031746034,
+      "random_pattern": 0.09451404389880953
+    },
+    "worktree_corrected_metrics": {
+      "ASFT": 0.09580853174603174,
+      "frequency_only": 0.09580853174603174,
+      "no_transfer": 0.09580853174603174,
+      "random_pattern": 0.06311337425595238
+    },
+    "affected_worktree_files": [
+      "src/solver/executor.py",
+      "experiments/idt_experiments.py",
+      "reports/experiments/idt_evidence/summary.json",
+      "reports/experiments/EXP-IDT-BASELINES/record.json",
+      "reports/experiments/EXP-IDT-BASELINES/report.md"
+    ]
+  }
+}

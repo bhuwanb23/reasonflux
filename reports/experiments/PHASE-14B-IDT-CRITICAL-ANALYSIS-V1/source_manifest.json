@@ -1,0 +1,64 @@
+{
+  "review_id": "PHASE-14B-IDT-CRITICAL-ANALYSIS-V1",
+  "method": "read-only analysis of existing saved Phase 13 evidence; no experiment reruns",
+  "sources": [
+    {
+      "path": "../../../docs/03_implementation/validation/phase_13b_results.md",
+      "role": "Phase 13B results and disclosed accounting correction"
+    },
+    {
+      "path": "../idt_evidence/summary.json",
+      "role": "current corrected Phase 13B summary, discovery, transfer, robustness, baselines"
+    },
+    {
+      "path": "../EXP-IDT-01/report.md",
+      "role": "per-family discovery details and measurement interpretation"
+    },
+    {
+      "path": "../EXP-IDT-02/report.md",
+      "role": "per-family discovery details"
+    },
+    {
+      "path": "../EXP-IDT-03/report.md",
+      "role": "per-family discovery details"
+    },
+    {
+      "path": "../EXP-IDT-04/report.md",
+      "role": "per-family discovery details"
+    },
+    {
+      "path": "../EXP-IDT-BASELINES/report.md",
+      "role": "corrected baseline comparisons and primary gate"
+    },
+    {
+      "path": "../EXP-IDT-14/report.md",
+      "role": "exploratory controlled stress test"
+    },
+    {
+      "path": "../EXP-IDT-14/record.json",
+      "role": "stress-test configuration and metrics"
+    },
+    {
+      "path": "../PHASE-13D-TRANSFER-V1/posthoc_analysis.md",
+      "role": "corrected Phase 13D relationship estimate"
+    },
+    {
+      "path": "../PHASE-13D-TRANSFER-V1/posthoc_corrected_criteria.json",
+      "role": "corrected Phase 13D criteria and numeric evidence"
+    },
+    {
+      "path": "../PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md",
+      "role": "bounded ARC adapter evidence and limitations"
+    },
+    {
+      "path": "../PHASE-14A-EVIDENCE-INTEGRITY-REVIEW-V1/evidence_integrity_report.md",
+      "role": "accounting-version/provenance caveats"
+    }
+  ],
+  "notes": [
+    "The pre-correction Phase 13B number is from the local tracked HEAD snapshot inspected during Phase 14A; no configured remote was available to verify upstream history.",
+    "Current corrected Phase 13B mean TU is 0.0958085317 for ASFT, frequency-only, and no-transfer; the earlier local snapshot value was 0.1431299603 for all three.",
+    "The analysis preserves EXP-IDT-14 as exploratory and the Phase 13B strict gate as failed.",
+    "No Phase 13 outputs were modified and no experiment was rerun."
+  ]
+}

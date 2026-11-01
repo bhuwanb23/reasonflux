@@ -1,0 +1,7 @@
+predictor,spearman_rho,ci95_low,ci95_high,candidate_rows,seed_clusters,interpretation
+SCV10,0.7004272164658744,0.5447240106787921,0.9305950021129076,44,10,Association with shadow realized net value; not policy advantage
+frequency,0.747752297166495,0.7089082483306098,0.8848020217749296,44,10,Numerically above SCV10 in this candidate sample; no direct superiority test
+p_reuse,0.8835087540432829,0.8736595983399669,0.9368388895960552,44,10,Highest listed predictor association; not a causal or policy comparison
+AG,-0.07442075473293705,-0.11007516718675771,0.0,44,10,Near-zero/non-positive descriptive association
+TS,0.0,0.0,0.0,44,10,No observed association in this constructed sample
+SU_vs_future_net_value,0.9369600364296339,0.8966919631980146,1.0,44,10,High descriptive association; SU and shadow value share synthetic definitions/data
