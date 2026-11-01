@@ -1,0 +1,13 @@
+phase,arm_or_comparator,endpoint,estimate,interval_or_count,direction,scope_caveat
+13C,SCT,normalized reasoning reduction among correct applications,0.227,,positive,"synthetic simulator step proxy; not compute time"
+13C,SCT,raw step saving on applied rows,1.000,,positive,"incorrect applications receive zero cost benefit"
+13C,MEMORY_ONLY,normalized reasoning reduction among correct applications,0.213,,positive,"separate phase-specific task protocol"
+13D_corrected,ASFT,success-gated normalized RCR,0.149288,"95% CI [0.131979,0.157943]; 10/10 seeds positive",positive,"saved outcomes; no rerun; synthetic reasoning-step proxy"
+13D_corrected,ASFT_minus_B1,transfer utility,0.018909,"95% CI [0.016727,0.020000]; 10/10 positive",positive,"phase-specific paired seed contrast"
+13D_corrected,ASFT_minus_B2,transfer utility,0.015273,"95% CI [0.013091,0.016364]; 10/10 positive",positive,"phase-specific paired seed contrast"
+13D_corrected,ASFT_minus_B3,transfer utility,0.728909,"95% CI [0.706364,0.761273]; 10/10 positive",positive,"phase-specific paired seed contrast; unusually large comparator-specific value"
+13D_corrected,ASFT_minus_B4_compression_proxy,transfer utility,-0.001091,"95% CI [-0.003273,0]; 0/10 positive",negative_or_tied,"all-baseline gate fails; proxy is not DreamCoder"
+13F,ASFT_minus_X1_NO_TRANSFER,task utility,-0.0363,,negative,"separate 13F protocol; task utility only"
+13F,ASFT_minus_X1_NO_TRANSFER,composed-task utility,-0.3412,,negative,"separate endpoint; not pooled with transfer utility"
+13F,ASFT_minus_X1_NO_TRANSFER,CGR,0.2872,,positive,"phase-specific growth metric; does not establish transfer causality"
+search,not_measured,solver search candidates,,null,unavailable,"retrieval candidate counts are not search effort"

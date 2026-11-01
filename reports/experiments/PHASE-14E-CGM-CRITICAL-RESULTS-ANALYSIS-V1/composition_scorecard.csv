@@ -1,0 +1,6 @@
+measure,phase13e_result,interpretation
+Mean held-out incremental gain vs best single,-0.1428571429,"Composition was worse than the best single component on incremental task-cost/value measure"
+Seeds with round4 capability count > round2 and successful held-out composition,0/10,"No post-composition capability-count gain"
+Accepted higher-order emergent capability occurrences,0,"No higher-order emergence observed"
+ASFT capability objects by round,"1,1,1,1 in each seed","One cross-domain object persists; count does not grow"
+Capability member count by round,"2,2,3,3","A composed skill is added to the same portfolio object"

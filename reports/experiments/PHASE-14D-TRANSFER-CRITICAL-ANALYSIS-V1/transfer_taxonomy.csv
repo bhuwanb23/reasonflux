@@ -1,0 +1,9 @@
+taxonomy,status,coverage_or_count,evidence,interpretation
+Near synthetic,partially_supported,"EXP-TR-01 9/10; EXP-TR-02 10/10; EXP-TR-03 0/10","13D corrected coverage and TS","Positive only in source-covered cells; missing cell unavailable"
+Moderate synthetic,partially_supported,"EXP-TR-04 9/10; EXP-TR-05 10/10; EXP-TR-06 0/10","13D corrected coverage and TS","Positive only in source-covered cells; missing cell unavailable"
+Cross-family synthetic,narrowly_supported,"13C SCT 91/91 attempted applications; MEMORY_ONLY 308/308","13C reuse ledger","Generated tasks and reflection/rotation skill pool only"
+Compositional,unavailable,"EXP-TR-07-11: 0 eligible source-skill seeds; 0 active composition","13D corrected posthoc","Raw positive TS does not qualify; missing-operation fallback"
+Structural,unavailable,"EXP-TR-07-11: 0 eligible source-skill seeds","13D corrected posthoc","No coverage-qualified structural transfer"
+General multi-skill,unavailable,"No valid component-complete chain demonstrated","13D corrected posthoc and 13G","No general composition claim"
+Negative transfer,diagnostic_only,"190 forced cases; P decrement 190/190; accuracy NTR 0; guard rejects 90/90 evaluable, 10 unavailable","13D corrected task-level rows","Probability decrement, not observed exact-accuracy loss; no broad specificity test"
+ARC,not_demonstrated,"0 invariant candidates; 0 skills; 0 capabilities","13G bounded adapter","No eligible skill pool; transfer denominator unavailable"

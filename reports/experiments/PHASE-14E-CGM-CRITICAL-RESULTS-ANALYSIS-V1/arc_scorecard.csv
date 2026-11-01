@@ -1,0 +1,6 @@
+metric,result,interpretation
+Accepted invariant candidates,0,"Upstream invariant/skill pipeline did not produce transfer-ready evidence"
+Skill candidates/promotions,0,"No eligible skill units"
+Validated capability groups,0,"CGM capability pipeline did not activate"
+CGR/IG/IGR,unavailable,"Not zero; no capability components available"
+External validity,not_demonstrated,"Bounded DSL and low task fit; not a test that CGM fails on ARC in principle"

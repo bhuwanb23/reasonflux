@@ -1,0 +1,5 @@
+# Revised ARC Claim
+
+> Phase 13G did not demonstrate ASFT invariant discovery, skill-based transfer, capability growth, or intelligence growth on ARC-AGI-2. The dominant proximate failure was extremely low coverage of the fixed ten-program symbolic DSL, compounded by support thresholds and budget inconsistency: although the frozen config declares three candidates per task, the discovery function searches ten. Only three discovery tasks yielded successful exact-fit traces under the full inventory (only the reflection case is within the first three fixed candidates), leaving the invariant-to-skill chain unable to activate. This is a failure of the tested ARC implementation and an external-validity non-result for the higher-level mechanisms—not a direct falsification of IDT, SCT, transfer, or CGM in general.
+
+**Boundary:** full-DSL demonstration-fit coverage (`3/600`, `5/200`, `2/200`) is distinct from exact task accuracy (ASFT `0/200` transfer; all arms `1/200` holdout). The 13G attempt-02 same-holdout and temporary archive-transport caveats remain attached.

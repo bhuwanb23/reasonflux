@@ -1,0 +1,21 @@
+phase,baseline_or_version,endpoint,ASFT_result_or_difference,comparator_result_or_difference,decision_or_relation,scope_note
+13B_pre_correction,frequency/no-transfer,top-k2 mean TU,0.1431299603,0.1431299603,tie_strict_gate_failed,Local tracked HEAD historical snapshot
+13B_corrected,frequency/no-transfer,top-k2 mean TU,0.0958085317,0.0958085317,tie_strict_gate_failed,Current saved corrected output; preserve separately from prior value
+13B_corrected,random_pattern,top-k2 mean TU,0.0958085317,0.0631133743,ASFT higher,No overall all-control strict pass
+13C,NEVER_CREATE,mean net value,0.345,0.000,ASFT higher,Simulator net-value protocol
+13C,ALWAYS_CREATE,mean net value,0.345,0.345,tie,SCT selects all eligible candidate rows
+13C,RANDOM_CREATE,mean net value,0.345,0.345,tie,Frozen create probability 1.0; degenerates to always-create
+13C,MEMORY_ONLY,mean net value,0.345,1.325,MEMORY_ONLY higher,Raw trace exemplars; not skill-store B2
+13D_corrected,B1_NO_LEARNING,transfer utility,ASFT-minus +0.018909,0,ASFT higher,10 paired seeds
+13D_corrected,B2_MEMORY_ONLY,transfer utility,ASFT-minus +0.015273,0,ASFT higher,10 paired seeds; phase-specific
+13D_corrected,B3_RANDOM_SKILLS,transfer utility,ASFT-minus +0.728909,0,ASFT higher,10 paired seeds; unusually large task-specific contrast
+13D_corrected,B4_COMPRESSION_PROXY,transfer utility,ASFT-minus -0.001091,0,ASFT not strictly higher,"CI [-.003273,0]; mandatory gate fails"
+13E,B1_NO_LEARNING,all-task utility,ASFT-minus -0.0361,0,ASFT lower,Final C_t difference +1.1785 does not cancel utility failure
+13E,B2_SKILL_STORAGE_ONLY,all-task utility,ASFT-minus +0.0773,0,ASFT higher,Separate 13E protocol
+13E,B3_RANDOM_SKILL_CREATION,all-task utility,ASFT-minus +0.0776,0,ASFT higher,Separate 13E protocol
+13E,B4_COMPRESSION_PROXY,all-task utility,ASFT-minus +0.0752,0,ASFT higher,Proxy not canonical DreamCoder
+13F,B1_NO_LEARNING,task utility,ASFT-minus -0.036344,0,ASFT lower,CGR contrast +.287172; joint gate fails
+13F,B2_MEMORY_SKILL_STORE,task utility,ASFT-minus +0.074906,0,ASFT higher,CGR +.287172; joint gate passes
+13F,B3_RANDOM_SKILL_CREATION,task utility,ASFT-minus 0.000000,0,tie,CGR also 0; joint gate fails
+13F,B4_COMPRESSION_PROXY,task utility,ASFT-minus +0.074906,0,ASFT higher,CGR +.081372; proxy not canonical DreamCoder
+13G_bounded_ARC,B1-B4,holdout exact accuracy,0.005,0.005,all arms tied,Zero validated invariant/skill/capability chain

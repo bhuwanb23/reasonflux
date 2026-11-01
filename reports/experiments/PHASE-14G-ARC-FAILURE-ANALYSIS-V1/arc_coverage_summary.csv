@@ -1,0 +1,4 @@
+split,task_ids,full_dsl_demo_fits,full_dsl_fit_rate,unsupported_under_full_dsl,fit_families,arm_exact_accuracy,arm_accuracy_detail,budget_caveat
+Discovery,600,3,0.005,597,"reflection 1; rotation 1; recoloring 1",not_primary,"three successful discovery traces total; each program support=1; only reflection fit is within first three fixed candidates","discover() uses default budget 10 despite frozen config budget 3; full inventory scan, not declared-budget yield"
+Transfer,200,5,0.025,195,"rotation 1; transpose_or_antitranspose 2; translation 1; recoloring 1","ASFT 0/200; B1 0/200; B2 1/200; B3 0/200; B4 0/200","B2 success is a nearest-episode memory event","scored arms use max 3 candidate trials"
+Holdout,200,2,0.010,198,"reflection 1; rotation 1","ASFT 1/200; B1 1/200; B2 1/200; B3 1/200; B4 1/200","one reflection task solved by all arms","scored arms use max 3 candidate trials; same frozen holdout rerun caveat"

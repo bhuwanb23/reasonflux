@@ -1,0 +1,13 @@
+id,severity,threat,impact,interpretation_control
+BLA-01,high,"Memory-friendly synthetic stream and raw trace retrieval","Phase 13C memory policy may leverage repeatable exact exemplars","Keep MEMORY_ONLY result; distinguish protocol and later skill-store B2"
+BLA-02,high,"Positive/eligible candidate pool","SCT selected every eligible Phase 13C candidate","Call it low decision leverage in that frozen pool, not universal benchmark incapacity"
+BLA-03,high,"Low selection and lifecycle pressure","13F no-SCV/random-SCV/lifecycle arms often select same items/actions","Treat ties as no measured effect in these arms"
+BLA-04,high,"Generator/task distribution","Repeated synthetic operators can favor memory, abstraction, or compression differently","Limit claims to each synthetic protocol"
+BLA-05,high,"Endpoint mismatch across phases","Net value, TU, TS, task utility, CGR, composition utility, ARC accuracy are non-interchangeable","Name phase, comparator, endpoint; do not pool"
+BLA-06,high,"B4 is a compression proxy","B4 outcomes cannot settle canonical DreamCoder comparison","Label B4 proxy explicitly"
+BLA-07,medium-high,"Random controls are heterogeneous","Random pattern, random create, B3 random skill creation, random SCV differ","Use exact arm names"
+BLA-08,high,"Phase 13B accounting correction","TU magnitude shifts from 0.1431299603 to 0.0958085317","Preserve both versions; tie and strict-gate failure common"
+BLA-09,medium-high,"Corrected Phase 13D posthoc reporting","Original dashboard had pairwise lookup and composition coverage defects","Use corrected saved-record view for conclusions; retain original"
+BLA-10,high,"Metric-layer removal","CGM removal can alter score availability without behavioral change","Separate instrumented score from task outcome"
+BLA-11,high,"ARC pipeline undercoverage","No invariants/skills/capabilities, all main arms tied at .005","Call mechanism comparison unavailable"
+BLA-12,medium,"Predictor correlations descriptive","SCV/frequency/p_reuse association is not a causal policy effect","Require direct controlled selection contrast"

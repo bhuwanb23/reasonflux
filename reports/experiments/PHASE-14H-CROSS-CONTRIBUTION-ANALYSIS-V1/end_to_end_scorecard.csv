@@ -1,0 +1,13 @@
+claim,status,phase_evidence,interpretation
+Experience_to_invariants,supported_narrowly,"13B 4 expected operation-family signatures in 5/5 seeds; IP/IR 1.0 within synthetic vocabulary","Repeatable detection under known generator labels; not open-ended discovery"
+Invariants_to_skills,operationally_demonstrated,"13C 44 skill instances: 22 reflection, 22 rotation","Skill objects formed; all eligible candidates selected; no SCT superiority"
+Skills_to_transfer,supported_narrowly,"13C 201 correct positive-credit SCT applications; 91/91 attempted cross-family; 0.227 normalized step reduction; 13D RCR 0.1493","Simulator-generated settings and cost proxy; memory alternative remains"
+Transfer_to_capability_growth,not_established,"13D mean CGR -0.060; 13E TS-CGR -0.503 CI spans 0; 13E no-SCT CGR delta 0; 13F transfer/task utility tradeoff","First unestablished causal link; no causal effect shown"
+Capability_to_intelligence_growth,not_established,"Positive 13E IG/IGR values from repository formula; IE slope negative","No external or independent intelligence construct criterion"
+Synthetic_end_to_end_chain,partial_not_validated,"Bounded pattern-skill-reuse pathway observed across synthetic phases","Different phase designs; not one causal mediation experiment"
+ARC_end_to_end_chain,not_activated,"Low bounded DSL fit; 0 invariants, skills, capabilities; ASFT learned-transfer denominator 0","Upstream representation/coverage break; config budget 3 vs discovery code default 10"
+Memory_retrieval_alternative,survives,"13C net value 1.325 vs SCT 0.345; unequal application opportunities","Strong comparator-specific result, not universal memory superiority"
+IDT_transfer_aware_superiority,failed_primary_gate,"Corrected 13B ASFT/frequency/no-transfer tie at 0.095809","Exploratory no-op stress test does not repair gate"
+SCT_selection_superiority,not_demonstrated,"13C SCT=always=random at 0.345; all 44 selected; 13F no-SCV/random-SCV ties","Selection advantage not exercised in tested pool"
+Transfer_generalization,not_established,"Positive synthetic reuse and step-cost proxy; no ARC skill transfer","No open-world/general transfer claim"
+Positive_component_synergy,not_demonstrated,"Several exact ties, phase-specific contrasts, and metric/task outcome divergence","No unified factorial interaction test"

@@ -1,0 +1,10 @@
+stage,evidence,status,first_or_downstream,interpretation
+Task loading,600/200/200 disjoint public training task IDs,completed,upstream,"Task ingestion not primary bottleneck"
+Full inventory demo fit,3/600 discovery; 5/200 transfer; 2/200 holdout,failed_nearly_all,first major failure,"Ten-program language poorly covers tasks"
+Trace record,600 schema-valid discovery rows; 3 successful exact-fit traces,partial,downstream of fit,"Schema works; useful trace population sparse"
+Invariant mining,3 successful traces; min_frequency=5 and min_cross_trace=5; 0 candidates,not_activated,downstream,"No support population; theory not directly tested"
+ASFT skill pool,support per program=1 vs minimum 5; 0 eligible operators; 0 skills,not_activated,downstream,"Skill formation mechanically blocked"
+Learned transfer,0 applicable skill tasks; precision null; ASFT task accuracy 0/200,unavailable_mechanism_plus_poor_bounded_accuracy,downstream,"No ASFT skill transfer precision estimate"
+Memory retrieval,B2 nearest-episode arm exact transfer success 1/200,narrow_success,parallel pathway,"Demonstrates an episodic-memory event, not SCT"
+Capability formation,0 capability groups,not_activated,downstream,"Requires validated skill population"
+CGM/IG,CGR/IG unavailable,no_measurement,downstream,"Unavailable is not zero-valued growth"

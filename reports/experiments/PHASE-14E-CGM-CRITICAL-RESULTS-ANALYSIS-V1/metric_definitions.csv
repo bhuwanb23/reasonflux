@@ -1,0 +1,7 @@
+metric,implementation,phase13e_value,interpretation_risk
+C_t,"Mean score of non-archived capabilities; each CapU=0.40*mean_SU+0.25*mean_TS+0.20*coverage+0.15*composition_bonus",mean seed-round score 1.0227,"Not capability count; can rise with changed skill evidence inside same capability"
+CGR,"(C_t - previous C_t)/dt; previous first round is 0",0.2946,"Initial capability formation/zero baseline contributes large first step"
+CCG,"Change in union of successful target families divided by four fixed synthetic task families",0.2500,"Generator-specific family coverage; not semantic breadth"
+IG,"0.35*CGR+0.25*TG+0.20*UG+0.15*CCG+0.05*CompG",0.2294,"Weighted internal composite; no external intelligence criterion"
+IGR,"(IG_t - previous IG)/dt",0.00904,"Mean masks negative rounds; first-round IG jump affects mean"
+IE,"IG / cumulative experiences",0.0043,"Ratio decline does not independently measure cognitive efficiency"

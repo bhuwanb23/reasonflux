@@ -1,0 +1,5 @@
+phase,association,n,r,interval,interval_method,status,interpretation
+13E,C_t_round_t_to_next_round_task_utility,30_round_pairs,0.0498167,"[0.0163087,0.0921634]",seed_cluster_bootstrap_4000_replicates_10_clusters,preregistered_directional_gate_pass,Very small same-generator association; not causal or external
+13E,TS_to_CGR,10_seed_means,-0.5027073,"[-0.8601010,0.1857077]",Fisher_z,not_positive_or_unavailable,Direction uncertain; not evidence transfer causes CGR
+13D,TS_to_CGR,36_rows_9_seed_clusters,0.483,"saved corrected report interval",clustered_descriptive,descriptive_positive,Opposite sign to 13E; mean CGR still -0.060
+13E,SU_to_CGR,10_seed_means,0.9929787,"[0.9694701,0.9983999]",Fisher_z,positive_descriptive,Strongly coupled internal scores; not causal or external validation
