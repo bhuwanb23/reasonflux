@@ -1,0 +1,68 @@
+contract_id,result,detail
+1I-CT-01,PASS,All four experiment classes are defined
+1I-CT-02,PASS,Exploratory and development classes are valid
+1I-CT-03,PASS,Confirmatory and replication can support primary claims
+1I-CT-04,PASS,Exploratory/development evidence cannot support primary claims
+1I-CT-05,PASS,Unknown class is rejected
+1I-CT-06,PASS,E1 evidence cannot be promoted into confirmatory evidence
+1I-CT-07,PASS,Classification is immutable after outcome access
+1I-CT-08,PASS,Fully populated preregistration passes
+1I-CT-09,PASS,Missing research question blocks preregistration
+1I-CT-10,PASS,E1 cannot register a primary scientific claim
+1I-CT-11,PASS,SOI must be nonnegative and frozen
+1I-CT-12,PASS,Missingness policy cannot convert unavailable to zero
+1I-CT-13,PASS,One decision-driving primary endpoint passes
+1I-CT-14,PASS,No primary endpoint is rejected
+1I-CT-15,PASS,Multiple primary endpoints are rejected
+1I-CT-16,PASS,Diagnostic metric cannot silently drive primary decision
+1I-CT-17,PASS,Secondary endpoint cannot replace primary after outcomes
+1I-CT-18,PASS,Primary definition and direction are required
+1I-CT-19,PASS,Endpoint IDs must be unique
+1I-CT-20,PASS,Only primary/secondary/diagnostic roles are allowed
+1I-CT-21,PASS,Cluster-level independent unit and nested rows are reported
+1I-CT-22,PASS,Missing independent-unit count is unavailable
+1I-CT-23,PASS,Zero independent units are not a valid estimate
+1I-CT-24,PASS,Malformed uncertainty interval is rejected
+1I-CT-25,PASS,Exact ties must be explicitly reported
+1I-CT-26,PASS,Zero variance must be explicitly reported
+1I-CT-27,PASS,Prespecified missingness below limit is handled
+1I-CT-28,PASS,Missingness beyond frozen limit blocks result
+1I-CT-29,PASS,Zero missingness is distinct from missing outcomes
+1I-CT-30,PASS,"Undefined denominator is unavailable, not zero performance"
+1I-CT-31,PASS,Meaningful preregistered effect can be supported
+1I-CT-32,PASS,Precise null contradicts a meaningful-superiority claim
+1I-CT-33,PASS,Interval spanning decision boundary remains inconclusive
+1I-CT-34,PASS,"Missing endpoint is unavailable, not zero"
+1I-CT-35,PASS,Identical comparator decisions can be explicitly non-informative
+1I-CT-36,PASS,Failed integrity/fairness gate blocks outcome interpretation
+1I-CT-37,PASS,A precise tie can support preregistered equivalence
+1I-CT-38,PASS,Opposite-direction effect can support a prespecified negative hypothesis
+1I-CT-39,PASS,Noninferiority is classifiable when preregistered
+1I-CT-40,PASS,Insufficient independent units cannot be called support
+1I-CT-41,PASS,Estimate outside its interval is rejected
+1I-CT-42,PASS,Exact tie/zero variance is reported and does not become superiority
+1I-CT-43,PASS,All four replication classes are defined
+1I-CT-44,PASS,Within-generator independent replication is recognized
+1I-CT-45,PASS,Cross-generator replication is recognized
+1I-CT-46,PASS,Cross-domain replication is recognized
+1I-CT-47,PASS,External benchmark replication is recognized
+1I-CT-48,PASS,Reusing holdout/data does not count as replication
+1I-CT-49,PASS,New seeds/panels must have independent manifests
+1I-CT-50,PASS,Within-generator replication alone cannot support generalization
+1I-CT-51,PASS,One positive result is not generalized support
+1I-CT-52,PASS,Cross-generator replication can support a generalization claim
+1I-CT-53,PASS,Conflicting confirmatory/replication outcomes remain inconclusive
+1I-CT-54,PASS,Complete governance audit passes
+1I-CT-55,PASS,Missing governance audit evidence is unavailable
+1I-CT-56,PASS,Frozen-protocol changes fail governance
+1I-CT-57,PASS,Hiding negative results fails governance
+1I-CT-58,PASS,Development findings cannot be promoted as replication
+1I-CT-59,PASS,Post-outcome endpoint/threshold/split changes fail governance
+1I-CT-60,PASS,Complete reporting record passes
+1I-CT-61,PASS,Negative results must be explicitly reported
+1I-CT-62,PASS,Unavailable results must be explicitly reported
+1I-CT-63,PASS,Reports must include independent-unit count and source lineage
+1I-CT-64,PASS,Contract suite has a fixed declared count
+1I-CT-65,PASS,"No independent units is unavailable, not a zero-effect result"
+1I-CT-66,PASS,Non-finite SOI is rejected
+1I-CT-67,PASS,Every individual governance rule is fail-closed

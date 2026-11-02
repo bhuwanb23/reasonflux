@@ -1,0 +1,371 @@
+{
+  "phase": "ASFT-V1.1-PHASE-1H",
+  "package": "ASFT-V1.1-PHASE-1H-BASELINE-ABLATION-SPEC-V1",
+  "provenance_note": "Historical Phases 13B-13G and Phase 14F records were audited read-only. No empirical outcomes were generated. Decision fixtures are code-path tests only.",
+  "records": [
+    {
+      "path": "reports/experiments/PHASE-14F-BASELINE-ABLATION-CRITICAL-ANALYSIS-V1/phase14f_baselines_ablations_analysis.md",
+      "kind": "historical_source",
+      "note": "Phase 14F integrated historical baseline/ablation audit",
+      "sha256": "b9e9bbf4aa8e14b66776e038ce92dc361bda23cf5147de11524c068820e78402",
+      "bytes": 21121
+    },
+    {
+      "path": "reports/experiments/PHASE-14F-BASELINE-ABLATION-CRITICAL-ANALYSIS-V1/baseline_interpretation_report.md",
+      "kind": "historical_source",
+      "note": "Phase 14F baseline interpretation",
+      "sha256": "f38b64e157fc8577c56525da2f94bfa7545e491b10c23f23d0f887745550bd41",
+      "bytes": 2727
+    },
+    {
+      "path": "reports/experiments/PHASE-14F-BASELINE-ABLATION-CRITICAL-ANALYSIS-V1/ablation_interpretation_report.md",
+      "kind": "historical_source",
+      "note": "Phase 14F ablation interpretation",
+      "sha256": "4855a9866b2f44c06708822d5a5ac18d137e959601c339441d1578ab0439c197",
+      "bytes": 2938
+    },
+    {
+      "path": "reports/experiments/PHASE-14F-BASELINE-ABLATION-CRITICAL-ANALYSIS-V1/component_importance_assessment.md",
+      "kind": "historical_source",
+      "note": "Phase 14F component-importance assessment",
+      "sha256": "393bb47978b392127fe0c779f2a819563c1a23bca1280b4b04b1ef334dfd2798",
+      "bytes": 2410
+    },
+    {
+      "path": "reports/experiments/PHASE-14F-BASELINE-ABLATION-CRITICAL-ANALYSIS-V1/cross_phase_baselines.csv",
+      "kind": "historical_source",
+      "note": "Phase 14F cross-phase baseline table",
+      "sha256": "e930cd05eb454e8ddd4c5bf0b23b474f07478da4c1f220f23210c37f6acd9b59",
+      "bytes": 2409
+    },
+    {
+      "path": "reports/experiments/PHASE-14F-BASELINE-ABLATION-CRITICAL-ANALYSIS-V1/component_evidence_matrix.csv",
+      "kind": "historical_source",
+      "note": "Phase 14F component/ablation evidence matrix",
+      "sha256": "f0aaba3de28d3ff8656156fb0c6c14ffaf06ce3cb4dd440ab95a0936f4e69c4d",
+      "bytes": 2776
+    },
+    {
+      "path": "reports/experiments/PHASE-14F-BASELINE-ABLATION-CRITICAL-ANALYSIS-V1/baseline_ablation_scorecard.csv",
+      "kind": "historical_source",
+      "note": "Phase 14F final scorecard",
+      "sha256": "af6109630fbc8576675164812b17e5de1478ed91a5164e6cc30062f1b1d6d326",
+      "bytes": 2193
+    },
+    {
+      "path": "reports/experiments/EXP-IDT-BASELINES/report.md",
+      "kind": "historical_source",
+      "note": "Corrected EXP-IDT-BASELINES/13B ranking record",
+      "sha256": "45b1988b3426d75d66f1f5879c775972abf73cbd8430cfb435c4f6fda5e4fa34",
+      "bytes": 13994
+    },
+    {
+      "path": "reports/experiments/PHASE-14B-IDT-CRITICAL-ANALYSIS-V1/phase13b_accounting_versions.csv",
+      "kind": "historical_source",
+      "note": "Phase 13B accounting-version lineage",
+      "sha256": "71509f927e94df67ab6232941308e0f40e0420cd4852394d34eb087aa8ccc81d",
+      "bytes": 610
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/evidence_package.md",
+      "kind": "historical_source",
+      "note": "Phase 13C SCT baseline evidence",
+      "sha256": "bdaf81eae3923dd66c2ea158a4fc3d8fc6f3cae0c7fb1cfc298174f2015131d3",
+      "bytes": 10362
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/matched_controls.csv",
+      "kind": "historical_source",
+      "note": "Phase 13C matched control outcomes",
+      "sha256": "a0f1e4ccedd553978dd7f54d8b0da293a311dd8899dd474433dc954484765a57",
+      "bytes": 1601
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/candidate_level.csv",
+      "kind": "historical_source",
+      "note": "Phase 13C candidate-level selection records",
+      "sha256": "ba614eeb77a42ee37d83ac99bd7460c4c61aa2a38e32d8c278565ced1a67a1c0",
+      "bytes": 11434
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/lifecycle_ablation.csv",
+      "kind": "historical_source",
+      "note": "Phase 13C lifecycle ablation",
+      "sha256": "7ac54828dc7d0bda7ec79b8c595afb85a803cb62b2e153c63a0dfbc97bc287c4",
+      "bytes": 576
+    },
+    {
+      "path": "reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_analysis.md",
+      "kind": "historical_source",
+      "note": "Corrected Phase 13D analysis",
+      "sha256": "fd93a2b999f0d0620420213ded433b9f7638eae7ae4bbe8036ac61dfefcd175e",
+      "bytes": 2775
+    },
+    {
+      "path": "reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_corrected_criteria.json",
+      "kind": "historical_source",
+      "note": "Corrected Phase 13D criteria results",
+      "sha256": "0c91030b7c0a92285bf48480f0c96fe4fa806c90ad6a02bcc6262eed42a23a07",
+      "bytes": 33527
+    },
+    {
+      "path": "reports/experiments/PHASE-13D-TRANSFER-V1/posthoc_pairwise_baselines.csv",
+      "kind": "historical_source",
+      "note": "Corrected Phase 13D baseline contrasts",
+      "sha256": "39cf3fcdbdbb2416dbd4a641ea0b0d11cd5db5b8cde51fea15eaecb20514907f",
+      "bytes": 4241
+    },
+    {
+      "path": "reports/experiments/PHASE-13D-TRANSFER-V1/table_matched_ablations.csv",
+      "kind": "historical_source",
+      "note": "Corrected Phase 13D matched ablations",
+      "sha256": "d7793e1d87f3f045bcab0f0ff8e5e19de345342f6e9afc74e4ab12e0c4b653f9",
+      "bytes": 4880
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md",
+      "kind": "historical_source",
+      "note": "Phase 13E baseline/capability evidence",
+      "sha256": "b12c706818452c8033699f9dc5bbdc1246349760a307d3b4085951060d223f54",
+      "bytes": 8909
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/analysis.json",
+      "kind": "historical_source",
+      "note": "Phase 13E analysis output",
+      "sha256": "5b04b3cf37b17962797853b103e31d3a2af7bfb87de45f341d525976400d6268",
+      "bytes": 255400
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/evidence_package.md",
+      "kind": "historical_source",
+      "note": "Phase 13F baseline/ablation evidence",
+      "sha256": "42443a38d0b6f9e0ee95931339c3a9d8344dbfee4a8247ad992fd9e74a85b6cd",
+      "bytes": 8225
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/candidate_selection.csv",
+      "kind": "historical_source",
+      "note": "Phase 13F candidate/selection pressure evidence",
+      "sha256": "0145b558d9a74f6457fcc4be07dd767908ad70d10d88208ff6f2dc7921875dfe",
+      "bytes": 6780
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/master_result_matrix.csv",
+      "kind": "historical_source",
+      "note": "Phase 13F arm outcome matrix",
+      "sha256": "35c52b770312d9914cf640acd78f1cdd2ad63ef981c1c6d93ccb8a3092a15e1e",
+      "bytes": 2312
+    },
+    {
+      "path": "reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/evidence_package.md",
+      "kind": "historical_source",
+      "note": "Phase 13G ARC bounded baseline evidence",
+      "sha256": "ca9e71eee2092dcbb352dacc67a083bcb1b81bc409e67ecb1783f2c6b1fc7158",
+      "bytes": 6671
+    },
+    {
+      "path": "reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/task_outcomes.csv",
+      "kind": "historical_source",
+      "note": "Phase 13G task/arm outcomes",
+      "sha256": "2af7633521db2fbe7b982d95595e9a933f9b7fb4cc3ea95d75d5b08ed7336fd2",
+      "bytes": 277695
+    },
+    {
+      "path": "reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/summary.json",
+      "kind": "historical_source",
+      "note": "Phase 13G summary and caveats",
+      "sha256": "56d2bdccbcc21a5857f1eb125830b29ec75882461bf093a5942f3335216f1a1c",
+      "bytes": 4357
+    },
+    {
+      "path": "experiments/phase13g/config.json",
+      "kind": "historical_source",
+      "note": "Phase 13G declared budget and baseline configuration",
+      "sha256": "ba9e4979b651bedacd7262411e9434e9502c3d52db093383752853ead255b098",
+      "bytes": 5831
+    },
+    {
+      "path": "experiments/phase13g/runner.py",
+      "kind": "historical_source",
+      "note": "Phase 13G runtime baseline/discovery implementation",
+      "sha256": "9bf757523399d1541e09e14e78d6304fe9a2aec015284d5d8830b9bb2fbaa52e",
+      "bytes": 21655
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/package_D_Baselines.md",
+      "kind": "historical_source",
+      "note": "Phase 13H consolidated baseline package",
+      "sha256": "a13e987b15f713ac15236288f86fcd1f64feb6d34cb98757460983a66929491e",
+      "bytes": 4173
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/package_E_Ablations.md",
+      "kind": "historical_source",
+      "note": "Phase 13H consolidated ablation package",
+      "sha256": "805b3863350917be8582571f2a17a76c3e8de3235e87c0a9e8e092ac64d0789a",
+      "bytes": 4638
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/baseline_master_table.csv",
+      "kind": "historical_source",
+      "note": "Phase 13H baseline master table",
+      "sha256": "af4c8cf6ac5af1ae2cf22103e00b5280d2facc933b3136fe0d08dfa71a17c642",
+      "bytes": 4677
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/ablation_master_table.csv",
+      "kind": "historical_source",
+      "note": "Phase 13H ablation master table",
+      "sha256": "b59e424c8b63acc6ffa3f4fb6eb1bcbbaed63433a6b0b789386c8592985695fd",
+      "bytes": 3731
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1H-BASELINE-ABLATION-SPEC-V1/README.md",
+      "kind": "phase1H_artifact",
+      "note": "Phase 1H governance specification, contract, or report artifact",
+      "sha256": "f324ee43d5dcb0033364360e20f570b78087b02754e5fcf5c8183b8591af6bcd",
+      "bytes": 2596
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1H-BASELINE-ABLATION-SPEC-V1/ablation_taxonomy.md",
+      "kind": "phase1H_artifact",
+      "note": "Phase 1H governance specification, contract, or report artifact",
+      "sha256": "1707cffbae141d5732f3fe792ca23ea7e558ee20df32e1dfe1f8c4211bf98a5d",
+      "bytes": 2777
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1H-BASELINE-ABLATION-SPEC-V1/attribution_audit.md",
+      "kind": "phase1H_artifact",
+      "note": "Phase 1H governance specification, contract, or report artifact",
+      "sha256": "9349f728e08456fa4b58636bd3b6457112a302f610fc53ddf75ad43bf61c7b91",
+      "bytes": 3728
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1H-BASELINE-ABLATION-SPEC-V1/baseline_audit.md",
+      "kind": "phase1H_artifact",
+      "note": "Phase 1H governance specification, contract, or report artifact",
+      "sha256": "fec308d1b8b9da2f25b76ce3e6bb68934e571757f804a1c3bcefd9b045ae6c76",
+      "bytes": 6531
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1H-BASELINE-ABLATION-SPEC-V1/baseline_preregistration_template.md",
+      "kind": "phase1H_artifact",
+      "note": "Phase 1H governance specification, contract, or report artifact",
+      "sha256": "93ef3ce95ab08f899ccf091b56ce4ea61d5b1005278d897bae46e3b0f43b6520",
+      "bytes": 3511
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1H-BASELINE-ABLATION-SPEC-V1/baseline_taxonomy.md",
+      "kind": "phase1H_artifact",
+      "note": "Phase 1H governance specification, contract, or report artifact",
+      "sha256": "91ea9d6e96cb2af73c0db880d9a2836edd05f1e183c327b52928a09203a79150",
+      "bytes": 2593
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1H-BASELINE-ABLATION-SPEC-V1/comparator_activation_audit.md",
+      "kind": "phase1H_artifact",
+      "note": "Phase 1H governance specification, contract, or report artifact",
+      "sha256": "deb81760bde26e79cc0649e23a0be275f64217cc505239ce79e1f3df2e680670",
+      "bytes": 2818
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1H-BASELINE-ABLATION-SPEC-V1/fairness_framework.md",
+      "kind": "phase1H_artifact",
+      "note": "Phase 1H governance specification, contract, or report artifact",
+      "sha256": "2bf525c2b05067667ccf0ff6ebd3b75f01592ddbd6b518fc3ec6bee71fe521f7",
+      "bytes": 2678
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1H-BASELINE-ABLATION-SPEC-V1/interpretation_rules.md",
+      "kind": "phase1H_artifact",
+      "note": "Phase 1H governance specification, contract, or report artifact",
+      "sha256": "45475c8fdd078817a6cef9a60da7ad49ec2b091643e288775799058bb0f8f230",
+      "bytes": 2444
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1H-BASELINE-ABLATION-SPEC-V1/mandatory_ablations.md",
+      "kind": "phase1H_artifact",
+      "note": "Phase 1H governance specification, contract, or report artifact",
+      "sha256": "ac0a7fec566e3ef02620f6cd721fd7d43ec366d26271ccfbcf67f0385bb13d47",
+      "bytes": 2279
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1H-BASELINE-ABLATION-SPEC-V1/mandatory_baselines.md",
+      "kind": "phase1H_artifact",
+      "note": "Phase 1H governance specification, contract, or report artifact",
+      "sha256": "d0bd1c299c8189713567f88d6ef4d273c6d6456106b5d1f642ece27f43dd3a3d",
+      "bytes": 2928
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1H-BASELINE-ABLATION-SPEC-V1/outcome_response_report.md",
+      "kind": "phase1H_artifact",
+      "note": "Phase 1H governance specification, contract, or report artifact",
+      "sha256": "b36225f2f7821992b9fd285b9918bb14c9b0c5af13cc3d86d75394f907ebc17b",
+      "bytes": 1665
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1H-BASELINE-ABLATION-SPEC-V1/outcome_response_sanity.csv",
+      "kind": "phase1H_artifact",
+      "note": "Phase 1H governance specification, contract, or report artifact",
+      "sha256": "efde34816173d59a13742a07c1abc0e77c11440b9461954444d586ea2f4e7175",
+      "bytes": 1245
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1H-BASELINE-ABLATION-SPEC-V1/phase1H_contract_test_results.csv",
+      "kind": "phase1H_artifact",
+      "note": "Phase 1H governance specification, contract, or report artifact",
+      "sha256": "ecc6c3f4de6ef5be46462e3d51eaec0310e3d483c2923bc26262353da20f368d",
+      "bytes": 3278
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1H-BASELINE-ABLATION-SPEC-V1/phase1H_full_audit_report.md",
+      "kind": "phase1H_artifact",
+      "note": "Phase 1H governance specification, contract, or report artifact",
+      "sha256": "3d58900cd32bc5dcbfe8d2b65d53efd8cbcdec8cc3e1215c5392ca3a0973e0e2",
+      "bytes": 6960
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1H-BASELINE-ABLATION-SPEC-V1/phase1H_readiness_checklist.csv",
+      "kind": "phase1H_artifact",
+      "note": "Phase 1H governance specification, contract, or report artifact",
+      "sha256": "82691609e16e6953d004dbd6ee637ee550bd2f0323fcef6a13d86de808fb0cc1",
+      "bytes": 1639
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1H-BASELINE-ABLATION-SPEC-V1/phase1H_readiness_report.md",
+      "kind": "phase1H_artifact",
+      "note": "Phase 1H governance specification, contract, or report artifact",
+      "sha256": "135d5ece819b6bc1a187d2dc8cd1b1da9d36c651b6e47d786b58f7402914132d",
+      "bytes": 5109
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1H-BASELINE-ABLATION-SPEC-V1/phase1H_registry_schema.csv",
+      "kind": "phase1H_artifact",
+      "note": "Phase 1H governance specification, contract, or report artifact",
+      "sha256": "2a1d5b514e4379ed565911d1167229e34cdea33bea48a7f40cb210629825eb0b",
+      "bytes": 3056
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1H-BASELINE-ABLATION-SPEC-V1/provenance_validation.md",
+      "kind": "phase1H_artifact",
+      "note": "Phase 1H governance specification, contract, or report artifact",
+      "sha256": "ae88731025bc438efe636758367ddff2799fd865589eaf7c54884b1b4d154bb5",
+      "bytes": 940
+    },
+    {
+      "path": "experiments/phase1h/competition_framework.py",
+      "kind": "implementation_source",
+      "note": "Phase 1H baseline/ablation governance and contract code",
+      "sha256": "562808ba1edb8ab467c52b0bbedc945bd6ff41b6ad9539b4485b6f8983a3ad57",
+      "bytes": 6135
+    },
+    {
+      "path": "experiments/phase1h/run_contracts.py",
+      "kind": "implementation_source",
+      "note": "Phase 1H baseline/ablation governance and contract code",
+      "sha256": "09a4fd8cc5ccccaccee0f059d394ad8156f5813380274aeceaf2267a045f3aeb",
+      "bytes": 11219
+    }
+  ]
+}
