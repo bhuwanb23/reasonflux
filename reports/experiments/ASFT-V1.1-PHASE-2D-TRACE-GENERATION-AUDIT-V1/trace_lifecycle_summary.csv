@@ -1,0 +1,5 @@
+condition,task_condition_denominator,candidate_pool_nonempty_tasks,search_attempted_tasks,trace_generated,valid_traces,successful_traces,invariant_candidate_count,skill_candidate_count,candidate_to_search_survival_pct,search_to_trace_survival_pct,trace_generated_to_valid_survival_pct,valid_to_successful_survival_pct,successful_discovery_to_invariant_survival_pct,invariant_to_skill_survival_pct,trace_successes_on_all_splits_not_equal_discovery_miner_input,miner_input_successful_discovery_traces,skill_stage_status
+S1,1000,1000,1000,1000,1000,2,0,0,100.0,100.0,100.0,0.2,0.0,NOT_ESTIMABLE_ZERO_INVARIANTS,2,1,BLOCKED_UPSTREAM_NO_INVARIANT_CANDIDATE
+S2,1000,1000,1000,1000,1000,5,0,0,100.0,100.0,100.0,0.5,0.0,NOT_ESTIMABLE_ZERO_INVARIANTS,5,2,BLOCKED_UPSTREAM_NO_INVARIANT_CANDIDATE
+S3,1000,1000,1000,1000,1000,10,0,0,100.0,100.0,100.0,1.0,0.0,NOT_ESTIMABLE_ZERO_INVARIANTS,10,3,BLOCKED_UPSTREAM_NO_INVARIANT_CANDIDATE
+S4,1000,1000,1000,1000,1000,10,0,0,100.0,100.0,100.0,1.0,0.0,NOT_ESTIMABLE_ZERO_INVARIANTS,10,3,BLOCKED_UPSTREAM_NO_INVARIANT_CANDIDATE

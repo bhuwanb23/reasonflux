@@ -1,0 +1,281 @@
+{
+  "phase": "ASFT-V1.1-PHASE-2D",
+  "package": "ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1",
+  "scope": "Retrospective audit of saved Phase 2C test-output-blind traces and Phase 13G serialized historical traces; no new search, test-label parsing, or accuracy measurement.",
+  "record_count": 39,
+  "records": [
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/README.md",
+      "kind": "phase2d_package_artifact",
+      "note": "Final Phase 2D report, data, or audit manifest.",
+      "sha256": "da7451d4f2d9ed91403a2a6ee763905c74386307c0618912bd309573e660a95c",
+      "bytes": 3431
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/historical_trace_audit.md",
+      "kind": "phase2d_package_artifact",
+      "note": "Final Phase 2D report, data, or audit manifest.",
+      "sha256": "d7d63395769f308906ae42886ca18f318d54a0fc0f9a76875dab393aed3e3f18",
+      "bytes": 3098
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/historical_trace_validation.csv",
+      "kind": "phase2d_package_artifact",
+      "note": "Final Phase 2D report, data, or audit manifest.",
+      "sha256": "912e5c9e3115d322e4136f33060e8e7147994ee1e1f110eee0b81ec3390ffc2a",
+      "bytes": 96181
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/historical_trace_validation_summary.json",
+      "kind": "phase2d_package_artifact",
+      "note": "Final Phase 2D report, data, or audit manifest.",
+      "sha256": "7e2e769b1caa954669d47d35406cab0014537ae24e5a785ecde06f4dc6b18364",
+      "bytes": 791
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/invariant_readiness_audit.md",
+      "kind": "phase2d_package_artifact",
+      "note": "Final Phase 2D report, data, or audit manifest.",
+      "sha256": "1b53db0b05e254dbfd9e3b507af5deeb5a65dcc2b59ef9d2c0f84930b3b6c898",
+      "bytes": 2259
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/invariant_readiness_summary.csv",
+      "kind": "phase2d_package_artifact",
+      "note": "Final Phase 2D report, data, or audit manifest.",
+      "sha256": "c4216a2915be38f34e536ec0eab715fa77d9ca17ef9733d788c6ba625f854922",
+      "bytes": 424
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/phase2D_readiness_review.md",
+      "kind": "phase2d_package_artifact",
+      "note": "Final Phase 2D report, data, or audit manifest.",
+      "sha256": "6abe0e60648cb445261390639cc4c3464ed049c1268970bffb01cbee8009a23a",
+      "bytes": 4311
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/trace_audit_manifest.json",
+      "kind": "phase2d_package_artifact",
+      "note": "Final Phase 2D report, data, or audit manifest.",
+      "sha256": "7bda2be8bb97e034dee3800f79917605336b99d2fa0aa49699765224a2a2289d",
+      "bytes": 425
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/trace_audit_records.csv",
+      "kind": "phase2d_package_artifact",
+      "note": "Final Phase 2D report, data, or audit manifest.",
+      "sha256": "15906517cbb0f48d82b5a59b53eb0db020022643c955441bacd3476dd27b5c88",
+      "bytes": 1219323
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/trace_diversity_report.md",
+      "kind": "phase2d_package_artifact",
+      "note": "Final Phase 2D report, data, or audit manifest.",
+      "sha256": "ee82eee4944b87926fa595c846ed1869d18cedbc4f39a837bbde1e21df9c7ca1",
+      "bytes": 1907
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/trace_diversity_summary.csv",
+      "kind": "phase2d_package_artifact",
+      "note": "Final Phase 2D report, data, or audit manifest.",
+      "sha256": "e02455f928bacd97c9cfcff7a4fa35f1c10d90b97e3d201f81a86f50c50d1551",
+      "bytes": 2832
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/trace_failure_localization.md",
+      "kind": "phase2d_package_artifact",
+      "note": "Final Phase 2D report, data, or audit manifest.",
+      "sha256": "225abab849d04bd119d1aaa9330dd03e37f70ef6f49ad99a15509d3f11221e28",
+      "bytes": 2294
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/trace_lifecycle_report.md",
+      "kind": "phase2d_package_artifact",
+      "note": "Final Phase 2D report, data, or audit manifest.",
+      "sha256": "81c091d709578f3620de54868e38272d641aaa91acfa29b061cd49d51a75c2cf",
+      "bytes": 2296
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/trace_lifecycle_summary.csv",
+      "kind": "phase2d_package_artifact",
+      "note": "Final Phase 2D report, data, or audit manifest.",
+      "sha256": "76d1b6bf82d1b55337f676bd3c64b372153e49881acb7256400cdc137fed4ced",
+      "bytes": 1063
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/trace_mining_details.json",
+      "kind": "phase2d_package_artifact",
+      "note": "Final Phase 2D report, data, or audit manifest.",
+      "sha256": "8d35eb894ae93fb7f16d6ec3c1c5532513593ed8b8353dcf5c967fcb66f44c21",
+      "bytes": 4469
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/trace_quality_report.md",
+      "kind": "phase2d_package_artifact",
+      "note": "Final Phase 2D report, data, or audit manifest.",
+      "sha256": "1557dfded27acf4ec5d30f9770977c320807712c5fe3a7995b4dc9a83fff0f5c",
+      "bytes": 1720
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/trace_quality_summary.csv",
+      "kind": "phase2d_package_artifact",
+      "note": "Final Phase 2D report, data, or audit manifest.",
+      "sha256": "7d8f79694692f8b0687effe15f01d676cb2db9f845d0fc236e4ab9c19033f0f1",
+      "bytes": 595
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/trace_reporting_standard.md",
+      "kind": "phase2d_package_artifact",
+      "note": "Final Phase 2D report, data, or audit manifest.",
+      "sha256": "be12444fa977c167178d12c6540b6d9d6cb4fa0824709221c38145433b107fb4",
+      "bytes": 2165
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/trace_taxonomy.md",
+      "kind": "phase2d_package_artifact",
+      "note": "Final Phase 2D report, data, or audit manifest.",
+      "sha256": "559b305d75f349472ecdb82bf09719e77c6f3b16b1ede048d66e49bc1d7b9d59",
+      "bytes": 2446
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/trace_taxonomy_counts.csv",
+      "kind": "phase2d_package_artifact",
+      "note": "Final Phase 2D report, data, or audit manifest.",
+      "sha256": "3f33e2a5825dea444264f74c25706b171c8aabc415a49ae80ac6384270722959",
+      "bytes": 2291
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/trace_yield_report.md",
+      "kind": "phase2d_package_artifact",
+      "note": "Final Phase 2D report, data, or audit manifest.",
+      "sha256": "1b565a4d2de82c1c5bf1c247cd7627f7716f05760bc8a9575138f8cc91e9fa81",
+      "bytes": 1428
+    },
+    {
+      "path": "experiments/phase2d/trace_audit.py",
+      "kind": "executed_audit_code",
+      "note": "Phase 2D reconstruction, retrospective validation, and TraceMiner replay; test-output blind.",
+      "sha256": "90cb2a6580c7caba6a17a1cfe13740f6b0488a80db96dba2246658a4e641689a",
+      "bytes": 17237
+    },
+    {
+      "path": "experiments/phase2d/finalize_package.py",
+      "kind": "package_qa_code",
+      "note": "Package provenance, hash, structure, count, scope, and link validation.",
+      "sha256": "b6d43dd8c1b73dd48dde840fb0f722bea26b2070c5d4ae6086f5ad3ea5c488e2",
+      "bytes": 9019
+    },
+    {
+      "path": "experiments/phase2c/config.json",
+      "kind": "frozen_protocol",
+      "note": "Phase 2C conditions and budget definitions.",
+      "sha256": "abdd45fe7373108a7b8b0704218a379eca5263c72b001de1d21e87082425ed79",
+      "bytes": 3553
+    },
+    {
+      "path": "experiments/phase2c/preregistration.md",
+      "kind": "frozen_protocol",
+      "note": "Frozen Phase 2C search and interpretation limits.",
+      "sha256": "3f55a1e9148bc63adfcab6b31ac4e53392d532ca51f87eefa746c6e9e48d7075",
+      "bytes": 5603
+    },
+    {
+      "path": "experiments/phase2c/search_budget_benchmark.py",
+      "kind": "executed_search_code",
+      "note": "Runner that generated the saved Phase 2C logs audited here.",
+      "sha256": "48828d049ee4b922a6d487b81b85292bf6d844db11f066f00037e5edd2e787f2",
+      "bytes": 25268
+    },
+    {
+      "path": "experiments/phase13g/runner.py",
+      "kind": "historical_runtime_source",
+      "note": "Historical trace generation and miner path.",
+      "sha256": "9bf757523399d1541e09e14e78d6304fe9a2aec015284d5d8830b9bb2fbaa52e",
+      "bytes": 21655
+    },
+    {
+      "path": "experiments/phase13g/common.py",
+      "kind": "historical_runtime_source",
+      "note": "Historical search and trace helpers.",
+      "sha256": "74bf8874b39e23a4abc0e294b50726a6eaebcb5024c7da9c4d71978d197621aa",
+      "bytes": 13692
+    },
+    {
+      "path": "src/core/trace.py",
+      "kind": "trace_runtime_source",
+      "note": "Trace structure and serialization semantics.",
+      "sha256": "9b7919ed5766711114219164bf4dcfb97cdc2794aa87664cb68ba90727045fbb",
+      "bytes": 4857
+    },
+    {
+      "path": "src/core/invariant.py",
+      "kind": "miner_runtime_source",
+      "note": "Invariant mining runtime.",
+      "sha256": "05b5dada974347d2cc92b9b25c02b2df4a71f377157004bf7cdebb173c2ef318",
+      "bytes": 9624
+    },
+    {
+      "path": "src/invariants/pattern_mining.py",
+      "kind": "miner_runtime_source",
+      "note": "Pattern extraction runtime.",
+      "sha256": "47e93de9e38550ac7eaec56846d2563dcfdfded227e07fbe7b73eb0db4880753",
+      "bytes": 8655
+    },
+    {
+      "path": "src/invariants/aggregation.py",
+      "kind": "miner_runtime_source",
+      "note": "Pattern aggregation runtime.",
+      "sha256": "79faae82dfa059e0afa1dbe03b94bbb5153aee2fa3a6bb7323756ea5ef368422",
+      "bytes": 4694
+    },
+    {
+      "path": "src/invariants/candidate_generation.py",
+      "kind": "miner_runtime_source",
+      "note": "Invariant candidate generation runtime.",
+      "sha256": "ced8346bc5278b4cfce73363df53da574ee67b4772ef1e5de9629732f065bf4b",
+      "bytes": 3774
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2C-SEARCH-BUDGET-AUDIT-V1/search_execution_log.csv",
+      "kind": "audited_saved_log",
+      "note": "Primary 4,000 Phase 2C task-condition search records.",
+      "sha256": "97d3eac2a2f11463038a4c48491aae2753ee7447390f9a4e809eddec6dec5c17",
+      "bytes": 828265
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2C-SEARCH-BUDGET-AUDIT-V1/candidate_trial_log.csv",
+      "kind": "audited_saved_log",
+      "note": "Candidate-level Phase 2C attempt and outcome log.",
+      "sha256": "ebe228bd97a924975faa279e2d37d193b48c1523fa792dbc29085117c910a8fb",
+      "bytes": 3362338
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2C-SEARCH-BUDGET-AUDIT-V1/budget_sensitivity_summary.csv",
+      "kind": "audited_saved_summary",
+      "note": "Frozen condition-level search yield summary.",
+      "sha256": "b3aa60b87e2d70053cfee9bfd02827b98cf7c4d24f87a22827aa89f3b08afe5b",
+      "bytes": 1060
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2C-SEARCH-BUDGET-AUDIT-V1/source_hashes.csv",
+      "kind": "upstream_provenance",
+      "note": "Phase 2C source/artifact hashes, including training task inputs.",
+      "sha256": "606b7fac1e1b001e502be6588701cf189869a023a3c65f928176de128d78645c",
+      "bytes": 251153
+    },
+    {
+      "path": "reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/discovery_traces.jsonl",
+      "kind": "historical_saved_trace",
+      "note": "600 Phase 13G serialized discovery trace records.",
+      "sha256": "927292f6ad5e09b2bb59b9395361975ec3de70e519a46bc726f891a87e29ba1d",
+      "bytes": 498455
+    },
+    {
+      "path": "reports/experiments/PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1/summary.json",
+      "kind": "historical_saved_summary",
+      "note": "Historical trace, mining, and outcome summary used for replay parity.",
+      "sha256": "56d2bdccbcc21a5857f1eb125830b29ec75882461bf093a5942f3335216f1a1c",
+      "bytes": 4357
+    }
+  ]
+}

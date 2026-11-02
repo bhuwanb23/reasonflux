@@ -1,0 +1,5 @@
+condition,tasks,valid_traces,successful_traces,Q1_demo_fit_rate_pct,Q2_consistency_among_successful_exact_replays,Q3_generalization_beyond_demos,Q4_max_discovery_program_support,Q4_max_exact_signature_support,Q5_program_level_discovery_transfer_overlap,Q5_exact_signature_overlap,invariant_score_or_skill_score_used
+S1,1000,1000,2,0.2,1.0,NOT_MEASURED_TEST_OUTPUT_BLIND,1,1,0,0,False
+S2,1000,1000,5,0.5,1.0,NOT_MEASURED_TEST_OUTPUT_BLIND,1,1,0,0,False
+S3,1000,1000,10,1.0,1.0,NOT_MEASURED_TEST_OUTPUT_BLIND,1,1,1,0,False
+S4,1000,1000,10,1.0,1.0,NOT_MEASURED_TEST_OUTPUT_BLIND,1,1,1,0,False

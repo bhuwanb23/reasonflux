@@ -1,0 +1,148 @@
+{
+  "phase2c_by_condition": {
+    "S1": {
+      "discovery_successful_traces": 1,
+      "exact_signature_support": {
+        "[\"reflect_vertical\",\"{}\"]": 1
+      },
+      "program_operation_support": {
+        "reflect_vertical": 1
+      },
+      "max_discovery_signature_support": 1,
+      "high_support_signature_count_ge_5": 0,
+      "programs_observed_in_both_discovery_and_transfer": [],
+      "exact_signatures_observed_in_both_discovery_and_transfer": 0,
+      "miner_statistics": {
+        "traces_in": 1,
+        "traces_success": 1,
+        "traces_failure": 0,
+        "fragments": 10,
+        "raw_patterns": 0,
+        "structures": 0,
+        "candidates": 0,
+        "rejected": 0
+      },
+      "trace_miner_candidate_count": 0,
+      "mapped_invariant_count": 0
+    },
+    "S2": {
+      "discovery_successful_traces": 2,
+      "exact_signature_support": {
+        "[\"reflect_vertical\",\"{}\"]": 1,
+        "[\"rotate_270\",\"{}\"]": 1
+      },
+      "program_operation_support": {
+        "reflect_vertical": 1,
+        "rotate_270": 1
+      },
+      "max_discovery_signature_support": 1,
+      "high_support_signature_count_ge_5": 0,
+      "programs_observed_in_both_discovery_and_transfer": [],
+      "exact_signatures_observed_in_both_discovery_and_transfer": 0,
+      "miner_statistics": {
+        "traces_in": 2,
+        "traces_success": 2,
+        "traces_failure": 0,
+        "fragments": 20,
+        "raw_patterns": 0,
+        "structures": 0,
+        "candidates": 0,
+        "rejected": 0
+      },
+      "trace_miner_candidate_count": 0,
+      "mapped_invariant_count": 0
+    },
+    "S3": {
+      "discovery_successful_traces": 3,
+      "exact_signature_support": {
+        "[\"reflect_vertical\",\"{}\"]": 1,
+        "[\"rotate_270\",\"{}\"]": 1,
+        "[\"recolor_bijection\",\"{\\\"mapping\\\":{\\\"1\\\":1,\\\"7\\\":5,\\\"8\\\":8}}\"]": 1
+      },
+      "program_operation_support": {
+        "reflect_vertical": 1,
+        "rotate_270": 1,
+        "recolor_bijection": 1
+      },
+      "max_discovery_signature_support": 1,
+      "high_support_signature_count_ge_5": 0,
+      "programs_observed_in_both_discovery_and_transfer": [
+        "recolor_bijection"
+      ],
+      "exact_signatures_observed_in_both_discovery_and_transfer": 0,
+      "miner_statistics": {
+        "traces_in": 3,
+        "traces_success": 3,
+        "traces_failure": 0,
+        "fragments": 30,
+        "raw_patterns": 0,
+        "structures": 0,
+        "candidates": 0,
+        "rejected": 0
+      },
+      "trace_miner_candidate_count": 0,
+      "mapped_invariant_count": 0
+    },
+    "S4": {
+      "discovery_successful_traces": 3,
+      "exact_signature_support": {
+        "[\"reflect_vertical\",\"{}\"]": 1,
+        "[\"rotate_270\",\"{}\"]": 1,
+        "[\"recolor_bijection\",\"{\\\"mapping\\\":{\\\"1\\\":1,\\\"7\\\":5,\\\"8\\\":8}}\"]": 1
+      },
+      "program_operation_support": {
+        "reflect_vertical": 1,
+        "rotate_270": 1,
+        "recolor_bijection": 1
+      },
+      "max_discovery_signature_support": 1,
+      "high_support_signature_count_ge_5": 0,
+      "programs_observed_in_both_discovery_and_transfer": [
+        "recolor_bijection"
+      ],
+      "exact_signatures_observed_in_both_discovery_and_transfer": 0,
+      "miner_statistics": {
+        "traces_in": 3,
+        "traces_success": 3,
+        "traces_failure": 0,
+        "fragments": 30,
+        "raw_patterns": 0,
+        "structures": 0,
+        "candidates": 0,
+        "rejected": 0
+      },
+      "trace_miner_candidate_count": 0,
+      "mapped_invariant_count": 0
+    }
+  },
+  "phase13g_historical": {
+    "tasks": 600,
+    "serialized_traces": 600,
+    "retrospective_structural_valid": 600,
+    "successful_traces": 3,
+    "no_fit_valid_traces": 597,
+    "discovery_success_program_support": {
+      "reflect_vertical": 1,
+      "rotate_270": 1,
+      "recolor_bijection": 1
+    },
+    "high_support_programs_ge_5": 0,
+    "trace_miner_statistics": {
+      "traces_in": 3,
+      "traces_success": 3,
+      "traces_failure": 0,
+      "fragments": 30,
+      "raw_patterns": 0,
+      "structures": 0,
+      "candidates": 0,
+      "rejected": 0
+    },
+    "trace_miner_candidates": 0,
+    "mapped_invariant_candidates": 0,
+    "phase13g_schema_flag_was_hardcoded": true,
+    "generation_time_validator_established": false,
+    "successful_train_demo_replay_count": 3,
+    "test_output_fields_parsed_or_used": false,
+    "accuracy_measured": false
+  }
+}

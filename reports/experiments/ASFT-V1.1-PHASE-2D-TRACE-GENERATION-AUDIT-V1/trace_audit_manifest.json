@@ -1,0 +1,17 @@
+{
+  "phase": "ASFT-V1.1-PHASE-2D",
+  "phase2c_conditions_audited": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+  ],
+  "trace_records_reconstructed": 4000,
+  "historical_serialized_traces_validated": 600,
+  "trace_miner_replays": 4,
+  "test_output_fields_parsed_or_used": false,
+  "accuracy_measured": false,
+  "new_arc_search_or_scoring_run": false,
+  "historical_outcomes_modified": false,
+  "status": "TRACE_AUDIT_COMPLETE"
+}
