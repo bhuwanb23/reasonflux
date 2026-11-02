@@ -1,0 +1,24 @@
+registry_type,code,definition_or_claim,mandatory,interpretation_boundary
+baseline_taxonomy,B1_NO_LEARNING,No learned mechanism; retains a fair fixed base solver and task access.,True,Implementation subtype and endpoint frozen per experiment
+baseline_taxonomy,B2_MEMORY_RETRIEVAL,Episodic or structured memory/retrieval; implementation subtype must be named.,True,Implementation subtype and endpoint frozen per experiment
+baseline_taxonomy,B3_RANDOM,"Random ranking, selection, or action over the same eligible pool and budget.",True,Implementation subtype and endpoint frozen per experiment
+baseline_taxonomy,B4_FREQUENCY,Frequency-only recurrence/reuse statistics from training data only.,True,Implementation subtype and endpoint frozen per experiment
+baseline_taxonomy,B5_COMPRESSION,Compression-oriented alternative with exact algorithm named; proxy is not canonical DreamCoder.,True,Implementation subtype and endpoint frozen per experiment
+baseline_taxonomy,B6_HEURISTIC_HYBRID,Declared simple heuristic (B6a) or explicit hybrid such as memory+frequency (B6b).,True,Implementation subtype and endpoint frozen per experiment
+baseline_taxonomy,B7_ORACLE,Oracle/upper-bound analysis only; never a deployable competitor or outcome-informed selector.,False,Implementation subtype and endpoint frozen per experiment
+mandatory_baseline,BL1_NO_LEARNING,BL1_NO_LEARNING,True,Same opportunity/budget rules; oracle remains analysis-only
+mandatory_baseline,BL2_MEMORY_RETRIEVAL,BL2_MEMORY_RETRIEVAL,True,Same opportunity/budget rules; oracle remains analysis-only
+mandatory_baseline,BL3_RANDOM,BL3_RANDOM,True,Same opportunity/budget rules; oracle remains analysis-only
+mandatory_baseline,BL4_FREQUENCY,BL4_FREQUENCY,True,Same opportunity/budget rules; oracle remains analysis-only
+mandatory_baseline,BL5_COMPRESSION,BL5_COMPRESSION,True,Same opportunity/budget rules; oracle remains analysis-only
+mandatory_baseline,BL6_HYBRID_MEMORY_FREQUENCY,BL6_HYBRID_MEMORY_FREQUENCY,True,Same opportunity/budget rules; oracle remains analysis-only
+mandatory_baseline,BL7_ORACLE_ANALYSIS_ONLY,BL7_ORACLE_ANALYSIS_ONLY,True,Same opportunity/budget rules; oracle remains analysis-only
+claim_ablation,A1_NO_IDT,IDT/ranking,True,Local effect only; necessity is not universal
+claim_ablation,A2_NO_SCT,SCT/formation,True,Local effect only; necessity is not universal
+claim_ablation,A3_NO_SCV,SCV/selection,True,Local effect only; necessity is not universal
+claim_ablation,A4_NO_TRANSFER,transfer,True,Local effect only; necessity is not universal
+claim_ablation,A5_NO_CAPABILITY_LAYER,capability measurement/formation,True,Local effect only; necessity is not universal
+claim_ablation,A6_NO_LIFECYCLE,lifecycle,True,Local effect only; necessity is not universal
+claim_ablation,A7_NO_COMPOSITION,composition,True,Local effect only; necessity is not universal
+claim_ablation,A8_NO_MEMORY,memory contribution,True,Local effect only; necessity is not universal
+claim_ablation,A9_NO_ARC_EXTENSION,ARC extension,True,Local effect only; necessity is not universal

@@ -1,0 +1,51 @@
+contract_id,result,detail
+1H-CT-01,PASS,B1-B7 comparator taxonomy declared
+1H-CT-02,PASS,All baseline families named
+1H-CT-03,PASS,Seven mandatory baseline slots declared
+1H-CT-04,PASS,"Mandatory baselines include no-learning, memory, random, frequency, compression, hybrid, oracle"
+1H-CT-05,PASS,Hybrid memory+frequency is an explicit comparator
+1H-CT-06,PASS,Oracle is explicitly analysis-only
+1H-CT-07,PASS,A1-A9 component ablations declared
+1H-CT-08,PASS,All required ablation families are explicit
+1H-CT-09,PASS,Every major claim maps to a distinct required removal test
+1H-CT-10,PASS,"Fairness checklist contains tasks, pool, budgets, storage, compute, horizon, exposure, evaluator, config parity"
+1H-CT-11,PASS,Fully matched comparison passes fairness gate
+1H-CT-12,PASS,Task mismatch fails fairness gate
+1H-CT-13,PASS,Candidate-pool mismatch fails fairness gate
+1H-CT-14,PASS,Budget mismatch fails fairness gate
+1H-CT-15,PASS,"Missing fairness evidence is unavailable, not pass"
+1H-CT-16,PASS,Known fairness violation dominates unknown audit fields
+1H-CT-17,PASS,Identical comparator decisions are flagged non-informative
+1H-CT-18,PASS,Divergent decisions create an informative selection comparison
+1H-CT-19,PASS,Unmatched candidate pools cannot support direct ranking attribution
+1H-CT-20,PASS,Different opportunity counts are explicitly flagged
+1H-CT-21,PASS,No eligible opportunities are unavailable
+1H-CT-22,PASS,Missing comparator records cannot be treated as a win
+1H-CT-23,PASS,Different decision horizons are flagged
+1H-CT-24,PASS,ASFT win path exists
+1H-CT-25,PASS,Alternative baseline win path exists
+1H-CT-26,PASS,Equivalent tie path exists
+1H-CT-27,PASS,Uncertain comparison remains inconclusive
+1H-CT-28,PASS,Unavailable endpoint is not coded zero
+1H-CT-29,PASS,Ablation can show positive local component contribution
+1H-CT-30,PASS,Ablation can remove a component without a measurable outcome change
+1H-CT-31,PASS,Ablation can reveal a component harms the tested endpoint
+1H-CT-32,PASS,Unverified removal cannot establish a null contribution
+1H-CT-33,PASS,Missing ablation outcome remains unavailable
+1H-CT-34,PASS,Abstaining/uncertain component effect is allowed
+1H-CT-35,PASS,Frozen governance checklist passes when all commitments verified
+1H-CT-36,PASS,Post-outcome config change fails governance
+1H-CT-37,PASS,Endpoint drift fails governance
+1H-CT-38,PASS,Split changes fail governance
+1H-CT-39,PASS,Unknown posthoc-change audit is unavailable
+1H-CT-40,PASS,Every baseline family has an interpretation boundary
+1H-CT-41,PASS,SCT formation and SCV selection require distinct ablations
+1H-CT-42,PASS,Contract suite has a fixed declared count
+1H-CT-43,PASS,Decision rule does not structurally favor ASFT
+1H-CT-44,PASS,A single-arm result is not a comparator victory
+1H-CT-45,PASS,Claim-to-ablation registry references only declared ablations
+1H-CT-46,PASS,"Attribution permits a win only after fair, divergent comparison"
+1H-CT-47,PASS,Identical choices block a mechanism win label
+1H-CT-48,PASS,Unfair comparisons cannot be attributed even with favorable numbers
+1H-CT-49,PASS,Opportunity mismatch prevents direct attribution
+1H-CT-50,PASS,Decision-vector lengths must match eligible-opportunity counts
