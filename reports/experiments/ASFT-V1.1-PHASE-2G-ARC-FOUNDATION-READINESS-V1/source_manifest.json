@@ -1,0 +1,253 @@
+{
+  "phase": "ASFT-V1.1-PHASE-2G",
+  "package": "ASFT-V1.1-PHASE-2G-ARC-FOUNDATION-READINESS-V1",
+  "scope": "Read-only integration of Phases 2A-2F. No new ARC search, test scoring, or representation comparison.",
+  "record_count": 35,
+  "records": [
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2G-ARC-FOUNDATION-READINESS-V1/README.md",
+      "kind": "phase2g_integrated_artifact",
+      "note": "Integrated readiness report, matrix, or manifest.",
+      "sha256": "a340cb17d55a9f139e4ed77a45772ea79b70de61327ca3907af8e028db153984",
+      "bytes": 1515
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2G-ARC-FOUNDATION-READINESS-V1/arc_readiness_matrix.csv",
+      "kind": "phase2g_integrated_artifact",
+      "note": "Integrated readiness report, matrix, or manifest.",
+      "sha256": "ba88dff64a8bca8253c3ff5fd1b6b55bd9c492bddd1d0bee70ebcb9c41b6e313",
+      "bytes": 3988
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2G-ARC-FOUNDATION-READINESS-V1/arc_risk_assessment.md",
+      "kind": "phase2g_integrated_artifact",
+      "note": "Integrated readiness report, matrix, or manifest.",
+      "sha256": "71d448ad6b168d53974739aa88516b37fd7ae6b726205b8cbd76efd2b549eacf",
+      "bytes": 3212
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2G-ARC-FOUNDATION-READINESS-V1/foundation_evidence_review.md",
+      "kind": "phase2g_integrated_artifact",
+      "note": "Integrated readiness report, matrix, or manifest.",
+      "sha256": "60c05022e54b10e3f601875b333b9d9e55d32c660f6d01f00a7933c5f049d22a",
+      "bytes": 5575
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2G-ARC-FOUNDATION-READINESS-V1/mechanism_test_readiness.md",
+      "kind": "phase2g_integrated_artifact",
+      "note": "Integrated readiness report, matrix, or manifest.",
+      "sha256": "aee251930a96d798a838d6087999cd8c679c2b6237d7facd54befa7d668c6fcb",
+      "bytes": 3286
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2G-ARC-FOUNDATION-READINESS-V1/phase2G_integrated_manifest.json",
+      "kind": "phase2g_integrated_artifact",
+      "note": "Integrated readiness report, matrix, or manifest.",
+      "sha256": "2ed915e68bb8ce5f753ce6cd7fd0dba83d296bc06202bedf5e08d0a05b762550",
+      "bytes": 542
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2G-ARC-FOUNDATION-READINESS-V1/phase2_exit_decision.md",
+      "kind": "phase2g_integrated_artifact",
+      "note": "Integrated readiness report, matrix, or manifest.",
+      "sha256": "17578f1896f8707b99244962f3c8df311d857b1a5ed1a9c82f08b70e303cf085",
+      "bytes": 2601
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2G-ARC-FOUNDATION-READINESS-V1/phase2_readiness_report.md",
+      "kind": "phase2g_integrated_artifact",
+      "note": "Integrated readiness report, matrix, or manifest.",
+      "sha256": "2d62817c772d934cb146390f9759da2967cc6c7fe7c1186eef0731e445f4c32f",
+      "bytes": 5307
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2G-ARC-FOUNDATION-READINESS-V1/protocol_integrity_review.md",
+      "kind": "phase2g_integrated_artifact",
+      "note": "Integrated readiness report, matrix, or manifest.",
+      "sha256": "5fb3eb06763c23c3d8957210d470b42e4691ac3670389bd4c1ffcda58d684d1f",
+      "bytes": 2682
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2G-ARC-FOUNDATION-READINESS-V1/representation_hypothesis_status.md",
+      "kind": "phase2g_integrated_artifact",
+      "note": "Integrated readiness report, matrix, or manifest.",
+      "sha256": "c960165b8b266246baa98b8d86707e38fa7e142e19c02852b63c7b5d60e40d57",
+      "bytes": 1896
+    },
+    {
+      "path": "experiments/phase2g/finalize_package.py",
+      "kind": "package_qa_code",
+      "note": "Integrated package structure, claims, link, and provenance checks.",
+      "sha256": "8131566aaa00c3bf422493d39f0cd7f88eb74f5bde6197a30beaa52f965ebaaf",
+      "bytes": 8876
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2A-REPRESENTATION-AUDIT-V1/phase2A_readiness_review.md",
+      "kind": "phase2a_evidence",
+      "note": "Representation audit and original phase gate status.",
+      "sha256": "1166383c74713171b832e798d4b7adef74a411f649b23d8519a748ba63565065",
+      "bytes": 7399
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2A-REPRESENTATION-AUDIT-V1/historical_representation_audit.md",
+      "kind": "phase2a_evidence",
+      "note": "Historical Phase 13G language, budget, and coverage audit.",
+      "sha256": "12141e5eba7aba82dadddf88a950dfcf6f3958a4c68f4fd1c2175f859e9d4d18",
+      "bytes": 12995
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2A-REPRESENTATION-AUDIT-V1/primitive_inventory.csv",
+      "kind": "phase2a_evidence",
+      "note": "Phase 13G primitive inventory.",
+      "sha256": "2388d37d497a16e93ccec04cd230ccce80b4c09365a911526c755d5f33cda09f",
+      "bytes": 7605
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2A-REPRESENTATION-AUDIT-V1/missing_concepts_audit.md",
+      "kind": "phase2a_evidence",
+      "note": "Missing/partial solution concepts.",
+      "sha256": "140f25b3d44790ddb9bb79bdf4c9b3f6eecb852613c02fa307b6cbc325145e77",
+      "bytes": 6223
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2A-REPRESENTATION-AUDIT-V1/representation_bottleneck_assessment.md",
+      "kind": "phase2a_evidence",
+      "note": "Prior representation hypothesis grade.",
+      "sha256": "8d3b6964a6fe956c412c8085e3eecb22d89e7028aef55ecdd817acffa4075ac4",
+      "bytes": 5654
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2B-ARC-COVERAGE-BENCHMARK-V1/phase2B_readiness_review.md",
+      "kind": "phase2b_evidence",
+      "note": "Coverage benchmark and isolation status.",
+      "sha256": "dc86f8fab52f4df4c807ea5229efedc3a705158095e05de7d4f7d2baf00d34db",
+      "bytes": 4895
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2B-ARC-COVERAGE-BENCHMARK-V1/coverage_summary_by_split.csv",
+      "kind": "phase2b_data",
+      "note": "Saved Phase 2B split/condition coverage.",
+      "sha256": "69a6cdb16d3db2d4e8dd834e466d782e4780f7bc8c8fd81a2156fce444a9c823",
+      "bytes": 1820
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2B-ARC-COVERAGE-BENCHMARK-V1/run_manifest.json",
+      "kind": "phase2b_manifest",
+      "note": "Phase 2B run scope, task, and integrity record.",
+      "sha256": "165c2d36d8858b3a8eff390b4f6ecc5e24b6e6017be37c640b5b43a75b31f553",
+      "bytes": 1851
+    },
+    {
+      "path": "experiments/phase2c/config.json",
+      "kind": "phase2c_protocol",
+      "note": "Frozen B1-B6 search budget configuration.",
+      "sha256": "abdd45fe7373108a7b8b0704218a379eca5263c72b001de1d21e87082425ed79",
+      "bytes": 3553
+    },
+    {
+      "path": "experiments/phase2c/budget_registry.yaml",
+      "kind": "phase2c_protocol",
+      "note": "Budget source of truth and historical mismatch.",
+      "sha256": "cab4114f3aa9f2b6082bd709f2e342b1c72923d13f8de6b23fd738c2eab7cd50",
+      "bytes": 3464
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2C-SEARCH-BUDGET-AUDIT-V1/phase2C_readiness_review.md",
+      "kind": "phase2c_evidence",
+      "note": "Search-budget audit results and parity decision.",
+      "sha256": "75a4eb651f3302c0189141b84db9721d83372b728ac9d33633ac5eb5496bf2c3",
+      "bytes": 5141
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2C-SEARCH-BUDGET-AUDIT-V1/budget_sensitivity_summary.csv",
+      "kind": "phase2c_data",
+      "note": "S1-S4 coverage sensitivity results.",
+      "sha256": "b3aa60b87e2d70053cfee9bfd02827b98cf7c4d24f87a22827aa89f3b08afe5b",
+      "bytes": 1060
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2C-SEARCH-BUDGET-AUDIT-V1/replay_validation.csv",
+      "kind": "phase2c_data",
+      "note": "Deterministic replay validation.",
+      "sha256": "4a04e17ba5b653a86af3bf1298874148cc9f71052dedc0d6298c37251c25aaef",
+      "bytes": 964610
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2C-SEARCH-BUDGET-AUDIT-V1/runtime_integrity_record.json",
+      "kind": "phase2c_data",
+      "note": "B1-B6 parity and runtime integrity.",
+      "sha256": "83f06b2575faaab7d8f85de516250b99d67ad80dc072f3e7a1685dd38125a463",
+      "bytes": 6063
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/phase2D_readiness_review.md",
+      "kind": "phase2d_evidence",
+      "note": "Trace validity/yield/diversity and readiness.",
+      "sha256": "6abe0e60648cb445261390639cc4c3464ed049c1268970bffb01cbee8009a23a",
+      "bytes": 4311
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/trace_lifecycle_summary.csv",
+      "kind": "phase2d_data",
+      "note": "Trace lifecycle stage counts.",
+      "sha256": "76d1b6bf82d1b55337f676bd3c64b372153e49881acb7256400cdc137fed4ced",
+      "bytes": 1063
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2D-TRACE-GENERATION-AUDIT-V1/invariant_readiness_summary.csv",
+      "kind": "phase2d_data",
+      "note": "TraceMiner inputs and invariant-readiness counts.",
+      "sha256": "c4216a2915be38f34e536ec0eab715fa77d9ca17ef9733d788c6ba625f854922",
+      "bytes": 424
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2E-INVARIANT-DISCOVERY-AUDIT-V1/phase2E_readiness_review.md",
+      "kind": "phase2e_evidence",
+      "note": "Recurrence, support, candidate, validation, and status.",
+      "sha256": "1749b9b548fd25346ceb9a42c0baff4ca0a318707a63385eeb4fa6d02d3b8923",
+      "bytes": 5143
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2E-INVARIANT-DISCOVERY-AUDIT-V1/recurrence_summary.csv",
+      "kind": "phase2e_data",
+      "note": "Prethreshold operation-signature support.",
+      "sha256": "99e861c10800d11222081de1b98798c3612c6fdc217f9d114c35806dfac9e599",
+      "bytes": 913
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2E-INVARIANT-DISCOVERY-AUDIT-V1/candidate_generation_audit.csv",
+      "kind": "phase2e_data",
+      "note": "Current/relaxed/strict candidate stage results.",
+      "sha256": "b7bf0b62bbe3c87f16051d3800a9ef47975bfdb222eef0fb0744cf73f0735a9b",
+      "bytes": 4455
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2E-INVARIANT-DISCOVERY-AUDIT-V1/validation_diagnostic_summary.csv",
+      "kind": "phase2e_data",
+      "note": "Diagnostic validator counts and limits.",
+      "sha256": "6a61970b22d7454ee067f7e512c9ba97a75bd5879226c7570a40278eeb174e28",
+      "bytes": 708
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2F-REPRESENTATION-ALTERNATIVES-V1/phase2F_readiness_review.md",
+      "kind": "phase2f_evidence",
+      "note": "Representation framework readiness and outstanding gates.",
+      "sha256": "d0522028375694e19c15dde3003ff3681d33cbc94397c44551288bf98adfec44",
+      "bytes": 5400
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2F-REPRESENTATION-ALTERNATIVES-V1/representation_registry.csv",
+      "kind": "phase2f_data",
+      "note": "R0/R1, alternatives, HCC, and implementation status.",
+      "sha256": "dbe817e0ac0b56085afa94c1df00361c47214cfae31983342bddc007f3fd044b",
+      "bytes": 27229
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-2F-REPRESENTATION-ALTERNATIVES-V1/phase2F_framework_config.json",
+      "kind": "phase2f_data",
+      "note": "Common budgets, task-set caveats, and preregistration gates.",
+      "sha256": "c50a057bda358cf293b40be3f15361c8e5162bc92ac34fa984b4fc5eebe75023",
+      "bytes": 4024
+    }
+  ]
+}
