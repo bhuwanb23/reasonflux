@@ -1,0 +1,27 @@
+{
+  "support_threshold": 5,
+  "min_consistency": 1.0,
+  "results": {
+    "budgeted": {
+      "candidate_count": 0,
+      "trace_miner_candidate_count": 0,
+      "accepted_programs": [],
+      "source_successful_traces": 1,
+      "discovery_success_support_by_program": {
+        "reflect_vertical": 1
+      }
+    },
+    "fullscan": {
+      "candidate_count": 0,
+      "trace_miner_candidate_count": 0,
+      "accepted_programs": [],
+      "source_successful_traces": 3,
+      "discovery_success_support_by_program": {
+        "reflect_vertical": 1,
+        "rotate_270": 1,
+        "recolor_bijection": 1
+      }
+    }
+  },
+  "interpretation": "Actual Phase 13G TraceMiner invoked on successful discovery traces only; later stages not run."
+}

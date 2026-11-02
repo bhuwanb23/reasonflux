@@ -1,0 +1,58 @@
+{
+  "phase": "ASFT-V1.1-PHASE-2B",
+  "package": "ASFT-V1.1-PHASE-2B-ARC-COVERAGE-BENCHMARK-V1",
+  "protocol": "experiments/phase2b/preregistration.md",
+  "config": "experiments/phase2b/config.json",
+  "protocol_sha256": "366a73be93a933875bff0727f66e8acc0110684bc936318c24f64584f1983ab5",
+  "config_sha256": "6e17b631e68eae0b530308d3bc47fdf584cd5803eed3dd7dae316efd6bfca04a",
+  "runner_sha256": "2609eebc0967c86f6adf5feb0c773ed5f7a9b813a2546c3e46dee0be9c8d1195",
+  "dataset_manifest_sha256": "6c83a1454e957961c236a38252ac7b39d81b50f513b37dfec2b3c1995c8a1220",
+  "dataset_source_manifest_sha256": "c46e8cd8610492452b0c7a87a9085249eb09e89a8f6271de69a98151d5fee8e5",
+  "task_count": 1000,
+  "split_counts": {
+    "discovery": 600,
+    "transfer": 200,
+    "holdout": 200
+  },
+  "budgeted_candidate_limit": 3,
+  "fullscan_candidate_limit": 10,
+  "program_order": [
+    "identity",
+    "reflect_horizontal",
+    "reflect_vertical",
+    "rotate_90",
+    "rotate_180",
+    "rotate_270",
+    "transpose",
+    "anti_transpose",
+    "translate_constant",
+    "recolor_bijection"
+  ],
+  "test_output_fields_parsed_or_used": false,
+  "accuracy_measured": false,
+  "runtime_seconds": 10.313,
+  "historical_phase13g_outcomes_modified": false,
+  "invariant_mining": {
+    "budgeted": {
+      "candidate_count": 0,
+      "trace_miner_candidate_count": 0,
+      "accepted_programs": [],
+      "source_successful_traces": 1,
+      "discovery_success_support_by_program": {
+        "reflect_vertical": 1
+      }
+    },
+    "fullscan": {
+      "candidate_count": 0,
+      "trace_miner_candidate_count": 0,
+      "accepted_programs": [],
+      "source_successful_traces": 3,
+      "discovery_success_support_by_program": {
+        "reflect_vertical": 1,
+        "rotate_270": 1,
+        "recolor_bijection": 1
+      }
+    }
+  },
+  "run_status": "completed_coverage_only"
+}
