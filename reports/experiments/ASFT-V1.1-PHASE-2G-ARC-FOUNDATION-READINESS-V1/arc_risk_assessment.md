@@ -1,0 +1,17 @@
+# Phase 2G.3 — ARC Foundation Risk Assessment
+
+Ratings describe **risk to meaningful interpretation**, not probability that ASFT is true or false.
+
+| ID | Risk | Rating | Evidence / consequence | Mitigation / gate |
+|---|---|---|---|---|
+| **R1 Representation Risk** | Current bounded DSL may omit transformations/structures; alternatives remain specifications only. | **HIGH** | R1 fullscan found 10/1,000 demo fits; no alternative comparison. | Implement/hash R2–R7; preregister paired R1 vs R3 primary contrast and component contrasts; no semantic-impossibility claims. |
+| **R2 Search Risk** | Search budget/order and candidate enumeration can mask a fit. | **MODERATE** | Phase 2C matched B1-B6; Phase 13G mismatch cap3/config vs discovery10 and first-fit behavior remain. | Use one frozen candidate/resource budget and candidate ledger per representation; fail closed on parity. |
+| **R3 Coverage Risk** | Low coverage may leave insufficient substrate for mechanism tests. | **HIGH** | 0.2–1.0% fit yield across Phase 2C caps; only 1% fullscan. | Report bounded found-fit; do not proceed if preregistered minimum usable trace/support supply is unmet. |
+| **R4 Trace Risk** | Successful traces are sparse and offer little recurrence; historical generation-time validation is unknown. | **HIGH** | Phase 2D found all current traces structurally valid, but only 1–3 discovery successes/condition; historical flag hard-coded. | Independent generation-time validator; preserve no-fit/invalid/partial distinctions; require adequate support before invariant testing. |
+| **R5 Invariant Risk** | Current threshold/filter policy suppresses all production candidates; semantic validity is untested. | **CRITICAL** | Current support5 exceeds max observed support3; relaxed proposals are generic wrappers and rejected; FDR unavailable. | Freeze independent family labels and support rules; establish positive-control/HCC plumbing; require actual candidate input and independent validation before mechanism tests. |
+| **R6 Protocol Risk** | Historical holdout reuse and source/config mismatch limit confirmatory interpretation; no fresh alternative run exists. | **HIGH** | Phase 13G attempt02 reused holdout; 2F alternatives unbuilt; all 1,000 Phase2C tasks already reviewed. | New authorized untouched paired split; pre-run hashes, seals, budgets, adapters, and access audit. |
+| **R7 Interpretation Risk** | Coverage, trace success, invariants, transfer, capability, and accuracy may be conflated. | **HIGH** | Phase 2A-2F repeatedly show different denominators/stages; semantic family labels are outcome-derived. | Enforce reporting standard, explicit unavailable/blocked states, independent annotations, and no post-outcome promotion. |
+
+## Overall risk
+
+The existing diagnostics substantially reduce **measurement opacity** for R1, but they do not remove the **evidence-sufficiency risk**. The critical bottleneck is that no repeated, semantically grounded invariant candidate reaches the production validator, while the alternative representation comparison and fresh confirmatory split are not ready. Proceeding to confirmatory mechanism claims now would recreate the Phase 13G interpretability problem.

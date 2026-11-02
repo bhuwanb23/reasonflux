@@ -1,0 +1,14 @@
+{
+  "phase": "ASFT-V1.1-PHASE-2G",
+  "package": "ASFT-V1.1-PHASE-2G-ARC-FOUNDATION-READINESS-V1",
+  "review_only_no_new_arc_science_or_search": true,
+  "test_outputs_parsed_or_used": false,
+  "phase2_exit_decision": "PARTIAL",
+  "arc_mechanism_testing": "BLOCKED",
+  "representation_hypothesis": "H4_UNRESOLVED",
+  "confirmatory_authorization": false,
+  "historical_holdout_pristine": false,
+  "all_phase2c_1000_task_ids_previously_audited": true,
+  "accuracy_measured_in_phase2g": false,
+  "status": "FOUNDATION_READINESS_REVIEW_COMPLETE"
+}
