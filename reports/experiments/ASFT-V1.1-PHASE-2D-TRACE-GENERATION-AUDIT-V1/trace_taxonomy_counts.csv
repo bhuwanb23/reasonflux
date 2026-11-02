@@ -1,0 +1,31 @@
+condition,taxonomy_id,trace_class,count,status
+S1,T1,Invalid Trace,0,independently_validated
+S1,T2,Valid Trace,1000,independently_validated
+S1,T3,Partial Trace,0,not_emitted_by_builder; candidate failures are not partial trace records
+S1,T4,Successful Trace,2,exact demonstration fit
+S1,T5,High-Support Trace,0,nonexclusive; discovery program support >=5
+S1,T6,Transfer-Relevant Trace,0,nonexclusive program-level discovery/transfer overlap; not transfer success
+S2,T1,Invalid Trace,0,independently_validated
+S2,T2,Valid Trace,1000,independently_validated
+S2,T3,Partial Trace,0,not_emitted_by_builder; candidate failures are not partial trace records
+S2,T4,Successful Trace,5,exact demonstration fit
+S2,T5,High-Support Trace,0,nonexclusive; discovery program support >=5
+S2,T6,Transfer-Relevant Trace,0,nonexclusive program-level discovery/transfer overlap; not transfer success
+S3,T1,Invalid Trace,0,independently_validated
+S3,T2,Valid Trace,1000,independently_validated
+S3,T3,Partial Trace,0,not_emitted_by_builder; candidate failures are not partial trace records
+S3,T4,Successful Trace,10,exact demonstration fit
+S3,T5,High-Support Trace,0,nonexclusive; discovery program support >=5
+S3,T6,Transfer-Relevant Trace,2,nonexclusive program-level discovery/transfer overlap; not transfer success
+S4,T1,Invalid Trace,0,independently_validated
+S4,T2,Valid Trace,1000,independently_validated
+S4,T3,Partial Trace,0,not_emitted_by_builder; candidate failures are not partial trace records
+S4,T4,Successful Trace,10,exact demonstration fit
+S4,T5,High-Support Trace,0,nonexclusive; discovery program support >=5
+S4,T6,Transfer-Relevant Trace,2,nonexclusive program-level discovery/transfer overlap; not transfer success
+PHASE13G_HISTORICAL,T1,Invalid Trace,0,measured_retrospectively
+PHASE13G_HISTORICAL,T2,Valid Trace,600,historical_structural_validation_not_generation_time
+PHASE13G_HISTORICAL,T3,Partial Trace,0,not_emitted_by_builder; candidate failures are not partial trace records
+PHASE13G_HISTORICAL,T4,Successful Trace,3,exact demonstration fit
+PHASE13G_HISTORICAL,T5,High-Support Trace,0,nonexclusive; discovery program support >=5
+PHASE13G_HISTORICAL,T6,Transfer-Relevant Trace,0,nonexclusive program-level discovery/transfer overlap; not transfer success
