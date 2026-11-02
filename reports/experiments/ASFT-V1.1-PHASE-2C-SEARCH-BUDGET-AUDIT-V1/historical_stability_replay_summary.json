@@ -1,0 +1,12 @@
+{
+  "task_count": 600,
+  "permutation_searches": 6000,
+  "primary_search_candidate_trials": 5989,
+  "stability_replay_candidate_trials": 59890,
+  "primary_result_or_trial_count_mismatches": 0,
+  "saved_stability_value_mismatches": 0,
+  "saved_trace_permutation_count": 10,
+  "test_outputs_parsed_or_used": false,
+  "accuracy_measured": false,
+  "status": "EXACT_REPRODUCTION"
+}

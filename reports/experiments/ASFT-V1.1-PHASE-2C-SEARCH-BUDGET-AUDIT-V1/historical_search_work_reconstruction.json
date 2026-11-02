@@ -1,0 +1,36 @@
+{
+  "phase13g_historical_work_reconstruction": {
+    "discovery_primary": {
+      "calls": 600,
+      "candidate_trials": 5989
+    },
+    "discovery_stability": {
+      "calls": 6000,
+      "candidate_trials": 59890
+    },
+    "transfer_program_probes": {
+      "calls": 2000,
+      "candidate_trials": 2000
+    },
+    "transfer_conditional_baselines": {
+      "calls": 5,
+      "candidate_trials": 15
+    },
+    "scored_transfer_holdout_arms": {
+      "calls": 2000,
+      "candidate_trials": 5994
+    },
+    "transfer_holdout_fullscan_coverage": {
+      "calls": 400,
+      "candidate_trials": 3975
+    }
+  },
+  "total_solver_calls": 11005,
+  "total_candidate_trials": 77863,
+  "coverage_scan_trial_counts_source": "Phase2C S4 training-demo-only deterministic reconstruction; not original task-level Phase13G log",
+  "conditional_baseline_counts_source": "Phase2C transfer-probe training-demo-only reconstruction; not original task-level Phase13G log",
+  "interpretation": "Reconstructed from frozen source code, saved trace outcomes, task_outcomes.csv, Phase13G split manifest, and Phase2C training-demo-only replays. Not a contemporaneous Phase13G run log.",
+  "no_phase13g_outputs_modified": true,
+  "phase2c_test_outputs_parsed_or_used": false,
+  "accuracy_measured_in_phase2c": false
+}
