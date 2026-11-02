@@ -1,0 +1,184 @@
+{
+  "phase_id": "ASFT-V1.1-PHASE-1B",
+  "package": "ASFT-V1.1-PHASE-1B-SELECTION-PRESSURE-SPEC-V1",
+  "scope": "Read-only forensic review of v1.0 Phase 13C, Phase 13F, Phase 14C, Phase 14F, Phase 0 RQ2 and Phase 1A audit/redesign records. Phase 1B defines a benchmark; no experiment or confirmatory outcome collection was run.",
+  "source_hash_count": 32,
+  "sources": [
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/summary.md",
+      "sha256": "bac4148d7ddd5c19b011c25fa14a230156fc7260ab1da4739a9dbe0e0090be96",
+      "bytes": 3231
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/evidence_package.md",
+      "sha256": "bdaf81eae3923dd66c2ea158a4fc3d8fc6f3cae0c7fb1cfc298174f2015131d3",
+      "bytes": 10362
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/calibration_frozen.json",
+      "sha256": "fae1eb6209653b8d35794861621a444d8ff2ad1c65165e77423056d43dcea611",
+      "bytes": 1303
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/preregistration_v1_frozen_preconfirmation.md",
+      "sha256": "2b107c916a3c9d2c09cb1d97e89b934e5e374eb2cbe3940b4218a4f98d1399f1",
+      "bytes": 12195
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/candidate_level.csv",
+      "sha256": "ba614eeb77a42ee37d83ac99bd7460c4c61aa2a38e32d8c278565ced1a67a1c0",
+      "bytes": 11434
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/matched_controls.csv",
+      "sha256": "a0f1e4ccedd553978dd7f54d8b0da293a311dd8899dd474433dc954484765a57",
+      "bytes": 1601
+    },
+    {
+      "path": "experiments/phase13c/scoring.py",
+      "sha256": "27c52fa8d70332cf6dbaf4ec19c5df32cecc65e39114a36d3de4b84ef2de7550",
+      "bytes": 5002
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/evidence_package.md",
+      "sha256": "42443a38d0b6f9e0ee95931339c3a9d8344dbfee4a8247ad992fd9e74a85b6cd",
+      "bytes": 8225
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/candidate_selection.csv",
+      "sha256": "0145b558d9a74f6457fcc4be07dd767908ad70d10d88208ff6f2dc7921875dfe",
+      "bytes": 6780
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/master_result_matrix.csv",
+      "sha256": "35c52b770312d9914cf640acd78f1cdd2ad63ef981c1c6d93ccb8a3092a15e1e",
+      "bytes": 2312
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/frozen_run_manifest.json",
+      "sha256": "f8aa7fa72db5cb097846dcc98de0dc80ecf612dcb813062a23dc1ff2e273f2c7",
+      "bytes": 22741
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/run_manifest.json",
+      "sha256": "4e6025dca0b33855090243cb71fc451a20c817c66408011c669c5cf4a7fb993f",
+      "bytes": 24053
+    },
+    {
+      "path": "experiments/phase13f/config.json",
+      "sha256": "33e719b080d4fe4db99ce0ca142a7837ccf77ac04dc528693e21a2afb872906a",
+      "bytes": 6290
+    },
+    {
+      "path": "experiments/phase13f/preregistration.md",
+      "sha256": "fa2497bd08b00fda39425216fdd87e5cfc776385995277ee7cdddc08181df89f",
+      "bytes": 7848
+    },
+    {
+      "path": "reports/experiments/PHASE-14C-SCT-CRITICAL-ANALYSIS-V1/phase14c_sct_analysis.md",
+      "sha256": "d23e9cf08c3c7d932c285af0aff523efa617e85b0fa27dba03e43ab255f0d977",
+      "bytes": 22369
+    },
+    {
+      "path": "reports/experiments/PHASE-14C-SCT-CRITICAL-ANALYSIS-V1/policy_failure_analysis.csv",
+      "sha256": "8b8da68f328ca428916fa560b21e5ccc22baa15bba5d001cdb3211b6996c0037",
+      "bytes": 2179
+    },
+    {
+      "path": "reports/experiments/PHASE-14C-SCT-CRITICAL-ANALYSIS-V1/scv_predictor_comparison.csv",
+      "sha256": "3fabde78aa0c15e01e254bfc41c34cba0935384084dc7f62fd09ce2ea78bd784",
+      "bytes": 847
+    },
+    {
+      "path": "reports/experiments/PHASE-14C-SCT-CRITICAL-ANALYSIS-V1/threats_to_validity.csv",
+      "sha256": "8b9c550fa93a454f8449891a2ad0411d5ba88427f7b7bfdeab36c21399a80404",
+      "bytes": 2857
+    },
+    {
+      "path": "reports/experiments/PHASE-14C-SCT-CRITICAL-ANALYSIS-V1/memory_interpretation.md",
+      "sha256": "be03e4081c6691bada2e16419ccd493840936af7c7859498b9b1da0b53776436",
+      "bytes": 1994
+    },
+    {
+      "path": "reports/experiments/PHASE-14F-BASELINE-ABLATION-CRITICAL-ANALYSIS-V1/phase14f_baselines_ablations_analysis.md",
+      "sha256": "b9e9bbf4aa8e14b66776e038ce92dc361bda23cf5147de11524c068820e78402",
+      "bytes": 21121
+    },
+    {
+      "path": "reports/experiments/PHASE-14F-BASELINE-ABLATION-CRITICAL-ANALYSIS-V1/component_importance_assessment.md",
+      "sha256": "393bb47978b392127fe0c779f2a819563c1a23bca1280b4b04b1ef334dfd2798",
+      "bytes": 2410
+    },
+    {
+      "path": "reports/experiments/PHASE-14F-BASELINE-ABLATION-CRITICAL-ANALYSIS-V1/alternative_explanation_analysis.md",
+      "sha256": "223c90feb0acdc6f202d0253b350a91c7f704a132a74a94abb1c96ac18bc8855",
+      "bytes": 2650
+    },
+    {
+      "path": "reports/experiments/PHASE-14F-BASELINE-ABLATION-CRITICAL-ANALYSIS-V1/baseline_ablation_scorecard.csv",
+      "sha256": "af6109630fbc8576675164812b17e5de1478ed91a5164e6cc30062f1b1d6d326",
+      "bytes": 2193
+    },
+    {
+      "path": "reports/experiments/PHASE-14F-BASELINE-ABLATION-CRITICAL-ANALYSIS-V1/threats_to_validity.csv",
+      "sha256": "ca82c69ef7dbc4f36beeeb2b6c7c0a9e1b5a9731e0f9f154e94cf1a2b203637c",
+      "bytes": 2086
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-0-RESEARCH-SPEC-V1/research_questions.csv",
+      "sha256": "cee6d7f511d27a69188dec79f62e2ebfabe8086b21c7d16a990672cd538ef249",
+      "bytes": 3761
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-0-RESEARCH-SPEC-V1/phase0_v1_1_research_specification.md",
+      "sha256": "5b88d33f939cc75b290432391c340f3b4616d622fceb7c33b1ba34698b5d4757",
+      "bytes": 16644
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-0-RESEARCH-SPEC-V1/success_criteria.csv",
+      "sha256": "4b993ab44d3c790df6ed2c103c1ad6dab52970ec8e39c18cb885518c7d4c1646",
+      "bytes": 4100
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-0-RESEARCH-SPEC-V1/v1_1_research_charter.json",
+      "sha256": "8b8710c8ea5942f83a4bcea97068e7549de43b6580eee3ec5fbde2e259d725d3",
+      "bytes": 5450
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1A-BENCHMARK-AUDIT-V1/phase1A_review.md",
+      "sha256": "e6d59bc8e146cf5083f60e2e642ddc936b9a80a441e1cc17773a7ced555b7237",
+      "bytes": 13735
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1A-BENCHMARK-AUDIT-V1/benchmark_redesign_requirements.csv",
+      "sha256": "75ededf6c926f2833acd371266df745d349e9de12833077867616671e1eeeaab",
+      "bytes": 7156
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1A-BENCHMARK-AUDIT-V1/baseline_audit.csv",
+      "sha256": "c4652452e78e18bf109c2b4058c5369a26a34ddb45dd9216c602cd4217aae2cb",
+      "bytes": 5116
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1A-BENCHMARK-AUDIT-V1/decision_divergence_audit.csv",
+      "sha256": "5ef61b920e9079da27222e6d2acfcb8a9b7f442ecdcf2bf0164c6dd580c8bd9c",
+      "bytes": 4349
+    }
+  ],
+  "deliverables": [
+    "selection_failure_audit.md",
+    "candidate_taxonomy.md",
+    "candidate_value_definition.md",
+    "selection_pressure_design.md",
+    "selector_competition_spec.md",
+    "baseline_fairness_protocol.md",
+    "selection_metrics.md",
+    "selection_dataset_protocol.md",
+    "selection_preregistration_template.md",
+    "phase1B_readiness_report.md",
+    "phase1B_readme.md",
+    "phase1B_readiness_checklist.csv",
+    "selection_pressure_fixture.csv",
+    "source_hashes.csv"
+  ]
+}
