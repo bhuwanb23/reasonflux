@@ -1,0 +1,6 @@
+fixture,coverage_status,accuracy_status,chain_status,scope
+coverage_high_accuracy_low,observed .80,observed .20,chain_break_observed,constructed contract fixture only; no ARC outcome data
+coverage_low_accuracy_low,observed .10,observed .10,chain_break_observed,constructed contract fixture only; no ARC outcome data
+coverage_high_transfer_low,observed .80,observed .20,chain_break_observed,constructed contract fixture only; no ARC outcome data
+zero_skill_transfer_denominator,observed coverage,unavailable transfer,chain_unavailable,constructed contract fixture only; no ARC outcome data
+all_stages_active,observed,observed,chain_activated,constructed contract fixture only; no ARC outcome data
