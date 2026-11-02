@@ -1,0 +1,75 @@
+{
+  "phase": "ASFT-V1.1-PHASE-2F",
+  "package": "ASFT-V1.1-PHASE-2F-REPRESENTATION-ALTERNATIVES-V1",
+  "status": "FRAMEWORK_ONLY_NO_REPRESENTATION_COMPARISON_RUN",
+  "legacy_namespace_note": "Phase2F registry follows user labels R0 historical, R1 current production. Phase2A called its object-centric relational proposal R1; Phase2F decomposes it into R3 object base plus R4 relation extension. Phase2A R0 corrected reference maps to Phase2F R1.",
+  "representation_reference": {
+    "R0": "historical 13G exact language and mismatched historical path; audit-only",
+    "R1": "same ten programs under current Phase2C frozen test-blind execution; matched comparison baseline"
+  },
+  "primary_comparison": "R1 vs R3 object-centric; R2 primitive-expanded and R4-R7 are specified secondary/component/hybrid alternatives.",
+  "common_task_data": {
+    "training_demo_only": true,
+    "same_task_ids_per_representation": true,
+    "prospective_common_evaluation_set_required": true,
+    "all_1000_phase2c_task_ids_previously_audited": true,
+    "existing_phase2c_set_confirmatory_use": "diagnostic_only; all IDs have prior coverage/trace/invariant inspection",
+    "confirmatory_data_requirement": "new authorized untouched common split; do not use historical Phase13G holdout as pristine",
+    "historical_13g_holdout_pristine": false,
+    "test_outputs_parsed_or_used": false
+  },
+  "common_search_budget": {
+    "candidate_trials_per_task": 10,
+    "search_depth": 1,
+    "primary_trace_records_per_task_condition": 1,
+    "max_trace_steps": 4,
+    "runtime_seconds_per_search": 30,
+    "memory_mib": 2048,
+    "primary_task_ids_per_condition": 1000,
+    "deterministic_replay_task_ids_per_condition": 1000,
+    "total_search_invocations_per_condition": 2000,
+    "composition_search_note": "One complete program is one flat candidate; a bounded composed AST is one candidate, not iterative deepening."
+  },
+  "common_fit_rule": "All available training demonstration pairs must be reproduced exactly; first exact fit under deterministic order; no fit is NOT_FOUND_WITHIN_LANGUAGE_AND_BUDGET, never semantic impossibility.",
+  "trace_contract": {
+    "records_per_task_condition": 1,
+    "max_high_level_steps": 4,
+    "schema_validator_required": true,
+    "no_partial_trace_from_failed_candidate": true,
+    "full_candidate_trial_ledger_separate": true
+  },
+  "downstream_frozen": {
+    "miner": "unchanged Phase 2E TraceMiner",
+    "min_frequency": 5,
+    "min_cross_trace": 5,
+    "min_consistency": 1.0,
+    "min_task_families": 2,
+    "skill_pipeline": "existing SkillConfig and qualify_candidate",
+    "transfer_applicability_minimum": 3,
+    "capability_pipeline": "existing CapabilityConfig and lifecycle"
+  },
+  "statistics": {
+    "independent_unit": "task_id",
+    "primary": "paired coverage risk difference",
+    "report": "win/loss/tie counts plus 95% paired bootstrap CI; predeclare seed, multiplicity handling, and practical delta before outputs",
+    "material_effect_threshold": "must be preregistered before execution; not selected in this framework"
+  },
+  "required_before_run": [
+    "implement each alternative and freeze code/grammar hashes",
+    "freeze shared independent task-family annotations or mark family-breadth endpoints unavailable",
+    "predeclare \u03b4_coverage and \u03b4_activation",
+    "freeze a prospective paired task set disjoint from representation development",
+    "test coverage-only runner cannot access test outputs",
+    "verify identical budget, trace, downstream and evaluator contracts",
+    "positive-control HCC generator and oracle run",
+    "authorize any sealed accuracy evaluation separately"
+  ],
+  "prohibited": [
+    "claiming ARC accuracy from demo-fit coverage",
+    "claiming transfer/capability from coverage alone",
+    "calling no-fit semantic unrepresentability",
+    "automatic representation-root-cause attribution",
+    "promoting exploratory results to confirmatory",
+    "using outcome-derived program labels as independent task-family labels"
+  ]
+}
