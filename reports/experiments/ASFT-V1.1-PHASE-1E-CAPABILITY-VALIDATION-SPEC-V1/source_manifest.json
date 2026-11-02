@@ -1,0 +1,273 @@
+{
+  "phase": "ASFT-V1.1-PHASE-1E",
+  "package": "ASFT-V1.1-PHASE-1E-CAPABILITY-VALIDATION-SPEC-V1",
+  "provenance_note": "Historical sources are audited, not rerun. Contract fixtures are not task evidence. Hashes identify source and package artifacts at specification/contract completion.",
+  "records": [
+    {
+      "path": "reports/experiments/PHASE-13D-TRANSFER-V1/phase13d_results.md",
+      "kind": "historical_source",
+      "note": "Historical source: corrected Phase 13D interpretation",
+      "sha256": "183e40153bf8e8eab9dff8ef4bc56723ba51df391b7db796b7e1e4865970af48",
+      "bytes": 11011
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 13E evidence package",
+      "sha256": "b12c706818452c8033699f9dc5bbdc1246349760a307d3b4085951060d223f54",
+      "bytes": 8909
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/seed_summary.csv",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 13E seed summary",
+      "sha256": "c9a359abe3c3b16338f36001d2be51de1ff41297f2eefb445c9dbbf94b9807ed",
+      "bytes": 43870
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/task_level.csv",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 13E task outcomes",
+      "sha256": "78f6c1047db0ef2bdc49802dbdc9794d6d3a93281f1bd87e4691b1aabf6461a2",
+      "bytes": 2927757
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/run_manifest.json",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 13E run manifest",
+      "sha256": "3cb40e0844ab01ebfb2fbeac72a376ff238e5f9a04c530a6686ba6429e679a5d",
+      "bytes": 33647
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/analysis.json",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 13E analysis output",
+      "sha256": "5b04b3cf37b17962797853b103e31d3a2af7bfb87de45f341d525976400d6268",
+      "bytes": 255400
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/evidence_package.md",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 13F endpoint/comparator results",
+      "sha256": "42443a38d0b6f9e0ee95931339c3a9d8344dbfee4a8247ad992fd9e74a85b6cd",
+      "bytes": 8225
+    },
+    {
+      "path": "reports/experiments/PHASE-14E-CGM-CRITICAL-RESULTS-ANALYSIS-V1/capability_interpretation.md",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14E capability interpretation",
+      "sha256": "d69a07b80fc8ac047d249c6c61c439036b255a079f971794374c57965ca833f1",
+      "bytes": 1447
+    },
+    {
+      "path": "reports/experiments/PHASE-14E-CGM-CRITICAL-RESULTS-ANALYSIS-V1/growth_interpretation.md",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14E growth interpretation",
+      "sha256": "aaeafcd3bc4fa30f48c89b2ef822c34c097f1dba806aea9901cf3c98fe06cb20",
+      "bytes": 1481
+    },
+    {
+      "path": "reports/experiments/PHASE-14E-CGM-CRITICAL-RESULTS-ANALYSIS-V1/cgm_scorecard.csv",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14E CGM scorecard",
+      "sha256": "6f12fca900692f3e2f085e8e2319c62fd47b64f97fa2f515a92238ab9e6dfe51",
+      "bytes": 2080
+    },
+    {
+      "path": "reports/experiments/PHASE-14E-CGM-CRITICAL-RESULTS-ANALYSIS-V1/prediction_and_association.csv",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14E association analyses",
+      "sha256": "40fc0d7fae41417675c27e8e2fbb05b0e661b287975db4445a65c70b8dd3f585",
+      "bytes": 790
+    },
+    {
+      "path": "reports/experiments/PHASE-14E-CGM-CRITICAL-RESULTS-ANALYSIS-V1/phase14e_cgm_critical_analysis.md",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14E critical analysis",
+      "sha256": "55b1c9543e9fc997e910329fd5d9a8c449205008c86a52943764a2472674460a",
+      "bytes": 20514
+    },
+    {
+      "path": "reports/experiments/PHASE-14H-CROSS-CONTRIBUTION-ANALYSIS-V1/causal_chain_analysis.md",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14H causal-chain audit",
+      "sha256": "0ed37355b317f5feefbbe54a9003e7f9565b5fb8ba365ea4c6d3cc27e2d6807b",
+      "bytes": 5069
+    },
+    {
+      "path": "reports/experiments/PHASE-14H-CROSS-CONTRIBUTION-ANALYSIS-V1/phase14h_cross_contribution_analysis.md",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14H full analysis",
+      "sha256": "a2af72c6353a1980f54a035913d3d8a58164be642c0f9155921f55561315204e",
+      "bytes": 20857
+    },
+    {
+      "path": "reports/experiments/PHASE-14J-FINAL-SCIENTIFIC-CONCLUSIONS-V1/final_scientific_scorecard.csv",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14J claim scorecard",
+      "sha256": "c2acfbe088d2623df18fd85dd185780cdae3cfda65f04b9f465590b7aaa2f45d",
+      "bytes": 2071
+    },
+    {
+      "path": "reports/experiments/PHASE-14J-FINAL-SCIENTIFIC-CONCLUSIONS-V1/future_research_priorities.md",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14J future priorities",
+      "sha256": "3d08870b43dd97cf8961034a703535116f270565545bed766d69fb0f27bb81c1",
+      "bytes": 1157
+    },
+    {
+      "path": "reports/experiments/PHASE-14J-FINAL-SCIENTIFIC-CONCLUSIONS-V1/phase14j_final_scientific_conclusions.md",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14J final conclusions",
+      "sha256": "90958220a47f0ad2e61d4bb149e234450d75c3d8e9076e38fc4be86248818003",
+      "bytes": 17464
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1E-CAPABILITY-VALIDATION-SPEC-V1/README.md",
+      "kind": "deliverable_or_contract_output",
+      "note": "Phase 1E package artifact",
+      "sha256": "02c8e56179a28d15bfc2ef44cd2be13963e221d572bcf94e98aefdb5a6905a71",
+      "bytes": 2768
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1E-CAPABILITY-VALIDATION-SPEC-V1/capability_audit.md",
+      "kind": "deliverable_or_contract_output",
+      "note": "Phase 1E package artifact",
+      "sha256": "2f42009a8d3c0aab68e5731c67b60377929e1b3f861509bb752021293d011696",
+      "bytes": 5581
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1E-CAPABILITY-VALIDATION-SPEC-V1/capability_battery_schema.csv",
+      "kind": "deliverable_or_contract_output",
+      "note": "Phase 1E package artifact",
+      "sha256": "0ff1ecc894f857ecd954c6cf3d5d0307ee0ae01ea4ff052e65dc3ff7e50e66f8",
+      "bytes": 506
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1E-CAPABILITY-VALIDATION-SPEC-V1/capability_battery_spec.md",
+      "kind": "deliverable_or_contract_output",
+      "note": "Phase 1E package artifact",
+      "sha256": "62b8937188e679b779e80d5bedbae13f052d75b9cb2cc7654c4ac93427022b8e",
+      "bytes": 3960
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1E-CAPABILITY-VALIDATION-SPEC-V1/capability_comparator_spec.md",
+      "kind": "deliverable_or_contract_output",
+      "note": "Phase 1E package artifact",
+      "sha256": "92f7190e1787a2782ab5d7289520b6b2dd5504e05505d365d1495d888c33aa8f",
+      "bytes": 2940
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1E-CAPABILITY-VALIDATION-SPEC-V1/capability_dataset_protocol.md",
+      "kind": "deliverable_or_contract_output",
+      "note": "Phase 1E package artifact",
+      "sha256": "d514a0a8516d011cbf0079348705651d0fd132755b125aacd123af2bfaf87eee",
+      "bytes": 2797
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1E-CAPABILITY-VALIDATION-SPEC-V1/capability_definition.md",
+      "kind": "deliverable_or_contract_output",
+      "note": "Phase 1E package artifact",
+      "sha256": "76b22981025a4cdec551bef55e9b9363e8d932809cecdaa90362b31962904d29",
+      "bytes": 3182
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1E-CAPABILITY-VALIDATION-SPEC-V1/capability_growth_framework.md",
+      "kind": "deliverable_or_contract_output",
+      "note": "Phase 1E package artifact",
+      "sha256": "f63045ce77e21d249647584390390ac4be23dce78ecb512a4173614205d0af70",
+      "bytes": 1796
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1E-CAPABILITY-VALIDATION-SPEC-V1/capability_metrics.md",
+      "kind": "deliverable_or_contract_output",
+      "note": "Phase 1E package artifact",
+      "sha256": "3c6ffb8694b3e35167b2b7c5a49178b6b7a1ffd9bf75501b5fe012998895a797",
+      "bytes": 3907
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1E-CAPABILITY-VALIDATION-SPEC-V1/capability_preregistration_template.md",
+      "kind": "deliverable_or_contract_output",
+      "note": "Phase 1E package artifact",
+      "sha256": "abd2d80280844fd05bbada0c211590070deea6345cbeb0f3dc78af841d0b67ba",
+      "bytes": 3558
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1E-CAPABILITY-VALIDATION-SPEC-V1/capability_taxonomy.md",
+      "kind": "deliverable_or_contract_output",
+      "note": "Phase 1E package artifact",
+      "sha256": "c07f5917ced2c35f96bf764918ba596749b3b28b5cb1c87c17df3d2493357ac9",
+      "bytes": 2072
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1E-CAPABILITY-VALIDATION-SPEC-V1/construct_separation_audit.md",
+      "kind": "deliverable_or_contract_output",
+      "note": "Phase 1E package artifact",
+      "sha256": "2b6af688e6a483db8276242190e35418c43b61bf01c6668f8593c5fe847c3b68",
+      "bytes": 2381
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1E-CAPABILITY-VALIDATION-SPEC-V1/outcome_response_sanity.csv",
+      "kind": "deliverable_or_contract_output",
+      "note": "Phase 1E package artifact",
+      "sha256": "2cb8ad5f1dc367cb1d4c939778611c99920c2db4850c52b72a8bfb3a2d3ff2c0",
+      "bytes": 637
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1E-CAPABILITY-VALIDATION-SPEC-V1/outcome_response_sanity_report.md",
+      "kind": "deliverable_or_contract_output",
+      "note": "Phase 1E package artifact",
+      "sha256": "a7dc562f5b9d4d8d2db44ad2f324d74a63bec64fd0171348924fd172d94f8efa",
+      "bytes": 1129
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1E-CAPABILITY-VALIDATION-SPEC-V1/phase1E_contract_test_results.csv",
+      "kind": "deliverable_or_contract_output",
+      "note": "Phase 1E package artifact",
+      "sha256": "833a5df742243e38d451ae2864c360a35724f606466a90c49fb2827a2fe56f6b",
+      "bytes": 2280
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1E-CAPABILITY-VALIDATION-SPEC-V1/phase1E_full_audit_report.md",
+      "kind": "deliverable_or_contract_output",
+      "note": "Phase 1E package artifact",
+      "sha256": "081a4f336ac6e25db6328d754cc8a791339bd3f6627d4685adab9406910e5720",
+      "bytes": 8097
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1E-CAPABILITY-VALIDATION-SPEC-V1/phase1E_readiness_checklist.csv",
+      "kind": "deliverable_or_contract_output",
+      "note": "Phase 1E package artifact",
+      "sha256": "5d5301aa322e3e907ad5a022ca666fec4aa9f420b1fb6c48cbeacb7956d42b73",
+      "bytes": 1750
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1E-CAPABILITY-VALIDATION-SPEC-V1/phase1E_readiness_report.md",
+      "kind": "deliverable_or_contract_output",
+      "note": "Phase 1E package artifact",
+      "sha256": "203345ac7f232a26c9898c621cbb4137afbd6160d035f95d1dddd436a492594e",
+      "bytes": 5495
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1E-CAPABILITY-VALIDATION-SPEC-V1/provenance_validation.md",
+      "kind": "deliverable_or_contract_output",
+      "note": "Phase 1E package artifact",
+      "sha256": "7d61cccaf3ffcece50f99c71b20b1a9a079ec909773e0912d5d44c3e2b24971c",
+      "bytes": 836
+    },
+    {
+      "path": "experiments/phase1e/capability_benchmark.py",
+      "kind": "implementation_source",
+      "note": "Phase 1E outcome-side contract implementation",
+      "sha256": "b6a7bbd71850fa18d742b7b515718e94d586dbc6db099ddf8e832b636c1ecbf8",
+      "bytes": 4029
+    },
+    {
+      "path": "experiments/phase1e/run_contracts.py",
+      "kind": "implementation_source",
+      "note": "Phase 1E outcome-side contract implementation",
+      "sha256": "c92c0e886c2b2d419baf011c94a382f282b53b542fa1b65f5f4c8054635a5aac",
+      "bytes": 7766
+    }
+  ]
+}

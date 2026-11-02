@@ -1,0 +1,7 @@
+test_id,construct,independent_behavioral_observation,internal_metric_inputs
+A_future_learning_rate,I1 learning speed / I6 knowledge efficiency,"External accuracy curve at 0,1,3,5 examples on future novel task families",none
+B_adaptation_speed,I2 adaptation,External recovery curve after fixed rule/distribution shift,none
+C_novel_environment_success,I5 generalization,Held-out environment success after fixed resource budget,none
+D_few_shot_acquisition,I1/I4/I6 acquisition and compositional learning,Held-out accuracy after fixed 1- and 5-shot examples,none
+E_cross_domain_learning,I3 transfer / I4 composition,Target-domain learning curve on disjoint domain tasks,none
+F_generalization_retention,I5 generalization / persistence,Delayed novel-variant performance and relearning savings,none
