@@ -1,0 +1,74 @@
+phase: ASFT-V1.1-PHASE-2C
+registry_version: 1
+unit_of_analysis: ARC task_id
+conditions:
+  S1:
+    requested_candidate_budget: 3
+    enforced_candidate_trial_cap: 3
+    available_unique_candidates: 3
+  S2:
+    requested_candidate_budget: 6
+    enforced_candidate_trial_cap: 6
+    available_unique_candidates: 6
+  S3:
+    requested_candidate_budget: 15
+    enforced_candidate_trial_cap: 15
+    available_unique_candidates: 10
+    note: Fifteen is the declared cap; only ten unique DSL candidates exist, so the search space exhausts before the cap.
+  S4:
+    requested_candidate_budget: unrestricted
+    enforced_candidate_trial_cap: 10
+    available_unique_candidates: 10
+    note: Unrestricted means all ten unique programs in the frozen finite DSL, not arbitrary program synthesis.
+historical_phase13g_audit:
+  declared_candidate_budget: 3
+  actual_search_paths:
+    discovery_main:
+      candidate_cap: 10
+      source: discover() default, called without override
+      logged: discovery trace outcome cost/quality rows; not configuration-parity matched
+    discovery_stability:
+      searches_per_task: 10
+      candidate_cap_each: 10
+      task_count: 600
+      trace_records_emitted: 0 additional (one primary trace per discovery task)
+      original_permutation_trial_counts: not logged; reconstructed separately in Phase 2C
+    transfer_and_holdout_scored_arms:
+      candidate_cap: 3
+      arms_per_task: 5
+      task_ids_per_split: 200
+      candidate_trials: logged in task_outcomes.csv
+    transfer_program_probe:
+      program_specific_searches: 10 programs x 200 transfer task IDs, one candidate cap each
+      conditional_baseline_search: cap 3 when a program-specific exact-demo fit exists; per-task calls not logged
+    coverage_scan:
+      candidate_cap: 10
+      transfer_and_holdout_task_ids: 400
+      test_outputs_used_in_historical_path: true via solve_task()
+  search_depth: 1 flat candidate programs; no composition
+  trace_budget: no global cap; 600 primary discovery traces; stability replay runs create no traces
+  runtime_budget: not configured and not logged
+  memory_budget: not configured and not logged
+  evaluation_integrity: holdout attempt 02 reused the same holdout; no pristine confirmatory replication
+  status: PROTOCOL_MISMATCH_AND_PARTIAL_LOGGING
+shared_budgets:
+  B2_search_depth: 1
+  B2_composition_enabled: false
+  B3_primary_trace_records_per_task_condition: 1
+  B3_max_trace_steps: 4
+  B4_wall_clock_seconds_per_search: 30
+  B5_process_address_space_limit_mib: 2048
+  B6_primary_task_ids_per_condition: 1000
+  B6_deterministic_replay_task_ids_per_condition: 1000
+  B6_total_search_invocations_per_condition: 2000
+  split_task_ids:
+    discovery: 600
+    transfer: 200
+    holdout: 200
+execution_rules:
+  - Runtime loads this registry and the matching frozen config; field mismatches fail closed.
+  - Every primary task-condition log row records requested cap, enforced cap, executed trials, trace budget/use, depth, wall-clock cap/actual, memory cap, and evaluation budget.
+  - Replay repeats each condition/task search once and compares ordered candidate-trial fingerprints; replay does not emit a second reasoning trace.
+  - Candidate trial count is observed consumption, not the declared maximum cap.
+  - Candidate pool exhaustion, early first-fit stopping, trace pruning, and candidates outside a finite DSL are separate statuses; none is silently counted as budget use.
+  - No test-output field is parsed or used.

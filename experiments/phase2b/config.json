@@ -1,0 +1,51 @@
+{
+  "phase": "ASFT-V1.1-PHASE-2B",
+  "package": "ASFT-V1.1-PHASE-2B-ARC-COVERAGE-BENCHMARK-V1",
+  "status": "frozen_before_coverage_run",
+  "purpose": "Descriptive, coverage-only diagnostic of the Phase 13G bounded representation and ASFT activation pipeline; not accuracy evaluation or confirmatory theory test.",
+  "dataset": {
+    "root": "datasets/arc/arc-agi-2/training",
+    "split_manifest": "datasets/arc/arc-agi-2/split_manifest.json",
+    "split_manifest_protocol": "PHASE-13G-ARC-AGI-2-TRACE-TRANSFER-V1",
+    "expected_task_counts": {"discovery": 600, "transfer": 200, "holdout": 200},
+    "task_input_used": "training demonstrations only",
+    "test_output_fields_parsed_or_used": false
+  },
+  "representation": {
+    "source": "experiments/phase13g/common.py",
+    "program_order": ["identity", "reflect_horizontal", "reflect_vertical", "rotate_90", "rotate_180", "rotate_270", "transpose", "anti_transpose", "translate_constant", "recolor_bijection"],
+    "parameter_inference": "unchanged Phase 13G infer_context implementation",
+    "fit_rule": "exact equality across all training demonstrations",
+    "first_fit_stopping": true
+  },
+  "budgeted_mode": {
+    "candidate_budget": 3,
+    "program_order": "first three entries of frozen Phase 13G order",
+    "runtime_cap": "deterministic candidate-trial cap; no Phase 13G wall-clock cap was specified",
+    "mode": "production-budget diagnostic"
+  },
+  "fullscan_mode": {
+    "candidate_budget": 10,
+    "program_order": "all frozen Phase 13G programs in frozen order",
+    "runtime_cap": "deterministic candidate-trial cap; no Phase 13G wall-clock cap was specified",
+    "mode": "diagnostic ceiling only; not performance claim"
+  },
+  "stages": {
+    "C1": "At least one exact-demo-fit candidate found within the specific mode's finite representation, inference, order, and trial budget; bounded operational fit, not proof of semantic representability.",
+    "C2": "A structured trace record emitted for the task/mode.",
+    "C3": "The emitted trace's selected program independently replays exactly on all training demonstrations.",
+    "C4": "A matching invariant candidate is actually emitted by the Phase 13G TraceMiner from successful discovery traces under the frozen support/consistency policy.",
+    "C5": "Skill candidate available only after C4; not run if the upstream invariant pool is empty.",
+    "C6": "Transfer eligibility requires an available skill and separate prospective transfer gate; not inferred from task accuracy.",
+    "C7": "Capability eligibility requires at least two validated reusable skills and transfer evidence; not inferred from ARC score."
+  },
+  "trace_audit": {
+    "independent_grid_schema_validation": true,
+    "independent_exact_demo_replay": true,
+    "trace_outcome_checked_against_demo_fit": true,
+    "test_outputs_used": false
+  },
+  "invariant_policy": {"source": "Phase 13G runner._miner", "min_support": 5, "min_consistency": 1.0},
+  "accuracy": {"measured": false, "reason": "Coverage benchmark is deliberately test-output blind."},
+  "prohibited": ["test accuracy computation", "test-output parsing/use", "claiming unsupported_v1 proves unrepresentability", "claiming fullscan coverage is accuracy", "editing Phase 13G historical outcomes", "confirmatory ASFT efficacy claims"]
+}

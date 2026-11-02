@@ -1,0 +1,53 @@
+{
+  "phase": "ASFT-V1.1-PHASE-2C",
+  "package": "ASFT-V1.1-PHASE-2C-SEARCH-BUDGET-AUDIT-V1",
+  "status": "frozen_before_benchmark",
+  "objective": "Audit and enforce declared=runtime=logged search budgets; measure demo-fit sensitivity to additional search without using test outputs.",
+  "dataset": {
+    "split_manifest": "datasets/arc/arc-agi-2/split_manifest.json",
+    "expected_counts": {"discovery": 600, "transfer": 200, "holdout": 200},
+    "task_input": "training demonstrations only",
+    "test_output_fields_parsed_or_used": false
+  },
+  "representation": {
+    "source": "experiments/phase13g/common.py",
+    "programs": ["identity", "reflect_horizontal", "reflect_vertical", "rotate_90", "rotate_180", "rotate_270", "transpose", "anti_transpose", "translate_constant", "recolor_bijection"],
+    "order": "unchanged Phase 13G order",
+    "search_depth": 1,
+    "composition": false,
+    "fit_rule": "all training demonstrations exactly reproduced",
+    "candidate_selection": "first exact fit; stop, no backtracking"
+  },
+  "budget_fields": {
+    "B1_candidate_budget": "per-task unique candidate trial cap; cap15 can only inspect the 10 unique DSL programs",
+    "B2_search_depth": 1,
+    "B3_trace_budget": {"primary_traces_per_task_condition": 1, "maximum_steps": 4},
+    "B4_runtime_budget_seconds_per_search": 30,
+    "B5_process_memory_budget_mib": 2048,
+    "B6_evaluation_budget": {"primary_tasks_per_condition": 1000, "replay_tasks_per_condition": 1000, "total_search_invocations_per_condition": 2000}
+  },
+  "historical_phase13g_reference": {
+    "declared_per_task_candidate_budget": 3,
+    "discovery_main_candidate_budget_executed": 10,
+    "discovery_stability_searches_per_task": 10,
+    "discovery_stability_candidate_budget_each": 10,
+    "transfer_and_holdout_arm_budget": 3,
+    "coverage_scan_candidate_budget": 10,
+    "search_depth": 1,
+    "discovery_trace_records": 600,
+    "stability_replay_searches": 6000,
+    "wall_clock_budget": "not configured or logged",
+    "memory_budget": "not configured or logged",
+    "candidate_attempt_logging": "primary discovery cost recoverable from trace outcome; stability per-permutation attempts not present in original logs; scored arm candidate_trials present in task_outcomes.csv"
+  },
+  "sensitivity_conditions": [
+    {"id": "S1", "requested_candidate_budget": 3, "enforced_trial_cap": 3, "candidate_pool_available": 3},
+    {"id": "S2", "requested_candidate_budget": 6, "enforced_trial_cap": 6, "candidate_pool_available": 6},
+    {"id": "S3", "requested_candidate_budget": 15, "enforced_trial_cap": 15, "candidate_pool_available": 10},
+    {"id": "S4", "requested_candidate_budget": "unrestricted", "enforced_trial_cap": 10, "candidate_pool_available": 10}
+  ],
+  "invariant_policy": {"source": "unchanged Phase 13G TraceMiner", "minimum_support": 5, "minimum_consistency": 1.0},
+  "replay": {"passes": 1, "same_task_ids_and_inputs": true, "traces_emitted_in_replay": false, "clear_inference_cache_before_replay": true, "comparison": "ordered per-candidate trial fingerprint and selected result"},
+  "prohibited": ["test accuracy computation", "test-output parsing/use", "changing representation or candidate order", "claiming diagnostic fullscan is performance", "editing Phase13G outcomes", "confirmatory ARC efficacy claims"],
+  "failure_policy": "Any config/registry/runtime/log budget mismatch, hash mismatch, timeout, memory-cap failure, split mismatch, trace validation failure, or non-identical deterministic replay invalidates the run and blocks conclusions."
+}
