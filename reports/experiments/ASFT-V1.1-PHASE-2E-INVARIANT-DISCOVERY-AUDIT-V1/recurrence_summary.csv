@@ -1,0 +1,6 @@
+source,successful_discovery_traces,discovery_tasks_processed,distinct_operation_ngram_signatures,fragment_occurrences_after_per_trace_dedupe,signatures_support_ge_2,signatures_support_ge_3,signatures_support_ge_5,max_distinct_trace_support,signature_support_histogram_json,trace_family_labels_used_as_independent_evidence,recurrence_semantics
+PHASE13G_HISTORICAL,3,600,22,30,4,4,0,3,"{""1"":18,""3"":4}",False,exact operation n-grams only; not semantic ARC-family labels
+S1,1,600,10,10,0,0,0,1,"{""1"":10}",False,exact operation n-grams only; not semantic ARC-family labels
+S2,2,600,16,20,4,0,0,2,"{""1"":12,""2"":4}",False,exact operation n-grams only; not semantic ARC-family labels
+S3,3,600,22,30,4,4,0,3,"{""1"":18,""3"":4}",False,exact operation n-grams only; not semantic ARC-family labels
+S4,3,600,22,30,4,4,0,3,"{""1"":18,""3"":4}",False,exact operation n-grams only; not semantic ARC-family labels

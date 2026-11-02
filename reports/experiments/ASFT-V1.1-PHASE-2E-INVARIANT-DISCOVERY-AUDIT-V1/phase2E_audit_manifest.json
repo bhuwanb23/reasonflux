@@ -1,0 +1,43 @@
+{
+  "phase": "ASFT-V1.1-PHASE-2E",
+  "package": "ASFT-V1.1-PHASE-2E-INVARIANT-DISCOVERY-AUDIT-V1",
+  "sources": {
+    "PHASE13G_HISTORICAL": {
+      "successful_discovery_traces": 3
+    },
+    "S1": {
+      "successful_discovery_traces": 1
+    },
+    "S2": {
+      "successful_discovery_traces": 2
+    },
+    "S3": {
+      "successful_discovery_traces": 3
+    },
+    "S4": {
+      "successful_discovery_traces": 3
+    }
+  },
+  "phase13g_saved_summary_mining_statistics": {
+    "candidates": 0,
+    "fragments": 30,
+    "raw_patterns": 0,
+    "rejected": 0,
+    "structures": 0,
+    "traces_failure": 0,
+    "traces_in": 3,
+    "traces_success": 3
+  },
+  "support_thresholds": {
+    "RELAXED_S2": 2,
+    "CURRENT_S1": 5,
+    "STRICT_S3": 6
+  },
+  "test_outputs_parsed_or_used": false,
+  "new_arc_search_or_scoring_run": false,
+  "historical_outcomes_modified": false,
+  "accuracy_measured": false,
+  "transfer_holdout_traces_used_for_discovery_mining": false,
+  "false_discovery_rate_measured": false,
+  "status": "INVARIANT_AUDIT_COMPLETE"
+}
