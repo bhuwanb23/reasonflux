@@ -1,0 +1,5 @@
+condition,successful_discovery_trace_inputs,traces_in,traces_success,traces_failure,fragments,raw_patterns,structures,candidates,rejected,trace_miner_candidates,mapped_invariant_candidates,support_threshold,consistency_threshold,readiness
+S1,1,1,1,0,10,0,0,0,0,0,0,5,1.0,I3_NOT_READY
+S2,2,2,2,0,20,0,0,0,0,0,0,5,1.0,I3_NOT_READY
+S3,3,3,3,0,30,0,0,0,0,0,0,5,1.0,I3_NOT_READY
+S4,3,3,3,0,30,0,0,0,0,0,0,5,1.0,I3_NOT_READY

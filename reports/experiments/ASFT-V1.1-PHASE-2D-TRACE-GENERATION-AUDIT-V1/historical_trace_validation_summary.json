@@ -1,0 +1,30 @@
+{
+  "tasks": 600,
+  "serialized_traces": 600,
+  "retrospective_structural_valid": 600,
+  "successful_traces": 3,
+  "no_fit_valid_traces": 597,
+  "discovery_success_program_support": {
+    "reflect_vertical": 1,
+    "rotate_270": 1,
+    "recolor_bijection": 1
+  },
+  "high_support_programs_ge_5": 0,
+  "trace_miner_statistics": {
+    "traces_in": 3,
+    "traces_success": 3,
+    "traces_failure": 0,
+    "fragments": 30,
+    "raw_patterns": 0,
+    "structures": 0,
+    "candidates": 0,
+    "rejected": 0
+  },
+  "trace_miner_candidates": 0,
+  "mapped_invariant_candidates": 0,
+  "phase13g_schema_flag_was_hardcoded": true,
+  "generation_time_validator_established": false,
+  "successful_train_demo_replay_count": 3,
+  "test_output_fields_parsed_or_used": false,
+  "accuracy_measured": false
+}
