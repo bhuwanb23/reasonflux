@@ -1,0 +1,32 @@
+contract_id,result,detail
+CT-1,PASS,Six independent behavioral battery tests declared
+CT-2,PASS,C1-C6 capability taxonomy has six distinct definitions
+CT-3,PASS,Primary CGM predictor is explicitly named CGR_t
+CT-4,PASS,Required and additional declared simple comparator variables are included
+CT-5,PASS,score_task_output signature contains only behavioral/evaluator fields
+CT-6,PASS,external_battery_score signature contains only behavioral/evaluator fields
+CT-7,PASS,behavioral_growth signature contains only behavioral/evaluator fields
+CT-8,PASS,behavioral_capability_pass signature contains only behavioral/evaluator fields
+CT-9,PASS,Task correctness is independently scored against evaluator gold
+CT-10,PASS,External battery score is macro-averaged from per-test family-level outcomes
+CT-11,PASS,Behavioral growth is future-minus-prior external score
+CT-12,PASS,Allowed outcome schema contains only task behavior fields
+CT-13,PASS,CGR/C_t/IG fields are rejected from outcome payload
+CT-14,PASS,"Capability-unit rule requires behavior, generalization margin, retention, and utility"
+CT-15,PASS,Insufficient independent tasks cannot establish a capability unit
+CT-16,PASS,High internal score cannot compensate for failed behavioral threshold
+CT-17,PASS,Decision rule can report meaningful positive-direction CGR win
+CT-18,PASS,Decision rule can report an equivalence tie
+CT-19,PASS,Decision rule can report capability-metric loss/inverse direction
+CT-20,PASS,Decision rule preserves uncertainty
+CT-21,PASS,"Integrity failure yields unavailable, not zero"
+CT-22,PASS,Identical behavioral records replay deterministically
+CT-23,PASS,Common test opportunities can be represented per battery component
+CT-24,PASS,Forbidden self-validating metric fields explicitly enumerated
+CT-25,PASS,Battery maps exactly to the six required behavioral tests
+CT-26,PASS,Every capability type has a behavioral description
+CT-27,PASS,Simple comparator variables are not target labels
+CT-28,PASS,Decision branches are mutually discriminable
+CT-29,PASS,Independent behavioral battery score remains bounded
+CT-30,PASS,All target-contamination metrics are explicitly denied
+CT-31,PASS,Predictive gain in the wrong score direction cannot be called a capability-metric win

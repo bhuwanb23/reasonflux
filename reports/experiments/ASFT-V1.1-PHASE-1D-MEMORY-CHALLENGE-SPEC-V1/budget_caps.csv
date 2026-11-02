@@ -1,0 +1,8 @@
+resource,per_arm_cap,unit
+training_examples,24,fixed protocol cap
+storage_bytes,4096,fixed protocol cap
+candidate_units,24,fixed protocol cap
+training_compute_ops,50000,fixed protocol cap
+inference_ops_per_task,2000,fixed protocol cap
+retrieval_checks_per_task,4,fixed protocol cap
+future_tasks_per_family,12,tasks

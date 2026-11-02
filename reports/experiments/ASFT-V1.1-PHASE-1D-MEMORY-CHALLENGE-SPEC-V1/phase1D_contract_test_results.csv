@@ -1,0 +1,27 @@
+contract_id,result,detail
+CT-1,PASS,Six challenge families A-F defined
+CT-2,PASS,Five memory representations remain distinct
+CT-3,PASS,Exact replay family is an explicit positive control for M1
+CT-4,PASS,Context/analogy/far/adversarial families create non-exact abstraction tests
+CT-5,PASS,Composition family requires both context shift and composition
+CT-6,PASS,Adversarial retrieval lure is named and explicit
+CT-7,PASS,All required arms present; Oracle labeled analysis-only
+CT-8,PASS,"Memory-only comparator is a suite, not one selected memory variant"
+CT-9,PASS,Same per-arm maximum training/storage/candidate/compute/retrieval caps
+CT-10,PASS,Usage ledger accepts in-cap use and rejects an overrun
+CT-11,PASS,Every named split is specified to contain each challenge family
+CT-12,PASS,Allowed policy payload excludes gold/future labels
+CT-13,PASS,Leakage guard rejects hidden-answer field
+CT-14,PASS,Only Family A permits exact-precedent exposure
+CT-15,PASS,Adversarial lure occurs only in declared family F
+CT-16,PASS,Distinct family identifiers and names
+CT-17,PASS,Each family has design purpose and falsifiable mechanism expectation
+CT-18,PASS,Common task horizon and per-query compute cap defined
+CT-19,PASS,Storage and candidate-unit caps are explicit
+CT-20,PASS,Retrieval count is bounded and auditable
+CT-21,PASS,Oracle receives no competitive budget ledger and cannot tune policies
+CT-22,PASS,Confirmatory and replication are separate from development
+CT-23,PASS,Every challenge family has a unique stable ID
+CT-24,PASS,Comparator names exactly include all requested systems
+CT-25,PASS,No undeclared family enters protocol
+CT-26,PASS,"Exact-replay exposure is explicit, isolated, and non-adversarial"

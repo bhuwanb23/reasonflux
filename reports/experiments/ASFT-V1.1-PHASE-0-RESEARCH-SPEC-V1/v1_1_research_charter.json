@@ -1,0 +1,60 @@
+{
+  "program": "ASFT v1.1 Research Program",
+  "phase_id": "ASFT-V1.1-PHASE-0",
+  "package": "ASFT-V1.1-PHASE-0-RESEARCH-SPEC-V1",
+  "status": "phase_0_complete_ready_for_phase_1_design",
+  "purpose": "Convert v1.0 evidence into a frozen research specification; no experiments or new metrics are run in Phase 0.",
+  "version_1_0_claim_ceiling": "Narrow synthetic operation-pattern detection, reflection/rotation skill construction and reuse, and simulator reasoning-step cost effects are observed. Transfer-aware ranking superiority, SCT selection superiority, transfer-to-capability causation, intelligence construct validity, and ARC generalization are not established.",
+  "research_questions": [
+    {"id": "RQ1", "phase": 3, "question": "Does transfer-aware ranking improve held-out utility over frequency-only and no-transfer when rankings genuinely disagree?"},
+    {"id": "RQ2", "phase": 4, "question": "Does SCV improve held-out skill selection value over always-create, random, and frequency/reuse policies under real choice pressure?"},
+    {"id": "RQ3", "phase": 5, "question": "When does abstraction beat episodic memory on unseen combinations or contexts under matched budgets, and when does a hybrid help?"},
+    {"id": "RQ4", "phase": 7, "question": "Does a capability score predict independent future behavioral capability beyond prior performance and exposure?"},
+    {"id": "RQ5", "phase": 8, "question": "Does IG predict an independent future-learning/adaptation target beyond baseline capability and experience?"},
+    {"id": "RQ6", "phase": 10, "question": "Can an expanded, protocol-conformant ARC representation activate the mechanism chain and improve held-out exact task performance?"},
+    {"id": "RQ7", "phase": 9, "question": "Do core results replicate under independent generators, vocabularies, and trace implementations?"}
+  ],
+  "confirmatory_rules": {
+    "pre_registration_required": true,
+    "freeze_before_confirmatory_outcomes": ["primary_endpoint", "independent_unit", "split", "baselines", "sample_size_and_power", "smallest_effect_of_interest", "missingness", "exclusions", "code_hash", "analysis"],
+    "positive_claim": "Primary paired/cluster-aware contrast in predicted direction; interval clears frozen smallest effect of interest; replicate for generalization claims.",
+    "inconclusive": "Uncertainty overlaps both the null and the useful-effect region, or pressure/coverage prerequisites are absent.",
+    "contradicted": "Comparator favored or primary effect nonpositive under frozen decision rule.",
+    "unavailable": "Required mechanism or denominator absent; never convert unavailable to zero.",
+    "post_result_changes": "Any endpoint, threshold, split, baseline, or exclusion change after outcome access is exploratory and requires a new holdout for confirmation."
+  },
+  "success_tiers": {
+    "bronze": "Benchmark suite v2 and ARC coverage audit are implemented, pressure-tested, leak-audited, compared to v1.0 on locked partitions, and frozen; this is design readiness, not theory validation.",
+    "silver": "RQ1 and RQ2 pass primary tests and independent replication; RQ4 validates a capability measure against an independent behavioral criterion.",
+    "gold": "On a frozen ARC evaluation, valid invariants and skills form, transfer is measurable, a validated capability group forms, and held-out exact task benefit over no-learning clears the preregistered gate.",
+    "platinum": "Core claims replicate across independent generators/domains; ARC external evidence and a public Kaggle entry/score are documented; claims remain within validated scope. Prize outcomes are not guaranteed."
+  },
+  "roadmap": [
+    {"phase": 0, "name": "Retrospective & Failure Mapping", "status": "complete"},
+    {"phase": 1, "name": "Benchmark & Evaluation Redesign", "status": "planned"},
+    {"phase": 2, "name": "Representation & ARC Foundation", "status": "planned"},
+    {"phase": 3, "name": "IDT Revalidation", "status": "planned"},
+    {"phase": 4, "name": "SCT Revalidation", "status": "planned"},
+    {"phase": 5, "name": "Memory vs Abstraction", "status": "planned"},
+    {"phase": 6, "name": "Transfer Revalidation", "status": "planned"},
+    {"phase": 7, "name": "Capability Validation", "status": "planned"},
+    {"phase": 8, "name": "Intelligence Validation", "status": "planned"},
+    {"phase": 9, "name": "Cross-Domain Replication", "status": "planned"},
+    {"phase": 10, "name": "ARC Evaluation v2", "status": "planned"},
+    {"phase": 11, "name": "Scientific Synthesis", "status": "planned"},
+    {"phase": 12, "name": "Publication Package", "status": "planned"}
+  ],
+  "readiness_decision": {
+    "phase_0_exit": "PASS",
+    "authorized_next_step": "Phase 1 benchmark design",
+    "confirmatory_data_authorized_now": false,
+    "condition": "Phase-specific preregistration, pressure diagnostics, coverage audit, and leakage controls must pass before confirmatory outcome access."
+  },
+  "integrity_constraints": [
+    "No v1.0 metric or threshold is retroactively changed.",
+    "ARC demo-fit coverage, arm-level exact accuracy, trace-schema validity, and learned-skill transfer denominators remain separate.",
+    "ARC operator categories are not semantic task-family labels.",
+    "The v1.0 ARC budget mismatch and same-holdout retry remain disclosed.",
+    "The Phase 12 repository documents are treated as planning/checklist records, not independent experiment evidence."
+  ]
+}

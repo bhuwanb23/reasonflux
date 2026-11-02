@@ -1,0 +1,287 @@
+{
+  "phase": "ASFT-V1.1-PHASE-1F",
+  "package": "ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1",
+  "provenance_note": "Historical records audited read-only. No Phase 1F battery outcomes were generated. Decision-rule fixtures are not scientific evidence.",
+  "records": [
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/evidence_package.md",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 13E evidence package",
+      "sha256": "b12c706818452c8033699f9dc5bbdc1246349760a307d3b4085951060d223f54",
+      "bytes": 8909
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/seed_summary.csv",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 13E seed-level metrics",
+      "sha256": "c9a359abe3c3b16338f36001d2be51de1ff41297f2eefb445c9dbbf94b9807ed",
+      "bytes": 43870
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/seed_round_arm.csv",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 13E round trajectories",
+      "sha256": "e12b721160ecb732c79658458ee1ce94ce515ee10fe66127b3c53b0c5292375a",
+      "bytes": 112583
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/analysis.json",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 13E metric/correlation analysis",
+      "sha256": "5b04b3cf37b17962797853b103e31d3a2af7bfb87de45f341d525976400d6268",
+      "bytes": 255400
+    },
+    {
+      "path": "reports/experiments/PHASE-13E-CAP-GROWTH-V1/run_manifest.json",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 13E run manifest",
+      "sha256": "3cb40e0844ab01ebfb2fbeac72a376ff238e5f9a04c530a6686ba6429e679a5d",
+      "bytes": 33647
+    },
+    {
+      "path": "reports/experiments/PHASE-14E-CGM-CRITICAL-RESULTS-ANALYSIS-V1/intelligence_metric_analysis.md",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14E intelligence metric interpretation",
+      "sha256": "120bf4b1c0a0debc50477b2a9cb4f727d63094cb883e6bba009e75131760e4f1",
+      "bytes": 1634
+    },
+    {
+      "path": "reports/experiments/PHASE-14E-CGM-CRITICAL-RESULTS-ANALYSIS-V1/phase14e_cgm_critical_analysis.md",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14E critical CGM review",
+      "sha256": "55b1c9543e9fc997e910329fd5d9a8c449205008c86a52943764a2472674460a",
+      "bytes": 20514
+    },
+    {
+      "path": "reports/experiments/PHASE-14E-CGM-CRITICAL-RESULTS-ANALYSIS-V1/cgm_scorecard.csv",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14E scorecard",
+      "sha256": "6f12fca900692f3e2f085e8e2319c62fd47b64f97fa2f515a92238ab9e6dfe51",
+      "bytes": 2080
+    },
+    {
+      "path": "reports/experiments/PHASE-14E-CGM-CRITICAL-RESULTS-ANALYSIS-V1/prediction_and_association.csv",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14E associations",
+      "sha256": "40fc0d7fae41417675c27e8e2fbb05b0e661b287975db4445a65c70b8dd3f585",
+      "bytes": 790
+    },
+    {
+      "path": "reports/experiments/PHASE-14H-CROSS-CONTRIBUTION-ANALYSIS-V1/causal_chain_analysis.md",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14H causal-chain audit",
+      "sha256": "0ed37355b317f5feefbbe54a9003e7f9565b5fb8ba365ea4c6d3cc27e2d6807b",
+      "bytes": 5069
+    },
+    {
+      "path": "reports/experiments/PHASE-14H-CROSS-CONTRIBUTION-ANALYSIS-V1/phase14h_cross_contribution_analysis.md",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14H cross-contribution analysis",
+      "sha256": "a2af72c6353a1980f54a035913d3d8a58164be642c0f9155921f55561315204e",
+      "bytes": 20857
+    },
+    {
+      "path": "reports/experiments/PHASE-14I-THREATS-TO-VALIDITY-V1/construct_validity.md",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14I construct-validity audit",
+      "sha256": "691956f42f4ce9193d1102bbea71be85983953828cf943b68d1d70e8aeb5919b",
+      "bytes": 2302
+    },
+    {
+      "path": "reports/experiments/PHASE-14I-THREATS-TO-VALIDITY-V1/phase14i_threats_to_validity.md",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14I full threat audit",
+      "sha256": "f91b18f0eac2c8d66cf8fcaef19626c5e4edae6b1ecc328b9d1148487574ae47",
+      "bytes": 22957
+    },
+    {
+      "path": "reports/experiments/PHASE-14I-THREATS-TO-VALIDITY-V1/validity_scorecard.csv",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14I validity scorecard",
+      "sha256": "2967c1845086e14233c1c92f0486bb934566b492e3fc26e0bac2f2ae65675c55",
+      "bytes": 1333
+    },
+    {
+      "path": "reports/experiments/PHASE-14J-FINAL-SCIENTIFIC-CONCLUSIONS-V1/final_scientific_scorecard.csv",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14J scientific scorecard",
+      "sha256": "c2acfbe088d2623df18fd85dd185780cdae3cfda65f04b9f465590b7aaa2f45d",
+      "bytes": 2071
+    },
+    {
+      "path": "reports/experiments/PHASE-14J-FINAL-SCIENTIFIC-CONCLUSIONS-V1/phase14j_final_scientific_conclusions.md",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14J final conclusions",
+      "sha256": "90958220a47f0ad2e61d4bb149e234450d75c3d8e9076e38fc4be86248818003",
+      "bytes": 17464
+    },
+    {
+      "path": "reports/experiments/PHASE-14J-FINAL-SCIENTIFIC-CONCLUSIONS-V1/future_research_priorities.md",
+      "kind": "historical_source",
+      "note": "Historical source: Phase 14J research priorities",
+      "sha256": "3d08870b43dd97cf8961034a703535116f270565545bed766d69fb0f27bb81c1",
+      "bytes": 1157
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1/README.md",
+      "kind": "phase1F_artifact",
+      "note": "Phase 1F specification, contract, or report artifact",
+      "sha256": "336460a44f68fb9adecfa8f37decc819e34b896198b3fa415b96b26cc7dc67f0",
+      "bytes": 2946
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1/adaptation_framework.md",
+      "kind": "phase1F_artifact",
+      "note": "Phase 1F specification, contract, or report artifact",
+      "sha256": "de9f47fc692c64a71f1b38128ffd320cad7d4536bd991468df92e5aab5b77868",
+      "bytes": 1745
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1/construct_separation_audit.md",
+      "kind": "phase1F_artifact",
+      "note": "Phase 1F specification, contract, or report artifact",
+      "sha256": "8ef715c9a64a6f7a6ed394bdf3b02127fcae93cca4e6a850cce5270bd6a2c99c",
+      "bytes": 2674
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1/ig_outcome_response_sanity.csv",
+      "kind": "phase1F_artifact",
+      "note": "Phase 1F specification, contract, or report artifact",
+      "sha256": "31ebebc75f4a2b99ecb666c84673b6d9e3275ebe7ed10150818ef402048f5b46",
+      "bytes": 612
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1/intelligence_audit.md",
+      "kind": "phase1F_artifact",
+      "note": "Phase 1F specification, contract, or report artifact",
+      "sha256": "c0d7321fde6af674235e3a43e41833f8b5f29ceaea1c9f6a1d23707494878294",
+      "bytes": 3995
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1/intelligence_battery_schema.csv",
+      "kind": "phase1F_artifact",
+      "note": "Phase 1F specification, contract, or report artifact",
+      "sha256": "7ebaa74e77645dc52dbf9b09678c625068dd83c3cb20f619ca22722ef20980d5",
+      "bytes": 799
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1/intelligence_battery_spec.md",
+      "kind": "phase1F_artifact",
+      "note": "Phase 1F specification, contract, or report artifact",
+      "sha256": "23b1f99257c4c67a8ddbf36d6339c63fe3d62e8097db796b920a02b385e589bb",
+      "bytes": 4222
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1/intelligence_comparator_spec.md",
+      "kind": "phase1F_artifact",
+      "note": "Phase 1F specification, contract, or report artifact",
+      "sha256": "912baaf3d58f8977b986100997436e661f643927e210e97df9060c70811b166f",
+      "bytes": 2987
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1/intelligence_dataset_protocol.md",
+      "kind": "phase1F_artifact",
+      "note": "Phase 1F specification, contract, or report artifact",
+      "sha256": "21dcee341d8eac41556def918b2e364ec4fd6506937152038682da9fb5d25788",
+      "bytes": 2573
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1/intelligence_definition.md",
+      "kind": "phase1F_artifact",
+      "note": "Phase 1F specification, contract, or report artifact",
+      "sha256": "9405e702ab439207f38d3fa091043c4ef208ab5a25e3cc007b39983eb308c9d0",
+      "bytes": 2562
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1/intelligence_full_audit_report.md",
+      "kind": "phase1F_artifact",
+      "note": "Phase 1F specification, contract, or report artifact",
+      "sha256": "268ad77595a954e0805851fb8d463c1acca6a31bda638d5fbc20728bdd811fc6",
+      "bytes": 7343
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1/intelligence_metrics.md",
+      "kind": "phase1F_artifact",
+      "note": "Phase 1F specification, contract, or report artifact",
+      "sha256": "e36e67e201c2c9eb090ee77b6d3ea0988dcfec15dd4b20f13fbd62262970bd16",
+      "bytes": 3675
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1/intelligence_outcome_response_report.md",
+      "kind": "phase1F_artifact",
+      "note": "Phase 1F specification, contract, or report artifact",
+      "sha256": "b68b36361efa8f77bbb72dfe864880a1d9d89b26d169a184852bb3ce64b64c15",
+      "bytes": 1291
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1/intelligence_preregistration_template.md",
+      "kind": "phase1F_artifact",
+      "note": "Phase 1F specification, contract, or report artifact",
+      "sha256": "1bbeb71bf0bba79ae7542032f3490686151eab1e18d76fe83f5fe61b165cb15f",
+      "bytes": 3569
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1/intelligence_retirement_rules.md",
+      "kind": "phase1F_artifact",
+      "note": "Phase 1F specification, contract, or report artifact",
+      "sha256": "9b618ff06a0886a78d6331e5a3203f2ebb52e0b37fe28242f09132804a2524e5",
+      "bytes": 3777
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1/intelligence_taxonomy.md",
+      "kind": "phase1F_artifact",
+      "note": "Phase 1F specification, contract, or report artifact",
+      "sha256": "21ae2767e74aa2935d0b8aae210bd50f95c4143a97b49bc5818c078e73f37a1c",
+      "bytes": 1534
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1/learning_framework.md",
+      "kind": "phase1F_artifact",
+      "note": "Phase 1F specification, contract, or report artifact",
+      "sha256": "9fd3b75f88d8dc2c0ffcb4d1315f6ed410abfeaaee109b29a275766697780426",
+      "bytes": 1588
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1/phase1F_contract_test_results.csv",
+      "kind": "phase1F_artifact",
+      "note": "Phase 1F specification, contract, or report artifact",
+      "sha256": "2b452ccfba245315a153ec60376b06db6aaee5abb0275c9ac55b203ba5d30c17",
+      "bytes": 3114
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1/phase1F_readiness_checklist.csv",
+      "kind": "phase1F_artifact",
+      "note": "Phase 1F specification, contract, or report artifact",
+      "sha256": "5a4735ca2a8538cf3059e0baeeee18012438c4c17b0249a027123ae728b718df",
+      "bytes": 1970
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1/phase1F_readiness_report.md",
+      "kind": "phase1F_artifact",
+      "note": "Phase 1F specification, contract, or report artifact",
+      "sha256": "1606a95475e1aae7c69cc86f533a8a164d1b96f51f6e2c71199384b1645c389d",
+      "bytes": 5563
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1F-INTELLIGENCE-VALIDATION-SPEC-V1/provenance_validation.md",
+      "kind": "phase1F_artifact",
+      "note": "Phase 1F specification, contract, or report artifact",
+      "sha256": "06ecf92cf0b00c6a710f68559ec921e626d5d7d23418e0957bc0f23811abb392",
+      "bytes": 794
+    },
+    {
+      "path": "experiments/phase1f/intelligence_benchmark.py",
+      "kind": "implementation_source",
+      "note": "Phase 1F behavior-only target and contract code",
+      "sha256": "17910d7af26f02e6d5451119261ad642887ac1d4f531154f490ac46565902e9e",
+      "bytes": 5627
+    },
+    {
+      "path": "experiments/phase1f/run_contracts.py",
+      "kind": "implementation_source",
+      "note": "Phase 1F behavior-only target and contract code",
+      "sha256": "43f81950b710f17c96b64f96ebb2d6d55aae46fd99af94555da21fa6bb0b0f43",
+      "bytes": 10429
+    }
+  ]
+}

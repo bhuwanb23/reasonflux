@@ -1,0 +1,48 @@
+section,required_field_or_rule,meaning
+preregistration,experiment_id,must be frozen before confirmatory outcome access
+preregistration,experiment_class,must be frozen before confirmatory outcome access
+preregistration,research_question,must be frozen before confirmatory outcome access
+preregistration,primary_hypothesis,must be frozen before confirmatory outcome access
+preregistration,primary_endpoint,must be frozen before confirmatory outcome access
+preregistration,secondary_endpoints,must be frozen before confirmatory outcome access
+preregistration,diagnostic_metrics,must be frozen before confirmatory outcome access
+preregistration,comparators,must be frozen before confirmatory outcome access
+preregistration,independent_unit,must be frozen before confirmatory outcome access
+preregistration,sample_size_rationale,must be frozen before confirmatory outcome access
+preregistration,soi,must be frozen before confirmatory outcome access
+preregistration,missingness_policy,must be frozen before confirmatory outcome access
+preregistration,decision_rule,must be frozen before confirmatory outcome access
+preregistration,splits,must be frozen before confirmatory outcome access
+preregistration,budget_and_exposure,must be frozen before confirmatory outcome access
+preregistration,replication_plan,must be frozen before confirmatory outcome access
+preregistration,analysis_plan,must be frozen before confirmatory outcome access
+preregistration,source_and_config_hashes,must be frozen before confirmatory outcome access
+preregistration,outcome_access_plan,must be frozen before confirmatory outcome access
+preregistration,interpretation_rules_version,must be frozen before confirmatory outcome access
+preregistration,reporting_plan,must be frozen before confirmatory outcome access
+reporting,experiment_id,must be reported; negative/unavailable outcomes explicit
+reporting,experiment_class,must be reported; negative/unavailable outcomes explicit
+reporting,research_question,must be reported; negative/unavailable outcomes explicit
+reporting,hypothesis,must be reported; negative/unavailable outcomes explicit
+reporting,primary_result,must be reported; negative/unavailable outcomes explicit
+reporting,secondary_results,must be reported; negative/unavailable outcomes explicit
+reporting,negative_results,must be reported; negative/unavailable outcomes explicit
+reporting,unavailable_results,must be reported; negative/unavailable outcomes explicit
+reporting,limitations,must be reported; negative/unavailable outcomes explicit
+reporting,interpretation,must be reported; negative/unavailable outcomes explicit
+reporting,independent_unit_count,must be reported; negative/unavailable outcomes explicit
+reporting,missingness_count,must be reported; negative/unavailable outcomes explicit
+reporting,effect_estimate,must be reported; negative/unavailable outcomes explicit
+reporting,uncertainty_interval,must be reported; negative/unavailable outcomes explicit
+reporting,protocol_deviations,must be reported; negative/unavailable outcomes explicit
+reporting,source_lineage,must be reported; negative/unavailable outcomes explicit
+governance,G1_frozen_protocol_unchanged,must pass or the claim is blocked
+governance,G2_failed_gates_not_relabeled,must pass or the claim is blocked
+governance,G3_negative_results_retained,must pass or the claim is blocked
+governance,G4_exploratory_not_promoted,must pass or the claim is blocked
+governance,G5_unavailable_not_failure,must pass or the claim is blocked
+governance,G6_amendments_versioned,must pass or the claim is blocked
+governance,G7_source_lineage_preserved,must pass or the claim is blocked
+governance,sealed_outcomes_and_access_log,must pass or the claim is blocked
+governance,corrections_append_only,must pass or the claim is blocked
+governance,no_post_outcome_rule_changes,must pass or the claim is blocked

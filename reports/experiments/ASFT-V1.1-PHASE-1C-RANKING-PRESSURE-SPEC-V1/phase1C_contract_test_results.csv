@@ -1,0 +1,27 @@
+contract_id,result,detail
+CT-1,PASS,N=40; hidden A-H fixture quotas with 8 each B/C
+CT-2,PASS,No latent-label field; IDs follow opaque hash-only format
+CT-3,PASS,Unique opaque IDs; arrival order independently shuffled
+CT-4,PASS,Five policy rankers use the exact same candidate pool
+CT-5,PASS,Same-seed replay is deterministic
+CT-6,PASS,Each policy returns exactly K=8 unique selections
+CT-7,PASS,Fixture creates full-rank disagreement with each serious baseline
+CT-8,PASS,IDT/Frequency Top-K RDR=1.000
+CT-9,PASS,IDT/Reuse Top-K RDR=0.750
+CT-10,PASS,IDT/Compression Top-K RDR=0.500
+CT-11,PASS,Pre-outcome RDR and Kendall gates pass fixture 0
+CT-12,PASS,Oracle/truth excluded from production ranking interface
+CT-13,PASS,Analysis-only Oracle ranks from truth only
+CT-14,PASS,Pressure validator accepts ranks/K only; no truth input
+CT-15,PASS,Changing the separate outcome record cannot change ranker output
+CT-16,PASS,Selectors produce nonidentical Top-1 candidates
+CT-17,PASS,Outcome aggregator can report IDT loss vs Frequency
+CT-18,PASS,Equal-value truth fixture yields a tie
+CT-19,PASS,Outcome aggregator can report IDT win vs Frequency
+CT-20,PASS,Truth and latent labels reside in separate records keyed by opaque IDs
+CT-21,PASS,Frozen feature channels are independently represented
+CT-22,PASS,Common public card schema has bounded normalized features
+CT-23,PASS,100 synthetic pressure panels pass (100/100)
+CT-24,PASS,Mean all-pair Top-K RDR=0.839
+CT-25,PASS,Mean normalized Kendall divergence=0.490
+CT-26,PASS,Pressure fixture log includes explicit pre-outcome panel status

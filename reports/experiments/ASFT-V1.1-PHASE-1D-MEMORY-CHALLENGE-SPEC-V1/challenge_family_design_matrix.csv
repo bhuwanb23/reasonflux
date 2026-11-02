@@ -1,0 +1,7 @@
+family,name,exact_precedent,context_transform,composition_required,structural_relation_preserved,novel_family,adversarial_lure,design_role,expected_mechanism
+A,Exact Replay,True,False,False,False,False,False,positive control: memory sufficiency,M1 exact episodic memory
+B,Context Shift,False,True,False,True,False,False,"same principle, changed surface/context",abstraction over exact retrieval
+C,Composition Shift,False,True,True,True,False,False,unseen composition with a case-specific parameter,hybrid memory + abstraction
+D,Structural Analogy,False,True,False,True,True,False,relation preserved under new surface representation,abstraction
+E,Far Transfer,False,True,False,True,True,False,no exact or near precedent; learned rule still applies,"abstraction, if construct is valid"
+F,Adversarial Memory,False,True,False,False,False,True,high-similarity distractor maps to wrong rule,verified abstraction/hybrid over unverified retrieval

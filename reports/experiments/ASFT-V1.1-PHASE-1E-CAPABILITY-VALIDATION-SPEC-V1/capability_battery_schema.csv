@@ -1,0 +1,7 @@
+test_id,behavioral_construct,primary_observation,internal_metric_inputs
+A_novel_task_success,novel-task competence,correct outputs on unseen instances,none
+B_transfer_success,transfer,correct outputs on disjoint family/surface,none
+C_task_breadth,breadth,family-level success proportions,none
+D_retention,persistence,delayed task performance after no refresh,none
+E_composition,composition,success on unseen component combinations,none
+F_adaptation,adaptation,behavior change after fixed demos,none

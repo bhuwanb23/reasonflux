@@ -1,0 +1,27 @@
+contract_id,contract,result,detail
+CT-1A,All five candidate classes present,PASS,Contract assertion passed
+CT-1B,Per-batch 4xA-E quotas and N=20,PASS,Contract assertion passed
+CT-1C,Candidate labels hidden from selector payloads,PASS,Contract assertion passed
+CT-2A,"Future Net Value depends on held-out truth/cost, not predictors",PASS,Contract assertion passed
+CT-2B,Mutating SCV inputs cannot mutate ground-truth value,PASS,Contract assertion passed
+CT-3A,All seven required selectors operational (oracle analysis-only),PASS,Contract assertion passed
+CT-3B,Deterministic replay for same seed,PASS,Contract assertion passed
+CT-3C,Tie ordering is deterministic,PASS,Contract assertion passed
+CT-4A,Mean pairwise SDR >= .20 in 100 development fixtures,PASS,Contract assertion passed
+CT-4B,"SCV top-K differs from frequency, reuse, and random",PASS,Contract assertion passed
+CT-4C,Pressure gate receives no truth/outcome argument,PASS,Contract assertion passed
+CT-5A,Creation/storage capacity parity (K=8),PASS,Contract assertion passed
+CT-5B,Opportunity/candidate pool parity,PASS,Contract assertion passed
+CT-5C,Evaluation horizon parity (10 opportunities),PASS,Contract assertion passed
+CT-5D,Information-card parity and no hidden fields,PASS,Contract assertion passed
+CT-6A,No held-out outcome leakage,PASS,Contract assertion passed
+CT-6B,No taxonomy-label leakage,PASS,Contract assertion passed
+CT-6C,Calibration/dev/confirmatory/replication IDs disjoint,PASS,Contract assertion passed
+CT-7A,Oracle isolated from production competition,PASS,Contract assertion passed
+CT-7B,Oracle cannot affect pressure or candidate generation,PASS,Contract assertion passed
+CT-8A,Cost model fixed in contract fixture,PASS,Contract assertion passed
+CT-8B,Reward formula and horizon fixed,PASS,Contract assertion passed
+CT-8C,Type labels robust under +/-5% cost conversion,PASS,Contract assertion passed
+CT-9A,Adverse-value fixture lets SCV lose to Always and Never,PASS,Contract assertion passed
+CT-9B,Outcome aggregation returns a tie when all candidate values tie,PASS,Contract assertion passed
+CT-9C,Same outcome pipeline can register SCV wins vs frequency/reuse,PASS,Contract assertion passed

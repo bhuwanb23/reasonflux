@@ -1,0 +1,43 @@
+contract_id,result,detail
+1G-CT-01,PASS,Seven mechanism/accuracy stages are independently declared
+1G-CT-02,PASS,Cascade order is explicit from coverage through task accuracy
+1G-CT-03,PASS,Exact task scoring compares output with independent gold
+1G-CT-04,PASS,Coverage is computed from representable tasks and task denominator
+1G-CT-05,PASS,"Zero coverage is observed zero, not unavailable"
+1G-CT-06,PASS,"No coverage denominator is unavailable, not zero"
+1G-CT-07,PASS,Exact accuracy has its own correct-task/scored-task denominator
+1G-CT-08,PASS,Partial pixel accuracy has a separate pixel denominator
+1G-CT-09,PASS,Family accuracy remains disaggregated
+1G-CT-10,PASS,High coverage/low accuracy is representable as separate measures
+1G-CT-11,PASS,Low coverage/low accuracy is representable without conflation
+1G-CT-12,PASS,Accuracy function does not read coverage
+1G-CT-13,PASS,Coverage function does not read accuracy
+1G-CT-14,PASS,Observed candidate activation can be represented
+1G-CT-15,PASS,Observed no-activation can be represented without theory rejection
+1G-CT-16,PASS,Zero eligible denominator yields unavailable
+1G-CT-17,PASS,Insufficient denominator remains inconclusive
+1G-CT-18,PASS,Frozen activation threshold can be applied
+1G-CT-19,PASS,Complete chain activation is representable
+1G-CT-20,PASS,Observed stage failure localizes chain break while downstream stays unavailable
+1G-CT-21,PASS,No eligible transfer opportunities do not become transfer failure
+1G-CT-22,PASS,Uncertain stages remain inconclusive
+1G-CT-23,PASS,Incomplete stage table cannot pass
+1G-CT-24,PASS,Unexpected stage fields cannot silently alter chain result
+1G-CT-25,PASS,Runtime budgets matching frozen config pass
+1G-CT-26,PASS,Scored-arm/config mismatch is blocked
+1G-CT-27,PASS,Larger full-inventory scan allowed only as declared diagnostic
+1G-CT-28,PASS,Undeclared exhaustive scan is a protocol failure
+1G-CT-29,PASS,Inconsistent per-arm candidate budgets are blocked
+1G-CT-30,PASS,All five protocol controls can pass explicitly
+1G-CT-31,PASS,Budget mismatch causes integrity failure
+1G-CT-32,PASS,Holdout reuse prevents pristine confirmatory status
+1G-CT-33,PASS,"Unknown holdout audit is unavailable, not pass"
+1G-CT-34,PASS,Incomplete failure logging fails protocol integrity
+1G-CT-35,PASS,Behavioral and coverage fields may coexist without internal metric inputs
+1G-CT-36,PASS,Internal growth/capability/transfer fields are rejected from outcome payloads
+1G-CT-37,PASS,All named internal metrics are explicitly blocked from external labels
+1G-CT-38,PASS,Invalid numerator/denominator cannot be silently accepted
+1G-CT-39,PASS,Zero and unavailable states remain distinct
+1G-CT-40,PASS,Contract suite has a fixed declared count
+1G-CT-41,PASS,A smaller search is not mislabeled an exhaustive diagnostic scan
+1G-CT-42,PASS,Known protocol failure dominates unknown audit fields

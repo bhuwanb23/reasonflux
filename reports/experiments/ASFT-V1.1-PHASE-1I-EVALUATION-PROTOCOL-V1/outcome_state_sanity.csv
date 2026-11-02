@@ -1,0 +1,9 @@
+constructed_fixture,state,evidence_scope
+constructed_support,supported,constructed protocol contract only; no empirical result
+constructed_contradiction,contradicted,constructed protocol contract only; no empirical result
+constructed_inconclusive,inconclusive,constructed protocol contract only; no empirical result
+constructed_unavailable,unavailable,constructed protocol contract only; no empirical result
+constructed_non_informative,non_informative,constructed protocol contract only; no empirical result
+constructed_equivalence_tie,supported,constructed protocol contract only; no empirical result
+constructed_opposite_direction,contradicted,constructed protocol contract only; no empirical result
+constructed_alternative_superiority_supported,supported,constructed protocol contract only; no empirical result

@@ -1,0 +1,12 @@
+fixture,decision_or_status,scope
+constructed_asft_win,asft_wins,constructed contract fixture only; no experiment outcomes
+constructed_tie,equivalent_tie,constructed contract fixture only; no experiment outcomes
+constructed_baseline_win,baseline_wins,constructed contract fixture only; no experiment outcomes
+constructed_inconclusive,inconclusive,constructed contract fixture only; no experiment outcomes
+integrity_unavailable,unavailable,constructed contract fixture only; no experiment outcomes
+component_positive,positive_contribution_under_tested_conditions,constructed contract fixture only; no experiment outcomes
+component_no_measurable_effect,no_measurable_contribution_under_tested_conditions,constructed contract fixture only; no experiment outcomes
+component_negative,negative_contribution_ablation_better_under_tested_conditions,constructed contract fixture only; no experiment outcomes
+identical_decisions,non_informative_identical_decisions,constructed contract fixture only; no experiment outcomes
+noninformative_cannot_become_win,non_informative_comparison,constructed contract fixture only; no experiment outcomes
+unfair_comparison_invalid,comparison_invalid,constructed contract fixture only; no experiment outcomes

@@ -1,0 +1,6 @@
+fixture,delta_mae,delta_ci_low,delta_ci_high,slope_ci_low,slope_ci_high,status,scope
+constructed_win,0.06,0.04,0.08,0.01,0.1,metric_wins,decision-rule contract fixture only; no task outcome data
+equivalence_tie,0,-0.01,0.01,-0.01,0.01,equivalent_tie,decision-rule contract fixture only; no task outcome data
+constructed_loss,-0.05,-0.08,-0.03,-0.1,-0.01,metric_loses,decision-rule contract fixture only; no task outcome data
+uncertain,0.01,-0.02,0.04,-0.01,0.03,inconclusive,decision-rule contract fixture only; no task outcome data
+integrity_failure,0,0,0,0,0,unavailable,decision-rule contract fixture only; no task outcome data

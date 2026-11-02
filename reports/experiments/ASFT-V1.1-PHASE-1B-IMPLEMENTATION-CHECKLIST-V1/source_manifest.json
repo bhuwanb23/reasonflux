@@ -1,0 +1,160 @@
+{
+  "phase_id": "ASFT-V1.1-PHASE-1B",
+  "package": "ASFT-V1.1-PHASE-1B-IMPLEMENTATION-CHECKLIST-V1",
+  "scope": "Synthetic fixture contract implementation and Phase 1B audit only. No calibration, independent task/outcome evaluation, confirmatory SCT/SCV collection, or experiment was run.",
+  "contracts_passed": 26,
+  "contracts_total": 26,
+  "fixture_batches_checked": 100,
+  "fixture_batches_pressure_passed": 100,
+  "mean_contested_sdr": 0.3681666666666667,
+  "minimum_contested_sdr": 0.25,
+  "maximum_contested_sdr": 0.5,
+  "outcome_response_fixture": "SCV loses to Random, Always-capacity, and Never; wins over Frequency and Reuse; separate fixture tie. Synthetic pipeline check only.",
+  "confirmatory_evaluation_unlocked": false,
+  "source_hash_count": 26,
+  "sources": [
+    {
+      "path": "experiments/phase1b/selection_benchmark.py",
+      "sha256": "09434529be3389015849b4667b6d6b8e4cc2849107511c138a903350f5a30dbf",
+      "bytes": 9971
+    },
+    {
+      "path": "experiments/phase1b/run_contracts.py",
+      "sha256": "fbb729b602e008f38927bd193a04d7ede7da31831bdea3be33ea7822f8177254",
+      "bytes": 13210
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1B-SELECTION-PRESSURE-SPEC-V1/selection_failure_audit.md",
+      "sha256": "3313b543ea77718caf30bdc2e674f6eb969c5d980f8859cba1dc489ec31a42df",
+      "bytes": 5706
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1B-SELECTION-PRESSURE-SPEC-V1/candidate_taxonomy.md",
+      "sha256": "4265d20bb91d88792a48d961d0389c6c541d6a612f3bbc53a61f7748420021e2",
+      "bytes": 4332
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1B-SELECTION-PRESSURE-SPEC-V1/candidate_value_definition.md",
+      "sha256": "09b788f913e464bba28fd06f6ff8f47b73d9c8711c66098410cf1491cc95462b",
+      "bytes": 4756
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1B-SELECTION-PRESSURE-SPEC-V1/selection_pressure_design.md",
+      "sha256": "cf72922aed65857d53a5c1b6f26f2a61576e3a8839ee5cd7ccabe8a211ff4de5",
+      "bytes": 3848
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1B-SELECTION-PRESSURE-SPEC-V1/selector_competition_spec.md",
+      "sha256": "547951edaa8f41f3d42430568854d97140080c2ffbaefa84e942b476f623de6e",
+      "bytes": 4100
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/summary.md",
+      "sha256": "bac4148d7ddd5c19b011c25fa14a230156fc7260ab1da4739a9dbe0e0090be96",
+      "bytes": 3231
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/evidence_package.md",
+      "sha256": "bdaf81eae3923dd66c2ea158a4fc3d8fc6f3cae0c7fb1cfc298174f2015131d3",
+      "bytes": 10362
+    },
+    {
+      "path": "reports/experiments/PHASE-13C-SCT-V1/calibration_frozen.json",
+      "sha256": "fae1eb6209653b8d35794861621a444d8ff2ad1c65165e77423056d43dcea611",
+      "bytes": 1303
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/candidate_selection.csv",
+      "sha256": "0145b558d9a74f6457fcc4be07dd767908ad70d10d88208ff6f2dc7921875dfe",
+      "bytes": 6780
+    },
+    {
+      "path": "reports/experiments/PHASE-13F-BASELINE-ABLATION-V1/master_result_matrix.csv",
+      "sha256": "35c52b770312d9914cf640acd78f1cdd2ad63ef981c1c6d93ccb8a3092a15e1e",
+      "bytes": 2312
+    },
+    {
+      "path": "reports/experiments/PHASE-14C-SCT-CRITICAL-ANALYSIS-V1/policy_failure_analysis.csv",
+      "sha256": "8b8da68f328ca428916fa560b21e5ccc22baa15bba5d001cdb3211b6996c0037",
+      "bytes": 2179
+    },
+    {
+      "path": "reports/experiments/PHASE-14F-BASELINE-ABLATION-CRITICAL-ANALYSIS-V1/baseline_ablation_scorecard.csv",
+      "sha256": "af6109630fbc8576675164812b17e5de1478ed91a5164e6cc30062f1b1d6d326",
+      "bytes": 2193
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1B-IMPLEMENTATION-CHECKLIST-V1/contract_test_results.csv",
+      "sha256": "1c707ea97f181c530372fd296b37a305c03f02e48d4ec1474f6e8247c8b10dbc",
+      "bytes": 2211
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1B-IMPLEMENTATION-CHECKLIST-V1/pairwise_divergence_matrix.csv",
+      "sha256": "362f1a302c13007898ee28e79aec3072244889082251608080e7bec62d36fac6",
+      "bytes": 294
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1B-IMPLEMENTATION-CHECKLIST-V1/pressure_validation.json",
+      "sha256": "3c743c5ca3c0faeb5786354ff18553eba667e441bcc52c78e17079483cf49b34",
+      "bytes": 2349
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1B-IMPLEMENTATION-CHECKLIST-V1/phase1B_readiness_report.md",
+      "sha256": "9c103bfa11c3443ee0bc7b9a3b1a187452b51ae98b4673110a926f4b6086194b",
+      "bytes": 5106
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1B-IMPLEMENTATION-CHECKLIST-V1/phase1B_contract_checklist.csv",
+      "sha256": "d4a6a7ce0d0f479e125b5d4ea98264a0f318c042bd3df80e1a0f365dbcb147dd",
+      "bytes": 3358
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1B-IMPLEMENTATION-CHECKLIST-V1/phase1B_implementation_readme.md",
+      "sha256": "535a72c20a8677e5b4c96830634606a03f6ad9d44b0c8c6a940b3eeac60d376c",
+      "bytes": 2586
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1B-IMPLEMENTATION-CHECKLIST-V1/pressure_validation_report.md",
+      "sha256": "76046d5bbb8cb730537bb45ae01a352334655811dc01c81e78d4db2cfb8e7014",
+      "bytes": 3078
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1B-IMPLEMENTATION-CHECKLIST-V1/phase1B_full_audit_report.md",
+      "sha256": "11644ea0b6f1868487cb388511e2e2fb39129314bb0a9b5317a49574e5bbe6a6",
+      "bytes": 17424
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1B-IMPLEMENTATION-CHECKLIST-V1/outcome_response_sanity_report.md",
+      "sha256": "a94a0edf43fb5243b964c3bb54a36cc9828de9f7fbf3ab24963bc5b5e7f796bf",
+      "bytes": 3644
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1B-IMPLEMENTATION-CHECKLIST-V1/outcome_response_sanity.csv",
+      "sha256": "1ab6ea44d8aafdb7c5c709f20aab21f1cc83fd88ce0022433dd215dbaeaeeeea",
+      "bytes": 1285
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1B-SELECTION-PRESSURE-SPEC-V1/phase1B_readiness_report.md",
+      "sha256": "56f70f10f6b558bb5cc117367125874df4c069538fab720671b9706bcb1983fb",
+      "bytes": 4854
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1B-SELECTION-PRESSURE-SPEC-V1/phase1B_readme.md",
+      "sha256": "851c0197b4c63356370320456d834ebe84395b941fbcac42df4b85823512e26a",
+      "bytes": 2033
+    }
+  ],
+  "deliverables": [
+    "contract_test_results.csv",
+    "pairwise_divergence_matrix.csv",
+    "pressure_validation.json",
+    "pressure_validation_report.md",
+    "phase1B_readiness_report.md",
+    "phase1B_contract_checklist.csv",
+    "phase1B_full_audit_report.md",
+    "outcome_response_sanity_report.md",
+    "outcome_response_sanity.csv",
+    "phase1B_implementation_readme.md",
+    "source_hashes.csv"
+  ]
+}

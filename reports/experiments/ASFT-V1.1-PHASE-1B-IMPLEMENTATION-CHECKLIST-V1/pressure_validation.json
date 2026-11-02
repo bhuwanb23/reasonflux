@@ -1,0 +1,78 @@
+{
+  "fixture_split": "development",
+  "fixture_seed": 0,
+  "batches_checked": 100,
+  "all_batches_pressure_pass": true,
+  "min_contested_sdr": 0.25,
+  "mean_contested_sdr": 0.3681666666666667,
+  "max_contested_sdr": 0.5,
+  "mean_scv_frequency_divergence": 0.4,
+  "min_scv_frequency_divergence": 0.4,
+  "mean_scv_reuse_divergence": 0.4,
+  "min_scv_reuse_divergence": 0.4,
+  "mean_scv_random_divergence": 0.45899999999999996,
+  "min_scv_random_divergence": 0.3,
+  "selection_sets": {
+    "S1_SCV": [
+      "DEVELOPMENT-0000-CAND-07",
+      "DEVELOPMENT-0000-CAND-14",
+      "DEVELOPMENT-0000-CAND-15",
+      "DEVELOPMENT-0000-CAND-10",
+      "DEVELOPMENT-0000-CAND-06",
+      "DEVELOPMENT-0000-CAND-02",
+      "DEVELOPMENT-0000-CAND-17",
+      "DEVELOPMENT-0000-CAND-01"
+    ],
+    "S2_FREQUENCY": [
+      "DEVELOPMENT-0000-CAND-11",
+      "DEVELOPMENT-0000-CAND-18",
+      "DEVELOPMENT-0000-CAND-05",
+      "DEVELOPMENT-0000-CAND-16",
+      "DEVELOPMENT-0000-CAND-10",
+      "DEVELOPMENT-0000-CAND-15",
+      "DEVELOPMENT-0000-CAND-14",
+      "DEVELOPMENT-0000-CAND-07"
+    ],
+    "S3_REUSE": [
+      "DEVELOPMENT-0000-CAND-11",
+      "DEVELOPMENT-0000-CAND-18",
+      "DEVELOPMENT-0000-CAND-05",
+      "DEVELOPMENT-0000-CAND-16",
+      "DEVELOPMENT-0000-CAND-07",
+      "DEVELOPMENT-0000-CAND-14",
+      "DEVELOPMENT-0000-CAND-15",
+      "DEVELOPMENT-0000-CAND-10"
+    ],
+    "S4_RANDOM": [
+      "DEVELOPMENT-0000-CAND-01",
+      "DEVELOPMENT-0000-CAND-04",
+      "DEVELOPMENT-0000-CAND-05",
+      "DEVELOPMENT-0000-CAND-06",
+      "DEVELOPMENT-0000-CAND-11",
+      "DEVELOPMENT-0000-CAND-13",
+      "DEVELOPMENT-0000-CAND-16",
+      "DEVELOPMENT-0000-CAND-19"
+    ],
+    "S5_ALWAYS_CAPACITY": [
+      "DEVELOPMENT-0000-CAND-01",
+      "DEVELOPMENT-0000-CAND-02",
+      "DEVELOPMENT-0000-CAND-03",
+      "DEVELOPMENT-0000-CAND-04",
+      "DEVELOPMENT-0000-CAND-05",
+      "DEVELOPMENT-0000-CAND-06",
+      "DEVELOPMENT-0000-CAND-07",
+      "DEVELOPMENT-0000-CAND-08"
+    ],
+    "S6_NEVER": []
+  },
+  "selection_rates": {
+    "S1_SCV": 0.4,
+    "S2_FREQUENCY": 0.4,
+    "S3_REUSE": 0.4,
+    "S4_RANDOM": 0.4,
+    "S5_ALWAYS_CAPACITY": 0.4,
+    "S6_NEVER": 0.0
+  },
+  "sdr_definition": "mean of pairwise symmetric-difference / N among S1-S4",
+  "data_status": "synthetic contract fixtures only; not candidate outcome evidence or confirmatory data"
+}

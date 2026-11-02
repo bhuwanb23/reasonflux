@@ -1,0 +1,8 @@
+fixture_split,fixture_seed,policy,selected_n,selected_type_counts,mean_net_value_per_slot_teu,difference_vs_scv_teu,interpretation
+development,0,S1_SCV,8,"{""A"": 4, ""B"": 0, ""C"": 0, ""D"": 4, ""E"": 0}",-0.5499999999999998,0.0,synthetic outcome-response contract only; not research evidence
+development,0,S2_FREQUENCY,8,"{""A"": 0, ""B"": 0, ""C"": 4, ""D"": 4, ""E"": 0}",-3.175,-2.625,synthetic outcome-response contract only; not research evidence
+development,0,S3_REUSE,8,"{""A"": 0, ""B"": 0, ""C"": 4, ""D"": 4, ""E"": 0}",-3.175,-2.625,synthetic outcome-response contract only; not research evidence
+development,0,S4_RANDOM,8,"{""A"": 2, ""B"": 2, ""C"": 3, ""D"": 0, ""E"": 1}",1.23125,1.7812499999999998,synthetic outcome-response contract only; not research evidence
+development,0,S5_ALWAYS_CAPACITY,8,"{""A"": 3, ""B"": 2, ""C"": 1, ""D"": 1, ""E"": 1}",1.1687500000000002,1.71875,synthetic outcome-response contract only; not research evidence
+development,0,S6_NEVER,0,"{""A"": 0, ""B"": 0, ""C"": 0, ""D"": 0, ""E"": 0}",0.0,0.5499999999999998,synthetic outcome-response contract only; not research evidence
+development,0,S7_ORACLE,8,"{""A"": 4, ""B"": 0, ""C"": 0, ""D"": 0, ""E"": 4}",2.95,3.5,synthetic outcome-response contract only; not research evidence
