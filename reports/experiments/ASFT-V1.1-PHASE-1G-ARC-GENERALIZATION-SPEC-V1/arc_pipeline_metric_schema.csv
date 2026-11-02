@@ -1,0 +1,8 @@
+stage,primary_metric,denominator,zero_or_missing_rule,accuracy_separation
+representation_coverage,demo_fit_coverage_rate,tasks with demos,0 observed; denominator 0 unavailable,coverage is not accuracy
+trace_generation,trace_generation_rate + successful_trace_rate,attempted tasks / generated traces,no attempts unavailable; failures logged,trace validity is not accuracy
+invariant_discovery,"candidate yield, precision, survival",successful traces / candidate validations,zero candidates observed; no denominator unavailable,candidate status is not accuracy
+skill_formation,"formation count, promotion rate, survival",validated invariant candidates,zero skills observed,skill formation is not transfer
+transfer,"eligible transfer rate, utility, negative transfer",eligible skill-task pairs,zero eligible skill denominator unavailable,transfer is not overall accuracy
+capability,"validated external capability units, persistence, utility",independent behavioral task tests,insufficient behavior denominator unavailable,capability follows Phase 1E; not C_t/CGR
+accuracy,"exact task, partial pixel, per-family accuracy",scored test tasks/pixels/family tasks,no scored tasks unavailable,accuracy is not coverage or transfer

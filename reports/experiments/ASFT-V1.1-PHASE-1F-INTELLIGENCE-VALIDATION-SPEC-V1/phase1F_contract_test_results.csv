@@ -1,0 +1,45 @@
+contract_id,result,detail
+IF-CT-01,PASS,Six independently scored future-learning/adaptation tests declared
+IF-CT-02,PASS,A-F test names match frozen specification
+IF-CT-03,PASS,I1-I6 intelligence taxonomy present
+IF-CT-04,PASS,Each taxonomy category has a behavioral definition
+IF-CT-05,PASS,All required B1-B5 comparator variables included
+IF-CT-06,PASS,Random/chance comparator is explicit
+IF-CT-07,PASS,Primary candidate predictor is frozen as IG at time t
+IF-CT-08,PASS,One primary external endpoint is frozen
+IF-CT-09,PASS,Smallest effect of interest is explicit
+IF-CT-10,PASS,Learning exposures are fixed before confirmatory outcomes
+IF-CT-11,PASS,score_task_output accepts external behavior/evaluator fields only
+IF-CT-12,PASS,learning_curve_auc accepts external behavior/evaluator fields only
+IF-CT-13,PASS,behavioral_delta accepts external behavior/evaluator fields only
+IF-CT-14,PASS,validate_external_outcomes accepts external behavior/evaluator fields only
+IF-CT-15,PASS,External correctness compares output with evaluator gold
+IF-CT-16,PASS,Learning-rate endpoint is normalized trapezoidal AULC
+IF-CT-17,PASS,Flat external performance yields flat AULC
+IF-CT-18,PASS,Behavioral change is computed from external pre/post scores
+IF-CT-19,PASS,Invalid exposure sequence cannot be scored
+IF-CT-20,PASS,Mismatched curve shape cannot be scored
+IF-CT-21,PASS,External outcome schema accepts task behavior only
+IF-CT-22,PASS,All internal score fields are rejected from target payloads
+IF-CT-23,PASS,Target contamination deny-list is explicit and broad
+IF-CT-24,PASS,Decision rule permits a positive incremental IG win
+IF-CT-25,PASS,Decision rule permits an equivalence tie
+IF-CT-26,PASS,Decision rule permits an IG loss/inverse direction
+IF-CT-27,PASS,Decision rule preserves uncertainty
+IF-CT-28,PASS,"Integrity failure remains unavailable, not zero"
+IF-CT-29,PASS,A wrong-direction predictive association cannot be labeled an IG win
+IF-CT-30,PASS,Claim survives only with replicated learning and second external win
+IF-CT-31,PASS,Adequately powered replicated ties trigger retirement path
+IF-CT-32,PASS,Replicated external losses trigger retirement path
+IF-CT-33,PASS,Underpowered nulls cannot force retirement
+IF-CT-34,PASS,Single-cohort/partial wins weaken but do not survive
+IF-CT-35,PASS,Failed integrity gate prevents validation claim
+IF-CT-36,PASS,Missing A-F endpoint table is unavailable
+IF-CT-37,PASS,IG/IGR/IE are explicitly excluded from external target scoring
+IF-CT-38,PASS,Capability/CGR/C_t internal metrics cannot define the target
+IF-CT-39,PASS,Capability score is available as a predictor but explicitly forbidden as an external target label
+IF-CT-40,PASS,Contract suite has a fixed declared count
+IF-CT-41,PASS,Invalid decision labels cannot be used to validate or retire the claim
+IF-CT-42,PASS,Inconclusive outcomes do not become a weakening or retirement verdict
+IF-CT-43,PASS,"IGR is a separately declared predictor, never an external target field"
+IF-CT-44,PASS,Unavailable external outcome cannot be treated as a tie or retirement result
