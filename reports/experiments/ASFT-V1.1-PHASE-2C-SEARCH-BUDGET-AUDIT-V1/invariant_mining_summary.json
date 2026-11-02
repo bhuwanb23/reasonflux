@@ -1,0 +1,47 @@
+{
+  "support_threshold": 5,
+  "consistency_threshold": 1.0,
+  "by_condition": {
+    "S1": {
+      "successful_discovery_traces": 1,
+      "support_by_program": {
+        "reflect_vertical": 1
+      },
+      "trace_miner_candidates": 0,
+      "mapped_invariant_count": 0,
+      "accepted_programs": []
+    },
+    "S2": {
+      "successful_discovery_traces": 2,
+      "support_by_program": {
+        "reflect_vertical": 1,
+        "rotate_270": 1
+      },
+      "trace_miner_candidates": 0,
+      "mapped_invariant_count": 0,
+      "accepted_programs": []
+    },
+    "S3": {
+      "successful_discovery_traces": 3,
+      "support_by_program": {
+        "reflect_vertical": 1,
+        "rotate_270": 1,
+        "recolor_bijection": 1
+      },
+      "trace_miner_candidates": 0,
+      "mapped_invariant_count": 0,
+      "accepted_programs": []
+    },
+    "S4": {
+      "successful_discovery_traces": 3,
+      "support_by_program": {
+        "reflect_vertical": 1,
+        "rotate_270": 1,
+        "recolor_bijection": 1
+      },
+      "trace_miner_candidates": 0,
+      "mapped_invariant_count": 0,
+      "accepted_programs": []
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "transfer_task_ids": 200,
+  "programs": 10,
+  "program_specific_probe_calls": 2000,
+  "program_specific_candidate_trials": 2000,
+  "conditional_baseline_calls": 5,
+  "conditional_baseline_candidate_trials": 15,
+  "conditional_baseline_demo_fits": 0,
+  "test_output_fields_parsed_or_used": false,
+  "accuracy_measured": false,
+  "status": "TRAIN_DEMO_ONLY_CODE_PATH_RECONSTRUCTION_NOT_ORIGINAL_PER_TASK_LOG"
+}

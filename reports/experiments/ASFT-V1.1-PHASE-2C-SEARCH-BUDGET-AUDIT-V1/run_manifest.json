@@ -1,0 +1,28 @@
+{
+  "phase": "ASFT-V1.1-PHASE-2C",
+  "package": "ASFT-V1.1-PHASE-2C-SEARCH-BUDGET-AUDIT-V1",
+  "protocol": "experiments/phase2c/preregistration.md",
+  "config": "experiments/phase2c/config.json",
+  "budget_registry": "experiments/phase2c/budget_registry.yaml",
+  "config_sha256": "abdd45fe7373108a7b8b0704218a379eca5263c72b001de1d21e87082425ed79",
+  "registry_sha256": "cab4114f3aa9f2b6082bd709f2e342b1c72923d13f8de6b23fd738c2eab7cd50",
+  "runtime_hash": "8744aa33bfc5ae7be107ad7ff828dd87e80cd2a933d7dbc90d076605c5f456e0",
+  "search_log_hash": "e146d640e4f7d68f8e68af2f6858f55cd68a832266006b4a57a77b18c4944b01",
+  "dataset_split_manifest_sha256": "6c83a1454e957961c236a38252ac7b39d81b50f513b37dfec2b3c1995c8a1220",
+  "task_count": 1000,
+  "split_counts": {
+    "discovery": 600,
+    "transfer": 200,
+    "holdout": 200
+  },
+  "conditions": 4,
+  "primary_task_condition_runs": 4000,
+  "deterministic_replay_runs": 4000,
+  "total_search_invocations": 8000,
+  "process_memory_limit_mib": 2048,
+  "process_peak_rss_mib": 97.586,
+  "wall_clock_limit_sec_per_search": 30,
+  "test_output_fields_parsed_or_used": false,
+  "accuracy_measured": false,
+  "run_status": "completed_budget_parity_and_replay_pass"
+}
