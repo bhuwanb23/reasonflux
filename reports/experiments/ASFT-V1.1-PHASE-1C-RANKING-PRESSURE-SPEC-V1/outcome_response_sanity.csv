@@ -1,0 +1,7 @@
+fixture,policy,mean_value_per_slot,scope
+constructed_loss,R1_IDT,0.000000,synthetic metric-response contract only
+constructed_loss,R2_FREQUENCY,1.000000,synthetic metric-response contract only
+equal_value_tie,R1_IDT,1.000000,synthetic metric-response contract only
+equal_value_tie,R2_FREQUENCY,1.000000,synthetic metric-response contract only
+constructed_win,R1_IDT,1.000000,synthetic metric-response contract only
+constructed_win,R2_FREQUENCY,0.000000,synthetic metric-response contract only

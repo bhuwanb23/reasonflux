@@ -1,0 +1,229 @@
+{
+  "phase_id": "ASFT-V1.1-PHASE-1C",
+  "package": "ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1",
+  "build_note": "Created afresh from the accepted Phase 1B design/contract state; no withdrawn Phase 1C draft was reused.",
+  "scope": "Historical ranking failure audit, benchmark specification, and synthetic ranking-pressure contract checks only. No real task runner, calibration study, confirmatory outcome evaluation, or research replication was run.",
+  "contracts_passed": 26,
+  "contracts_total": 26,
+  "synthetic_pressure_panels": 100,
+  "synthetic_pressure_passed": 100,
+  "mean_all_pair_topk_rdr": 0.839125,
+  "minimum_all_pair_topk_rdr": 0.7875,
+  "mean_normalized_kendall_divergence": 0.49002051282051284,
+  "minimum_normalized_kendall_divergence": 0.45384615384615384,
+  "mean_idt_vs_frequency_rdr": 0.94625,
+  "mean_idt_vs_reuse_rdr": 0.76,
+  "mean_idt_vs_compression_rdr": 0.555,
+  "mean_idt_vs_random_rdr": 0.80375,
+  "confirmatory_evaluation_unlocked": false,
+  "source_hash_count": 37,
+  "sources": [
+    {
+      "path": "experiments/phase1c/ranking_benchmark.py",
+      "sha256": "83e76cdbe1c77e2d98cb9c036b94a244f2ce25ddb74b125c81cd04998ad5df61",
+      "bytes": 7886
+    },
+    {
+      "path": "experiments/phase1c/run_contracts.py",
+      "sha256": "550a84bd140f080aad893043c9517e710b16f51f907044502abc92a653af87d0",
+      "bytes": 10750
+    },
+    {
+      "path": "src/invariants/transfer_aware.py",
+      "sha256": "93ccf303cd912ef4bd4d4b7c76d68c1b5f8e36d3931efe13c5b0e622cfc7e05e",
+      "bytes": 1718
+    },
+    {
+      "path": "src/invariants/ranking.py",
+      "sha256": "b0cb7172a974b9dabcae02edac6a63087b79f01ccd512a981352bcce9d5ce9be",
+      "bytes": 3769
+    },
+    {
+      "path": "src/invariants/validation/scores.py",
+      "sha256": "301aa18f5c82da6eedb84329367f42bfed028b07a5a0801343db7b650499abfa",
+      "bytes": 3251
+    },
+    {
+      "path": "src/invariants/validation/transfer.py",
+      "sha256": "841bd9c40bfd6c529939649388b605dd41d583acae5a3c254dedcae7b1f3aa1d",
+      "bytes": 1084
+    },
+    {
+      "path": "src/transfer/metrics.py",
+      "sha256": "6b32538ddfaab680cd1800b27e1a953ffedf504746da730b85506a1393a813b2",
+      "bytes": 4051
+    },
+    {
+      "path": "experiments/idt_experiments.py",
+      "sha256": "0e7d4d503780caafe9e9aa3ccce0949e72c4fa03d044b2fb8f6d215aec82a5f0",
+      "bytes": 47184
+    },
+    {
+      "path": "experiments/exp14_confounded_idt.py",
+      "sha256": "67cceaf1c5d6633be3bd237cc771bb1664ce3784371639d5bd055b5b28a99e93",
+      "bytes": 17432
+    },
+    {
+      "path": "reports/experiments/PHASE-14B-IDT-CRITICAL-ANALYSIS-V1/phase14b_idt_analysis.md",
+      "sha256": "2427878888e470b7e9d76773a0891b55c158972e4ae9afbd242bc83d036016b1",
+      "bytes": 19139
+    },
+    {
+      "path": "reports/experiments/PHASE-14B-IDT-CRITICAL-ANALYSIS-V1/idt_scorecard.csv",
+      "sha256": "13a1b5be5cb76a1fa627c615b8b2a24436b47e13bcd96233ed10d475493f4d18",
+      "bytes": 2445
+    },
+    {
+      "path": "reports/experiments/PHASE-14B-IDT-CRITICAL-ANALYSIS-V1/failure_analysis.csv",
+      "sha256": "e8f4108e5f7acc1582bebc37376834a20f123bc4b18877914fae5bc8e3ff6718",
+      "bytes": 2297
+    },
+    {
+      "path": "reports/experiments/PHASE-14B-IDT-CRITICAL-ANALYSIS-V1/phase13b_accounting_versions.csv",
+      "sha256": "71509f927e94df67ab6232941308e0f40e0420cd4852394d34eb087aa8ccc81d",
+      "bytes": 610
+    },
+    {
+      "path": "reports/experiments/PHASE-14F-BASELINE-ABLATION-CRITICAL-ANALYSIS-V1/phase14f_baselines_ablations_analysis.md",
+      "sha256": "b9e9bbf4aa8e14b66776e038ce92dc361bda23cf5147de11524c068820e78402",
+      "bytes": 21121
+    },
+    {
+      "path": "reports/experiments/PHASE-14H-CROSS-CONTRIBUTION-ANALYSIS-V1/phase14h_cross_contribution_analysis.md",
+      "sha256": "a2af72c6353a1980f54a035913d3d8a58164be642c0f9155921f55561315204e",
+      "bytes": 20857
+    },
+    {
+      "path": "reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/package_A_IDT.md",
+      "sha256": "369f624ac3400c62988fee7cc4837ab80d21c38bc0c9785d9cbdd89da8225717",
+      "bytes": 3518
+    },
+    {
+      "path": "reports/experiments/EXP-IDT-14/report.md",
+      "sha256": "8204cf65679a29bf7b4b1297abee912d02afa9b6c61b3c3bb4158687e1a1ba2d",
+      "bytes": 119852
+    },
+    {
+      "path": "reports/experiments/EXP-IDT-14/summary.md",
+      "sha256": "92e35e34756a3b547a32dfe2ef050169a290c54847cd4cb971a12e07812c7a0b",
+      "bytes": 1081
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/README.md",
+      "sha256": "25e264702d770225db9a569285cbbb49befe9853760a3e72b492164a11b2903f",
+      "bytes": 3078
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/candidate_taxonomy.md",
+      "sha256": "83a2417d1b79b3b1df2fbdbfe1e6f792133701b7175ca5f2b9018084d6297eee",
+      "bytes": 3672
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/future_value_definition.md",
+      "sha256": "7163757b581d32843498dc4333859248917f42c5f0ef1740a832dac553c33c42",
+      "bytes": 3391
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/outcome_response_sanity.csv",
+      "sha256": "b78b424c9ec40ceeeafcb1207e391e538254a668e6f4a4ac645d19dbaa9f24dd",
+      "bytes": 500
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/outcome_response_sanity_report.md",
+      "sha256": "d6017ae2e6e92acbd8c7bc4aa6eca59639f563ac0a9327154f455b7b847929a2",
+      "bytes": 603
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/pairwise_rank_divergence.csv",
+      "sha256": "23eaaa6c1077ba8e79bc931a53855497b4521937bc4d93ed58d48a90f481bb76",
+      "bytes": 464
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/phase1C_contract_test_results.csv",
+      "sha256": "d97fac43072fad8311e79e989038d9c2f5aea680570ab2bec9a0cc7abe1f789e",
+      "bytes": 1606
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/phase1C_full_audit_report.md",
+      "sha256": "b7328e4c0482ce2cf765014c8d64045f7932c2181976e2f2868e71be5f6eb96e",
+      "bytes": 8058
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/phase1C_readiness_checklist.csv",
+      "sha256": "245d154cf7eab5d44da1f1ec501febd6eed1764c073bacaa0e7f820dabd35bad",
+      "bytes": 1658
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/phase1C_readiness_report.md",
+      "sha256": "d5c66c8e8915a8d2e104afa27a4c24769f5f8890dc99a8b4d16b44ea497b6c5c",
+      "bytes": 5569
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/ranker_competition_spec.md",
+      "sha256": "765d06ab44efee89c46f87f687fa90a8a8d862c48477b0379845210a86348b49",
+      "bytes": 4147
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/ranking_dataset_protocol.md",
+      "sha256": "33931a16bc2539212bed88e33b92cbe9be4b4366d6314c6763b0abfbcb08993b",
+      "bytes": 3344
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/ranking_failure_audit.md",
+      "sha256": "f5a3a314e3d52bb48d479af9bae8e0f001ee5caaf42b3e2905d4b67a91be2309",
+      "bytes": 5994
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/ranking_metrics.md",
+      "sha256": "c60fbbae6b6db13bbc4d557234ea6bbe0e2a3d0a336e2fa617535234e48a604e",
+      "bytes": 3459
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/ranking_preregistration_template.md",
+      "sha256": "15ac8a2ed6eacfc6a8039f746e7494babe2ac304750f1142aa073a5738b641b6",
+      "bytes": 4505
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/ranking_pressure_design.md",
+      "sha256": "15c0bd582fdae2a50c68599a4b2fc64277f27f88532055a7ef9a8a92f344dbe2",
+      "bytes": 2806
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/synthetic_pressure_report.md",
+      "sha256": "02cfa04fb023fa351a450b785e1c7fe7bb88ff0dc88f736f1ad408e31e6ec5ea",
+      "bytes": 607
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/synthetic_pressure_validation.json",
+      "sha256": "a58f42696d99bc2bffc60e9a8e25a19e65fe1e03adf9ed015accf9576813186f",
+      "bytes": 32533
+    },
+    {
+      "path": "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/transfer_ground_truth_protocol.md",
+      "sha256": "934d11a210e1afba5e8542a8e25514b4dae0f4e211dcbf4483a1951df70523b2",
+      "bytes": 3036
+    }
+  ],
+  "deliverables": [
+    "ranking_failure_audit.md",
+    "candidate_taxonomy.md",
+    "future_value_definition.md",
+    "ranking_pressure_design.md",
+    "ranker_competition_spec.md",
+    "transfer_ground_truth_protocol.md",
+    "ranking_metrics.md",
+    "ranking_dataset_protocol.md",
+    "ranking_preregistration_template.md",
+    "phase1C_readiness_report.md",
+    "phase1C_full_audit_report.md",
+    "phase1C_readiness_checklist.csv",
+    "phase1C_contract_test_results.csv",
+    "synthetic_pressure_report.md",
+    "synthetic_pressure_validation.json",
+    "pairwise_rank_divergence.csv",
+    "outcome_response_sanity_report.md",
+    "outcome_response_sanity.csv",
+    "README.md",
+    "source_hashes.csv"
+  ]
+}

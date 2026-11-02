@@ -1,0 +1,1026 @@
+{
+  "fixture_only": true,
+  "panels": 100,
+  "N": 40,
+  "K": 8,
+  "pass_count": 100,
+  "all_pass": true,
+  "mean_metrics": {
+    "mean_pairwise_topk_rdr": 0.8391249999999999,
+    "mean_pairwise_kendall_divergence": 0.49002051282051284,
+    "R1_vs_R2_FREQUENCY_topk_rdr": 0.94625,
+    "R1_vs_R3_REUSE_topk_rdr": 0.76,
+    "R1_vs_R4_COMPRESSION_topk_rdr": 0.555,
+    "R1_vs_R5_RANDOM_topk_rdr": 0.80375
+  },
+  "minimum_metrics": {
+    "mean_pairwise_topk_rdr": 0.7875,
+    "mean_pairwise_kendall_divergence": 0.45384615384615384,
+    "R1_vs_R2_FREQUENCY_topk_rdr": 0.75,
+    "R1_vs_R3_REUSE_topk_rdr": 0.625,
+    "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+    "R1_vs_R5_RANDOM_topk_rdr": 0.375
+  },
+  "panel_results": [
+    {
+      "seed": 0,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8625,
+      "mean_pairwise_kendall_divergence": 0.49564102564102563,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 1,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.7875,
+      "mean_pairwise_kendall_divergence": 0.49974358974358973,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.625,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.5
+    },
+    {
+      "seed": 2,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.875,
+      "mean_pairwise_kendall_divergence": 0.5084615384615384,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    },
+    {
+      "seed": 3,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.48589743589743584,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.75,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 4,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8625,
+      "mean_pairwise_kendall_divergence": 0.5033333333333333,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 5,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8125,
+      "mean_pairwise_kendall_divergence": 0.48897435897435904,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.625
+    },
+    {
+      "seed": 6,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8625,
+      "mean_pairwise_kendall_divergence": 0.5056410256410256,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    },
+    {
+      "seed": 7,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8625,
+      "mean_pairwise_kendall_divergence": 0.4838461538461538,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.75,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    },
+    {
+      "seed": 8,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.85,
+      "mean_pairwise_kendall_divergence": 0.49923076923076926,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.625,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    },
+    {
+      "seed": 9,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.825,
+      "mean_pairwise_kendall_divergence": 0.4907692307692308,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.625,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.75,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 10,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8625,
+      "mean_pairwise_kendall_divergence": 0.5002564102564102,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 11,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8125,
+      "mean_pairwise_kendall_divergence": 0.4830769230769231,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 12,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8125,
+      "mean_pairwise_kendall_divergence": 0.49282051282051287,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.625
+    },
+    {
+      "seed": 13,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.825,
+      "mean_pairwise_kendall_divergence": 0.4748717948717949,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.625,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 14,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.825,
+      "mean_pairwise_kendall_divergence": 0.47897435897435897,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.625,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 15,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.825,
+      "mean_pairwise_kendall_divergence": 0.5046153846153846,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.625
+    },
+    {
+      "seed": 16,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8125,
+      "mean_pairwise_kendall_divergence": 0.46794871794871795,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 17,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.4971794871794872,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 18,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.85,
+      "mean_pairwise_kendall_divergence": 0.5051282051282051,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.625,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 19,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8,
+      "mean_pairwise_kendall_divergence": 0.4902564102564103,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.5
+    },
+    {
+      "seed": 20,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.85,
+      "mean_pairwise_kendall_divergence": 0.4807692307692307,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    },
+    {
+      "seed": 21,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.7875,
+      "mean_pairwise_kendall_divergence": 0.4717948717948718,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 22,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8625,
+      "mean_pairwise_kendall_divergence": 0.5015384615384615,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    },
+    {
+      "seed": 23,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8125,
+      "mean_pairwise_kendall_divergence": 0.4871794871794871,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 24,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.825,
+      "mean_pairwise_kendall_divergence": 0.49435897435897436,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.625,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.625
+    },
+    {
+      "seed": 25,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.9,
+      "mean_pairwise_kendall_divergence": 0.4971794871794872,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    },
+    {
+      "seed": 26,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.49564102564102563,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.625,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 27,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.4902564102564103,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 28,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.4707692307692308,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 29,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.4915384615384616,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 30,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.9125,
+      "mean_pairwise_kendall_divergence": 0.4982051282051282,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    },
+    {
+      "seed": 31,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.85,
+      "mean_pairwise_kendall_divergence": 0.5010256410256411,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 32,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.4874358974358975,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.625
+    },
+    {
+      "seed": 33,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.875,
+      "mean_pairwise_kendall_divergence": 0.5015384615384615,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.625
+    },
+    {
+      "seed": 34,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8125,
+      "mean_pairwise_kendall_divergence": 0.4915384615384616,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.625,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 35,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.825,
+      "mean_pairwise_kendall_divergence": 0.47820512820512817,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    },
+    {
+      "seed": 36,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8625,
+      "mean_pairwise_kendall_divergence": 0.48769230769230776,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 37,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.4764102564102564,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 38,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.825,
+      "mean_pairwise_kendall_divergence": 0.4833333333333333,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.625,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 39,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.4851282051282051,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 40,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.85,
+      "mean_pairwise_kendall_divergence": 0.4861538461538462,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 41,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.875,
+      "mean_pairwise_kendall_divergence": 0.5105128205128204,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    },
+    {
+      "seed": 42,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8625,
+      "mean_pairwise_kendall_divergence": 0.48820512820512824,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    },
+    {
+      "seed": 43,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.875,
+      "mean_pairwise_kendall_divergence": 0.5028205128205128,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.75,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 44,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8125,
+      "mean_pairwise_kendall_divergence": 0.48256410256410254,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.625
+    },
+    {
+      "seed": 45,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8125,
+      "mean_pairwise_kendall_divergence": 0.4769230769230769,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.625
+    },
+    {
+      "seed": 46,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8875,
+      "mean_pairwise_kendall_divergence": 0.498974358974359,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.625,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    },
+    {
+      "seed": 47,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.4976923076923077,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 48,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.875,
+      "mean_pairwise_kendall_divergence": 0.5092307692307692,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    },
+    {
+      "seed": 49,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8125,
+      "mean_pairwise_kendall_divergence": 0.4748717948717949,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.625,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 50,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.5005128205128205,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 51,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.85,
+      "mean_pairwise_kendall_divergence": 0.4787179487179487,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.625,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 52,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.825,
+      "mean_pairwise_kendall_divergence": 0.4766666666666667,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.625
+    },
+    {
+      "seed": 53,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8125,
+      "mean_pairwise_kendall_divergence": 0.47846153846153844,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.625
+    },
+    {
+      "seed": 54,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.4917948717948718,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.625
+    },
+    {
+      "seed": 55,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.825,
+      "mean_pairwise_kendall_divergence": 0.47435897435897434,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 56,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8125,
+      "mean_pairwise_kendall_divergence": 0.46923076923076923,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.375
+    },
+    {
+      "seed": 57,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8625,
+      "mean_pairwise_kendall_divergence": 0.4871794871794871,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.625,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 58,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8,
+      "mean_pairwise_kendall_divergence": 0.46564102564102566,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.5
+    },
+    {
+      "seed": 59,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8125,
+      "mean_pairwise_kendall_divergence": 0.4861538461538461,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.625
+    },
+    {
+      "seed": 60,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.5010256410256411,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.625,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    },
+    {
+      "seed": 61,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.875,
+      "mean_pairwise_kendall_divergence": 0.47897435897435897,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 1.0,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 62,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.4848717948717948,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 63,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8625,
+      "mean_pairwise_kendall_divergence": 0.4946153846153846,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 64,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.85,
+      "mean_pairwise_kendall_divergence": 0.4966666666666667,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    },
+    {
+      "seed": 65,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.49205128205128207,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 66,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.45384615384615384,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 67,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.85,
+      "mean_pairwise_kendall_divergence": 0.49435897435897436,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 68,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.49846153846153846,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 69,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.825,
+      "mean_pairwise_kendall_divergence": 0.48,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.5
+    },
+    {
+      "seed": 70,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.85,
+      "mean_pairwise_kendall_divergence": 0.4717948717948718,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 71,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.875,
+      "mean_pairwise_kendall_divergence": 0.5128205128205128,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    },
+    {
+      "seed": 72,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.825,
+      "mean_pairwise_kendall_divergence": 0.49923076923076926,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 73,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8,
+      "mean_pairwise_kendall_divergence": 0.48820512820512824,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.625
+    },
+    {
+      "seed": 74,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8625,
+      "mean_pairwise_kendall_divergence": 0.49743589743589745,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    },
+    {
+      "seed": 75,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.7875,
+      "mean_pairwise_kendall_divergence": 0.4630769230769231,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.75,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.5
+    },
+    {
+      "seed": 76,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8125,
+      "mean_pairwise_kendall_divergence": 0.49948717948717947,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.5
+    },
+    {
+      "seed": 77,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.48,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 78,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.85,
+      "mean_pairwise_kendall_divergence": 0.4841025641025641,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    },
+    {
+      "seed": 79,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.5064102564102564,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.625,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 80,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.85,
+      "mean_pairwise_kendall_divergence": 0.49923076923076926,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 81,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8125,
+      "mean_pairwise_kendall_divergence": 0.5025641025641026,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 82,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.85,
+      "mean_pairwise_kendall_divergence": 0.5,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 83,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8625,
+      "mean_pairwise_kendall_divergence": 0.49102564102564106,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    },
+    {
+      "seed": 84,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.481025641025641,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 1.0,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 85,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8,
+      "mean_pairwise_kendall_divergence": 0.4764102564102564,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 86,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.85,
+      "mean_pairwise_kendall_divergence": 0.4894871794871795,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    },
+    {
+      "seed": 87,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.875,
+      "mean_pairwise_kendall_divergence": 0.5046153846153846,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 88,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.825,
+      "mean_pairwise_kendall_divergence": 0.46923076923076923,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.625,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 89,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.5038461538461538,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 90,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8125,
+      "mean_pairwise_kendall_divergence": 0.5025641025641026,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.625
+    },
+    {
+      "seed": 91,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8125,
+      "mean_pairwise_kendall_divergence": 0.5038461538461538,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.625
+    },
+    {
+      "seed": 92,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.47820512820512817,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.625,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    },
+    {
+      "seed": 93,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.4658974358974358,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 94,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8125,
+      "mean_pairwise_kendall_divergence": 0.4946153846153846,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.75
+    },
+    {
+      "seed": 95,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8625,
+      "mean_pairwise_kendall_divergence": 0.497948717948718,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 96,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.85,
+      "mean_pairwise_kendall_divergence": 0.51,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 1.0,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.625
+    },
+    {
+      "seed": 97,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8375,
+      "mean_pairwise_kendall_divergence": 0.5053846153846153,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 98,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8625,
+      "mean_pairwise_kendall_divergence": 0.4971794871794872,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.75,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.5,
+      "R1_vs_R5_RANDOM_topk_rdr": 0.875
+    },
+    {
+      "seed": 99,
+      "pass": true,
+      "mean_pairwise_topk_rdr": 0.8625,
+      "mean_pairwise_kendall_divergence": 0.48666666666666664,
+      "R1_vs_R2_FREQUENCY_topk_rdr": 0.875,
+      "R1_vs_R3_REUSE_topk_rdr": 0.875,
+      "R1_vs_R4_COMPRESSION_topk_rdr": 0.625,
+      "R1_vs_R5_RANDOM_topk_rdr": 1.0
+    }
+  ]
+}
