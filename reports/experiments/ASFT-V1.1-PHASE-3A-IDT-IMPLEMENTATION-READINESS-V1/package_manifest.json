@@ -1,0 +1,69 @@
+{
+  "package_id": "ASFT-V1.1-PHASE-3A-IDT-IMPLEMENTATION-READINESS-V1",
+  "phase": "ASFT v1.1 Phase 3A",
+  "decision": "BLOCKED",
+  "package_integrity": "PASS",
+  "evidence_scope": "implementation plumbing and synthetic fixtures only; no IDT efficacy claim",
+  "required_reports": [
+    "historical_idt_audit.md",
+    "ranker_validation_report.md",
+    "candidate_pool_validation.md",
+    "ranking_pressure_validation.md",
+    "endpoint_validation_report.md",
+    "leakage_audit.md",
+    "fairness_audit.md",
+    "contract_revalidation_report.md",
+    "phase3A_readiness_review.md"
+  ],
+  "contract_revalidation": {
+    "passed": 26,
+    "total": 26,
+    "synthetic_pressure_panels": 100,
+    "all_synthetic_panels_pass": true
+  },
+  "mentor_review": {
+    "status": "concurred",
+    "phase3A": "accepted as implementation plumbing only",
+    "phase3B": "BLOCKED / not authorized",
+    "phase3D": "not authorized",
+    "supplement": "mentor_review.md"
+  },
+  "phase3B_started": false,
+  "blocked_gates": [
+    "actual candidate pool and natural pressure",
+    "independent task evaluator and FNTU outcome runner",
+    "calibrated frozen cost model and lambda",
+    "production sealed outcome store and access audit",
+    "final calibration-only sample-size/power plan and preregistration"
+  ],
+  "sources": [
+    "experiments/phase3a/benchmark_engine.py",
+    "experiments/phase3a/run_contracts.py",
+    "experiments/phase3a/contract_results.json",
+    "src/invariants/transfer_aware.py",
+    "src/invariants/ranking.py",
+    "src/invariants/validation/scores.py",
+    "src/transfer/metrics.py",
+    "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/",
+    "docs/03_implementation/validation/phase_13b_results.md",
+    "reports/experiments/PHASE-14B-IDT-CRITICAL-ANALYSIS-V1/phase14b_idt_analysis.md"
+  ],
+  "qa": {
+    "required_reports": "9/9 present",
+    "contracts": "26/26 PASS (synthetic/plumbing scope)",
+    "pressure_fixtures": "100/100 PASS; not actual candidate pools",
+    "supplemental_checks": {
+      "deterministic_score_tie_break_by_opaque_id": true,
+      "arrival_order_invariance": true,
+      "random_seed_changes_random_order": true,
+      "converged_rankings_fail_pressure_gate": true,
+      "unfrozen_cost_model_rejected": true,
+      "ambiguous_missing_outcome_rejected": true
+    },
+    "readiness_questions": "7/7 answered",
+    "mentor_review": "concurred; Phase 3B/3D not authorized",
+    "unlock_gates": "0/6 closed",
+    "markdown_local_links": "PASS",
+    "readiness_decision": "BLOCKED for Phase 3B/3D"
+  }
+}

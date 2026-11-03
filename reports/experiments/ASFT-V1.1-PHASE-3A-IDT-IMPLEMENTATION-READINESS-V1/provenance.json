@@ -1,0 +1,41 @@
+{
+  "package_id": "ASFT-V1.1-PHASE-3A-IDT-IMPLEMENTATION-READINESS-V1",
+  "sha256": {
+    "reports/experiments/ASFT-V1.1-PHASE-3A-IDT-IMPLEMENTATION-READINESS-V1/historical_idt_audit.md": "7da9afe192be685fbebdd183c94a59e5d0485e49abc7105a9fd3526e1d661a87",
+    "reports/experiments/ASFT-V1.1-PHASE-3A-IDT-IMPLEMENTATION-READINESS-V1/ranker_validation_report.md": "11beda5409e21486ac33668f569f7e3a5a289284e07527646312cccfdfba9016",
+    "reports/experiments/ASFT-V1.1-PHASE-3A-IDT-IMPLEMENTATION-READINESS-V1/candidate_pool_validation.md": "ce8634ec8f13578905b721fde3289499c3de99ad856f29fe445eaade8a70e567",
+    "reports/experiments/ASFT-V1.1-PHASE-3A-IDT-IMPLEMENTATION-READINESS-V1/ranking_pressure_validation.md": "39fcbd4c8afee76af1e19ccdb772d4ab469353a123d5e0b08a2a5d77abad8fbb",
+    "reports/experiments/ASFT-V1.1-PHASE-3A-IDT-IMPLEMENTATION-READINESS-V1/endpoint_validation_report.md": "cf688a1e26d4264c443203b8c1e0ed4b80ac66baa8cec4b61e73c45fa9e11d26",
+    "reports/experiments/ASFT-V1.1-PHASE-3A-IDT-IMPLEMENTATION-READINESS-V1/leakage_audit.md": "e10d33d82b9136aaee2f34322c5fe38656c1ee2aaf241e9f6be37923a352413e",
+    "reports/experiments/ASFT-V1.1-PHASE-3A-IDT-IMPLEMENTATION-READINESS-V1/fairness_audit.md": "6ffc3b16137ae36e01d2751e33b8649fb862b93de3c2cbf33d3393f99826dd9e",
+    "reports/experiments/ASFT-V1.1-PHASE-3A-IDT-IMPLEMENTATION-READINESS-V1/contract_revalidation_report.md": "41f5c8677fa4cc36325980cd76bad59412f1326b415abb05e1320c22d9d9514e",
+    "reports/experiments/ASFT-V1.1-PHASE-3A-IDT-IMPLEMENTATION-READINESS-V1/phase3A_readiness_review.md": "5dcf50fa249e87a0a46b8f9e964149661ca3c4dba5b5b502b0e4ad99511ad855",
+    "reports/experiments/ASFT-V1.1-PHASE-3A-IDT-IMPLEMENTATION-READINESS-V1/mentor_review.md": "9e7f3cd8ad30878d3cd1a465391bcf65c8c166b5833359a771551bf05b52ceba",
+    "reports/experiments/ASFT-V1.1-PHASE-3A-IDT-IMPLEMENTATION-READINESS-V1/README.md": "ca5d5d494718b5d64efe855e8f7e7de1957cfe6c5e6a3ddf4c5ecd40d69f2951",
+    "reports/experiments/ASFT-V1.1-PHASE-3A-IDT-IMPLEMENTATION-READINESS-V1/package_manifest.json": "381351ce597c14159aa7159dd150183df87648b5bee4eb18d9356eaaea6ee92d",
+    "experiments/phase3a/benchmark_engine.py": "9627350221b3821699fcdb16c8718fd9cde71eed6356b5c4490829336654e7d4",
+    "experiments/phase3a/run_contracts.py": "50494263af9850ba0f4fffa3476e787bead0f4d16f87903606caff8fba798f0f",
+    "experiments/phase3a/finalize_package.py": "f82b976f1ab8510d344de050ba03d4daef74a5ca24e124ca7ce372130f3b6d64",
+    "experiments/phase3a/contract_results.json": "6ec96213b39d065e5543d2f265bbbc897ce05280add97da3f2c385b9dc5a1977",
+    "src/invariants/transfer_aware.py": "93ccf303cd912ef4bd4d4b7c76d68c1b5f8e36d3931efe13c5b0e622cfc7e05e",
+    "src/invariants/ranking.py": "b0cb7172a974b9dabcae02edac6a63087b79f01ccd512a981352bcce9d5ce9be",
+    "src/invariants/validation/scores.py": "301aa18f5c82da6eedb84329367f42bfed028b07a5a0801343db7b650499abfa",
+    "src/transfer/metrics.py": "6b32538ddfaab680cd1800b27e1a953ffedf504746da730b85506a1393a813b2",
+    "experiments/phase1c/ranking_benchmark.py": "83e76cdbe1c77e2d98cb9c036b94a244f2ce25ddb74b125c81cd04998ad5df61",
+    "experiments/phase1c/run_contracts.py": "550a84bd140f080aad893043c9517e710b16f51f907044502abc92a653af87d0",
+    "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/phase1C_readiness_report.md": "d5c66c8e8915a8d2e104afa27a4c24769f5f8890dc99a8b4d16b44ea497b6c5c",
+    "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/ranker_competition_spec.md": "765d06ab44efee89c46f87f687fa90a8a8d862c48477b0379845210a86348b49",
+    "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/future_value_definition.md": "7163757b581d32843498dc4333859248917f42c5f0ef1740a832dac553c33c42",
+    "reports/experiments/ASFT-V1.1-PHASE-1C-RANKING-PRESSURE-SPEC-V1/ranking_metrics.md": "c60fbbae6b6db13bbc4d557234ea6bbe0e2a3d0a336e2fa617535234e48a604e",
+    "docs/03_implementation/validation/phase_13b_results.md": "3fe2b148cb59766c5988c06279bc93f16dca94a91cbb3462191b80b502ab3c7f",
+    "docs/03_implementation/validation/phase_13b_exp14_protocol.md": "45b410a4738f630a0fe37199b6ff578138cf94391359a2362f4b8eb6cb306019",
+    "reports/experiments/PHASE-14B-IDT-CRITICAL-ANALYSIS-V1/phase14b_idt_analysis.md": "2427878888e470b7e9d76773a0891b55c158972e4ae9afbd242bc83d036016b1"
+  },
+  "counts": {
+    "required_reports": 9,
+    "contracts_passed": 26,
+    "contracts_total": 26,
+    "pressure_panels": 100
+  },
+  "scientific_scope": "Synthetic development plumbing only; readiness BLOCKED; no efficacy claim."
+}
