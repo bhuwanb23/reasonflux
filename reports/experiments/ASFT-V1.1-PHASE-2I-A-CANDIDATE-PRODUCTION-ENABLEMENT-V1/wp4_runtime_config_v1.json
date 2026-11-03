@@ -1,0 +1,46 @@
+{
+  "config_id": "ASFT-V1.1-PHASE-2I-A-WP4-RUNTIME-CONFIG-V1",
+  "status": "OWNER_APPROVED_FROZEN",
+  "approval_date": "2026-11-02",
+  "arms": ["R1", "R3"],
+  "trace_mining": {
+    "min_frequency": 5,
+    "min_cross_trace": 5,
+    "max_fragment_length": 4,
+    "min_core_length": 1,
+    "successful_trace_bias": true
+  },
+  "candidate_policy": {
+    "min_frequency": 5,
+    "min_consistency": 1.0,
+    "min_task_families": 2,
+    "min_generality": 0.0,
+    "require_transfer_evidence": false,
+    "min_transfer_events": 0,
+    "universal_noise_generality": 0.95,
+    "task_specific_terms": ["red", "blue", "green", "yellow", "triangle", "square", "circle", "row 0", "col 0"],
+    "moderate_score": 0.4,
+    "strong_score": 0.7
+  },
+  "candidate_stages": {
+    "proposal": "Invariant object generated from aggregated structure",
+    "generator_accepted": "passes unchanged generation rejection criteria",
+    "structurally_eligible": "frequency>=5, consistency>=1.0, and >=2 WP3 family labels; transfer evidence not required",
+    "taxonomy_policy": "allow_unsupported_type=true for Phase2I structural candidate-population diagnostic only; downstream MVP/skill promotion unchanged",
+    "counts": "report proposals, generator-accepted, structurally eligible, and downstream states separately"
+  },
+  "identity": {
+    "implementation": "existing InvariantIdentity; no code change",
+    "fingerprint_payload": ["normalized origin", "normalized pattern_signature"],
+    "task_families_in_fingerprint": false,
+    "id_prefix_and_digest": "INV- + first 16 lowercase SHA-256 hex chars",
+    "within_arm_dedup": true,
+    "cross_arm_yields_pooled": false,
+    "shared_id_reporting": "retain arm-specific source paths; do not pool denominators",
+    "collision_rule": "fail closed if same short ID maps to different full payload"
+  },
+  "future_value_or_transfer_gate_at_candidate_entry": false,
+  "outcome_or_test_data_access": false,
+  "family_labels": "external frozen WP3 map required; no program-derived labels",
+  "owner_approval": "User approved candidate-stage separation, transfer-type structural allowance, and existing family-excluded identity on 2026-11-02"
+}

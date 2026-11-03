@@ -1,0 +1,83 @@
+{
+  "artifact_header": [
+    "WP3-AI-PILOT — Exploratory Only",
+    "Not Independent Annotation",
+    "Not Eligible For Family Qualification",
+    "Not Eligible For Candidate Eligibility",
+    "Not Eligible For Phase 2I Execution",
+    "Not Eligible For WP3 Completion"
+  ],
+  "pilot_id": "ASFT-WP3-AI-PILOT-V1",
+  "status": "EXPLORATORY_ONLY_NOT_WP3",
+  "purpose": "Rubric usability/ontology stress test only; protocol-development evidence, not annotation evidence.",
+  "modeling_boundary": "Pass A, Pass B, and adjudication were produced by the same AI assistant; they are not independent annotators and the adjudication is not independent.",
+  "sample": {
+    "count": 12,
+    "source_packet": "annotation_packets/annotator_A_train_only.jsonl",
+    "source_packet_rows": 600,
+    "source_packet_sha256": "846bf7c396f4563204142cc5859b604279e67b5e6389a27bef0bf4cfa390436e",
+    "selection": "ascending SHA-256 of ASFT-WP3-AI-PILOT-V1|task_id; first 12; no solver/outcome selection",
+    "task_ids": [
+      "45bbe264",
+      "69889d6e",
+      "36fdfd69",
+      "c0f76784",
+      "7447852a",
+      "e9c9d9a1",
+      "dc46ea44",
+      "aab50785",
+      "b74ca5d1",
+      "1b59e163",
+      "ff805c23",
+      "e9bb6954"
+    ],
+    "task_id_list_sha256": "98b59e421e6a06ed5fea5f5e7cd301eeeccbf16bf1939e1903db76368fb7651c",
+    "train_pair_sha256": {
+      "45bbe264": "c7d9c8872674359f3147b9a7a684c9ed1245a76b69ed96642c094baea59fd1be",
+      "69889d6e": "8fcba54faf26109d150e8d8c62f73dbe25bf50190af47602e40d0ce067e1501f",
+      "36fdfd69": "e43f66c975635f13f7c51a47f722c7b7371c4ac3ffe73df31f1f8ee89fd73cd4",
+      "c0f76784": "d441a4af941a083ae152b3b4546c6bdf25619fa9c88804d709b732efe81bf84a",
+      "7447852a": "8046371f64b876284dd2807c7bb995d7f575abcd31a7b96be30221d567179a08",
+      "e9c9d9a1": "87cea2cc71d987db35668f1d6adb1320d66e565b79adcb8bb36ff4d2b15378fe",
+      "dc46ea44": "fdb81a3e7861ad877042d206e5e7056de3b47b6084eb136128a515b552b3fbe2",
+      "aab50785": "fa8cbd5de417e7a8ad4bf17d3b8c28603d7b3fb41e6b3ae692e6b4b5e6de5af5",
+      "b74ca5d1": "69b8bde3bb2a54e0c5d2217b53b3e9a81f3e56ca25b36e1b303dfa9446dcdd13",
+      "1b59e163": "b0c6c86255f588dd559690887188902192375dac344e5df6b944a83bd49fffd3",
+      "ff805c23": "0817554c90247a50eee2dad02ad082064b8e43ebf44082cf294912af33fe3af2",
+      "e9bb6954": "063546a5207aea32b9fbd3ac0cac63a5dc66423bf883a78a711f431b0397a9fd"
+    }
+  },
+  "outputs_sha256": {
+    "README.md": "9cf09936adb1b5840f7d5c5011b8ca3c059d28ccac1b2613a668b12af3c03981",
+    "agreement_report.md": "d04f9bf345ae7e3433b6b7c51ead9cce40edccc1138e8ac92a7cbc44af677b16",
+    "ai_adjudication.md": "2e0868b574633d93d23f225a12e06291924b18d0f820e55317e96ee4137c29be",
+    "pass_A.md": "096cb6c7f7987119d9a754547fd1684784735a537a8d41e22606eec5c7bcb372",
+    "pass_B.md": "af5f729174de1743b44b49c570e267c45dd3ed87a1125e34badbd56abb1b0acd",
+    "prompt_specification.md": "85e57367e39daac162a7cc0aac4836efad85ef1e8df8e0fa8221d861da2524bf"
+  },
+  "results": {
+    "pass_a_pass_b_exact_agreement": 4,
+    "n": 12,
+    "observed_agreement": 0.3333333333333333,
+    "cohen_kappa_descriptive": 0.232,
+    "kappa_exact_rational": "(1/3-19/144)/(1-19/144)",
+    "ai_adjudication_unknown_ambiguous": 4,
+    "unknown_fraction": 0.3333333333333333
+  },
+  "data_access": {
+    "source_is_train_only_packet": true,
+    "test_fields_or_outputs_accessed": false,
+    "solver_programs_traces_candidate_yield_or_future_values_accessed": false
+  },
+  "use_restrictions": {
+    "independent_annotation": false,
+    "family_qualification": false,
+    "candidate_eligibility": false,
+    "phase2i_execution": false,
+    "phase3_claims_or_inputs": false,
+    "wp3_completion": false,
+    "freeze_as_label_map": false
+  },
+  "wp3_status": "INCOMPLETE; independent human coder streams and separate adjudicator remain required",
+  "phase2i_run": "NOT AUTHORIZED; NOT RUN"
+}
