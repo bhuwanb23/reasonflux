@@ -1,5 +1,7 @@
 # ARC Prize 2026 Paper Track — ASFT v0.1 Readiness Assessment
 
+> **Current-status note (2026-11-03):** This is the 2026-11-01 baseline assessment. For the rechecked official deadlines, expired ARC-AGI-2/3 entry windows, current ReasonFlux evidence gaps, competitor analysis, and recommended plan, see [`arc_prize_2026_paper_track_strategy_2026-11-03.md`](arc_prize_2026_paper_track_strategy_2026-11-03.md).
+
 **Assessment date:** 1 November 2026 (Asia/Kolkata)  
 **Basis:** saved ASFT Phase 11–14 project records; official ARC Prize 2026 Paper Track requirements; no new ASFT experiments or rescoring.
 
