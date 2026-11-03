@@ -1,0 +1,13 @@
+{
+  "phase2e_conditions": 15,
+  "accepted_invariant_candidates_total_across_condition_rows": 0,
+  "conditions_with_any_pre_rejection_proposals": 4,
+  "conditions_with_accepted_candidate": 0,
+  "unique_proposal_ids_in_relaxed_rows": [
+    "INV-403ef00057eafb52",
+    "INV-6b9c0646e32acc5d"
+  ],
+  "warning": "Repeated condition rows reuse task IDs/recipes and are not independent populations; do not sum proposals across conditions as unique candidates.",
+  "actual_rankable_candidate_population": 0,
+  "decision": "F2 for current audited invariant candidate path; alternative candidate layer would require a new construct/protocol decision"
+}

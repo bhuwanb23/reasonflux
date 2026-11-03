@@ -1,0 +1,11 @@
+source_object,producer_or_stage,observed_nonzero_objects,accepted_for_current_R1,eligibility_for_IDT_R1,reason_or_boundary,evidence_scope
+ReasoningTrace,trace collection and normalization,"1 record per task/condition; 600 historical discovery, 1000 per Phase2C condition",0,NO,Raw trajectories are inputs/material not invariant candidates; candidate family/semantic identity not established,Historical/development trace audit
+TraceFragment,trace segmentation,"30 historical; 10/20/30/30 in S1-S4 discovery inputs",0,NO,Contiguous operation n-grams; support counts operational recurrence not semantic invariance,Phase2D/2E saved diagnostics
+MinedPattern,pattern extraction,"4 signatures at relaxed support for historical/S2/S3/S4; zero at current support5",0,NO,Patterns are explicitly not invariants; observed recurring signatures are generic control/verification operations,Phase2E saved diagnostics
+AggregatedStructure,pattern aggregation,"2 structures in each relaxed historical/S2/S3/S4 condition; zero current",0,NO,Intermediate structures; relaxed proposals rejected downstream; not an accepted candidate registry,Phase2E saved diagnostics
+Invariant candidate,generate_candidates after frozen rejection policy,"2 proposals in relaxed condition; 0 accepted; 0 under current/strict settings",0,YES_INTENDED_UNIT,Only intended R1 unit; candidate-generation rejects both relaxed proposals as universal_noise,Phase2E and Phase1C ranker specification
+Validated/promotable Invariant,validation and promotion,0 on audited ARC path,0,NO_CURRENT_ROWS,Downstream validation/promotion not reached because accepted generator pool is empty,Phase2B/2E/2G evidence
+SkillCandidate,skills.candidate.from_invariant,0 ARC candidates,0,NO,Downstream of promotable invariants; changes target from invariant ranking to skill creation,Phase13G/2G and source pipeline
+Skill,skill creation/library,0 ARC skills,0,NO,Downstream object; no ARC invariant feedstock,Phase13G/2G evidence
+Capability,capability construction,0 ARC capabilities,0,NO,Later downstream aggregate; not an IDT invariant candidate,Phase13G/2G evidence
+ARC program search trial,Phase2C bounded DSL search,2999/5991/9964 trials per S1/S2/S3-S4 conditions,0,NO,Programs are solver hypotheses in a search budget, not recurring reasoning structures; trial rows are not candidate IDs,Phase2C test-output-blind search audit

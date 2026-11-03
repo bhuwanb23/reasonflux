@@ -1,0 +1,30 @@
+{
+  "package_id": "ASFT-V1.1-PHASE-2H-CANDIDATE-POPULATION-READINESS-V1",
+  "phase_id": "ASFT-V1.1-PHASE-2H",
+  "audit_status": "COMPLETE_AS_RETROSPECTIVE_READINESS_AUDIT",
+  "benchmark_feasibility": "F2_FOR_CURRENT_ARC_INVARIANT_CANDIDATE_PATH",
+  "phase3_authorized": false,
+  "candidate_rows_in_template": 0,
+  "current_accepted_actual_invariant_candidates": 0,
+  "alternative_candidate_layer": "NOT_ADOPTED; would require F3 design amendment",
+  "outcome_access_or_new_runs": false,
+  "required_reports": [
+    "candidate_source_audit.md",
+    "candidate_yield_audit.md",
+    "candidate_eligibility_rules.md",
+    "alternative_candidate_sources.md",
+    "benchmark_feasibility_decision.md",
+    "phase2H_readiness_review.md"
+  ],
+  "package_integrity": "PASS",
+  "qa": {
+    "reports": "6/6 present",
+    "candidate_yield_rows": "15/15 reconciled",
+    "accepted_invariant_candidates": 0,
+    "unique_relaxed_proposal_ids": 2,
+    "proposal_disposition": "all rejected; no candidate population",
+    "candidate_registry": "template only; 0 rows",
+    "markdown_links": "PASS",
+    "decision": "F2 current invariant path; Phase 3 blocked; F3 alternative not adopted"
+  }
+}

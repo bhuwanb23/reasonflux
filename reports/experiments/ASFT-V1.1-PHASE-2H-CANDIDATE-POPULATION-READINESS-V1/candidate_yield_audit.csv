@@ -1,0 +1,16 @@
+source_condition,threshold_id,support_floor,discovery_tasks_processed,successful_discovery_traces,trace_fragments,unique_signatures_before_filter,signatures_support_ge_floor,max_distinct_task_support,patterns_after_mining,aggregated_structures,candidate_proposals_pre_rejection,distinct_proposal_ids_within_condition,accepted_candidates,rejected_candidates,rejection_reasons,phase3_rankable_eligible,interpretation
+PHASE13G_HISTORICAL,RELAXED_S2,2,600,3,30,22,4,3,4,2,2,2,0,2,"{""universal_noise"":2}",0,proposal/feature fixture only; no accepted invariant candidate
+PHASE13G_HISTORICAL,CURRENT_S1,5,600,3,30,22,0,3,0,0,0,0,0,0,{},0,proposal/feature fixture only; no accepted invariant candidate
+PHASE13G_HISTORICAL,STRICT_S3,6,600,3,30,22,0,3,0,0,0,0,0,0,{},0,proposal/feature fixture only; no accepted invariant candidate
+S1,RELAXED_S2,2,600,1,10,10,0,1,0,0,0,0,0,0,{},0,proposal/feature fixture only; no accepted invariant candidate
+S1,CURRENT_S1,5,600,1,10,10,0,1,0,0,0,0,0,0,{},0,proposal/feature fixture only; no accepted invariant candidate
+S1,STRICT_S3,6,600,1,10,10,0,1,0,0,0,0,0,0,{},0,proposal/feature fixture only; no accepted invariant candidate
+S2,RELAXED_S2,2,600,2,20,16,4,2,4,2,2,2,0,2,"{""universal_noise"":2}",0,proposal/feature fixture only; no accepted invariant candidate
+S2,CURRENT_S1,5,600,2,20,16,0,2,0,0,0,0,0,0,{},0,proposal/feature fixture only; no accepted invariant candidate
+S2,STRICT_S3,6,600,2,20,16,0,2,0,0,0,0,0,0,{},0,proposal/feature fixture only; no accepted invariant candidate
+S3,RELAXED_S2,2,600,3,30,22,4,3,4,2,2,2,0,2,"{""universal_noise"":2}",0,proposal/feature fixture only; no accepted invariant candidate
+S3,CURRENT_S1,5,600,3,30,22,0,3,0,0,0,0,0,0,{},0,proposal/feature fixture only; no accepted invariant candidate
+S3,STRICT_S3,6,600,3,30,22,0,3,0,0,0,0,0,0,{},0,proposal/feature fixture only; no accepted invariant candidate
+S4,RELAXED_S2,2,600,3,30,22,4,3,4,2,2,2,0,2,"{""universal_noise"":2}",0,proposal/feature fixture only; no accepted invariant candidate
+S4,CURRENT_S1,5,600,3,30,22,0,3,0,0,0,0,0,0,{},0,proposal/feature fixture only; no accepted invariant candidate
+S4,STRICT_S3,6,600,3,30,22,0,3,0,0,0,0,0,0,{},0,proposal/feature fixture only; no accepted invariant candidate
