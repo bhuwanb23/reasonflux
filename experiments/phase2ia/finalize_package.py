@@ -15,18 +15,7 @@ ARTIFACTS=["README.md","implementation_work_package.md","wp0_wp6_end_to_end_summ
  "task_breakdown.csv","ambiguity_register.csv","wp4_policy_identity_resolution.md",
  "wp4_runtime_config_v1.json","package_manifest.json",
  "annotation_packets/annotator_A_train_only.jsonl","annotation_packets/annotator_B_train_only.jsonl",
- "annotation_packets/packet_manifest.json",
- "wp3_ai_pilot_v1/README.md","wp3_ai_pilot_v1/prompt_specification.md","wp3_ai_pilot_v1/pass_A.md",
- "wp3_ai_pilot_v1/pass_B.md","wp3_ai_pilot_v1/ai_adjudication.md","wp3_ai_pilot_v1/agreement_report.md",
- "wp3_ai_pilot_v1/pilot_manifest.json",
- "wp3_provisional_v1/README.md","wp3_provisional_v1/annotator_A_labels.csv","wp3_provisional_v1/annotator_B_labels.csv",
- "wp3_provisional_v1/adjudication_log.csv","wp3_provisional_v1/agreement_report.md",
- "wp3_provisional_v1/confusion_matrix.csv","wp3_provisional_v1/task_family_map.csv",
- "wp3_provisional_v1/family_map_hash.txt","wp3_provisional_v1/wp3_completion_review.md",
- "wp3_provisional_v1/provisional_manifest.json",
- "wp3_provisional_v1/reviewer_A_packet.jsonl","wp3_provisional_v1/reviewer_B_packet.jsonl",
- "wp3_provisional_v1/reviewer_C_packet.jsonl","wp3_provisional_v1/disagreement_priority_queue.csv",
- "wp3_provisional_v1/review_packet_manifest.json"]
+ "annotation_packets/packet_manifest.json"]
 SOURCES=[
  "experiments/phase2ia/finalize_package.py",
  "reports/experiments/ASFT-V1.1-PHASE-2I-INVARIANT-CANDIDATE-PRODUCTION-V1/candidate_production_protocol.md",
@@ -61,11 +50,57 @@ SOURCES=[
  "tests/test_phase2ia_hcc_control.py",
  "tests/test_phase2ia_runner.py",
  "tests/test_phase2ia_train_only_source.py",
- "tests/test_phase2ia_ai_pilot_boundary.py",
+ "tests/test_phase2ia_wp3_provisional_boundary.py",
  "tests/test_train_only_annotation_packets.py",
  "tests/test_phase2ia_runtime_config.py",
  "datasets/arc/arc-agi-2/split_manifest.json",
 ]
+REMOTE_WP3={
+ "source_url":"https://github.com/bhuwanb23/reasonflux/tree/eb3c6a2cb04afe6a7289e30e7141fdec9b64fa99/reports/experiments/ASFT-V1.1-PHASE-2I-A-CANDIDATE-PRODUCTION-ENABLEMENT-V1/wp3_provisional_v1",
+ "commit":"eb3c6a2cb04afe6a7289e30e7141fdec9b64fa99",
+ "status":"AI_PROVISIONAL_ONLY_NOT_WP3",
+ "local_copy":"NOT RETAINED; verified against remote outputs",
+ "task_count":600,
+ "label_mode":"AI_PROVISIONAL",
+ "independence":"A/B/C are deterministic AI policies sharing feature code, ontology, and author; not independent human coders/adjudicator",
+ "agreement":{"n":600,"exact_matches":476,"observed_agreement":0.7933333333333333,
+  "cohen_kappa_descriptive":0.7196367336172137,"unknown_a":226,"unknown_b":264,
+  "final_unknown_ambiguous":226,"final_non_unknown":374},
+ "family_map_sha256":"79e92048b6c840deaf04d9a0136d9c09304789effac51ced32f5fa1d024123bd",
+ "source_packet_sha256":"846bf7c396f4563204142cc5859b604279e67b5e6389a27bef0bf4cfa390436e",
+ "outputs_sha256":{
+  "adjudication_log.csv":"e73f1d8bd427d3b903e1ce1f7dcd73e224c3888c808138a927766f3221b4c17f",
+  "agreement_report.md":"6876ae47d57c9ce4d2ae5bfc598166571326cbb98f51f507fde4df6214a57ec8",
+  "annotator_A_labels.csv":"8bde7e6786f7749f6be234cdcac051d263518afec76432692fdd0060b414fc8a",
+  "annotator_B_labels.csv":"440c57c9b74e5a7a41a92e052896b2eb5e6fd750079d134b537699d94e2616b5",
+  "confusion_matrix.csv":"3b5700f98468efcd729f197ea439f6a1dadb4a146b7b09ba85da54d4d7f6e13c",
+  "disagreement_priority_queue.csv":"f572f2dbe69ef8a001a7836104e4decb102547f51acb550a11e64ec8f016cc34",
+  "family_map_hash.txt":"bf4712d1ec9311f275348125e8cf30408aa9106fee4c3bd6f15e2f24824bdb47",
+  "README.md":"274aa38101c8ba90b3454a0d39b2b26e87a000433d8e41ec5ac37788c2003a33",
+  "review_packet_manifest.json":"96910b318e9c24713c13de6e06f0b19ba60839c160c67edca4d1b00aa589262e",
+  "reviewer_A_packet.jsonl":"2c42f64690b206adada89f5091eba68a96a428c53bfa293c92ed29be4668bf91",
+  "reviewer_B_packet.jsonl":"84af61c1a4bce16df352a3f2b1a2a4b5c9f65fd269ff847110e9787f718a3f06",
+  "reviewer_C_packet.jsonl":"5396d298b9fa1bf2fd9958be6c595ce07970c5515e04896cd39fbe11fa1aae3b",
+  "task_family_map.csv":"79e92048b6c840deaf04d9a0136d9c09304789effac51ced32f5fa1d024123bd",
+  "wp3_completion_review.md":"20477b46e9f7017fdf669a59f795be9f2ec425ef66217addee1766b390bbc1ef"},
+ "all_map_rows_status":"PROVISIONAL_NOT_ADJUDICATED_BY_HUMAN",
+ "human_review":{"status":"AI_DRAFT_FOR_HUMAN_REVIEW_ONLY","reviews_present":0,
+  "human_gate_completion_percent":0,"coder_packet_rows_per_role":600,
+  "all_A_B_C_rows_unreviewed":True,"adjudication_reviews_present":0,
+  "promotion_blockers":["600 of 600 tasks lack complete reviews from roles A and B",
+   "no human adjudication records for role C"]},
+ "review_packet_sha256":{
+  "reviewer_A_packet.jsonl":"2c42f64690b206adada89f5091eba68a96a428c53bfa293c92ed29be4668bf91",
+  "reviewer_B_packet.jsonl":"84af61c1a4bce16df352a3f2b1a2a4b5c9f65fd269ff847110e9787f718a3f06",
+  "reviewer_C_packet.jsonl":"5396d298b9fa1bf2fd9958be6c595ce07970c5515e04896cd39fbe11fa1aae3b",
+  "disagreement_priority_queue.csv":"f572f2dbe69ef8a001a7836104e4decb102547f51acb550a11e64ec8f016cc34"},
+ "eligible_for_family_qualification":False,
+ "eligible_for_candidate_eligibility":False,
+ "eligible_for_phase2i_execution":False,
+ "wp3_complete":False,
+ "labels_used_by_runner_or_phase2i":False,
+ "phase2i_run":"NOT AUTHORIZED; NOT RUN"
+}
 def digest(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
     missing=[n for n in ARTIFACTS if not (PKG/n).is_file() or not (PKG/n).stat().st_size]
@@ -115,68 +150,21 @@ def main():
         if any(set(pair)!={"input","output"} for pair in row["train_pairs"]): raise SystemExit("non-train pair in annotation packet")
         if row["annotation"].get("primary_family") or row["annotation"].get("rationale"):
           raise SystemExit("family labels must remain blank until independent coding")
-    pilot_manifest=json.loads((PKG/"wp3_ai_pilot_v1/pilot_manifest.json").read_text())
-    if pilot_manifest.get("status")!="EXPLORATORY_ONLY_NOT_WP3" or pilot_manifest.get("wp3_status","").startswith("COMPLETE"):
-      raise SystemExit("AI annotation pilot must remain non-qualifying; WP3 labels stay pending")
-    if any(pilot_manifest.get("use_restrictions",{}).get(k) is not False for k in
-      ("independent_annotation","family_qualification","candidate_eligibility","phase2i_execution","phase3_claims_or_inputs","wp3_completion","freeze_as_label_map")):
-      raise SystemExit("AI pilot use restrictions must all remain false")
     source_packet=PKG/"annotation_packets/annotator_A_train_only.jsonl"
-    if pilot_manifest["sample"]["source_packet_sha256"]!=digest(source_packet) or pilot_manifest["sample"]["source_packet_rows"]!=600:
-      raise SystemExit("AI pilot source must be the 600-row train-only packet")
-    pilot_header="WP3-AI-PILOT — Exploratory Only"
-    for name,expected in pilot_manifest["outputs_sha256"].items():
-      pilot_path=PKG/"wp3_ai_pilot_v1"/name
-      if digest(pilot_path)!=expected or pilot_header not in pilot_path.read_text():
-        raise SystemExit(f"AI pilot artifact hash/header mismatch: {name}")
-    if pilot_manifest["results"]["n"]!=12 or pilot_manifest["results"]["pass_a_pass_b_exact_agreement"]!=4:
-      raise SystemExit("unexpected AI pilot sample/report state")
-    provisional_manifest=json.loads((PKG/"wp3_provisional_v1/provisional_manifest.json").read_text())
-    if provisional_manifest.get("status")!="AI_PROVISIONAL_ONLY_NOT_WP3" or not provisional_manifest.get("wp3_status","").startswith("INCOMPLETE"):
-      raise SystemExit("provisional WP3 bundle must remain non-qualifying; WP3 labels stay pending")
-    if any(value is not False for value in provisional_manifest.get("use_restrictions",{}).values()):
-      raise SystemExit("provisional WP3 use restrictions must all remain false")
-    if provisional_manifest["source_packet_sha256"]!=digest(source_packet) or provisional_manifest["task_count"]!=600:
-      raise SystemExit("provisional WP3 bundle must derive from the 600-row train-only packet")
-    provisional_header="AI_PROVISIONAL — NOT HUMAN ANNOTATION — NOT WP3-ELIGIBLE"
-    labelled_csvs={"annotator_A_labels.csv","annotator_B_labels.csv","adjudication_log.csv","task_family_map.csv"}
-    for name,expected in provisional_manifest["outputs_sha256"].items():
-      provisional_path=PKG/"wp3_provisional_v1"/name
-      if digest(provisional_path)!=expected:
-        raise SystemExit(f"provisional WP3 artifact hash mismatch: {name}")
-      if name.endswith(".md") and provisional_header not in provisional_path.read_text():
-        raise SystemExit(f"provisional WP3 report missing non-eligibility header: {name}")
-      if name in labelled_csvs:
-        header=provisional_path.read_text().splitlines()[0]
-        if "label_mode" not in header:
-          raise SystemExit(f"provisional WP3 label CSV must carry a label_mode column: {name}")
-        if not all("AI_PROVISIONAL" in line for line in provisional_path.read_text().splitlines()[1:]):
-          raise SystemExit(f"provisional WP3 label CSV has a row without AI_PROVISIONAL mode: {name}")
-    if provisional_manifest["data_access"]["test_fields_or_outputs_accessed"] is not False:
-      raise SystemExit("provisional WP3 bundle must not access test fields")
-    schema=provisional_manifest.get("human_review_schema",{})
-    if schema.get("reviews_present")!=0: raise SystemExit("provisional WP3 bundle must ship with zero human reviews")
-    if not schema.get("promotion_blockers"): raise SystemExit("provisional WP3 bundle must record promotion blockers")
-    packets=provisional_manifest.get("review_packets",{})
-    if packets.get("review_fields_prefilled") is not False:
-      raise SystemExit("provisional WP3 review packets must ship unlabelled")
-    if sum(packets.get("queue_counts",{}).values())!=600:
-      raise SystemExit("provisional WP3 priority queue must cover all 600 tasks")
-    for name in ("reviewer_A_packet.jsonl","reviewer_B_packet.jsonl","reviewer_C_packet.jsonl"):
-      packet_path=PKG/"wp3_provisional_v1"/name
-      if digest(packet_path)!=packets["packet_sha256"][name]:
-        raise SystemExit(f"review packet hash mismatch: {name}")
-      for line in packet_path.read_text().splitlines():
-        row=json.loads(line)
-        if any(value for value in row.values() if isinstance(value,str) and "HIDDEN_TEST" in value):
-          raise SystemExit(f"review packet leaked test sentinel: {name}")
-        if set(row)&{"test","test_output","solver_program","trace","candidate_yield"}:
-          raise SystemExit(f"review packet leaked prohibited field: {name}")
-        for field in ("review_decision","reviewer_id","reviewed_at_utc","sign_off_sha256"):
-          if row.get(field): raise SystemExit(f"review packet must not prefill {field}: {name}")
-    coder_packet=(PKG/"wp3_provisional_v1/reviewer_A_packet.jsonl").read_text().splitlines()[0]
-    if "coder_b_family" in coder_packet or "ai_draft_family" not in coder_packet:
-      raise SystemExit("coder A packet must expose only coder A's draft")
+    if REMOTE_WP3["status"]!="AI_PROVISIONAL_ONLY_NOT_WP3" or REMOTE_WP3["source_packet_sha256"]!=digest(source_packet):
+      raise SystemExit("remote WP3 provisional bundle must remain pinned to the train-only source and non-eligible")
+    if REMOTE_WP3["outputs_sha256"].get("task_family_map.csv")!=REMOTE_WP3["family_map_sha256"]:
+      raise SystemExit("remote provisional family map hash reference is inconsistent")
+    if any(REMOTE_WP3.get(k) is not False for k in
+      ("eligible_for_family_qualification","eligible_for_candidate_eligibility","eligible_for_phase2i_execution","wp3_complete","labels_used_by_runner_or_phase2i")):
+      raise SystemExit("remote AI provisional labels must remain prohibited from eligibility and execution")
+    if REMOTE_WP3["agreement"]["n"]!=600 or REMOTE_WP3["agreement"]["exact_matches"]!=476 or REMOTE_WP3["agreement"]["final_unknown_ambiguous"]!=226:
+      raise SystemExit("remote WP3 provisional summary does not match the audited outputs")
+    if REMOTE_WP3["human_review"]["reviews_present"]!=0 or REMOTE_WP3["human_review"]["human_gate_completion_percent"]!=0:
+      raise SystemExit("latest remote WP3 commit has no completed human reviews; do not promote its AI drafts")
+    if any(REMOTE_WP3["review_packet_sha256"].get(name)!=REMOTE_WP3["outputs_sha256"].get(name)
+      for name in REMOTE_WP3["review_packet_sha256"]):
+      raise SystemExit("human-review packet hashes differ from the remote bundle output hashes")
     env=os.environ.copy()
     env["PYTHONPATH"]=str(ROOT/"src")+os.pathsep+env.get("PYTHONPATH","")
     r3_run=subprocess.run([sys.executable,"-m","pytest","-q","tests/test_r3_representation.py"],cwd=ROOT,env=env,
@@ -188,7 +176,7 @@ def main():
       raise SystemExit(f"unexpected R3 test summary: {r3_summary}")
     test_run=subprocess.run([sys.executable,"-m","pytest","-q",
       "tests/test_r3_representation.py","tests/test_semantic_adapter.py","tests/test_train_only_annotation_packets.py",
-      "tests/test_phase2ia_runtime_config.py","tests/test_phase2ia_hcc_control.py","tests/test_phase2ia_runner.py","tests/test_phase2ia_train_only_source.py","tests/test_phase2ia_ai_pilot_boundary.py","tests/test_core_invariant.py","tests/test_trace_miner.py","tests/test_trace_normalizer.py",
+      "tests/test_phase2ia_runtime_config.py","tests/test_phase2ia_hcc_control.py","tests/test_phase2ia_runner.py","tests/test_phase2ia_train_only_source.py","tests/test_phase2ia_wp3_provisional_boundary.py","tests/test_core_invariant.py","tests/test_trace_miner.py","tests/test_trace_normalizer.py",
       "tests/test_trace_segmentation.py"],cwd=ROOT,env=env,
       text=True,capture_output=True)
     if test_run.returncode:
@@ -211,32 +199,15 @@ def main():
       "test_sha256":digest(ROOT/"tests/test_semantic_adapter.py"),"tests_included_in_suite":10,
       "scope":"Common action tokens; target_scope retained in raw trace; arm/candidate provenance sidecar only",
       "synthetic_trace_miner_parity":"PASS for semantic token/pattern parity using frozen runtime config; full four-event fixture may produce zero candidates under core-length-1 aggregation and is not a positive-yield check"}
-    manifest["wp3_annotation"]={"status":"RUBRIC_DEFINED; 600 TRAIN_ONLY_PACKETS_BUILT; INDEPENDENT_CODERS_AND_LABELS_PENDING",
+    manifest["wp3_annotation"]={"status":"RUBRIC_DEFINED; 600 TRAIN_ONLY_PACKETS_BUILT; INDEPENDENT_HUMAN_CODERS_AND_ADJUDICATOR_PENDING",
       "protocol_sha256":digest(PKG/"family_annotation_protocol.md"),
       "packet_manifest_sha256":digest(PKG/"annotation_packets/packet_manifest.json"),
       "annotator_packet_sha256":packet_manifest["packet_sha256"],
-      "label_map":"BLANK; not yet assigned/frozen","test_fields":"not decoded; packet field allowlist audit PASS"}
-    manifest["wp3_ai_pilot"]={"status":"EXPLORATORY_ONLY; NOT_INDEPENDENT; NOT_WP3_COMPLETION",
-      "pilot_manifest_sha256":digest(PKG/"wp3_ai_pilot_v1/pilot_manifest.json"),
-      "source_train_packet_sha256":pilot_manifest["sample"]["source_packet_sha256"],
-      "sample_size":pilot_manifest["sample"]["count"],
-      "pass_agreement":"4/12; descriptive only","cohen_kappa_descriptive":pilot_manifest["results"]["cohen_kappa_descriptive"],
-      "ai_adjudication_unknown":pilot_manifest["results"]["ai_adjudication_unknown_ambiguous"],
-      "eligible_for_family_or_candidate_gates":False,"wp3_complete":False,
-      "labels_used_by_runner_or_phase2i":False}
-    manifest["wp3_provisional"]={"status":"AI_PROVISIONAL_ONLY; NOT_HUMAN; NOT_WP3_COMPLETION",
-      "provisional_manifest_sha256":digest(PKG/"wp3_provisional_v1/provisional_manifest.json"),
-      "source_train_packet_sha256":provisional_manifest["source_packet_sha256"],
-      "task_count":provisional_manifest["task_count"],
-      "exact_matches":provisional_manifest["agreement"]["exact_matches"],
-      "cohen_kappa_descriptive":provisional_manifest["agreement"]["cohen_kappa_descriptive"],
-      "unknown_a":provisional_manifest["agreement"]["unknown_a"],
-      "unknown_b":provisional_manifest["agreement"]["unknown_b"],
-      "disagreement_count":len(provisional_manifest["disagreement_task_ids"]),
-      "family_map_sha256":provisional_manifest["family_map_sha256"],
-      "eligible_for_family_or_candidate_gates":False,"wp3_complete":False,
-      "labels_used_by_runner_or_phase2i":False,
-      "note":"complete first pass for human review only; agreement is between two rule policies, not readers"}
+      "label_map":"BLANK; remote AI-provisional map is not eligible and is not used",
+      "remote_ai_provisional_reference":"wp3_remote_provisional; external commit-pinned source",
+      "test_fields":"not decoded; packet field allowlist audit PASS"}
+    manifest.pop("wp3_ai_pilot",None)
+    manifest["wp3_remote_provisional"]=REMOTE_WP3
     manifest["wp4_policy_identity"]={"status":"OWNER_APPROVED_FROZEN_AND_RUNTIME_TESTED",
       "config_sha256":digest(PKG/"wp4_runtime_config_v1.json"),
       "resolution_doc_sha256":digest(PKG/"wp4_policy_identity_resolution.md"),
@@ -270,8 +241,7 @@ def main():
       "wp1_r3_contract_tests":r3_summary,"combined_synthetic_regressions":test_summary,
       "wp4":"frozen config, transfer/taxonomy separation, identity ledger; runtime tests pass", 
       "hcc":"ASFT-2I-HCC-SYNTH-V1 synthetic plumbing passes; no ARC HCC run or evidence",
-      "wp3_ai_pilot":"12-task exploratory AI pilot only; 4/12 agreement, descriptive kappa 0.232; not independent and not eligible",
-
+      "wp3_remote_provisional":"Latest 14-output AI-draft/review-packet bundle hash-audited; 0 human reviews/sign-offs present; WP3 and Phase 2I remain blocked",
       "artifact_boundary":"Train-only source and synthetic output allowlist/field/hash audit PASS; no ARC run artifacts were created",  
       "empirical_arc_run":"NOT RUN; NOT AUTHORIZED","phase3":"BLOCKED / UNAUTHORIZED","local_markdown_links":"PASS"}
     mp.write_text(json.dumps(manifest,indent=2)+"\n")
@@ -279,7 +249,7 @@ def main():
     missing=[str(p.relative_to(ROOT)) for p in files if not p.is_file()]
     if missing: raise SystemExit(f"missing provenance sources: {missing}")
     prov={"package_id":manifest["package_id"],"sha256":{p.relative_to(ROOT).as_posix():digest(p) for p in files},
-      "scope":"WP0-WP2 core implementation (including effect-based reflection correction), WP3 train-only packets plus a separate 12-task non-qualifying AI rubric pilot, WP4 frozen config/identity ledger, WP5 synthetic HCC control, and WP6 paired-runner/search adapters/path-confined source/synthetic artifact audit. No ARC test outputs or WP3-qualified family map, ARC HCC, or Phase 2I candidate-production run was accessed or performed; the real ARC run remains blocked pending independent WP3 coding and separate authorization.",
+      "scope":"WP0-WP2 core implementation (including effect-based reflection correction), WP3 train-only packets plus a commit-pinned external AI-provisional bundle audited by output hashes but not used for qualification, WP4 frozen config/identity ledger, WP5 synthetic HCC control, and WP6 paired-runner/search adapters/path-confined source/synthetic artifact audit. No ARC test outputs or WP3-qualified family map, ARC HCC, or Phase 2I candidate-production run was accessed or performed; the real ARC run remains blocked pending independent human WP3 coding and separate authorization.",
       "decision":"WP3 labels remain on hold; WP4 complete. Phase 2I ARC execution not authorized; Phase 3B/3D remain blocked."}
     (PKG/"provenance.json").write_text(json.dumps(prov,indent=2)+"\n")
     print(json.dumps({"package_id":manifest["package_id"],"qa":manifest["qa"],"sha256_entries":len(files)},indent=2))
