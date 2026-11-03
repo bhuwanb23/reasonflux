@@ -3,6 +3,10 @@
 Agent C resolves only the tasks where Agent A and Agent B disagree, using the
 rubric's priority rules and the same train-only evidence. Agreement is retained
 verbatim; unresolved disagreements stay explicitly ``UNKNOWN_AMBIGUOUS``.
+
+Every adjudicated record carries the same audit trail a human adjudicator would
+be expected to write: what was observed, the competing reading, and why the
+final label was chosen.
 """
 from __future__ import annotations
 
@@ -19,6 +23,10 @@ def _priority(family: str) -> int:
     return FAMILY_ORDER.index(family) if family in FAMILY_ORDER else len(FAMILY_ORDER)
 
 
+def _competing(a: Label, b: Label) -> str:
+    return f"A read {a.primary_family} ({a.confidence}); B read {b.primary_family} ({b.confidence})."
+
+
 def adjudicate(task: TrainTask, features: TaskFeatures, a: Label, b: Label) -> Label:
     """Resolve one task, preferring direct demonstration evidence over label priority."""
     if a.primary_family == b.primary_family:
@@ -31,6 +39,9 @@ def adjudicate(task: TrainTask, features: TaskFeatures, a: Label, b: Label) -> L
             rationale=f"Both passes independently reached {a.primary_family}. {a.rationale}",
             notes="",
             secondary=set(a.secondary_tags) | set(b.secondary_tags),
+            observed_change=a.observed_change,
+            competing_interpretation="None: both passes converged on the same family.",
+            decision_basis="Agreement retained without modification; no adjudication was required.",
             contributions=a.contributions,
         )
 
@@ -54,19 +65,26 @@ def adjudicate(task: TrainTask, features: TaskFeatures, a: Label, b: Label) -> L
                 ),
                 notes=f"unresolved disagreement A={a.primary_family} B={b.primary_family}",
                 secondary={a.primary_family, b.primary_family} - {"UNKNOWN_AMBIGUOUS"},
+                observed_change=a.observed_change or b.observed_change,
+                competing_interpretation=_competing(a, b),
+                decision_basis=(
+                    f"Unresolved: the evidence gap is only {gap:+.2f}, below the {NEAR_TIE_GAP} threshold for a "
+                    f"defensible adjudication, so both labels are preserved as competing readings."
+                ),
             )
         winner, loser = (a, b) if gap > 0 else (b, a)
-        basis = "stronger direct evidence"
+        basis = f"direct evidence favours {winner.primary_family} by {abs(gap):.2f}"
     elif score_a is not None or score_b is not None:
         winner, loser = (a, b) if score_a is not None else (b, a)
-        basis = "only one label has supporting feature evidence"
+        basis = f"only {winner.primary_family} has supporting feature evidence"
     else:
         concrete = [label for label in (a, b) if label.primary_family != "UNKNOWN_AMBIGUOUS"]
         if len(concrete) == 1:
             winner, loser = concrete[0], (b if concrete[0] is a else a)
             basis = "the other pass withheld a label"
         else:
-            winner, loser = sorted((a, b), key=lambda label: _priority(label.primary_family))[0], None
+            winner = sorted((a, b), key=lambda label: _priority(label.primary_family))[0]
+            loser = None
             basis = "rubric family priority"
         return build_label(
             "C",
@@ -80,6 +98,9 @@ def adjudicate(task: TrainTask, features: TaskFeatures, a: Label, b: Label) -> L
             ),
             notes=f"adjudicated from A={a.primary_family} B={b.primary_family}",
             secondary=(loser.primary_family,) if loser else (),
+            observed_change=winner.observed_change,
+            competing_interpretation=_competing(a, b),
+            decision_basis=f"{basis.capitalize()}; retained at low confidence pending human review.",
         )
 
     assert loser is not None
@@ -95,5 +116,8 @@ def adjudicate(task: TrainTask, features: TaskFeatures, a: Label, b: Label) -> L
         ),
         notes=f"resolved disagreement A={a.primary_family} B={b.primary_family}",
         secondary=(loser.primary_family,),
+        observed_change=winner.observed_change,
+        competing_interpretation=_competing(a, b),
+        decision_basis=f"Resolved because {basis}.",
         contributions=winner.contributions,
     )

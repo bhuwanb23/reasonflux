@@ -27,6 +27,23 @@ WP3 requires two independent human annotators and a separate human adjudicator, 
 | `family_map_hash.txt` | SHA-256 pin for the family map |
 | `wp3_completion_review.md` | Gate-by-gate status showing WP3 remains incomplete |
 | `provisional_manifest.json` | Hashes, boundary checks, and use restrictions |
+| `reviewer_A_packet.jsonl` | Blinded packet for coder A: training pairs plus A's AI draft only |
+| `reviewer_B_packet.jsonl` | Blinded packet for coder B: training pairs plus B's AI draft only |
+| `reviewer_C_packet.jsonl` | Adjudicator packet: both coder drafts plus the AI synthesis |
+| `disagreement_priority_queue.csv` | Ranked review order: conflicts, unknowns, low confidence |
+| `review_packet_manifest.json` | Packet hashes, field allowlists, and blinding notes |
+
+## Human review workflow
+
+Every label CSV carries `review_status`, `reviewer_id`, `reviewed_at_utc`, and `sign_off_sha256`, all empty. To make a label count as human evidence:
+
+1. A coder opens their own blinded packet and reads the training pairs and their AI draft.
+2. They record a decision (`ACCEPTED_BY_HUMAN`, `EDITED_BY_HUMAN`, or `ADJUDICATED_BY_HUMAN`), a final family, and their own rationale.
+3. A signed `HumanReview` record is created via `sign_review`, which binds the reviewer identity to the exact `ai_draft_record_sha256` they reviewed.
+4. `verify_reviews` rejects the record if the draft changed afterwards, so a stale signature cannot be inherited by an edited label.
+5. Only when both required roles are verified for all 600 tasks does `can_promote_to_human_evidence` return true.
+
+Editing a CSV value, renaming a column, or writing a status string does not create a review; the signature check fails.
 
 ## Reproduce
 

@@ -39,6 +39,13 @@ FAMILY_DESCRIPTIONS: Mapping[str, str] = {
 
 @dataclass(frozen=True, slots=True)
 class Label:
+    """One agent's judgement, with the audit fields a human reviewer needs.
+
+    ``observed_change``, ``competing_interpretation``, and ``decision_basis``
+    are the reviewer-facing audit trail. They are part of the record hash, so a
+    human cannot silently rewrite the rationale of an AI draft.
+    """
+
     task_id: str
     agent_id: str
     primary_family: str
@@ -48,6 +55,9 @@ class Label:
     ambiguity_notes: str
     secondary_tags: tuple[str, ...]
     train_pairs_sha256: str
+    observed_change: str = ""
+    competing_interpretation: str = ""
+    decision_basis: str = ""
     contributions: tuple[tuple[str, float], ...] = ()
     ontology_version: str = ONTOLOGY_VERSION
     policy_version: str = POLICY_VERSION
@@ -63,6 +73,19 @@ class Label:
         if not self.rationale.strip():
             raise ValueError(f"{self.task_id}: a rationale is required")
 
+    def audit_gaps(self) -> tuple[str, ...]:
+        """Names of audit fields a reviewer would find empty."""
+        gaps = []
+        if not self.observed_change.strip():
+            gaps.append("observed_change")
+        if not self.competing_interpretation.strip():
+            gaps.append("competing_interpretation")
+        if not self.decision_basis.strip():
+            gaps.append("decision_basis")
+        if not self.rationale.strip():
+            gaps.append("rationale")
+        return tuple(gaps)
+
     def record_hash(self) -> str:
         return canonical_sha256(
             {
@@ -75,6 +98,9 @@ class Label:
                 "ambiguity_notes": self.ambiguity_notes,
                 "secondary_tags": list(self.secondary_tags),
                 "train_pairs_sha256": self.train_pairs_sha256,
+                "observed_change": self.observed_change,
+                "competing_interpretation": self.competing_interpretation,
+                "decision_basis": self.decision_basis,
                 "contributions": [list(item) for item in self.contributions],
                 "ontology_version": self.ontology_version,
                 "policy_version": self.policy_version,
@@ -97,6 +123,9 @@ def build_label(
     rationale: str,
     notes: str,
     secondary: Sequence[str],
+    observed_change: str = "",
+    competing_interpretation: str = "",
+    decision_basis: str = "",
     contributions: Sequence[tuple[str, float]] = (),
 ) -> Label:
     return Label(
@@ -109,5 +138,8 @@ def build_label(
         ambiguity_notes=notes,
         secondary_tags=tuple(sorted(set(secondary))),
         train_pairs_sha256=task.train_pairs_sha256,
+        observed_change=observed_change,
+        competing_interpretation=competing_interpretation,
+        decision_basis=decision_basis,
         contributions=tuple(contributions),
     )

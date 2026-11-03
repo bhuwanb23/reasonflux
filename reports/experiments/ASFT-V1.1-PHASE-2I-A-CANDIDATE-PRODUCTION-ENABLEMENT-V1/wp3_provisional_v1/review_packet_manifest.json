@@ -1,0 +1,80 @@
+{
+  "protocol": "WP3-HUMAN-REVIEW-PACKETS-V1",
+  "status": "AI_DRAFT_FOR_HUMAN_REVIEW_ONLY",
+  "task_count": 600,
+  "source_packet_sha256": "846bf7c396f4563204142cc5859b604279e67b5e6389a27bef0bf4cfa390436e",
+  "coder_fields": [
+    "task_id",
+    "train_pairs",
+    "ai_draft_family",
+    "ai_draft_confidence",
+    "ai_draft_observed_change",
+    "ai_draft_competing_interpretation",
+    "ai_draft_decision_basis",
+    "ai_draft_evidence_pairs",
+    "ai_draft_record_sha256",
+    "draft_mode",
+    "review_decision",
+    "review_final_family",
+    "review_rationale",
+    "reviewer_id",
+    "reviewed_at_utc",
+    "sign_off_sha256"
+  ],
+  "adjudicator_fields": [
+    "task_id",
+    "train_pairs",
+    "coder_a_family",
+    "coder_b_family",
+    "ai_draft_family",
+    "ai_draft_confidence",
+    "ai_draft_observed_change",
+    "ai_draft_competing_interpretation",
+    "ai_draft_decision_basis",
+    "ai_draft_evidence_pairs",
+    "ai_draft_record_sha256",
+    "draft_mode",
+    "review_decision",
+    "review_final_family",
+    "review_rationale",
+    "reviewer_id",
+    "reviewed_at_utc",
+    "sign_off_sha256"
+  ],
+  "queue_fields": [
+    "priority_rank",
+    "task_id",
+    "priority_class",
+    "priority_score",
+    "coder_a_family",
+    "coder_b_family",
+    "ai_draft_family",
+    "coder_a_confidence",
+    "coder_b_confidence",
+    "agreement_status",
+    "reason"
+  ],
+  "queue_counts": {
+    "A_CODERS_DISAGREE": 124,
+    "B_UNRESOLVED_AMBIGUOUS": 221,
+    "C_LOW_CONFIDENCE": 49,
+    "D_ROUTINE_CONFIRM": 206
+  },
+  "review_fields_prefilled": false,
+  "excluded_fields": [
+    "test",
+    "test.input",
+    "test.output",
+    "solver_programs",
+    "traces",
+    "candidate_yield",
+    "future_value"
+  ],
+  "blinding_note": "reviewer_A_packet.jsonl exposes only coder A's AI draft; reviewer_B_packet.jsonl exposes only coder B's. Neither reveals the other coder's labels or the AI adjudication.",
+  "packet_sha256": {
+    "reviewer_A_packet.jsonl": "2c42f64690b206adada89f5091eba68a96a428c53bfa293c92ed29be4668bf91",
+    "reviewer_B_packet.jsonl": "84af61c1a4bce16df352a3f2b1a2a4b5c9f65fd269ff847110e9787f718a3f06",
+    "reviewer_C_packet.jsonl": "5396d298b9fa1bf2fd9958be6c595ce07970c5515e04896cd39fbe11fa1aae3b",
+    "disagreement_priority_queue.csv": "f572f2dbe69ef8a001a7836104e4decb102547f51acb550a11e64ec8f016cc34"
+  }
+}

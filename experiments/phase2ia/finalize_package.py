@@ -23,7 +23,10 @@ ARTIFACTS=["README.md","implementation_work_package.md","wp0_wp6_end_to_end_summ
  "wp3_provisional_v1/adjudication_log.csv","wp3_provisional_v1/agreement_report.md",
  "wp3_provisional_v1/confusion_matrix.csv","wp3_provisional_v1/task_family_map.csv",
  "wp3_provisional_v1/family_map_hash.txt","wp3_provisional_v1/wp3_completion_review.md",
- "wp3_provisional_v1/provisional_manifest.json"]
+ "wp3_provisional_v1/provisional_manifest.json",
+ "wp3_provisional_v1/reviewer_A_packet.jsonl","wp3_provisional_v1/reviewer_B_packet.jsonl",
+ "wp3_provisional_v1/reviewer_C_packet.jsonl","wp3_provisional_v1/disagreement_priority_queue.csv",
+ "wp3_provisional_v1/review_packet_manifest.json"]
 SOURCES=[
  "experiments/phase2ia/finalize_package.py",
  "reports/experiments/ASFT-V1.1-PHASE-2I-INVARIANT-CANDIDATE-PRODUCTION-V1/candidate_production_protocol.md",
@@ -151,6 +154,29 @@ def main():
           raise SystemExit(f"provisional WP3 label CSV has a row without AI_PROVISIONAL mode: {name}")
     if provisional_manifest["data_access"]["test_fields_or_outputs_accessed"] is not False:
       raise SystemExit("provisional WP3 bundle must not access test fields")
+    schema=provisional_manifest.get("human_review_schema",{})
+    if schema.get("reviews_present")!=0: raise SystemExit("provisional WP3 bundle must ship with zero human reviews")
+    if not schema.get("promotion_blockers"): raise SystemExit("provisional WP3 bundle must record promotion blockers")
+    packets=provisional_manifest.get("review_packets",{})
+    if packets.get("review_fields_prefilled") is not False:
+      raise SystemExit("provisional WP3 review packets must ship unlabelled")
+    if sum(packets.get("queue_counts",{}).values())!=600:
+      raise SystemExit("provisional WP3 priority queue must cover all 600 tasks")
+    for name in ("reviewer_A_packet.jsonl","reviewer_B_packet.jsonl","reviewer_C_packet.jsonl"):
+      packet_path=PKG/"wp3_provisional_v1"/name
+      if digest(packet_path)!=packets["packet_sha256"][name]:
+        raise SystemExit(f"review packet hash mismatch: {name}")
+      for line in packet_path.read_text().splitlines():
+        row=json.loads(line)
+        if any(value for value in row.values() if isinstance(value,str) and "HIDDEN_TEST" in value):
+          raise SystemExit(f"review packet leaked test sentinel: {name}")
+        if set(row)&{"test","test_output","solver_program","trace","candidate_yield"}:
+          raise SystemExit(f"review packet leaked prohibited field: {name}")
+        for field in ("review_decision","reviewer_id","reviewed_at_utc","sign_off_sha256"):
+          if row.get(field): raise SystemExit(f"review packet must not prefill {field}: {name}")
+    coder_packet=(PKG/"wp3_provisional_v1/reviewer_A_packet.jsonl").read_text().splitlines()[0]
+    if "coder_b_family" in coder_packet or "ai_draft_family" not in coder_packet:
+      raise SystemExit("coder A packet must expose only coder A's draft")
     env=os.environ.copy()
     env["PYTHONPATH"]=str(ROOT/"src")+os.pathsep+env.get("PYTHONPATH","")
     r3_run=subprocess.run([sys.executable,"-m","pytest","-q","tests/test_r3_representation.py"],cwd=ROOT,env=env,

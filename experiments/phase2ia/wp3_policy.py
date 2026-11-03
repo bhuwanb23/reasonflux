@@ -80,6 +80,41 @@ def mechanisms(score: Score) -> str:
     return "; ".join(f"{feature} ({SPEC_BY_FEATURE[feature].mechanism})" for feature in score.features)
 
 
+def observed_change_text(score: Score) -> str:
+    """Plain statement of what the demonstrations actually do, for the audit trail."""
+    described = "; ".join(SPEC_BY_FEATURE[feature].mechanism for feature in score.features)
+    pairs = ", ".join(map(str, score.evidence)) or "1"
+    return f"On pair(s) {pairs}: {described}."
+
+
+def competing_text(runner_up: Score | None) -> str:
+    """The strongest rival reading, stated so a reviewer can test it."""
+    if runner_up is None:
+        return "No competing family reached the evidence threshold on these demonstrations."
+    return (
+        f"Rival reading {runner_up.family}: "
+        + "; ".join(SPEC_BY_FEATURE[feature].mechanism for feature in runner_up.features)
+        + f" (evidence weight {runner_up.weight:.2f})."
+    )
+
+
+def decision_basis_text(best: Score, runner_up: Score | None, *, tiered: bool) -> str:
+    if runner_up is None:
+        return f"{best.family} is the only family above the evidence threshold for this pass."
+    margin = best.weight - runner_up.weight
+    if tiered:
+        relative = "outranks" if tier_of(best.family) < tier_of(runner_up.family) else "is outranked by"
+        return (
+            f"{best.family} sits in rubric tier {tier_of(best.family)} and {runner_up.family} in tier "
+            f"{tier_of(runner_up.family)}, so {best.family} {relative} the rival reading on priority "
+            f"(evidence weight {best.weight:.2f} versus {runner_up.weight:.2f})."
+        )
+    return (
+        f"{best.family} carries the greater specific evidence weight ({best.weight:.2f} versus "
+        f"{runner_up.weight:.2f}), a margin of {margin:+.2f}."
+    )
+
+
 def tier_of(family: str) -> int:
     for index, families in enumerate(TIERS):
         if family in families:
@@ -91,7 +126,15 @@ def _qualified(scores: Sequence[Score], min_specificity: float) -> list[Score]:
     return [s for s in scores if s.weight >= DECISION_THRESHOLD and s.specificity >= min_specificity]
 
 
-def _unresolved(agent_id: str, task: TrainTask, features: TaskFeatures, note: str) -> Label:
+def _unresolved(
+    agent_id: str,
+    task: TrainTask,
+    features: TaskFeatures,
+    note: str,
+    *,
+    competing: str = "",
+    basis: str = "",
+) -> Label:
     return build_label(
         agent_id,
         task,
@@ -104,14 +147,29 @@ def _unresolved(agent_id: str, task: TrainTask, features: TaskFeatures, note: st
         ),
         notes=note,
         secondary=(),
+        observed_change="No single transformation pattern held across enough training pairs to name a mechanism.",
+        competing_interpretation=competing or "Several readings remain plausible; none clears the threshold.",
+        decision_basis=basis or "Insufficient support for any single family under this pass's threshold.",
     )
 
 
 def mechanism_first(task: TrainTask, features: TaskFeatures) -> Label:
     """Agent A: take the family with the greatest specific evidence weight."""
-    strong = _qualified(family_scores(features, threshold=POLICY_A_THRESHOLD), POLICY_A_SPECIFICITY)
+    scores = family_scores(features, threshold=POLICY_A_THRESHOLD)
+    strong = _qualified(scores, POLICY_A_SPECIFICITY)
     if not strong:
-        return _unresolved("A", task, features, "no qualifying mechanism under the mechanism-first policy")
+        near = scores[0] if scores else None
+        return _unresolved(
+            "A",
+            task,
+            features,
+            "no qualifying mechanism under the mechanism-first policy",
+            competing=(
+                f"Strongest partial signal was {near.family} ({near.weight:.2f}), below the required threshold."
+                if near
+                else ""
+            ),
+        )
 
     best = strong[0]
     runner_up = strong[1] if len(strong) > 1 else None
@@ -130,6 +188,12 @@ def mechanism_first(task: TrainTask, features: TaskFeatures) -> Label:
             ),
             notes=f"near tie between {best.family} and {runner_up.family}",
             secondary=(best.family, runner_up.family),
+            observed_change=observed_change_text(best),
+            competing_interpretation=competing_text(runner_up),
+            decision_basis=(
+                f"Withheld: the margin of {best.weight - runner_up.weight:+.2f} is below the 0.12 separation "
+                f"this pass requires before naming a primary family."
+            ),
             contributions=contributions,
         )
 
@@ -145,15 +209,31 @@ def mechanism_first(task: TrainTask, features: TaskFeatures) -> Label:
         ),
         notes="; ".join(features.notes),
         secondary=[s.family for s in strong[1:3]],
+        observed_change=observed_change_text(best),
+        competing_interpretation=competing_text(runner_up),
+        decision_basis=decision_basis_text(best, runner_up, tiered=False),
         contributions=contributions,
     )
 
 
 def counter_hypothesis(task: TrainTask, features: TaskFeatures) -> Label:
     """Agent B: rank by rubric priority tier, then by evidence weight."""
-    strong = _qualified(family_scores(features, threshold=POLICY_B_THRESHOLD), POLICY_B_SPECIFICITY)
+    scores = family_scores(features, threshold=POLICY_B_THRESHOLD)
+    strong = _qualified(scores, POLICY_B_SPECIFICITY)
     if not strong:
-        return _unresolved("B", task, features, "no qualifying mechanism after the counter-hypothesis check")
+        near = scores[0] if scores else None
+        return _unresolved(
+            "B",
+            task,
+            features,
+            "no qualifying mechanism after the counter-hypothesis check",
+            competing=(
+                f"Strongest partial signal after discounting surface actions was {near.family} "
+                f"({near.weight:.2f}), below threshold."
+                if near
+                else ""
+            ),
+        )
 
     ranked = sorted(strong, key=lambda s: (tier_of(s.family), -s.weight))
     best = ranked[0]
@@ -178,6 +258,12 @@ def counter_hypothesis(task: TrainTask, features: TaskFeatures) -> Label:
             ),
             notes=f"tier tie between {best.family} and {runner_up.family}",
             secondary=(best.family, runner_up.family),
+            observed_change=observed_change_text(best),
+            competing_interpretation=competing_text(runner_up),
+            decision_basis=(
+                f"Withheld: both candidates are in tier {tier_of(best.family)} and differ by only "
+                f"{best.weight - runner_up.weight:+.2f}, so the rubric offers no tie-break."
+            ),
             contributions=contributions,
         )
 
@@ -195,6 +281,9 @@ def counter_hypothesis(task: TrainTask, features: TaskFeatures) -> Label:
         ),
         notes="; ".join(features.notes),
         secondary=[s.family for s in ranked[1:3]],
+        observed_change=observed_change_text(best),
+        competing_interpretation=competing_text(runner_up),
+        decision_basis=decision_basis_text(best, runner_up, tiered=True),
         contributions=contributions,
     )
 

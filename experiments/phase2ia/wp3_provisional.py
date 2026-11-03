@@ -31,6 +31,7 @@ from experiments.phase2ia.wp3_agents import (  # noqa: E402
     annotate_agent_b,
 )
 from experiments.phase2ia.wp3_features import TaskFeatures, extract_features  # noqa: E402
+from experiments.phase2ia.wp3_human_review import ReviewState, promotion_blockers  # noqa: E402
 from experiments.phase2ia.wp3_packet_loader import (  # noqa: E402
     Packet,
     canonical_sha256,
@@ -45,6 +46,7 @@ from experiments.phase2ia.wp3_reports import (  # noqa: E402
     completion_review,
     readme,
 )
+from experiments.phase2ia.wp3_review_packets import write_review_packets  # noqa: E402
 
 LABEL_FIELDS = (
     "task_id",
@@ -53,12 +55,19 @@ LABEL_FIELDS = (
     "evidence_pair_indices",
     "secondary_tags",
     "rationale",
+    "observed_change",
+    "competing_interpretation",
+    "decision_basis",
     "ambiguity_notes",
     "label_mode",
     "agent_id",
     "ontology_version",
     "policy_version",
     "train_pairs_sha256",
+    "review_status",
+    "reviewer_id",
+    "reviewed_at_utc",
+    "sign_off_sha256",
     "record_sha256",
 )
 ADJUDICATION_FIELDS = (
@@ -68,18 +77,28 @@ ADJUDICATION_FIELDS = (
     "final_label",
     "adjudication_status",
     "decision_basis",
+    "competing_interpretation",
     "adjudicator_id",
     "label_mode",
     "train_pairs_sha256",
+    "review_status",
+    "reviewer_id",
+    "reviewed_at_utc",
+    "sign_off_sha256",
     "record_sha256",
 )
 FAMILY_MAP_FIELDS = (
     "task_id",
     "final_primary_family",
     "confidence",
+    "decision_basis",
     "annotation_version",
     "adjudication_status",
     "label_mode",
+    "review_status",
+    "reviewer_id",
+    "reviewed_at_utc",
+    "sign_off_sha256",
 )
 
 
@@ -137,12 +156,20 @@ def _label_row(label: Label) -> dict[str, str]:
         "evidence_pair_indices": ";".join(str(i) for i in label.evidence_pair_indices),
         "secondary_tags": ";".join(label.secondary_tags),
         "rationale": label.rationale,
+        "observed_change": label.observed_change,
+        "competing_interpretation": label.competing_interpretation,
+        "decision_basis": label.decision_basis,
         "ambiguity_notes": label.ambiguity_notes,
         "label_mode": label.mode,
         "agent_id": label.agent_id,
         "ontology_version": label.ontology_version,
         "policy_version": label.policy_version,
         "train_pairs_sha256": label.train_pairs_sha256,
+        # Human review columns are intentionally empty until a real reviewer signs.
+        "review_status": str(ReviewState.UNREVIEWED),
+        "reviewer_id": "",
+        "reviewed_at_utc": "",
+        "sign_off_sha256": "",
         "record_sha256": label.record_hash(),
     }
 
@@ -157,11 +184,16 @@ def _adjudication_rows(bundle: ProvisionalBundle) -> list[dict[str, str]]:
                 "annotator_a_label": left.primary_family,
                 "annotator_b_label": right.primary_family,
                 "final_label": final.primary_family,
-                "adjudication_status": "AGREEMENT_RETAINED" if agreed else "DISAGREEMENT_RESOLVED",
-                "decision_basis": final.rationale,
+                "adjudication_status": "AI_AGREEMENT_RETAINED" if agreed else "AI_DISAGREEMENT_RESOLVED",
+                "decision_basis": final.decision_basis,
+                "competing_interpretation": final.competing_interpretation,
                 "adjudicator_id": final.agent_id,
                 "label_mode": final.mode,
                 "train_pairs_sha256": task.train_pairs_sha256,
+                "review_status": str(ReviewState.UNREVIEWED),
+                "reviewer_id": "",
+                "reviewed_at_utc": "",
+                "sign_off_sha256": "",
                 "record_sha256": final.record_hash(),
             }
         )
@@ -174,9 +206,14 @@ def _family_map_rows(bundle: ProvisionalBundle) -> list[dict[str, str]]:
             "task_id": label.task_id,
             "final_primary_family": label.primary_family,
             "confidence": label.confidence,
+            "decision_basis": label.decision_basis,
             "annotation_version": f"{ONTOLOGY_VERSION}/{POLICY_VERSION}",
             "adjudication_status": "PROVISIONAL_NOT_ADJUDICATED_BY_HUMAN",
             "label_mode": label.mode,
+            "review_status": str(ReviewState.UNREVIEWED),
+            "reviewer_id": "",
+            "reviewed_at_utc": "",
+            "sign_off_sha256": "",
         }
         for label in bundle.c
     ]
@@ -259,6 +296,15 @@ def write_bundle(bundle: ProvisionalBundle, out_dir: Path | str) -> dict[str, ob
     (output / "wp3_completion_review.md").write_text(completion_review(bundle), encoding="utf-8", newline="\n")
     (output / "README.md").write_text(readme(bundle), encoding="utf-8", newline="\n")
 
+    review_manifest = write_review_packets(
+        bundle.packet,
+        {label.task_id: label for label in bundle.a},
+        {label.task_id: label for label in bundle.b},
+        {label.task_id: label for label in bundle.c},
+        bundle.agreement,
+        output,
+    )
+
     family_map = output / "task_family_map.csv"
     family_map_hash = hashlib.sha256(family_map.read_bytes()).hexdigest()
     (output / "family_map_hash.txt").write_text(
@@ -274,6 +320,34 @@ def write_bundle(bundle: ProvisionalBundle, out_dir: Path | str) -> dict[str, ob
         if path.is_file() and path.name != "provisional_manifest.json"
     }
     manifest = _manifest(bundle, output, family_map_hash, outputs)
+    manifest["human_review_schema"] = {
+        "schema_version": "WP3-HUMAN-REVIEW-V1",
+        "states": [str(state) for state in ReviewState],
+        "required_fields": [
+            "reviewer_id",
+            "role",
+            "reviewed_at_utc",
+            "review_rationale",
+            "decision",
+            "final_family",
+            "sign_off_sha256",
+        ],
+        "promotion_rule": (
+            "A draft becomes human evidence only when a signed HumanReview record verifies against the "
+            "exact draft record_sha256 it claims to judge."
+        ),
+        "reviews_present": 0,
+        "promotion_blockers": list(
+            promotion_blockers({label.task_id: label for label in bundle.c}, [])
+        ),
+    }
+    manifest["review_packets"] = {
+        "protocol": review_manifest["protocol"],
+        "status": review_manifest["status"],
+        "queue_counts": review_manifest["queue_counts"],
+        "review_fields_prefilled": review_manifest["review_fields_prefilled"],
+        "packet_sha256": review_manifest["packet_sha256"],
+    }
     (output / "provisional_manifest.json").write_text(
         json.dumps(manifest, indent=2) + "\n", encoding="utf-8", newline="\n"
     )
