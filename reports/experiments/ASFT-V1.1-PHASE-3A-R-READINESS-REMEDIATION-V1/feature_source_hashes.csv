@@ -1,0 +1,9 @@
+feature_or_component,source_path,sha256,interpretation
+R1 frequency F,src/invariants/validation/frequency.py,0e2c7b54d76e9205940fba792cdd7e49a932bef7f3a2c88dab6fbd3094361278,production implementation; not bound to real candidate inputs/config
+R1 consistency C,src/invariants/validation/consistency.py,1fd347d02fcb286d99be01f45f3b002f5158aa055f6e89cea4df1f68d7d12507,production implementation; Phase3A-R draft label Coverage conflicts
+R1 generality G,src/invariants/validation/generality.py,673ef7a94a8c0b4a273603a1c697074c34f2f2cdc9918e1701359484f72cb650,production implementation; Phase3A-R draft label Growth conflicts
+R1 reasoning value R,src/invariants/validation/reasoning_value.py,d3f3a4826291301d7bfd7db21b55ece14f04c641c7cb1a3282e6496d5c353e6e,production implementation; Phase3A-R draft label Reuse conflicts with R3
+R1 transfer bridge,src/invariants/transfer_aware.py,93ccf303cd912ef4bd4d4b7c76d68c1b5f8e36d3931efe13c5b0e622cfc7e05e,production bridge; real calibration memory/total_families absent
+T=ITS*TU,src/transfer/metrics.py,6b32538ddfaab680cd1800b27e1a953ffedf504746da730b85506a1393a813b2,production metric; source episodes and config absent
+R1 product/tie-break,src/invariants/ranking.py,b0cb7172a974b9dabcae02edac6a63087b79f01ccd512a981352bcce9d5ce9be,production score; no empirical candidate snapshot
+Phase3A feature adapter,experiments/phase3a/benchmark_engine.py,9627350221b3821699fcdb16c8718fd9cde71eed6356b5c4490829336654e7d4,development engine; not authorized as final study implementation

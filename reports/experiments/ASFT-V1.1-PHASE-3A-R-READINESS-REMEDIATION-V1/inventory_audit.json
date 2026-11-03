@@ -1,0 +1,21 @@
+{
+  "source_repository": "https://github.com/arcprize/ARC-AGI-2",
+  "source_commit": "f3283f727488ad98fe575ea6a5ac981e4a188e49",
+  "source_manifest_count": 1000,
+  "registry_rows": 1000,
+  "historical_split_counts": {
+    "discovery": 600,
+    "transfer": 200,
+    "holdout": 200
+  },
+  "phase2b_schema_valid_rows": 1000,
+  "target_eligible_rows": 0,
+  "phase3ar_split_assignments": 0,
+  "family_annotations": 0,
+  "difficulty_annotations": 0,
+  "task_files_hash_verified": 1000,
+  "outcome_access": "not performed; manifest/hash and Phase2B test-blind status only",
+  "candidate_registry_rows": 0,
+  "candidate_basis": "Phase2E accepted ARC candidates=0 under audited R1 path; Phase1C actual registry absent",
+  "task_registry_sha256": "92e132a29e27360cac5cb5a98050665149d6a24bef83991328740c9c54964d34"
+}

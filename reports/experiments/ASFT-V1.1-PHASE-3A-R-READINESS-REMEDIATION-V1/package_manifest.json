@@ -1,0 +1,43 @@
+{
+  "package_id": "ASFT-V1.1-PHASE-3A-R-READINESS-REMEDIATION-V1",
+  "phase_id": "ASFT-V1.1-PHASE-3A-R",
+  "decision": "BLOCKED",
+  "purpose": "Readiness remediation audit for six Phase 3B unlock gates; no calibration or efficacy experiment",
+  "phase3b_authorized": false,
+  "phase3d_authorized": false,
+  "gate_status": {
+    "G1_actual_candidate_task_pool": "BLOCKED",
+    "G2_feature_lineage": "BLOCKED_SPEC_CONFLICT_AND_INPUTS_MISSING",
+    "G3_actual_pool_pressure": "NOT_COMPUTABLE_NO_CANDIDATE_POOL",
+    "G4_independent_fntu_evaluator": "BLOCKED_ARITHMETIC_ONLY",
+    "G5_sealed_outcome_store": "BLOCKED_NOT_PRESENT_OR_ATTESTED",
+    "G6_calibration_only_power_plan": "BLOCKED_NO_MATCHED_VARIANCE_OR_SPLITS"
+  },
+  "historical_task_inventory": {
+    "rows": 1000,
+    "source": "datasets/arc/arc-agi-2",
+    "role": "historical audit/development inventory only; no new split assignment"
+  },
+  "accepted_actual_candidate_count": 0,
+  "synthetic_fixture_candidates_excluded": 40,
+  "reports": [
+    "candidate_pool_qualification.md",
+    "task_pool_qualification.md",
+    "feature_lineage_freeze.md",
+    "actual_pool_pressure_report.md",
+    "fntu_evaluator_validation.md",
+    "sealed_outcome_store_audit.md",
+    "power_precision_plan.md",
+    "phase3A-R_readiness_review.md"
+  ],
+  "qa": {
+    "reports": "8/8 present",
+    "task_manifest_reconciliation": "1000/1000 task hashes verified; inventory only",
+    "candidate_registry": "0 eligible actual candidates; no fabricated rows",
+    "pressure_matrix": "10/10 comparisons NOT_COMPUTABLE, correctly fail-closed",
+    "feature_semantic_conflict": "documented; no silent R1 change",
+    "split_assignment": "0; C1-C4 not assigned",
+    "local_markdown_links": "PASS",
+    "readiness": "BLOCKED; Phase 3B/3D not authorized"
+  }
+}
