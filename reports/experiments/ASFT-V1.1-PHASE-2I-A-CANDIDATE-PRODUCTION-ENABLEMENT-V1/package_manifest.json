@@ -1,0 +1,141 @@
+{
+  "package_id": "ASFT-V1.1-PHASE-2I-A-CANDIDATE-PRODUCTION-ENABLEMENT-V1",
+  "phase": "ASFT-V1.1-PHASE-2I-A",
+  "status": "WP0-WP2_CORE_COMPLETE; WP3_ON_HOLD_FOR_INDEPENDENT_ANNOTATORS; WP4_COMPLETE; WP5_SYNTHETIC_CONTROL_TESTED; WP6_IMPLEMENTATION_AND_SYNTHETIC_AUDITS_COMPLETE; ARC_RUN_BLOCKED",
+  "active_workstream": "WP3 labels remain held pending independent coders/adjudicator; all eligible WP6 plumbing complete; no ARC run authorization",
+  "annotation_resource_decision": "USER_SELECTED_HOLD; do not generate labels until independent coders and adjudicator are available",
+  "frozen_r3_grammar_addendum": "r3_grammar_addendum_v1.md; owner-approved 2026-11-02",
+  "plan_approval": "USER_APPROVED; PHASE_2I_A_IMPLEMENTATION_ACTIVE; PHASE_2I_CANDIDATE_RUN_NOT_AUTHORIZED",
+  "objective": "Make Phase 2I executable without running ARC candidate production or changing the invariant-candidate construct.",
+  "not_a_readiness_phase": true,
+  "scientific_ranked_object": "Phase 1C generated Invariant candidate; unchanged",
+  "registered_arc_arms": [
+    "R1",
+    "R3"
+  ],
+  "hcc_decision": "BUILD as isolated synthetic software control; exclude from all ARC yields and candidate registries",
+  "empirical_arc_run": "NOT AUTHORIZED; NOT RUN",
+  "discovery_material": "Previously exposed 600-task development IDs; training demonstrations only; no data accessed by this package",
+  "frozen_candidate_floors": {
+    "min_frequency": 5,
+    "min_cross_trace": 5,
+    "min_consistency": 1.0,
+    "min_independent_task_families": 2
+  },
+  "phase3b_phase3d": "BLOCKED / UNAUTHORIZED",
+  "package_integrity": "PASS",
+  "qa": {
+    "artifacts": "22/22 present",
+    "workstreams": "8 sequenced",
+    "active_workstream": "WP3 labels held pending independent coders/adjudicator; WP5 and WP6 synthetic engineering tests pass; ARC execution remains blocked",
+    "open_specification_decisions": 2,
+    "wp1_r3_contract_tests": "11 passed in 0.05s",
+    "combined_synthetic_regressions": "68 passed in 0.71s",
+    "wp4": "frozen config, transfer/taxonomy separation, identity ledger; runtime tests pass",
+    "hcc": "ASFT-2I-HCC-SYNTH-V1 synthetic plumbing passes; no ARC HCC run or evidence",
+    "wp3_ai_pilot": "12-task exploratory AI pilot only; 4/12 agreement, descriptive kappa 0.232; not independent and not eligible",
+    "artifact_boundary": "Train-only source and synthetic output allowlist/field/hash audit PASS; no ARC run artifacts were created",
+    "empirical_arc_run": "NOT RUN; NOT AUTHORIZED",
+    "phase3": "BLOCKED / UNAUTHORIZED",
+    "local_markdown_links": "PASS"
+  },
+  "wp1_r3": {
+    "status": "IMPLEMENTED_AND_TESTED",
+    "grammar_version": "R3-GRAMMAR-ADDENDUM-V1",
+    "grammar_sha256": "5eff77d2959e6f40e5482ea4b7d8ebf7fd899db84a00c499d04dccdb5a5d8139",
+    "implementation_sha256": "ff3f7357109ef85146a1cf228b1cd0f01807181bcb697ea020ea895d08fbd84f",
+    "focused_contract_tests": "11 passed in 0.05s",
+    "combined_synthetic_regressions": "68 passed in 0.71s",
+    "test_data": "synthetic fixtures only; no ARC task/test data accessed"
+  },
+  "wp2_semantic_trace": {
+    "status": "IMPLEMENTED; SYNTHETIC_MINER_PARITY_PASS_USING_FROZEN_WP4_CONFIG",
+    "schema_version": "ASFT-2I-SEMANTIC-TRACE-V1",
+    "implementation_sha256": "8debeab3049c8234e78fcf6922497716f4e3855720bbe48c67076d3f42eb42d6",
+    "test_sha256": "f9a744c84ad181ebdba51878c7c3bf643a396523dfc89c5df8378c3afdd77fa4",
+    "tests_included_in_suite": 10,
+    "scope": "Common action tokens; target_scope retained in raw trace; arm/candidate provenance sidecar only",
+    "synthetic_trace_miner_parity": "PASS for semantic token/pattern parity using frozen runtime config; full four-event fixture may produce zero candidates under core-length-1 aggregation and is not a positive-yield check"
+  },
+  "wp3_annotation": {
+    "status": "RUBRIC_DEFINED; 600 TRAIN_ONLY_PACKETS_BUILT; INDEPENDENT_CODERS_AND_LABELS_PENDING",
+    "protocol_sha256": "9c97853d243ae3ff379c2e28bdf68d24810833b69be12845a4ac9e56bf23ebbd",
+    "packet_manifest_sha256": "6979463c4c943e4b27e02ec1fb97a5a520e17e42580e3e5728f6ef41767cd11f",
+    "annotator_packet_sha256": {
+      "annotator_A_train_only.jsonl": "846bf7c396f4563204142cc5859b604279e67b5e6389a27bef0bf4cfa390436e",
+      "annotator_B_train_only.jsonl": "d4b6aadc65989c6ba0449d3e1c3a24d7602d0315b98b2770df143e94d57df2cb"
+    },
+    "label_map": "BLANK; not yet assigned/frozen",
+    "test_fields": "not decoded; packet field allowlist audit PASS"
+  },
+  "wp4_policy_identity": {
+    "status": "OWNER_APPROVED_FROZEN_AND_RUNTIME_TESTED",
+    "config_sha256": "f9dfa8d72e07d603b7e113f1edb0a3bc65e5f9dcdf480ddddf0e134a02713333",
+    "resolution_doc_sha256": "29255532fe549b1c0448a051ffae374fad779be862d67d3960a2919c4a908888",
+    "runtime_factory_sha256": "608b0deaba83ce9393493e35595c51c6a094b09a1d763116ce2745d138233bfd",
+    "code_changes": "No modifications to InvariantIdentity; frozen runtime factory and arm-separated identity ledger implemented"
+  },
+  "wp5_hcc": {
+    "status": "IMPLEMENTED_AND_TESTED_SYNTHETIC_ONLY; NO_ARC_HCC_RUN",
+    "control_version": "ASFT-2I-HCC-SYNTH-V1",
+    "implementation_sha256": "8449c294c8b0216e17f30a922518f8b6f27c8c0aaccf3170b21b1a145e57aad7",
+    "test_sha256": "88f1af7c00beea90c1bf06773486071a7cf8229747aa8468a0a1dfc619081072",
+    "result": {
+      "synthetic_tasks": 120,
+      "training_pairs": 240,
+      "r1_exact_demo_checks": 240,
+      "r3_exact_demo_checks": 240,
+      "r1_generator_accepted": 6,
+      "r3_generator_accepted": 6,
+      "r1_structurally_eligible": 6,
+      "r3_structurally_eligible": 6,
+      "candidate_signatures_equal": true
+    },
+    "miner_fixture_boundary": "oracle-selected one-action synthetic fixtures; not search coverage or full four-event production integration",
+    "arc_namespace_guard": "negative HCC-to-ARC task-ID test passes",
+    "scientific_evidence": false
+  },
+  "wp6_runner": {
+    "status": "IMPLEMENTED_AND_SYNTHETIC_END_TO_END_TESTED; ARC_EXECUTION_BLOCKED_BY_WP3_AND_AUTHORIZATION",
+    "implementation_sha256": "43e690510384d6595f40dc89bc3bc1cf71b033e74331e48b6c8c637af6d018d2",
+    "search_adapters_sha256": "bbdbaa27ac4db4a2baa1374609ac011d4cf725158992cee972b4a62ce217f2ce",
+    "train_only_source_sha256": "d6a60ecad20194de2efe57ef75c594efa7e26ee275ad5e54d24e7719d0de02bd",
+    "test_sha256": "709494821e7158cab1b5d1dee560e859a49119334a08c5c1c1841996a3bea25e",
+    "train_only_source_test_sha256": "e4ae041dc547d70f3a75e49c2504188ee82d99e9beff36bad61c14473b2fa151",
+    "paired_synthetic_replay": "PASS; six synthetic IDs; identical ordered IDs and resource limits",
+    "synthetic_file_to_search_to_trace_to_mining_to_artifact_audit": "PASS; registered R1/R3 callbacks; train-only stream stops before trailing test-output sentinel",
+    "authorization": "ARC mode requires separate run-specific authorization bound to protocol/task/source-allowlist/family-map/config/resource-limit/arm/grammar/runner/adapter/search-code hashes; none provided",
+    "controls": [
+      "path-confined explicit task-file allowlist",
+      "train-first streaming parser and prefix byte cap",
+      "10-trial/task/search-time ceiling",
+      "900-cell grid and 2048-MiB worker address-space caps",
+      "hashed train-demo/family-map/code provenance",
+      "opaque candidate/trial IDs",
+      "HCC namespace rejection",
+      "forbidden-field and raw-grid rejection",
+      "exact output-file allowlist plus SHA-256",
+      "stage ledger",
+      "paired-order/budget checks",
+      "arm-separated identity"
+    ],
+    "remaining": [
+      "independent WP3 family labels/adjudication are held and unavailable",
+      "owner run-specific authorization is not provided",
+      "no actual ARC artifacts exist to audit because ARC execution is not authorized"
+    ],
+    "arc_run": "NOT RUN; NOT AUTHORIZED"
+  },
+  "wp3_ai_pilot": {
+    "status": "EXPLORATORY_ONLY; NOT_INDEPENDENT; NOT_WP3_COMPLETION",
+    "pilot_manifest_sha256": "3caaf229e7795d98b953f352b551658a499d042ff198e1f67e320026e4b5a86c",
+    "source_train_packet_sha256": "846bf7c396f4563204142cc5859b604279e67b5e6389a27bef0bf4cfa390436e",
+    "sample_size": 12,
+    "pass_agreement": "4/12; descriptive only",
+    "cohen_kappa_descriptive": 0.232,
+    "ai_adjudication_unknown": 4,
+    "eligible_for_family_or_candidate_gates": false,
+    "wp3_complete": false,
+    "labels_used_by_runner_or_phase2i": false
+  }
+}
