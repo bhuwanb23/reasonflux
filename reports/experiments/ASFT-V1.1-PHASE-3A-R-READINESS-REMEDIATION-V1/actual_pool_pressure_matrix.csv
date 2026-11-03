@@ -1,0 +1,11 @@
+policy_a,policy_b,topk_rdr,normalized_kendall_divergence,topk_overlap,normalized_pairwise_rank_divergence,status,reason
+R1_IDT,R2_FREQUENCY,,,,,NOT_COMPUTABLE,No eligible actual candidate pool
+R1_IDT,R3_REUSE,,,,,NOT_COMPUTABLE,No eligible actual candidate pool
+R1_IDT,R4_COMPRESSION,,,,,NOT_COMPUTABLE,No eligible actual candidate pool
+R1_IDT,R5_RANDOM,,,,,NOT_COMPUTABLE,No eligible actual candidate pool
+R2_FREQUENCY,R3_REUSE,,,,,NOT_COMPUTABLE,No eligible actual candidate pool
+R2_FREQUENCY,R4_COMPRESSION,,,,,NOT_COMPUTABLE,No eligible actual candidate pool
+R2_FREQUENCY,R5_RANDOM,,,,,NOT_COMPUTABLE,No eligible actual candidate pool
+R3_REUSE,R4_COMPRESSION,,,,,NOT_COMPUTABLE,No eligible actual candidate pool
+R3_REUSE,R5_RANDOM,,,,,NOT_COMPUTABLE,No eligible actual candidate pool
+R4_COMPRESSION,R5_RANDOM,,,,,NOT_COMPUTABLE,No eligible actual candidate pool

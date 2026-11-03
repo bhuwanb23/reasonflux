@@ -1,0 +1,9 @@
+gate_id,requirement,status,evidence_needed,phase3i_run_implication
+I1,Ranked object remains accepted Invariant candidate,DESIGN_PASS,Retain Phase1C/production construct; no alternative object substitution,No candidate run if changed
+I2,R3 object-centric implementation and hash,OPEN,Implement Phase2F R3 grammar/parser; contract tests; code/grammar hashes,R3 arm cannot run
+I3,One frozen downstream miner and candidate policy,OPEN,Reconcile Phase2F config support5/cross-trace5/consistency1/family2 with runtime defaults and hash,No threshold tuning or run until pinned
+I4,Independent task-family annotations,OPEN,Outcome-blind annotation rubric/map and adjudication/hash,Family qualification unavailable
+I5,Common semantic trace schema,OPEN,Map R1/R3 semantic operations to same trace contract and validate adapter,No candidate yield comparison
+I6,Discovery task block designated diagnostic only,PARTIAL,Use only 600 historical discovery IDs; document all prior exposure; demos only,No confirmatory claims or C3/C4 assignments
+I7,HCC pipeline control,OPEN_OPTIONAL_SOFTWARE_GATE,Build predeclared synthetic positive-control plumbing; exclude its candidate rows from ARC yield,If built incorrectly, pipeline plumbing not validated
+I8,Phase 3 transition controls,OPEN,Any P1 yield re-enters Phase3A-R; all six gates must separately pass,Phase3B remains blocked

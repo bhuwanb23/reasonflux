@@ -1,0 +1,4 @@
+condition_id,representation,role,downstream_miner,candidate_definition,task_ids,exposure,run_status
+R1,R1 current ten-program bounded representation,reference,unchanged Phase2E miner/invariant policy,accepted Invariant candidate only,600 historical discovery IDs,previously audited development only,AVAILABLE_REFERENCE_NOT_RERUN
+R3,R3 object-centric Phase2F specification,primary candidate-yield alternative,unchanged Phase2E miner/invariant policy,accepted Invariant candidate only,600 same historical discovery IDs,previously audited development only,NOT_IMPLEMENTED
+HCC,Phase2F high-coverage known-rule positive control,software control only,unchanged Phase2E miner/invariant policy,synthetic candidate outputs excluded from ARC registry,synthetic generated IDs only,not ARC evidence,NOT_IMPLEMENTED
