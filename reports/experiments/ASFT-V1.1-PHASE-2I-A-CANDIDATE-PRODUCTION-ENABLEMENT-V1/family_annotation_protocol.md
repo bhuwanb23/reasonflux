@@ -53,3 +53,14 @@ The packet builder reads the Phase 13G split manifest only for task IDs assigned
 ## Current blocker
 
 A genuinely independent second annotator and adjudicator have not been supplied or authorized in this workspace. One AI assistant cannot truthfully self-certify two independent blind annotations. A separate 12-task AI pilot exists at `wp3_ai_pilot_v1/`; it is explicitly non-qualifying protocol-development material and does not change this requirement. Until two independent human label streams and a separate adjudication exist, the family map remains blank and the ≥2-family eligibility endpoint unavailable; do not use pilot labels as a substitute.
+
+## Provisional full-packet pass
+
+`wp3_provisional_v1/` contains a complete first pass over all 600 discovery tasks, produced by three deterministic AI policies behind the same train-only boundary:
+
+- Agent A: mechanism-first scoring over structural features.
+- Agent B: counter-hypothesis pass with the rubric's priority tiers.
+- Agent C: adjudication of A/B disagreements only.
+
+Every record is tagged `AI_PROVISIONAL`. The bundle reports descriptive agreement (476/600 exact, Cohen's κ ≈ 0.72) and a 37.7% `UNKNOWN_AMBIGUOUS` rate. Those figures describe agreement between two rule policies, not between human readers, and cannot satisfy any WP3 gate condition. The bundle exists to give human reviewers a finished draft and a prioritised disagreement list. See `wp3_provisional_v1/wp3_completion_review.md` and `wp3_provisional_v1/provisional_manifest.json`.
+

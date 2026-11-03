@@ -1,0 +1,5 @@
+sha256=9e26b268eb8431ed89e3fb9035501f78ec9ff632e862cb983bbed90308ac189a
+file=task_family_map.csv
+run_id=ASFT-WP3-AI-PROVISIONAL-V1
+label_mode=AI_PROVISIONAL
+status=PROVISIONAL_NOT_WP3_ELIGIBLE
