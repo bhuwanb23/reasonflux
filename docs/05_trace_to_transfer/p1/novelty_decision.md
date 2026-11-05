@@ -1,75 +1,81 @@
-# P1.3 — Interim Novelty Decision and Required Follow-up
+# P1.3 — Novelty Decision
 
-**Decision version:** P1-interim-2026-11-03-v1  
-**Status:** proposed disposition only; **owner approval outstanding**. This is not an owner-approved novelty claim, systematic-review certification, or authorization to implement/run.
+**Decision record:** `P1-owner-disposition-2026-11-03-v3`  
+**Review status:** bounded source-grounded P1 review complete to owner-approved idea-stage scope. **Owner direction (2026-11-03): pursue the comparative ARC-specific reframe as the best path.** This is not novelty clearance, comprehensive systematic-review certification, implementation approval, or experiment authorization.
 
-## 1. Proposed disposition
+## 1. Executive decision
 
-### Reject broad novelty
+### Recommendation: NO-GO for the current standalone novelty claim; REFRAME if the research question is retained
 
-Do **not** claim any of the following as novel:
+The proposed broad contribution—**counterexample-guided learning/refinement of an applicability boundary for reusable skills**—is not supportable as novel on the evidence now reviewed.
 
-- inducing reusable skills from traces;
-- parameterized or compressed procedural skills;
-- adding explicit skill triggers, preconditions, applicability conditions, initiation sets or termination rules;
-- refining/merging/creating skills after successes or failures;
-- preventing negative transfer through selective skill retrieval/masking;
-- prediction-before-action, replay verification, or halting after a prediction mismatch;
-- counterexample-guided repair/refinement in general;
-- transferring skills or abstractions across tasks/levels;
-- generic auditing of whether a skill helped;
-- skill creation/reuse cost amortization.
+This conclusion follows from several distinct but converging overlaps:
 
-The surveyed prior art directly covers these components. Relevant anchors include Skill-Pro (activation conditions plus trajectory-driven refinement and gate), Skill-DisCo (trace-derived parameterized executable skills), SkillComposer/Trace2Skill (skill creation, merging/refinement and transfer), ASSAY (per-task causal utility/masking), options/CEGAR (initiation sets and counterexample-guided abstraction refinement), and Twin/OPINE/arc-skill (ARC-AGI-3 model verification, mismatch repair and prediction gating).
+1. **Boundary-aware skill representation/use:** BASM explicitly stores applicability, risk, avoidance and recovery conditions and uses them to apply, suppress or repair skills ([Lin et al., 2026](https://arxiv.org/html/2608.22339)).
+2. **Evidence-conditioned activation-boundary learning:** latest SkillApt v2 collects matched WITH/WITHOUT executions for fixed skills and accumulates state-conditioned evidence to update LOAD/ABSTAIN without changing the procedure ([Guo et al., 2026](https://arxiv.org/html/2609.26863v2)). SelSkill learns local invoke/skip decisions from paired continuations ([Chen et al., 2026](https://arxiv.org/html/2606.00510v2)).
+3. **Direct public disclosure and finite fixtures for counterexample-to-skill-guard refinement:** issue #6645 specifies versioned reusable skill guards refined from independently replayable, classified counterexamples, with a fixed predicate vocabulary, fallback/UNKNOWN, and dependent-cache invalidation ([issue](https://github.com/Unjuno/agent-interface/issues/6645)). Linked PRs report finite synthetic results: #6796 reports 0/7 harmful false admissions versus 7 unchanged-guard in its authored fixture; #6800 reports a five-row hidden-family coverage-gate T1; #6804 isolates the gate boolean in a five-row counterfactual; #6997 is an evidence-only independent audit with zero new candidate runs ([#6796](https://github.com/Unjuno/agent-interface/pull/6796), [#6800](https://github.com/Unjuno/agent-interface/pull/6800), [#6804](https://github.com/Unjuno/agent-interface/pull/6804), [#6997](https://github.com/Unjuno/agent-interface/pull/6997)). These are not ARC or population evidence, but they make the central guard-refinement mechanism publicly disclosed and concretely instantiated in finite fixtures.
+4. **Failure-informed conditional skill evolution and structured state skills:** ReSkill revises conditional triggers from diagnosed rollout failures; StateSkill represents embodied experience as state-conditioned FSM skills and revises state gates/guidance from successful and failed trajectories ([ReSkill](https://arxiv.org/html/2606.01619v2), [StateSkill-Agent](https://arxiv.org/html/2610.14601v1)). They are not the proposed ARC invariant learner, but they block broad novelty claims for stateful reusable skills or failure-driven skill refinement.
+5. **ARC-specific predictive verification/model/workspace repair:** DreamTeam, Twin, OPINE-World, Tycho, Schema and arc-skill cover executable model prediction, replay checks, mismatch routing/repair, or prediction-gated action in ARC-AGI-3. These prevent “first predictive gate / first counterexample repair” claims.
+6. **Unresolved ARC3 SAGE collision:** a search-indexed secondary pointer describes an ARC3 SAGE action/effect world-model and generalized-skill lane, including promotion when preconditions/effects remain stable. The cited primary issue/merge pages are inaccessible, so exact overlap is unverified; it is an additional novelty risk, not evidence of absence.
 
-### Retain only a narrow research question, provisionally
+Together, these overlaps mean the current T2T wedge cannot be presented as a new general method. Calling the T2T object an “invariant skill” does not by itself establish a distinction.
 
-> **For interactive ARC-like environments, can a cross-context invariant skill’s observable applicability boundary be learned from correctly classified counterexamples, and does that representation improve held-out effect prediction or behavior beyond a strong parameterized/compressed replay control at matched resources?**
+## 2. What remains potentially worth studying (not novelty-cleared)
 
-This is a **question to investigate**, not a novelty assertion. The potential distinction is the unit and comparison: explicit skill applicability scope across contexts, compared against replay/compression and separated from within-environment world-model repair and task-level outcome masking.
+A narrower **comparative question** remains plausible:
 
-## 2. Confidence and reasons
+> In interactive ARC-like environments, does a cross-context structural state/action/effect representation provide incremental held-out predictive or behavioral value beyond (a) strong parameterized/compressed replay, (b) a SkillApt-like outcome-utility activation boundary, (c) explicit boundary-conditioned skill records, and (d) environment-specific executable-model repair?
 
-| Assessment | Current status | Rationale |
-|---|---|---|
-| Broad trace-to-skill idea is novel | **Rejected** | Multiple direct prior methods. |
-| Counterexamples can refine some reusable knowledge | **Known in broad form** | CEGAR and ARC world-model systems establish counterexample-guided refinement/model repair; skill refinement papers use failure signals. |
-| A skill boundary differs conceptually from a world-model transition repair | **Plausible distinction, needs operational test** | Different object: invocation/effect-transfer scope vs environment dynamics. But methods can implement both together, so terminology alone is insufficient. |
-| The exact proposed combination is absent from known sources | **Unknown** | The initial review found no exact match, but it is not comprehensive; related work and concurrent ARC projects remain to inspect. |
-| Invariant representation adds value beyond strong replay | **Untested** | Requires Claim N comparator and controlled study. |
-| Counterexample-guided boundary improves transfer | **Untested** | Requires counterexample ablation and held-out validation. |
+This may support a useful controlled study if the distinction is operationally precise. It is not presently a novelty claim. Publicly searchable material reviewed here did not establish whether a method already performs this exact comparison; the inaccessible SAGE lane is an unresolved collision, not evidence of absence.
 
-No numerical probability is assigned: the search is not a formal systematic review and the available coverage is not sufficient to calibrate confidence.
+## 3. Components that must not be claimed as novel
 
-## 3. Required final-review work before calling P1 complete
+Do not claim “first” or method novelty for:
 
-1. **Citation chasing:** backward and forward citations for Skill-Pro, Skill-DisCo, SkillComposer, Trace2Skill, ASSAY, Twin, Tycho, OPINE-World, Schema and arc-skill.
-2. **Full text and supplements:** inspect algorithms, data splits, negative results, cost accounting, artifact/code and exact definitions of activation, initiation set, counterexample and validation.
-3. **ARC-specific methods/artifacts:** inspect the underlying SAGE lane and referenced implementation behind issue #14268 if stable primary sources can be located; the issue itself previously returned 404 and cannot support the claim.
-4. **Search synonyms:** option initiation-set refinement; precondition learning from failed executions; counterexample-guided skill induction; transferable action/effect abstractions; conditional options; skill safety filters; replay-equivalent program controls.
-5. **Independent reviewer:** ask a researcher who did not formulate T2T to challenge whether a strong skill library, option learner, or model-repair method already has the purported operation.
-6. **Freeze disposition:** record the owner’s choice—retain narrow question, reframe, or abandon—by explicit approval/version. Do not imply it was approved here.
+- trace-to-skill distillation, parameterized skills, transferable abstractions, or skill libraries;
+- skill preconditions, initiation sets, applicability/activation boundaries, or conditional invocation;
+- adding risk/avoidance/recovery boundary fields to reusable skills;
+- using outcome or counterfactual evidence to decide whether to invoke a skill;
+- local invoke/skip preference learning;
+- refining a skill guard from classified concrete counterexamples in general;
+- verifying predicted effects before action, replaying observations, or repairing a model from mismatch;
+- reducing negative transfer by selective masking, suppression, or abstention;
+- broad candidate-generation/support-before-ranking framing or skill-use auditing.
 
-## 4. No-go conditions
+## 4. Exact distinctions—and why they are insufficient alone
 
-Abandon the novelty claim or redesign the study if any of these holds:
+| Mechanism | Evidence signal | Updated object | Closest precedent | Possible T2T delta; still unproven |
+|---|---|---|---|---|
+| Counterfactual activation boundary | Matched skill/no-skill outcomes and cost | Whether to load/invoke a fixed procedure | SkillApt; SelSkill; ASSAY | T2T could use structural transition evidence rather than final utility, but must show added value under direct controls. |
+| Boundary-aware skill record | Logged traces / extracted validity conditions | Conditions/risk/avoidance/recovery fields | BASM | T2T could formalize invariant/effect semantics and provenance; mere schema formalization is not enough. |
+| Guard refinement | Independently replayed concrete counterexample against a skill guard | Versioned applicability guard, with fallback and dependency invalidation | Unjuno issue #6645 | Same broad mechanism is already publicly disclosed. A domain-specific instantiation alone is weak novelty absent new principle/evidence. |
+| Dynamics-model repair | Prospective transition prediction differs from observed environment | Environment/game world model | Twin; OPINE-World; arc-skill | T2T could separate local model correctness from cross-context skill applicability, but must define this independently and compare it. |
+| Replay/trace compression | Repeated action sequences/parameters across tasks | Compact macro/script/procedure | Skill-DisCo; DreamCoder; strong replay | T2T could establish that a relational invariant adds value beyond compression, but this is an empirical comparison, not novelty by definition. |
 
-- A prior method already learns an explicit cross-context skill boundary by classified counterexamples and tests it against a fair replay control.
-- The proposed boundary is merely a manually written trigger or inferred task label, not learned from the stated evidence.
-- Strong replay plus parameter binding reproduces the same behavior/predictions within matched resource budgets.
-- The representation cannot distinguish boundary mismatch from a wrong transition model, bad goal hypothesis, execution fault or observation ambiguity.
-- The only improvement is generic performance from extra context, code, compute, or action prediction checks.
-- Scope gains are achieved by abstaining almost always; coverage-adjusted utility does not improve.
+## 5. Critical prior-art caveats
 
-## 5. Claim-language guidance
+- **Issue #6645:** direct fetch shows the issue closed and linked to #6997; its proposal is an offline finite GUI-interface guard-refinement method and explicitly limits its scope. #6661 is host construction evidence with formal-resource HOLD; #6796 is an authored finite T0-C replication; #6800 is a distinct five-row hidden-family coverage-gate T1; #6804 isolates the coverage gate in a separate five-row counterfactual; #6997 audits retained T1b artifacts without a new candidate run. Preserve the failures/UNKNOWN controls and scope caveats. None is ARC-science evidence. For prior art, the relevant fact is the public mechanism disclosure; fixture pass labels do not establish general effectiveness.
+- **SkillApt:** the paper distinguishes utility-based activation from editing a skill; its boundary changes with accumulated paired evidence. T2T’s prediction mismatch signal differs, but it also targets a state-conditioned “use/abstain” boundary. The contrast must be tested, not asserted.
+- **BASM:** explicit validity boundaries and execution-time enforcement already exist. It appears not to provide the same formal, counterexample-qualified invariant-learning algorithm, but that gap alone is insufficient given issue #6645.
+- **SAGE:** search results point to an ARC-AGI-3 action/effect model and generalized skill-induction lane, but primary issue/PR pages returned 404 during this review. No mechanism details are relied on as verified facts. This collision must be resolved from an accessible source before any ARC-specific novelty statement.
 
-Until the above work and owner review are done, use formulations such as:
+## 6. Conditions before a later novelty claim or study
 
-- “We investigate whether counterexample-guided applicability-boundary learning adds value beyond strong replay.”
-- “Our proposed mechanism is motivated by an unresolved comparison; related work already covers trace distillation, conditional skills, negative transfer, replay validation and model repair.”
+The owner selected the comparative question as the idea-stage direction. Before asserting a novelty contribution or designing any future study around it, retain these constraints:
 
-Avoid “first,” “novel invariant skill,” “new counterexample-guided skill learning,” and any implication that current ARC-AGI-3 results support the proposal. Current claim ceiling remains unchanged: no ARC-AGI-3 results; no test of Claims N, B, C, D or E.
+1. State that the general method is not novel/cleared; position the paper as an ARC-specific evaluation or a carefully specified incremental contribution.
+2. Define a “structural skill-scope counterexample” separately from a final task failure, SkillApt’s WITH/WITHOUT utility label, a BASM boundary field, and a world-model transition mismatch.
+3. Compare directly to an outcome-utility activation baseline, a boundary-aware skill record, an unchanged-guard/guard-refinement analogue where feasible, per-game world-model repair, and strong parameterized replay.
+4. Freeze source/target evidence, resource budgets and candidate semantics before any future authorized outcome access. No split assignment or run is authorized by P1.
+5. Use falsifiers: if the strong replay or any direct applicability controller matches the invariant treatment at matched budgets, withdraw invariant-specific value; if the proposed scope cannot be inferred from permitted observations, report UNKNOWN/abstain.
+6. Obtain independent novelty review. A bounded web search cannot prove global absence.
 
-## 6. Next design dependency
+## 7. Final status for P1
 
-If the owner accepts the narrow question, proceed to T2T-P2/P3 to formalize (i) an invariant-scope counterexample distinct from a dynamics mismatch, (ii) a strong replay arm and (iii) falsifiers. If prior-art follow-up finds equivalence, revise/stop before implementation. P1 completion itself grants no authorization.
+- **P1.1 source inventory — complete for the owner-approved bounded scope:** expanded source set, targeted search/citation-chase record, primary-vs-secondary distinction, and updated finite-artifact evidence. Not exhaustive; ARC3 SAGE remains unverified.
+- **P1.2 mechanism comparison — complete for the bounded scope:** differentiating objects/signals separated across activation, boundaries, guard refinement, state-conditioned skills, replay, model repair and ARC systems. The proposed standalone novelty center overlaps established work and a near-exact public guard-refinement proposal.
+- **P1.3 decision — complete:** **NO-GO on the current standalone novelty claim; pursue the comparative ARC-specific question as provisional idea-stage direction.** The owner selected this route on 2026-11-03. The residual contribution remains a hypothesis, not novelty-cleared.
+
+**Overall P1 status: COMPLETE for the owner-approved idea-stage scope.** It is not exhaustive prior-art clearance, a systematic-review certification, a legal opinion, or permission to implement/run. SAGE primary-source access and independent human novelty review remain future requirements before any submission-level novelty claim.
+
+No experiment, benchmark, ARC run, implementation, split assignment or restricted-outcome access occurred. P1 completion does not change Phase 2I/Phase 3 restrictions and authorizes no execution.

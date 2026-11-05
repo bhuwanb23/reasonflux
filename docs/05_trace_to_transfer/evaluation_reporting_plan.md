@@ -1,28 +1,10 @@
-# Evaluation and Reporting Plan — Design Only
+# Evaluation and Reporting Plan — Entry Point
 
-## Claim-linked reporting
+**Controlling proposal:** [`T2T-P7-EvalReport-v1.0.0-draft`](p7/evaluation_reporting_v1.md)  
+**Status:** complete for design/documentation scope only. This page and its companion artifacts do not authorize implementation, preregistration, experiments, benchmarks, ARC runs, split assignment, or restricted-outcome access.
 
-Every paper statement must map to one of `N, A, B, C, D, E` in the claim-evidence map. Report a claim as supported, weakened, inconclusive, or untested; never infer downstream links from upstream success.
+The versioned P7 packet defines claim decision states and claim-specific support/weakening rules, a blank results shell, failure and cost accounting, reproducibility needs, and a competition/paper artifact checklist. It follows the [P5 protocol proposal](p5/protocol_v1.md) and controlling [claim-evidence map](../../reports/competition/arc_prize_2026_claim_evidence_map_v1.md).
 
-## Required result tables (future)
+No result language is permitted without a matching authorized run artifact. The current evidence ceiling remains unchanged: limited known-generator synthetic support for Claim A does not establish ARC-AGI-3 evidence; N/B/C/D/E are untested for the proposed AGI-3 method. Synthetic, ARC-AGI-2, Phase 13/14, contract, and readiness evidence must remain separately labeled. P1 standalone novelty remains a no-go; the comparative reframe is provisional and not novelty-cleared.
 
-1. **Run integrity:** variant, commit/hash, model/config, environment/evaluator version, seed, budget, status, exclusions.
-2. **Skill formation:** candidate counts, support contexts, rejected candidates, promotion decisions, provenance completeness.
-3. **Claim N:** raw replay vs strong replay vs invariant representation on held-out prediction and end-to-end outcome at matched resources.
-4. **Claim B:** boundary metrics with and without counterexample evidence; coverage and false-activation rates together.
-5. **Claims C/D:** harmful transfer events and full-cohort score/action efficiency, including per-game outcomes and costs.
-6. **Claim E:** official score plus all baseline comparisons, uncertainty and cost accounting.
-7. **Failures:** counterexamples, abstentions, action mismatch, stale transfer, timeout, crash and missing artifact counts.
-
-## Reporting rules
-
-- Distinguish public/development diagnostics from official hidden evaluation.
-- Report score and resource costs separately; do not hide cost behind a weighted utility scalar.
-- Report the full denominator and all failed/abstained cases.
-- Label synthetic and ARC-AGI-2 results as background, not ARC-AGI-3 evidence.
-- Report exact code/notebook version, submission ID, score receipt and team match once available.
-- State limitations, negative transfer, null results and novelty uncertainty prominently.
-
-## Paper decision rule
-
-Do not write a result claim before a matching run artifact exists. A concept/paper direction can be developed now; a Paper Track submission must describe a real working linked AGI-3 entry. Late-entry eligibility is a separate unresolved rules question; it does not alter the scientific claim ceiling.
+Alpha/confidence level, effect margins, sample size/power, cohort/splits, operating points, budgets, missingness rules, owners/reviewers, live competition eligibility, code, notebook, team linkage, evaluator receipt and score remain unset, unavailable or unresolved as identified in P5/P7. P7 completion is not preregistration, engineering permission, run approval or submission eligibility.

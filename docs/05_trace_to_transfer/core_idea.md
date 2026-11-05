@@ -20,9 +20,11 @@ This is a hypothesis, not a result or novelty claim.
 
 A skill is not a copied trajectory. It is a versioned conditional procedure that says what relation it represents, what must be true before use, what it predicts, how it terminates, how it fails safely, and which experiences support it.
 
-## Core contribution candidate
+## Core contribution candidate — P1 revised status
 
-The proposed differentiator is **counterexample-guided learning of the applicability boundary of an invariant-derived skill**, tested against strong replay/parameterized-script baselines. Claim N explicitly asks whether the invariant representation contributes information beyond replay. Claims B–D test whether counterexamples improve scope, reduce harmful transfer, and improve efficiency. The novelty wedge remains unverified pending the prior-art package.
+The original proposed differentiator was **counterexample-guided learning of the applicability boundary of an invariant-derived skill**, tested against strong replay/parameterized-script baselines. The completed first-pass P1 review finds that this mechanism-level novelty claim is **not supportable as written**: SkillApt learns evidence-conditioned activation boundaries from matched outcomes; BASM uses explicit skill boundaries; and public issue #6645 proposes counterexample-qualified refinement of reusable skill guards. ARC world-model systems also cover mismatch-driven repair. See [`P1 decision`](p1/novelty_decision.md).
+
+A narrower comparative question may remain: whether cross-context structural state/action/effect invariants add held-out value beyond outcome-based activation, boundary-aware skill records, guard-refinement analogues, per-environment model repair, and strong replay. The owner selected this comparative reframe as the best direction on 2026-11-03. It is not novelty-cleared or empirically tested. Keep Claims N and B–E untested; do not present the original mechanism as novel, and do not infer authorization for implementation or experiments from the reframe decision.
 
 ## Preserve from original ASFT
 
