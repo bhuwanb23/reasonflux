@@ -1,0 +1,649 @@
+{
+  "b_holdout_contexts": [
+    {
+      "adjacent": true,
+      "context_id": "B-H1-gold",
+      "corridor_clear": true,
+      "door_closed": true,
+      "door_color": "gold",
+      "has_key": true,
+      "key_color": "gold"
+    },
+    {
+      "adjacent": true,
+      "context_id": "B-H2-silver",
+      "corridor_clear": true,
+      "door_closed": true,
+      "door_color": "silver",
+      "has_key": true,
+      "key_color": "silver"
+    },
+    {
+      "adjacent": true,
+      "context_id": "B-H3-violet-orange",
+      "corridor_clear": true,
+      "door_closed": true,
+      "door_color": "orange",
+      "has_key": true,
+      "key_color": "violet"
+    },
+    {
+      "adjacent": true,
+      "context_id": "B-H4-pink-teal",
+      "corridor_clear": true,
+      "door_closed": true,
+      "door_color": "teal",
+      "has_key": true,
+      "key_color": "pink"
+    },
+    {
+      "adjacent": true,
+      "context_id": "B-H5-no-key",
+      "corridor_clear": true,
+      "door_closed": true,
+      "door_color": "white",
+      "has_key": false,
+      "key_color": "white"
+    },
+    {
+      "adjacent": true,
+      "context_id": "B-H6-blocked",
+      "corridor_clear": false,
+      "door_closed": true,
+      "door_color": "gray",
+      "has_key": true,
+      "key_color": "gray"
+    }
+  ],
+  "b_result": {
+    "boundaries": {
+      "I0-G0-no-boundary-update": {
+        "admitted": 4,
+        "applicable_context_coverage": 1.0,
+        "false_activation": 2,
+        "false_activation_rate_among_admitted": 0.5,
+        "false_activation_rate_among_non_applicable": 0.5,
+        "false_rejection": 0,
+        "non_applicable": 4,
+        "total_contexts": 6,
+        "total_coverage": 0.6666666666666666,
+        "true_admitted": 2,
+        "true_applicable": 2
+      },
+      "I1-G1-CE-updated": {
+        "admitted": 2,
+        "applicable_context_coverage": 1.0,
+        "false_activation": 0,
+        "false_activation_rate_among_admitted": 0.0,
+        "false_activation_rate_among_non_applicable": 0.0,
+        "false_rejection": 0,
+        "non_applicable": 4,
+        "total_contexts": 6,
+        "total_coverage": 0.3333333333333333,
+        "true_admitted": 2,
+        "true_applicable": 2
+      }
+    },
+    "decision": "B-PASS",
+    "denominator": 6,
+    "refinement": {
+      "append_only_counterexample_count": 1,
+      "counterexample_context_id": "SRC-CE-red-blue",
+      "counterexample_id": "synthetic:ce:red-blue:v1",
+      "counterexample_not_in_holdout": true,
+      "observed_effect": {
+        "agent_advanced": false,
+        "door_open": false
+      },
+      "parent_boundary_id": "synthetic:boundary:G0",
+      "predicted_skill_effect": {
+        "agent_advanced": true,
+        "door_open": true
+      },
+      "prediction_frozen_before_observation": true,
+      "successor_boundary_id": "synthetic:boundary:G0:successor:color-match",
+      "successor_predicate": "key_color == door_color"
+    },
+    "rows": [
+      {
+        "boundaries": {
+          "I0-G0-no-boundary-update": {
+            "admitted": true,
+            "correct": true
+          },
+          "I1-G1-CE-updated": {
+            "admitted": true,
+            "correct": true
+          }
+        },
+        "context_id": "B-H1-gold",
+        "truth_applicable": true
+      },
+      {
+        "boundaries": {
+          "I0-G0-no-boundary-update": {
+            "admitted": true,
+            "correct": true
+          },
+          "I1-G1-CE-updated": {
+            "admitted": true,
+            "correct": true
+          }
+        },
+        "context_id": "B-H2-silver",
+        "truth_applicable": true
+      },
+      {
+        "boundaries": {
+          "I0-G0-no-boundary-update": {
+            "admitted": true,
+            "correct": false
+          },
+          "I1-G1-CE-updated": {
+            "admitted": false,
+            "correct": true
+          }
+        },
+        "context_id": "B-H3-violet-orange",
+        "truth_applicable": false
+      },
+      {
+        "boundaries": {
+          "I0-G0-no-boundary-update": {
+            "admitted": true,
+            "correct": false
+          },
+          "I1-G1-CE-updated": {
+            "admitted": false,
+            "correct": true
+          }
+        },
+        "context_id": "B-H4-pink-teal",
+        "truth_applicable": false
+      },
+      {
+        "boundaries": {
+          "I0-G0-no-boundary-update": {
+            "admitted": false,
+            "correct": true
+          },
+          "I1-G1-CE-updated": {
+            "admitted": false,
+            "correct": true
+          }
+        },
+        "context_id": "B-H5-no-key",
+        "truth_applicable": false
+      },
+      {
+        "boundaries": {
+          "I0-G0-no-boundary-update": {
+            "admitted": false,
+            "correct": true
+          },
+          "I1-G1-CE-updated": {
+            "admitted": false,
+            "correct": true
+          }
+        },
+        "context_id": "B-H6-blocked",
+        "truth_applicable": false
+      }
+    ]
+  },
+  "b_scope_status": "FINITE_SYNTHETIC_FIXTURE_ONLY",
+  "interpretation_limit": "Deterministic finite-fixture result only. No statistical, population, ARC, harm-reduction, cost-effectiveness, or novelty claim follows.",
+  "n_decision_grade_status": "N-BLOCKED",
+  "n_holdout_contexts": [
+    {
+      "adjacent": true,
+      "context_id": "N-H1-yellow",
+      "corridor_clear": true,
+      "door_closed": true,
+      "door_color": "yellow",
+      "has_key": true,
+      "key_color": "yellow"
+    },
+    {
+      "adjacent": true,
+      "context_id": "N-H2-orange",
+      "corridor_clear": true,
+      "door_closed": true,
+      "door_color": "orange",
+      "has_key": true,
+      "key_color": "orange"
+    },
+    {
+      "adjacent": true,
+      "context_id": "N-H3-cyan",
+      "corridor_clear": true,
+      "door_closed": true,
+      "door_color": "cyan",
+      "has_key": true,
+      "key_color": "cyan"
+    },
+    {
+      "adjacent": true,
+      "context_id": "N-H4-magenta",
+      "corridor_clear": true,
+      "door_closed": true,
+      "door_color": "magenta",
+      "has_key": true,
+      "key_color": "magenta"
+    },
+    {
+      "adjacent": true,
+      "context_id": "N-H5-amber-violet",
+      "corridor_clear": true,
+      "door_closed": true,
+      "door_color": "violet",
+      "has_key": true,
+      "key_color": "amber"
+    },
+    {
+      "adjacent": true,
+      "context_id": "N-H6-teal-brown",
+      "corridor_clear": true,
+      "door_closed": true,
+      "door_color": "brown",
+      "has_key": true,
+      "key_color": "teal"
+    },
+    {
+      "adjacent": true,
+      "context_id": "N-H7-no-key",
+      "corridor_clear": true,
+      "door_closed": true,
+      "door_color": "white",
+      "has_key": false,
+      "key_color": "white"
+    },
+    {
+      "adjacent": true,
+      "context_id": "N-H8-blocked",
+      "corridor_clear": false,
+      "door_closed": true,
+      "door_color": "gray",
+      "has_key": true,
+      "key_color": "gray"
+    }
+  ],
+  "n_result": {
+    "arms": {
+      "I0": {
+        "abstain": 0,
+        "accuracy": 1.0,
+        "correct": 8,
+        "coverage": 1.0,
+        "denominator_all_contexts": 8,
+        "issued": 8
+      },
+      "R1-Max": {
+        "abstain": 0,
+        "accuracy": 1.0,
+        "correct": 8,
+        "coverage": 1.0,
+        "denominator_all_contexts": 8,
+        "issued": 8
+      }
+    },
+    "decision": "N-FAIL",
+    "delta_accuracy_I0_minus_R1": 0.0,
+    "denominator": 8,
+    "rows": [
+      {
+        "arms": {
+          "I0": {
+            "correct": true,
+            "predicted_effect": {
+              "agent_advanced": true,
+              "door_open": true
+            },
+            "reason": "key_color == door_color",
+            "status": "PREDICTED"
+          },
+          "R1-Max": {
+            "correct": true,
+            "predicted_effect": {
+              "agent_advanced": true,
+              "door_open": true
+            },
+            "reason": "COMPILED_SOURCE_MACRO_GUARD",
+            "status": "PREDICTED"
+          }
+        },
+        "context_id": "N-H1-yellow",
+        "truth": {
+          "agent_advanced": true,
+          "door_open": true
+        }
+      },
+      {
+        "arms": {
+          "I0": {
+            "correct": true,
+            "predicted_effect": {
+              "agent_advanced": true,
+              "door_open": true
+            },
+            "reason": "key_color == door_color",
+            "status": "PREDICTED"
+          },
+          "R1-Max": {
+            "correct": true,
+            "predicted_effect": {
+              "agent_advanced": true,
+              "door_open": true
+            },
+            "reason": "COMPILED_SOURCE_MACRO_GUARD",
+            "status": "PREDICTED"
+          }
+        },
+        "context_id": "N-H2-orange",
+        "truth": {
+          "agent_advanced": true,
+          "door_open": true
+        }
+      },
+      {
+        "arms": {
+          "I0": {
+            "correct": true,
+            "predicted_effect": {
+              "agent_advanced": true,
+              "door_open": true
+            },
+            "reason": "key_color == door_color",
+            "status": "PREDICTED"
+          },
+          "R1-Max": {
+            "correct": true,
+            "predicted_effect": {
+              "agent_advanced": true,
+              "door_open": true
+            },
+            "reason": "COMPILED_SOURCE_MACRO_GUARD",
+            "status": "PREDICTED"
+          }
+        },
+        "context_id": "N-H3-cyan",
+        "truth": {
+          "agent_advanced": true,
+          "door_open": true
+        }
+      },
+      {
+        "arms": {
+          "I0": {
+            "correct": true,
+            "predicted_effect": {
+              "agent_advanced": true,
+              "door_open": true
+            },
+            "reason": "key_color == door_color",
+            "status": "PREDICTED"
+          },
+          "R1-Max": {
+            "correct": true,
+            "predicted_effect": {
+              "agent_advanced": true,
+              "door_open": true
+            },
+            "reason": "COMPILED_SOURCE_MACRO_GUARD",
+            "status": "PREDICTED"
+          }
+        },
+        "context_id": "N-H4-magenta",
+        "truth": {
+          "agent_advanced": true,
+          "door_open": true
+        }
+      },
+      {
+        "arms": {
+          "I0": {
+            "correct": true,
+            "predicted_effect": {
+              "agent_advanced": false,
+              "door_open": false
+            },
+            "reason": "key_color == door_color",
+            "status": "PREDICTED"
+          },
+          "R1-Max": {
+            "correct": true,
+            "predicted_effect": {
+              "agent_advanced": false,
+              "door_open": false
+            },
+            "reason": "COMPILED_SOURCE_MACRO_ELSE",
+            "status": "PREDICTED"
+          }
+        },
+        "context_id": "N-H5-amber-violet",
+        "truth": {
+          "agent_advanced": false,
+          "door_open": false
+        }
+      },
+      {
+        "arms": {
+          "I0": {
+            "correct": true,
+            "predicted_effect": {
+              "agent_advanced": false,
+              "door_open": false
+            },
+            "reason": "key_color == door_color",
+            "status": "PREDICTED"
+          },
+          "R1-Max": {
+            "correct": true,
+            "predicted_effect": {
+              "agent_advanced": false,
+              "door_open": false
+            },
+            "reason": "COMPILED_SOURCE_MACRO_ELSE",
+            "status": "PREDICTED"
+          }
+        },
+        "context_id": "N-H6-teal-brown",
+        "truth": {
+          "agent_advanced": false,
+          "door_open": false
+        }
+      },
+      {
+        "arms": {
+          "I0": {
+            "correct": true,
+            "predicted_effect": {
+              "agent_advanced": false,
+              "door_open": false
+            },
+            "reason": "key_color == door_color",
+            "status": "PREDICTED"
+          },
+          "R1-Max": {
+            "correct": true,
+            "predicted_effect": {
+              "agent_advanced": false,
+              "door_open": false
+            },
+            "reason": "COMPILED_SOURCE_MACRO_ELSE",
+            "status": "PREDICTED"
+          }
+        },
+        "context_id": "N-H7-no-key",
+        "truth": {
+          "agent_advanced": false,
+          "door_open": false
+        }
+      },
+      {
+        "arms": {
+          "I0": {
+            "correct": true,
+            "predicted_effect": {
+              "agent_advanced": false,
+              "door_open": false
+            },
+            "reason": "key_color == door_color",
+            "status": "PREDICTED"
+          },
+          "R1-Max": {
+            "correct": true,
+            "predicted_effect": {
+              "agent_advanced": false,
+              "door_open": false
+            },
+            "reason": "COMPILED_SOURCE_MACRO_ELSE",
+            "status": "PREDICTED"
+          }
+        },
+        "context_id": "N-H8-blocked",
+        "truth": {
+          "agent_advanced": false,
+          "door_open": false
+        }
+      }
+    ]
+  },
+  "n_validity_reason": "This revised run follows an earlier pilot that exposed the same N holdout; R1-Max and I0 were changed after the pilot output, so these raw revised scores are exploratory.",
+  "not_arc_or_benchmark": true,
+  "plan_id": "T2T-S2-SyntheticMechanism-v1.0.0-draft",
+  "run_date": "2026-11-04",
+  "run_id": "T2T-S2-KeyDoor-Run-v1-revised",
+  "scope": "one deterministic synthetic key/door world; Claims N and B only",
+  "source_contexts": [
+    {
+      "effect": {
+        "agent_advanced": true,
+        "door_open": true
+      },
+      "state": {
+        "adjacent": true,
+        "context_id": "SRC-POS-blue",
+        "corridor_clear": true,
+        "door_closed": true,
+        "door_color": "blue",
+        "has_key": true,
+        "key_color": "blue"
+      },
+      "trace_id": "trace:SRC-POS-blue"
+    },
+    {
+      "effect": {
+        "agent_advanced": true,
+        "door_open": true
+      },
+      "state": {
+        "adjacent": true,
+        "context_id": "SRC-POS-green",
+        "corridor_clear": true,
+        "door_closed": true,
+        "door_color": "green",
+        "has_key": true,
+        "key_color": "green"
+      },
+      "trace_id": "trace:SRC-POS-green"
+    },
+    {
+      "effect": {
+        "agent_advanced": false,
+        "door_open": false
+      },
+      "state": {
+        "adjacent": true,
+        "context_id": "SRC-CE-red-blue",
+        "corridor_clear": true,
+        "door_closed": true,
+        "door_color": "blue",
+        "has_key": true,
+        "key_color": "red"
+      },
+      "trace_id": "trace:SRC-CE-red-blue"
+    },
+    {
+      "effect": {
+        "agent_advanced": false,
+        "door_open": false
+      },
+      "state": {
+        "adjacent": true,
+        "context_id": "SRC-NEG-purple-yellow",
+        "corridor_clear": true,
+        "door_closed": true,
+        "door_color": "yellow",
+        "has_key": true,
+        "key_color": "purple"
+      },
+      "trace_id": "trace:SRC-NEG-purple-yellow"
+    },
+    {
+      "effect": {
+        "agent_advanced": false,
+        "door_open": false
+      },
+      "state": {
+        "adjacent": true,
+        "context_id": "SRC-NEG-no-key",
+        "corridor_clear": true,
+        "door_closed": true,
+        "door_color": "black",
+        "has_key": false,
+        "key_color": "black"
+      },
+      "trace_id": "trace:SRC-NEG-no-key"
+    },
+    {
+      "effect": {
+        "agent_advanced": false,
+        "door_open": false
+      },
+      "state": {
+        "adjacent": true,
+        "context_id": "SRC-NEG-blocked",
+        "corridor_clear": false,
+        "door_closed": true,
+        "door_color": "tan",
+        "has_key": true,
+        "key_color": "tan"
+      },
+      "trace_id": "trace:SRC-NEG-blocked"
+    },
+    {
+      "effect": {
+        "agent_advanced": false,
+        "door_open": false
+      },
+      "state": {
+        "adjacent": false,
+        "context_id": "SRC-NEG-not-adjacent",
+        "corridor_clear": true,
+        "door_closed": true,
+        "door_color": "white",
+        "has_key": true,
+        "key_color": "white"
+      },
+      "trace_id": "trace:SRC-NEG-not-adjacent"
+    },
+    {
+      "effect": {
+        "agent_advanced": false,
+        "door_open": false
+      },
+      "state": {
+        "adjacent": true,
+        "context_id": "SRC-NEG-door-open",
+        "corridor_clear": true,
+        "door_closed": false,
+        "door_color": "gray",
+        "has_key": true,
+        "key_color": "gray"
+      },
+      "trace_id": "trace:SRC-NEG-door-open"
+    }
+  ],
+  "world_rule": "base_conditions AND key_color == door_color -> open and advance; otherwise no effect"
+}

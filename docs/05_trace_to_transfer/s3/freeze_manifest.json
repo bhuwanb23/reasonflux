@@ -1,0 +1,64 @@
+{
+  "manifest_schema": "t2t-s3-implementation-freeze-v2",
+  "package_id": "T2T-S3-RA-v0.2.0",
+  "freeze_state": "RA_IMPLEMENTATION_CANDIDATE_FROZEN_FOR_INDEPENDENT_REVIEW",
+  "authorization": {
+    "implementation_resolution": true,
+    "development_fixture_software_checks": true,
+    "s3_evaluation_run": false,
+    "heldout_context_generation_or_exposure": false,
+    "s3_outcome_calculation": false,
+    "claim_n_decision": false,
+    "arc_or_external_data_work": false
+  },
+  "design_decisions": {
+    "r4": "minimum-internal-node source-only binary decision tree over six fixed Boolean predicates; fixed feature order and false-before-true recursive tie-break",
+    "context_id": "metadata_only_not_a_predictor_input",
+    "primary_scoring": "all-context exact accuracy plus per-cell denominator, coverage, wrong, abstained, invalid, and missing counts",
+    "transformation_cells": "recipe-level roles/families frozen; no contexts/counts materialized",
+    "unknown_required_state": "diagnostic only, not scored in primary endpoint pending owner confirmation"
+  },
+  "status": {
+    "carried_claim_n_status": "N-BLOCKED_FROM_S2; S3_UNDECIDED",
+    "independent_comparator_review": "PENDING_UNASSIGNED",
+    "source_development_heldout_recipe_roles_frozen": true,
+    "context_ids_or_instances_assigned": false,
+    "heldout_contexts_materialized_or_exposed": false,
+    "s3_outcomes_or_scores_present": false,
+    "sample_sizes_or_cell_counts_chosen": false,
+    "resource_caps_or_run_config_frozen": false
+  },
+  "unresolved_before_any_run": [
+    "independent review/sign-off on R4 competence and comparator fairness",
+    "owner confirmation of the unknown-required-state diagnostic policy",
+    "source/development/held-out context manifests and context counts",
+    "source opportunity and resource vector/caps",
+    "complete run configuration and stop conditions",
+    "separate explicit S3 execution authorization"
+  ],
+  "development_software_check": {
+    "command": "PYTHONPATH=src python -m pytest -q tests/test_t2t_s3_mechanism.py",
+    "result": "11 passed",
+    "interpretation": "software verification on hand-built development fixtures and abstract Boolean feature rows only; not S3 evaluation or Claim N evidence"
+  },
+  "manifest_does_not_hash_itself": true,
+  "hash_algorithm": "SHA-256",
+  "frozen_files": [
+    {"path": "src/t2t_s3/__init__.py", "sha256": "c7cc92736a2b74f0aff074edb6bea2a2d91c09f67f804b36117518b11bb2f23c"},
+    {"path": "src/t2t_s3/world.py", "sha256": "60b354009bb2275461f51ba918e595868c81502592f0de7bcb908b19d116238e"},
+    {"path": "src/t2t_s3/transforms.py", "sha256": "5a20dfc1a6532e31a95578bb9da221897566c31ed018b54b1822034800727444"},
+    {"path": "src/t2t_s3/generator.py", "sha256": "34fdd34d195bb833604c0e573d8cc258a0efb08ca7ff01a1542e7c30cdc4df0e"},
+    {"path": "src/t2t_s3/arms.py", "sha256": "39943c48cbb952de1255fb5ce98d08aec04d6df5d320a58da4f1233231735920"},
+    {"path": "src/t2t_s3/eventlog.py", "sha256": "27b8c7900c03c3c4abba608e7f4ab2963e63143a296286b2fe702aa39b16829b"},
+    {"path": "src/t2t_s3/scoring.py", "sha256": "0dbd8dc44bbe59ad02ea4e7fb3a7e792a2bae590dc7d01a2b5bced46bc778e92"},
+    {"path": "tests/test_t2t_s3_mechanism.py", "sha256": "62c9d6ad9c56af30526ff166a1e004627218688478396bbffa253bacbdf22767"},
+    {"path": "docs/05_trace_to_transfer/s3/s3_plan.md", "sha256": "3050b6ffc1ad1d370aa7b64fc564453415ef5a856bdb0fdd3f507edb9e56011f"},
+    {"path": "docs/05_trace_to_transfer/s3/README.md", "sha256": "68db3ba1044aea7389c3bd63e85509b47161eaf5c7af145a1016a7265a6504a1"},
+    {"path": "docs/05_trace_to_transfer/s3/competence_review.md", "sha256": "1cf4c9098e61c1f4f5e5629c2369c0a8dc1074cabe5e3490256597e6361ddac8"},
+    {"path": "docs/05_trace_to_transfer/s3/transformation_cells_v1.json", "sha256": "810693a6c4bd2955a776723e293c6968747badcadb9e220a11e8388855143a62"},
+    {"path": "docs/05_trace_to_transfer/s3/s3_ra_resolution.md", "sha256": "fa4fdb6d76c37e06fbfa164594aa673362e07ef6bf0c951359ae0f48336db28b"},
+    {"path": "docs/05_trace_to_transfer/s3/s3_review_v1.md", "sha256": "adc0f90e1b87f57248f888d35deb37dd93397046525d05943054f9259132e6dc"},
+    {"path": "docs/05_trace_to_transfer/README.md", "sha256": "9f64c8a58f4e8edf0068b85044177e8ee2bc4d78d77dfd98dc63e382a1bebfd8"},
+    {"path": "docs/05_trace_to_transfer/master_plan.md", "sha256": "c165790fe37c96c036bfd45d42cc4cd4dfb7048384c4eaa486120fc08bdd9e93"}
+  ]
+}

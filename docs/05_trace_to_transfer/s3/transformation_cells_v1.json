@@ -1,0 +1,78 @@
+{
+  "schema": "t2t-s3-transformation-cells-v1",
+  "package_version": "T2T-S3-RA-v0.2.0",
+  "status": "RECIPE_CELLS_FROZEN; NO_CONTEXTS_MATERIALIZED; INDEPENDENT_REVIEW_PENDING",
+  "context_generation_or_evaluation_authorized": false,
+  "cell_counts_or_sample_sizes": null,
+  "source_development_test_roles": {
+    "source_surface_family": "SRC-CANONICAL",
+    "development_role": "DEV-SOFTWARE-ONLY",
+    "development_data_enters_s3_fit_or_scoring": false,
+    "heldout_surface_families": ["H-ID", "H-APP", "H-LAYOUT", "H-ROLE", "H-COMPOSED"]
+  },
+  "surface_families": {
+    "SRC-CANONICAL": {
+      "role": "SOURCE",
+      "transform": "identity",
+      "definition": "Use canonical IDs, appearances, coordinates, and record order. The source feature-contrast coverage gate is one all-true six-bit row labeled success plus, for each of the six predicates in turn, a row with exactly that predicate false and the other five true labeled exact no-effect; any additional source rows must be complete and label-consistent. This is a deterministic compiler-identifiability requirement, not a population sample-size/power choice. No concrete contexts or source count are assigned/materialized."
+    },
+    "DEV-SOFTWARE-ONLY": {
+      "role": "DEVELOPMENT_FIXTURE_ONLY",
+      "transform": "hand-built software fixtures and declared recipe checks",
+      "definition": "Not S3 source, development, or held-out data; may be used only for deterministic unit/competence checks."
+    },
+    "H-ID": {
+      "role": "HELD_OUT_RECIPE_FAMILY",
+      "transform": "map each object ID x injectively to 'H-ID::' + x; remap all object references through the same map; leave appearance/layout unchanged"
+    },
+    "H-APP": {
+      "role": "HELD_OUT_RECIPE_FAMILY",
+      "transform": "sort distinct color and shape values separately; map the i-th distinct value to 'H-APP::color::i' or 'H-APP::shape::i'; leave IDs, references, and layout unchanged"
+    },
+    "H-LAYOUT": {
+      "role": "HELD_OUT_RECIPE_FAMILY",
+      "transform": "rotate each coordinate one quarter-turn using the package convention, then translate by (+11,-7); reverse object-record order; preserve all typed relations and state fields"
+    },
+    "H-ROLE": {
+      "role": "HELD_OUT_RECIPE_FAMILY",
+      "transform": "within groups of targets sharing the same closed-state and agent-adjacency facts, cycle distinct coordinate slots in lexicographic object-ID order and reverse object-record order; this changes which target occupies a spatial slot while preserving target-level preconditions. Eligible states require at least one such group with two or more distinct positions; otherwise the context is not assigned to H-ROLE."
+    },
+    "H-COMPOSED": {
+      "role": "HELD_OUT_RECIPE_FAMILY",
+      "transform": "apply H-ID, H-APP, H-LAYOUT, and H-ROLE together; this full combination is reserved from source and development roles. The same H-ROLE target-group eligibility condition applies."
+    }
+  },
+  "semantic_contrast_families": {
+    "POS-VALID": "Complete state/action satisfying every world condition.",
+    "NEG-WRONG-RELATION": "Keep the required context valid but select a target not named by the selected key relation.",
+    "NEG-TARGET-OPEN": "Keep the key-target relation valid and target otherwise selected, but set closed=false.",
+    "NEG-NONADJACENT": "Keep relation/target/path valid but move the agent to a non-adjacent coordinate.",
+    "NEG-BLOCKED-PATH": "Keep relation/target/adjacency valid but set path_clear=false.",
+    "NEG-WRONG-ROLE": "Select an observable non-key or non-target object, including matching-looking distractors; all references must resolve and the state must be complete.",
+    "NEG-ABSENT-KEY": "Use a known absent key ID in an otherwise complete state; this is known false, not unknown.",
+    "UNKNOWN-REQUIRED-DIAGNOSTIC": "A required field is unknown/incomplete. Simulator returns no effect label, so this is an abstention-contract diagnostic, not an eligible primary accuracy context unless the world/scoring contract is prospectively amended."
+  },
+  "finite_cell_rule": {
+    "eligible_surface_families": ["H-ID", "H-APP", "H-LAYOUT", "H-ROLE", "H-COMPOSED"],
+    "scored_semantic_families": ["POS-VALID", "NEG-WRONG-RELATION", "NEG-TARGET-OPEN", "NEG-NONADJACENT", "NEG-BLOCKED-PATH", "NEG-WRONG-ROLE", "NEG-ABSENT-KEY"],
+    "cell_id_format": "<surface-family>__<semantic-family>",
+    "number_of_contexts_per_cell": null,
+    "replicates_or_count_caps": null,
+    "role_assignment": "Each cross-product cell is HELD_OUT; no cross-product cell is assigned to source or development.",
+    "unknown_required_diagnostic_scored": false
+  },
+  "leakage_and_stop_rules": [
+    "No context ID or outcome may be used to select, revise, or exclude a cell after labels are exposed.",
+    "Source and held-out contexts must have distinct context IDs and disjoint surface-family roles.",
+    "Do not materialize or expose held-out contexts until separate S3 execution authorization.",
+    "Do not assign cell counts, sample sizes, resource caps, or stochastic inference choices by guess.",
+    "Any source/held-out overlap or post-exposure change blocks Claim N interpretation."
+  ],
+  "open_run_gates": [
+    "independent review of R4 grammar and fairness",
+    "owner confirmation of unknown-required diagnostic exclusion from the scored endpoint",
+    "source and held-out context counts and finite suite manifest",
+    "resource accounting/caps and complete run protocol",
+    "separate explicit execution authorization"
+  ]
+}
