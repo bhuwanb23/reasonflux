@@ -1,0 +1,526 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:t2t:formal-skill-object:1.0.0-draft",
+  "title": "T2T Formal Skill Object Contract v1.0.0-draft",
+  "description": "Design-time record-shape contract. Schema validity is not scientific validation, execution authorization, or permission to access restricted outcomes.",
+  "oneOf": [
+    { "$ref": "#/$defs/CandidateVersion" },
+    { "$ref": "#/$defs/SkillVersion" },
+    { "$ref": "#/$defs/EvidenceSnapshot" },
+    { "$ref": "#/$defs/LifecycleEvent" },
+    { "$ref": "#/$defs/PromotionDecision" },
+    { "$ref": "#/$defs/ApplicabilityResult" },
+    { "$ref": "#/$defs/PredictionRecord" },
+    { "$ref": "#/$defs/EffectAssessment" },
+    { "$ref": "#/$defs/CounterexampleRecord" }
+  ],
+  "$defs": {
+    "ID": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable project-approved globally unique ID; identity format is pinned by the producing system."
+    },
+    "Digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "Timestamp": { "type": "string", "format": "date-time" },
+    "ArtifactRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["uri", "digest", "media_type", "artifact_version"],
+      "properties": {
+        "uri": { "type": "string", "minLength": 1 },
+        "digest": { "$ref": "#/$defs/Digest" },
+        "media_type": { "type": "string", "minLength": 1 },
+        "artifact_version": { "type": "string", "minLength": 1 }
+      }
+    },
+    "TaggedValue": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["availability", "value", "source_refs"],
+          "properties": {
+            "availability": { "const": "KNOWN" },
+            "value": {},
+            "source_refs": { "type": "array", "items": { "$ref": "#/$defs/ID" } }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["availability", "reason_code", "source_refs"],
+          "properties": {
+            "availability": { "const": "UNKNOWN" },
+            "reason_code": { "type": "string", "minLength": 1 },
+            "source_refs": { "type": "array", "items": { "$ref": "#/$defs/ID" } }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["availability", "reason_code"],
+          "properties": {
+            "availability": { "const": "NOT_APPLICABLE" },
+            "reason_code": { "type": "string", "minLength": 1 }
+          }
+        }
+      ]
+    },
+    "Variable": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["variable_id", "type_ref", "role", "binding_source"],
+      "properties": {
+        "variable_id": { "$ref": "#/$defs/ID" },
+        "type_ref": { "$ref": "#/$defs/ArtifactRef" },
+        "role": { "enum": ["STATE", "ACTION", "EFFECT", "CONTEXT", "PARAMETER"] },
+        "binding_source": { "enum": ["OBSERVATION", "ACTION_RECORD", "DERIVED_STATE", "EXPLICIT_PARAMETER"] }
+      }
+    },
+    "PredicateSpec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["predicate_id", "language_ref", "expression", "required_for_invocation", "observable_inputs"],
+      "properties": {
+        "predicate_id": { "$ref": "#/$defs/ID" },
+        "language_ref": { "$ref": "#/$defs/ArtifactRef" },
+        "expression": { "type": "object" },
+        "required_for_invocation": { "type": "boolean" },
+        "observable_inputs": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/ID" } }
+      }
+    },
+    "ParameterDef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["parameter_id", "type_ref", "source_role", "binding_rule_ref"],
+      "properties": {
+        "parameter_id": { "$ref": "#/$defs/ID" },
+        "type_ref": { "$ref": "#/$defs/ArtifactRef" },
+        "source_role": { "enum": ["STATE_ENTITY", "ACTION_ARGUMENT", "EFFECT_VALUE", "OTHER_OBSERVED"] },
+        "binding_rule_ref": { "$ref": "#/$defs/ArtifactRef" }
+      }
+    },
+    "EvidenceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_id", "trace_id", "event_index", "context_ref", "evidence_class", "claim_role", "access_class", "source_manifest_ref", "representation_ref", "normalizer_ref"],
+      "properties": {
+        "event_id": { "$ref": "#/$defs/ID" },
+        "trace_id": { "$ref": "#/$defs/ID" },
+        "event_index": { "type": "integer", "minimum": 0 },
+        "context_ref": { "$ref": "#/$defs/ID" },
+        "evidence_class": { "enum": ["OBSERVED", "INFERRED", "PREDICTED", "COUNTEREXAMPLE", "COUNTERFACTUAL_ACTIVATION", "CONTROL"] },
+        "claim_role": { "enum": ["SUPPORTS", "CONTRADICTS", "QUALIFIES", "CONTROL", "UNRESOLVED"] },
+        "access_class": { "const": "PERMITTED_SOURCE" },
+        "source_manifest_ref": { "$ref": "#/$defs/ArtifactRef" },
+        "representation_ref": { "$ref": "#/$defs/ArtifactRef" },
+        "normalizer_ref": { "$ref": "#/$defs/ArtifactRef" },
+        "derivation_ref": { "$ref": "#/$defs/ArtifactRef" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "evidence_class": { "const": "INFERRED" } }, "required": ["evidence_class"] },
+          "then": { "required": ["derivation_ref"] }
+        }
+      ]
+    },
+    "EvidenceSnapshotRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence_snapshot_id", "digest"],
+      "properties": {
+        "evidence_snapshot_id": { "$ref": "#/$defs/ID" },
+        "digest": { "$ref": "#/$defs/Digest" }
+      }
+    },
+    "Provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["created_at", "producer_id", "producer_class", "source_manifest_ref", "configuration_ref"],
+      "properties": {
+        "created_at": { "$ref": "#/$defs/Timestamp" },
+        "producer_id": { "$ref": "#/$defs/ID" },
+        "producer_class": { "enum": ["HUMAN", "SOFTWARE", "AGENT", "IMPORT"] },
+        "source_manifest_ref": { "$ref": "#/$defs/ArtifactRef" },
+        "configuration_ref": { "$ref": "#/$defs/ArtifactRef" },
+        "parent_record_ref": { "$ref": "#/$defs/ID" }
+      }
+    },
+    "RepresentationContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["representation_id", "representation_version", "state_schema_ref", "action_schema_ref", "effect_schema_ref", "normalizer_ref", "relation_language_ref"],
+      "properties": {
+        "representation_id": { "$ref": "#/$defs/ID" },
+        "representation_version": { "type": "string", "minLength": 1 },
+        "state_schema_ref": { "$ref": "#/$defs/ArtifactRef" },
+        "action_schema_ref": { "$ref": "#/$defs/ArtifactRef" },
+        "effect_schema_ref": { "$ref": "#/$defs/ArtifactRef" },
+        "normalizer_ref": { "$ref": "#/$defs/ArtifactRef" },
+        "relation_language_ref": { "$ref": "#/$defs/ArtifactRef" }
+      }
+    },
+    "CandidateVersion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_type", "schema_version", "candidate_id", "candidate_version_id", "content_digest", "representation", "variables", "parameter_defs", "relation", "proposed_preconditions", "hypothesis_scope", "evidence_snapshot_ref", "provenance"],
+      "properties": {
+        "record_type": { "const": "CANDIDATE_VERSION" },
+        "schema_version": { "const": "1.0.0-draft" },
+        "candidate_id": { "$ref": "#/$defs/ID" },
+        "candidate_version_id": { "$ref": "#/$defs/ID" },
+        "content_digest": { "$ref": "#/$defs/Digest" },
+        "predecessor_candidate_version_id": { "$ref": "#/$defs/ID" },
+        "representation": { "$ref": "#/$defs/RepresentationContract" },
+        "variables": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/Variable" } },
+        "parameter_defs": { "type": "array", "items": { "$ref": "#/$defs/ParameterDef" } },
+        "relation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["relation_id", "expression", "falsifiers"],
+          "properties": {
+            "relation_id": { "$ref": "#/$defs/ID" },
+            "expression": { "type": "object" },
+            "falsifiers": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+          }
+        },
+        "proposed_preconditions": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/PredicateSpec" } },
+        "hypothesis_scope": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["scope_statement", "context_refs", "scope_limits"],
+          "properties": {
+            "scope_statement": { "type": "string", "minLength": 1 },
+            "context_refs": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/ID" } },
+            "scope_limits": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "evidence_snapshot_ref": { "$ref": "#/$defs/EvidenceSnapshotRef" },
+        "provenance": { "$ref": "#/$defs/Provenance" }
+      }
+    },
+    "SkillVersion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_type", "schema_version", "skill_id", "skill_version_id", "content_digest", "candidate_ref", "representation", "parameter_defs", "bindings", "applicability", "effect_model", "policy_artifact_ref", "policy_interface", "termination", "fallback", "derivation_evidence_ref", "resource_accounting", "provenance"],
+      "properties": {
+        "record_type": { "const": "SKILL_VERSION" },
+        "schema_version": { "const": "1.0.0-draft" },
+        "skill_id": { "$ref": "#/$defs/ID" },
+        "skill_version_id": { "$ref": "#/$defs/ID" },
+        "content_digest": { "$ref": "#/$defs/Digest" },
+        "predecessor_skill_version_id": { "$ref": "#/$defs/ID" },
+        "candidate_ref": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["candidate_id", "candidate_version_id"],
+          "properties": {
+            "candidate_id": { "$ref": "#/$defs/ID" },
+            "candidate_version_id": { "$ref": "#/$defs/ID" }
+          }
+        },
+        "representation": { "$ref": "#/$defs/RepresentationContract" },
+        "parameter_defs": { "type": "array", "items": { "$ref": "#/$defs/ParameterDef" } },
+        "bindings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["parameter_id", "value", "binding_evidence_refs"],
+            "properties": {
+              "parameter_id": { "$ref": "#/$defs/ID" },
+              "value": { "$ref": "#/$defs/TaggedValue" },
+              "binding_evidence_refs": { "type": "array", "items": { "$ref": "#/$defs/ID" } }
+            }
+          }
+        },
+        "applicability": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/PredicateSpec" } },
+        "effect_model": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["model_ref", "prediction_target", "prediction_form", "representation_ref"],
+          "properties": {
+            "model_ref": { "$ref": "#/$defs/ArtifactRef" },
+            "prediction_target": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+            "prediction_form": { "enum": ["DETERMINISTIC_RULE", "SET_VALUED_RULE", "DISTRIBUTION"] },
+            "representation_ref": { "$ref": "#/$defs/ArtifactRef" },
+            "calibration_ref": { "$ref": "#/$defs/ArtifactRef" }
+          }
+        },
+        "policy_artifact_ref": { "$ref": "#/$defs/ArtifactRef" },
+        "policy_interface": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["entrypoint", "input_schema_ref", "output_schema_ref", "supported_action_refs", "compatibility_refs"],
+          "properties": {
+            "entrypoint": { "type": "string", "minLength": 1 },
+            "input_schema_ref": { "$ref": "#/$defs/ArtifactRef" },
+            "output_schema_ref": { "$ref": "#/$defs/ArtifactRef" },
+            "supported_action_refs": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/ArtifactRef" } },
+            "compatibility_refs": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/ArtifactRef" } }
+          }
+        },
+        "termination": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["condition_ref", "max_action_budget", "max_step_budget", "max_wall_time_ms", "max_compute_units"],
+          "properties": {
+            "condition_ref": { "$ref": "#/$defs/ArtifactRef" },
+            "max_action_budget": { "$ref": "#/$defs/TaggedValue" },
+            "max_step_budget": { "$ref": "#/$defs/TaggedValue" },
+            "max_wall_time_ms": { "$ref": "#/$defs/TaggedValue" },
+            "max_compute_units": { "$ref": "#/$defs/TaggedValue" }
+          }
+        },
+        "fallback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mode", "trigger_conditions", "fallback_policy_ref"],
+          "properties": {
+            "mode": { "enum": ["ABSTAIN", "NO_OP", "DEOPT", "AUTHORIZED_SAFE_POLICY"] },
+            "trigger_conditions": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/ID" } },
+            "fallback_policy_ref": { "$ref": "#/$defs/TaggedValue" }
+          }
+        },
+        "derivation_evidence_ref": { "$ref": "#/$defs/EvidenceSnapshotRef" },
+        "resource_accounting": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["creation_cost_ref", "validation_cost_ref", "invocation_cost_ref", "units_ref"],
+          "properties": {
+            "creation_cost_ref": { "$ref": "#/$defs/TaggedValue" },
+            "validation_cost_ref": { "$ref": "#/$defs/TaggedValue" },
+            "invocation_cost_ref": { "$ref": "#/$defs/TaggedValue" },
+            "units_ref": { "$ref": "#/$defs/ArtifactRef" }
+          }
+        },
+        "provenance": { "$ref": "#/$defs/Provenance" }
+      }
+    },
+    "EvidenceSnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_type", "schema_version", "evidence_snapshot_id", "digest", "purpose", "source_manifest_ref", "evidence_refs", "created_at"],
+      "properties": {
+        "record_type": { "const": "EVIDENCE_SNAPSHOT" },
+        "schema_version": { "const": "1.0.0-draft" },
+        "evidence_snapshot_id": { "$ref": "#/$defs/ID" },
+        "digest": { "$ref": "#/$defs/Digest" },
+        "purpose": { "enum": ["CANDIDATE_FORMATION", "CONTRADICTION_REVIEW", "STRUCTURAL_REVIEW", "FUTURE_AUTHORIZED_VALIDATION"] },
+        "source_manifest_ref": { "$ref": "#/$defs/ArtifactRef" },
+        "evidence_refs": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/EvidenceRef" } },
+        "created_at": { "$ref": "#/$defs/Timestamp" }
+      }
+    },
+    "PredecessorDecisionRef": {
+      "oneOf": [
+        { "type": "object", "additionalProperties": false, "required": ["availability", "reason_code"], "properties": { "availability": { "const": "NOT_APPLICABLE" }, "reason_code": { "type": "string", "minLength": 1 } } },
+        { "type": "object", "additionalProperties": false, "required": ["availability", "value", "source_refs"], "properties": { "availability": { "const": "KNOWN" }, "value": { "$ref": "#/$defs/ID" }, "source_refs": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/ID" } } } }
+      ]
+    },
+    "CandidatePreviousStatus": {
+      "oneOf": [
+        { "type": "object", "additionalProperties": false, "required": ["availability", "reason_code"], "properties": { "availability": { "const": "NOT_APPLICABLE" }, "reason_code": { "type": "string", "minLength": 1 } } },
+        { "type": "object", "additionalProperties": false, "required": ["availability", "value", "source_refs"], "properties": { "availability": { "const": "KNOWN" }, "value": { "enum": ["PROPOSED", "UNDER_REVIEW", "ACCEPTED_FOR_SKILL_SPEC", "REJECTED", "SUPERSEDED"] }, "source_refs": { "type": "array", "items": { "$ref": "#/$defs/ID" } } } }
+      ]
+    },
+    "SkillPreviousStatus": {
+      "oneOf": [
+        { "type": "object", "additionalProperties": false, "required": ["availability", "reason_code"], "properties": { "availability": { "const": "NOT_APPLICABLE" }, "reason_code": { "type": "string", "minLength": 1 } } },
+        { "type": "object", "additionalProperties": false, "required": ["availability", "value", "source_refs"], "properties": { "availability": { "const": "KNOWN" }, "value": { "enum": ["DRAFT", "ELIGIBLE_FOR_VALIDATION", "VALIDATED", "ACTIVE", "QUARANTINED", "RETIRED", "SUPERSEDED"] }, "source_refs": { "type": "array", "items": { "$ref": "#/$defs/ID" } } } }
+      ]
+    },
+    "LifecycleEvent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_type", "schema_version", "decision_id", "subject_type", "subject_id", "subject_version_id", "previous_status", "next_status", "reason_code", "policy_ref", "evidence_snapshot_ref", "actor_class", "actor_id", "occurred_at", "predecessor_decision_id"],
+      "properties": {
+        "record_type": { "const": "LIFECYCLE_EVENT" },
+        "schema_version": { "const": "1.0.0-draft" },
+        "decision_id": { "$ref": "#/$defs/ID" },
+        "subject_type": { "enum": ["CANDIDATE", "SKILL"] },
+        "subject_id": { "$ref": "#/$defs/ID" },
+        "subject_version_id": { "$ref": "#/$defs/ID" },
+        "previous_status": { "oneOf": [{ "$ref": "#/$defs/CandidatePreviousStatus" }, { "$ref": "#/$defs/SkillPreviousStatus" }] },
+        "next_status": { "enum": ["PROPOSED", "UNDER_REVIEW", "ACCEPTED_FOR_SKILL_SPEC", "REJECTED", "SUPERSEDED", "DRAFT", "ELIGIBLE_FOR_VALIDATION", "VALIDATED", "ACTIVE", "QUARANTINED", "RETIRED"] },
+        "reason_code": { "type": "string", "minLength": 1 },
+        "policy_ref": { "$ref": "#/$defs/ArtifactRef" },
+        "evidence_snapshot_ref": { "$ref": "#/$defs/EvidenceSnapshotRef" },
+        "actor_class": { "enum": ["OWNER", "HUMAN_REVIEWER", "PIPELINE", "AGENT", "IMPORT"] },
+        "actor_id": { "$ref": "#/$defs/ID" },
+        "occurred_at": { "$ref": "#/$defs/Timestamp" },
+        "predecessor_decision_id": { "$ref": "#/$defs/PredecessorDecisionRef" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "subject_type": { "const": "CANDIDATE" } }, "required": ["subject_type"] },
+          "then": {
+            "properties": {
+              "next_status": { "enum": ["PROPOSED", "UNDER_REVIEW", "ACCEPTED_FOR_SKILL_SPEC", "REJECTED", "SUPERSEDED"] },
+              "previous_status": { "$ref": "#/$defs/CandidatePreviousStatus" }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "subject_type": { "const": "SKILL" } }, "required": ["subject_type"] },
+          "then": {
+            "properties": {
+              "next_status": { "enum": ["DRAFT", "ELIGIBLE_FOR_VALIDATION", "VALIDATED", "ACTIVE", "QUARANTINED", "RETIRED", "SUPERSEDED"] },
+              "previous_status": { "$ref": "#/$defs/SkillPreviousStatus" }
+            }
+          }
+        }
+      ]
+    },
+    "PromotionDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_type", "schema_version", "decision_id", "candidate_ref", "evidence_snapshot_ref", "policy_ref", "result", "satisfied_criteria", "unmet_or_unknown_criteria", "decided_at", "decision_owner_ref"],
+      "properties": {
+        "record_type": { "const": "PROMOTION_DECISION" },
+        "schema_version": { "const": "1.0.0-draft" },
+        "decision_id": { "$ref": "#/$defs/ID" },
+        "candidate_ref": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["candidate_id", "candidate_version_id"],
+          "properties": {
+            "candidate_id": { "$ref": "#/$defs/ID" },
+            "candidate_version_id": { "$ref": "#/$defs/ID" }
+          }
+        },
+        "evidence_snapshot_ref": { "$ref": "#/$defs/EvidenceSnapshotRef" },
+        "policy_ref": { "$ref": "#/$defs/ArtifactRef" },
+        "result": { "enum": ["ACCEPT_FOR_SKILL_SPEC", "HOLD", "REJECT"] },
+        "satisfied_criteria": { "type": "array", "items": { "type": "string" } },
+        "unmet_or_unknown_criteria": { "type": "array", "items": { "type": "string" } },
+        "decided_at": { "$ref": "#/$defs/Timestamp" },
+        "decision_owner_ref": { "$ref": "#/$defs/ID" }
+      }
+    },
+    "PredicateEvaluation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["predicate_id", "result", "reason_code", "source_event_refs"],
+      "properties": {
+        "predicate_id": { "$ref": "#/$defs/ID" },
+        "result": { "enum": ["TRUE", "FALSE", "UNKNOWN"] },
+        "reason_code": { "type": "string", "minLength": 1 },
+        "source_event_refs": { "type": "array", "items": { "$ref": "#/$defs/ID" } }
+      }
+    },
+    "ApplicabilityResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_type", "schema_version", "skill_version_id", "context_ref", "decision", "decision_reason_codes", "predicate_evaluations", "evaluator_ref", "evaluated_at"],
+      "properties": {
+        "record_type": { "const": "APPLICABILITY_RESULT" },
+        "schema_version": { "const": "1.0.0-draft" },
+        "skill_version_id": { "$ref": "#/$defs/ID" },
+        "context_ref": { "$ref": "#/$defs/ID" },
+        "decision": { "enum": ["APPLICABLE", "REJECT", "ABSTAIN"] },
+        "decision_reason_codes": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "predicate_evaluations":  { "type": "array", "items": { "$ref": "#/$defs/PredicateEvaluation" } },
+        "evaluator_ref": { "$ref": "#/$defs/ArtifactRef" },
+        "evaluated_at": { "$ref": "#/$defs/Timestamp" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "decision": { "const": "APPLICABLE" } }, "required": ["decision"] },
+          "then": { "properties": { "predicate_evaluations": { "minItems": 1, "items": { "properties": { "result": { "const": "TRUE" } }, "required": ["result"] } } } }
+        },
+        {
+          "if": { "properties": { "decision": { "const": "REJECT" } }, "required": ["decision"] },
+          "then": { "properties": { "predicate_evaluations": { "contains": { "properties": { "result": { "const": "FALSE" } }, "required": ["result"] } } } }
+        }
+      ]
+    },
+    "PredictionRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_type", "schema_version", "prediction_id", "skill_version_id", "context_ref", "action_ref", "predicate_evaluations", "predicted_effects", "prediction_model_ref", "evidence_snapshot_ref", "predicted_at", "log_sequence"],
+      "properties": {
+        "record_type": { "const": "PREDICTION_RECORD" },
+        "schema_version": { "const": "1.0.0-draft" },
+        "prediction_id": { "$ref": "#/$defs/ID" },
+        "skill_version_id": { "$ref": "#/$defs/ID" },
+        "context_ref": { "$ref": "#/$defs/ID" },
+        "action_ref": { "$ref": "#/$defs/ID" },
+        "predicate_evaluations": { "type": "array", "minItems": 1, "items": { "allOf": [{ "$ref": "#/$defs/PredicateEvaluation" }, { "properties": { "result": { "const": "TRUE" } }, "required": ["result"] }] } },
+        "predicted_effects": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["target_ref", "prediction_form", "predicted_value"],
+            "properties": {
+              "target_ref": { "$ref": "#/$defs/ArtifactRef" },
+              "prediction_form": { "enum": ["DETERMINISTIC_RULE", "SET_VALUED_RULE", "DISTRIBUTION"] },
+              "predicted_value": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["availability", "value", "source_refs"],
+                "properties": {
+                  "availability": { "const": "KNOWN" },
+                  "value": {},
+                  "source_refs": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/ID" } }
+                }
+              },
+              "calibration_ref": { "$ref": "#/$defs/ArtifactRef" }
+            }
+          }
+        },
+        "prediction_model_ref": { "$ref": "#/$defs/ArtifactRef" },
+        "evidence_snapshot_ref": { "$ref": "#/$defs/EvidenceSnapshotRef" },
+        "predicted_at": { "$ref": "#/$defs/Timestamp" },
+        "log_sequence": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "EffectAssessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_type", "schema_version", "prediction_id", "skill_version_id", "source_context_ref", "action_ref", "prediction_ref", "assessment", "assessed_at"],
+      "properties": {
+        "record_type": { "const": "EFFECT_ASSESSMENT" },
+        "schema_version": { "const": "1.0.0-draft" },
+        "prediction_id": { "$ref": "#/$defs/ID" },
+        "skill_version_id": { "$ref": "#/$defs/ID" },
+        "source_context_ref": { "$ref": "#/$defs/ID" },
+        "action_ref": { "$ref": "#/$defs/ID" },
+        "prediction_ref": { "$ref": "#/$defs/ID" },
+        "observed_effect_ref": { "$ref": "#/$defs/ID" },
+        "assessment": { "enum": ["MATCH", "MISMATCH", "UNRESOLVED", "NOT_ASSESSED"] },
+        "assessed_at": { "$ref": "#/$defs/Timestamp" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "assessment": { "enum": ["MATCH", "MISMATCH"] } }, "required": ["assessment"] },
+          "then": { "required": ["observed_effect_ref"] }
+        }
+      ]
+    },
+    "CounterexampleRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_type", "schema_version", "counterexample_id", "skill_version_id", "prior_prediction_id", "observed_event_id", "classification", "classifier_ref", "conditions_at_prediction", "consequence_ref", "provenance_ref", "recorded_at"],
+      "properties": {
+        "record_type": { "const": "COUNTEREXAMPLE_RECORD" },
+        "schema_version": { "const": "1.0.0-draft" },
+        "counterexample_id": { "$ref": "#/$defs/ID" },
+        "skill_version_id": { "$ref": "#/$defs/ID" },
+        "prior_prediction_id": { "$ref": "#/$defs/ID" },
+        "observed_event_id": { "$ref": "#/$defs/ID" },
+        "classification": { "enum": ["DYNAMICS_COUNTEREXAMPLE", "SCOPE_COUNTEREXAMPLE", "EXECUTION_ERROR", "OBSERVATION_ERROR", "OUTCOME_ONLY", "AMBIGUOUS_UNRESOLVED"] },
+        "classifier_ref": { "$ref": "#/$defs/ArtifactRef" },
+        "conditions_at_prediction": { "type": "array", "items": { "$ref": "#/$defs/PredicateEvaluation" } },
+        "consequence_ref": { "$ref": "#/$defs/TaggedValue" },
+        "provenance_ref": { "$ref": "#/$defs/ArtifactRef" },
+        "recorded_at": { "$ref": "#/$defs/Timestamp" }
+      }
+    }
+  }
+}

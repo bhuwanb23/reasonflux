@@ -1,0 +1,442 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:t2t:event-schema:1.0.0-draft",
+  "title": "T2T Event Envelope and Payloads v1.0.0-draft",
+  "description": "Local-only implementation profile for P6. It is not a production access policy, run authorization, or resolution of P2's project-wide ID/canonicalization profile. The general journal intentionally excludes restricted evaluator outcome events.",
+  "oneOf": [
+    { "$ref": "#/$defs/ActivityConfigBound" },
+    { "$ref": "#/$defs/DataRoleBound" },
+    { "$ref": "#/$defs/IntegrityHold" },
+    { "$ref": "#/$defs/ObservationRecorded" },
+    { "$ref": "#/$defs/ObservationNormalized" },
+    { "$ref": "#/$defs/SourceActionRecorded" },
+    { "$ref": "#/$defs/ApplicabilityAssessed" },
+    { "$ref": "#/$defs/ActionRequested" },
+    { "$ref": "#/$defs/PredictionFrozen" },
+    { "$ref": "#/$defs/ActionDispatched" },
+    { "$ref": "#/$defs/ActionResultRecorded" },
+    { "$ref": "#/$defs/TransitionObserved" },
+    { "$ref": "#/$defs/EffectAssessed" },
+    { "$ref": "#/$defs/CandidateVersionEmitted" },
+    { "$ref": "#/$defs/SkillVersionEmitted" },
+    { "$ref": "#/$defs/LifecycleDecisionAppended" },
+    { "$ref": "#/$defs/TriageAssessmentAppended" },
+    { "$ref": "#/$defs/EvidenceUseAppended" },
+    { "$ref": "#/$defs/FallbackSelected" },
+    { "$ref": "#/$defs/StopOrFailure" },
+    { "$ref": "#/$defs/CostMeasured" },
+    { "$ref": "#/$defs/EventCorrectionAppended" }
+  ],
+  "$defs": {
+    "ID": { "type": "string", "minLength": 1 },
+    "Digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "Timestamp": { "type": "string", "format": "date-time" },
+    "RefList": { "type": "array", "items": { "$ref": "#/$defs/ID" } },
+    "TaggedValue": {
+      "oneOf": [
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["availability", "value", "source_refs"],
+          "properties": {
+            "availability": { "const": "KNOWN" },
+            "value": {},
+            "source_refs": { "$ref": "#/$defs/RefList" }
+          }
+        },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["availability", "reason_code", "source_refs"],
+          "properties": {
+            "availability": { "const": "UNKNOWN" },
+            "reason_code": { "$ref": "#/$defs/ID" },
+            "source_refs": { "$ref": "#/$defs/RefList" }
+          }
+        },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["availability", "reason_code"],
+          "properties": {
+            "availability": { "const": "NOT_APPLICABLE" },
+            "reason_code": { "$ref": "#/$defs/ID" }
+          }
+        }
+      ]
+    },
+    "RefOrNA": {
+      "oneOf": [
+        { "$ref": "#/$defs/ID" },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["availability", "reason_code"],
+          "properties": {
+            "availability": { "const": "NOT_APPLICABLE" },
+            "reason_code": { "$ref": "#/$defs/ID" }
+          }
+        }
+      ]
+    },
+    "Producer": {
+      "type": "object", "additionalProperties": false,
+      "required": ["producer_id", "producer_class", "producer_version_ref"],
+      "properties": {
+        "producer_id": { "$ref": "#/$defs/ID" },
+        "producer_class": { "enum": ["HUMAN", "SOFTWARE", "AGENT", "IMPORT"] },
+        "producer_version_ref": { "$ref": "#/$defs/ID" }
+      }
+    },
+    "Integrity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["content_digest", "digest_profile"],
+      "properties": {
+        "content_digest": { "$ref": "#/$defs/Digest" },
+        "digest_profile": { "const": "t2t-python-json-c14n-v1" },
+        "previous_digest": { "$ref": "#/$defs/Digest" }
+      }
+    },
+    "EventEnvelope": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "event_id", "event_schema_version", "event_type", "recorded_at",
+        "stream_id", "stream_seq", "activity_ref", "producer",
+        "access_class_ref", "causal_parent_event_refs", "payload",
+        "provenance_refs", "integrity"
+      ],
+      "properties": {
+        "event_id": { "$ref": "#/$defs/ID" },
+        "event_schema_version": { "const": "T2T-EventSchema-v1.0.0-draft" },
+        "event_type": { "type": "string", "minLength": 1 },
+        "recorded_at": { "$ref": "#/$defs/Timestamp" },
+        "stream_id": { "$ref": "#/$defs/ID" },
+        "stream_seq": { "type": "integer", "minimum": 0 },
+        "activity_ref": { "$ref": "#/$defs/ID" },
+        "arm_ref": { "$ref": "#/$defs/ID" },
+        "data_role_ref": { "$ref": "#/$defs/ID" },
+        "producer": { "$ref": "#/$defs/Producer" },
+        "access_class_ref": { "$ref": "#/$defs/ID" },
+        "causal_parent_event_refs": { "$ref": "#/$defs/RefList" },
+        "supersedes_event_ref": { "$ref": "#/$defs/ID" },
+        "payload": { "type": "object" },
+        "provenance_refs": { "$ref": "#/$defs/RefList" },
+        "integrity": { "$ref": "#/$defs/Integrity" }
+      }
+    },
+    "FieldAvailability": {
+      "type": "object", "additionalProperties": false,
+      "required": ["field_ref", "availability"],
+      "properties": {
+        "field_ref": { "$ref": "#/$defs/ID" },
+        "availability": { "enum": ["KNOWN", "UNKNOWN", "NOT_APPLICABLE"] },
+        "reason_code": { "$ref": "#/$defs/ID" }
+      }
+    },
+    "ActivityConfigBoundPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["protocol_ref", "config_ref", "arm_artifact_refs", "representation_refs", "manifest_refs", "evaluator_ref", "budget_contract_ref", "authorization_decision_ref"],
+      "properties": {
+        "protocol_ref": { "$ref": "#/$defs/ID" },
+        "config_ref": { "$ref": "#/$defs/ID" },
+        "arm_artifact_refs": { "$ref": "#/$defs/RefList" },
+        "representation_refs": { "$ref": "#/$defs/RefList" },
+        "manifest_refs": { "$ref": "#/$defs/RefList" },
+        "evaluator_ref": { "$ref": "#/$defs/RefOrNA" },
+        "budget_contract_ref": { "$ref": "#/$defs/ID" },
+        "authorization_decision_ref": { "$ref": "#/$defs/ID" }
+      }
+    },
+    "DataRoleBoundPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["manifest_ref", "artifact_or_event_ref", "role_ref", "allowed_fields_ref", "purpose_ref", "decision_ref"],
+      "properties": {
+        "manifest_ref": { "$ref": "#/$defs/ID" },
+        "artifact_or_event_ref": { "$ref": "#/$defs/ID" },
+        "role_ref": { "$ref": "#/$defs/ID" },
+        "allowed_fields_ref": { "$ref": "#/$defs/ID" },
+        "purpose_ref": { "$ref": "#/$defs/ID" },
+        "decision_ref": { "$ref": "#/$defs/ID" }
+      }
+    },
+    "IntegrityHoldPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["affected_refs", "reason_code", "hold_scope", "review_required"],
+      "properties": {
+        "affected_refs": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/ID" } },
+        "reason_code": { "$ref": "#/$defs/ID" },
+        "hold_scope": { "$ref": "#/$defs/ID" },
+        "review_required": { "type": "boolean" }
+      }
+    },
+    "ObservationRecordedPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["observation_id", "raw_observation_ref", "source_event_ref", "source_time", "representation_ref", "normalizer_ref", "normalization_status"],
+      "properties": {
+        "observation_id": { "$ref": "#/$defs/ID" },
+        "raw_observation_ref": { "$ref": "#/$defs/ID" },
+        "source_event_ref": { "$ref": "#/$defs/RefOrNA" },
+        "source_time": { "$ref": "#/$defs/TaggedValue" },
+        "representation_ref": { "$ref": "#/$defs/ID" },
+        "normalizer_ref": { "$ref": "#/$defs/RefOrNA" },
+        "normalization_status": { "enum": ["NOT_STARTED", "NORMALIZED", "FAILED"] }
+      }
+    },
+    "ObservationNormalizedPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["observation_id", "source_observation_event_ref", "normalized_observation_ref", "normalizer_ref", "field_availability_summary", "derivation_ref"],
+      "properties": {
+        "observation_id": { "$ref": "#/$defs/ID" },
+        "source_observation_event_ref": { "$ref": "#/$defs/ID" },
+        "normalized_observation_ref": { "$ref": "#/$defs/ID" },
+        "normalizer_ref": { "$ref": "#/$defs/ID" },
+        "field_availability_summary": { "type": "array", "items": { "$ref": "#/$defs/FieldAvailability" } },
+        "derivation_ref": { "$ref": "#/$defs/ID" }
+      }
+    },
+    "SourceActionRecordedPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_action_id", "source_trace_ref", "source_event_index", "action_ref", "pre_observation_event_ref", "post_transition_event_ref", "source_time"],
+      "properties": {
+        "source_action_id": { "$ref": "#/$defs/ID" },
+        "source_trace_ref": { "$ref": "#/$defs/ID" },
+        "source_event_index": { "type": "integer", "minimum": 0 },
+        "action_ref": { "$ref": "#/$defs/ID" },
+        "pre_observation_event_ref": { "$ref": "#/$defs/RefOrNA" },
+        "post_transition_event_ref": { "$ref": "#/$defs/RefOrNA" },
+        "source_time": { "$ref": "#/$defs/TaggedValue" }
+      }
+    },
+    "ApplicabilityAssessedPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["skill_version_ref", "observation_event_ref", "applicability_result_ref", "result", "predicate_evaluation_refs", "reason_codes"],
+      "properties": {
+        "skill_version_ref": { "$ref": "#/$defs/ID" },
+        "observation_event_ref": { "$ref": "#/$defs/ID" },
+        "applicability_result_ref": { "$ref": "#/$defs/ID" },
+        "result": { "enum": ["APPLICABLE", "REJECT", "ABSTAIN"] },
+        "predicate_evaluation_refs": { "$ref": "#/$defs/RefList" },
+        "reason_codes": { "$ref": "#/$defs/RefList" }
+      }
+    },
+    "ActionRequestedPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["intent_id", "agent_or_arm_ref", "observation_event_refs", "proposed_action_ref", "required_prediction", "remaining_budget_ref"],
+      "properties": {
+        "intent_id": { "$ref": "#/$defs/ID" },
+        "agent_or_arm_ref": { "$ref": "#/$defs/ID" },
+        "observation_event_refs": { "$ref": "#/$defs/RefList" },
+        "proposed_action_ref": { "$ref": "#/$defs/RefOrNA" },
+        "required_prediction": { "type": "boolean" },
+        "remaining_budget_ref": { "$ref": "#/$defs/ID" }
+      }
+    },
+    "PredictionFrozenPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["prediction_record_ref", "skill_version_ref", "baseline_adapter_ref", "intent_id", "target_effect_ref"],
+      "properties": {
+        "prediction_record_ref": { "$ref": "#/$defs/ID" },
+        "skill_version_ref": { "$ref": "#/$defs/RefOrNA" },
+        "baseline_adapter_ref": { "$ref": "#/$defs/RefOrNA" },
+        "intent_id": { "$ref": "#/$defs/ID" },
+        "target_effect_ref": { "$ref": "#/$defs/RefOrNA" }
+      }
+    },
+    "ActionDispatchedPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["intent_id", "action_ref", "dispatch_ref", "prediction_record_ref", "budget_before_ref"],
+      "properties": {
+        "intent_id": { "$ref": "#/$defs/ID" },
+        "action_ref": { "$ref": "#/$defs/ID" },
+        "dispatch_ref": { "$ref": "#/$defs/ID" },
+        "prediction_record_ref": { "$ref": "#/$defs/RefOrNA" },
+        "budget_before_ref": { "$ref": "#/$defs/ID" }
+      }
+    },
+    "ActionResultRecordedPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["intent_id", "dispatch_event_ref", "result_status", "environment_response", "budget_after_ref"],
+      "properties": {
+        "intent_id": { "$ref": "#/$defs/ID" },
+        "dispatch_event_ref": { "$ref": "#/$defs/ID" },
+        "result_status": { "enum": ["ACCEPTED", "REJECTED", "FAILED", "UNKNOWN"] },
+        "environment_response": { "$ref": "#/$defs/TaggedValue" },
+        "budget_after_ref": { "$ref": "#/$defs/ID" }
+      }
+    },
+    "TransitionObservedPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["pre_observation_event_ref", "action_result_event_ref", "post_observation_event_ref", "observed_effect", "representation_ref", "source_time"],
+      "properties": {
+        "pre_observation_event_ref": { "$ref": "#/$defs/ID" },
+        "action_result_event_ref": { "$ref": "#/$defs/ID" },
+        "post_observation_event_ref": { "$ref": "#/$defs/ID" },
+        "observed_effect": { "$ref": "#/$defs/TaggedValue" },
+        "representation_ref": { "$ref": "#/$defs/ID" },
+        "source_time": { "$ref": "#/$defs/TaggedValue" }
+      }
+    },
+    "EffectAssessedPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["effect_assessment_ref", "prediction_record_ref", "transition_event_ref", "assessment_status", "comparator_ref"],
+      "properties": {
+        "effect_assessment_ref": { "$ref": "#/$defs/ID" },
+        "prediction_record_ref": { "$ref": "#/$defs/ID" },
+        "transition_event_ref": { "$ref": "#/$defs/ID" },
+        "assessment_status": { "enum": ["MATCH", "MISMATCH", "UNKNOWN", "NOT_ASSESSED"] },
+        "comparator_ref": { "$ref": "#/$defs/ID" }
+      }
+    },
+    "CandidateVersionEmittedPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["candidate_version_ref", "candidate_version_id", "content_digest", "evidence_snapshot_ref", "support_ledger_ref", "proposal_audit_ref"],
+      "properties": {
+        "candidate_version_ref": { "$ref": "#/$defs/ID" },
+        "candidate_version_id": { "$ref": "#/$defs/ID" },
+        "content_digest": { "$ref": "#/$defs/Digest" },
+        "evidence_snapshot_ref": { "$ref": "#/$defs/ID" },
+        "support_ledger_ref": { "$ref": "#/$defs/ID" },
+        "proposal_audit_ref": { "$ref": "#/$defs/ID" }
+      }
+    },
+    "SkillVersionEmittedPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["skill_version_ref", "skill_version_id", "content_digest", "candidate_version_ref", "derivation_evidence_ref", "lifecycle_status_ref"],
+      "properties": {
+        "skill_version_ref": { "$ref": "#/$defs/ID" },
+        "skill_version_id": { "$ref": "#/$defs/ID" },
+        "content_digest": { "$ref": "#/$defs/Digest" },
+        "candidate_version_ref": { "$ref": "#/$defs/ID" },
+        "derivation_evidence_ref": { "$ref": "#/$defs/ID" },
+        "lifecycle_status_ref": { "$ref": "#/$defs/ID" }
+      }
+    },
+    "LifecycleDecisionAppendedPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["lifecycle_event_ref", "subject_ref", "prior_status", "next_status", "decision_ref", "evidence_snapshot_ref", "predecessor_lifecycle_event_ref"],
+      "properties": {
+        "lifecycle_event_ref": { "$ref": "#/$defs/ID" },
+        "subject_ref": { "$ref": "#/$defs/ID" },
+        "prior_status": { "$ref": "#/$defs/ID" },
+        "next_status": { "$ref": "#/$defs/ID" },
+        "decision_ref": { "$ref": "#/$defs/ID" },
+        "evidence_snapshot_ref": { "$ref": "#/$defs/ID" },
+        "predecessor_lifecycle_event_ref": { "$ref": "#/$defs/RefOrNA" }
+      }
+    },
+    "TriageAssessmentAppendedPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["counterexample_record_ref", "p4_triage_sidecar_ref", "prediction_record_ref", "transition_event_ref", "assessment_state"],
+      "properties": {
+        "counterexample_record_ref": { "$ref": "#/$defs/RefOrNA" },
+        "p4_triage_sidecar_ref": { "$ref": "#/$defs/ID" },
+        "prediction_record_ref": { "$ref": "#/$defs/ID" },
+        "transition_event_ref": { "$ref": "#/$defs/ID" },
+        "assessment_state": { "enum": ["CONFIRMED", "PROVISIONAL", "UNRESOLVED", "NOT_APPLICABLE"] }
+      }
+    },
+    "EvidenceUseAppendedPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["evidence_ref", "prior_role_ref", "new_role_ref", "subject_version_refs", "decision_ref", "validation_eligibility_effect"],
+      "properties": {
+        "evidence_ref": { "$ref": "#/$defs/ID" },
+        "prior_role_ref": { "$ref": "#/$defs/ID" },
+        "new_role_ref": { "$ref": "#/$defs/ID" },
+        "subject_version_refs": { "$ref": "#/$defs/RefList" },
+        "decision_ref": { "$ref": "#/$defs/ID" },
+        "validation_eligibility_effect": { "$ref": "#/$defs/ID" }
+      }
+    },
+    "FallbackSelectedPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["trigger_event_ref", "fallback_policy_ref", "fallback_decision", "reserved_budget_ref", "result_event_ref"],
+      "properties": {
+        "trigger_event_ref": { "$ref": "#/$defs/ID" },
+        "fallback_policy_ref": { "$ref": "#/$defs/RefOrNA" },
+        "fallback_decision": { "enum": ["RUN_AUTHORIZED_FALLBACK", "ABSTAIN", "NO_OP", "ABORT"] },
+        "reserved_budget_ref": { "$ref": "#/$defs/RefOrNA" },
+        "result_event_ref": { "$ref": "#/$defs/RefOrNA" }
+      }
+    },
+    "StopOrFailurePayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["stage", "reason_code", "affected_refs", "stop_scope", "recoverable", "review_required"],
+      "properties": {
+        "stage": { "$ref": "#/$defs/ID" },
+        "reason_code": { "$ref": "#/$defs/ID" },
+        "affected_refs": { "$ref": "#/$defs/RefList" },
+        "stop_scope": { "$ref": "#/$defs/ID" },
+        "recoverable": { "$ref": "#/$defs/TaggedValue" },
+        "review_required": { "type": "boolean" }
+      }
+    },
+    "CostMeasuredPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["cost_record_id", "resource_dimension", "amount", "unit_ref", "measurement_method_ref", "stage", "scope_ref", "arm_ref", "budget_contract_ref", "window_start_ref", "window_end_ref"],
+      "properties": {
+        "cost_record_id": { "$ref": "#/$defs/ID" },
+        "resource_dimension": { "$ref": "#/$defs/ID" },
+        "amount": { "$ref": "#/$defs/TaggedValue" },
+        "unit_ref": { "$ref": "#/$defs/RefOrNA" },
+        "measurement_method_ref": { "$ref": "#/$defs/RefOrNA" },
+        "stage": { "$ref": "#/$defs/ID" },
+        "scope_ref": { "$ref": "#/$defs/ID" },
+        "arm_ref": { "$ref": "#/$defs/RefOrNA" },
+        "budget_contract_ref": { "$ref": "#/$defs/ID" },
+        "window_start_ref": { "$ref": "#/$defs/RefOrNA" },
+        "window_end_ref": { "$ref": "#/$defs/RefOrNA" }
+      }
+    },
+    "EventCorrectionAppendedPayload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["supersedes_event_ref", "correction_reason", "corrected_fields_or_payload_ref", "approver_ref", "integrity_impact"],
+      "properties": {
+        "supersedes_event_ref": { "$ref": "#/$defs/ID" },
+        "correction_reason": { "$ref": "#/$defs/ID" },
+        "corrected_fields_or_payload_ref": { "$ref": "#/$defs/ID" },
+        "approver_ref": { "$ref": "#/$defs/ID" },
+        "integrity_impact": { "$ref": "#/$defs/ID" }
+      }
+    },
+    "ActivityConfigBound": { "$ref": "#/$defs/ActivityConfigBoundEvent" },
+    "DataRoleBound": { "$ref": "#/$defs/DataRoleBoundEvent" },
+    "IntegrityHold": { "$ref": "#/$defs/IntegrityHoldEvent" },
+    "ObservationRecorded": { "$ref": "#/$defs/ObservationRecordedEvent" },
+    "ObservationNormalized": { "$ref": "#/$defs/ObservationNormalizedEvent" },
+    "SourceActionRecorded": { "$ref": "#/$defs/SourceActionRecordedEvent" },
+    "ApplicabilityAssessed": { "$ref": "#/$defs/ApplicabilityAssessedEvent" },
+    "ActionRequested": { "$ref": "#/$defs/ActionRequestedEvent" },
+    "PredictionFrozen": { "$ref": "#/$defs/PredictionFrozenEvent" },
+    "ActionDispatched": { "$ref": "#/$defs/ActionDispatchedEvent" },
+    "ActionResultRecorded": { "$ref": "#/$defs/ActionResultRecordedEvent" },
+    "TransitionObserved": { "$ref": "#/$defs/TransitionObservedEvent" },
+    "EffectAssessed": { "$ref": "#/$defs/EffectAssessedEvent" },
+    "CandidateVersionEmitted": { "$ref": "#/$defs/CandidateVersionEmittedEvent" },
+    "SkillVersionEmitted": { "$ref": "#/$defs/SkillVersionEmittedEvent" },
+    "LifecycleDecisionAppended": { "$ref": "#/$defs/LifecycleDecisionAppendedEvent" },
+    "TriageAssessmentAppended": { "$ref": "#/$defs/TriageAssessmentAppendedEvent" },
+    "EvidenceUseAppended": { "$ref": "#/$defs/EvidenceUseAppendedEvent" },
+    "FallbackSelected": { "$ref": "#/$defs/FallbackSelectedEvent" },
+    "StopOrFailure": { "$ref": "#/$defs/StopOrFailureEvent" },
+    "CostMeasured": { "$ref": "#/$defs/CostMeasuredEvent" },
+    "EventCorrectionAppended": { "$ref": "#/$defs/EventCorrectionAppendedEvent" },
+    "ActivityConfigBoundEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "ACTIVITY_CONFIG_BOUND" }, "payload": { "$ref": "#/$defs/ActivityConfigBoundPayload" } } }] },
+    "DataRoleBoundEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "DATA_ROLE_BOUND" }, "payload": { "$ref": "#/$defs/DataRoleBoundPayload" } } }] },
+    "IntegrityHoldEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "INTEGRITY_HOLD" }, "payload": { "$ref": "#/$defs/IntegrityHoldPayload" } } }] },
+    "ObservationRecordedEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "OBSERVATION_RECORDED" }, "payload": { "$ref": "#/$defs/ObservationRecordedPayload" } } }] },
+    "ObservationNormalizedEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "OBSERVATION_NORMALIZED" }, "payload": { "$ref": "#/$defs/ObservationNormalizedPayload" } } }] },
+    "SourceActionRecordedEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "SOURCE_ACTION_RECORDED" }, "payload": { "$ref": "#/$defs/SourceActionRecordedPayload" } } }] },
+    "ApplicabilityAssessedEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "APPLICABILITY_ASSESSED" }, "payload": { "$ref": "#/$defs/ApplicabilityAssessedPayload" } } }] },
+    "ActionRequestedEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "ACTION_REQUESTED" }, "payload": { "$ref": "#/$defs/ActionRequestedPayload" } } }] },
+    "PredictionFrozenEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "PREDICTION_FROZEN" }, "payload": { "$ref": "#/$defs/PredictionFrozenPayload" } } }] },
+    "ActionDispatchedEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "ACTION_DISPATCHED" }, "payload": { "$ref": "#/$defs/ActionDispatchedPayload" } } }] },
+    "ActionResultRecordedEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "ACTION_RESULT_RECORDED" }, "payload": { "$ref": "#/$defs/ActionResultRecordedPayload" } } }] },
+    "TransitionObservedEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "TRANSITION_OBSERVED" }, "payload": { "$ref": "#/$defs/TransitionObservedPayload" } } }] },
+    "EffectAssessedEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "EFFECT_ASSESSED" }, "payload": { "$ref": "#/$defs/EffectAssessedPayload" } } }] },
+    "CandidateVersionEmittedEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "CANDIDATE_VERSION_EMITTED" }, "payload": { "$ref": "#/$defs/CandidateVersionEmittedPayload" } } }] },
+    "SkillVersionEmittedEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "SKILL_VERSION_EMITTED" }, "payload": { "$ref": "#/$defs/SkillVersionEmittedPayload" } } }] },
+    "LifecycleDecisionAppendedEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "LIFECYCLE_DECISION_APPENDED" }, "payload": { "$ref": "#/$defs/LifecycleDecisionAppendedPayload" } } }] },
+    "TriageAssessmentAppendedEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "TRIAGE_ASSESSMENT_APPENDED" }, "payload": { "$ref": "#/$defs/TriageAssessmentAppendedPayload" } } }] },
+    "EvidenceUseAppendedEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "EVIDENCE_USE_APPENDED" }, "payload": { "$ref": "#/$defs/EvidenceUseAppendedPayload" } } }] },
+    "FallbackSelectedEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "FALLBACK_SELECTED" }, "payload": { "$ref": "#/$defs/FallbackSelectedPayload" } } }] },
+    "StopOrFailureEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "STOP_OR_FAILURE" }, "payload": { "$ref": "#/$defs/StopOrFailurePayload" } } }] },
+    "CostMeasuredEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "COST_MEASURED" }, "payload": { "$ref": "#/$defs/CostMeasuredPayload" } } }] },
+    "EventCorrectionAppendedEvent": { "allOf": [{ "$ref": "#/$defs/EventEnvelope" }, { "properties": { "event_type": { "const": "EVENT_CORRECTION_APPENDED" }, "payload": { "$ref": "#/$defs/EventCorrectionAppendedPayload" } } }] }
+  }
+}
