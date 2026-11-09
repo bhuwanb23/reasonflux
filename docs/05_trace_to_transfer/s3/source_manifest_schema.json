@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "source_manifest_schema.json",
+  "title": "T2T S3 source context manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "package_version", "manifest_role", "generation_spec_sha256", "base_contexts_sha256", "counts_policy_sha256", "transformation_cells_sha256", "required_contrasts", "contexts"],
+  "properties": {
+    "schema_version": {"const": "t2t-s3-source-manifest-v1"},
+    "package_version": {"const": "T2T-S3-RA-v0.2.0"},
+    "manifest_role": {"const": "SOURCE"},
+    "generation_spec_sha256": {"$ref": "#/$defs/sha256"},
+    "base_contexts_sha256": {"$ref": "#/$defs/sha256"},
+    "counts_policy_sha256": {"$ref": "#/$defs/sha256"},
+    "transformation_cells_sha256": {"$ref": "#/$defs/sha256"},
+    "required_contrasts": {
+      "const": [
+        "ALL_TRUE",
+        "ONLY_FALSE_KEY_IS_KEY",
+        "ONLY_FALSE_TARGET_IS_TARGET",
+        "ONLY_FALSE_TARGET_CLOSED",
+        "ONLY_FALSE_AGENT_ADJACENT",
+        "ONLY_FALSE_PATH_CLEAR",
+        "ONLY_FALSE_KEY_UNLOCKS_SELECTED_TARGET"
+      ]
+    },
+    "contexts": {
+      "type": "array",
+      "minItems": 7,
+      "items": {"$ref": "#/$defs/sourceContext"},
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "object": {
+      "oneOf": [
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["object_id", "kind", "x", "y", "color", "shape", "opens_target_id", "closed"],
+          "properties": {"object_id": {"type": "string", "minLength": 1}, "kind": {"const": "KEY"}, "x": {"type": "integer"}, "y": {"type": "integer"}, "color": {"type": "string"}, "shape": {"type": "string"}, "opens_target_id": {"type": "string", "minLength": 1}, "closed": {"type": ["boolean", "null"]}}
+        },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["object_id", "kind", "x", "y", "color", "shape", "opens_target_id", "closed"],
+          "properties": {"object_id": {"type": "string", "minLength": 1}, "kind": {"const": "TARGET"}, "x": {"type": "integer"}, "y": {"type": "integer"}, "color": {"type": "string"}, "shape": {"type": "string"}, "opens_target_id": {"type": "null"}, "closed": {"type": "boolean"}}
+        },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["object_id", "kind", "x", "y", "color", "shape", "opens_target_id", "closed"],
+          "properties": {"object_id": {"type": "string", "minLength": 1}, "kind": {"const": "DISTRACTOR"}, "x": {"type": "integer"}, "y": {"type": "integer"}, "color": {"type": "string"}, "shape": {"type": "string"}, "opens_target_id": {"type": ["string", "null"]}, "closed": {"type": ["boolean", "null"]}}
+        }
+      ]
+    },
+    "completeState": {
+      "type": "object", "additionalProperties": false,
+      "required": ["context_id", "objects", "agent_x", "agent_y", "path_clear"],
+      "properties": {"context_id": {"type": "string", "minLength": 1}, "objects": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/object"}}, "agent_x": {"type": "integer"}, "agent_y": {"type": "integer"}, "path_clear": {"type": "boolean"}}
+    },
+    "action": {
+      "type": "object", "additionalProperties": false,
+      "required": ["key_id", "target_id"],
+      "properties": {"key_id": {"type": "string", "minLength": 1}, "target_id": {"type": "string", "minLength": 1}}
+    },
+    "featureVector": {
+      "type": "object", "additionalProperties": false,
+      "required": ["key_is_key", "target_is_target", "target_closed", "agent_adjacent", "path_clear", "key_unlocks_selected_target"],
+      "properties": {"key_is_key": {"type": "boolean"}, "target_is_target": {"type": "boolean"}, "target_closed": {"type": "boolean"}, "agent_adjacent": {"type": "boolean"}, "path_clear": {"type": "boolean"}, "key_unlocks_selected_target": {"type": "boolean"}}
+    },
+    "sourceContext": {
+      "type": "object", "additionalProperties": false,
+      "required": ["context_id", "trace_id", "role", "surface_family", "cell_id", "contrast_id", "replicate_index", "state", "action", "feature_vector"],
+      "properties": {
+        "context_id": {"type": "string", "minLength": 1},
+        "trace_id": {"type": "string", "minLength": 1},
+        "role": {"const": "SOURCE"},
+        "surface_family": {"const": "SRC-CANONICAL"},
+        "cell_id": {"enum": ["SRC-CANONICAL__ALL_TRUE", "SRC-CANONICAL__ONLY_FALSE_KEY_IS_KEY", "SRC-CANONICAL__ONLY_FALSE_TARGET_IS_TARGET", "SRC-CANONICAL__ONLY_FALSE_TARGET_CLOSED", "SRC-CANONICAL__ONLY_FALSE_AGENT_ADJACENT", "SRC-CANONICAL__ONLY_FALSE_PATH_CLEAR", "SRC-CANONICAL__ONLY_FALSE_KEY_UNLOCKS_SELECTED_TARGET"]},
+        "contrast_id": {"enum": ["ALL_TRUE", "ONLY_FALSE_KEY_IS_KEY", "ONLY_FALSE_TARGET_IS_TARGET", "ONLY_FALSE_TARGET_CLOSED", "ONLY_FALSE_AGENT_ADJACENT", "ONLY_FALSE_PATH_CLEAR", "ONLY_FALSE_KEY_UNLOCKS_SELECTED_TARGET"]},
+        "replicate_index": {"type": "integer", "minimum": 0},
+        "state": {"$ref": "#/$defs/completeState"},
+        "action": {"$ref": "#/$defs/action"},
+        "feature_vector": {"$ref": "#/$defs/featureVector"}
+      }
+    }
+  }
+}
