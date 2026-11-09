@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="650" viewBox="0 0 1600 650" role="img" aria-labelledby="title desc">
+  <title id="title">Research Cycle 1 claim audit map</title>
+  <desc id="desc">A matrix maps three research lines through six stages: hypothesis, mechanism, utility, comparator, generalization, and disposition. T2T/S3 is excluded from this submission version pending provenance reconciliation.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto" markerUnits="strokeWidth"><path d="M1,1 L10,5.5 L1,10 Z" fill="#94a3b8"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.title{font:700 27px Arial,sans-serif;fill:#0f172a}.sub{font:15px Arial,sans-serif;fill:#475569}
+      .head{font:700 14px Arial,sans-serif;fill:#fff;letter-spacing:.45px}.rowlab{font:700 15px Arial,sans-serif;fill:#0f172a}
+      .body{font:13px Arial,sans-serif;fill:#263449}.status{font:700 12px Arial,sans-serif;letter-spacing:.3px}.foot{font:13px Arial,sans-serif;fill:#7c2d12}
+    </style>
+  </defs>
+  <rect class="bg" width="1600" height="650" rx="18"/>
+  <text class="title" x="32" y="43">Research Cycle 1: from claim to scientific disposition</text>
+  <text class="sub" x="32" y="70">Read across each row: hypothesis → mechanism → utility → comparator → generalization → disposition.</text>
+
+  <g>
+    <rect x="175" y="96" width="220" height="46" rx="8" fill="#334155"/><text class="head" x="190" y="124">1 · HYPOTHESIS</text>
+    <rect x="410" y="96" width="220" height="46" rx="8" fill="#334155"/><text class="head" x="425" y="124">2 · MECHANISM</text>
+    <rect x="645" y="96" width="220" height="46" rx="8" fill="#334155"/><text class="head" x="660" y="124">3 · UTILITY</text>
+    <rect x="880" y="96" width="220" height="46" rx="8" fill="#334155"/><text class="head" x="895" y="124">4 · COMPARATOR</text>
+    <rect x="1115" y="96" width="220" height="46" rx="8" fill="#334155"/><text class="head" x="1130" y="124">5 · GENERALIZATION</text>
+    <rect x="1350" y="96" width="220" height="46" rx="8" fill="#334155"/><text class="head" x="1365" y="124">6 · DISPOSITION</text>
+  </g>
+  <g stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)">
+    <line x1="396" y1="119" x2="406" y2="119"/><line x1="631" y1="119" x2="641" y2="119"/><line x1="866" y1="119" x2="876" y2="119"/><line x1="1101" y1="119" x2="1111" y2="119"/><line x1="1336" y1="119" x2="1346" y2="119"/>
+  </g>
+
+  <!-- ASFT row -->
+  <text class="rowlab" x="30" y="194">ASFT</text><text class="sub" x="30" y="216">patterns / skills</text>
+  <g>
+    <rect x="175" y="157" width="220" height="108" rx="9" fill="#eff6ff" stroke="#93c5fd"/>
+    <text class="body" x="189" y="182"><tspan x="189">Recurring structure can</tspan><tspan x="189" dy="18">support reusable skills</tspan><tspan x="189" dy="18">and transfer.</tspan></text>
+    <rect x="410" y="157" width="220" height="108" rx="9" fill="#f0fdf4" stroke="#86efac"/>
+    <text class="body" x="424" y="182"><tspan x="424">Reflection/rotation</tspan><tspan x="424" dy="18">patterns and skill objects</tspan><tspan x="424" dy="18">observed synthetically.</tspan></text>
+    <rect x="645" y="157" width="220" height="108" rx="9" fill="#f0fdf4" stroke="#86efac"/>
+    <text class="body" x="659" y="182"><tspan x="659">Some reuse and simulator</tspan><tspan x="659" dy="18">step savings observed in</tspan><tspan x="659" dy="18">the tested generators.</tspan></text>
+    <rect x="880" y="157" width="220" height="108" rx="9" fill="#fffbeb" stroke="#fcd34d"/>
+    <text class="body" x="894" y="182"><tspan x="894">Ranking tied frequency /</tspan><tspan x="894" dy="18">no-transfer; creation had</tspan><tspan x="894" dy="18">no superiority gate pass.</tspan></text>
+    <rect x="1115" y="157" width="220" height="108" rx="9" fill="#fffbeb" stroke="#fcd34d"/>
+    <text class="body" x="1129" y="182"><tspan x="1129">ARC adapter: very low fit</tspan><tspan x="1129" dy="18">coverage; no accepted</tspan><tspan x="1129" dy="18">downstream objects.</tspan></text>
+    <rect x="1350" y="157" width="220" height="108" rx="9" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+    <text class="status" x="1364" y="184" fill="#92400e">PARTIAL / BOUNDED</text>
+    <text class="body" x="1364" y="207"><tspan x="1364">Synthetic mechanism and</tspan><tspan x="1364" dy="18">local utility; superiority</tspan><tspan x="1364" dy="18">and ARC transfer unproven.</tspan></text>
+  </g>
+
+  <!-- Capability row -->
+  <text class="rowlab" x="30" y="333">Capability</text><text class="sub" x="30" y="355">growth metrics</text>
+  <g>
+    <rect x="175" y="278" width="220" height="108" rx="9" fill="#eff6ff" stroke="#93c5fd"/>
+    <text class="body" x="189" y="303"><tspan x="189">Metric growth indicates</tspan><tspan x="189" dy="18">a growing capability</tspan><tspan x="189" dy="18">portfolio.</tspan></text>
+    <rect x="410" y="278" width="220" height="108" rx="9" fill="#f0fdf4" stroke="#86efac"/>
+    <text class="body" x="424" y="303"><tspan x="424">Positive CGR/IG/IGR in</tspan><tspan x="424" dy="18">one Phase 13E synthetic</tspan><tspan x="424" dy="18">cohort.</tspan></text>
+    <rect x="645" y="278" width="220" height="108" rx="9" fill="#fffbeb" stroke="#fcd34d"/>
+    <text class="body" x="659" y="303"><tspan x="659">Mixed metric path: negative</tspan><tspan x="659" dy="18">IE trend; composition and</tspan><tspan x="659" dy="18">utility caveats.</tspan></text>
+    <rect x="880" y="278" width="220" height="108" rx="9" fill="#fffbeb" stroke="#fcd34d"/>
+    <text class="body" x="894" y="303"><tspan x="894">Cross-phase CGR and</tspan><tspan x="894" dy="18">baseline contrasts mixed;</tspan><tspan x="894" dy="18">not a stable increment.</tspan></text>
+    <rect x="1115" y="278" width="220" height="108" rx="9" fill="#fffbeb" stroke="#fcd34d"/>
+    <text class="body" x="1129" y="303"><tspan x="1129">No validated capability</tspan><tspan x="1129" dy="18">group on the ARC</tspan><tspan x="1129" dy="18">adapter.</tspan></text>
+    <rect x="1350" y="278" width="220" height="108" rx="9" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+    <text class="status" x="1364" y="305" fill="#92400e">CONSTRUCT UNVALIDATED</text>
+    <text class="body" x="1364" y="328"><tspan x="1364">One positive cohort does not</tspan><tspan x="1364" dy="18">establish robust capability</tspan><tspan x="1364" dy="18">or intelligence growth.</tspan></text>
+  </g>
+
+  <!-- BL1 row -->
+  <text class="rowlab" x="30" y="472">BL1</text><text class="sub" x="30" y="494">boundary learning</text>
+  <g>
+    <rect x="175" y="399" width="220" height="108" rx="9" fill="#eff6ff" stroke="#93c5fd"/>
+    <text class="body" x="189" y="424"><tspan x="189">Counterexamples refine</tspan><tspan x="189" dy="18">applicability boundaries</tspan><tspan x="189" dy="18">while preserving coverage.</tspan></text>
+    <rect x="410" y="399" width="220" height="108" rx="9" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text class="body" x="424" y="424"><tspan x="424">Not implemented; no</tspan><tspan x="424" dy="18">contexts generated.</tspan></text>
+    <rect x="645" y="399" width="220" height="108" rx="9" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text class="body" x="659" y="424"><tspan x="659">Not measured.</tspan></text>
+    <rect x="880" y="399" width="220" height="108" rx="9" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text class="body" x="894" y="424"><tspan x="894">No empirical</tspan><tspan x="894" dy="18">comparison.</tspan></text>
+    <rect x="1115" y="399" width="220" height="108" rx="9" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text class="body" x="1129" y="424"><tspan x="1129">Not tested.</tspan></text>
+    <rect x="1350" y="399" width="220" height="108" rx="9" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.5"/>
+    <text class="status" x="1364" y="426" fill="#5b21b6">P0 PRIOR-ART STOP</text>
+    <text class="body" x="1364" y="449"><tspan x="1364">Program terminated before</tspan><tspan x="1364" dy="18">experiment; no efficacy</tspan><tspan x="1364" dy="18">conclusion.</tspan></text>
+  </g>
+
+  <rect x="31" y="535" width="1539" height="59" rx="10" fill="#fff7ed" stroke="#fb923c" stroke-width="1.5"/>
+  <text class="foot" x="48" y="560"><tspan font-weight="700">Submission-scope note:</tspan> T2T / S3 is excluded from this version because its archived completion timestamp cannot be reconciled with the manuscript date.</text>
+  <text class="sub" x="48" y="581">The immutable archive is unchanged; this figure does not report the S3 score or disposition.</text>
+</svg>
