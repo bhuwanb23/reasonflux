@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "context_role_map_schema.json",
+  "title": "T2T S3 context role map",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "package_version", "source_manifest_sha256", "heldout_manifest_sha256", "diagnostic_manifest_sha256", "assignments"],
+  "properties": {
+    "schema_version": {"const": "t2t-s3-context-role-map-v1"},
+    "package_version": {"const": "T2T-S3-RA-v0.2.0"},
+    "source_manifest_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "heldout_manifest_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "diagnostic_manifest_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "assignments": {"type": "array", "items": {"$ref": "#/$defs/assignment"}, "uniqueItems": true}
+  },
+  "$defs": {
+    "assignment": {
+      "type": "object", "additionalProperties": false,
+      "required": ["context_id", "role", "manifest_file", "cell_id", "endpoint_scope"],
+      "properties": {
+        "context_id": {"type": "string", "minLength": 1},
+        "role": {"enum": ["SOURCE", "HELD_OUT"]},
+        "manifest_file": {"enum": ["source_manifest.json", "heldout_manifest.json", "diagnostic_manifest.json"]},
+        "cell_id": {"type": "string", "minLength": 1},
+        "endpoint_scope": {"enum": ["SOURCE_FIT", "PRIMARY", "DIAGNOSTIC_ONLY"]}
+      },
+      "allOf": [
+        {"if": {"properties": {"role": {"const": "SOURCE"}}, "required": ["role"]}, "then": {"properties": {"manifest_file": {"const": "source_manifest.json"}, "endpoint_scope": {"const": "SOURCE_FIT"}}}},
+        {"if": {"properties": {"role": {"const": "HELD_OUT"}}, "required": ["role"]}, "then": {"properties": {"manifest_file": {"enum": ["heldout_manifest.json", "diagnostic_manifest.json"]}, "endpoint_scope": {"enum": ["PRIMARY", "DIAGNOSTIC_ONLY"]}}}},
+        {"if": {"properties": {"manifest_file": {"const": "heldout_manifest.json"}}, "required": ["manifest_file"]}, "then": {"properties": {"role": {"const": "HELD_OUT"}, "endpoint_scope": {"const": "PRIMARY"}}}},
+        {"if": {"properties": {"manifest_file": {"const": "diagnostic_manifest.json"}}, "required": ["manifest_file"]}, "then": {"properties": {"role": {"const": "HELD_OUT"}, "endpoint_scope": {"const": "DIAGNOSTIC_ONLY"}}}}
+      ]
+    }
+  }
+}

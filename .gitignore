@@ -10,3 +10,14 @@ venv/
 .env.test
 .env.production
 node_modules/
+# Python caches / build artifacts
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+src/asft.egg-info/
+
+# brag skill output
+brag-output-*/
+*.zip

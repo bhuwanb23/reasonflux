@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "heldout_manifest_schema.json",
+  "title": "T2T S3 held-out context manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "package_version", "manifest_role", "generation_spec_sha256", "base_contexts_sha256", "counts_policy_sha256", "transformation_cells_sha256", "cell_declarations", "contexts"],
+  "properties": {
+    "schema_version": {"const": "t2t-s3-heldout-manifest-v1"},
+    "package_version": {"const": "T2T-S3-RA-v0.2.0"},
+    "manifest_role": {"const": "HELD_OUT"},
+    "generation_spec_sha256": {"$ref": "#/$defs/sha256"},
+    "base_contexts_sha256": {"$ref": "#/$defs/sha256"},
+    "counts_policy_sha256": {"$ref": "#/$defs/sha256"},
+    "transformation_cells_sha256": {"$ref": "#/$defs/sha256"},
+    "cell_declarations": {"type": "array", "minItems": 35, "items": {"$ref": "#/$defs/cellDeclaration"}, "uniqueItems": true},
+    "contexts": {"type": "array", "items": {"oneOf": [{"$ref": "#/$defs/primaryContext"}, {"$ref": "#/$defs/diagnosticContext"}]}, "uniqueItems": true}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "surfaces": {"enum": ["H-ID", "H-APP", "H-LAYOUT", "H-ROLE", "H-COMPOSED"]},
+    "semantics": {"enum": ["POS-VALID", "NEG-WRONG-RELATION", "NEG-TARGET-OPEN", "NEG-NONADJACENT", "NEG-BLOCKED-PATH", "NEG-WRONG-ROLE", "NEG-ABSENT-KEY"]},
+    "cellIds": {"enum": ["H-ID__POS-VALID", "H-ID__NEG-WRONG-RELATION", "H-ID__NEG-TARGET-OPEN", "H-ID__NEG-NONADJACENT", "H-ID__NEG-BLOCKED-PATH", "H-ID__NEG-WRONG-ROLE", "H-ID__NEG-ABSENT-KEY", "H-APP__POS-VALID", "H-APP__NEG-WRONG-RELATION", "H-APP__NEG-TARGET-OPEN", "H-APP__NEG-NONADJACENT", "H-APP__NEG-BLOCKED-PATH", "H-APP__NEG-WRONG-ROLE", "H-APP__NEG-ABSENT-KEY", "H-LAYOUT__POS-VALID", "H-LAYOUT__NEG-WRONG-RELATION", "H-LAYOUT__NEG-TARGET-OPEN", "H-LAYOUT__NEG-NONADJACENT", "H-LAYOUT__NEG-BLOCKED-PATH", "H-LAYOUT__NEG-WRONG-ROLE", "H-LAYOUT__NEG-ABSENT-KEY", "H-ROLE__POS-VALID", "H-ROLE__NEG-WRONG-RELATION", "H-ROLE__NEG-TARGET-OPEN", "H-ROLE__NEG-NONADJACENT", "H-ROLE__NEG-BLOCKED-PATH", "H-ROLE__NEG-WRONG-ROLE", "H-ROLE__NEG-ABSENT-KEY", "H-COMPOSED__POS-VALID", "H-COMPOSED__NEG-WRONG-RELATION", "H-COMPOSED__NEG-TARGET-OPEN", "H-COMPOSED__NEG-NONADJACENT", "H-COMPOSED__NEG-BLOCKED-PATH", "H-COMPOSED__NEG-WRONG-ROLE", "H-COMPOSED__NEG-ABSENT-KEY"]},
+    "object": {"oneOf": [
+      {"type": "object", "additionalProperties": false, "required": ["object_id", "kind", "x", "y", "color", "shape", "opens_target_id", "closed"], "properties": {"object_id": {"type": "string", "minLength": 1}, "kind": {"const": "KEY"}, "x": {"type": "integer"}, "y": {"type": "integer"}, "color": {"type": "string"}, "shape": {"type": "string"}, "opens_target_id": {"type": ["string", "null"]}, "closed": {"type": ["boolean", "null"]}}},
+      {"type": "object", "additionalProperties": false, "required": ["object_id", "kind", "x", "y", "color", "shape", "opens_target_id", "closed"], "properties": {"object_id": {"type": "string", "minLength": 1}, "kind": {"const": "TARGET"}, "x": {"type": "integer"}, "y": {"type": "integer"}, "color": {"type": "string"}, "shape": {"type": "string"}, "opens_target_id": {"type": "null"}, "closed": {"type": ["boolean", "null"]}}},
+      {"type": "object", "additionalProperties": false, "required": ["object_id", "kind", "x", "y", "color", "shape", "opens_target_id", "closed"], "properties": {"object_id": {"type": "string", "minLength": 1}, "kind": {"const": "DISTRACTOR"}, "x": {"type": "integer"}, "y": {"type": "integer"}, "color": {"type": "string"}, "shape": {"type": "string"}, "opens_target_id": {"type": ["string", "null"]}, "closed": {"type": ["boolean", "null"]}}}
+    ]},
+    "state": {"type": "object", "additionalProperties": false, "required": ["context_id", "objects", "agent_x", "agent_y", "path_clear"], "properties": {"context_id": {"type": "string", "minLength": 1}, "objects": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/object"}}, "agent_x": {"type": "integer"}, "agent_y": {"type": "integer"}, "path_clear": {"type": ["boolean", "null"]}}},
+    "completeState": {"allOf": [{"$ref": "#/$defs/state"}, {"properties": {"path_clear": {"type": "boolean"}, "objects": {"items": {"allOf": [{"if": {"properties": {"kind": {"const": "KEY"}}, "required": ["kind"]}, "then": {"properties": {"opens_target_id": {"type": "string"}}}}, {"if": {"properties": {"kind": {"const": "TARGET"}}, "required": ["kind"]}, "then": {"properties": {"closed": {"type": "boolean"}}}}]}}}}]},
+    "action": {"type": "object", "additionalProperties": false, "required": ["key_id", "target_id"], "properties": {"key_id": {"type": "string", "minLength": 1}, "target_id": {"type": "string", "minLength": 1}}},
+    "cellDeclaration": {
+      "type": "object", "additionalProperties": false,
+      "required": ["cell_id", "surface_family", "semantic_family", "planned_count", "eligibility_status"],
+      "properties": {
+        "cell_id": {"$ref": "#/$defs/cellIds"},
+        "surface_family": {"$ref": "#/$defs/surfaces"},
+        "semantic_family": {"$ref": "#/$defs/semantics"},
+        "planned_count": {"type": "integer", "minimum": 0},
+        "eligibility_status": {"enum": ["ELIGIBLE", "INELIGIBLE"]},
+        "ineligibility_reason": {"type": "string", "minLength": 1}
+      },
+      "allOf": [{"if": {"properties": {"eligibility_status": {"const": "INELIGIBLE"}}, "required": ["eligibility_status"]}, "then": {"required": ["ineligibility_reason"], "properties": {"planned_count": {"const": 0}}}}, {"if": {"properties": {"eligibility_status": {"const": "ELIGIBLE"}}, "required": ["eligibility_status"]}, "then": {"properties": {"planned_count": {"minimum": 1}}}}]
+    },
+    "primaryContext": {
+      "type": "object", "additionalProperties": false,
+      "required": ["context_id", "role", "endpoint_scope", "surface_family", "semantic_family", "cell_id", "template_id", "replicate_index", "state", "action"],
+      "properties": {"context_id": {"type": "string", "minLength": 1}, "role": {"const": "HELD_OUT"}, "endpoint_scope": {"const": "PRIMARY"}, "surface_family": {"$ref": "#/$defs/surfaces"}, "semantic_family": {"$ref": "#/$defs/semantics"}, "cell_id": {"$ref": "#/$defs/cellIds"}, "template_id": {"type": "string", "minLength": 1}, "replicate_index": {"type": "integer", "minimum": 0}, "state": {"$ref": "#/$defs/completeState"}, "action": {"$ref": "#/$defs/action"}}
+    },
+    "diagnosticContext": {
+      "type": "object", "additionalProperties": false,
+      "required": ["context_id", "role", "endpoint_scope", "surface_family", "semantic_family", "cell_id", "template_id", "replicate_index", "diagnostic_reason", "state", "action"],
+      "properties": {"context_id": {"type": "string", "minLength": 1}, "role": {"const": "HELD_OUT"}, "endpoint_scope": {"const": "DIAGNOSTIC_ONLY"}, "surface_family": {"$ref": "#/$defs/surfaces"}, "semantic_family": {"const": "UNKNOWN-REQUIRED-DIAGNOSTIC"}, "cell_id": {"const": "DIAG-UNKNOWN-REQUIRED-STATE"}, "template_id": {"type": "string", "minLength": 1}, "replicate_index": {"type": "integer", "minimum": 0}, "diagnostic_reason": {"const": "UNKNOWN_REQUIRED_STATE"}, "state": {"$ref": "#/$defs/state"}, "action": {"$ref": "#/$defs/action"}}
+    }
+  }
+}
