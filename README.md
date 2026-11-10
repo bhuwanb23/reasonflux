@@ -302,6 +302,7 @@ validation/        hypothesis register, protocols, templates, repository review
 | What threatens validity? | [`phase_14i.md`](docs/03_implementation/results_analysis/phase_14i.md) |
 | What is the final program verdict? | [`phase_14j.md`](docs/03_implementation/results_analysis/phase_14j.md) |
 | Why is S3 excluded from the paper? | [`s3_provenance_date_reconciliation.md`](docs/research_notes/s3_provenance_date_reconciliation.md) |
+| Why do a few old hashes need CRLF conversion? | [`encoding_provenance.md`](docs/research_notes/encoding_provenance.md) |
 | What happened to Claim N? | [`claim_n_archive.md`](docs/05_trace_to_transfer/claim_n_archive.md) |
 | Why was BL1 stopped? | [`boundary_prior_art_review.md`](docs/05_trace_to_transfer/bl1/boundary_prior_art_review.md) |
 | Why is there no successor program? | [`research_cycle_1_closure.md`](docs/research_notes/research_cycle_1_closure.md) |
@@ -343,17 +344,15 @@ Phase 13E–13G use explicit confirmation flags: `python -m experiments.phase13e
 python -m pytest -q
 ```
 
-**Verification status in this checkout (Windows):** the core suite is green — **612 passed** — when the POSIX-only event-journal module and the v1.1 readiness/human-review gate modules are excluded. Those modules depend on `fcntl` or on POSIX path/commit behavior and fail to collect or run on this platform; they are not part of the ASFT evidence chain. The core suite excludes:
+**Verification status in this checkout (Windows):** `711 passed, 10 skipped`. The skips are the Phase 2IA fork-isolation runner tests, which explicitly require POSIX `fork`; they skip with a stated reason rather than failing. The event journal now uses `msvcrt` locks on Windows, and text evidence is checked out with LF so hash-frozen manifests verify on every platform.
+
+A dedicated read-only readiness suite (45 checks) verifies the submission itself:
 
 ```bash
-python -m pytest -q \
-  --ignore=tests/test_t2t_eventlog.py \
-  --ignore=tests/test_phase2ia_ai_pilot_boundary.py \
-  --ignore=tests/test_phase2ia_runner.py \
-  --ignore=tests/test_phase2ia_wp3_provisional_boundary.py \
-  --ignore=tests/test_wp3_human_review.py \
-  --ignore=tests/test_wp3_provisional_annotation.py
+python -m pytest tests/test_submission_readiness.py -q
 ```
+
+It verifies the manuscript and asset inventory, exact card/banner dimensions, upload-manifest and Markdown links, claim-index coverage of every frozen claim ID, preservation of the failed dispositions and headline numbers, the S3 provenance exclusion, the BL1 P0 termination, and the cycle-closure record. It runs no experiments and writes no reports.
 
 ### Rebuild the submission package
 

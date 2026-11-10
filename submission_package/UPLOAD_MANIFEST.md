@@ -13,4 +13,4 @@ Prepared for the ARC Prize 2026 Paper Track Kaggle writeup. Files are presentati
 - `assets/research_cycle_claim_audit_timeline.png` and `.svg` — raster/vector timeline figure.
 - `assets/scope_and_provenance.png` — included/excluded evidence scope graphic.
 
-Current ZIP size is approximately 2.4 MB, well below the 100 MB upload limit. The selected card artwork was generated for this submission and then composited with typography; the diagrams are original visual summaries of manuscript content. No official ARC logo or external copyrighted puzzle image is included.
+A regenerated bundle is approximately 2.4 MB, well below the 100 MB upload limit. `submission_files.zip` is intentionally **not committed** (the repository ignores `*.zip`); it can be regenerated from this directory when needed. The selected card artwork was generated for this submission and then composited with typography; the diagrams are original visual summaries of manuscript content. No official ARC logo or external copyrighted puzzle image is included.

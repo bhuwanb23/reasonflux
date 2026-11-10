@@ -7,7 +7,6 @@ boundary for real or restricted data.
 from __future__ import annotations
 
 import copy
-import fcntl
 import hashlib
 import json
 import os
@@ -19,6 +18,12 @@ from contextlib import contextmanager
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Iterator, Mapping
+
+try:  # POSIX
+    import fcntl
+except ImportError:  # pragma: no cover - Windows
+    fcntl = None  # type: ignore[assignment]
+    import msvcrt
 
 from .canonical import DIGEST_PROFILE, canonical_json_bytes, event_digest
 from .errors import (
@@ -83,14 +88,27 @@ class EventJournal:
 
     @contextmanager
     def _locked(self) -> Iterator[None]:
-        """Serialize local writers/readers with a POSIX advisory lock."""
+        """Serialize local writers/readers with an advisory file lock.
+
+        Uses ``flock`` on POSIX and ``msvcrt.locking`` on Windows so the
+        journal and its hash-frozen fixtures behave identically on both
+        platforms. This remains a single-machine lock, not a distributed one.
+        """
         with self._thread_lock:
             fd = os.open(self.lock_path, os.O_CREAT | os.O_RDWR, 0o600)
             try:
-                fcntl.flock(fd, fcntl.LOCK_EX)
+                if fcntl is not None:
+                    fcntl.flock(fd, fcntl.LOCK_EX)
+                else:  # pragma: no cover - Windows
+                    os.lseek(fd, 0, os.SEEK_SET)
+                    msvcrt.locking(fd, msvcrt.LK_LOCK, 1)
                 yield
             finally:
-                fcntl.flock(fd, fcntl.LOCK_UN)
+                if fcntl is not None:
+                    fcntl.flock(fd, fcntl.LOCK_UN)
+                else:  # pragma: no cover - Windows
+                    os.lseek(fd, 0, os.SEEK_SET)
+                    msvcrt.locking(fd, msvcrt.LK_UNLCK, 1)
                 os.close(fd)
 
     def append(self, event_template: Mapping[str, Any]) -> dict[str, Any]:
@@ -478,6 +496,10 @@ class EventJournal:
             raise
 
     def _fsync_directory(self) -> None:
+        # Directory handles cannot be opened/fsynced portably on Windows.
+        # File contents and the head checkpoint are already fsynced above.
+        if os.name == "nt":  # pragma: no cover - Windows
+            return
         fd = os.open(self.path.parent, os.O_RDONLY)
         try:
             os.fsync(fd)

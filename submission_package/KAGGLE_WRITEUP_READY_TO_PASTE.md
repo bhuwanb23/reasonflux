@@ -56,7 +56,7 @@ Recommended, in this order:
 4. `paper_source_v4.md` — Markdown source version of the submission-facing manuscript.
 5. `assets/` images for Media gallery; the card image is a separate exact-size upload.
 
-`submission_files.zip` contains the prepared docs and assets together. Individual files can also be uploaded separately. Total bundle size is documented in `UPLOAD_MANIFEST.md`.
+`submission_files.zip` is not committed (the repository ignores `*.zip`); regenerate it from this directory if a single bundle is preferred. Individual files can also be uploaded separately. Total bundle size is documented in `UPLOAD_MANIFEST.md`.
 
 ## Project links
 

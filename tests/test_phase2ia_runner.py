@@ -1,10 +1,19 @@
 from __future__ import annotations
+
+import multiprocessing
+
+import pytest
 import sys
 from pathlib import Path
 import json
-import pytest
-ROOT=Path(__file__).resolve().parents[1]
-sys.path.insert(0,str(ROOT))
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+pytestmark = pytest.mark.skipif(
+    "fork" not in multiprocessing.get_all_start_methods(),
+    reason="Phase 2IA runner requires fork-based process isolation (POSIX)",
+)
 
 from representations.r3 import Action
 from experiments.phase2ia.search_adapters import registered_searchers

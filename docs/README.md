@@ -14,6 +14,11 @@ This folder is the project’s research, design, and status record. It is organi
 - [`04_paper/`](04_paper/) — paper-facing material: the experiment map,
   [`claim_traceability.md`](04_paper/claim_traceability.md), and the submission-facing
   [`claim_evidence_index.md`](04_paper/claim_evidence_index.md).
+- [`05_trace_to_transfer/`](05_trace_to_transfer/) — the T2T/Claim N/BL1 design and
+  closure record, including the excluded S3 execution package.
+- [`research_notes/`](research_notes/) — case-study drafts, landscape reviews,
+  the Research Cycle 1 closure, and the
+  [`encoding_provenance.md`](research_notes/encoding_provenance.md) note.
 - [`99_chats/`](99_chats/) — supporting chat transcripts.
 
 ## Rule

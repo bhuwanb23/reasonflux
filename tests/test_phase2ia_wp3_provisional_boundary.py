@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
@@ -43,9 +44,17 @@ def test_remote_wp3_bundle_is_pinned_provisional_and_not_used_for_eligibility():
         assert remote[key] is False
     assert remote["phase2i_run"] == "NOT AUTHORIZED; NOT RUN"
 
-    # The remote data are referenced by commit and hashes; they are not copied
-    # into the active package or made available to its candidate runner.
-    assert not (PKG / "wp3_provisional_v1").exists()
+    # The AI-provisional package exists locally, but only as a clearly marked
+    # exploratory artifact. It must not be copied into the annotation packets or
+    # treated as human evidence by the candidate runner.
+    local_provisional = PKG / "wp3_provisional_v1"
+    assert local_provisional.is_dir()
+    local_manifest = json.loads(
+        (local_provisional / "provisional_manifest.json").read_text(encoding="utf-8")
+    )
+    assert local_manifest["status"] == "AI_PROVISIONAL_ONLY_NOT_WP3"
+    assert all(value is False for value in local_manifest["use_restrictions"].values())
+    assert not (PKG / "annotation_packets" / "wp3_provisional_v1").exists()
     assert len(remote["outputs_sha256"]) == 14
     assert remote["review_packet_sha256"] == {
         name: remote["outputs_sha256"][name]
