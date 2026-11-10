@@ -1,5 +1,10 @@
 # Claim Traceability (Phase 11F)
 
+> **Design-time map.** This document records the planned claim → module → metric →
+> experiment → artifact chain. For the final submission-facing mapping of each paper
+> claim to its exact archived evidence file and disposition, see
+> [`claim_evidence_index.md`](claim_evidence_index.md).
+
 Every research claim must resolve to code, a metric, an experiment, and a paper
 artifact. Machine-checked against
 [`configs/modules.yaml`](../../configs/modules.yaml) by

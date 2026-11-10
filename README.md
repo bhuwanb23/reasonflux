@@ -294,6 +294,7 @@ validation/        hypothesis register, protocols, templates, repository review
 
 | Question | Read |
 |---|---|
+| What evidence file supports each paper claim? | [`docs/04_paper/claim_evidence_index.md`](docs/04_paper/claim_evidence_index.md) |
 | What is the paper's claim ceiling? | [`reports/experiments/PHASE-14J-FINAL-SCIENTIFIC-CONCLUSIONS-V1/publication_claim_ceiling.md`](reports/experiments/PHASE-14J-FINAL-SCIENTIFIC-CONCLUSIONS-V1/publication_claim_ceiling.md) |
 | What failed, with numbers? | [`PHASE-13H negative evidence register`](reports/experiments/PHASE-13H-EVIDENCE-CONSOLIDATION-V1/negative_evidence_register.csv) |
 | How was each contribution analyzed? | [`docs/03_implementation/results_analysis/`](docs/03_implementation/results_analysis/) (14A–14J) |

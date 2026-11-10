@@ -11,8 +11,9 @@ This folder is the project’s research, design, and status record. It is organi
   [`implementation_blueprint.md`](02_design/implementation_blueprint.md) is the
   module registry and build spec (Phase 11F).
 - [`03_implementation/`](03_implementation/) — implementation planning material, including module plans and phase plans.
-- [`04_paper/`](04_paper/) — paper-facing material: the experiment map and
-  [`claim_traceability.md`](04_paper/claim_traceability.md).
+- [`04_paper/`](04_paper/) — paper-facing material: the experiment map,
+  [`claim_traceability.md`](04_paper/claim_traceability.md), and the submission-facing
+  [`claim_evidence_index.md`](04_paper/claim_evidence_index.md).
 - [`99_chats/`](99_chats/) — supporting chat transcripts.
 
 ## Rule
