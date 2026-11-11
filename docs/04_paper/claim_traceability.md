@@ -8,7 +8,7 @@
 Every research claim must resolve to code, a metric, an experiment, and a paper
 artifact. Machine-checked against
 [`configs/modules.yaml`](../../configs/modules.yaml) by
-`tests/test_spec_claim_traceability.py`.
+`tests/submission/test_spec_claim_traceability.py`.
 
 ## Chain
 
@@ -36,7 +36,7 @@ claim.
 | Metrics | TC, TFD |
 | Experiment | `exp01_invariants` (consumes traces) |
 | Artifact | table: dataset and trace inventory per task family |
-| Verifier | `tests/test_pipeline_phases.py::test_trace_pipeline_produces_and_persists` |
+| Verifier | `tests/evaluation/test_pipeline_phases.py::test_trace_pipeline_produces_and_persists` |
 
 **Status: demonstrated.** `src/solver/` produces real reasoning steps for
 reflection, rotation, counting, and grouping tasks; `TraceLogger` captures them;
@@ -52,7 +52,7 @@ reflection, rotation, counting, and grouping tasks; `TraceLogger` captures them;
 | Metrics | IS, VST, IER, TC |
 | Experiment | `exp01_invariants` |
 | Artifact | table: invariant inventory vs IS; figure: IS distribution by task family |
-| Verifier | `tests/test_trace_miner.py::test_end_to_end_reflection_and_rotation_emerge` |
+| Verifier | `tests/traces/test_trace_miner.py::test_end_to_end_reflection_and_rotation_emerge` |
 
 Anti-claim tested: frequent patterns are not invariants. Rejection lives in
 [docs/invariants.md](../02_design/invariants.md) and
@@ -68,7 +68,7 @@ Anti-claim tested: frequent patterns are not invariants. Rejection lives in
 | Metrics | SCV, SU, ASU, PU, NTB |
 | Experiment | `exp02_skills` |
 | Artifact | table: SCV decision outcomes; figure: SU distribution before/after promotion |
-| Verifier | `tests/test_skill_pipeline_e2e.py::test_reflection_promoted_verify_rejected` |
+| Verifier | `tests/skills/test_skill_pipeline_e2e.py::test_reflection_promoted_verify_rejected` |
 
 Anti-claim tested: more skills is not better. Explosion, duplicates, and negative
 transfer are blocked by
@@ -84,7 +84,7 @@ transfer are blocked by
 | Metrics | TS, ITS, TU, NTR |
 | Experiment | `exp03_transfer` |
 | Artifact | table: TS/ITS per source-target family pair; figure: transfer graph |
-| Verifier | `tests/test_transfer_aware_ranking.py::test_high_its_outranks_zero_transfer_despite_lower_frequency` |
+| Verifier | `tests/transfer/test_transfer_aware_ranking.py::test_high_its_outranks_zero_transfer_despite_lower_frequency` |
 
 Anti-claim tested: co-occurrence is not transfer. Transfer memory requires a
 recorded attempt with benefit and reasoning reduction
@@ -100,7 +100,7 @@ recorded attempt with benefit and reasoning reduction
 | Metrics | CGR, IG, AG, UG, PU |
 | Experiment | `exp04_growth` |
 | Artifact | figure: C_t and IG trajectories; table: CGR by phase with CI |
-| Verifier | `tests/test_cgr_e2e.py::test_positive_zero_negative_cgr_and_ig` |
+| Verifier | `tests/evaluation/test_cgr_e2e.py::test_positive_zero_negative_cgr_and_ig` |
 
 Anti-claim tested: fake growth. CF1–CF10 plus the multi-signal hard gate reject
 skill-count-only and evidence-free growth
@@ -116,7 +116,7 @@ skill-count-only and evidence-free growth
 | Metrics | CGR, IG, SU, TS |
 | Experiment | `exp05_end_to_end` |
 | Artifact | table: ASFT vs baselines A–D; table: ablations A1–A5 |
-| Verifier | `tests/test_full_pipeline_e2e.py::test_asft_beats_every_baseline` |
+| Verifier | `tests/evaluation/test_full_pipeline_e2e.py::test_asft_beats_every_baseline` |
 
 **Status: demonstrated.** ASFT reaches capability 1.230 vs DreamCoder-like 0.782,
 random 0.463, storage-only 0.439, and 0.000 for no-learning on identical

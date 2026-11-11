@@ -27,7 +27,7 @@
 - Protocol: `experiments/phase13e/preregistration.md`
 - Machine config: `experiments/phase13e/config.json`
 - Modular runner/analysis: `experiments/phase13e/*.py` (all source modules below 350 lines; tests enforce a 400-line ceiling)
-- Contract tests: `tests/test_phase13e_contracts.py`
+- Contract tests: `tests/phase13/test_phase13e_contracts.py`
 - Output: `reports/experiments/PHASE-13E-CAP-GROWTH-V1/`
 
 The independent seed block is 60–69. The tests exercise the protocol, deterministic task generation, IG pathway/weights, empty-portfolio behavior, confidence intervals, and source modularity; they do not run benchmark outcomes. Confirmation begins only through the explicit `--confirm` command after the runner/config hashes are written.

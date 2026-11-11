@@ -93,7 +93,7 @@ Expected files, and no others unless this plan is amended:
 - `src/t2t_eventlog/canonical.py`
 - `src/t2t_eventlog/journal.py`
 - `src/t2t_eventlog/README.md`
-- `tests/test_t2t_eventlog.py`
+- `tests/t2t/test_t2t_eventlog.py`
 - `pyproject.toml` and `requirements.txt` only for the explicitly declared validator dependency.
 - `docs/05_trace_to_transfer/p6/README.md`, `p6/event_schema_v1.md`, `phases/p6.md`, `subphases/p6_2.md`, `subphases/p6_3.md`, `implementation_blueprint.md`, `README.md`, and `master_plan.md` only for narrow status/boundary notes. These were added to M4 on 2026-11-04 because prior statements that no local validator or tests existed became stale after the separately authorized implementation; no method or empirical design was changed.
 
@@ -108,9 +108,9 @@ Complete Step 1 only if all M1–M4 checks pass, the exact test command is recor
 **M0–M4 complete, 2026-11-04, for local synthetic plumbing only.**
 
 - Added `docs/05_trace_to_transfer/p6/event_schema_v1.json`, Draft 2020-12 schema with 22 event variants; added isolated package `src/t2t_eventlog/` (`__init__.py`, `errors.py`, `schema.py`, `canonical.py`, `journal.py`, `README.md`).
-- Added `tests/test_t2t_eventlog.py` with synthetic fixtures and temporary paths; declared `jsonschema>=4.18,<5` in `pyproject.toml` and `requirements.txt`.
-- `python -m pytest -q tests/test_t2t_eventlog.py` — **PASS: 19 passed**. Coverage includes every declared event type, invalid schema cases, tagged-value distinctions, ordering, append/reopen/verify, digest tampering, malformed/truncated logs, duplicate IDs, missing parents, sequence/timestamp regressions, corrections, restricted outcome rejection, and concurrent local appends serialized under lock.
-- `python -m compileall -q src/t2t_eventlog tests/test_t2t_eventlog.py` — **PASS**.
+- Added `tests/t2t/test_t2t_eventlog.py` with synthetic fixtures and temporary paths; declared `jsonschema>=4.18,<5` in `pyproject.toml` and `requirements.txt`.
+- `python -m pytest -q tests/t2t/test_t2t_eventlog.py` — **PASS: 19 passed**. Coverage includes every declared event type, invalid schema cases, tagged-value distinctions, ordering, append/reopen/verify, digest tampering, malformed/truncated logs, duplicate IDs, missing parents, sequence/timestamp regressions, corrections, restricted outcome rejection, and concurrent local appends serialized under lock.
+- `python -m compileall -q src/t2t_eventlog tests/t2t/test_t2t_eventlog.py` — **PASS**.
 - Draft 2020-12 meta-schema and pyproject/requirements dependency consistency — **PASS**; 22 variants confirmed.
 - Focused relative-link QA across `docs/05_trace_to_transfer/` — **PASS**, 67 Markdown files and no missing relative targets.
 - Package-source scan for network imports/calls/URLs — **PASS**, none found. No repository-wide test suite, experiment, benchmark, ARC task/data, split, model, evaluator, environment, or outcome access was used.

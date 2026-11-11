@@ -8,7 +8,7 @@
 **Independence declaration:** I did not author the S3 implementation, did not participate in its design, and did not contribute to the Claim N specification or to the transformation-cell construction. I reviewed only the frozen package materials listed in `s3_rb_independent_review_packet.md`.
 **Conflicts / limitations:** None known. Review is limited to static inspection plus the already-reported development software checks. No S3 contexts were generated or evaluated, and no held-out labels were accessed.
 
-**Verification performed (read-only):** all 16/16 freeze-manifest SHA-256 hashes recomputed and matched; `tests/test_t2t_s3_mechanism.py` re-run = 11 passed. No code, configuration, or protocol file was modified by this review.
+**Verification performed (read-only):** all 16/16 freeze-manifest SHA-256 hashes recomputed and matched; `tests/t2t/test_t2t_s3_mechanism.py` re-run = 11 passed. No code, configuration, or protocol file was modified by this review.
 
 ---
 

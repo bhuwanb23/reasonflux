@@ -20,7 +20,7 @@ def build_manifest(config: dict[str, Any] | None = None) -> dict[str, Any]:
     cfg = config or load_config()
     prereg = ROOT / "experiments/phase13f/preregistration.md"
     preflight = ROOT / "docs/03_implementation/validation/phase_13f_preflight.md"
-    test = ROOT / "tests/test_phase13f_contracts.py"
+    test = ROOT / "tests/phase13/test_phase13f_contracts.py"
     paths = [p for p in (ROOT / "experiments/phase13f").glob("*.py")]
     paths += [p for p in (ROOT / "experiments/phase13e").glob("*.py")]
     paths += [ROOT / "experiments/phase13c/scoring.py", test]
@@ -31,7 +31,7 @@ def build_manifest(config: dict[str, Any] | None = None) -> dict[str, Any]:
             "seeds": cfg["seeds"], "config_sha256": _hash(CONFIG_PATH),
             "preregistration_sha256": _hash(prereg), "preflight_sha256": _hash(preflight), "source_tree_sha256": tree,
             "source_file_count": len(files), "source_files": files,
-            "contract_test": "tests/test_phase13f_contracts.py", "contract_test_result": "11 passed; compileall passed",
+            "contract_test": "tests/phase13/test_phase13f_contracts.py", "contract_test_result": "11 passed; compileall passed",
             "prior_phase_evidence_modified": False}
 
 

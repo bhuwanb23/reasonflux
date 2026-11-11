@@ -31,7 +31,7 @@ The test file contains hand-built **development fixtures** for software behavior
 
 The implementer may record the deterministic test command/result below. Passing it does not certify comparator competence on any future suite.
 
-- Command: `PYTHONPATH=src python -m pytest -q tests/test_t2t_s3_mechanism.py`
+- Command: `PYTHONPATH=src python -m pytest -q tests/t2t/test_t2t_s3_mechanism.py`
 - Result: **11 passed** (developer-run; software verification only; includes R4 minimum-tree fit, all 64 abstract feature rows, metadata-only R0, and denominator/error accounting)
 - Repository-wide tests: not run as part of S3 implementation.
 

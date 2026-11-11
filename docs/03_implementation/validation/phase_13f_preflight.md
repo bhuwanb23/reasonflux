@@ -13,7 +13,7 @@
 
 ## Verification before freeze
 
-`PYTHONPATH=src:. python -m pytest -q tests/test_phase13f_contracts.py` — **11 passed**. `compileall`, JSON validation, `git diff --check`, and source line counts passed. No Phase 13F outcome package existed. The run CLI requires explicit `--confirm`, writes a pre-run frozen manifest, refuses output overwrite, and preserves previous phases.
+`PYTHONPATH=src:. python -m pytest -q tests/phase13/test_phase13f_contracts.py` — **11 passed**. `compileall`, JSON validation, `git diff --check`, and source line counts passed. No Phase 13F outcome package existed. The run CLI requires explicit `--confirm`, writes a pre-run frozen manifest, refuses output overwrite, and preserves previous phases.
 
 ## Caveats recorded before outcomes
 

@@ -25,7 +25,7 @@ During source discovery, a temporary upstream compressed archive containing both
 - Upstream list count: 1,000 unique training IDs.
 - Local ARC training files: 1,000; all task JSONs parsed; all input/output grids rectangular with colors 0–9.
 - Split integrity: 600/200/200 IDs, disjoint and exhaustive; file SHA-256s and pair counts recorded in `datasets/arc/arc-agi-2/split_manifest.json`.
-- Contract tests: `PYTHONPATH=src:. python -m pytest -q tests/test_phase13g_contracts.py` — **7 passed**.
+- Contract tests: `PYTHONPATH=src:. python -m pytest -q tests/phase13/test_phase13g_contracts.py` — **7 passed**.
 - Module compile and config JSON parse passed. The full experiment has not started as of this preflight record.
 
 ## Confirmation command

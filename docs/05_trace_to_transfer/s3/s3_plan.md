@@ -158,7 +158,7 @@ Before any S3 run is authorized, freeze:
 ### Implementation package outputs
 
 - `src/t2t_s3/` — deterministic world, minimum Boolean decision-tree R4, I0, deterministic surface recipes, per-context/per-cell scorer, and append-only event construction.
-- `tests/test_t2t_s3_mechanism.py` — development-fixture software checks only; not an S3 evaluation suite.
+- `tests/t2t/test_t2t_s3_mechanism.py` — development-fixture software checks only; not an S3 evaluation suite.
 - `docs/05_trace_to_transfer/s3/transformation_cells_v1.json` — recipe-level, finite cell/role definitions; no contexts or counts materialized.
 - `docs/05_trace_to_transfer/s3/competence_review.md` — independent-review packet; reviewer remains unassigned.
 - `docs/05_trace_to_transfer/s3/freeze_manifest.json` — implementation/protocol hashes and unresolved run-gate fields.

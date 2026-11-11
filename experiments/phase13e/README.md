@@ -5,7 +5,7 @@ The preregistered configuration and protocol are `config.json` and `preregistrat
 Before confirmation, run the contract tests:
 
 ```bash
-PYTHONPATH=src:. python -m pytest -q tests/test_phase13e_contracts.py
+PYTHONPATH=src:. python -m pytest -q tests/phase13/test_phase13e_contracts.py
 ```
 
 After protocol/config/source review, start confirmation once:

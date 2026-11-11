@@ -37,7 +37,7 @@
     "separate explicit S3 execution authorization"
   ],
   "development_software_check": {
-    "command": "PYTHONPATH=src python -m pytest -q tests/test_t2t_s3_mechanism.py",
+    "command": "PYTHONPATH=src python -m pytest -q tests/t2t/test_t2t_s3_mechanism.py",
     "result": "11 passed",
     "interpretation": "software verification on hand-built development fixtures and abstract Boolean feature rows only; not S3 evaluation or Claim N evidence"
   },
@@ -51,7 +51,7 @@
     {"path": "src/t2t_s3/arms.py", "sha256": "39943c48cbb952de1255fb5ce98d08aec04d6df5d320a58da4f1233231735920"},
     {"path": "src/t2t_s3/eventlog.py", "sha256": "27b8c7900c03c3c4abba608e7f4ab2963e63143a296286b2fe702aa39b16829b"},
     {"path": "src/t2t_s3/scoring.py", "sha256": "0dbd8dc44bbe59ad02ea4e7fb3a7e792a2bae590dc7d01a2b5bced46bc778e92"},
-    {"path": "tests/test_t2t_s3_mechanism.py", "sha256": "62c9d6ad9c56af30526ff166a1e004627218688478396bbffa253bacbdf22767"},
+    {"path": "tests/t2t/test_t2t_s3_mechanism.py", "sha256": "62c9d6ad9c56af30526ff166a1e004627218688478396bbffa253bacbdf22767"},
     {"path": "docs/05_trace_to_transfer/s3/s3_plan.md", "sha256": "3050b6ffc1ad1d370aa7b64fc564453415ef5a856bdb0fdd3f507edb9e56011f"},
     {"path": "docs/05_trace_to_transfer/s3/README.md", "sha256": "68db3ba1044aea7389c3bd63e85509b47161eaf5c7af145a1016a7265a6504a1"},
     {"path": "docs/05_trace_to_transfer/s3/competence_review.md", "sha256": "1cf4c9098e61c1f4f5e5629c2369c0a8dc1074cabe5e3490256597e6361ddac8"},

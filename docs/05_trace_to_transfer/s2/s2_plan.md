@@ -99,7 +99,7 @@ A B pass establishes only that this fixed update changes this boundary correctly
 - `src/t2t_s2/invariant.py`
 - `src/t2t_s2/evaluation.py`
 - `src/t2t_s2/run.py`
-- `tests/test_t2t_s2_mechanism.py`
+- `tests/t2t/test_t2t_s2_mechanism.py`
 - `docs/05_trace_to_transfer/README.md`, `master_plan.md`, and `current_evidence.md` only for the S2 status/index/evidence-ceiling update.
 - `docs/05_trace_to_transfer/s1/README.md`, `s1/s1_plan.md`, and `s1/minimum_claim_package.md` only to record the user's S1/S1.1 approval and the completed S2 follow-on status.
 
@@ -120,8 +120,8 @@ This is a baseline/model revision after exposure to the N result, so neither the
 **S2 prototype and exploratory mechanism check complete, 2026-11-04; no confirmatory Claim N result.**
 
 - Implemented `src/t2t_s2/` using the standard library only: deterministic world, R1-Max trace-to-script compiler, one-family I0 relation fit, fixed I1 counterexample boundary update, finite scoring, and run entry point.
-- Added focused tests at `tests/test_t2t_s2_mechanism.py`.
-- Focused command `python -m pytest -q tests/test_t2t_s2_mechanism.py` — **PASS: 8 passed**; `python -m compileall -q src/t2t_s2 tests/test_t2t_s2_mechanism.py` — **PASS**.
+- Added focused tests at `tests/t2t/test_t2t_s2_mechanism.py`.
+- Focused command `python -m pytest -q tests/t2t/test_t2t_s2_mechanism.py` — **PASS: 8 passed**; `python -m compileall -q src/t2t_s2 tests/t2t/test_t2t_s2_mechanism.py` — **PASS**.
 - Documentation link QA — **PASS: 78 Markdown files, no missing relative targets**; S2 package network scan — **PASS: no network imports/calls/URLs**.
 - The initial v0 exploratory run showed I0 8/8 vs a weaker positive-trace replay 4/8. After seeing this, R1-Max was strengthened to fit a shortest source-consistent conjunction and I0 was revised to fit-check against the same source corpus. The same exposed N holdout was reused. This sequence is recorded in `results/keydoor_pilot_v0.md` and means N is **BLOCKED for decision-grade interpretation** under the S2 rule; do not report v0 as an N pass.
 - Revised-run raw metric: I0 = 8/8, R1-Max = 8/8; difference 0. This exploratory tie shows the bounded replay script can reproduce the invariant on this toy but is not an independent confirmation after the v0-driven revision.

@@ -30,7 +30,7 @@ def _source_manifest() -> tuple[list[dict[str,str]],str]:
     paths.extend([ROOT/"experiments/phase13g/config.json",ROOT/"experiments/phase13g/preregistration.md",
                   ROOT/"datasets/arc/arc-agi-2/README.md",ROOT/"datasets/arc/arc-agi-2/LICENSE",
                   ROOT/"datasets/arc/arc-agi-2/source_manifest.json",ROOT/"datasets/arc/arc-agi-2/split_manifest.json",
-                  ROOT/"tests/test_phase13g_contracts.py",
+                  ROOT/"tests/phase13/test_phase13g_contracts.py",
                   ROOT/"docs/03_implementation/validation/phase_13g_preflight.md"])
     records=[{"path":p.relative_to(ROOT).as_posix(),"sha256":_hash(p)} for p in sorted(set(paths))]
     root_hash=hashlib.sha256("\n".join(f"{r['path']}:{r['sha256']}" for r in records).encode()).hexdigest()

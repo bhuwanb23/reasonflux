@@ -8,7 +8,7 @@
 - One deterministic key/door transition world and a single color-match relation family.
 - R1-Max as a source-only compressed trace-to-script baseline, using a fixed predicate grammar and shortest consistent conjunction.
 - I0 as a one-family relation fit, plus G0 and an append-only synthetic counterexample/update to successor G1.
-- Finite N and B scoring; focused tests at `tests/test_t2t_s2_mechanism.py` (**8 passed**).
+- Finite N and B scoring; focused tests at `tests/t2t/test_t2t_s2_mechanism.py` (**8 passed**).
 
 ## What happened
 

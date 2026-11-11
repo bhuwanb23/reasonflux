@@ -2,7 +2,7 @@
 
 Implementation-ready build specification. Source of truth for module status is
 [`configs/modules.yaml`](../../configs/modules.yaml), enforced by
-`tests/test_spec_module_registry.py` and `tests/test_spec_claim_traceability.py`.
+`tests/submission/test_spec_module_registry.py` and `tests/submission/test_spec_claim_traceability.py`.
 
 **Rule:** a module is only `implemented` when its public entry point imports and
 its behavior is covered by a test.
@@ -118,7 +118,7 @@ How the numbers are protected from inflation:
 ## Stub inventory
 
 **None.** No file under `src/` raises `NotImplementedError`. This is asserted by
-`tests/test_spec_module_registry.py::test_no_stubs_remain`.
+`tests/submission/test_spec_module_registry.py::test_no_stubs_remain`.
 
 ## Implementation contract for each module
 
@@ -137,7 +137,7 @@ Every module, regardless of layer, must satisfy:
 ## Non-goals for v0.1
 
 Locked in `configs/modules.yaml` under `non_goals:` and enforced by
-`tests/test_spec_claim_traceability.py`:
+`tests/submission/test_spec_claim_traceability.py`:
 
 LLM planner · autonomous agent · meta-reasoner · world model · recursive
 self-improvement · concept graph engine · neural skill embeddings · ARC

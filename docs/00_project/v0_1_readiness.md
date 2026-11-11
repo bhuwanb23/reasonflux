@@ -2,7 +2,7 @@
 
 Go/no-go for the MVP success checklist. Backed by
 [`configs/modules.yaml`](../../configs/modules.yaml) and
-`tests/test_spec_claim_traceability.py`.
+`tests/submission/test_spec_claim_traceability.py`.
 
 ## Verdict
 
@@ -26,12 +26,12 @@ baselines. 501 tests pass.
 
 | Gate | Criterion (scope) | Verdict | Evidence |
 | --- | --- | --- | --- |
-| FOUNDATION | Tasks produce persisted traces retrievable by task and family | PASS | `tests/test_pipeline_phases.py::test_trace_pipeline_produces_and_persists` |
-| IDT | Reflection and rotation invariants discovered and ranked by IS | PASS | `tests/test_experiments.py::test_exp01_discovers_reflection_and_rotation` |
-| SCT | SCV gate admits trials and admits none at a prohibitive threshold | PASS | `tests/test_experiments.py::test_exp02_scv_gate_actually_gates` |
-| TRANSFER | Credited transfer measured, never for incorrect runs | PASS | `tests/test_experiments.py::test_exp03_reports_positive_and_cross_family_transfer` |
-| CGM | Positive / zero / negative CGR and IG computed | PASS | `tests/test_cgr_e2e.py::test_positive_zero_negative_cgr_and_ig` |
-| EVALUATION | One end-to-end run yields positive CGR/IG and beats every baseline | PASS | `tests/test_full_pipeline_e2e.py::test_pipeline_success_flag` |
+| FOUNDATION | Tasks produce persisted traces retrievable by task and family | PASS | `tests/evaluation/test_pipeline_phases.py::test_trace_pipeline_produces_and_persists` |
+| IDT | Reflection and rotation invariants discovered and ranked by IS | PASS | `tests/evaluation/test_experiments.py::test_exp01_discovers_reflection_and_rotation` |
+| SCT | SCV gate admits trials and admits none at a prohibitive threshold | PASS | `tests/evaluation/test_experiments.py::test_exp02_scv_gate_actually_gates` |
+| TRANSFER | Credited transfer measured, never for incorrect runs | PASS | `tests/evaluation/test_experiments.py::test_exp03_reports_positive_and_cross_family_transfer` |
+| CGM | Positive / zero / negative CGR and IG computed | PASS | `tests/evaluation/test_cgr_e2e.py::test_positive_zero_negative_cgr_and_ig` |
+| EVALUATION | One end-to-end run yields positive CGR/IG and beats every baseline | PASS | `tests/evaluation/test_full_pipeline_e2e.py::test_pipeline_success_flag` |
 
 ## Measured results
 

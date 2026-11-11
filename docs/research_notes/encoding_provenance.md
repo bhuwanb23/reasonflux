@@ -20,7 +20,7 @@ For a manifest digest that does not match the LF file:
 
 A mismatch that is **not** explained by this rule is a content change and must be treated as an integrity failure.
 
-This rule is implemented in [`tests/test_submission_readiness.py`](../../tests/test_submission_readiness.py). The test suite fails if any listed source is missing, changed, or mismatched for a reason other than line endings.
+This rule is implemented in [`tests/submission/test_submission_readiness.py`](../../tests/submission/test_submission_readiness.py). The test suite fails if any listed source is missing, changed, or mismatched for a reason other than line endings.
 
 ## Files with CRLF-derived digests
 

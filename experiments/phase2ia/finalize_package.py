@@ -38,8 +38,8 @@ SOURCES=[
  "src/representations/__init__.py",
  "src/representations/r3.py",
  "src/traces/semantic_adapter.py",
- "tests/test_r3_representation.py",
- "tests/test_semantic_adapter.py",
+ "tests/invariants/test_r3_representation.py",
+ "tests/traces/test_semantic_adapter.py",
  "experiments/phase2ia/build_annotation_packets.py",
  "experiments/phase2ia/runtime_config.py",
  "experiments/phase2ia/hcc_control.py",
@@ -47,12 +47,12 @@ SOURCES=[
  "experiments/phase2ia/search_adapters.py",
  "experiments/phase2ia/train_only_source.py",
  "experiments/phase13g/common.py",
- "tests/test_phase2ia_hcc_control.py",
- "tests/test_phase2ia_runner.py",
- "tests/test_phase2ia_train_only_source.py",
- "tests/test_phase2ia_wp3_provisional_boundary.py",
- "tests/test_train_only_annotation_packets.py",
- "tests/test_phase2ia_runtime_config.py",
+ "tests/phase2ia/test_phase2ia_hcc_control.py",
+ "tests/phase2ia/test_phase2ia_runner.py",
+ "tests/phase2ia/test_phase2ia_train_only_source.py",
+ "tests/phase2ia/test_phase2ia_wp3_provisional_boundary.py",
+ "tests/t2t/test_train_only_annotation_packets.py",
+ "tests/phase2ia/test_phase2ia_runtime_config.py",
  "datasets/arc/arc-agi-2/split_manifest.json",
 ]
 REMOTE_WP3={
@@ -167,7 +167,7 @@ def main():
       raise SystemExit("human-review packet hashes differ from the remote bundle output hashes")
     env=os.environ.copy()
     env["PYTHONPATH"]=str(ROOT/"src")+os.pathsep+env.get("PYTHONPATH","")
-    r3_run=subprocess.run([sys.executable,"-m","pytest","-q","tests/test_r3_representation.py"],cwd=ROOT,env=env,
+    r3_run=subprocess.run([sys.executable,"-m","pytest","-q","tests/invariants/test_r3_representation.py"],cwd=ROOT,env=env,
       text=True,capture_output=True)
     if r3_run.returncode:
       raise SystemExit("R3 contract tests failed:\\n"+r3_run.stdout+r3_run.stderr)
@@ -175,9 +175,9 @@ def main():
     if "11 passed" not in r3_summary:
       raise SystemExit(f"unexpected R3 test summary: {r3_summary}")
     test_run=subprocess.run([sys.executable,"-m","pytest","-q",
-      "tests/test_r3_representation.py","tests/test_semantic_adapter.py","tests/test_train_only_annotation_packets.py",
-      "tests/test_phase2ia_runtime_config.py","tests/test_phase2ia_hcc_control.py","tests/test_phase2ia_runner.py","tests/test_phase2ia_train_only_source.py","tests/test_phase2ia_wp3_provisional_boundary.py","tests/test_core_invariant.py","tests/test_trace_miner.py","tests/test_trace_normalizer.py",
-      "tests/test_trace_segmentation.py"],cwd=ROOT,env=env,
+      "tests/invariants/test_r3_representation.py","tests/traces/test_semantic_adapter.py","tests/t2t/test_train_only_annotation_packets.py",
+      "tests/phase2ia/test_phase2ia_runtime_config.py","tests/phase2ia/test_phase2ia_hcc_control.py","tests/phase2ia/test_phase2ia_runner.py","tests/phase2ia/test_phase2ia_train_only_source.py","tests/phase2ia/test_phase2ia_wp3_provisional_boundary.py","tests/core/test_core_invariant.py","tests/traces/test_trace_miner.py","tests/traces/test_trace_normalizer.py",
+      "tests/traces/test_trace_segmentation.py"],cwd=ROOT,env=env,
       text=True,capture_output=True)
     if test_run.returncode:
       raise SystemExit("R3 synthetic/integration tests failed:\\n"+test_run.stdout+test_run.stderr)
@@ -196,7 +196,7 @@ def main():
       "test_data":"synthetic fixtures only; no ARC task/test data accessed"}
     manifest["wp2_semantic_trace"]={"status":"IMPLEMENTED; SYNTHETIC_MINER_PARITY_PASS_USING_FROZEN_WP4_CONFIG",
       "schema_version":"ASFT-2I-SEMANTIC-TRACE-V1","implementation_sha256":digest(ROOT/"src/traces/semantic_adapter.py"),
-      "test_sha256":digest(ROOT/"tests/test_semantic_adapter.py"),"tests_included_in_suite":10,
+      "test_sha256":digest(ROOT/"tests/traces/test_semantic_adapter.py"),"tests_included_in_suite":10,
       "scope":"Common action tokens; target_scope retained in raw trace; arm/candidate provenance sidecar only",
       "synthetic_trace_miner_parity":"PASS for semantic token/pattern parity using frozen runtime config; full four-event fixture may produce zero candidates under core-length-1 aggregation and is not a positive-yield check"}
     manifest["wp3_annotation"]={"status":"RUBRIC_DEFINED; 600 TRAIN_ONLY_PACKETS_BUILT; INDEPENDENT_HUMAN_CODERS_AND_ADJUDICATOR_PENDING",
@@ -216,7 +216,7 @@ def main():
     hcc_summary=__import__("experiments.phase2ia.hcc_control",fromlist=["run_hcc_control"]).run_hcc_control()
     manifest["wp5_hcc"]={"status":"IMPLEMENTED_AND_TESTED_SYNTHETIC_ONLY; NO_ARC_HCC_RUN",
       "control_version":hcc_summary.control_version,"implementation_sha256":digest(ROOT/"experiments/phase2ia/hcc_control.py"),
-      "test_sha256":digest(ROOT/"tests/test_phase2ia_hcc_control.py"),
+      "test_sha256":digest(ROOT/"tests/phase2ia/test_phase2ia_hcc_control.py"),
       "result":{"synthetic_tasks":hcc_summary.task_count,"training_pairs":hcc_summary.training_pair_count,
         "r1_exact_demo_checks":hcc_summary.r1_equivalent_demo_checks,"r3_exact_demo_checks":hcc_summary.r3_equivalent_demo_checks,
         "r1_generator_accepted":hcc_summary.r1_candidates,"r3_generator_accepted":hcc_summary.r3_candidates,
@@ -228,8 +228,8 @@ def main():
       "implementation_sha256":digest(ROOT/"experiments/phase2ia/runner.py"),
       "search_adapters_sha256":digest(ROOT/"experiments/phase2ia/search_adapters.py"),
       "train_only_source_sha256":digest(ROOT/"experiments/phase2ia/train_only_source.py"),
-      "test_sha256":digest(ROOT/"tests/test_phase2ia_runner.py"),
-      "train_only_source_test_sha256":digest(ROOT/"tests/test_phase2ia_train_only_source.py"),
+      "test_sha256":digest(ROOT/"tests/phase2ia/test_phase2ia_runner.py"),
+      "train_only_source_test_sha256":digest(ROOT/"tests/phase2ia/test_phase2ia_train_only_source.py"),
       "paired_synthetic_replay":"PASS; six synthetic IDs; identical ordered IDs and resource limits",
       "synthetic_file_to_search_to_trace_to_mining_to_artifact_audit":"PASS; registered R1/R3 callbacks; train-only stream stops before trailing test-output sentinel",
       "authorization":"ARC mode requires separate run-specific authorization bound to protocol/task/source-allowlist/family-map/config/resource-limit/arm/grammar/runner/adapter/search-code hashes; none provided",

@@ -58,7 +58,7 @@ PYTHONPATH=src python -m t2t_s2.run --output docs/05_trace_to_transfer/s2/result
 Focused tests:
 
 ```bash
-python -m pytest -q tests/test_t2t_s2_mechanism.py
+python -m pytest -q tests/t2t/test_t2t_s2_mechanism.py
 ```
 
 Result: **8 passed**. No repository-wide tests or unrelated experiment was run.

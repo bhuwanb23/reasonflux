@@ -27,7 +27,7 @@ The append template should use `stream_id`, `activity_ref`, and all artifact/pro
 From the repository root, run only:
 
 ```bash
-python -m pytest -q tests/test_t2t_eventlog.py
+python -m pytest -q tests/t2t/test_t2t_eventlog.py
 ```
 
 This command targets synthetic temporary-file contract tests only. Do not infer that these tests authorize or validate empirical work. No repository-wide suite or experiment is invoked by the command above.

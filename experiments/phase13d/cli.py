@@ -18,7 +18,7 @@ PREFLIGHT = ROOT / "docs/03_implementation/validation/phase_13d_preflight.md"
 def source_files() -> list[Path]:
     paths = [*Path(ROOT / "experiments/phase13d").glob("*.py"),
              ROOT / "experiments/phase13c/scoring.py", ROOT / "experiments/phase13c/common.py",
-             ROOT / "experiments/phase13c/tasking.py", ROOT / "tests/test_phase13d_contracts.py",
+             ROOT / "experiments/phase13c/tasking.py", ROOT / "tests/phase13/test_phase13d_contracts.py",
              CONFIG_PATH, PROTOCOL, PREFLIGHT]
     paths.extend((ROOT / "src").rglob("*.py"))
     return sorted({p.resolve() for p in paths if p.is_file()})
@@ -43,7 +43,7 @@ def verify_manifest() -> dict[str, Any]:
 
 
 def run_contract_tests() -> None:
-    result = subprocess.run([sys.executable, "-m", "pytest", "-q", "tests/test_phase13d_contracts.py"],
+    result = subprocess.run([sys.executable, "-m", "pytest", "-q", "tests/phase13/test_phase13d_contracts.py"],
                             cwd=ROOT, check=False)
     if result.returncode != 0:
         raise SystemExit("Contract tests failed; no freeze or benchmark run performed.")

@@ -286,7 +286,7 @@ docs/
   05_trace_to_transfer/ T2T P0–P7 design packets, S1–S3, BL1
   research_notes/  case-study drafts, landscape, ranking, closure, provenance
 submission_package/ paper PDF/DOCX/Markdown, figures, Kaggle writeup copy
-tests/             contract, pipeline, metric, and experiment tests
+tests/             contract, pipeline, metric, and experiment tests (see tests/README.md for a grouped index)
 validation/        hypothesis register, protocols, templates, repository review
 ```
 
@@ -349,7 +349,7 @@ python -m pytest -q
 A dedicated read-only readiness suite (45 checks) verifies the submission itself:
 
 ```bash
-python -m pytest tests/test_submission_readiness.py -q
+python -m pytest tests/submission/test_submission_readiness.py -q
 ```
 
 It verifies the manuscript and asset inventory, exact card/banner dimensions, upload-manifest and Markdown links, claim-index coverage of every frozen claim ID, preservation of the failed dispositions and headline numbers, the S3 provenance exclusion, the BL1 P0 termination, and the cycle-closure record. It runs no experiments and writes no reports.

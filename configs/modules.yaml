@@ -1,8 +1,8 @@
 # Phase 11F — ASFT v0.1 implementation registry.
 #
 # Machine-readable companion to docs/02_design/implementation_blueprint.md.
-# Read by tests/test_spec_module_registry.py and
-# tests/test_spec_claim_traceability.py. Not loaded by src/ at runtime.
+# Read by tests/submission/test_spec_module_registry.py and
+# tests/submission/test_spec_claim_traceability.py. Not loaded by src/ at runtime.
 #
 # status semantics (must match disk reality, not the aspiration checklist):
 #   implemented — public entry points exist, import, and are covered by tests
@@ -418,7 +418,7 @@ modules:
     notes: "ReuseEngine replays skills as macro steps and credits transfer only for correct, cheaper runs."
 
 # Stub inventory. Empty as of Phase 11 completion: no entry point in src/ raises
-# NotImplementedError. tests/test_spec_module_registry.py asserts this list is
+# NotImplementedError. tests/submission/test_spec_module_registry.py asserts this list is
 # empty AND that no source file contains NotImplementedError.
 stubs: []
 
@@ -469,37 +469,37 @@ gates:
     metric: TC
     criterion: "Tasks produce persisted reasoning traces retrievable by task and family, from a real solver."
     scope: end_to_end
-    verifier: "tests/test_pipeline_phases.py::test_trace_pipeline_produces_and_persists"
+    verifier: "tests/evaluation/test_pipeline_phases.py::test_trace_pipeline_produces_and_persists"
     status: demonstrated
   - id: IDT
     metric: IS
     criterion: "Reflection and rotation invariants are discovered from solver traces and ranked by IS."
     scope: end_to_end
-    verifier: "tests/test_experiments.py::test_exp01_discovers_reflection_and_rotation"
+    verifier: "tests/evaluation/test_experiments.py::test_exp01_discovers_reflection_and_rotation"
     status: demonstrated
   - id: SCT
     metric: SCV
     criterion: "The SCV gate admits justified skills and admits none at a prohibitive threshold."
     scope: end_to_end
-    verifier: "tests/test_experiments.py::test_exp02_scv_gate_actually_gates"
+    verifier: "tests/evaluation/test_experiments.py::test_exp02_scv_gate_actually_gates"
     status: demonstrated
   - id: TRANSFER
     metric: TS
     criterion: "Reuse produces credited transfer including cross-family transfer, and never credits incorrect runs."
     scope: end_to_end
-    verifier: "tests/test_experiments.py::test_exp03_reports_positive_and_cross_family_transfer"
+    verifier: "tests/evaluation/test_experiments.py::test_exp03_reports_positive_and_cross_family_transfer"
     status: demonstrated
   - id: CGM
     metric: CGR
     criterion: "Positive, zero, and negative CGR/IG are computed from a capability series."
     scope: harness
-    verifier: "tests/test_cgr_e2e.py::test_positive_zero_negative_cgr_and_ig"
+    verifier: "tests/evaluation/test_cgr_e2e.py::test_positive_zero_negative_cgr_and_ig"
     status: demonstrated
   - id: EVALUATION
     metric: CGR
     criterion: "A single end-to-end ASFT run yields positive CGR and IG from solver traces, and beats every baseline."
     scope: end_to_end
-    verifier: "tests/test_full_pipeline_e2e.py::test_pipeline_success_flag"
+    verifier: "tests/evaluation/test_full_pipeline_e2e.py::test_pipeline_success_flag"
     status: demonstrated
 
 non_goals:
