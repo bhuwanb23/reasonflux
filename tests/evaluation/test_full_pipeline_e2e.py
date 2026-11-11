@@ -20,7 +20,7 @@ from baselines.random_skill_creation.run import run as random_run
 from baselines.skill_storage.run import run as storage_run
 from pipelines.full_asft_pipeline import run_full_asft_pipeline
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 
 
 @pytest.fixture(scope="module")

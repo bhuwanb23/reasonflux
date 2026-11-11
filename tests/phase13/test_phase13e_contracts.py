@@ -139,6 +139,6 @@ def test_analysis_accepts_structural_fixture_without_running_benchmark():
 
 
 def test_phase13e_source_modules_remain_modular_and_bounded():
-    root = Path(__file__).resolve().parents[1] / "experiments" / "phase13e"
+    root = Path(__file__).resolve().parents[2] / "experiments" / "phase13e"
     for path in root.glob("*.py"):
         assert len(path.read_text(encoding="utf-8").splitlines()) < 400, path.name

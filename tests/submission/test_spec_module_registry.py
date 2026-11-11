@@ -14,7 +14,7 @@ from typing import Any
 import pytest
 import yaml
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 REGISTRY = ROOT / "configs" / "modules.yaml"
 BLUEPRINT = ROOT / "docs" / "02_design" / "implementation_blueprint.md"
 

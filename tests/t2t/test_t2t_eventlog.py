@@ -1,6 +1,6 @@
 """Synthetic-only tests for the T2T local event-log prototype.
 
-Run only with: python -m pytest -q tests/test_t2t_eventlog.py
+Run only with: python -m pytest -q tests/t2t/test_t2t_eventlog.py
 No repository experiments, ARC data, network, model, evaluator or live environment
 are used in this module.
 """

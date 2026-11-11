@@ -1,7 +1,7 @@
 from __future__ import annotations
 import hashlib,json,sys
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1]
+ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT))
 PKG=ROOT/"reports/experiments/ASFT-V1.1-PHASE-2I-A-CANDIDATE-PRODUCTION-ENABLEMENT-V1"
 PILOT=PKG/"wp3_ai_pilot_v1"
